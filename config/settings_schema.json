@@ -2116,5 +2116,22 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "CRO-instellingen",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_urgency_components",
+        "label": "Kortings-/urgentiecomponenten tonen",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_exit_intent_popup",
+        "label": "Exit-intent popup tonen",
+        "default": false
+      }
+    ]
   }
 ]
