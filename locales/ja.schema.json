@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "フッターメニュー",
     "hero_banner": "ヒーローバナー",
     "link": "リンク",
     "menu_column": "メニュー列",
@@ -178,6 +179,11 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "button_opens_chat": "チャットを開く",
+    "copyright_text": "著作権テキスト",
+    "legal_menu": "法的メニュー",
+    "show_agency_credit": "制作会社のクレジットを表示",
+    "show_payment_icons": "支払いアイコンを表示",
     "button_color": "ボタンの色",
     "button_label": "ボタンのラベル",
     "mobile_image": "モバイル画像",
@@ -884,6 +890,8 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "button": "ボタン",
+    "footer_bottom_bar": "下部バー",
     "free_shipping": "送料無料",
     "advanced": "高度な設定",
     "background_image": "背景画像",
@@ -1108,6 +1116,10 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "footer_legal_menu": "空欄の場合はストアのポリシーを表示します",
+    "footer_menu_button_chat": "Shopify Inboxがインストールされている場合は開きます。それ以外はリンク先に移動します",
+    "footer_menu_button_link": "デフォルトはお問い合わせページです",
+    "footer_menu_heading": "空欄の場合はメニューのタイトルを使用します",
     "hero_banner_desktop_only": "テキストが画像の上に表示されるデスクトップに適用されます",
     "hero_banner_mobile_image": "任意。未設定の場合はデスクトップ画像を使用します",
     "hero_banner_mobile_only": "コンテンツが画像の下に表示されるモバイルに適用されます",

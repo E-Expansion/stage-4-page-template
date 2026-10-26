@@ -30,6 +30,8 @@
     "text": "ٹیکسٹ"
   },
   "content": {
+    "button": "بٹن",
+    "footer_bottom_bar": "نچلی بار",
     "free_shipping": "مفت شپنگ",
     "visible_if_collection_has_more_products": "اگر کلیکشن میں دکھائے گئے پروڈکٹ سے زیادہ پروڈکٹ ہوں تو ظاہر ہوتا ہے",
     "advanced": "ایڈوانسڈ",
@@ -216,6 +218,10 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "footer_legal_menu": "اسٹور کی پالیسیاں دکھانے کے لیے خالی چھوڑیں",
+    "footer_menu_button_chat": "انسٹال ہونے پر Shopify Inbox کھولتا ہے؛ ورنہ بٹن اپنے لنک پر جاتا ہے",
+    "footer_menu_button_link": "بطور ڈیفالٹ رابطہ صفحہ",
+    "footer_menu_heading": "مینو کا عنوان استعمال کرنے کے لیے خالی چھوڑیں",
     "hero_banner_desktop_only": "ڈیسک ٹاپ پر لاگو ہوتا ہے جہاں متن تصویر پر ہوتا ہے",
     "hero_banner_mobile_image": "اختیاری۔ خالی ہونے پر ڈیسک ٹاپ تصویر استعمال ہوتی ہے",
     "hero_banner_mobile_only": "موبائل پر لاگو ہوتا ہے جہاں مواد تصویر کے نیچے ہوتا ہے",
@@ -254,6 +260,7 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "footer_menu": "فوٹر مینو",
     "hero_banner": "ہیرو بینر",
     "link": "لنک",
     "menu_column": "مینو کالم",
@@ -699,6 +706,11 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "button_opens_chat": "چیٹ کھولیں",
+    "copyright_text": "کاپی رائٹ متن",
+    "legal_menu": "قانونی مینو",
+    "show_agency_credit": "ایجنسی کا حوالہ دکھائیں",
+    "show_payment_icons": "ادائیگی کے آئیکنز دکھائیں",
     "button_color": "بٹن کا رنگ",
     "button_label": "بٹن کا لیبل",
     "mobile_image": "موبائل تصویر",

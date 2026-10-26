@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Menu stopki",
     "hero_banner": "Baner główny",
     "link": "Link",
     "menu_column": "Kolumna menu",
@@ -178,6 +179,11 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "button_opens_chat": "Otwórz czat",
+    "copyright_text": "Tekst praw autorskich",
+    "legal_menu": "Menu prawne",
+    "show_agency_credit": "Pokaż informację o agencji",
+    "show_payment_icons": "Pokaż ikony płatności",
     "button_color": "Kolor przycisku",
     "button_label": "Etykieta przycisku",
     "mobile_image": "Obraz mobilny",
@@ -884,6 +890,8 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "button": "Przycisk",
+    "footer_bottom_bar": "Dolny pasek",
     "free_shipping": "Darmowa dostawa",
     "background_video": "Wideo w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1108,6 +1116,10 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "footer_legal_menu": "Pozostaw puste, aby wyświetlić zasady sklepu",
+    "footer_menu_button_chat": "Otwiera Shopify Inbox, jeśli jest zainstalowany; w przeciwnym razie przycisk prowadzi do linku",
+    "footer_menu_button_link": "Domyślnie strona kontaktowa",
+    "footer_menu_heading": "Pozostaw puste, aby użyć tytułu menu",
     "hero_banner_desktop_only": "Dotyczy komputerów, gdzie tekst jest na obrazie",
     "hero_banner_mobile_image": "Opcjonalnie. Domyślnie używany jest obraz na komputer",
     "hero_banner_mobile_only": "Dotyczy urządzeń mobilnych, gdzie treść jest pod obrazem",

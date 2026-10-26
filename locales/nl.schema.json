@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Footermenu",
     "hero_banner": "Hero-banner",
     "link": "Link",
     "menu_column": "Menukolom",
@@ -178,6 +179,11 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "button_opens_chat": "Chat openen",
+    "copyright_text": "Copyrighttekst",
+    "legal_menu": "Juridisch menu",
+    "show_agency_credit": "Bureauvermelding tonen",
+    "show_payment_icons": "Betaaliconen tonen",
     "button_color": "Knopkleur",
     "button_label": "Knoplabel",
     "mobile_image": "Mobiele afbeelding",
@@ -884,6 +890,8 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "button": "Knop",
+    "footer_bottom_bar": "Onderbalk",
     "free_shipping": "Gratis verzending",
     "background_video": "Achtergrondvideo",
     "describe_the_video_for": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1108,6 +1116,10 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "footer_legal_menu": "Laat leeg om het winkelbeleid te tonen",
+    "footer_menu_button_chat": "Opent Shopify Inbox als die is geïnstalleerd; anders volgt de knop de link",
+    "footer_menu_button_link": "Standaard de contactpagina",
+    "footer_menu_heading": "Laat leeg om de menutitel te gebruiken",
     "hero_banner_desktop_only": "Geldt op desktop, waar de tekst op de afbeelding staat",
     "hero_banner_mobile_image": "Optioneel. Valt terug op de desktopafbeelding",
     "hero_banner_mobile_only": "Geldt op mobiel, waar de inhoud onder de afbeelding staat",

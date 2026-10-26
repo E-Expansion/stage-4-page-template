@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Bunntekstmeny",
     "hero_banner": "Hero-banner",
     "link": "Lenke",
     "menu_column": "Menykolonne",
@@ -178,6 +179,11 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "button_opens_chat": "Åpne chat",
+    "copyright_text": "Opphavsrettstekst",
+    "legal_menu": "Juridisk meny",
+    "show_agency_credit": "Vis byråkreditering",
+    "show_payment_icons": "Vis betalingsikoner",
     "button_color": "Knappefarge",
     "button_label": "Knappetikett",
     "mobile_image": "Mobilbilde",
@@ -884,6 +890,8 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "button": "Knapp",
+    "footer_bottom_bar": "Bunnlinje",
     "free_shipping": "Gratis frakt",
     "advanced": "Avansert",
     "background_image": "Bakgrunnsbilde",
@@ -1108,6 +1116,10 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "footer_legal_menu": "La stå tomt for å vise butikkens retningslinjer",
+    "footer_menu_button_chat": "Åpner Shopify Inbox hvis installert; ellers følger knappen lenken",
+    "footer_menu_button_link": "Kontaktsiden som standard",
+    "footer_menu_heading": "La stå tomt for å bruke menyens tittel",
     "hero_banner_desktop_only": "Gjelder på datamaskin, der teksten ligger på bildet",
     "hero_banner_mobile_image": "Valgfritt. Bruker ellers bildet for datamaskin",
     "hero_banner_mobile_only": "Gjelder på mobil, der innholdet står under bildet",

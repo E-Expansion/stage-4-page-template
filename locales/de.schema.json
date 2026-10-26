@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Footer-Menü",
     "hero_banner": "Hero-Banner",
     "link": "Link",
     "menu_column": "Menüspalte",
@@ -178,6 +179,11 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "button_opens_chat": "Chat öffnen",
+    "copyright_text": "Copyright-Text",
+    "legal_menu": "Rechtliches Menü",
+    "show_agency_credit": "Agentur-Hinweis anzeigen",
+    "show_payment_icons": "Zahlungssymbole anzeigen",
     "button_color": "Button-Farbe",
     "button_label": "Button-Beschriftung",
     "mobile_image": "Mobiles Bild",
@@ -884,6 +890,8 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "button": "Button",
+    "footer_bottom_bar": "Untere Leiste",
     "free_shipping": "Kostenloser Versand",
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1108,6 +1116,10 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "footer_legal_menu": "Leer lassen, um die Shop-Richtlinien anzuzeigen",
+    "footer_menu_button_chat": "Öffnet Shopify Inbox, falls installiert; andernfalls folgt der Button seinem Link",
+    "footer_menu_button_link": "Standardmäßig die Kontaktseite",
+    "footer_menu_heading": "Leer lassen, um den Menütitel zu verwenden",
     "hero_banner_desktop_only": "Gilt auf dem Desktop, wo der Text auf dem Bild liegt",
     "hero_banner_mobile_image": "Optional. Verwendet sonst das Desktop-Bild",
     "hero_banner_mobile_only": "Gilt auf Mobilgeräten, wo der Inhalt unter dem Bild steht",

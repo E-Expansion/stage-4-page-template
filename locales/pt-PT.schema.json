@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Menu do rodapé",
     "hero_banner": "Banner principal",
     "link": "Ligação",
     "menu_column": "Coluna do menu",
@@ -178,6 +179,11 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "button_opens_chat": "Abrir chat",
+    "copyright_text": "Texto de direitos de autor",
+    "legal_menu": "Menu jurídico",
+    "show_agency_credit": "Mostrar crédito da agência",
+    "show_payment_icons": "Mostrar ícones de pagamento",
     "button_color": "Cor do botão",
     "button_label": "Etiqueta do botão",
     "mobile_image": "Imagem para telemóvel",
@@ -884,6 +890,8 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "button": "Botão",
+    "footer_bottom_bar": "Barra inferior",
     "free_shipping": "Envio gratuito",
     "advanced": "Avançado",
     "background_image": "Imagem de fundo",
@@ -1108,6 +1116,10 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "footer_legal_menu": "Deixe vazio para mostrar as políticas da loja",
+    "footer_menu_button_chat": "Abre o Shopify Inbox se estiver instalado; caso contrário, o botão segue a ligação",
+    "footer_menu_button_link": "Página de contacto por predefinição",
+    "footer_menu_heading": "Deixe vazio para utilizar o título do menu",
     "hero_banner_desktop_only": "Aplica-se no computador, onde o texto fica sobre a imagem",
     "hero_banner_mobile_image": "Opcional. Utiliza a imagem do computador se vazio",
     "hero_banner_mobile_only": "Aplica-se no telemóvel, onde o conteúdo fica abaixo da imagem",

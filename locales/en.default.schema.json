@@ -33,6 +33,8 @@
     "text": "Text"
   },
   "content": {
+    "button": "Button",
+    "footer_bottom_bar": "Bottom bar",
     "free_shipping": "Free shipping",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
@@ -224,6 +226,10 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "footer_legal_menu": "Leave empty to show the store policies",
+    "footer_menu_button_chat": "Opens Shopify Inbox when installed; otherwise the button follows its link",
+    "footer_menu_button_link": "Defaults to the contact page",
+    "footer_menu_heading": "Leave empty to use the menu title",
     "hero_banner_desktop_only": "Applies on desktop, where text sits on the image",
     "hero_banner_mobile_image": "Optional. Falls back to the desktop image",
     "hero_banner_mobile_only": "Applies on mobile, where content sits below the image",
@@ -262,6 +268,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "footer_menu": "Footer menu",
     "hero_banner": "Hero banner",
     "link": "Link",
     "menu_column": "Menu column",
@@ -751,6 +758,11 @@
     "below_media": "Below media"
   },
   "settings": {
+    "button_opens_chat": "Open chat",
+    "copyright_text": "Copyright text",
+    "legal_menu": "Legal menu",
+    "show_agency_credit": "Show agency credit",
+    "show_payment_icons": "Show payment icons",
     "button_color": "Button color",
     "button_label": "Button label",
     "mobile_image": "Mobile image",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "頁尾選單",
     "hero_banner": "主橫幅",
     "link": "連結",
     "menu_column": "選單欄",
@@ -178,6 +179,11 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "button_opens_chat": "開啟聊天",
+    "copyright_text": "版權文字",
+    "legal_menu": "法律選單",
+    "show_agency_credit": "顯示代理商署名",
+    "show_payment_icons": "顯示付款圖示",
     "button_color": "按鈕顏色",
     "button_label": "按鈕標籤",
     "mobile_image": "行動版圖片",
@@ -884,6 +890,8 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "button": "按鈕",
+    "footer_bottom_bar": "底部列",
     "free_shipping": "免運費",
     "advanced": "進階",
     "background_image": "背景圖片",
@@ -1108,6 +1116,10 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "footer_legal_menu": "留空以顯示商店政策",
+    "footer_menu_button_chat": "已安裝 Shopify Inbox 時開啟聊天；否則按鈕會前往其連結",
+    "footer_menu_button_link": "預設為聯絡頁面",
+    "footer_menu_heading": "留空以使用選單標題",
     "hero_banner_desktop_only": "適用於桌面版，文字顯示在圖片上",
     "hero_banner_mobile_image": "選填。未設定時使用桌面版圖片",
     "hero_banner_mobile_only": "適用於行動版，內容顯示在圖片下方",

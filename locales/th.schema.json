@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "เมนูส่วนท้าย",
     "hero_banner": "แบนเนอร์หลัก",
     "link": "ลิงก์",
     "menu_column": "คอลัมน์เมนู",
@@ -178,6 +179,11 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "button_opens_chat": "เปิดแชท",
+    "copyright_text": "ข้อความลิขสิทธิ์",
+    "legal_menu": "เมนูกฎหมาย",
+    "show_agency_credit": "แสดงเครดิตเอเจนซี",
+    "show_payment_icons": "แสดงไอคอนการชำระเงิน",
     "button_color": "สีปุ่ม",
     "button_label": "ป้ายกำกับปุ่ม",
     "mobile_image": "รูปภาพสำหรับมือถือ",
@@ -884,6 +890,8 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "button": "ปุ่ม",
+    "footer_bottom_bar": "แถบด้านล่าง",
     "free_shipping": "จัดส่งฟรี",
     "advanced": "ขั้นสูง",
     "background_image": "รูปภาพพื้นหลัง",
@@ -1108,6 +1116,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "footer_legal_menu": "เว้นว่างไว้เพื่อแสดงนโยบายร้านค้า",
+    "footer_menu_button_chat": "เปิด Shopify Inbox หากติดตั้งไว้ มิฉะนั้นปุ่มจะไปยังลิงก์",
+    "footer_menu_button_link": "ค่าเริ่มต้นคือหน้าติดต่อ",
+    "footer_menu_heading": "เว้นว่างไว้เพื่อใช้ชื่อเมนู",
     "hero_banner_desktop_only": "ใช้กับเดสก์ท็อป ซึ่งข้อความอยู่บนรูปภาพ",
     "hero_banner_mobile_image": "ไม่บังคับ หากไม่ระบุจะใช้รูปภาพเดสก์ท็อป",
     "hero_banner_mobile_only": "ใช้กับมือถือ ซึ่งเนื้อหาอยู่ใต้รูปภาพ",

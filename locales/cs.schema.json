@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Nabídka zápatí",
     "hero_banner": "Hlavní banner",
     "link": "Odkaz",
     "menu_column": "Sloupec nabídky",
@@ -178,6 +179,11 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "button_opens_chat": "Otevřít chat",
+    "copyright_text": "Text autorských práv",
+    "legal_menu": "Právní nabídka",
+    "show_agency_credit": "Zobrazit uvedení agentury",
+    "show_payment_icons": "Zobrazit ikony plateb",
     "button_color": "Barva tlačítka",
     "button_label": "Popisek tlačítka",
     "mobile_image": "Obrázek pro mobil",
@@ -884,6 +890,8 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "button": "Tlačítko",
+    "footer_bottom_bar": "Spodní lišta",
     "free_shipping": "Doprava zdarma",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
@@ -1108,6 +1116,10 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "footer_legal_menu": "Ponechte prázdné pro zobrazení zásad obchodu",
+    "footer_menu_button_chat": "Otevře Shopify Inbox, pokud je nainstalován; jinak tlačítko vede na odkaz",
+    "footer_menu_button_link": "Výchozí je kontaktní stránka",
+    "footer_menu_heading": "Ponechte prázdné pro použití názvu nabídky",
     "hero_banner_desktop_only": "Platí na počítači, kde je text na obrázku",
     "hero_banner_mobile_image": "Volitelné. Jinak se použije obrázek pro počítač",
     "hero_banner_mobile_only": "Platí na mobilu, kde je obsah pod obrázkem",

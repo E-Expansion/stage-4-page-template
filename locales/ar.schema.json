@@ -30,6 +30,8 @@
     "text": "نص"
   },
   "content": {
+    "button": "زر",
+    "footer_bottom_bar": "الشريط السفلي",
     "free_shipping": "شحن مجاني",
     "visible_if_collection_has_more_products": "مرئي إذا كانت المجموعة تحتوي على منتجات أكثر من المعروضة",
     "advanced": "متقدم",
@@ -216,6 +218,10 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "footer_legal_menu": "اتركه فارغًا لعرض سياسات المتجر",
+    "footer_menu_button_chat": "يفتح Shopify Inbox إذا كان مثبتًا؛ وإلا ينتقل الزر إلى رابطه",
+    "footer_menu_button_link": "صفحة الاتصال افتراضيًا",
+    "footer_menu_heading": "اتركه فارغًا لاستخدام عنوان القائمة",
     "hero_banner_desktop_only": "يُطبّق على سطح المكتب حيث يظهر النص فوق الصورة",
     "hero_banner_mobile_image": "اختياري. تُستخدم صورة سطح المكتب عند تركه فارغًا",
     "hero_banner_mobile_only": "يُطبّق على الجوال حيث يظهر المحتوى أسفل الصورة",
@@ -254,6 +260,7 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "footer_menu": "قائمة التذييل",
     "hero_banner": "البانر الرئيسي",
     "link": "رابط",
     "menu_column": "عمود القائمة",
@@ -699,6 +706,11 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "button_opens_chat": "فتح الدردشة",
+    "copyright_text": "نص حقوق النشر",
+    "legal_menu": "القائمة القانونية",
+    "show_agency_credit": "إظهار إشارة الوكالة",
+    "show_payment_icons": "إظهار أيقونات الدفع",
     "button_color": "لون الزر",
     "button_label": "تسمية الزر",
     "mobile_image": "صورة الجوال",

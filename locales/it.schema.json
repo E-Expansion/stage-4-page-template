@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Menu footer",
     "hero_banner": "Banner hero",
     "link": "Link",
     "menu_column": "Colonna del menu",
@@ -178,6 +179,11 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "button_opens_chat": "Apri chat",
+    "copyright_text": "Testo copyright",
+    "legal_menu": "Menu legale",
+    "show_agency_credit": "Mostra credito agenzia",
+    "show_payment_icons": "Mostra icone di pagamento",
     "button_color": "Colore del pulsante",
     "button_label": "Etichetta del pulsante",
     "mobile_image": "Immagine mobile",
@@ -884,6 +890,8 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "button": "Pulsante",
+    "footer_bottom_bar": "Barra inferiore",
     "free_shipping": "Spedizione gratuita",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
@@ -1108,6 +1116,10 @@
     "disclosures": "Informative"
   },
   "info": {
+    "footer_legal_menu": "Lascia vuoto per mostrare le informative del negozio",
+    "footer_menu_button_chat": "Apre Shopify Inbox se installato; altrimenti il pulsante segue il suo link",
+    "footer_menu_button_link": "Pagina contatti predefinita",
+    "footer_menu_heading": "Lascia vuoto per usare il titolo del menu",
     "hero_banner_desktop_only": "Si applica su desktop, dove il testo è sopra l'immagine",
     "hero_banner_mobile_image": "Facoltativa. Usa l'immagine desktop se assente",
     "hero_banner_mobile_only": "Si applica su mobile, dove il contenuto è sotto l'immagine",

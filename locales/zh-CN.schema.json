@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "页脚菜单",
     "hero_banner": "主横幅",
     "link": "链接",
     "menu_column": "菜单列",
@@ -178,6 +179,11 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "button_opens_chat": "打开聊天",
+    "copyright_text": "版权文本",
+    "legal_menu": "法律菜单",
+    "show_agency_credit": "显示代理商署名",
+    "show_payment_icons": "显示支付图标",
     "button_color": "按钮颜色",
     "button_label": "按钮标签",
     "mobile_image": "移动端图片",
@@ -884,6 +890,8 @@
     "input_field": "输入字段"
   },
   "content": {
+    "button": "按钮",
+    "footer_bottom_bar": "底部栏",
     "free_shipping": "免费配送",
     "advanced": "高级",
     "background_image": "背景图片",
@@ -1108,6 +1116,10 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "footer_legal_menu": "留空以显示商店政策",
+    "footer_menu_button_chat": "安装 Shopify Inbox 时打开聊天；否则按钮跳转到其链接",
+    "footer_menu_button_link": "默认为联系页面",
+    "footer_menu_heading": "留空以使用菜单标题",
     "hero_banner_desktop_only": "适用于桌面端，文本显示在图片上",
     "hero_banner_mobile_image": "可选。未设置时使用桌面端图片",
     "hero_banner_mobile_only": "适用于移动端，内容显示在图片下方",

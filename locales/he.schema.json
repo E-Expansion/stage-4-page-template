@@ -30,6 +30,8 @@
     "text": "טקסט"
   },
   "content": {
+    "button": "כפתור",
+    "footer_bottom_bar": "סרגל תחתון",
     "free_shipping": "משלוח חינם",
     "visible_if_collection_has_more_products": "גלוי אם באוסף יש יותר מוצרים ממה שמוצג",
     "advanced": "מתקדם",
@@ -216,6 +218,10 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "footer_legal_menu": "השאר ריק כדי להציג את מדיניות החנות",
+    "footer_menu_button_chat": "פותח את Shopify Inbox אם מותקן; אחרת הכפתור עובר לקישור",
+    "footer_menu_button_link": "ברירת המחדל היא דף יצירת הקשר",
+    "footer_menu_heading": "השאר ריק כדי להשתמש בכותרת התפריט",
     "hero_banner_desktop_only": "חל במחשב, שם הטקסט מופיע על התמונה",
     "hero_banner_mobile_image": "אופציונלי. אחרת תשמש תמונת המחשב",
     "hero_banner_mobile_only": "חל בנייד, שם התוכן מופיע מתחת לתמונה",
@@ -254,6 +260,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "footer_menu": "תפריט כותרת תחתונה",
     "hero_banner": "באנר ראשי",
     "link": "קישור",
     "menu_column": "עמודת תפריט",
@@ -699,6 +706,11 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "button_opens_chat": "פתח צ'אט",
+    "copyright_text": "טקסט זכויות יוצרים",
+    "legal_menu": "תפריט משפטי",
+    "show_agency_credit": "הצג קרדיט לסוכנות",
+    "show_payment_icons": "הצג סמלי תשלום",
     "button_color": "צבע הכפתור",
     "button_label": "תווית הכפתור",
     "mobile_image": "תמונה לנייד",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Alatunnisteen valikko",
     "hero_banner": "Hero-banneri",
     "link": "Linkki",
     "menu_column": "Valikon sarake",
@@ -178,6 +179,11 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "button_opens_chat": "Avaa chat",
+    "copyright_text": "Tekijänoikeusteksti",
+    "legal_menu": "Juridinen valikko",
+    "show_agency_credit": "Näytä toimiston maininta",
+    "show_payment_icons": "Näytä maksukuvakkeet",
     "button_color": "Painikkeen väri",
     "button_label": "Painikkeen teksti",
     "mobile_image": "Mobiilikuva",
@@ -884,6 +890,8 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "button": "Painike",
+    "footer_bottom_bar": "Alapalkki",
     "free_shipping": "Ilmainen toimitus",
     "advanced": "Lisäasetukset",
     "background_image": "Taustakuva",
@@ -1108,6 +1116,10 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "footer_legal_menu": "Jätä tyhjäksi näyttääksesi kaupan käytännöt",
+    "footer_menu_button_chat": "Avaa Shopify Inboxin, jos se on asennettu; muuten painike seuraa linkkiään",
+    "footer_menu_button_link": "Oletuksena yhteydenottosivu",
+    "footer_menu_heading": "Jätä tyhjäksi käyttääksesi valikon otsikkoa",
     "hero_banner_desktop_only": "Koskee tietokonetta, jossa teksti on kuvan päällä",
     "hero_banner_mobile_image": "Valinnainen. Käyttää muuten tietokoneen kuvaa",
     "hero_banner_mobile_only": "Koskee mobiilia, jossa sisältö on kuvan alla",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "Altbilgi menüsü",
     "hero_banner": "Hero banner",
     "link": "Bağlantı",
     "menu_column": "Menü sütunu",
@@ -178,6 +179,11 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "button_opens_chat": "Sohbeti aç",
+    "copyright_text": "Telif hakkı metni",
+    "legal_menu": "Yasal menü",
+    "show_agency_credit": "Ajans bilgisini göster",
+    "show_payment_icons": "Ödeme simgelerini göster",
     "button_color": "Düğme rengi",
     "button_label": "Düğme etiketi",
     "mobile_image": "Mobil görsel",
@@ -884,6 +890,8 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "button": "Düğme",
+    "footer_bottom_bar": "Alt çubuk",
     "free_shipping": "Ücretsiz kargo",
     "background_video": "Arka plan videosu",
     "describe_the_video_for": "Ekran okuyucu kullanan müşteriler için videoyu açıklayın. [Daha fazla bilgi edinin](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1108,6 +1116,10 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "footer_legal_menu": "Mağaza politikalarını göstermek için boş bırakın",
+    "footer_menu_button_chat": "Yüklüyse Shopify Inbox'ı açar; aksi halde düğme bağlantısına gider",
+    "footer_menu_button_link": "Varsayılan olarak iletişim sayfası",
+    "footer_menu_heading": "Menü başlığını kullanmak için boş bırakın",
     "hero_banner_desktop_only": "Metnin görselin üzerinde olduğu masaüstünde geçerlidir",
     "hero_banner_mobile_image": "İsteğe bağlı. Boşsa masaüstü görseli kullanılır",
     "hero_banner_mobile_only": "İçeriğin görselin altında olduğu mobilde geçerlidir",

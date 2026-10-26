@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "footer_menu": "푸터 메뉴",
     "hero_banner": "히어로 배너",
     "link": "링크",
     "menu_column": "메뉴 열",
@@ -178,6 +179,11 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "button_opens_chat": "채팅 열기",
+    "copyright_text": "저작권 텍스트",
+    "legal_menu": "법률 메뉴",
+    "show_agency_credit": "에이전시 크레딧 표시",
+    "show_payment_icons": "결제 아이콘 표시",
     "button_color": "버튼 색상",
     "button_label": "버튼 레이블",
     "mobile_image": "모바일 이미지",
@@ -884,6 +890,8 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "button": "버튼",
+    "footer_bottom_bar": "하단 바",
     "free_shipping": "무료 배송",
     "background_video": "배경 비디오",
     "describe_the_video_for": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
@@ -1108,6 +1116,10 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "footer_legal_menu": "비워 두면 스토어 정책이 표시됩니다",
+    "footer_menu_button_chat": "Shopify Inbox가 설치되어 있으면 열고, 그렇지 않으면 링크로 이동합니다",
+    "footer_menu_button_link": "기본값은 문의 페이지입니다",
+    "footer_menu_heading": "비워 두면 메뉴 제목을 사용합니다",
     "hero_banner_desktop_only": "텍스트가 이미지 위에 표시되는 데스크톱에 적용됩니다",
     "hero_banner_mobile_image": "선택 사항. 비어 있으면 데스크톱 이미지를 사용합니다",
     "hero_banner_mobile_only": "콘텐츠가 이미지 아래에 표시되는 모바일에 적용됩니다",
