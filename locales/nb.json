@@ -88,6 +88,7 @@
     "view_disclosure_information_for_product": "Se produktopplysninger for {{ product_title }}"
   },
   "actions": {
+    "load_more": "Last inn flere",
     "view_product": "Se produkt",
     "add_to_cart": "Legg i handlekurv",
     "clear_all": "Fjern alle",
@@ -132,6 +133,9 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
+    "products_shown": "{{ shown }} av {{ total }} produkter",
+    "sort_by": "Sorter etter:",
     "home": "Hjem",
     "read_time": {
       "one": "{{ count }} min lesetid",

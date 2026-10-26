@@ -90,6 +90,7 @@
     "show_submenu": "Prikaži podmeni {{ title }}"
   },
   "actions": {
+    "load_more": "Naloži več",
     "view_product": "Ogled izdelka",
     "add_to_cart": "Dodaj v košarico",
     "clear_all": "Počisti vse",
@@ -136,6 +137,9 @@
     "back_to_main_menu": "Nazaj na glavni meni"
   },
   "content": {
+    "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
+    "products_shown": "{{ shown }} od {{ total }} izdelkov",
+    "sort_by": "Razvrsti po:",
     "home": "Domov",
     "read_time": {
       "one": "{{ count }} min branja",

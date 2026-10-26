@@ -90,6 +90,7 @@
     "show_submenu": "Zobrazit podnabídku {{ title }}"
   },
   "actions": {
+    "load_more": "Načíst další",
     "view_product": "Zobrazit produkt",
     "add_to_cart": "Přidat do košíku",
     "clear_all": "Vymazat vše",
@@ -136,6 +137,9 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "showing_range_html": "Zobrazeno <strong>{{ start }}–{{ end }}</strong> z {{ total }}",
+    "products_shown": "{{ shown }} z {{ total }} produktů",
+    "sort_by": "Řadit podle:",
     "home": "Domů",
     "read_time": {
       "one": "{{ count }} min čtení",

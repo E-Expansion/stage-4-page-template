@@ -88,6 +88,7 @@
     "show_submenu": "Hiển thị menu phụ {{ title }}"
   },
   "actions": {
+    "load_more": "Tải thêm",
     "view_product": "Xem sản phẩm",
     "add_to_cart": "Thêm vào giỏ hàng",
     "clear_all": "Xóa tất cả",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "showing_range_html": "Hiển thị <strong>{{ start }}–{{ end }}</strong> trên {{ total }}",
+    "products_shown": "{{ shown }} trên {{ total }} sản phẩm",
+    "sort_by": "Sắp xếp theo:",
     "home": "Trang chủ",
     "read_time": {
       "one": "{{ count }} phút đọc",

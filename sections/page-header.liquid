@@ -1,0 +1,196 @@
+{% comment %}
+  Section contract.
+  Page intro for listing pages: breadcrumbs, the page title and a short description.
+  Title and description are read from the current collection, blog or page, so one
+  template serves every collection or blog. The section's own title and text are used
+  when set (title) or when the resource has no description (text). Collections can also
+  show their product count on mobile.
+  @example
+  <!-- Collection or blog template > Add section > Page header -->
+{% endcomment %}
+
+{% liquid
+  case template.name
+    when 'collection'
+      assign resource_title = collection.title
+      assign resource_description = collection.description
+    when 'blog'
+      assign resource_title = blog.title
+    when 'page'
+      assign resource_title = page.title
+    else
+      assign resource_title = page_title
+  endcase
+
+  assign title = section.settings.title | default: resource_title | escape
+  assign description = resource_description
+  if description == blank
+    assign description = section.settings.text
+  endif
+%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="page-header section section--page-width spacing-style color-custom-{{ section.id }}"
+  style="{% render 'spacing-padding', settings: section.settings %}"
+>
+  <div class="page-header__inner">
+    {% if section.settings.show_breadcrumbs %}
+      {% render 'breadcrumbs',
+        parent_label: section.settings.parent_label,
+        parent_url: section.settings.parent_link
+      %}
+    {% endif %}
+
+    <h1 class="page-header__title">{{ title }}</h1>
+
+    {% if description != blank %}
+      <div class="page-header__text rte">{{ description }}</div>
+    {% endif %}
+
+    {% if section.settings.show_product_count and template.name == 'collection' %}
+      <p class="page-header__count desktop:hidden">
+        {{- 'content.item_count' | t: count: collection.products_count -}}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .page-header__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    min-width: 0;
+
+    @media screen and (min-width: 750px) {
+      gap: var(--gap-md);
+    }
+  }
+
+  .page-header__title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--3xl);
+    line-height: var(--line-height--display-tight);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--4xl);
+    }
+  }
+
+  .page-header__text {
+    max-width: 40rem;
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .page-header__count {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.page_header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "info": "t:info.page_header_title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:info.page_header_text"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_count",
+      "label": "t:settings.show_product_count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.breadcrumbs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:settings.show_breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "parent_label",
+      "label": "t:settings.parent_label",
+      "info": "t:info.page_header_parent"
+    },
+    {
+      "type": "url",
+      "id": "parent_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.page_header"
+    }
+  ]
+}
+{% endschema %}

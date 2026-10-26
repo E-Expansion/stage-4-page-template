@@ -68,6 +68,7 @@
     }
   },
   "actions": {
+    "load_more": "مزید لوڈ کریں",
     "view_product": "پروڈکٹ دیکھیں",
     "add": "شامل کریں",
     "add_to_cart": "کارٹ میں شامل کریں",
@@ -152,6 +153,9 @@
     }
   },
   "content": {
+    "showing_range_html": "{{ total }} میں سے <strong>{{ start }}–{{ end }}</strong> دکھا رہے ہیں",
+    "products_shown": "{{ total }} میں سے {{ shown }} پروڈکٹس",
+    "sort_by": "ترتیب دیں:",
     "home": "ہوم",
     "read_time": {
       "one": "{{ count }} منٹ کا مطالعہ",

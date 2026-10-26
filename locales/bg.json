@@ -88,6 +88,7 @@
     "show_submenu": "Показване на подменю {{ title }}"
   },
   "actions": {
+    "load_more": "Зареди още",
     "view_product": "Виж продукта",
     "add_to_cart": "Добавяне към количката",
     "clear_all": "Изчисти всички",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "showing_range_html": "Показани <strong>{{ start }}–{{ end }}</strong> от {{ total }}",
+    "products_shown": "{{ shown }} от {{ total }} продукта",
+    "sort_by": "Сортиране по:",
     "home": "Начало",
     "read_time": {
       "one": "{{ count }} мин. четене",

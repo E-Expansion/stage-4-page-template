@@ -90,6 +90,7 @@
     "show_submenu": "Показать подменю {{ title }}"
   },
   "actions": {
+    "load_more": "Загрузить ещё",
     "view_product": "Посмотреть товар",
     "add_to_cart": "Добавить в корзину",
     "clear_all": "Очистить всё",
@@ -136,6 +137,9 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "showing_range_html": "Показано <strong>{{ start }}–{{ end }}</strong> из {{ total }}",
+    "products_shown": "{{ shown }} из {{ total }} товаров",
+    "sort_by": "Сортировать:",
     "home": "Главная",
     "read_time": {
       "one": "{{ count }} мин чтения",

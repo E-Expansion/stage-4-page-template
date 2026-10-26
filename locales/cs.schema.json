@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Záhlaví stránky",
+    "subcategories": "Podkategorie",
+    "collection_products": "Produkty kolekce",
+    "seo_text": "Text SEO",
+    "collection_promo": "Propagační dlaždice",
     "newsletter_signup": "Přihlášení k newsletteru",
     "faq": "Časté dotazy",
     "faq_item": "Otázka",
@@ -193,6 +198,14 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "parent_label": "Další krok navigace",
+    "show_breadcrumbs": "Zobrazit drobečkovou navigaci",
+    "show_product_count": "Zobrazit počet produktů na mobilu",
+    "accent_color": "Barva zvýraznění",
+    "mobile_sort_options": "Tlačítka řazení na mobilu",
+    "promo_position": "Pozice propagace",
+    "align_with_product_grid": "Zarovnat s mřížkou produktů",
+    "show_on_mobile": "Zobrazit na mobilu",
     "badge_3_color": "Barva odznaku 3",
     "badge_3_label": "Popisek odznaku 3",
     "badge_3_tag": "Štítek produktu odznaku 3",
@@ -953,6 +966,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "breadcrumbs": "Drobečková navigace",
     "tag_badges": "Odznaky štítků",
     "form": "Formulář",
     "badges": "Odznaky",
@@ -1184,6 +1198,15 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "page_header_parent": "Volitelný další krok po Domů, např. „Obchod“ s odkazem na všechny produkty",
+    "page_header_text": "Použije se, když kolekce nemá popis, a na blozích a stránkách",
+    "page_header_title": "Ponechte prázdné pro použití názvu kolekce, blogu nebo stránky",
+    "subcategories_metafield": "Každá kolekce zobrazí kolekce z metapole custom.subcategories (seznam kolekcí). Seznam níže se použije, když je prázdné.",
+    "collection_accent": "Použije se pro „Vymazat vše“, počet filtrů a cenový posuvník",
+    "collection_mobile_sort": "Možnosti řazení zobrazené jako tlačítka na mobilu, oddělené čárkami: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Propagační blok se zobrazí po tomto počtu produktů na první stránce",
+    "seo_text_source": "Kolekce používají metapole custom.seo_heading a custom.seo_text, produkty svůj popis. Text níže je záložní.",
+    "faq_heading_title": "Pomocí [title] vložíte název produktu, kolekce nebo článku",
     "tag_badges": "Produkty a články s odpovídajícím štítkem zobrazí barevnou odznaku, např. „best-seller“ nebo „Nákupní průvodce“. Pravidla se kontrolují postupně a platí první shoda.",
     "tag_badge_label": "Volitelné. Ponechte prázdné pro zobrazení samotného štítku",
     "faq_metafield": "Na stránkách produktu, kolekce a článku pocházejí otázky z metapole custom.faq (seznam položek FAQ). Bloky otázek níže se použijí, když je prázdné.",

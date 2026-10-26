@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "页面标题区",
+    "subcategories": "子类别",
+    "collection_products": "商品系列商品",
+    "seo_text": "SEO 文本",
+    "collection_promo": "促销图块",
     "newsletter_signup": "新闻通讯订阅",
     "faq": "常见问题",
     "faq_item": "问题",
@@ -193,6 +198,14 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "parent_label": "额外的面包屑层级",
+    "show_breadcrumbs": "显示面包屑导航",
+    "show_product_count": "在移动设备上显示商品数量",
+    "accent_color": "强调色",
+    "mobile_sort_options": "移动设备排序按钮",
+    "promo_position": "促销位置",
+    "align_with_product_grid": "与商品网格对齐",
+    "show_on_mobile": "在移动设备上显示",
     "badge_3_color": "徽章 3 颜色",
     "badge_3_label": "徽章 3 文本",
     "badge_3_tag": "徽章 3 产品标签",
@@ -953,6 +966,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "breadcrumbs": "面包屑导航",
     "tag_badges": "标签徽章",
     "form": "表单",
     "badges": "徽章",
@@ -1184,6 +1198,15 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "page_header_parent": "首页之后的可选额外层级，例如链接到所有商品的“商店”",
+    "page_header_text": "在商品系列没有描述时使用，也用于博客和页面",
+    "page_header_title": "留空则使用商品系列、博客或页面的标题",
+    "subcategories_metafield": "每个商品系列显示其元字段 custom.subcategories（商品系列列表）中的商品系列。为空时使用下方列表。",
+    "collection_accent": "用于“全部清除”、筛选数量和价格滑块",
+    "collection_mobile_sort": "在移动设备上显示为按钮的排序选项，以逗号分隔：manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "促销块显示在第一页的这么多件商品之后",
+    "seo_text_source": "商品系列使用元字段 custom.seo_heading 和 custom.seo_text，商品使用其描述。下方文本为备用内容。",
+    "faq_heading_title": "使用 [title] 插入商品、商品系列或文章标题",
     "tag_badges": "带有匹配标签的商品和文章会显示彩色徽章，例如“best-seller”或“选购指南”。规则按顺序检查，以第一个匹配项为准。",
     "tag_badge_label": "可选。留空则显示标签本身",
     "faq_metafield": "在商品、商品系列和文章页面上，问题来自元字段 custom.faq（FAQ 条目列表）。为空时使用下方的问题块。",

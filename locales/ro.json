@@ -89,6 +89,7 @@
     "view_disclosure_information_for_product": "Vizualizează mențiunile referitoare la produsul {{ product_title }}"
   },
   "actions": {
+    "load_more": "Încarcă mai multe",
     "view_product": "Vezi produsul",
     "add_to_cart": "Adaugă în coș",
     "clear_all": "Ștergeți tot",
@@ -134,6 +135,9 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "showing_range_html": "Se afișează <strong>{{ start }}–{{ end }}</strong> din {{ total }}",
+    "products_shown": "{{ shown }} din {{ total }} produse",
+    "sort_by": "Sortează după:",
     "home": "Acasă",
     "read_time": {
       "one": "{{ count }} min de citit",

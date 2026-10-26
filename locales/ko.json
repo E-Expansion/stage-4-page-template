@@ -88,6 +88,7 @@
     "view_disclosure_information_for_product": "{{ product_title }}에 대한 고지 정보 보기"
   },
   "actions": {
+    "load_more": "더 불러오기",
     "view_product": "제품 보기",
     "add_to_cart": "카트에 추가",
     "clear_all": "모두 지우기",
@@ -132,6 +133,9 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "showing_range_html": "{{ total }}개 중 <strong>{{ start }}–{{ end }}</strong> 표시",
+    "products_shown": "{{ total }}개 중 {{ shown }}개 제품",
+    "sort_by": "정렬:",
     "home": "홈",
     "read_time": {
       "one": "{{ count }}분 분량",

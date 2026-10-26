@@ -90,6 +90,7 @@
     "show_submenu": "Rodyti {{ title }} submeniu"
   },
   "actions": {
+    "load_more": "Įkelti daugiau",
     "view_product": "Peržiūrėti produktą",
     "add_to_cart": "Įdėti į krepšelį",
     "clear_all": "Išvalyti viską",
@@ -136,6 +137,9 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "showing_range_html": "Rodoma <strong>{{ start }}–{{ end }}</strong> iš {{ total }}",
+    "products_shown": "{{ shown }} iš {{ total }} produktų",
+    "sort_by": "Rikiuoti pagal:",
     "home": "Pradžia",
     "read_time": {
       "one": "{{ count }} min skaitymo",

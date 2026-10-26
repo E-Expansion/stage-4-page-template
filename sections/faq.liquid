@@ -22,11 +22,16 @@
   case template.name
     when 'product'
       assign faq_entries = product.metafields.custom.faq.value
+      assign resource_title = product.title
     when 'collection'
       assign faq_entries = collection.metafields.custom.faq.value
+      assign resource_title = collection.title
     when 'article'
       assign faq_entries = article.metafields.custom.faq.value
+      assign resource_title = article.title
   endcase
+  assign resource_title = resource_title | escape
+  assign heading = heading | replace: '[title]', resource_title
   if faq_entries.size > 0
     assign uses_metafield = true
   else
@@ -35,6 +40,7 @@
   endif
 %}
 
+{% if faq_entries.size > 0 or request.design_mode %}
 {% render 'contrast-override',
   background_color: section.settings.background_color,
   border_color: section.settings.border_color,
@@ -49,7 +55,7 @@
     {% if section.settings.link_color != blank %}--faq-link-color: {{ section.settings.link_color }};{% endif %}
   "
 >
-  <div class="faq__card">
+  <div class="faq__card{% if section.settings.align_with_grid %} align-with-collection-grid{% endif %}">
     <div class="faq__intro">
       {% if heading != blank %}
         <h2 class="faq__heading">{{ heading }}</h2>
@@ -119,6 +125,7 @@
       ]
     }
   </script>
+{% endif %}
 {% endif %}
 
 {% stylesheet %}
@@ -217,6 +224,7 @@
       "type": "text",
       "id": "heading",
       "label": "t:settings.heading",
+      "info": "t:info.faq_heading_title",
       "default": "Questions we get a lot"
     },
     {
@@ -261,6 +269,12 @@
         { "value": "vertical", "label": "t:options.vertical" }
       ],
       "default": "horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "align_with_grid",
+      "label": "t:settings.align_with_product_grid",
+      "default": false
     },
     {
       "type": "color",

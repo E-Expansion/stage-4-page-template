@@ -88,6 +88,7 @@
     "show_submenu": "{{ title }} almenü megjelenítése"
   },
   "actions": {
+    "load_more": "Továbbiak betöltése",
     "view_product": "Termék megtekintése",
     "add_to_cart": "Hozzáadás a kosárhoz",
     "clear_all": "Összes törlése",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }}",
+    "products_shown": "{{ shown }} / {{ total }} termék",
+    "sort_by": "Rendezés:",
     "home": "Kezdőlap",
     "read_time": {
       "one": "{{ count }} perc olvasás",

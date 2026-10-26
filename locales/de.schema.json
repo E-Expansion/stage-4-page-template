@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Seitenkopf",
+    "subcategories": "Unterkategorien",
+    "collection_products": "Kollektionsprodukte",
+    "seo_text": "SEO-Text",
+    "collection_promo": "Promo-Kachel",
     "newsletter_signup": "Newsletter-Anmeldung",
     "faq": "FAQ",
     "faq_item": "Frage",
@@ -193,6 +198,14 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "parent_label": "Zusätzlicher Brotkrümel",
+    "show_breadcrumbs": "Brotkrümel anzeigen",
+    "show_product_count": "Produktanzahl auf Mobilgeräten anzeigen",
+    "accent_color": "Akzentfarbe",
+    "mobile_sort_options": "Sortier-Buttons auf Mobilgeräten",
+    "promo_position": "Promo-Position",
+    "align_with_product_grid": "Am Produktraster ausrichten",
+    "show_on_mobile": "Auf Mobilgeräten anzeigen",
     "badge_3_color": "Farbe Badge 3",
     "badge_3_label": "Beschriftung Badge 3",
     "badge_3_tag": "Produkt-Tag Badge 3",
@@ -953,6 +966,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "breadcrumbs": "Brotkrümelnavigation",
     "tag_badges": "Tag-Badges",
     "form": "Formular",
     "badges": "Badges",
@@ -1184,6 +1198,15 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "page_header_parent": "Optionaler zusätzlicher Schritt nach Startseite, z. B. \"Shop\" mit Link zu allen Produkten",
+    "page_header_text": "Wird verwendet, wenn die Kollektion keine Beschreibung hat, sowie auf Blogs und Seiten",
+    "page_header_title": "Leer lassen, um den Titel der Kollektion, des Blogs oder der Seite zu verwenden",
+    "subcategories_metafield": "Jede Kollektion zeigt die Kollektionen aus ihrem Metafeld custom.subcategories (eine Liste von Kollektionen). Die Liste unten wird verwendet, wenn es leer ist.",
+    "collection_accent": "Wird für \"Alle löschen\", die Filteranzahl und den Preisregler verwendet",
+    "collection_mobile_sort": "Sortieroptionen, die auf Mobilgeräten als Buttons angezeigt werden, durch Kommas getrennt: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Der Promo-Block erscheint nach dieser Anzahl Produkte auf der ersten Seite",
+    "seo_text_source": "Kollektionen nutzen ihre Metafelder custom.seo_heading und custom.seo_text, Produkte ihre Beschreibung. Der Text unten ist der Fallback.",
+    "faq_heading_title": "Verwende [title], um den Titel des Produkts, der Kollektion oder des Artikels einzufügen",
     "tag_badges": "Produkte und Artikel mit passendem Tag zeigen ein farbiges Badge, z. B. \"best-seller\" oder \"Kaufberatung\". Die Regeln werden der Reihe nach geprüft, der erste Treffer gilt.",
     "tag_badge_label": "Optional. Leer lassen, um den Tag selbst anzuzeigen",
     "faq_metafield": "Auf Produkt-, Kollektions- und Artikelseiten stammen die Fragen aus dem Metafeld custom.faq (eine Liste von FAQ-Einträgen). Die Frageblöcke unten werden verwendet, wenn es leer ist.",

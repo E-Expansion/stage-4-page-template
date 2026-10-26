@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Sidehoved",
+    "subcategories": "Underkategorier",
+    "collection_products": "Kollektionsprodukter",
+    "seo_text": "SEO-tekst",
+    "collection_promo": "Promo-felt",
     "newsletter_signup": "Nyhedsbrevstilmelding",
     "faq": "Ofte stillede spørgsmål",
     "faq_item": "Spørgsmål",
@@ -193,6 +198,14 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "parent_label": "Ekstra brødkrumme",
+    "show_breadcrumbs": "Vis brødkrummesti",
+    "show_product_count": "Vis antal produkter på mobil",
+    "accent_color": "Accentfarve",
+    "mobile_sort_options": "Sorteringsknapper på mobil",
+    "promo_position": "Promo-position",
+    "align_with_product_grid": "Juster med produktgitter",
+    "show_on_mobile": "Vis på mobil",
     "badge_3_color": "Farve badge 3",
     "badge_3_label": "Tekst badge 3",
     "badge_3_tag": "Produkttag badge 3",
@@ -953,6 +966,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "breadcrumbs": "Brødkrummesti",
     "tag_badges": "Tag-badges",
     "form": "Formular",
     "badges": "Badges",
@@ -1184,6 +1198,15 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "page_header_parent": "Valgfrit ekstra trin efter Forside, fx \"Shop\" med link til alle produkter",
+    "page_header_text": "Bruges, når kollektionen ikke har en beskrivelse, samt på blogs og sider",
+    "page_header_title": "Lad være tom for at bruge kollektionens, bloggens eller sidens titel",
+    "subcategories_metafield": "Hver kollektion viser kollektionerne i sit metafelt custom.subcategories (en liste med kollektioner). Listen nedenfor bruges, når det er tomt.",
+    "collection_accent": "Bruges til \"Ryd alle\", antal filtre og prisskyderen",
+    "collection_mobile_sort": "Sorteringsmuligheder vist som knapper på mobil, adskilt af kommaer: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Promo-blokken vises efter dette antal produkter på første side",
+    "seo_text_source": "Kollektioner bruger deres metafelter custom.seo_heading og custom.seo_text, produkter deres beskrivelse. Teksten nedenfor er reserven.",
+    "faq_heading_title": "Brug [title] til at indsætte produktets, kollektionens eller artiklens titel",
     "tag_badges": "Produkter og artikler med et matchende tag viser et farvet badge, fx \"best-seller\" eller \"Købsguide\". Reglerne tjekkes i rækkefølge, og det første match vinder.",
     "tag_badge_label": "Valgfrit. Lad være tom for at vise selve tagget",
     "faq_metafield": "På produkt-, kollektions- og artikelsider kommer spørgsmålene fra metafeltet custom.faq (en liste med FAQ-poster). Spørgsmålsblokkene nedenfor bruges, når det er tomt.",

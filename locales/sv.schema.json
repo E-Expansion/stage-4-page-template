@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Sidhuvud",
+    "subcategories": "Underkategorier",
+    "collection_products": "Kollektionsprodukter",
+    "seo_text": "SEO-text",
+    "collection_promo": "Kampanjruta",
     "newsletter_signup": "Nyhetsbrevsregistrering",
     "faq": "Vanliga frågor",
     "faq_item": "Fråga",
@@ -193,6 +198,14 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "parent_label": "Extra brödsmula",
+    "show_breadcrumbs": "Visa brödsmulor",
+    "show_product_count": "Visa antal produkter på mobil",
+    "accent_color": "Accentfärg",
+    "mobile_sort_options": "Sorteringsknappar på mobil",
+    "promo_position": "Kampanjposition",
+    "align_with_product_grid": "Justera mot produktrutnät",
+    "show_on_mobile": "Visa på mobil",
     "badge_3_color": "Färg märke 3",
     "badge_3_label": "Etikett märke 3",
     "badge_3_tag": "Produkttagg märke 3",
@@ -953,6 +966,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "breadcrumbs": "Brödsmulor",
     "tag_badges": "Taggmärken",
     "form": "Formulär",
     "badges": "Märken",
@@ -1184,6 +1198,15 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "page_header_parent": "Valfritt extra steg efter Hem, t.ex. \"Butik\" med länk till alla produkter",
+    "page_header_text": "Används när kollektionen saknar beskrivning, samt på bloggar och sidor",
+    "page_header_title": "Lämna tomt för att använda kollektionens, bloggens eller sidans titel",
+    "subcategories_metafield": "Varje kollektion visar kollektionerna i sitt metafält custom.subcategories (en lista med kollektioner). Listan nedan används när det är tomt.",
+    "collection_accent": "Används för \"Rensa alla\", antal filter och prisreglaget",
+    "collection_mobile_sort": "Sorteringsalternativ som visas som knappar på mobil, separerade med kommatecken: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Kampanjblocket visas efter så här många produkter på första sidan",
+    "seo_text_source": "Kollektioner använder sina metafält custom.seo_heading och custom.seo_text, produkter sin beskrivning. Texten nedan är reserv.",
+    "faq_heading_title": "Använd [title] för att infoga produktens, kollektionens eller artikelns titel",
     "tag_badges": "Produkter och artiklar med en matchande tagg visar ett färgat märke, t.ex. \"best-seller\" eller \"Köpguide\". Reglerna kontrolleras i ordning och första träffen gäller.",
     "tag_badge_label": "Valfritt. Lämna tomt för att visa själva taggen",
     "faq_metafield": "På produkt-, kollektions- och artikelsidor hämtas frågorna från metafältet custom.faq (en lista med FAQ-poster). Frågeblocken nedan används när det är tomt.",

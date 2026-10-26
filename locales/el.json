@@ -88,6 +88,7 @@
     "show_submenu": "Εμφάνιση υπομενού {{ title }}"
   },
   "actions": {
+    "load_more": "Φόρτωση περισσότερων",
     "view_product": "Προβολή προϊόντος",
     "add_to_cart": "Προσθήκη στο καλάθι",
     "clear_all": "Εκκαθάριση όλων",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "showing_range_html": "Εμφάνιση <strong>{{ start }}–{{ end }}</strong> από {{ total }}",
+    "products_shown": "{{ shown }} από {{ total }} προϊόντα",
+    "sort_by": "Ταξινόμηση κατά:",
     "home": "Αρχική",
     "read_time": {
       "one": "{{ count }} λεπτό ανάγνωσης",

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "En-tête de page",
+    "subcategories": "Sous-catégories",
+    "collection_products": "Produits de la collection",
+    "seo_text": "Texte SEO",
+    "collection_promo": "Vignette promo",
     "newsletter_signup": "Inscription à la newsletter",
     "faq": "FAQ",
     "faq_item": "Question",
@@ -193,6 +198,14 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "parent_label": "Étape de fil d'Ariane supplémentaire",
+    "show_breadcrumbs": "Afficher le fil d'Ariane",
+    "show_product_count": "Afficher le nombre de produits sur mobile",
+    "accent_color": "Couleur d'accent",
+    "mobile_sort_options": "Boutons de tri sur mobile",
+    "promo_position": "Position de la promo",
+    "align_with_product_grid": "Aligner sur la grille de produits",
+    "show_on_mobile": "Afficher sur mobile",
     "badge_3_color": "Couleur du badge 3",
     "badge_3_label": "Libellé du badge 3",
     "badge_3_tag": "Balise produit du badge 3",
@@ -953,6 +966,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "breadcrumbs": "Fil d'Ariane",
     "tag_badges": "Badges de balise",
     "form": "Formulaire",
     "badges": "Badges",
@@ -1184,6 +1198,15 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "page_header_parent": "Étape supplémentaire facultative après Accueil, par ex. « Boutique » vers tous les produits",
+    "page_header_text": "Utilisé si la collection n'a pas de description, ainsi que sur les blogs et les pages",
+    "page_header_title": "Laissez vide pour utiliser le titre de la collection, du blog ou de la page",
+    "subcategories_metafield": "Chaque collection affiche les collections de son champ méta custom.subcategories (une liste de collections). La liste ci-dessous est utilisée s'il est vide.",
+    "collection_accent": "Utilisée pour « Tout effacer », le nombre de filtres et le curseur de prix",
+    "collection_mobile_sort": "Options de tri affichées sous forme de boutons sur mobile, séparées par des virgules : manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Le bloc promo apparaît après ce nombre de produits sur la première page",
+    "seo_text_source": "Les collections utilisent leurs champs méta custom.seo_heading et custom.seo_text, les produits leur description. Le texte ci-dessous sert de solution de repli.",
+    "faq_heading_title": "Utilisez [title] pour insérer le titre du produit, de la collection ou de l'article",
     "tag_badges": "Les produits et articles ayant une balise correspondante affichent un badge coloré, par ex. « best-seller » ou « Guide d'achat ». Les règles sont vérifiées dans l'ordre et la première correspondance l'emporte.",
     "tag_badge_label": "Facultatif. Laissez vide pour afficher la balise elle-même",
     "faq_metafield": "Sur les pages produit, collection et article, les questions proviennent du champ méta custom.faq (une liste d'entrées FAQ). Les blocs de questions ci-dessous sont utilisés s'il est vide.",

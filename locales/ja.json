@@ -88,6 +88,7 @@
     "show_submenu": "{{ title }} のサブメニューを表示"
   },
   "actions": {
+    "load_more": "さらに読み込む",
     "view_product": "商品を見る",
     "add_to_cart": "カートに追加",
     "clear_all": "すべてクリア",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "showing_range_html": "{{ total }}件中 <strong>{{ start }}–{{ end }}</strong>件を表示",
+    "products_shown": "{{ total }}点中{{ shown }}点",
+    "sort_by": "並べ替え:",
     "home": "ホーム",
     "read_time": {
       "one": "{{ count }}分で読めます",

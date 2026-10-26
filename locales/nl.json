@@ -88,6 +88,7 @@
     "show_submenu": "Submenu {{ title }} weergeven"
   },
   "actions": {
+    "load_more": "Meer laden",
     "view_product": "Bekijk product",
     "add_to_cart": "Aan winkelwagen toevoegen",
     "clear_all": "Alles wissen",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> van {{ total }}",
+    "products_shown": "{{ shown }} van {{ total }} producten",
+    "sort_by": "Sorteer op:",
     "home": "Home",
     "read_time": {
       "one": "{{ count }} min leestijd",

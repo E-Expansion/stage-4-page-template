@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "ページヘッダー",
+    "subcategories": "サブカテゴリー",
+    "collection_products": "コレクションの商品",
+    "seo_text": "SEOテキスト",
+    "collection_promo": "プロモーションタイル",
     "newsletter_signup": "ニュースレター登録",
     "faq": "よくある質問",
     "faq_item": "質問",
@@ -193,6 +198,14 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "parent_label": "追加のパンくず",
+    "show_breadcrumbs": "パンくずリストを表示",
+    "show_product_count": "モバイルで商品数を表示",
+    "accent_color": "アクセントカラー",
+    "mobile_sort_options": "モバイルの並べ替えボタン",
+    "promo_position": "プロモーションの位置",
+    "align_with_product_grid": "商品グリッドに揃える",
+    "show_on_mobile": "モバイルで表示",
     "badge_3_color": "バッジ3の色",
     "badge_3_label": "バッジ3のラベル",
     "badge_3_tag": "バッジ3の商品タグ",
@@ -953,6 +966,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "breadcrumbs": "パンくずリスト",
     "tag_badges": "タグバッジ",
     "form": "フォーム",
     "badges": "バッジ",
@@ -1184,6 +1198,15 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "page_header_parent": "ホームの後に追加する任意の階層（例：すべての商品にリンクする「ショップ」）",
+    "page_header_text": "コレクションに説明がない場合や、ブログ・ページで使用されます",
+    "page_header_title": "空欄の場合はコレクション、ブログ、ページのタイトルを使用します",
+    "subcategories_metafield": "各コレクションはメタフィールド custom.subcategories（コレクションのリスト）のコレクションを表示します。空の場合は下のリストが使用されます。",
+    "collection_accent": "「すべてクリア」、フィルター数、価格スライダーに使用されます",
+    "collection_mobile_sort": "モバイルでボタンとして表示する並べ替えオプション（カンマ区切り）: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "プロモーションブロックは最初のページでこの数の商品の後に表示されます",
+    "seo_text_source": "コレクションはメタフィールド custom.seo_heading と custom.seo_text、商品は商品説明を使用します。下のテキストは代替として使われます。",
+    "faq_heading_title": "[title]で商品、コレクション、記事のタイトルを挿入します",
     "tag_badges": "一致するタグを持つ商品や記事に色付きのバッジを表示します（例：「best-seller」「購入ガイド」）。ルールは順番に確認され、最初に一致したものが適用されます。",
     "tag_badge_label": "任意。空欄の場合はタグそのものを表示します",
     "faq_metafield": "商品・コレクション・記事ページでは、質問はメタフィールド custom.faq（FAQ項目のリスト）から取得されます。空の場合は下の質問ブロックが使用されます。",

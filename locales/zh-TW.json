@@ -88,6 +88,7 @@
     "show_submenu": "顯示 {{ title }} 子選單"
   },
   "actions": {
+    "load_more": "載入更多",
     "view_product": "查看商品",
     "add_to_cart": "加入購物車",
     "clear_all": "全部清除",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "返回主選單"
   },
   "content": {
+    "showing_range_html": "顯示第 <strong>{{ start }}–{{ end }}</strong> 件，共 {{ total }} 件",
+    "products_shown": "{{ shown }} / {{ total }} 件商品",
+    "sort_by": "排序方式：",
     "home": "首頁",
     "read_time": {
       "one": "閱讀需 {{ count }} 分鐘",

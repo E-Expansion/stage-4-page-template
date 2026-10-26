@@ -88,6 +88,7 @@
     "view_disclosure_information_for_product": "{{ product_title }} için bildirim bilgilerini görüntüleyin"
   },
   "actions": {
+    "load_more": "Daha fazla yükle",
     "view_product": "Ürünü görüntüle",
     "add_to_cart": "Sepete ekle",
     "clear_all": "Tümünü temizle",
@@ -132,6 +133,9 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }} gösteriliyor",
+    "products_shown": "{{ shown }} / {{ total }} ürün",
+    "sort_by": "Sırala:",
     "home": "Ana sayfa",
     "read_time": {
       "one": "{{ count }} dk okuma",

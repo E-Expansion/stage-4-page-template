@@ -88,6 +88,7 @@
     "show_submenu": "แสดงเมนูย่อยของ{{ title }}"
   },
   "actions": {
+    "load_more": "โหลดเพิ่มเติม",
     "view_product": "ดูสินค้า",
     "add_to_cart": "เพิ่มลงในตะกร้าสินค้า",
     "clear_all": "ล้างทั้งหมด",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "showing_range_html": "แสดง <strong>{{ start }}–{{ end }}</strong> จาก {{ total }}",
+    "products_shown": "{{ shown }} จาก {{ total }} สินค้า",
+    "sort_by": "จัดเรียงตาม:",
     "home": "หน้าแรก",
     "read_time": {
       "one": "อ่าน {{ count }} นาที",

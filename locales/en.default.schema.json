@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "breadcrumbs": "Breadcrumbs",
     "tag_badges": "Tag badges",
     "form": "Form",
     "badges": "Badges",
@@ -231,6 +232,15 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "page_header_parent": "Optional extra step after Home, e.g. \"Shop\" linking to all products",
+    "page_header_text": "Used when the collection has no description, and on blogs and pages",
+    "page_header_title": "Leave empty to use the collection, blog or page title",
+    "subcategories_metafield": "Each collection shows the collections in its custom.subcategories metafield (a list of collections). The list below is used when that is empty.",
+    "collection_accent": "Used for \"Clear all\", the filter count and the price slider",
+    "collection_mobile_sort": "Sort options shown as buttons on mobile, separated by commas: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "The promo block appears after this many products on the first page",
+    "seo_text_source": "Collections use their custom.seo_heading and custom.seo_text metafields, products their description. The text below is the fallback.",
+    "faq_heading_title": "Use [title] to insert the product, collection or article title",
     "tag_badges": "Products and articles with a matching tag show a coloured badge, e.g. \"best-seller\" or \"Buying guide\". Rules are checked in order and the first match wins.",
     "tag_badge_label": "Optional. Leave empty to show the tag itself",
     "faq_metafield": "On product, collection and article pages the questions come from the custom.faq metafield (a list of FAQ entries). The question blocks below are used when it is empty.",
@@ -287,6 +297,11 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "page_header": "Page header",
+    "subcategories": "Subcategories",
+    "collection_products": "Collection products",
+    "seo_text": "SEO text",
+    "collection_promo": "Promo tile",
     "newsletter_signup": "Newsletter signup",
     "faq": "FAQ",
     "faq_item": "Question",
@@ -793,6 +808,14 @@
     "below_media": "Below media"
   },
   "settings": {
+    "parent_label": "Extra breadcrumb",
+    "show_breadcrumbs": "Show breadcrumbs",
+    "show_product_count": "Show product count on mobile",
+    "accent_color": "Accent color",
+    "mobile_sort_options": "Mobile sort buttons",
+    "promo_position": "Promo position",
+    "align_with_product_grid": "Align with product grid",
+    "show_on_mobile": "Show on mobile",
     "badge_3_color": "Badge 3 color",
     "badge_3_label": "Badge 3 label",
     "badge_3_tag": "Badge 3 product tag",

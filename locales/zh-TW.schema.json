@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "頁面標題區",
+    "subcategories": "子類別",
+    "collection_products": "商品系列商品",
+    "seo_text": "SEO 文字",
+    "collection_promo": "促銷圖塊",
     "newsletter_signup": "電子報訂閱",
     "faq": "常見問題",
     "faq_item": "問題",
@@ -193,6 +198,14 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "parent_label": "額外的導覽層級",
+    "show_breadcrumbs": "顯示導覽路徑",
+    "show_product_count": "在行動裝置上顯示商品數量",
+    "accent_color": "強調色",
+    "mobile_sort_options": "行動裝置排序按鈕",
+    "promo_position": "促銷位置",
+    "align_with_product_grid": "與商品網格對齊",
+    "show_on_mobile": "在行動裝置上顯示",
     "badge_3_color": "徽章 3 顏色",
     "badge_3_label": "徽章 3 文字",
     "badge_3_tag": "徽章 3 商品標籤",
@@ -953,6 +966,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "breadcrumbs": "導覽路徑",
     "tag_badges": "標籤徽章",
     "form": "表單",
     "badges": "徽章",
@@ -1184,6 +1198,15 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "page_header_parent": "首頁之後的選填額外層級，例如連結至所有商品的「商店」",
+    "page_header_text": "在商品系列沒有說明時使用，也用於部落格和頁面",
+    "page_header_title": "留空則使用商品系列、部落格或頁面的標題",
+    "subcategories_metafield": "每個商品系列會顯示其中繼欄位 custom.subcategories（商品系列清單）中的商品系列。空白時使用下方清單。",
+    "collection_accent": "用於「全部清除」、篩選數量和價格滑桿",
+    "collection_mobile_sort": "在行動裝置上顯示為按鈕的排序選項，以逗號分隔：manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "促銷區塊會顯示在第一頁的這麼多件商品之後",
+    "seo_text_source": "商品系列使用中繼欄位 custom.seo_heading 和 custom.seo_text，商品使用其說明。下方文字為備用內容。",
+    "faq_heading_title": "使用 [title] 插入商品、商品系列或文章標題",
     "tag_badges": "帶有相符標籤的商品和文章會顯示彩色徽章，例如「best-seller」或「選購指南」。規則依序檢查，以第一個相符項目為準。",
     "tag_badge_label": "選填。留空則顯示標籤本身",
     "faq_metafield": "在商品、商品系列和文章頁面上，問題來自中繼欄位 custom.faq（FAQ 項目清單）。空白時使用下方的問題區塊。",

@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Sivun ylätunniste",
+    "subcategories": "Alaluokat",
+    "collection_products": "Kokoelman tuotteet",
+    "seo_text": "SEO-teksti",
+    "collection_promo": "Kampanjaruutu",
     "newsletter_signup": "Uutiskirjeen tilaus",
     "faq": "Usein kysytyt kysymykset",
     "faq_item": "Kysymys",
@@ -193,6 +198,14 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "parent_label": "Murupolun lisävaihe",
+    "show_breadcrumbs": "Näytä murupolku",
+    "show_product_count": "Näytä tuotemäärä mobiilissa",
+    "accent_color": "Korostusväri",
+    "mobile_sort_options": "Lajittelupainikkeet mobiilissa",
+    "promo_position": "Kampanjan sijainti",
+    "align_with_product_grid": "Tasaa tuoteruudukon kanssa",
+    "show_on_mobile": "Näytä mobiilissa",
     "badge_3_color": "Merkin 3 väri",
     "badge_3_label": "Merkin 3 teksti",
     "badge_3_tag": "Merkin 3 tuotetunniste",
@@ -953,6 +966,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "breadcrumbs": "Murupolku",
     "tag_badges": "Tunnistemerkit",
     "form": "Lomake",
     "badges": "Merkit",
@@ -1184,6 +1198,15 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "page_header_parent": "Valinnainen lisävaihe Etusivun jälkeen, esim. \"Kauppa\", joka linkittää kaikkiin tuotteisiin",
+    "page_header_text": "Käytetään, kun kokoelmalla ei ole kuvausta, sekä blogeissa ja sivuilla",
+    "page_header_title": "Jätä tyhjäksi käyttääksesi kokoelman, blogin tai sivun otsikkoa",
+    "subcategories_metafield": "Jokainen kokoelma näyttää metakenttänsä custom.subcategories kokoelmat (kokoelmaluettelo). Alla olevaa luetteloa käytetään, kun se on tyhjä.",
+    "collection_accent": "Käytetään kohteissa \"Tyhjennä kaikki\", suodattimien määrä ja hintaliukusäädin",
+    "collection_mobile_sort": "Mobiilissa painikkeina näytettävät lajitteluvaihtoehdot pilkuilla erotettuina: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Kampanjalohko näkyy näin monen tuotteen jälkeen ensimmäisellä sivulla",
+    "seo_text_source": "Kokoelmat käyttävät metakenttiä custom.seo_heading ja custom.seo_text, tuotteet kuvaustaan. Alla oleva teksti on varavaihtoehto.",
+    "faq_heading_title": "Lisää tuotteen, kokoelman tai artikkelin otsikko käyttämällä [title]",
     "tag_badges": "Tuotteissa ja artikkeleissa, joilla on vastaava tunniste, näkyy värillinen merkki, esim. \"best-seller\" tai \"Ostajan opas\". Säännöt tarkistetaan järjestyksessä ja ensimmäinen osuma voittaa.",
     "tag_badge_label": "Valinnainen. Jätä tyhjäksi näyttääksesi itse tunnisteen",
     "faq_metafield": "Tuote-, kokoelma- ja artikkelisivuilla kysymykset tulevat metakentästä custom.faq (luettelo UKK-merkinnöistä). Alla olevia kysymyslohkoja käytetään, kun se on tyhjä.",

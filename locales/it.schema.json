@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Intestazione pagina",
+    "subcategories": "Sottocategorie",
+    "collection_products": "Prodotti della collezione",
+    "seo_text": "Testo SEO",
+    "collection_promo": "Riquadro promo",
     "newsletter_signup": "Iscrizione alla newsletter",
     "faq": "FAQ",
     "faq_item": "Domanda",
@@ -193,6 +198,14 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "parent_label": "Passaggio aggiuntivo",
+    "show_breadcrumbs": "Mostra percorso di navigazione",
+    "show_product_count": "Mostra numero di prodotti su mobile",
+    "accent_color": "Colore di accento",
+    "mobile_sort_options": "Pulsanti di ordinamento su mobile",
+    "promo_position": "Posizione promo",
+    "align_with_product_grid": "Allinea alla griglia prodotti",
+    "show_on_mobile": "Mostra su mobile",
     "badge_3_color": "Colore badge 3",
     "badge_3_label": "Etichetta badge 3",
     "badge_3_tag": "Tag prodotto badge 3",
@@ -953,6 +966,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "breadcrumbs": "Percorso di navigazione",
     "tag_badges": "Badge dei tag",
     "form": "Modulo",
     "badges": "Badge",
@@ -1184,6 +1198,15 @@
     "disclosures": "Informative"
   },
   "info": {
+    "page_header_parent": "Passaggio aggiuntivo facoltativo dopo Home, ad es. \"Shop\" con link a tutti i prodotti",
+    "page_header_text": "Usato quando la collezione non ha descrizione, e su blog e pagine",
+    "page_header_title": "Lascia vuoto per usare il titolo della collezione, del blog o della pagina",
+    "subcategories_metafield": "Ogni collezione mostra le collezioni del suo metacampo custom.subcategories (un elenco di collezioni). L'elenco qui sotto viene usato quando è vuoto.",
+    "collection_accent": "Usato per \"Cancella tutto\", il numero di filtri e il cursore del prezzo",
+    "collection_mobile_sort": "Opzioni di ordinamento mostrate come pulsanti su mobile, separate da virgole: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Il blocco promo appare dopo questo numero di prodotti nella prima pagina",
+    "seo_text_source": "Le collezioni usano i metacampi custom.seo_heading e custom.seo_text, i prodotti la loro descrizione. Il testo qui sotto è l'alternativa.",
+    "faq_heading_title": "Usa [title] per inserire il titolo del prodotto, della collezione o dell'articolo",
     "tag_badges": "Prodotti e articoli con un tag corrispondente mostrano un badge colorato, ad es. \"best-seller\" o \"Guida all'acquisto\". Le regole vengono verificate in ordine e vince la prima corrispondenza.",
     "tag_badge_label": "Facoltativo. Lascia vuoto per mostrare il tag stesso",
     "faq_metafield": "Nelle pagine di prodotto, collezione e articolo le domande provengono dal metacampo custom.faq (un elenco di voci FAQ). I blocchi di domande qui sotto vengono usati quando è vuoto.",

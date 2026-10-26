@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "페이지 헤더",
+    "subcategories": "하위 카테고리",
+    "collection_products": "컬렉션 제품",
+    "seo_text": "SEO 텍스트",
+    "collection_promo": "프로모션 타일",
     "newsletter_signup": "뉴스레터 가입",
     "faq": "자주 묻는 질문",
     "faq_item": "질문",
@@ -193,6 +198,14 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "parent_label": "추가 이동 경로",
+    "show_breadcrumbs": "이동 경로 표시",
+    "show_product_count": "모바일에서 제품 수 표시",
+    "accent_color": "강조 색상",
+    "mobile_sort_options": "모바일 정렬 버튼",
+    "promo_position": "프로모션 위치",
+    "align_with_product_grid": "제품 그리드에 맞춤",
+    "show_on_mobile": "모바일에서 표시",
     "badge_3_color": "배지 3 색상",
     "badge_3_label": "배지 3 레이블",
     "badge_3_tag": "배지 3 상품 태그",
@@ -953,6 +966,7 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "breadcrumbs": "이동 경로",
     "tag_badges": "태그 배지",
     "form": "양식",
     "badges": "배지",
@@ -1184,6 +1198,15 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "page_header_parent": "홈 다음에 추가하는 선택적 단계(예: 모든 제품으로 연결되는 \"쇼핑\")",
+    "page_header_text": "컬렉션에 설명이 없을 때와 블로그 및 페이지에서 사용됩니다",
+    "page_header_title": "비워 두면 컬렉션, 블로그 또는 페이지 제목을 사용합니다",
+    "subcategories_metafield": "각 컬렉션은 custom.subcategories 메타필드(컬렉션 목록)의 컬렉션을 표시합니다. 비어 있으면 아래 목록이 사용됩니다.",
+    "collection_accent": "\"모두 지우기\", 필터 수 및 가격 슬라이더에 사용됩니다",
+    "collection_mobile_sort": "모바일에서 버튼으로 표시할 정렬 옵션(쉼표로 구분): manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "프로모션 블록은 첫 페이지에서 이 수만큼의 제품 뒤에 표시됩니다",
+    "seo_text_source": "컬렉션은 custom.seo_heading 및 custom.seo_text 메타필드를, 제품은 설명을 사용합니다. 아래 텍스트는 대체 텍스트입니다.",
+    "faq_heading_title": "[title]을 사용하여 제품, 컬렉션 또는 기사 제목을 삽입하세요",
     "tag_badges": "일치하는 태그가 있는 제품과 기사에 색상 배지가 표시됩니다(예: \"best-seller\", \"구매 가이드\"). 규칙은 순서대로 확인되며 처음 일치하는 규칙이 적용됩니다.",
     "tag_badge_label": "선택 사항. 비워 두면 태그 자체가 표시됩니다",
     "faq_metafield": "제품, 컬렉션, 기사 페이지에서는 질문이 custom.faq 메타필드(FAQ 항목 목록)에서 가져와집니다. 비어 있으면 아래 질문 블록이 사용됩니다.",

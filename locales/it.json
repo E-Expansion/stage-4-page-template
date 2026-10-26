@@ -89,6 +89,7 @@
     "show_submenu": "Mostra sottomenu {{ title }}"
   },
   "actions": {
+    "load_more": "Carica altri",
     "view_product": "Visualizza prodotto",
     "add_to_cart": "Aggiungi al carrello",
     "clear_all": "Cancella tutto",
@@ -134,6 +135,9 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> di {{ total }}",
+    "products_shown": "{{ shown }} di {{ total }} prodotti",
+    "sort_by": "Ordina per:",
     "home": "Home",
     "read_time": {
       "one": "{{ count }} min di lettura",

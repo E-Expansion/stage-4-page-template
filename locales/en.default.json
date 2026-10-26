@@ -69,6 +69,7 @@
     "price_filter_high": "High price"
   },
   "actions": {
+    "load_more": "Load more",
     "view_product": "View product",
     // Quick add button on product cards, shortened version of add to cart
     "add": "Add",
@@ -165,6 +166,9 @@
     }
   },
   "content": {
+    "showing_range_html": "Showing <strong>{{ start }}–{{ end }}</strong> of {{ total }}",
+    "products_shown": "{{ shown }} of {{ total }} products",
+    "sort_by": "Sort by:",
     "home": "Home",
     "read_time": {
       "one": "{{ count }} min read",

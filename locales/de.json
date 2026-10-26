@@ -88,6 +88,7 @@
     "show_submenu": "Untermenü {{ title }} anzeigen"
   },
   "actions": {
+    "load_more": "Mehr laden",
     "view_product": "Produkt ansehen",
     "add_to_cart": "In den Warenkorb legen",
     "clear_all": "Alle löschen",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Zurück zum Hauptmenü"
   },
   "content": {
+    "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> von {{ total }}",
+    "products_shown": "{{ shown }} von {{ total }} Produkten",
+    "sort_by": "Sortieren nach:",
     "home": "Startseite",
     "read_time": {
       "one": "{{ count }} Min. Lesezeit",

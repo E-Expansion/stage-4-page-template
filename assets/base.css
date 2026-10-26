@@ -1919,3 +1919,14 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
     overflow: visible;
   }
 }
+
+/* Width of the collection filter column; sections below the grid can line up with it */
+:root {
+  --collection-sidebar-width: 13.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .align-with-collection-grid {
+    margin-inline-start: calc(var(--collection-sidebar-width) + var(--gap-lg));
+  }
+}

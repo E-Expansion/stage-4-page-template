@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "ส่วนหัวของหน้า",
+    "subcategories": "หมวดหมู่ย่อย",
+    "collection_products": "สินค้าในคอลเลกชัน",
+    "seo_text": "ข้อความ SEO",
+    "collection_promo": "ไทล์โปรโมชัน",
     "newsletter_signup": "สมัครรับจดหมายข่าว",
     "faq": "คำถามที่พบบ่อย",
     "faq_item": "คำถาม",
@@ -193,6 +198,14 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "parent_label": "ขั้นเส้นทางเพิ่มเติม",
+    "show_breadcrumbs": "แสดงเส้นทางนำทาง",
+    "show_product_count": "แสดงจำนวนสินค้าบนมือถือ",
+    "accent_color": "สีเน้น",
+    "mobile_sort_options": "ปุ่มจัดเรียงบนมือถือ",
+    "promo_position": "ตำแหน่งโปรโมชัน",
+    "align_with_product_grid": "จัดแนวกับตารางสินค้า",
+    "show_on_mobile": "แสดงบนมือถือ",
     "badge_3_color": "สีป้าย 3",
     "badge_3_label": "ข้อความป้าย 3",
     "badge_3_tag": "แท็กสินค้าป้าย 3",
@@ -953,6 +966,7 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "breadcrumbs": "เส้นทางนำทาง",
     "tag_badges": "ป้ายแท็ก",
     "form": "แบบฟอร์ม",
     "badges": "ป้าย",
@@ -1184,6 +1198,15 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "page_header_parent": "ขั้นเพิ่มเติมหลังหน้าแรก (ไม่บังคับ) เช่น \"ร้านค้า\" ที่ลิงก์ไปยังสินค้าทั้งหมด",
+    "page_header_text": "ใช้เมื่อคอลเลกชันไม่มีคำอธิบาย และในบล็อกและหน้าต่างๆ",
+    "page_header_title": "เว้นว่างไว้เพื่อใช้ชื่อคอลเลกชัน บล็อก หรือหน้า",
+    "subcategories_metafield": "แต่ละคอลเลกชันจะแสดงคอลเลกชันในเมตาฟิลด์ custom.subcategories (รายการคอลเลกชัน) จะใช้รายการด้านล่างเมื่อว่าง",
+    "collection_accent": "ใช้สำหรับ \"ล้างทั้งหมด\" จำนวนตัวกรอง และแถบเลื่อนราคา",
+    "collection_mobile_sort": "ตัวเลือกการจัดเรียงที่แสดงเป็นปุ่มบนมือถือ คั่นด้วยเครื่องหมายจุลภาค: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "บล็อกโปรโมชันจะแสดงหลังสินค้าจำนวนนี้ในหน้าแรก",
+    "seo_text_source": "คอลเลกชันใช้เมตาฟิลด์ custom.seo_heading และ custom.seo_text สินค้าใช้คำอธิบาย ข้อความด้านล่างเป็นค่าสำรอง",
+    "faq_heading_title": "ใช้ [title] เพื่อแทรกชื่อสินค้า คอลเลกชัน หรือบทความ",
     "tag_badges": "สินค้าและบทความที่มีแท็กตรงกันจะแสดงป้ายสี เช่น \"best-seller\" หรือ \"คู่มือการซื้อ\" กฎจะถูกตรวจสอบตามลำดับและใช้กฎแรกที่ตรงกัน",
     "tag_badge_label": "ไม่บังคับ เว้นว่างไว้เพื่อแสดงแท็กนั้นเอง",
     "faq_metafield": "ในหน้าสินค้า คอลเลกชัน และบทความ คำถามมาจากเมตาฟิลด์ custom.faq (รายการ FAQ) จะใช้บล็อกคำถามด้านล่างเมื่อว่าง",

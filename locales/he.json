@@ -70,6 +70,7 @@
     }
   },
   "actions": {
+    "load_more": "טען עוד",
     "view_product": "צפייה במוצר",
     "add": "הוספה",
     "add_to_cart": "הוספה לסל",
@@ -158,6 +159,9 @@
     }
   },
   "content": {
+    "showing_range_html": "מציג <strong>{{ start }}–{{ end }}</strong> מתוך {{ total }}",
+    "products_shown": "{{ shown }} מתוך {{ total }} מוצרים",
+    "sort_by": "מיון לפי:",
     "home": "דף הבית",
     "read_time": {
       "one": "קריאה של דקה {{ count }}",

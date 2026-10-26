@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Sayfa başlığı",
+    "subcategories": "Alt kategoriler",
+    "collection_products": "Koleksiyon ürünleri",
+    "seo_text": "SEO metni",
+    "collection_promo": "Promosyon kutucuğu",
     "newsletter_signup": "Bülten kaydı",
     "faq": "SSS",
     "faq_item": "Soru",
@@ -193,6 +198,14 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "parent_label": "Ek içerik haritası adımı",
+    "show_breadcrumbs": "İçerik haritasını göster",
+    "show_product_count": "Mobilde ürün sayısını göster",
+    "accent_color": "Vurgu rengi",
+    "mobile_sort_options": "Mobilde sıralama düğmeleri",
+    "promo_position": "Promosyon konumu",
+    "align_with_product_grid": "Ürün ızgarasıyla hizala",
+    "show_on_mobile": "Mobilde göster",
     "badge_3_color": "Rozet 3 rengi",
     "badge_3_label": "Rozet 3 etiketi",
     "badge_3_tag": "Rozet 3 ürün etiketi",
@@ -953,6 +966,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "breadcrumbs": "İçerik haritası",
     "tag_badges": "Etiket rozetleri",
     "form": "Form",
     "badges": "Rozetler",
@@ -1184,6 +1198,15 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "page_header_parent": "Ana sayfadan sonra isteğe bağlı ek adım, ör. tüm ürünlere bağlanan \"Mağaza\"",
+    "page_header_text": "Koleksiyonun açıklaması olmadığında ve bloglarda ve sayfalarda kullanılır",
+    "page_header_title": "Koleksiyon, blog veya sayfa başlığını kullanmak için boş bırakın",
+    "subcategories_metafield": "Her koleksiyon, custom.subcategories meta alanındaki koleksiyonları (koleksiyon listesi) gösterir. Boş olduğunda aşağıdaki liste kullanılır.",
+    "collection_accent": "\"Tümünü temizle\", filtre sayısı ve fiyat kaydırıcısı için kullanılır",
+    "collection_mobile_sort": "Mobilde düğme olarak gösterilen sıralama seçenekleri, virgülle ayrılmış: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Promosyon bloğu ilk sayfada bu kadar üründen sonra görünür",
+    "seo_text_source": "Koleksiyonlar custom.seo_heading ve custom.seo_text meta alanlarını, ürünler açıklamalarını kullanır. Aşağıdaki metin yedektir.",
+    "faq_heading_title": "Ürün, koleksiyon veya makale başlığını eklemek için [title] kullanın",
     "tag_badges": "Eşleşen etikete sahip ürün ve makalelerde renkli bir rozet gösterilir, ör. \"best-seller\" veya \"Satın alma rehberi\". Kurallar sırayla kontrol edilir ve ilk eşleşme geçerli olur.",
     "tag_badge_label": "İsteğe bağlı. Etiketin kendisini göstermek için boş bırakın",
     "faq_metafield": "Ürün, koleksiyon ve makale sayfalarında sorular custom.faq meta alanından (SSS girişleri listesi) gelir. Boş olduğunda aşağıdaki soru blokları kullanılır.",

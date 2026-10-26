@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "page_header": "Paginakop",
+    "subcategories": "Subcategorieën",
+    "collection_products": "Collectieproducten",
+    "seo_text": "SEO-tekst",
+    "collection_promo": "Promotegel",
     "newsletter_signup": "Nieuwsbriefaanmelding",
     "faq": "Veelgestelde vragen",
     "faq_item": "Vraag",
@@ -193,6 +198,14 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "parent_label": "Extra kruimelpadstap",
+    "show_breadcrumbs": "Kruimelpad tonen",
+    "show_product_count": "Aantal producten tonen op mobiel",
+    "accent_color": "Accentkleur",
+    "mobile_sort_options": "Sorteerknoppen op mobiel",
+    "promo_position": "Positie promo",
+    "align_with_product_grid": "Uitlijnen met productraster",
+    "show_on_mobile": "Tonen op mobiel",
     "badge_3_color": "Kleur badge 3",
     "badge_3_label": "Label badge 3",
     "badge_3_tag": "Producttag badge 3",
@@ -953,6 +966,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "breadcrumbs": "Kruimelpad",
     "tag_badges": "Tagbadges",
     "form": "Formulier",
     "badges": "Badges",
@@ -1184,6 +1198,15 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "page_header_parent": "Optionele extra stap na Home, bijv. \"Shop\" met een link naar alle producten",
+    "page_header_text": "Gebruikt als de collectie geen beschrijving heeft, en op blogs en pagina's",
+    "page_header_title": "Laat leeg om de titel van de collectie, blog of pagina te gebruiken",
+    "subcategories_metafield": "Elke collectie toont de collecties uit haar metaveld custom.subcategories (een lijst met collecties). De lijst hieronder wordt gebruikt als dat leeg is.",
+    "collection_accent": "Gebruikt voor \"Alles wissen\", het aantal filters en de prijsslider",
+    "collection_mobile_sort": "Sorteeropties die op mobiel als knoppen worden getoond, gescheiden door komma's: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "Het promoblok verschijnt na dit aantal producten op de eerste pagina",
+    "seo_text_source": "Collecties gebruiken hun metavelden custom.seo_heading en custom.seo_text, producten hun beschrijving. De tekst hieronder is de terugvaloptie.",
+    "faq_heading_title": "Gebruik [title] om de titel van het product, de collectie of het artikel in te voegen",
     "tag_badges": "Producten en artikelen met een overeenkomende tag tonen een gekleurde badge, bijv. \"best-seller\" of \"Koopgids\". Regels worden op volgorde gecontroleerd en de eerste match wint.",
     "tag_badge_label": "Optioneel. Laat leeg om de tag zelf te tonen",
     "faq_metafield": "Op product-, collectie- en artikelpagina's komen de vragen uit het metaveld custom.faq (een lijst met FAQ-items). De vraagblokken hieronder worden gebruikt als het leeg is.",

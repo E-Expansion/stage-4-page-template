@@ -88,6 +88,7 @@
     "show_submenu": "Vis undermenu for {{ title }}"
   },
   "actions": {
+    "load_more": "Indlæs flere",
     "view_product": "Se produkt",
     "add_to_cart": "Læg i indkøbskurven",
     "clear_all": "Ryd alle",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> af {{ total }}",
+    "products_shown": "{{ shown }} af {{ total }} produkter",
+    "sort_by": "Sortér efter:",
     "home": "Forside",
     "read_time": {
       "one": "{{ count }} min. læsning",

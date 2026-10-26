@@ -88,6 +88,7 @@
     "show_submenu": "Näytä kohteen {{ title }} alivalikko"
   },
   "actions": {
+    "load_more": "Lataa lisää",
     "view_product": "Näytä tuote",
     "add_to_cart": "Lisää ostoskoriin",
     "clear_all": "Tyhjennä kaikki",
@@ -132,6 +133,9 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "showing_range_html": "Näytetään <strong>{{ start }}–{{ end }}</strong> / {{ total }}",
+    "products_shown": "{{ shown }} / {{ total }} tuotetta",
+    "sort_by": "Lajittele:",
     "home": "Etusivu",
     "read_time": {
       "one": "{{ count }} min lukuaika",

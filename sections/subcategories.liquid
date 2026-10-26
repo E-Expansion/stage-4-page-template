@@ -1,0 +1,177 @@
+{% comment %}
+  Section contract.
+  Strip of small collection tiles under a collection's header (e.g. Satchels, Totes,
+  Backpacks) with an optional "View all" tile at the end. The collections come from the
+  current collection's custom.subcategories metafield (a list of collections), so each
+  collection shows its own strip from one template; the section's collection list is the
+  fallback. A grid on desktop, a swipeable row on mobile.
+  @example
+  <!-- Collection template > Add section > Subcategories; fill custom.subcategories per collection -->
+{% endcomment %}
+
+{% liquid
+  assign subcollections = collection.metafields.custom.subcategories.value
+  if subcollections == blank or subcollections.size == 0
+    assign subcollections = section.settings.collections
+  endif
+
+  assign view_all_label = section.settings.view_all_label | escape
+  if view_all_label != blank
+    assign view_all_title = view_all_label | append: ' →'
+    assign view_all_url = section.settings.view_all_link | default: routes.all_products_collection_url
+  endif
+
+  assign tile_count = subcollections.size
+  if view_all_label != blank
+    assign tile_count = tile_count | plus: 1
+  endif
+  assign columns = tile_count | at_least: 1 | at_most: 6
+%}
+
+{% if subcollections.size > 0 or request.design_mode %}
+  {% render 'contrast-override',
+    background_color: section.settings.background_color,
+    border_color: section.settings.border_color,
+    section_id: section.id
+  %}
+
+  <div class="section-background color-custom-{{ section.id }}"></div>
+  <div
+    class="subcategories section section--page-width spacing-style color-custom-{{ section.id }}"
+    style="
+      {% render 'spacing-padding', settings: section.settings %}
+      --snap-carousel-columns: {{ columns }};
+      --snap-carousel-mobile-width: 28%;
+      --category-tile-ratio: {{ section.settings.image_ratio }};
+    "
+  >
+    <ul class="subcategories__list snap-carousel list-unstyled">
+      {% for subcollection in subcollections %}
+        {% liquid
+          assign subcollection_title = subcollection.title | escape
+        %}
+        {% render 'category-tile',
+          url: subcollection.url,
+          title: subcollection_title,
+          image: subcollection.featured_image,
+          size: 'small',
+          sizes: '(min-width: 750px) 16vw, 28vw'
+        %}
+      {% else %}
+        {% assign placeholder_title = 'content.collection_placeholder' | t %}
+        {% for i in (1..5) %}
+          {% render 'category-tile',
+            url: routes.all_products_collection_url,
+            title: placeholder_title,
+            size: 'small',
+            sizes: '(min-width: 750px) 16vw, 28vw'
+          %}
+        {% endfor %}
+      {% endfor %}
+
+      {% if view_all_label != blank %}
+        {% render 'category-tile',
+          url: view_all_url,
+          title: view_all_title,
+          image: section.settings.view_all_image,
+          size: 'small',
+          sizes: '(min-width: 750px) 16vw, 28vw'
+        %}
+      {% endif %}
+    </ul>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:names.subcategories",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.subcategories_metafield"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "t:categories.collections",
+      "limit": 11
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "t:settings.aspect_ratio",
+      "options": [
+        { "value": "16 / 9", "label": "t:options.landscape" },
+        { "value": "1", "label": "t:options.square" },
+        { "value": "4 / 5", "label": "t:options.portrait" }
+      ],
+      "default": "16 / 9"
+    },
+    {
+      "type": "header",
+      "content": "t:names.view_all_button"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "t:settings.link_label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "image_picker",
+      "id": "view_all_image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.subcategories"
+    }
+  ]
+}
+{% endschema %}

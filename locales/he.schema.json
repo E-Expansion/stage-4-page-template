@@ -30,6 +30,7 @@
     "text": "טקסט"
   },
   "content": {
+    "breadcrumbs": "פירורי לחם",
     "tag_badges": "תגי תגיות",
     "form": "טופס",
     "badges": "תגים",
@@ -223,6 +224,15 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "page_header_parent": "שלב נוסף אופציונלי אחרי דף הבית, למשל \"חנות\" עם קישור לכל המוצרים",
+    "page_header_text": "משמש כשאין לקולקציה תיאור, וגם בבלוגים ובדפים",
+    "page_header_title": "השאר ריק כדי להשתמש בכותרת הקולקציה, הבלוג או הדף",
+    "subcategories_metafield": "כל קולקציה מציגה את הקולקציות בשדה המטא custom.subcategories (רשימת קולקציות). הרשימה שלמטה משמשת כשהוא ריק.",
+    "collection_accent": "משמש עבור \"ניקוי הכול\", מספר המסננים ומחוון המחיר",
+    "collection_mobile_sort": "אפשרויות מיון שמוצגות ככפתורים בנייד, מופרדות בפסיקים: manual, best-selling, title-ascending, title-descending, price-ascending, price-descending, created-ascending, created-descending",
+    "collection_promo_position": "בלוק הקידום מופיע אחרי מספר זה של מוצרים בעמוד הראשון",
+    "seo_text_source": "קולקציות משתמשות בשדות המטא custom.seo_heading ו-custom.seo_text, מוצרים בתיאור שלהם. הטקסט שלמטה הוא ברירת המחדל.",
+    "faq_heading_title": "השתמש ב-[title] כדי להוסיף את כותרת המוצר, הקולקציה או המאמר",
     "tag_badges": "מוצרים ומאמרים עם תגית תואמת מציגים תג צבעוני, למשל \"best-seller\" או \"מדריך קנייה\". הכללים נבדקים לפי הסדר וההתאמה הראשונה קובעת.",
     "tag_badge_label": "אופציונלי. השאר ריק כדי להציג את התגית עצמה",
     "faq_metafield": "בדפי מוצר, קולקציה ומאמר השאלות מגיעות משדה המטא custom.faq (רשימת פריטי שאלות נפוצות). בלוקי השאלות שלמטה משמשים כשהוא ריק.",
@@ -279,6 +289,11 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "page_header": "כותרת הדף",
+    "subcategories": "קטגוריות משנה",
+    "collection_products": "מוצרי הקולקציה",
+    "seo_text": "טקסט SEO",
+    "collection_promo": "אריח קידום",
     "newsletter_signup": "הרשמה לניוזלטר",
     "faq": "שאלות נפוצות",
     "faq_item": "שאלה",
@@ -741,6 +756,14 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "parent_label": "שלב ניווט נוסף",
+    "show_breadcrumbs": "הצגת פירורי לחם",
+    "show_product_count": "הצגת מספר המוצרים בנייד",
+    "accent_color": "צבע הדגשה",
+    "mobile_sort_options": "כפתורי מיון בנייד",
+    "promo_position": "מיקום הקידום",
+    "align_with_product_grid": "יישור לרשת המוצרים",
+    "show_on_mobile": "הצגה בנייד",
     "badge_3_color": "צבע תג 3",
     "badge_3_label": "תווית תג 3",
     "badge_3_tag": "תגית מוצר תג 3",
