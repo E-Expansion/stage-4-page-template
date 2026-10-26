@@ -40,8 +40,7 @@
             "icon": "truck",
             "title": "Free shipping over €75",
             "text": "Dispatched within 24 hours"
-          },
-          "blocks": {}
+          }
         },
         "usp_returns": {
           "type": "_usp-item",
@@ -49,8 +48,7 @@
             "icon": "return",
             "title": "30-day free returns",
             "text": "Prepaid label in every order"
-          },
-          "blocks": {}
+          }
         },
         "usp_repair": {
           "type": "_usp-item",
@@ -58,8 +56,7 @@
             "icon": "tools",
             "title": "5-year repair guarantee",
             "text": "Parts kept in stock, always"
-          },
-          "blocks": {}
+          }
         },
         "usp_payment": {
           "type": "_usp-item",
@@ -67,8 +64,7 @@
             "icon": "shield",
             "title": "Secure payment",
             "text": "iDEAL · Visa · PayPal · Klarna"
-          },
-          "blocks": {}
+          }
         }
       },
       "block_order": [
@@ -91,38 +87,26 @@
         "card_everyday_carry": {
           "type": "_category-card",
           "settings": {
-            "collection": "everyday-carry",
-            "image": "shopify://shop_images/Gemini_Generated_Image__2.jpg",
-            "title": ""
-          },
-          "blocks": {}
+            "collection": "everyday-carry"
+          }
         },
         "card_small_goods": {
           "type": "_category-card",
           "settings": {
-            "collection": "small-goods",
-            "image": "shopify://shop_images/Gemini_Generated_Image__3.jpg",
-            "title": ""
-          },
-          "blocks": {}
+            "collection": "small-goods"
+          }
         },
         "card_travel": {
           "type": "_category-card",
           "settings": {
-            "collection": "travel",
-            "image": "shopify://shop_images/Gemini_Generated_Image__1.jpg",
-            "title": ""
-          },
-          "blocks": {}
+            "collection": "travel"
+          }
         },
         "card_refill_care": {
           "type": "_category-card",
           "settings": {
-            "collection": "refill-care",
-            "image": "shopify://shop_images/Gemini_Generated_Image.jpg",
-            "title": ""
-          },
-          "blocks": {}
+            "collection": "refill-care"
+          }
         }
       },
       "block_order": [
@@ -138,6 +122,85 @@
         "link_label_mobile": "View all",
         "link": "shopify://collections/all",
         "image_ratio": "4 / 3",
+        "section_width": "page-width",
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "press_mentions": {
+      "type": "press-mentions",
+      "blocks": {
+        "mention_vogue": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Vogue",
+            "logo_height": 32,
+            "quote": "Craftsmanship with a quiet, enduring confidence.",
+            "author": "Author name"
+          }
+        },
+        "mention_esquire": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Esquire",
+            "logo_height": 32,
+            "quote": "The kind of leather goods that only get better with age.",
+            "author": "Author name"
+          }
+        },
+        "mention_mens_health": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Men's Health",
+            "logo_height": 32,
+            "quote": "Built for the everyday, without looking ordinary.",
+            "author": "Author name"
+          }
+        },
+        "mention_cosmopolitan": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Cosmopolitan",
+            "logo_height": 32,
+            "quote": "Thoughtful essentials worth carrying everywhere.",
+            "author": "Author name"
+          }
+        },
+        "mention_marie_claire": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Marie Claire",
+            "logo_height": 32,
+            "quote": "Modern heirlooms, made with rare attention to detail.",
+            "author": "Author name"
+          }
+        },
+        "mention_monocle": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Monocle",
+            "logo_height": 32,
+            "quote": "An honest approach to materials, form and longevity.",
+            "author": "Author name"
+          }
+        }
+      },
+      "block_order": [
+        "mention_vogue",
+        "mention_esquire",
+        "mention_mens_health",
+        "mention_cosmopolitan",
+        "mention_marie_claire",
+        "mention_monocle"
+      ],
+      "settings": {
+        "heading": "As featured in",
+        "columns": 3,
+        "mobile_visible": 3,
+        "button_label": "Read more",
         "section_width": "page-width",
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
@@ -341,105 +404,6 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
-    "usp_bar": {
-      "type": "usp-bar",
-      "blocks": {
-        "usp_shipping": {
-          "type": "_usp-item",
-          "settings": {
-            "icon": "truck",
-            "title": "Free shipping over €75",
-            "text": "Dispatched within 24 hours"
-          }
-        },
-        "usp_returns": {
-          "type": "_usp-item",
-          "settings": {
-            "icon": "return",
-            "title": "30-day free returns",
-            "text": "Prepaid label in every order"
-          }
-        },
-        "usp_repair": {
-          "type": "_usp-item",
-          "settings": {
-            "icon": "tools",
-            "title": "5-year repair guarantee",
-            "text": "Parts kept in stock, always"
-          }
-        },
-        "usp_payment": {
-          "type": "_usp-item",
-          "settings": {
-            "icon": "shield",
-            "title": "Secure payment",
-            "text": "iDEAL · Visa · PayPal · Klarna"
-          }
-        }
-      },
-      "block_order": [
-        "usp_shipping",
-        "usp_returns",
-        "usp_repair",
-        "usp_payment"
-      ],
-      "settings": {
-        "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "border_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
-    },
-    "category_selector": {
-      "type": "category-selector",
-      "blocks": {
-        "card_everyday_carry": {
-          "type": "_category-card",
-          "settings": {
-            "collection": "everyday-carry"
-          }
-        },
-        "card_small_goods": {
-          "type": "_category-card",
-          "settings": {
-            "collection": "small-goods"
-          }
-        },
-        "card_travel": {
-          "type": "_category-card",
-          "settings": {
-            "collection": "travel"
-          }
-        },
-        "card_refill_care": {
-          "type": "_category-card",
-          "settings": {
-            "collection": "refill-care"
-          }
-        }
-      },
-      "block_order": [
-        "card_everyday_carry",
-        "card_small_goods",
-        "card_travel",
-        "card_refill_care"
-      ],
-      "settings": {
-        "heading": "Start with a category",
-        "text": "<p>Four curated groups, not the full catalogue.</p>",
-        "link_label": "View all products",
-        "link_label_mobile": "View all",
-        "link": "shopify://collections/all",
-        "image_ratio": "4 / 3",
-        "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "border_color": "{{ settings.color_palette.color2 }}",
-        "link_color": "{{ settings.color_palette.color3 }}",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
