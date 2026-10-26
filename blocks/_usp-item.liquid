@@ -1,0 +1,145 @@
+{% doc %}
+  Renders one USP cell: an icon (theme icon or uploaded image), a title and a short line
+  of supporting text. Lives inside the grid owned by sections/usp-bar.liquid.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign title = block.settings.title | escape
+  assign text = block.settings.text | escape
+%}
+
+{% if title != blank or text != blank %}
+  <li
+    class="usp-item"
+    {{ block.shopify_attributes }}
+  >
+    {% if block.settings.icon != 'none' or block.settings.image_upload != blank %}
+      <span class="usp-item__icon">
+        {% render 'icon-or-image',
+          icon: block.settings.icon,
+          image_upload: block.settings.image_upload,
+          width: 20,
+          class_name: 'usp-item__icon-graphic'
+        %}
+      </span>
+    {% endif %}
+
+    <span class="usp-item__body">
+      {% if title != blank %}
+        <span class="usp-item__title">{{ title }}</span>
+      {% endif %}
+      {% if text != blank %}
+        <span class="usp-item__text">{{ text }}</span>
+      {% endif %}
+    </span>
+  </li>
+{% endif %}
+
+{% stylesheet %}
+  .usp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-md);
+    min-width: 0;
+    padding: var(--padding-md) var(--padding-lg);
+    background-color: var(--color-background);
+  }
+
+  .usp-item__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    padding-block-start: var(--padding-3xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .usp-item__icon-graphic {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    object-fit: contain;
+  }
+
+  .usp-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .usp-item__title {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 990px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .usp-item__text {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.usp_item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "truck", "label": "t:options.truck" },
+        { "value": "return", "label": "t:options.return" },
+        { "value": "tools", "label": "t:options.tools" },
+        { "value": "shield", "label": "t:options.shield" },
+        { "value": "lock", "label": "t:options.lock" },
+        { "value": "box", "label": "t:options.box" },
+        { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+        { "value": "check_box", "label": "t:options.check_box" },
+        { "value": "heart", "label": "t:options.heart" },
+        { "value": "leaf", "label": "t:options.leaf" },
+        { "value": "leather", "label": "t:options.leather" },
+        { "value": "map_pin", "label": "t:options.map_pin" },
+        { "value": "plane", "label": "t:options.plane" },
+        { "value": "price_tag", "label": "t:options.price_tag" },
+        { "value": "recycle", "label": "t:options.recycle" },
+        { "value": "star", "label": "t:options.star" },
+        { "value": "stopwatch", "label": "t:options.stopwatch" }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_upload",
+      "label": "t:settings.image_icon",
+      "info": "t:info.usp_item_image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Free shipping over €75"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Dispatched within 24 hours"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.usp_item"
+    }
+  ]
+}
+{% endschema %}

@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Kategori kartı",
+    "category_selector": "Kategori seçici",
+    "usp_bar": "Avantaj çubuğu",
+    "usp_item": "Avantaj öğesi",
     "footer_menu": "Altbilgi menüsü",
     "hero_banner": "Hero banner",
     "link": "Bağlantı",
@@ -179,6 +183,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "link_color": "Bağlantı rengi",
+    "link_label": "Bağlantı etiketi",
+    "link_label_mobile": "Mobilde bağlantı etiketi",
     "button_opens_chat": "Sohbeti aç",
     "copyright_text": "Telif hakkı metni",
     "legal_menu": "Yasal menü",
@@ -614,6 +621,8 @@
     "title_preset": "Başlık ön ayarı"
   },
   "options": {
+    "shield": "Kalkan",
+    "tools": "Aletler",
     "apple": "Apple",
     "arrow": "Ok",
     "banana": "Muz",
@@ -1116,6 +1125,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "category_card_image": "Koleksiyon görselini kullanmak için boş bırakın",
+    "category_card_title": "Koleksiyon başlığını kullanmak için boş bırakın",
+    "usp_item_image": "Simgenin yerine geçer",
     "footer_legal_menu": "Mağaza politikalarını göstermek için boş bırakın",
     "footer_menu_button_chat": "Yüklüyse Shopify Inbox'ı açar; aksi halde düğme bağlantısına gider",
     "footer_menu_button_link": "Varsayılan olarak iletişim sayfası",

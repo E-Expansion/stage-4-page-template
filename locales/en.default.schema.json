@@ -226,6 +226,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "category_card_image": "Leave empty to use the collection image",
+    "category_card_title": "Leave empty to use the collection title",
+    "usp_item_image": "Replaces the icon",
     "footer_legal_menu": "Leave empty to show the store policies",
     "footer_menu_button_chat": "Opens Shopify Inbox when installed; otherwise the button follows its link",
     "footer_menu_button_link": "Defaults to the contact page",
@@ -268,6 +271,10 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "category_card": "Category card",
+    "category_selector": "Category selector",
+    "usp_bar": "USP bar",
+    "usp_item": "USP item",
     "footer_menu": "Footer menu",
     "hero_banner": "Hero banner",
     "link": "Link",
@@ -445,6 +452,8 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "shield": "Shield",
+    "tools": "Tools",
     "above_carousel": "Above carousel",
     "accent": "Accent",
     "all": "All",
@@ -758,6 +767,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "link_color": "Link color",
+    "link_label": "Link label",
+    "link_label_mobile": "Link label on mobile",
     "button_opens_chat": "Open chat",
     "copyright_text": "Copyright text",
     "legal_menu": "Legal menu",

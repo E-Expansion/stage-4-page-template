@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Karta kategorie",
+    "category_selector": "Výběr kategorií",
+    "usp_bar": "Lišta výhod",
+    "usp_item": "Výhoda",
     "footer_menu": "Nabídka zápatí",
     "hero_banner": "Hlavní banner",
     "link": "Odkaz",
@@ -179,6 +183,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "link_color": "Barva odkazu",
+    "link_label": "Popisek odkazu",
+    "link_label_mobile": "Popisek odkazu na mobilu",
     "button_opens_chat": "Otevřít chat",
     "copyright_text": "Text autorských práv",
     "legal_menu": "Právní nabídka",
@@ -614,6 +621,8 @@
     "title_preset": "Předvolba nadpisu"
   },
   "options": {
+    "shield": "Štít",
+    "tools": "Nářadí",
     "apple": "Apple",
     "arrow": "Šipka",
     "auto": "Automaticky",
@@ -1116,6 +1125,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "category_card_image": "Ponechte prázdné pro použití obrázku kolekce",
+    "category_card_title": "Ponechte prázdné pro použití názvu kolekce",
+    "usp_item_image": "Nahradí ikonu",
     "footer_legal_menu": "Ponechte prázdné pro zobrazení zásad obchodu",
     "footer_menu_button_chat": "Otevře Shopify Inbox, pokud je nainstalován; jinak tlačítko vede na odkaz",
     "footer_menu_button_link": "Výchozí je kontaktní stránka",

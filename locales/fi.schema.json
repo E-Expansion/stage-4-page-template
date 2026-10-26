@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Kategoriakortti",
+    "category_selector": "Kategoriavalitsin",
+    "usp_bar": "USP-palkki",
+    "usp_item": "USP-kohde",
     "footer_menu": "Alatunnisteen valikko",
     "hero_banner": "Hero-banneri",
     "link": "Linkki",
@@ -179,6 +183,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "link_color": "Linkin väri",
+    "link_label": "Linkin teksti",
+    "link_label_mobile": "Linkin teksti mobiilissa",
     "button_opens_chat": "Avaa chat",
     "copyright_text": "Tekijänoikeusteksti",
     "legal_menu": "Juridinen valikko",
@@ -614,6 +621,8 @@
     "title_preset": "Otsikon esiasetus"
   },
   "options": {
+    "shield": "Kilpi",
+    "tools": "Työkalut",
     "apple": "Omena",
     "arrow": "Nuoli",
     "auto": "Automaattinen",
@@ -1116,6 +1125,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "category_card_image": "Jätä tyhjäksi käyttääksesi kokoelman kuvaa",
+    "category_card_title": "Jätä tyhjäksi käyttääksesi kokoelman otsikkoa",
+    "usp_item_image": "Korvaa kuvakkeen",
     "footer_legal_menu": "Jätä tyhjäksi näyttääksesi kaupan käytännöt",
     "footer_menu_button_chat": "Avaa Shopify Inboxin, jos se on asennettu; muuten painike seuraa linkkiään",
     "footer_menu_button_link": "Oletuksena yhteydenottosivu",

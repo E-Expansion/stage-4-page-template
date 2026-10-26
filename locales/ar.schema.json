@@ -218,6 +218,9 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "category_card_image": "اتركه فارغًا لاستخدام صورة المجموعة",
+    "category_card_title": "اتركه فارغًا لاستخدام عنوان المجموعة",
+    "usp_item_image": "يحل محل الأيقونة",
     "footer_legal_menu": "اتركه فارغًا لعرض سياسات المتجر",
     "footer_menu_button_chat": "يفتح Shopify Inbox إذا كان مثبتًا؛ وإلا ينتقل الزر إلى رابطه",
     "footer_menu_button_link": "صفحة الاتصال افتراضيًا",
@@ -260,6 +263,10 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "category_card": "بطاقة الفئة",
+    "category_selector": "محدد الفئات",
+    "usp_bar": "شريط المزايا",
+    "usp_item": "عنصر الميزة",
     "footer_menu": "قائمة التذييل",
     "hero_banner": "البانر الرئيسي",
     "link": "رابط",
@@ -430,6 +437,8 @@
     "comparison_slider": "شريط تمرير المقارنة"
   },
   "options": {
+    "shield": "درع",
+    "tools": "أدوات",
     "above_carousel": "أعلى العرض الدائري",
     "accent": "تمييز",
     "all": "الكل",
@@ -706,6 +715,9 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "link_color": "لون الرابط",
+    "link_label": "تسمية الرابط",
+    "link_label_mobile": "تسمية الرابط على الجوال",
     "button_opens_chat": "فتح الدردشة",
     "copyright_text": "نص حقوق النشر",
     "legal_menu": "القائمة القانونية",

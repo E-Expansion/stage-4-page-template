@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "การ์ดหมวดหมู่",
+    "category_selector": "ตัวเลือกหมวดหมู่",
+    "usp_bar": "แถบจุดเด่น",
+    "usp_item": "รายการจุดเด่น",
     "footer_menu": "เมนูส่วนท้าย",
     "hero_banner": "แบนเนอร์หลัก",
     "link": "ลิงก์",
@@ -179,6 +183,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "link_color": "สีลิงก์",
+    "link_label": "ป้ายกำกับลิงก์",
+    "link_label_mobile": "ป้ายกำกับลิงก์บนมือถือ",
     "button_opens_chat": "เปิดแชท",
     "copyright_text": "ข้อความลิขสิทธิ์",
     "legal_menu": "เมนูกฎหมาย",
@@ -614,6 +621,8 @@
     "title_preset": "พรีเซ็ตชื่อ"
   },
   "options": {
+    "shield": "โล่",
+    "tools": "เครื่องมือ",
     "apple": "Apple",
     "arrow": "ลูกศร",
     "auto": "อัตโนมัติ",
@@ -1116,6 +1125,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "category_card_image": "เว้นว่างไว้เพื่อใช้รูปภาพคอลเลกชัน",
+    "category_card_title": "เว้นว่างไว้เพื่อใช้ชื่อคอลเลกชัน",
+    "usp_item_image": "แทนที่ไอคอน",
     "footer_legal_menu": "เว้นว่างไว้เพื่อแสดงนโยบายร้านค้า",
     "footer_menu_button_chat": "เปิด Shopify Inbox หากติดตั้งไว้ มิฉะนั้นปุ่มจะไปยังลิงก์",
     "footer_menu_button_link": "ค่าเริ่มต้นคือหน้าติดต่อ",

@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Kategorikort",
+    "category_selector": "Kategoriväljare",
+    "usp_bar": "USP-fält",
+    "usp_item": "USP-objekt",
     "footer_menu": "Sidfotsmeny",
     "hero_banner": "Hero-banner",
     "link": "Länk",
@@ -179,6 +183,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "link_color": "Länkfärg",
+    "link_label": "Länketikett",
+    "link_label_mobile": "Länketikett på mobil",
     "button_opens_chat": "Öppna chatt",
     "copyright_text": "Upphovsrättstext",
     "legal_menu": "Juridisk meny",
@@ -614,6 +621,8 @@
     "title_preset": "Förinställning för rubrik"
   },
   "options": {
+    "shield": "Sköld",
+    "tools": "Verktyg",
     "apple": "Apple",
     "arrow": "Pil",
     "auto": "Auto",
@@ -1116,6 +1125,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "category_card_image": "Lämna tomt för att använda kollektionens bild",
+    "category_card_title": "Lämna tomt för att använda kollektionens titel",
+    "usp_item_image": "Ersätter ikonen",
     "footer_legal_menu": "Lämna tomt för att visa butikens policyer",
     "footer_menu_button_chat": "Öppnar Shopify Inbox om det är installerat; annars följer knappen sin länk",
     "footer_menu_button_link": "Kontaktsidan som standard",

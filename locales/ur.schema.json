@@ -218,6 +218,9 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "category_card_image": "کلیکشن کی تصویر استعمال کرنے کے لیے خالی چھوڑیں",
+    "category_card_title": "کلیکشن کا عنوان استعمال کرنے کے لیے خالی چھوڑیں",
+    "usp_item_image": "آئیکن کی جگہ لیتا ہے",
     "footer_legal_menu": "اسٹور کی پالیسیاں دکھانے کے لیے خالی چھوڑیں",
     "footer_menu_button_chat": "انسٹال ہونے پر Shopify Inbox کھولتا ہے؛ ورنہ بٹن اپنے لنک پر جاتا ہے",
     "footer_menu_button_link": "بطور ڈیفالٹ رابطہ صفحہ",
@@ -260,6 +263,10 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "category_card": "کیٹیگری کارڈ",
+    "category_selector": "کیٹیگری سلیکٹر",
+    "usp_bar": "USP بار",
+    "usp_item": "USP آئٹم",
     "footer_menu": "فوٹر مینو",
     "hero_banner": "ہیرو بینر",
     "link": "لنک",
@@ -430,6 +437,8 @@
     "comparison_slider": "موازنہ کرنے والا سلائیڈر"
   },
   "options": {
+    "shield": "ڈھال",
+    "tools": "اوزار",
     "above_carousel": "کیرول کے اوپر",
     "accent": "ایکسنٹ",
     "all": "سبھی",
@@ -706,6 +715,9 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "link_color": "لنک کا رنگ",
+    "link_label": "لنک کا لیبل",
+    "link_label_mobile": "موبائل پر لنک کا لیبل",
     "button_opens_chat": "چیٹ کھولیں",
     "copyright_text": "کاپی رائٹ متن",
     "legal_menu": "قانونی مینو",

@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Karta kategorii",
+    "category_selector": "Wybór kategorii",
+    "usp_bar": "Pasek korzyści",
+    "usp_item": "Korzyść",
     "footer_menu": "Menu stopki",
     "hero_banner": "Baner główny",
     "link": "Link",
@@ -179,6 +183,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "link_color": "Kolor linku",
+    "link_label": "Etykieta linku",
+    "link_label_mobile": "Etykieta linku na urządzeniach mobilnych",
     "button_opens_chat": "Otwórz czat",
     "copyright_text": "Tekst praw autorskich",
     "legal_menu": "Menu prawne",
@@ -614,6 +621,8 @@
     "title_preset": "Gotowe ustawienie tytułu"
   },
   "options": {
+    "shield": "Tarcza",
+    "tools": "Narzędzia",
     "apple": "Apple",
     "arrow": "Strzałka",
     "banana": "Banan",
@@ -1116,6 +1125,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "category_card_image": "Pozostaw puste, aby użyć obrazu kolekcji",
+    "category_card_title": "Pozostaw puste, aby użyć tytułu kolekcji",
+    "usp_item_image": "Zastępuje ikonę",
     "footer_legal_menu": "Pozostaw puste, aby wyświetlić zasady sklepu",
     "footer_menu_button_chat": "Otwiera Shopify Inbox, jeśli jest zainstalowany; w przeciwnym razie przycisk prowadzi do linku",
     "footer_menu_button_link": "Domyślnie strona kontaktowa",

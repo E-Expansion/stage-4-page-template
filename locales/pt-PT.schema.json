@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Cartão de categoria",
+    "category_selector": "Seletor de categorias",
+    "usp_bar": "Barra de vantagens",
+    "usp_item": "Vantagem",
     "footer_menu": "Menu do rodapé",
     "hero_banner": "Banner principal",
     "link": "Ligação",
@@ -179,6 +183,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "link_color": "Cor da ligação",
+    "link_label": "Etiqueta da ligação",
+    "link_label_mobile": "Etiqueta da ligação no telemóvel",
     "button_opens_chat": "Abrir chat",
     "copyright_text": "Texto de direitos de autor",
     "legal_menu": "Menu jurídico",
@@ -614,6 +621,8 @@
     "title_preset": "Predefinição do título"
   },
   "options": {
+    "shield": "Escudo",
+    "tools": "Ferramentas",
     "apple": "Maçã",
     "arrow": "Seta",
     "auto": "Automático",
@@ -1116,6 +1125,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "category_card_image": "Deixe vazio para utilizar a imagem da coleção",
+    "category_card_title": "Deixe vazio para utilizar o título da coleção",
+    "usp_item_image": "Substitui o ícone",
     "footer_legal_menu": "Deixe vazio para mostrar as políticas da loja",
     "footer_menu_button_chat": "Abre o Shopify Inbox se estiver instalado; caso contrário, o botão segue a ligação",
     "footer_menu_button_link": "Página de contacto por predefinição",

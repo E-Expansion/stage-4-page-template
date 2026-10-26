@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "類別卡片",
+    "category_selector": "類別選擇器",
+    "usp_bar": "賣點列",
+    "usp_item": "賣點項目",
     "footer_menu": "頁尾選單",
     "hero_banner": "主橫幅",
     "link": "連結",
@@ -179,6 +183,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "link_color": "連結顏色",
+    "link_label": "連結標籤",
+    "link_label_mobile": "行動版連結標籤",
     "button_opens_chat": "開啟聊天",
     "copyright_text": "版權文字",
     "legal_menu": "法律選單",
@@ -614,6 +621,8 @@
     "title_preset": "標題預設設定"
   },
   "options": {
+    "shield": "盾牌",
+    "tools": "工具",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",
@@ -1116,6 +1125,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "category_card_image": "留空以使用商品系列圖片",
+    "category_card_title": "留空以使用商品系列標題",
+    "usp_item_image": "取代圖示",
     "footer_legal_menu": "留空以顯示商店政策",
     "footer_menu_button_chat": "已安裝 Shopify Inbox 時開啟聊天；否則按鈕會前往其連結",
     "footer_menu_button_link": "預設為聯絡頁面",

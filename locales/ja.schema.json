@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "カテゴリーカード",
+    "category_selector": "カテゴリーセレクター",
+    "usp_bar": "USPバー",
+    "usp_item": "USP項目",
     "footer_menu": "フッターメニュー",
     "hero_banner": "ヒーローバナー",
     "link": "リンク",
@@ -179,6 +183,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "link_color": "リンクの色",
+    "link_label": "リンクのラベル",
+    "link_label_mobile": "モバイルのリンクラベル",
     "button_opens_chat": "チャットを開く",
     "copyright_text": "著作権テキスト",
     "legal_menu": "法的メニュー",
@@ -614,6 +621,8 @@
     "title_preset": "タイトルプリセット"
   },
   "options": {
+    "shield": "盾",
+    "tools": "工具",
     "apple": "Apple",
     "arrow": "矢印",
     "auto": "自動",
@@ -1116,6 +1125,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "category_card_image": "空欄の場合はコレクション画像を使用します",
+    "category_card_title": "空欄の場合はコレクションのタイトルを使用します",
+    "usp_item_image": "アイコンを置き換えます",
     "footer_legal_menu": "空欄の場合はストアのポリシーを表示します",
     "footer_menu_button_chat": "Shopify Inboxがインストールされている場合は開きます。それ以外はリンク先に移動します",
     "footer_menu_button_link": "デフォルトはお問い合わせページです",

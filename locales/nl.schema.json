@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Categoriekaart",
+    "category_selector": "Categoriekiezer",
+    "usp_bar": "USP-balk",
+    "usp_item": "USP-item",
     "footer_menu": "Footermenu",
     "hero_banner": "Hero-banner",
     "link": "Link",
@@ -179,6 +183,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "link_color": "Linkkleur",
+    "link_label": "Linklabel",
+    "link_label_mobile": "Linklabel op mobiel",
     "button_opens_chat": "Chat openen",
     "copyright_text": "Copyrighttekst",
     "legal_menu": "Juridisch menu",
@@ -614,6 +621,8 @@
     "title_preset": "Titelvoorinstelling"
   },
   "options": {
+    "shield": "Schild",
+    "tools": "Gereedschap",
     "apple": "Apple",
     "arrow": "Pijl",
     "banana": "Banaan",
@@ -1116,6 +1125,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "category_card_image": "Laat leeg om de collectieafbeelding te gebruiken",
+    "category_card_title": "Laat leeg om de collectietitel te gebruiken",
+    "usp_item_image": "Vervangt het icoon",
     "footer_legal_menu": "Laat leeg om het winkelbeleid te tonen",
     "footer_menu_button_chat": "Opent Shopify Inbox als die is geïnstalleerd; anders volgt de knop de link",
     "footer_menu_button_link": "Standaard de contactpagina",

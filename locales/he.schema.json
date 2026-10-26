@@ -218,6 +218,9 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "category_card_image": "השאר ריק כדי להשתמש בתמונת הקולקציה",
+    "category_card_title": "השאר ריק כדי להשתמש בכותרת הקולקציה",
+    "usp_item_image": "מחליף את הסמל",
     "footer_legal_menu": "השאר ריק כדי להציג את מדיניות החנות",
     "footer_menu_button_chat": "פותח את Shopify Inbox אם מותקן; אחרת הכפתור עובר לקישור",
     "footer_menu_button_link": "ברירת המחדל היא דף יצירת הקשר",
@@ -260,6 +263,10 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "category_card": "כרטיס קטגוריה",
+    "category_selector": "בורר קטגוריות",
+    "usp_bar": "סרגל יתרונות",
+    "usp_item": "פריט יתרון",
     "footer_menu": "תפריט כותרת תחתונה",
     "hero_banner": "באנר ראשי",
     "link": "קישור",
@@ -430,6 +437,8 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "shield": "מגן",
+    "tools": "כלים",
     "above_carousel": "מעל הקרוסלה",
     "accent": "הדגשה",
     "all": "הכול",
@@ -706,6 +715,9 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "link_color": "צבע קישור",
+    "link_label": "תווית קישור",
+    "link_label_mobile": "תווית קישור בנייד",
     "button_opens_chat": "פתח צ'אט",
     "copyright_text": "טקסט זכויות יוצרים",
     "legal_menu": "תפריט משפטי",

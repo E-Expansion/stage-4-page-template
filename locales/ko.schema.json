@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "카테고리 카드",
+    "category_selector": "카테고리 선택기",
+    "usp_bar": "USP 바",
+    "usp_item": "USP 항목",
     "footer_menu": "푸터 메뉴",
     "hero_banner": "히어로 배너",
     "link": "링크",
@@ -179,6 +183,9 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "link_color": "링크 색상",
+    "link_label": "링크 레이블",
+    "link_label_mobile": "모바일 링크 레이블",
     "button_opens_chat": "채팅 열기",
     "copyright_text": "저작권 텍스트",
     "legal_menu": "법률 메뉴",
@@ -614,6 +621,8 @@
     "title_preset": "제목 사전 설정"
   },
   "options": {
+    "shield": "방패",
+    "tools": "도구",
     "apple": "Apple",
     "arrow": "화살표",
     "banana": "바나나",
@@ -1116,6 +1125,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "category_card_image": "비워 두면 컬렉션 이미지를 사용합니다",
+    "category_card_title": "비워 두면 컬렉션 제목을 사용합니다",
+    "usp_item_image": "아이콘을 대체합니다",
     "footer_legal_menu": "비워 두면 스토어 정책이 표시됩니다",
     "footer_menu_button_chat": "Shopify Inbox가 설치되어 있으면 열고, 그렇지 않으면 링크로 이동합니다",
     "footer_menu_button_link": "기본값은 문의 페이지입니다",

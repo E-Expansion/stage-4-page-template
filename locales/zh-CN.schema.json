@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "类别卡片",
+    "category_selector": "类别选择器",
+    "usp_bar": "卖点栏",
+    "usp_item": "卖点项",
     "footer_menu": "页脚菜单",
     "hero_banner": "主横幅",
     "link": "链接",
@@ -179,6 +183,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "link_color": "链接颜色",
+    "link_label": "链接标签",
+    "link_label_mobile": "移动端链接标签",
     "button_opens_chat": "打开聊天",
     "copyright_text": "版权文本",
     "legal_menu": "法律菜单",
@@ -614,6 +621,8 @@
     "title_preset": "标题预设"
   },
   "options": {
+    "shield": "盾牌",
+    "tools": "工具",
     "apple": "Apple",
     "arrow": "箭头",
     "auto": "自动",
@@ -1116,6 +1125,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "category_card_image": "留空以使用产品系列图片",
+    "category_card_title": "留空以使用产品系列标题",
+    "usp_item_image": "替换图标",
     "footer_legal_menu": "留空以显示商店政策",
     "footer_menu_button_chat": "安装 Shopify Inbox 时打开聊天；否则按钮跳转到其链接",
     "footer_menu_button_link": "默认为联系页面",

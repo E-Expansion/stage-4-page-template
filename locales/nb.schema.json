@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Kategorikort",
+    "category_selector": "Kategorivelger",
+    "usp_bar": "USP-linje",
+    "usp_item": "USP-element",
     "footer_menu": "Bunntekstmeny",
     "hero_banner": "Hero-banner",
     "link": "Lenke",
@@ -179,6 +183,9 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "link_color": "Lenkefarge",
+    "link_label": "Lenketekst",
+    "link_label_mobile": "Lenketekst på mobil",
     "button_opens_chat": "Åpne chat",
     "copyright_text": "Opphavsrettstekst",
     "legal_menu": "Juridisk meny",
@@ -614,6 +621,8 @@
     "title_preset": "Forhåndsinnstilling for tittel"
   },
   "options": {
+    "shield": "Skjold",
+    "tools": "Verktøy",
     "apple": "Eple",
     "arrow": "Pil",
     "auto": "Auto",
@@ -1116,6 +1125,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "category_card_image": "La stå tomt for å bruke kolleksjonsbildet",
+    "category_card_title": "La stå tomt for å bruke kolleksjonstittelen",
+    "usp_item_image": "Erstatter ikonet",
     "footer_legal_menu": "La stå tomt for å vise butikkens retningslinjer",
     "footer_menu_button_chat": "Åpner Shopify Inbox hvis installert; ellers følger knappen lenken",
     "footer_menu_button_link": "Kontaktsiden som standard",

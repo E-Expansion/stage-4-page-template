@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "category_card": "Kategoriekarte",
+    "category_selector": "Kategorieauswahl",
+    "usp_bar": "USP-Leiste",
+    "usp_item": "USP-Element",
     "footer_menu": "Footer-Menü",
     "hero_banner": "Hero-Banner",
     "link": "Link",
@@ -179,6 +183,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "link_color": "Linkfarbe",
+    "link_label": "Linkbeschriftung",
+    "link_label_mobile": "Linkbeschriftung auf Mobilgeräten",
     "button_opens_chat": "Chat öffnen",
     "copyright_text": "Copyright-Text",
     "legal_menu": "Rechtliches Menü",
@@ -614,6 +621,8 @@
     "title_preset": "Titelvoreinstellung"
   },
   "options": {
+    "shield": "Schild",
+    "tools": "Werkzeug",
     "apple": "Apfel",
     "arrow": "Pfeil",
     "banana": "Banane",
@@ -1116,6 +1125,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "category_card_image": "Leer lassen, um das Kollektionsbild zu verwenden",
+    "category_card_title": "Leer lassen, um den Kollektionstitel zu verwenden",
+    "usp_item_image": "Ersetzt das Symbol",
     "footer_legal_menu": "Leer lassen, um die Shop-Richtlinien anzuzeigen",
     "footer_menu_button_chat": "Öffnet Shopify Inbox, falls installiert; andernfalls folgt der Button seinem Link",
     "footer_menu_button_link": "Standardmäßig die Kontaktseite",
