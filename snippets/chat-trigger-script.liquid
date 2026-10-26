@@ -1,0 +1,23 @@
+{%- doc -%}
+  Makes any link with a `data-chat-trigger` attribute open Shopify Inbox chat when the
+  Inbox app has registered `<shopify-chat>`. Without Inbox the link is followed as usual,
+  so give it a sensible href (e.g. the contact page). Safe to render more than once.
+
+  @example
+  <a href="/pages/contact" data-chat-trigger>Chat with us</a>
+  {% render 'chat-trigger-script' %}
+{%- enddoc -%}
+
+<script type="module">
+  if (!window.chatTriggerBound) {
+    window.chatTriggerBound = true;
+    document.addEventListener('click', (event) => {
+      const trigger = event.target instanceof Element ? event.target.closest('[data-chat-trigger]') : null;
+      const chat = document.querySelector('shopify-chat');
+      if (!trigger || !chat || !customElements.get('shopify-chat')) return;
+
+      event.preventDefault();
+      chat.setAttribute('open', '');
+    });
+  }
+</script>

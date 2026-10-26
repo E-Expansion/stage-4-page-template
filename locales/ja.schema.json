@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "よくある質問",
+    "faq_item": "質問",
     "brand_story": "ブランドストーリー",
     "brand_story_stat": "主要な数値",
     "ugc_grid": "UGCグリッド",
@@ -190,6 +192,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "answer": "回答",
+    "question": "質問",
     "stat_value": "値",
     "account_handle": "アカウント名",
     "brand_handle": "あなたのアカウント名",

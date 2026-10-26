@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "SSS",
+    "faq_item": "Soru",
     "brand_story": "Marka hikâyesi",
     "brand_story_stat": "Temel rakam",
     "ugc_grid": "UGC ızgarası",
@@ -190,6 +192,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "answer": "Yanıt",
+    "question": "Soru",
     "stat_value": "Değer",
     "account_handle": "Hesap adı",
     "brand_handle": "Hesap adınız",

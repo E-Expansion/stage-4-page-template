@@ -280,6 +280,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "faq": "FAQ",
+    "faq_item": "Question",
     "brand_story": "Brand story",
     "brand_story_stat": "Key figure",
     "ugc_grid": "UGC grid",
@@ -783,6 +785,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "answer": "Answer",
+    "question": "Question",
     "stat_value": "Value",
     "account_handle": "Account handle",
     "brand_handle": "Your account handle",

@@ -1,0 +1,109 @@
+{%- doc -%}
+  Renders one FAQ accordion item with native `<details>`, so it opens and closes without
+  JavaScript. The plus icon turns into a minus when open. Owns the accordion styles.
+
+  @param {string} question - The question, shown in the summary (plain text, escaped here)
+  @param {string} [answer] - The answer as rich text HTML
+  @param {boolean} [open] - Render the item expanded
+  @param {string} [attributes] - Extra attributes for the wrapper, e.g. `block.shopify_attributes`
+
+  @example
+  {% render 'faq-accordion', question: block.settings.question, answer: block.settings.answer, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+
+{%- if question != blank -%}
+  <details
+    class="faq-accordion"
+    {% if open %}
+      open
+    {% endif %}
+    {{ attributes }}
+  >
+    <summary class="faq-accordion__summary">
+      <span class="faq-accordion__question">{{ question | escape }}</span>
+      <span
+        class="svg-wrapper faq-accordion__icon"
+        aria-hidden="true"
+      >
+        {{- 'icon-plus.svg' | inline_asset_content -}}
+      </span>
+    </summary>
+
+    {%- if answer != blank -%}
+      <div class="faq-accordion__answer rte">{{ answer }}</div>
+    {%- endif -%}
+  </details>
+{%- endif -%}
+
+{% stylesheet %}
+  .faq-accordion {
+    border-block-start: var(--style-border-width) solid var(--color-border);
+  }
+
+  .faq-accordion__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-lg);
+    min-height: var(--minimum-touch-target);
+    padding-block: var(--padding-lg);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .faq-accordion__question {
+    font-size: var(--font-size--md);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 990px) {
+      font-size: var(--font-size--lg);
+    }
+  }
+
+  .faq-accordion__icon {
+    flex-shrink: 0;
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-foreground);
+
+    .horizontal {
+      transform-origin: center;
+      transition: transform var(--animation-speed) var(--animation-easing);
+    }
+  }
+
+  /* The "horizontal" path in icon-plus.svg is the vertical stroke; collapsing it leaves a minus */
+  .faq-accordion[open] .faq-accordion__icon .horizontal {
+    transform: scaleY(0);
+  }
+
+  .faq-accordion__answer {
+    padding-block-end: var(--padding-lg);
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+
+    & > * + * {
+      margin-block-start: var(--margin-xs);
+    }
+
+    @media screen and (min-width: 990px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-accordion__icon .horizontal {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

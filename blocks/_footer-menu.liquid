@@ -50,7 +50,7 @@
         href="{{ button_url }}"
         class="footer-menu__button"
         {% if block.settings.button_opens_chat %}
-          data-footer-chat
+          data-chat-trigger
         {% endif %}
       >
         {{- button_label -}}
@@ -59,20 +59,7 @@
   </div>
 
   {% if block.settings.button_opens_chat and button_label != blank %}
-    <script type="module">
-      // Opens Shopify Inbox when it has registered <shopify-chat>; otherwise the link is followed.
-      if (!window.footerChatBound) {
-        window.footerChatBound = true;
-        document.addEventListener('click', (event) => {
-          const trigger = event.target instanceof Element ? event.target.closest('[data-footer-chat]') : null;
-          const chat = document.querySelector('shopify-chat');
-          if (!trigger || !chat || !customElements.get('shopify-chat')) return;
-
-          event.preventDefault();
-          chat.setAttribute('open', '');
-        });
-      }
-    </script>
+    {% render 'chat-trigger-script' %}
   {% endif %}
 {% endif %}
 

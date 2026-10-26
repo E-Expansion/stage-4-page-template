@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "常見問題",
+    "faq_item": "問題",
     "brand_story": "品牌故事",
     "brand_story_stat": "關鍵數據",
     "ugc_grid": "UGC 網格",
@@ -190,6 +192,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "answer": "答案",
+    "question": "問題",
     "stat_value": "數值",
     "account_handle": "帳號名稱",
     "brand_handle": "你的帳號名稱",

@@ -272,6 +272,8 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "faq": "عمومی سوالات",
+    "faq_item": "سوال",
     "brand_story": "برانڈ کی کہانی",
     "brand_story_stat": "اہم عدد",
     "ugc_grid": "UGC گرڈ",
@@ -731,6 +733,8 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "answer": "جواب",
+    "question": "سوال",
     "stat_value": "قدر",
     "account_handle": "اکاؤنٹ کا نام",
     "brand_handle": "آپ کے اکاؤنٹ کا نام",

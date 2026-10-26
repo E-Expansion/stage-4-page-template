@@ -272,6 +272,8 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "faq": "שאלות נפוצות",
+    "faq_item": "שאלה",
     "brand_story": "סיפור המותג",
     "brand_story_stat": "נתון מרכזי",
     "ugc_grid": "רשת UGC",
@@ -731,6 +733,8 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "answer": "תשובה",
+    "question": "שאלה",
     "stat_value": "ערך",
     "account_handle": "שם החשבון",
     "brand_handle": "שם החשבון שלך",

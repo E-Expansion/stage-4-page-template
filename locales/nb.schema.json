@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "Ofte stilte spørsmål",
+    "faq_item": "Spørsmål",
     "brand_story": "Merkevarehistorie",
     "brand_story_stat": "Nøkkeltall",
     "ugc_grid": "UGC-rutenett",
@@ -190,6 +192,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "answer": "Svar",
+    "question": "Spørsmål",
     "stat_value": "Verdi",
     "account_handle": "Kontonavn",
     "brand_handle": "Kontonavnet ditt",

@@ -380,6 +380,69 @@
         "padding-block-end": 48
       }
     },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_delivery": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Orders placed before 15:00 on a working day leave the workshop the same day. Within the Netherlands and Belgium they usually arrive in 1–2 working days, elsewhere in the EU in 2–5.</p>",
+            "open": false
+          }
+        },
+        "faq_returns": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I return something I have used?",
+            "answer": "<p>You can return any item within 30 days. If it has been used, we will inspect it and refund the full amount when it can be restored to as-new condition.</p>",
+            "open": false
+          }
+        },
+        "faq_guarantee": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "What does the 5-year repair guarantee cover?",
+            "answer": "<p>Stitching, hardware, zips and edge finishing are repaired free of charge for five years. Wear from normal use, such as scratches and patina, is part of the leather's character and not covered.</p>",
+            "open": false
+          }
+        },
+        "faq_leather": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Is the leather vegetable-tanned?",
+            "answer": "<p>Yes. All our leather is full-grain and vegetable-tanned at a single tannery forty kilometres from the workshop, without chromium.</p>",
+            "open": false
+          }
+        },
+        "faq_shipping": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Do you ship outside the EU?",
+            "answer": "<p>We ship to the UK, Switzerland, Norway and the United States. Import duties and taxes for orders outside the EU are calculated at checkout.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_delivery",
+        "faq_returns",
+        "faq_guarantee",
+        "faq_leather",
+        "faq_shipping"
+      ],
+      "settings": {
+        "heading": "Questions we get a lot",
+        "text": "<p>Still unsure? Our workshop answers within one working day.</p>",
+        "link_label": "Chat with us",
+        "link_opens_chat": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -588,6 +651,7 @@
     "curated_products",
     "ugc_grid",
     "brand_story",
+    "faq",
     "product_list_fa6P9H"
   ]
 }

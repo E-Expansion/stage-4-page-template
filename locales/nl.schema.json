@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "Veelgestelde vragen",
+    "faq_item": "Vraag",
     "brand_story": "Merkverhaal",
     "brand_story_stat": "Kerncijfer",
     "ugc_grid": "UGC-raster",
@@ -190,6 +192,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "answer": "Antwoord",
+    "question": "Vraag",
     "stat_value": "Waarde",
     "account_handle": "Accountnaam",
     "brand_handle": "Je accountnaam",

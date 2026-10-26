@@ -1,0 +1,45 @@
+{% doc %}
+  Renders one FAQ question and answer through the shared faq-accordion snippet.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% render 'faq-accordion',
+  question: block.settings.question,
+  answer: block.settings.answer,
+  open: block.settings.open,
+  attributes: block.shopify_attributes
+%}
+
+{% schema %}
+{
+  "name": "t:names.faq_item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "t:settings.question",
+      "default": "How long does delivery take?"
+    },
+    {
+      "type": "richtext",
+      "id": "answer",
+      "label": "t:settings.answer",
+      "default": "<p>Orders placed before 15:00 on a working day are dispatched the same day and usually arrive within 1–3 working days.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open",
+      "label": "t:settings.open_by_default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.faq_item"
+    }
+  ]
+}
+{% endschema %}

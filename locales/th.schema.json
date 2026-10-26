@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "คำถามที่พบบ่อย",
+    "faq_item": "คำถาม",
     "brand_story": "เรื่องราวแบรนด์",
     "brand_story_stat": "ตัวเลขสำคัญ",
     "ugc_grid": "ตาราง UGC",
@@ -190,6 +192,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "answer": "คำตอบ",
+    "question": "คำถาม",
     "stat_value": "ค่า",
     "account_handle": "ชื่อบัญชี",
     "brand_handle": "ชื่อบัญชีของคุณ",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "Usein kysytyt kysymykset",
+    "faq_item": "Kysymys",
     "brand_story": "Brändin tarina",
     "brand_story_stat": "Avainluku",
     "ugc_grid": "UGC-ruudukko",
@@ -190,6 +192,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "answer": "Vastaus",
+    "question": "Kysymys",
     "stat_value": "Arvo",
     "account_handle": "Tilin nimi",
     "brand_handle": "Tilisi nimi",

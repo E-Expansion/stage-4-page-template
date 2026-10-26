@@ -272,6 +272,8 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "faq": "الأسئلة الشائعة",
+    "faq_item": "سؤال",
     "brand_story": "قصة العلامة التجارية",
     "brand_story_stat": "رقم رئيسي",
     "ugc_grid": "شبكة محتوى العملاء",
@@ -731,6 +733,8 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "answer": "الإجابة",
+    "question": "السؤال",
     "stat_value": "القيمة",
     "account_handle": "اسم الحساب",
     "brand_handle": "اسم حسابك",

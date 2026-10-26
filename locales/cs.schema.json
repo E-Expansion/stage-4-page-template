@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "Časté dotazy",
+    "faq_item": "Otázka",
     "brand_story": "Příběh značky",
     "brand_story_stat": "Klíčový údaj",
     "ugc_grid": "Mřížka UGC",
@@ -190,6 +192,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "answer": "Odpověď",
+    "question": "Otázka",
     "stat_value": "Hodnota",
     "account_handle": "Název účtu",
     "brand_handle": "Název vašeho účtu",

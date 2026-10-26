@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "Preguntas frecuentes",
+    "faq_item": "Pregunta",
     "brand_story": "Historia de la marca",
     "brand_story_stat": "Cifra clave",
     "ugc_grid": "Cuadrícula UGC",
@@ -190,6 +192,8 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "answer": "Respuesta",
+    "question": "Pregunta",
     "stat_value": "Valor",
     "account_handle": "Nombre de la cuenta",
     "brand_handle": "Nombre de tu cuenta",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "faq": "FAQ",
+    "faq_item": "Frage",
     "brand_story": "Markengeschichte",
     "brand_story_stat": "Kennzahl",
     "ugc_grid": "UGC-Raster",
@@ -190,6 +192,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "answer": "Antwort",
+    "question": "Frage",
     "stat_value": "Wert",
     "account_handle": "Kontoname",
     "brand_handle": "Dein Kontoname",
