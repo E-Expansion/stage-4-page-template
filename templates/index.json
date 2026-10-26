@@ -254,7 +254,12 @@
       "settings": {
         "heading": "Curated products",
         "subheading": "Hand picked by our team at Atelier",
-        "products": [],
+        "products": [
+          "engraved-watch-strap",
+          "atlas-leather-weekender-bag",
+          "compass-leather-keychain",
+          "heritage-leather-wallet"
+        ],
         "max_products": 4,
         "columns": 4,
         "badge_1_tag": "best-seller",
