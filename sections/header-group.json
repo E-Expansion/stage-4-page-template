@@ -17,14 +17,18 @@
         "item_returns": {
           "type": "_top-bar-item",
           "settings": {
-            "text": "30-day free returns"
-          }
+            "text": "30-day free returns",
+            "link": ""
+          },
+          "blocks": {}
         },
         "item_support": {
           "type": "_top-bar-item",
           "settings": {
-            "text": "Support: Mon-Fri 9-17"
-          }
+            "text": "Support: Mon-Fri 9-17",
+            "link": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -33,36 +37,19 @@
       ],
       "settings": {
         "free_shipping_threshold": 75,
-        "background_color": "{{ settings.color_palette.foreground }}"
-      }
-    },
-    "header_announcements_9jGBFp": {
-      "type": "header-announcements",
-      "blocks": {
-        "announcement_BxgCk9": {
-          "type": "_announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "announcement_BxgCk9"
-      ],
-      "name": "t:names.announcement_bar",
-      "settings": {
-        "speed": 5,
+        "free_shipping_text": "Free shipping on orders over [threshold]",
+        "free_shipping_remaining_text": "you are [amount] away",
+        "free_shipping_success_text": "You've unlocked free shipping",
+        "show_indicator": true,
+        "indicator_color": "",
+        "font": "var(--font-body--family)",
+        "font_size": "0.875rem",
+        "font_size_mobile": "0.75rem",
         "section_width": "page-width",
-        "background_color": "{{ settings.color_palette.background }}",
-        "divider_width": 1,
-        "divider_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "background_color": "{{ settings.color_palette.foreground }}",
+        "text_color": "",
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     },
     "header_section": {
@@ -87,21 +74,24 @@
                   "settings": {
                     "label": "Bifold wallets",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c1_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Card holders",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c1_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Coin pouches",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -122,21 +112,24 @@
                   "settings": {
                     "label": "Key rings",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c2_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Key organizers",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c2_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Lanyards",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -157,21 +150,24 @@
                   "settings": {
                     "label": "Pens",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c3_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Notebooks",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "everyday_carry_c3_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Phone cases",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -206,21 +202,24 @@
                   "settings": {
                     "label": "Desk trays",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "small_goods_c1_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Cable organizers",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "small_goods_c1_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Coasters",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -241,21 +240,24 @@
                   "settings": {
                     "label": "Catchalls",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "small_goods_c2_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Candles",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "small_goods_c2_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Storage boxes",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -276,14 +278,16 @@
                   "settings": {
                     "label": "Gift sets",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "small_goods_c3_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Gift cards",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -317,21 +321,24 @@
                   "settings": {
                     "label": "Weekenders",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "travel_c1_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Totes",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "travel_c1_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Backpacks",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -352,21 +359,24 @@
                   "settings": {
                     "label": "Passport holders",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "travel_c2_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Packing cubes",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "travel_c2_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Toiletry bags",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -387,14 +397,16 @@
                   "settings": {
                     "label": "Luggage tags",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "travel_c3_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Travel wallets",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -428,21 +440,24 @@
                   "settings": {
                     "label": "Leather balm",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "refill_care_c1_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Cleaning kits",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "refill_care_c1_l3": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Brushes",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -463,14 +478,16 @@
                   "settings": {
                     "label": "Ink refills",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "refill_care_c2_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Notebook refills",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -490,14 +507,16 @@
                   "settings": {
                     "label": "Repair service",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 },
                 "refill_care_c3_l2": {
                   "type": "_header-mega-link",
                   "settings": {
                     "label": "Care guide",
                     "link": "shopify://collections/all"
-                  }
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -517,14 +536,16 @@
           "settings": {
             "label": "Journal",
             "link": "shopify://blogs/news"
-          }
+          },
+          "blocks": {}
         },
         "utility_contact": {
           "type": "_header-utility-link",
           "settings": {
             "label": "Contact",
             "link": "shopify://pages/contact"
-          }
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -549,6 +570,7 @@
         "section_width": "page-width",
         "enable_sticky_header": true,
         "background_color": "{{ settings.color_palette.background }}",
+        "text_color": "",
         "cart_bubble_color": "{{ settings.color_palette.color3 }}",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}"
@@ -557,7 +579,6 @@
   },
   "order": [
     "top_bar",
-    "header_announcements_9jGBFp",
     "header_section"
   ]
 }
