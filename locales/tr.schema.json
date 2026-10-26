@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Basında yer alma",
+    "press_mentions": "Basında yer almalar",
     "category_card": "Kategori kartı",
     "category_selector": "Kategori seçici",
     "usp_bar": "Avantaj çubuğu",
@@ -183,6 +185,13 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "article_link": "Makale bağlantısı",
+    "author_image": "Yazar fotoğrafı",
+    "author_name": "Yazar adı",
+    "logo_height": "Logo yüksekliği",
+    "press_mentions_mobile_visible": "\"Devamını oku\" öncesi görünen kartlar",
+    "publication": "Yayın",
+    "quote": "Alıntı",
     "link_color": "Bağlantı rengi",
     "link_label": "Bağlantı etiketi",
     "link_label_mobile": "Mobilde bağlantı etiketi",
@@ -899,6 +908,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "author": "Yazar",
     "button": "Düğme",
     "footer_bottom_bar": "Alt çubuk",
     "free_shipping": "Ücretsiz kargo",
@@ -1125,6 +1135,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "press_mention_publication": "Logonun alternatif metni olarak kullanılır ve logo yüklenmediğinde metin olarak gösterilir",
     "category_card_image": "Koleksiyon görselini kullanmak için boş bırakın",
     "category_card_title": "Koleksiyon başlığını kullanmak için boş bırakın",
     "usp_item_image": "Simgenin yerine geçer",

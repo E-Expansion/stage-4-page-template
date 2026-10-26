@@ -1,0 +1,267 @@
+{% doc %}
+  Renders one press mention card: publication logo (or its name as text), a quote and
+  the author with a small profile picture. Lives inside the grid owned by
+  sections/press-mentions.liquid.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign publication = block.settings.publication | escape
+  assign quote = block.settings.quote | escape
+  assign author = block.settings.author | escape
+  assign logo = block.settings.logo
+  assign logo_height = block.settings.logo_height
+
+  # Cards past the section's mobile limit can be collapsed behind "Read more".
+  assign block_index = section.blocks | find_index: 'id', block.id
+  assign is_overflow = false
+  if section.settings.mobile_visible and block_index >= section.settings.mobile_visible
+    assign is_overflow = true
+  endif
+%}
+
+<li
+  class="press-mention{% if is_overflow %} press-mention--overflow{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <figure class="press-mention__figure">
+    {% if block.settings.link != blank %}
+      <a
+        href="{{ block.settings.link }}"
+        class="press-mention__logo"
+        style="--press-mention-logo-height: {{ logo_height }}px;"
+        target="_blank"
+        rel="noopener"
+      >
+    {% else %}
+      <div
+        class="press-mention__logo"
+        style="--press-mention-logo-height: {{ logo_height }}px;"
+      >
+    {% endif %}
+      {% if logo != blank %}
+        {% liquid
+          assign logo_width = logo.aspect_ratio | times: logo_height | round
+        %}
+        {{
+          logo
+          | image_url: width: 600
+          | image_tag:
+            width: logo_width,
+            height: logo_height,
+            alt: publication,
+            loading: 'lazy',
+            class: 'press-mention__logo-image'
+        }}
+      {% elsif publication != blank %}
+        <span class="press-mention__logo-text">{{ publication }}</span>
+      {% endif %}
+    {% if block.settings.link != blank %}
+      </a>
+    {% else %}
+      </div>
+    {% endif %}
+
+    {% if quote != blank %}
+      <blockquote
+        class="press-mention__quote"
+        {% if block.settings.link != blank %}
+          cite="{{ block.settings.link }}"
+        {% endif %}
+      >
+        <p>{{ quote }}</p>
+      </blockquote>
+    {% endif %}
+
+    {% if author != blank %}
+      <figcaption class="press-mention__caption">
+        <span class="press-mention__author">
+            {% if block.settings.author_image != blank %}
+              {{
+                block.settings.author_image
+                | image_url: width: 96, height: 96, crop: 'center'
+                | image_tag: width: 24, height: 24, alt: '', loading: 'lazy', class: 'press-mention__avatar'
+              }}
+            {% else %}
+              <span
+                class="press-mention__avatar press-mention__avatar--initial"
+                aria-hidden="true"
+              >
+                {{- author | slice: 0 | upcase -}}
+              </span>
+            {% endif %}
+            <span class="press-mention__author-name">
+              {{- author -}}
+              {%- if publication != blank -%}
+                <span class="visually-hidden">, {{ publication }}</span>
+              {%- endif -%}
+            </span>
+          </span>
+      </figcaption>
+    {% endif %}
+  </figure>
+</li>
+
+{% stylesheet %}
+  .press-mention {
+    min-width: 0;
+    padding: var(--padding-4xl) var(--padding-2xl);
+    box-shadow: var(--style-border-width) 0 0 var(--color-border), 0 var(--style-border-width) 0 var(--color-border);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-2xl) var(--padding-2xl) var(--padding-3xl);
+    }
+  }
+
+  .press-mention__figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xl);
+    height: 100%;
+    margin: 0;
+  }
+
+  .press-mention__logo {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: var(--press-mention-logo-height);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .press-mention__logo-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: var(--press-mention-logo-height);
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .press-mention__logo-text {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--xl);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-sm);
+  }
+
+  .press-mention__quote {
+    margin: 0;
+    margin-block-start: auto;
+    font-size: var(--font-size--md);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    & p {
+      margin: 0;
+    }
+
+    & p::before {
+      content: open-quote;
+    }
+
+    & p::after {
+      content: close-quote;
+    }
+  }
+
+  .press-mention__caption {
+    display: flex;
+    margin-block-start: calc(var(--gap-md) - var(--gap-2xl));
+  }
+
+  .press-mention__author {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-width: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground);
+  }
+
+  .press-mention__avatar {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .press-mention__avatar--initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size--3xs);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+  }
+
+  .press-mention__author-name {
+    overflow-wrap: anywhere;
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.press_mention",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "publication",
+      "label": "t:settings.publication",
+      "info": "t:info.press_mention_publication",
+      "default": "Publication"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:settings.logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "t:settings.logo_height",
+      "min": 12,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "t:settings.quote",
+      "default": "Craftsmanship with a quiet, enduring confidence."
+    },
+    {
+      "type": "header",
+      "content": "t:content.author"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "t:settings.author_name"
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "t:settings.author_image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.article_link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.press_mention"
+    }
+  ]
+}
+{% endschema %}

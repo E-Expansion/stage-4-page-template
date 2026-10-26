@@ -1,0 +1,245 @@
+{% comment %}
+  Section contract.
+  "As featured in" grid of press mentions: publication logo, quote and author.
+  Desktop shows every card in a bordered grid. Mobile stacks the cards and, once
+  JavaScript runs, collapses everything after the first few behind a "Read more"
+  button; without JavaScript all cards stay visible.
+  @example
+  <!-- Homepage > Add section > Press mentions; add a mention per publication -->
+{% endcomment %}
+
+{% liquid
+  assign heading = section.settings.heading | escape
+  assign button_label = section.settings.button_label | escape
+  assign mobile_limit = section.settings.mobile_visible
+  assign can_collapse = false
+  if section.blocks.size > mobile_limit and button_label != blank
+    assign can_collapse = true
+  endif
+%}
+
+{% if can_collapse %}
+  <script
+    src="{{ 'press-mentions.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+{% endif %}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  border_color: section.settings.border_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="press-mentions section section--{{ section.settings.section_width }} spacing-style color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --press-mentions-columns: {{ section.settings.columns }};
+    {% if section.settings.link_color != blank %}--press-mentions-link-color: {{ section.settings.link_color }};{% endif %}
+  "
+>
+  <press-mentions-component class="press-mentions__inner">
+    {% if heading != blank %}
+      <h2 class="press-mentions__heading">{{ heading }}</h2>
+    {% endif %}
+
+    <ul
+      id="PressMentions-{{ section.id }}"
+      class="press-mentions__grid list-unstyled"
+      ref="grid"
+    >
+      {% content_for 'blocks' %}
+    </ul>
+
+    {% if can_collapse %}
+      <button
+        type="button"
+        class="press-mentions__more button-unstyled"
+        ref="moreButton"
+        aria-controls="PressMentions-{{ section.id }}"
+        aria-expanded="true"
+        hidden
+        on:click="/expand"
+      >
+        {{- button_label -}}
+      </button>
+    {% endif %}
+  </press-mentions-component>
+</div>
+
+{% stylesheet %}
+  .press-mentions__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-xl);
+    min-width: 0;
+  }
+
+  .press-mentions__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-normal);
+    letter-spacing: var(--letter-spacing--heading-tight);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  /* Cards draw their own inline-end and block-end lines; the clipped container border closes the grid */
+  .press-mentions__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--press-mentions-columns), minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .press-mentions__grid[data-collapsed] > .press-mention--overflow {
+      display: none;
+    }
+  }
+
+  .press-mentions__more {
+    color: var(--press-mentions-link-color, var(--color-foreground));
+    font-size: var(--font-size--md);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    cursor: pointer;
+
+    &[hidden] {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.press_mentions",
+  "blocks": [
+    {
+      "type": "_press-mention"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "As featured in"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "t:content.mobile_layout"
+    },
+    {
+      "type": "range",
+      "id": "mobile_visible",
+      "label": "t:settings.press_mentions_mobile_visible",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "default": "Read more"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.section_width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "t:settings.link_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.press_mentions",
+      "blocks": {
+        "mention_1": { "type": "_press-mention" },
+        "mention_2": { "type": "_press-mention" },
+        "mention_3": { "type": "_press-mention" }
+      },
+      "block_order": ["mention_1", "mention_2", "mention_3"]
+    }
+  ]
+}
+{% endschema %}

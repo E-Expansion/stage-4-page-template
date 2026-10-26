@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Persvermelding",
+    "press_mentions": "Persvermeldingen",
     "category_card": "Categoriekaart",
     "category_selector": "Categoriekiezer",
     "usp_bar": "USP-balk",
@@ -183,6 +185,13 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "article_link": "Link naar artikel",
+    "author_image": "Foto van auteur",
+    "author_name": "Naam van auteur",
+    "logo_height": "Logohoogte",
+    "press_mentions_mobile_visible": "Zichtbare kaarten vóór \"Lees meer\"",
+    "publication": "Publicatie",
+    "quote": "Citaat",
     "link_color": "Linkkleur",
     "link_label": "Linklabel",
     "link_label_mobile": "Linklabel op mobiel",
@@ -899,6 +908,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "author": "Auteur",
     "button": "Knop",
     "footer_bottom_bar": "Onderbalk",
     "free_shipping": "Gratis verzending",
@@ -1125,6 +1135,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "press_mention_publication": "Gebruikt als alt-tekst van het logo en getoond als tekst wanneer er geen logo is geüpload",
     "category_card_image": "Laat leeg om de collectieafbeelding te gebruiken",
     "category_card_title": "Laat leeg om de collectietitel te gebruiken",
     "usp_item_image": "Vervangt het icoon",

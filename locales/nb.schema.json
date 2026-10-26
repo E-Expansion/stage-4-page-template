@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Presseomtale",
+    "press_mentions": "Presseomtaler",
     "category_card": "Kategorikort",
     "category_selector": "Kategorivelger",
     "usp_bar": "USP-linje",
@@ -183,6 +185,13 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "article_link": "Lenke til artikkel",
+    "author_image": "Forfatterbilde",
+    "author_name": "Forfatternavn",
+    "logo_height": "Logohøyde",
+    "press_mentions_mobile_visible": "Synlige kort før «Les mer»",
+    "publication": "Publikasjon",
+    "quote": "Sitat",
     "link_color": "Lenkefarge",
     "link_label": "Lenketekst",
     "link_label_mobile": "Lenketekst på mobil",
@@ -899,6 +908,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "author": "Forfatter",
     "button": "Knapp",
     "footer_bottom_bar": "Bunnlinje",
     "free_shipping": "Gratis frakt",
@@ -1125,6 +1135,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "press_mention_publication": "Brukes som logoens alt-tekst og vises som tekst når ingen logo er lastet opp",
     "category_card_image": "La stå tomt for å bruke kolleksjonsbildet",
     "category_card_title": "La stå tomt for å bruke kolleksjonstittelen",
     "usp_item_image": "Erstatter ikonet",

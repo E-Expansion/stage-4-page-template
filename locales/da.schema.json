@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Presseomtale",
+    "press_mentions": "Presseomtaler",
     "category_card": "Kategorikort",
     "category_selector": "Kategorivælger",
     "usp_bar": "USP-bjælke",
@@ -183,6 +185,13 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "article_link": "Link til artikel",
+    "author_image": "Forfatterfoto",
+    "author_name": "Forfatternavn",
+    "logo_height": "Logohøjde",
+    "press_mentions_mobile_visible": "Synlige kort før \"Læs mere\"",
+    "publication": "Publikation",
+    "quote": "Citat",
     "link_color": "Linkfarve",
     "link_label": "Linktekst",
     "link_label_mobile": "Linktekst på mobil",
@@ -899,6 +908,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "author": "Forfatter",
     "button": "Knap",
     "footer_bottom_bar": "Bundbjælke",
     "free_shipping": "Gratis fragt",
@@ -1125,6 +1135,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "press_mention_publication": "Bruges som logoets alt-tekst og vises som tekst, når der ikke er uploadet et logo",
     "category_card_image": "Lad være tom for at bruge kollektionens billede",
     "category_card_title": "Lad være tom for at bruge kollektionens titel",
     "usp_item_image": "Erstatter ikonet",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Presseerwähnung",
+    "press_mentions": "Presseerwähnungen",
     "category_card": "Kategoriekarte",
     "category_selector": "Kategorieauswahl",
     "usp_bar": "USP-Leiste",
@@ -183,6 +185,13 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "article_link": "Artikel-Link",
+    "author_image": "Autorenfoto",
+    "author_name": "Name des Autors",
+    "logo_height": "Logohöhe",
+    "press_mentions_mobile_visible": "Sichtbare Karten vor \"Mehr lesen\"",
+    "publication": "Publikation",
+    "quote": "Zitat",
     "link_color": "Linkfarbe",
     "link_label": "Linkbeschriftung",
     "link_label_mobile": "Linkbeschriftung auf Mobilgeräten",
@@ -899,6 +908,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "author": "Autor",
     "button": "Button",
     "footer_bottom_bar": "Untere Leiste",
     "free_shipping": "Kostenloser Versand",
@@ -1125,6 +1135,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "press_mention_publication": "Wird als Alt-Text des Logos verwendet und als Text angezeigt, wenn kein Logo hochgeladen ist",
     "category_card_image": "Leer lassen, um das Kollektionsbild zu verwenden",
     "category_card_title": "Leer lassen, um den Kollektionstitel zu verwenden",
     "usp_item_image": "Ersetzt das Symbol",

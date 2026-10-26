@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Pressomnämnande",
+    "press_mentions": "Pressomnämnanden",
     "category_card": "Kategorikort",
     "category_selector": "Kategoriväljare",
     "usp_bar": "USP-fält",
@@ -183,6 +185,13 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "article_link": "Länk till artikel",
+    "author_image": "Författarfoto",
+    "author_name": "Författarens namn",
+    "logo_height": "Logotypens höjd",
+    "press_mentions_mobile_visible": "Synliga kort före \"Läs mer\"",
+    "publication": "Publikation",
+    "quote": "Citat",
     "link_color": "Länkfärg",
     "link_label": "Länketikett",
     "link_label_mobile": "Länketikett på mobil",
@@ -899,6 +908,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "author": "Författare",
     "button": "Knapp",
     "footer_bottom_bar": "Bottenfält",
     "free_shipping": "Fri frakt",
@@ -1125,6 +1135,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "press_mention_publication": "Används som logotypens alt-text och visas som text när ingen logotyp har laddats upp",
     "category_card_image": "Lämna tomt för att använda kollektionens bild",
     "category_card_title": "Lämna tomt för att använda kollektionens titel",
     "usp_item_image": "Ersätter ikonen",

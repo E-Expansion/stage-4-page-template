@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Menção na imprensa",
+    "press_mentions": "Menções na imprensa",
     "category_card": "Cartão de categoria",
     "category_selector": "Seletor de categorias",
     "usp_bar": "Barra de vantagens",
@@ -183,6 +185,13 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "article_link": "Ligação do artigo",
+    "author_image": "Fotografia do autor",
+    "author_name": "Nome do autor",
+    "logo_height": "Altura do logótipo",
+    "press_mentions_mobile_visible": "Cartões visíveis antes de \"Ler mais\"",
+    "publication": "Publicação",
+    "quote": "Citação",
     "link_color": "Cor da ligação",
     "link_label": "Etiqueta da ligação",
     "link_label_mobile": "Etiqueta da ligação no telemóvel",
@@ -899,6 +908,7 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "author": "Autor",
     "button": "Botão",
     "footer_bottom_bar": "Barra inferior",
     "free_shipping": "Envio gratuito",
@@ -1125,6 +1135,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "press_mention_publication": "Utilizado como texto alternativo do logótipo e apresentado como texto quando não há logótipo",
     "category_card_image": "Deixe vazio para utilizar a imagem da coleção",
     "category_card_title": "Deixe vazio para utilizar o título da coleção",
     "usp_item_image": "Substitui o ícone",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "การกล่าวถึงในสื่อ",
+    "press_mentions": "การกล่าวถึงในสื่อ",
     "category_card": "การ์ดหมวดหมู่",
     "category_selector": "ตัวเลือกหมวดหมู่",
     "usp_bar": "แถบจุดเด่น",
@@ -183,6 +185,13 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "article_link": "ลิงก์บทความ",
+    "author_image": "รูปผู้เขียน",
+    "author_name": "ชื่อผู้เขียน",
+    "logo_height": "ความสูงของโลโก้",
+    "press_mentions_mobile_visible": "การ์ดที่แสดงก่อน \"อ่านเพิ่มเติม\"",
+    "publication": "สื่อ",
+    "quote": "คำพูด",
     "link_color": "สีลิงก์",
     "link_label": "ป้ายกำกับลิงก์",
     "link_label_mobile": "ป้ายกำกับลิงก์บนมือถือ",
@@ -899,6 +908,7 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "author": "ผู้เขียน",
     "button": "ปุ่ม",
     "footer_bottom_bar": "แถบด้านล่าง",
     "free_shipping": "จัดส่งฟรี",
@@ -1125,6 +1135,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "press_mention_publication": "ใช้เป็นข้อความแสดงแทนของโลโก้ และแสดงเป็นข้อความเมื่อไม่มีโลโก้",
     "category_card_image": "เว้นว่างไว้เพื่อใช้รูปภาพคอลเลกชัน",
     "category_card_title": "เว้นว่างไว้เพื่อใช้ชื่อคอลเลกชัน",
     "usp_item_image": "แทนที่ไอคอน",

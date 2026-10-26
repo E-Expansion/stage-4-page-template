@@ -328,12 +328,92 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "press_mentions": {
+      "type": "press-mentions",
+      "blocks": {
+        "mention_vogue": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Vogue",
+            "logo_height": 32,
+            "quote": "Craftsmanship with a quiet, enduring confidence.",
+            "author": "Author name"
+          }
+        },
+        "mention_esquire": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Esquire",
+            "logo_height": 32,
+            "quote": "The kind of leather goods that only get better with age.",
+            "author": "Author name"
+          }
+        },
+        "mention_mens_health": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Men's Health",
+            "logo_height": 32,
+            "quote": "Built for the everyday, without looking ordinary.",
+            "author": "Author name"
+          }
+        },
+        "mention_cosmopolitan": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Cosmopolitan",
+            "logo_height": 32,
+            "quote": "Thoughtful essentials worth carrying everywhere.",
+            "author": "Author name"
+          }
+        },
+        "mention_marie_claire": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Marie Claire",
+            "logo_height": 32,
+            "quote": "Modern heirlooms, made with rare attention to detail.",
+            "author": "Author name"
+          }
+        },
+        "mention_monocle": {
+          "type": "_press-mention",
+          "settings": {
+            "publication": "Monocle",
+            "logo_height": 32,
+            "quote": "An honest approach to materials, form and longevity.",
+            "author": "Author name"
+          }
+        }
+      },
+      "block_order": [
+        "mention_vogue",
+        "mention_esquire",
+        "mention_mens_health",
+        "mention_cosmopolitan",
+        "mention_marie_claire",
+        "mention_monocle"
+      ],
+      "settings": {
+        "heading": "As featured in",
+        "columns": 3,
+        "mobile_visible": 3,
+        "button_label": "Read more",
+        "section_width": "page-width",
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "hero_banner",
     "usp_bar",
     "category_selector",
+    "press_mentions",
     "product_list_fa6P9H"
   ]
 }

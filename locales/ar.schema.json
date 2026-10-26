@@ -30,6 +30,7 @@
     "text": "نص"
   },
   "content": {
+    "author": "المؤلف",
     "button": "زر",
     "footer_bottom_bar": "الشريط السفلي",
     "free_shipping": "شحن مجاني",
@@ -218,6 +219,7 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "press_mention_publication": "يُستخدم كنص بديل للشعار ويُعرض كنص عند عدم تحميل شعار",
     "category_card_image": "اتركه فارغًا لاستخدام صورة المجموعة",
     "category_card_title": "اتركه فارغًا لاستخدام عنوان المجموعة",
     "usp_item_image": "يحل محل الأيقونة",
@@ -263,6 +265,8 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "press_mention": "إشادة صحفية",
+    "press_mentions": "إشادات صحفية",
     "category_card": "بطاقة الفئة",
     "category_selector": "محدد الفئات",
     "usp_bar": "شريط المزايا",
@@ -715,6 +719,13 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "article_link": "رابط المقال",
+    "author_image": "صورة المؤلف",
+    "author_name": "اسم المؤلف",
+    "logo_height": "ارتفاع الشعار",
+    "press_mentions_mobile_visible": "البطاقات الظاهرة قبل \"اقرأ المزيد\"",
+    "publication": "المنشور",
+    "quote": "اقتباس",
     "link_color": "لون الرابط",
     "link_label": "تسمية الرابط",
     "link_label_mobile": "تسمية الرابط على الجوال",

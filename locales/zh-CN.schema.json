@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "媒体报道",
+    "press_mentions": "媒体报道",
     "category_card": "类别卡片",
     "category_selector": "类别选择器",
     "usp_bar": "卖点栏",
@@ -183,6 +185,13 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "article_link": "文章链接",
+    "author_image": "作者照片",
+    "author_name": "作者姓名",
+    "logo_height": "徽标高度",
+    "press_mentions_mobile_visible": "“阅读更多”前显示的卡片数",
+    "publication": "媒体",
+    "quote": "引言",
     "link_color": "链接颜色",
     "link_label": "链接标签",
     "link_label_mobile": "移动端链接标签",
@@ -899,6 +908,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "author": "作者",
     "button": "按钮",
     "footer_bottom_bar": "底部栏",
     "free_shipping": "免费配送",
@@ -1125,6 +1135,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "press_mention_publication": "用作徽标的替代文本；未上传徽标时以文本显示",
     "category_card_image": "留空以使用产品系列图片",
     "category_card_title": "留空以使用产品系列标题",
     "usp_item_image": "替换图标",

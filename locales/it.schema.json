@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Menzione stampa",
+    "press_mentions": "Menzioni stampa",
     "category_card": "Scheda categoria",
     "category_selector": "Selettore di categorie",
     "usp_bar": "Barra dei vantaggi",
@@ -183,6 +185,13 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "article_link": "Link all'articolo",
+    "author_image": "Foto dell'autore",
+    "author_name": "Nome dell'autore",
+    "logo_height": "Altezza del logo",
+    "press_mentions_mobile_visible": "Schede visibili prima di \"Leggi di più\"",
+    "publication": "Pubblicazione",
+    "quote": "Citazione",
     "link_color": "Colore del link",
     "link_label": "Etichetta del link",
     "link_label_mobile": "Etichetta del link su mobile",
@@ -899,6 +908,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "author": "Autore",
     "button": "Pulsante",
     "footer_bottom_bar": "Barra inferiore",
     "free_shipping": "Spedizione gratuita",
@@ -1125,6 +1135,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "press_mention_publication": "Usato come testo alternativo del logo e mostrato come testo se non è caricato un logo",
     "category_card_image": "Lascia vuoto per usare l'immagine della collezione",
     "category_card_title": "Lascia vuoto per usare il titolo della collezione",
     "usp_item_image": "Sostituisce l'icona",

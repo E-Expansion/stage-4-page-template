@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Lehdistömaininta",
+    "press_mentions": "Lehdistömaininnat",
     "category_card": "Kategoriakortti",
     "category_selector": "Kategoriavalitsin",
     "usp_bar": "USP-palkki",
@@ -183,6 +185,13 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "article_link": "Artikkelin linkki",
+    "author_image": "Kirjoittajan kuva",
+    "author_name": "Kirjoittajan nimi",
+    "logo_height": "Logon korkeus",
+    "press_mentions_mobile_visible": "Näkyvät kortit ennen \"Lue lisää\"",
+    "publication": "Julkaisu",
+    "quote": "Lainaus",
     "link_color": "Linkin väri",
     "link_label": "Linkin teksti",
     "link_label_mobile": "Linkin teksti mobiilissa",
@@ -899,6 +908,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "author": "Kirjoittaja",
     "button": "Painike",
     "footer_bottom_bar": "Alapalkki",
     "free_shipping": "Ilmainen toimitus",
@@ -1125,6 +1135,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "press_mention_publication": "Käytetään logon vaihtoehtoisena tekstinä ja näytetään tekstinä, jos logoa ei ole ladattu",
     "category_card_image": "Jätä tyhjäksi käyttääksesi kokoelman kuvaa",
     "category_card_title": "Jätä tyhjäksi käyttääksesi kokoelman otsikkoa",
     "usp_item_image": "Korvaa kuvakkeen",

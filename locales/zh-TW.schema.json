@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "媒體報導",
+    "press_mentions": "媒體報導",
     "category_card": "類別卡片",
     "category_selector": "類別選擇器",
     "usp_bar": "賣點列",
@@ -183,6 +185,13 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "article_link": "文章連結",
+    "author_image": "作者照片",
+    "author_name": "作者姓名",
+    "logo_height": "標誌高度",
+    "press_mentions_mobile_visible": "「閱讀更多」前顯示的卡片數",
+    "publication": "媒體",
+    "quote": "引言",
     "link_color": "連結顏色",
     "link_label": "連結標籤",
     "link_label_mobile": "行動版連結標籤",
@@ -899,6 +908,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "author": "作者",
     "button": "按鈕",
     "footer_bottom_bar": "底部列",
     "free_shipping": "免運費",
@@ -1125,6 +1135,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "press_mention_publication": "用作標誌的替代文字；未上傳標誌時以文字顯示",
     "category_card_image": "留空以使用商品系列圖片",
     "category_card_title": "留空以使用商品系列標題",
     "usp_item_image": "取代圖示",

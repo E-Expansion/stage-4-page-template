@@ -30,6 +30,7 @@
     "text": "טקסט"
   },
   "content": {
+    "author": "מחבר",
     "button": "כפתור",
     "footer_bottom_bar": "סרגל תחתון",
     "free_shipping": "משלוח חינם",
@@ -218,6 +219,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "press_mention_publication": "משמש כטקסט חלופי ללוגו ומוצג כטקסט כשלא הועלה לוגו",
     "category_card_image": "השאר ריק כדי להשתמש בתמונת הקולקציה",
     "category_card_title": "השאר ריק כדי להשתמש בכותרת הקולקציה",
     "usp_item_image": "מחליף את הסמל",
@@ -263,6 +265,8 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "press_mention": "אזכור בעיתונות",
+    "press_mentions": "אזכורים בעיתונות",
     "category_card": "כרטיס קטגוריה",
     "category_selector": "בורר קטגוריות",
     "usp_bar": "סרגל יתרונות",
@@ -715,6 +719,13 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "article_link": "קישור לכתבה",
+    "author_image": "תמונת המחבר",
+    "author_name": "שם המחבר",
+    "logo_height": "גובה הלוגו",
+    "press_mentions_mobile_visible": "כרטיסים גלויים לפני \"קרא עוד\"",
+    "publication": "פרסום",
+    "quote": "ציטוט",
     "link_color": "צבע קישור",
     "link_label": "תווית קישור",
     "link_label_mobile": "תווית קישור בנייד",

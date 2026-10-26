@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "author": "Author",
     "button": "Button",
     "footer_bottom_bar": "Bottom bar",
     "free_shipping": "Free shipping",
@@ -226,6 +227,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "press_mention_publication": "Used as the logo's alt text, and shown as text when no logo is uploaded",
     "category_card_image": "Leave empty to use the collection image",
     "category_card_title": "Leave empty to use the collection title",
     "usp_item_image": "Replaces the icon",
@@ -271,6 +273,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "press_mention": "Press mention",
+    "press_mentions": "Press mentions",
     "category_card": "Category card",
     "category_selector": "Category selector",
     "usp_bar": "USP bar",
@@ -767,6 +771,13 @@
     "below_media": "Below media"
   },
   "settings": {
+    "article_link": "Article link",
+    "author_image": "Author photo",
+    "author_name": "Author name",
+    "logo_height": "Logo height",
+    "press_mentions_mobile_visible": "Cards visible before \"Read more\"",
+    "publication": "Publication",
+    "quote": "Quote",
     "link_color": "Link color",
     "link_label": "Link label",
     "link_label_mobile": "Link label on mobile",

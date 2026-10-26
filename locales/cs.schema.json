@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "press_mention": "Zmínka v tisku",
+    "press_mentions": "Zmínky v tisku",
     "category_card": "Karta kategorie",
     "category_selector": "Výběr kategorií",
     "usp_bar": "Lišta výhod",
@@ -183,6 +185,13 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "article_link": "Odkaz na článek",
+    "author_image": "Fotografie autora",
+    "author_name": "Jméno autora",
+    "logo_height": "Výška loga",
+    "press_mentions_mobile_visible": "Viditelné karty před „Číst dále“",
+    "publication": "Publikace",
+    "quote": "Citát",
     "link_color": "Barva odkazu",
     "link_label": "Popisek odkazu",
     "link_label_mobile": "Popisek odkazu na mobilu",
@@ -899,6 +908,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "author": "Autor",
     "button": "Tlačítko",
     "footer_bottom_bar": "Spodní lišta",
     "free_shipping": "Doprava zdarma",
@@ -1125,6 +1135,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "press_mention_publication": "Použije se jako alternativní text loga a zobrazí se jako text, pokud logo není nahráno",
     "category_card_image": "Ponechte prázdné pro použití obrázku kolekce",
     "category_card_title": "Ponechte prázdné pro použití názvu kolekce",
     "usp_item_image": "Nahradí ikonu",
