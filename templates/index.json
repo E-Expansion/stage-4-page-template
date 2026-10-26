@@ -280,26 +280,38 @@
         "post_milesandmakers": {
           "type": "_ugc-post",
           "settings": {
-            "handle": "milesandmakers"
-          }
+            "image": "shopify://shop_images/miles_and_makers.png",
+            "handle": "milesandmakers",
+            "link": ""
+          },
+          "blocks": {}
         },
         "post_studio_sunday": {
           "type": "_ugc-post",
           "settings": {
-            "handle": "studio.sunday"
-          }
+            "image": "shopify://shop_images/studio_sunday.png",
+            "handle": "studio.sunday",
+            "link": ""
+          },
+          "blocks": {}
         },
         "post_roamingwithjules": {
           "type": "_ugc-post",
           "settings": {
-            "handle": "roamingwithjules"
-          }
+            "image": "shopify://shop_images/roaming_with_jules.png",
+            "handle": "roamingwithjules",
+            "link": ""
+          },
+          "blocks": {}
         },
         "post_wornandloved": {
           "type": "_ugc-post",
           "settings": {
-            "handle": "wornandloved"
-          }
+            "image": "shopify://shop_images/worn_and_loved.png",
+            "handle": "wornandloved",
+            "link": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -311,6 +323,7 @@
       "settings": {
         "heading": "Made for your everyday",
         "brand_handle": "atelier.goods",
+        "brand_link": "",
         "follow_label": "Follow",
         "caption": "Shared by our community. Tag [handle] for a chance to be featured.",
         "columns": 4,
