@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "主橫幅",
     "link": "連結",
     "menu_column": "選單欄",
     "menu_item": "選單項目",
@@ -177,6 +178,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "button_color": "按鈕顏色",
+    "button_label": "按鈕標籤",
+    "mobile_image": "行動版圖片",
+    "mobile_image_ratio": "行動版圖片比例",
+    "subtext": "小字文字",
+    "subtext_mobile": "行動版小字文字",
     "cart_bubble_color": "購物車徽章顏色",
     "placeholder": "預留位置文字",
     "show_account": "顯示帳號",
@@ -1101,6 +1108,10 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "hero_banner_desktop_only": "適用於桌面版，文字顯示在圖片上",
+    "hero_banner_mobile_image": "選填。未設定時使用桌面版圖片",
+    "hero_banner_mobile_only": "適用於行動版，內容顯示在圖片下方",
+    "hero_banner_subtext_mobile": "選填。未設定時使用小字文字",
     "header_logo_source": "在佈景主題設定 > 標誌和網站圖示中上傳標誌。未上傳時會顯示商店名稱。",
     "menu_item_link": "在超級選單中顯示為「查看全部」連結；若該項目沒有欄，則用作項目連結",
     "free_shipping_threshold": "以商店預設幣別計算。設為 0 可隱藏剩餘金額。",

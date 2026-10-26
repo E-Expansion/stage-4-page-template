@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "主横幅",
     "link": "链接",
     "menu_column": "菜单列",
     "menu_item": "菜单项",
@@ -177,6 +178,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "button_color": "按钮颜色",
+    "button_label": "按钮标签",
+    "mobile_image": "移动端图片",
+    "mobile_image_ratio": "移动端图片比例",
+    "subtext": "小号文本",
+    "subtext_mobile": "移动端小号文本",
     "cart_bubble_color": "购物车徽章颜色",
     "placeholder": "占位符",
     "show_account": "显示账户",
@@ -1101,6 +1108,10 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "hero_banner_desktop_only": "适用于桌面端，文本显示在图片上",
+    "hero_banner_mobile_image": "可选。未设置时使用桌面端图片",
+    "hero_banner_mobile_only": "适用于移动端，内容显示在图片下方",
+    "hero_banner_subtext_mobile": "可选。未设置时使用小号文本",
     "header_logo_source": "在主题设置 > 徽标和网站图标中上传徽标。未上传时显示商店名称。",
     "menu_item_link": "在超级菜单中显示为“查看全部”链接；若该项没有列，则用作该项的链接",
     "free_shipping_threshold": "以商店默认货币计。设置为 0 可隐藏剩余金额。",

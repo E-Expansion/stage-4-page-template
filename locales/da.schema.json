@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-banner",
     "link": "Link",
     "menu_column": "Menukolonne",
     "menu_item": "Menupunkt",
@@ -177,6 +178,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "button_color": "Knapfarve",
+    "button_label": "Knaptekst",
+    "mobile_image": "Mobilbillede",
+    "mobile_image_ratio": "Format for mobilbillede",
+    "subtext": "Lille tekst",
+    "subtext_mobile": "Lille tekst på mobil",
     "cart_bubble_color": "Farve på kurvboble",
     "placeholder": "Pladsholder",
     "show_account": "Vis konto",
@@ -1101,6 +1108,10 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "hero_banner_desktop_only": "Gælder på computer, hvor teksten ligger på billedet",
+    "hero_banner_mobile_image": "Valgfrit. Bruger ellers computerbilledet",
+    "hero_banner_mobile_only": "Gælder på mobil, hvor indholdet står under billedet",
+    "hero_banner_subtext_mobile": "Valgfrit. Bruger ellers den lille tekst",
     "header_logo_source": "Upload et logo under Temaindstillinger > Logo og favicon. Uden logo vises butikkens navn.",
     "menu_item_link": "Vises som et \"Se alle\"-link i megamenuen eller bruges som elementets link, når det ikke har kolonner",
     "free_shipping_threshold": "I din butiks standardvaluta. Angiv 0 for at skjule det resterende beløb.",

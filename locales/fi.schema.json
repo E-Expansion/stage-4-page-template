@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-banneri",
     "link": "Linkki",
     "menu_column": "Valikon sarake",
     "menu_item": "Valikon kohde",
@@ -177,6 +178,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "button_color": "Painikkeen väri",
+    "button_label": "Painikkeen teksti",
+    "mobile_image": "Mobiilikuva",
+    "mobile_image_ratio": "Mobiilikuvan kuvasuhde",
+    "subtext": "Pieni teksti",
+    "subtext_mobile": "Pieni teksti mobiilissa",
     "cart_bubble_color": "Ostoskorikuplan väri",
     "placeholder": "Paikkamerkki",
     "show_account": "Näytä tili",
@@ -1101,6 +1108,10 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "hero_banner_desktop_only": "Koskee tietokonetta, jossa teksti on kuvan päällä",
+    "hero_banner_mobile_image": "Valinnainen. Käyttää muuten tietokoneen kuvaa",
+    "hero_banner_mobile_only": "Koskee mobiilia, jossa sisältö on kuvan alla",
+    "hero_banner_subtext_mobile": "Valinnainen. Käyttää muuten pientä tekstiä",
     "header_logo_source": "Lataa logo kohdassa Teeman asetukset > Logo ja favicon. Ilman logoa näytetään kaupan nimi.",
     "menu_item_link": "Näytetään \"Näytä kaikki\" -linkkinä megavalikossa tai käytetään kohteen linkkinä, jos sillä ei ole sarakkeita",
     "free_shipping_threshold": "Kauppasi oletusvaluutassa. Aseta arvoksi 0 piilottaaksesi jäljellä olevan summan.",

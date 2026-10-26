@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Banner principal",
     "link": "Link",
     "menu_column": "Coluna do menu",
     "menu_item": "Item do menu",
@@ -177,6 +178,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "button_color": "Cor do botão",
+    "button_label": "Rótulo do botão",
+    "mobile_image": "Imagem para celular",
+    "mobile_image_ratio": "Proporção da imagem para celular",
+    "subtext": "Texto pequeno",
+    "subtext_mobile": "Texto pequeno no celular",
     "cart_bubble_color": "Cor do indicador do carrinho",
     "placeholder": "Texto de exemplo",
     "show_account": "Mostrar conta",
@@ -1101,6 +1108,10 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "hero_banner_desktop_only": "Aplica-se no desktop, onde o texto fica sobre a imagem",
+    "hero_banner_mobile_image": "Opcional. Usa a imagem do desktop se vazio",
+    "hero_banner_mobile_only": "Aplica-se no celular, onde o conteúdo fica abaixo da imagem",
+    "hero_banner_subtext_mobile": "Opcional. Usa o texto pequeno se vazio",
     "header_logo_source": "Envie um logotipo em Configurações do tema > Logotipo e favicon. Sem ele, o nome da loja é exibido.",
     "menu_item_link": "Exibido como link \"Ver tudo\" no megamenu, ou usado como link do item quando ele não tem colunas",
     "free_shipping_threshold": "Na moeda padrão da sua loja. Defina como 0 para ocultar o valor restante.",

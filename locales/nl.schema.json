@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-banner",
     "link": "Link",
     "menu_column": "Menukolom",
     "menu_item": "Menu-item",
@@ -177,6 +178,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "button_color": "Knopkleur",
+    "button_label": "Knoplabel",
+    "mobile_image": "Mobiele afbeelding",
+    "mobile_image_ratio": "Verhouding mobiele afbeelding",
+    "subtext": "Kleine tekst",
+    "subtext_mobile": "Kleine tekst op mobiel",
     "cart_bubble_color": "Kleur winkelwagenbadge",
     "placeholder": "Tijdelijke tekst",
     "show_account": "Account tonen",
@@ -1101,6 +1108,10 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "hero_banner_desktop_only": "Geldt op desktop, waar de tekst op de afbeelding staat",
+    "hero_banner_mobile_image": "Optioneel. Valt terug op de desktopafbeelding",
+    "hero_banner_mobile_only": "Geldt op mobiel, waar de inhoud onder de afbeelding staat",
+    "hero_banner_subtext_mobile": "Optioneel. Valt terug op de kleine tekst",
     "header_logo_source": "Upload een logo via Thema-instellingen > Logo en favicon. Zonder logo wordt de winkelnaam getoond.",
     "menu_item_link": "Wordt getoond als \"Alles bekijken\"-link in het megamenu, of gebruikt als link wanneer het item geen kolommen heeft",
     "free_shipping_threshold": "In de standaardvaluta van je winkel. Stel in op 0 om het resterende bedrag te verbergen.",

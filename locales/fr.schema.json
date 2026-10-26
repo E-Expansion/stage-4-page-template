@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Bannière principale",
     "link": "Lien",
     "menu_column": "Colonne de menu",
     "menu_item": "Élément de menu",
@@ -177,6 +178,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "button_color": "Couleur du bouton",
+    "button_label": "Libellé du bouton",
+    "mobile_image": "Image mobile",
+    "mobile_image_ratio": "Format de l'image mobile",
+    "subtext": "Petit texte",
+    "subtext_mobile": "Petit texte sur mobile",
     "cart_bubble_color": "Couleur de la pastille du panier",
     "placeholder": "Texte indicatif",
     "show_account": "Afficher le compte",
@@ -1101,6 +1108,10 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "hero_banner_desktop_only": "S'applique sur ordinateur, où le texte est sur l'image",
+    "hero_banner_mobile_image": "Facultatif. Utilise l'image pour ordinateur par défaut",
+    "hero_banner_mobile_only": "S'applique sur mobile, où le contenu est sous l'image",
+    "hero_banner_subtext_mobile": "Facultatif. Utilise le petit texte par défaut",
     "header_logo_source": "Téléversez un logo dans Paramètres du thème > Logo et favicon. Sans logo, le nom de la boutique est affiché.",
     "menu_item_link": "Affiché comme lien « Tout afficher » dans le méga menu, ou utilisé comme lien de l'élément s'il n'a pas de colonnes",
     "free_shipping_threshold": "Dans la devise par défaut de votre boutique. Définissez sur 0 pour masquer le montant restant.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero banner",
     "link": "Bağlantı",
     "menu_column": "Menü sütunu",
     "menu_item": "Menü öğesi",
@@ -177,6 +178,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "button_color": "Düğme rengi",
+    "button_label": "Düğme etiketi",
+    "mobile_image": "Mobil görsel",
+    "mobile_image_ratio": "Mobil görsel oranı",
+    "subtext": "Küçük metin",
+    "subtext_mobile": "Mobilde küçük metin",
     "cart_bubble_color": "Sepet balonu rengi",
     "placeholder": "Yer tutucu",
     "show_account": "Hesabı göster",
@@ -1101,6 +1108,10 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "hero_banner_desktop_only": "Metnin görselin üzerinde olduğu masaüstünde geçerlidir",
+    "hero_banner_mobile_image": "İsteğe bağlı. Boşsa masaüstü görseli kullanılır",
+    "hero_banner_mobile_only": "İçeriğin görselin altında olduğu mobilde geçerlidir",
+    "hero_banner_subtext_mobile": "İsteğe bağlı. Boşsa küçük metin kullanılır",
     "header_logo_source": "Tema ayarları > Logo ve favicon bölümünden bir logo yükleyin. Logo yoksa mağaza adı gösterilir.",
     "menu_item_link": "Mega menüde \"Tümünü görüntüle\" bağlantısı olarak gösterilir veya öğenin sütunu yoksa öğe bağlantısı olarak kullanılır",
     "free_shipping_threshold": "Mağazanızın varsayılan para biriminde. Kalan tutarı gizlemek için 0 olarak ayarlayın.",

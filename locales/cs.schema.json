@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hlavní banner",
     "link": "Odkaz",
     "menu_column": "Sloupec nabídky",
     "menu_item": "Položka nabídky",
@@ -177,6 +178,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "button_color": "Barva tlačítka",
+    "button_label": "Popisek tlačítka",
+    "mobile_image": "Obrázek pro mobil",
+    "mobile_image_ratio": "Poměr stran obrázku pro mobil",
+    "subtext": "Malý text",
+    "subtext_mobile": "Malý text na mobilu",
     "cart_bubble_color": "Barva odznaku košíku",
     "placeholder": "Zástupný text",
     "show_account": "Zobrazit účet",
@@ -1101,6 +1108,10 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "hero_banner_desktop_only": "Platí na počítači, kde je text na obrázku",
+    "hero_banner_mobile_image": "Volitelné. Jinak se použije obrázek pro počítač",
+    "hero_banner_mobile_only": "Platí na mobilu, kde je obsah pod obrázkem",
+    "hero_banner_subtext_mobile": "Volitelné. Jinak se použije malý text",
     "header_logo_source": "Nahrajte logo v Nastavení motivu > Logo a favicon. Bez loga se zobrazí název obchodu.",
     "menu_item_link": "Zobrazí se jako odkaz „Zobrazit vše“ v mega menu, nebo se použije jako odkaz položky, pokud nemá sloupce",
     "free_shipping_threshold": "Ve výchozí měně obchodu. Nastavením na 0 skryjete zbývající částku.",

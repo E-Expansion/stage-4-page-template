@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Banner hero",
     "link": "Link",
     "menu_column": "Colonna del menu",
     "menu_item": "Voce di menu",
@@ -177,6 +178,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "button_color": "Colore del pulsante",
+    "button_label": "Etichetta del pulsante",
+    "mobile_image": "Immagine mobile",
+    "mobile_image_ratio": "Proporzioni immagine mobile",
+    "subtext": "Testo piccolo",
+    "subtext_mobile": "Testo piccolo su mobile",
     "cart_bubble_color": "Colore del badge del carrello",
     "placeholder": "Segnaposto",
     "show_account": "Mostra account",
@@ -1101,6 +1108,10 @@
     "disclosures": "Informative"
   },
   "info": {
+    "hero_banner_desktop_only": "Si applica su desktop, dove il testo è sopra l'immagine",
+    "hero_banner_mobile_image": "Facoltativa. Usa l'immagine desktop se assente",
+    "hero_banner_mobile_only": "Si applica su mobile, dove il contenuto è sotto l'immagine",
+    "hero_banner_subtext_mobile": "Facoltativo. Usa il testo piccolo se assente",
     "header_logo_source": "Carica un logo in Impostazioni tema > Logo e favicon. Senza logo viene mostrato il nome del negozio.",
     "menu_item_link": "Mostrato come link \"Visualizza tutto\" nel mega menu, o usato come link dell'elemento se non ha colonne",
     "free_shipping_threshold": "Nella valuta predefinita del tuo negozio. Imposta 0 per nascondere l'importo rimanente.",

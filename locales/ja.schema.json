@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "ヒーローバナー",
     "link": "リンク",
     "menu_column": "メニュー列",
     "menu_item": "メニュー項目",
@@ -177,6 +178,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "button_color": "ボタンの色",
+    "button_label": "ボタンのラベル",
+    "mobile_image": "モバイル画像",
+    "mobile_image_ratio": "モバイル画像の比率",
+    "subtext": "小さいテキスト",
+    "subtext_mobile": "モバイルの小さいテキスト",
     "cart_bubble_color": "カートバッジの色",
     "placeholder": "プレースホルダー",
     "show_account": "アカウントを表示",
@@ -1101,6 +1108,10 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "hero_banner_desktop_only": "テキストが画像の上に表示されるデスクトップに適用されます",
+    "hero_banner_mobile_image": "任意。未設定の場合はデスクトップ画像を使用します",
+    "hero_banner_mobile_only": "コンテンツが画像の下に表示されるモバイルに適用されます",
+    "hero_banner_subtext_mobile": "任意。未設定の場合は小さいテキストを使用します",
     "header_logo_source": "テーマ設定 > ロゴとファビコンでロゴをアップロードしてください。ロゴがない場合はストア名が表示されます。",
     "menu_item_link": "メガメニューで「すべて表示」リンクとして表示されます。列がない場合は項目のリンクとして使用されます",
     "free_shipping_threshold": "ストアのデフォルト通貨で指定します。0に設定すると残りの金額が非表示になります。",

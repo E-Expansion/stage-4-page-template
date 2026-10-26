@@ -1,0 +1,487 @@
+{% comment %}
+  Section contract.
+  Homepage hero. Desktop: full-bleed image with a gradient overlay and content on the
+  inline start, filling the viewport below the header group. Mobile: image on top,
+  content below on a solid background. App blocks (e.g. a Trustpilot widget) render
+  under the content.
+  @example
+  <!-- Homepage > Add section > Hero banner; add an app block for reviews -->
+{% endcomment %}
+
+{% liquid
+  assign heading = section.settings.heading | escape
+  assign subtext = section.settings.subtext | escape
+  assign subtext_mobile = section.settings.subtext_mobile | escape | default: subtext
+
+  # Button text picks the palette extreme that contrasts with a custom button color.
+  if section.settings.button_color != blank
+    assign button_brightness = section.settings.button_color | color_brightness
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    else
+      assign button_text = 'var(--palette-lightest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: section.settings.button_color
+    endcapture
+  endif
+
+  capture apps
+    content_for 'blocks'
+  endcapture
+
+  assign image = section.settings.image
+  assign mobile_image = section.settings.image_mobile
+
+  assign mobile_srcset = ''
+  if mobile_image != blank
+    for step in (1..4)
+      assign w = step | times: 375
+      if w <= mobile_image.width or step == 1
+        assign entry = mobile_image | image_url: width: w | append: ' ' | append: w | append: 'w, '
+        assign mobile_srcset = mobile_srcset | append: entry
+      endif
+    endfor
+    assign mobile_srcset = mobile_srcset | remove_last: ', '
+  endif
+%}
+
+{% if section.settings.desktop_height == 'full' %}
+  {% render 'measure-header-heights', only_on_desktop: true %}
+{% endif %}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  section_id: section.id
+%}
+
+<div
+  class="hero-banner hero-banner--{{ section.settings.desktop_height }} color-custom-{{ section.id }}"
+  style="
+    --hero-banner-overlay-rgb: {{ section.settings.overlay_color.rgb }};
+    --hero-banner-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --hero-banner-text-color: {{ section.settings.text_color }};
+    --hero-banner-text-color-rgb: {{ section.settings.text_color.rgb }};
+    --hero-banner-heading-size: {{ section.settings.heading_size }};
+    --hero-banner-heading-size-mobile: {{ section.settings.heading_size_mobile }};
+    --hero-banner-mobile-ratio: {{ section.settings.mobile_aspect_ratio }};
+    --hero-banner-content-width: {{ section.settings.content_width }}rem;
+  "
+>
+  <div class="hero-banner__media">
+    {% if image != blank %}
+      <picture>
+        {% if section.settings.image_mobile != blank %}
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ mobile_srcset }}"
+            sizes="100vw"
+            width="{{ mobile_image.width }}"
+            height="{{ mobile_image.height }}"
+          >
+        {% endif %}
+        {{
+          image
+          | image_url: width: 3000
+          | image_tag:
+            widths: '375, 750, 1100, 1500, 1800, 2200, 2800, 3000',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'hero-banner__image'
+        }}
+      </picture>
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-banner__image hero-banner__placeholder' }}
+    {% endif %}
+    <div
+      class="hero-banner__overlay"
+      aria-hidden="true"
+    ></div>
+  </div>
+
+  <div class="hero-banner__body section section--page-width">
+    <div class="hero-banner__content">
+      {% if heading != blank %}
+        <h2 class="hero-banner__heading">{{ heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="hero-banner__text rte">{{ section.settings.text }}</div>
+      {% endif %}
+
+      {% if section.settings.button_label != blank %}
+        <a
+          class="button hero-banner__button"
+          {% if section.settings.button_link != blank %}
+            href="{{ section.settings.button_link }}"
+          {% else %}
+            role="link"
+            aria-disabled="true"
+          {% endif %}
+          {% if section.settings.button_color != blank %}
+            style="
+              --color-primary-button-background: {{ section.settings.button_color }};
+              --color-primary-button-border: {{ section.settings.button_color }};
+              --color-primary-button-text: {{ button_text }};
+              --color-primary-button-hover-background: {{ button_hover | strip }};
+              --color-primary-button-hover-border: {{ button_hover | strip }};
+              --color-primary-button-hover-text: {{ button_text }};
+              --color-primary-button-focus-outline: {{ section.settings.button_color }};
+            "
+          {% endif %}
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      {% endif %}
+
+      {% if subtext != blank %}
+        <p class="hero-banner__subtext mobile:hidden">{{ subtext }}</p>
+      {% endif %}
+      {% if subtext_mobile != blank %}
+        <p class="hero-banner__subtext desktop:hidden">{{ subtext_mobile }}</p>
+      {% endif %}
+
+      {% if apps != blank %}
+        <div class="hero-banner__apps">{{ apps }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .hero-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  .hero-banner__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: var(--hero-banner-mobile-ratio);
+  }
+
+  .hero-banner__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-banner__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .hero-banner__overlay {
+    display: none;
+  }
+
+  .hero-banner__body {
+    position: relative;
+    padding-block: var(--padding-2xl) var(--padding-4xl);
+  }
+
+  .hero-banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    min-width: 0;
+  }
+
+  .hero-banner__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--hero-banner-heading-size-mobile);
+    line-height: var(--line-height--display-normal);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    color: inherit;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-banner__text {
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+
+    & > * + * {
+      margin-block-start: var(--margin-xs);
+    }
+  }
+
+  .hero-banner__button {
+    width: 100%;
+    margin-block-start: var(--gap-xs);
+  }
+
+  .hero-banner__subtext {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    text-align: center;
+  }
+
+  .hero-banner__apps {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-banner {
+      display: grid;
+      align-items: center;
+      background-color: transparent;
+      color: var(--hero-banner-text-color);
+    }
+
+    .hero-banner--full {
+      min-height: calc(100svh - var(--header-group-height, 0px));
+    }
+
+    .hero-banner--large {
+      min-height: 75svh;
+    }
+
+    .hero-banner--medium {
+      min-height: 55svh;
+    }
+
+    .hero-banner__media {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: auto;
+    }
+
+    /* Gradient keeps the inline-start text legible over the image */
+    .hero-banner__overlay {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        to right,
+        rgb(var(--hero-banner-overlay-rgb) / var(--hero-banner-overlay-opacity)) 0%,
+        rgb(var(--hero-banner-overlay-rgb) / calc(var(--hero-banner-overlay-opacity) * 0.6)) 35%,
+        rgb(var(--hero-banner-overlay-rgb) / 0) 70%
+      );
+
+      &:dir(rtl) {
+        transform: scaleX(-1);
+      }
+    }
+
+    .hero-banner__body {
+      padding-block: var(--padding-6xl);
+    }
+
+    .hero-banner__content {
+      max-width: var(--hero-banner-content-width);
+    }
+
+    .hero-banner__heading {
+      font-size: var(--hero-banner-heading-size);
+    }
+
+    .hero-banner__text,
+    .hero-banner__subtext {
+      color: rgb(var(--hero-banner-text-color-rgb) / var(--opacity-subdued-text));
+    }
+
+    .hero-banner__button {
+      width: fit-content;
+    }
+
+    .hero-banner__subtext {
+      text-align: start;
+    }
+
+    .hero-banner__apps {
+      justify-content: flex-start;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.hero_banner",
+  "class": "hero-banner-section",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:settings.mobile_image",
+      "info": "t:info.hero_banner_mobile_image"
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Objects built to be repaired, not replaced."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "<p>Every piece is cut, stitched and finished in our own workshop from full-grain leather and solid brass. We keep the parts to mend it for as long as you own it.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "default": "Shop the collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "t:settings.subtext",
+      "default": "Free shipping over €75 · 30-day returns"
+    },
+    {
+      "type": "text",
+      "id": "subtext_mobile",
+      "label": "t:settings.subtext_mobile",
+      "info": "t:info.hero_banner_subtext_mobile"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:settings.size",
+      "options": [
+        { "value": "2rem", "label": "32px" },
+        { "value": "2.5rem", "label": "40px" },
+        { "value": "3rem", "label": "48px" },
+        { "value": "3.5rem", "label": "56px" }
+      ],
+      "default": "2.5rem"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_mobile",
+      "label": "t:settings.size_mobile",
+      "options": [
+        { "value": "1.5rem", "label": "24px" },
+        { "value": "1.75rem", "label": "28px" },
+        { "value": "2rem", "label": "32px" },
+        { "value": "2.25rem", "label": "36px" }
+      ],
+      "default": "1.75rem"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height",
+      "label": "t:settings.desktop_height",
+      "options": [
+        { "value": "full", "label": "t:options.full_screen" },
+        { "value": "large", "label": "t:options.large" },
+        { "value": "medium", "label": "t:options.medium" }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "t:settings.content_width",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "rem",
+      "default": 26
+    },
+    {
+      "type": "select",
+      "id": "mobile_aspect_ratio",
+      "label": "t:settings.mobile_image_ratio",
+      "options": [
+        { "value": "1 / 1", "label": "1:1" },
+        { "value": "4 / 3", "label": "4:3" },
+        { "value": "3 / 2", "label": "3:2" },
+        { "value": "16 / 9", "label": "16:9" }
+      ],
+      "default": "4 / 3"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "info": "t:info.hero_banner_desktop_only",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:settings.overlay_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:settings.overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "info": "t:info.hero_banner_mobile_only",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:settings.button_color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.hero_banner"
+    }
+  ]
+}
+{% endschema %}

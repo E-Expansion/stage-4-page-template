@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-Banner",
     "link": "Link",
     "menu_column": "Menüspalte",
     "menu_item": "Menüelement",
@@ -177,6 +178,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "button_color": "Button-Farbe",
+    "button_label": "Button-Beschriftung",
+    "mobile_image": "Mobiles Bild",
+    "mobile_image_ratio": "Seitenverhältnis des mobilen Bilds",
+    "subtext": "Kleiner Text",
+    "subtext_mobile": "Kleiner Text auf Mobilgeräten",
     "cart_bubble_color": "Farbe der Warenkorb-Blase",
     "placeholder": "Platzhalter",
     "show_account": "Konto anzeigen",
@@ -1101,6 +1108,10 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "hero_banner_desktop_only": "Gilt auf dem Desktop, wo der Text auf dem Bild liegt",
+    "hero_banner_mobile_image": "Optional. Verwendet sonst das Desktop-Bild",
+    "hero_banner_mobile_only": "Gilt auf Mobilgeräten, wo der Inhalt unter dem Bild steht",
+    "hero_banner_subtext_mobile": "Optional. Verwendet sonst den kleinen Text",
     "header_logo_source": "Lade ein Logo unter Theme-Einstellungen > Logo und Favicon hoch. Ohne Logo wird der Shopname angezeigt.",
     "menu_item_link": "Wird als \"Alle anzeigen\"-Link im Mega-Menü angezeigt oder als Link verwendet, wenn das Element keine Spalten hat",
     "free_shipping_threshold": "In der Standardwährung deines Shops. Auf 0 setzen, um den Restbetrag auszublenden.",

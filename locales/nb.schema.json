@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-banner",
     "link": "Lenke",
     "menu_column": "Menykolonne",
     "menu_item": "Menyelement",
@@ -177,6 +178,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "button_color": "Knappefarge",
+    "button_label": "Knappetikett",
+    "mobile_image": "Mobilbilde",
+    "mobile_image_ratio": "Sideforhold for mobilbilde",
+    "subtext": "Liten tekst",
+    "subtext_mobile": "Liten tekst på mobil",
     "cart_bubble_color": "Farge på handlekurvboble",
     "placeholder": "Plassholder",
     "show_account": "Vis konto",
@@ -1101,6 +1108,10 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "hero_banner_desktop_only": "Gjelder på datamaskin, der teksten ligger på bildet",
+    "hero_banner_mobile_image": "Valgfritt. Bruker ellers bildet for datamaskin",
+    "hero_banner_mobile_only": "Gjelder på mobil, der innholdet står under bildet",
+    "hero_banner_subtext_mobile": "Valgfritt. Bruker ellers den lille teksten",
     "header_logo_source": "Last opp en logo under Temainnstillinger > Logo og favikon. Uten logo vises butikknavnet.",
     "menu_item_link": "Vises som en «Se alle»-lenke i megamenyen, eller brukes som elementets lenke når det ikke har kolonner",
     "free_shipping_threshold": "I butikkens standardvaluta. Angi 0 for å skjule gjenstående beløp.",

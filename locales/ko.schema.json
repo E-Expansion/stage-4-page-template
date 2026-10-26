@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "히어로 배너",
     "link": "링크",
     "menu_column": "메뉴 열",
     "menu_item": "메뉴 항목",
@@ -177,6 +178,12 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "button_color": "버튼 색상",
+    "button_label": "버튼 레이블",
+    "mobile_image": "모바일 이미지",
+    "mobile_image_ratio": "모바일 이미지 비율",
+    "subtext": "작은 텍스트",
+    "subtext_mobile": "모바일 작은 텍스트",
     "cart_bubble_color": "장바구니 배지 색상",
     "placeholder": "자리 표시자",
     "show_account": "계정 표시",
@@ -1101,6 +1108,10 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "hero_banner_desktop_only": "텍스트가 이미지 위에 표시되는 데스크톱에 적용됩니다",
+    "hero_banner_mobile_image": "선택 사항. 비어 있으면 데스크톱 이미지를 사용합니다",
+    "hero_banner_mobile_only": "콘텐츠가 이미지 아래에 표시되는 모바일에 적용됩니다",
+    "hero_banner_subtext_mobile": "선택 사항. 비어 있으면 작은 텍스트를 사용합니다",
     "header_logo_source": "테마 설정 > 로고 및 파비콘에서 로고를 업로드하세요. 로고가 없으면 스토어 이름이 표시됩니다.",
     "menu_item_link": "메가 메뉴에 \"모두 보기\" 링크로 표시되거나, 열이 없을 때 항목 링크로 사용됩니다",
     "free_shipping_threshold": "스토어 기본 통화 기준입니다. 남은 금액을 숨기려면 0으로 설정하세요.",

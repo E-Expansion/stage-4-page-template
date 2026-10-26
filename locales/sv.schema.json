@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "hero_banner": "Hero-banner",
     "link": "Länk",
     "menu_column": "Menykolumn",
     "menu_item": "Menyobjekt",
@@ -177,6 +178,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "button_color": "Knappfärg",
+    "button_label": "Knappetikett",
+    "mobile_image": "Mobilbild",
+    "mobile_image_ratio": "Bildförhållande för mobilbild",
+    "subtext": "Liten text",
+    "subtext_mobile": "Liten text på mobil",
     "cart_bubble_color": "Färg på varukorgsbubbla",
     "placeholder": "Platshållare",
     "show_account": "Visa konto",
@@ -1101,6 +1108,10 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "hero_banner_desktop_only": "Gäller på dator, där texten ligger på bilden",
+    "hero_banner_mobile_image": "Valfritt. Använder annars datorbilden",
+    "hero_banner_mobile_only": "Gäller på mobil, där innehållet ligger under bilden",
+    "hero_banner_subtext_mobile": "Valfritt. Använder annars den lilla texten",
     "header_logo_source": "Ladda upp en logotyp under Temainställningar > Logotyp och favicon. Utan logotyp visas butikens namn.",
     "menu_item_link": "Visas som en \"Visa alla\"-länk i megamenyn, eller används som objektets länk när det saknar kolumner",
     "free_shipping_threshold": "I butikens standardvaluta. Ange 0 för att dölja återstående belopp.",
