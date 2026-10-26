@@ -272,6 +272,8 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "brand_story": "סיפור המותג",
+    "brand_story_stat": "נתון מרכזי",
     "ugc_grid": "רשת UGC",
     "ugc_post": "פוסט מהקהילה",
     "curated_products": "מוצרים נבחרים",
@@ -729,6 +731,7 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "stat_value": "ערך",
     "account_handle": "שם החשבון",
     "brand_handle": "שם החשבון שלך",
     "brand_link": "קישור לפרופיל",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "品牌故事",
+    "brand_story_stat": "關鍵數據",
     "ugc_grid": "UGC 網格",
     "ugc_post": "社群貼文",
     "curated_products": "精選商品",
@@ -188,6 +190,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "stat_value": "數值",
     "account_handle": "帳號名稱",
     "brand_handle": "你的帳號名稱",
     "brand_link": "個人檔案連結",

@@ -323,6 +323,50 @@
         "padding-block-end": 48
       }
     },
+    "brand_story": {
+      "type": "brand-story",
+      "blocks": {
+        "stat_founded": {
+          "type": "_brand-story-stat",
+          "settings": {
+            "value": "1994",
+            "label": "Workshop founded"
+          }
+        },
+        "stat_tannery": {
+          "type": "_brand-story-stat",
+          "settings": {
+            "value": "1 tannery",
+            "label": "Single, traceable source"
+          }
+        },
+        "stat_guarantee": {
+          "type": "_brand-story-stat",
+          "settings": {
+            "value": "5 years",
+            "label": "Repair guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "stat_founded",
+        "stat_tannery",
+        "stat_guarantee"
+      ],
+      "settings": {
+        "image_position": "left",
+        "heading": "Two benches, eleven pairs of hands, one town",
+        "text": "<p>We buy full-grain hides from a single tannery forty kilometres from the workshop, cut them by hand, and stitch every seam on machines older than the company. Nothing leaves the bench until it has been checked twice.</p>",
+        "link_label": "Read how we make things",
+        "link": "shopify://collections/all",
+        "mobile_image_ratio": "4 / 3",
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -530,6 +574,7 @@
     "press_mentions",
     "curated_products",
     "ugc_grid",
+    "brand_story",
     "product_list_fa6P9H"
   ]
 }

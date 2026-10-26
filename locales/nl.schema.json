@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Merkverhaal",
+    "brand_story_stat": "Kerncijfer",
     "ugc_grid": "UGC-raster",
     "ugc_post": "Communitypost",
     "curated_products": "Uitgelichte producten",
@@ -188,6 +190,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "stat_value": "Waarde",
     "account_handle": "Accountnaam",
     "brand_handle": "Je accountnaam",
     "brand_link": "Profiellink",

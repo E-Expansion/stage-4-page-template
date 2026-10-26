@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Merkevarehistorie",
+    "brand_story_stat": "Nøkkeltall",
     "ugc_grid": "UGC-rutenett",
     "ugc_post": "Fellesskapsinnlegg",
     "curated_products": "Utvalgte produkter",
@@ -188,6 +190,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "stat_value": "Verdi",
     "account_handle": "Kontonavn",
     "brand_handle": "Kontonavnet ditt",
     "brand_link": "Profillenke",

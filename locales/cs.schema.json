@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Příběh značky",
+    "brand_story_stat": "Klíčový údaj",
     "ugc_grid": "Mřížka UGC",
     "ugc_post": "Příspěvek komunity",
     "curated_products": "Vybrané produkty",
@@ -188,6 +190,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "stat_value": "Hodnota",
     "account_handle": "Název účtu",
     "brand_handle": "Název vašeho účtu",
     "brand_link": "Odkaz na profil",

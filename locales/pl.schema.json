@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Historia marki",
+    "brand_story_stat": "Kluczowa liczba",
     "ugc_grid": "Siatka UGC",
     "ugc_post": "Post społeczności",
     "curated_products": "Wybrane produkty",
@@ -188,6 +190,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "stat_value": "Wartość",
     "account_handle": "Nazwa konta",
     "brand_handle": "Nazwa Twojego konta",
     "brand_link": "Link do profilu",

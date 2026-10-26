@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "เรื่องราวแบรนด์",
+    "brand_story_stat": "ตัวเลขสำคัญ",
     "ugc_grid": "ตาราง UGC",
     "ugc_post": "โพสต์จากชุมชน",
     "curated_products": "สินค้าคัดสรร",
@@ -188,6 +190,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "stat_value": "ค่า",
     "account_handle": "ชื่อบัญชี",
     "brand_handle": "ชื่อบัญชีของคุณ",
     "brand_link": "ลิงก์โปรไฟล์",

@@ -1,0 +1,70 @@
+{% doc %}
+  Renders one key figure (value and label) in the brand story's stats row, as a
+  term/description pair inside the section's `<dl>`.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign value = block.settings.value | escape
+  assign label = block.settings.label | escape
+%}
+
+{% if value != blank or label != blank %}
+  <div
+    class="brand-story-stat"
+    {{ block.shopify_attributes }}
+  >
+    <dt class="brand-story-stat__value">{{ value }}</dt>
+    <dd class="brand-story-stat__label">{{ label }}</dd>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .brand-story-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .brand-story-stat__value {
+    font-size: var(--font-size--lg);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+
+  .brand-story-stat__label {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.brand_story_stat",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "value",
+      "label": "t:settings.stat_value",
+      "default": "1994"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Workshop founded"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.brand_story_stat"
+    }
+  ]
+}
+{% endschema %}

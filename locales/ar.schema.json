@@ -272,6 +272,8 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "brand_story": "قصة العلامة التجارية",
+    "brand_story_stat": "رقم رئيسي",
     "ugc_grid": "شبكة محتوى العملاء",
     "ugc_post": "منشور من المجتمع",
     "curated_products": "منتجات مختارة",
@@ -729,6 +731,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "stat_value": "القيمة",
     "account_handle": "اسم الحساب",
     "brand_handle": "اسم حسابك",
     "brand_link": "رابط الملف الشخصي",

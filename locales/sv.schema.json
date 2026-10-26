@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Varumärkesberättelse",
+    "brand_story_stat": "Nyckeltal",
     "ugc_grid": "UGC-rutnät",
     "ugc_post": "Communityinlägg",
     "curated_products": "Utvalda produkter",
@@ -188,6 +190,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "stat_value": "Värde",
     "account_handle": "Kontonamn",
     "brand_handle": "Ditt kontonamn",
     "brand_link": "Profillänk",

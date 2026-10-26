@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "ブランドストーリー",
+    "brand_story_stat": "主要な数値",
     "ugc_grid": "UGCグリッド",
     "ugc_post": "コミュニティ投稿",
     "curated_products": "厳選商品",
@@ -188,6 +190,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "stat_value": "値",
     "account_handle": "アカウント名",
     "brand_handle": "あなたのアカウント名",
     "brand_link": "プロフィールリンク",

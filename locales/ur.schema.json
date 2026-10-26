@@ -272,6 +272,8 @@
     "media_type_info": "خصوصیات آپ کے مینو کے لنک سے پُر کی گئی ہیں"
   },
   "names": {
+    "brand_story": "برانڈ کی کہانی",
+    "brand_story_stat": "اہم عدد",
     "ugc_grid": "UGC گرڈ",
     "ugc_post": "کمیونٹی پوسٹ",
     "curated_products": "منتخب مصنوعات",
@@ -729,6 +731,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "stat_value": "قدر",
     "account_handle": "اکاؤنٹ کا نام",
     "brand_handle": "آپ کے اکاؤنٹ کا نام",
     "brand_link": "پروفائل لنک",

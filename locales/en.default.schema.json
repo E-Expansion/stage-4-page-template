@@ -280,6 +280,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "brand_story": "Brand story",
+    "brand_story_stat": "Key figure",
     "ugc_grid": "UGC grid",
     "ugc_post": "Community post",
     "curated_products": "Curated products",
@@ -781,6 +783,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "stat_value": "Value",
     "account_handle": "Account handle",
     "brand_handle": "Your account handle",
     "brand_link": "Profile link",

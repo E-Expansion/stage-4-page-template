@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Brändin tarina",
+    "brand_story_stat": "Avainluku",
     "ugc_grid": "UGC-ruudukko",
     "ugc_post": "Yhteisön julkaisu",
     "curated_products": "Valitut tuotteet",
@@ -188,6 +190,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "stat_value": "Arvo",
     "account_handle": "Tilin nimi",
     "brand_handle": "Tilisi nimi",
     "brand_link": "Profiilin linkki",

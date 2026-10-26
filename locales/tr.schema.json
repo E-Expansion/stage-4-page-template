@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "brand_story": "Marka hikâyesi",
+    "brand_story_stat": "Temel rakam",
     "ugc_grid": "UGC ızgarası",
     "ugc_post": "Topluluk gönderisi",
     "curated_products": "Seçilmiş ürünler",
@@ -188,6 +190,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "stat_value": "Değer",
     "account_handle": "Hesap adı",
     "brand_handle": "Hesap adınız",
     "brand_link": "Profil bağlantısı",
