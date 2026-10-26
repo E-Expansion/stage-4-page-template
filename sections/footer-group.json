@@ -20,8 +20,10 @@
             "heading": "Shop",
             "menu": "shop",
             "button_label": "",
+            "button_link": "",
             "button_opens_chat": false
-          }
+          },
+          "blocks": {}
         },
         "menu_help": {
           "type": "_footer-menu",
@@ -29,8 +31,10 @@
             "heading": "Help",
             "menu": "help",
             "button_label": "Direct chat",
+            "button_link": "",
             "button_opens_chat": true
-          }
+          },
+          "blocks": {}
         },
         "menu_about": {
           "type": "_footer-menu",
@@ -38,8 +42,10 @@
             "heading": "About",
             "menu": "about",
             "button_label": "",
+            "button_link": "",
             "button_opens_chat": false
-          }
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -56,6 +62,7 @@
         "show_credit": true,
         "section_width": "page-width",
         "background_color": "{{ settings.color_palette.foreground }}",
+        "divider_color": "",
         "padding-block-start": 40,
         "padding-block-end": 40
       }
