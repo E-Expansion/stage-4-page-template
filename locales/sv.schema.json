@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-rutnät",
+    "ugc_post": "Communityinlägg",
     "curated_products": "Utvalda produkter",
     "press_mention": "Pressomnämnande",
     "press_mentions": "Pressomnämnanden",
@@ -186,6 +188,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "account_handle": "Kontonamn",
+    "brand_handle": "Ditt kontonamn",
+    "brand_link": "Profillänk",
+    "caption": "Bildtext",
+    "follow_label": "Text för följ-länk",
+    "ugc_handle_color": "Textfärg för kontonamn",
     "badge_1_color": "Färg märke 1",
     "badge_1_label": "Etikett märke 1",
     "badge_1_tag": "Produkttagg märke 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "ugc_brand_link": "Lämna tomt för att länka till Instagram-profilen för kontot ovan",
+    "ugc_caption": "Använd [handle] för att infoga en länk till ditt konto",
+    "ugc_post_handle": "Utan @. Rutan länkar till detta Instagram-konto",
+    "ugc_post_link": "Valfritt. Ersätter länken till Instagram-profilen, t.ex. ett TikTok-konto eller ett specifikt inlägg",
     "curated_products_badges": "Ett märke visas på produkter med motsvarande tagg. Om båda matchar visas märke 1.",
     "press_mention_publication": "Används som logotypens alt-text och visas som text när ingen logotyp har laddats upp",
     "category_card_image": "Lämna tomt för att använda kollektionens bild",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Grille UGC",
+    "ugc_post": "Publication de la communauté",
     "curated_products": "Produits sélectionnés",
     "press_mention": "Mention presse",
     "press_mentions": "Mentions presse",
@@ -186,6 +188,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "account_handle": "Nom du compte",
+    "brand_handle": "Nom de votre compte",
+    "brand_link": "Lien du profil",
+    "caption": "Légende",
+    "follow_label": "Libellé du lien Suivre",
+    "ugc_handle_color": "Couleur du nom du compte",
     "badge_1_color": "Couleur du badge 1",
     "badge_1_label": "Libellé du badge 1",
     "badge_1_tag": "Balise produit du badge 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "ugc_brand_link": "Laissez vide pour lier au profil Instagram du compte ci-dessus",
+    "ugc_caption": "Utilisez [handle] pour insérer un lien vers votre compte",
+    "ugc_post_handle": "Sans le @. La vignette renvoie vers ce compte Instagram",
+    "ugc_post_link": "Facultatif. Remplace le lien du profil Instagram, par ex. un compte TikTok ou une publication précise",
     "curated_products_badges": "Un badge s'affiche sur les produits ayant la balise correspondante. Si les deux correspondent, le badge 1 est affiché.",
     "press_mention_publication": "Utilisé comme texte alternatif du logo et affiché en texte si aucun logo n'est téléversé",
     "category_card_image": "Laissez vide pour utiliser l'image de la collection",

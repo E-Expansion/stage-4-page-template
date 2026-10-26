@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-Raster",
+    "ugc_post": "Community-Beitrag",
     "curated_products": "Ausgewählte Produkte",
     "press_mention": "Presseerwähnung",
     "press_mentions": "Presseerwähnungen",
@@ -186,6 +188,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "account_handle": "Kontoname",
+    "brand_handle": "Dein Kontoname",
+    "brand_link": "Profillink",
+    "caption": "Bildunterschrift",
+    "follow_label": "Beschriftung des Folgen-Links",
+    "ugc_handle_color": "Textfarbe des Kontonamens",
     "badge_1_color": "Farbe Badge 1",
     "badge_1_label": "Beschriftung Badge 1",
     "badge_1_tag": "Produkt-Tag Badge 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "ugc_brand_link": "Leer lassen, um auf das Instagram-Profil des obigen Kontos zu verlinken",
+    "ugc_caption": "Verwende [handle], um einen Link zu deinem Konto einzufügen",
+    "ugc_post_handle": "Ohne @. Die Kachel verlinkt auf dieses Instagram-Konto",
+    "ugc_post_link": "Optional. Ersetzt den Instagram-Profillink, z. B. ein TikTok-Konto oder einen bestimmten Beitrag",
     "curated_products_badges": "Ein Badge erscheint bei Produkten mit dem passenden Tag. Wenn beide passen, wird Badge 1 angezeigt.",
     "press_mention_publication": "Wird als Alt-Text des Logos verwendet und als Text angezeigt, wenn kein Logo hochgeladen ist",
     "category_card_image": "Leer lassen, um das Kollektionsbild zu verwenden",

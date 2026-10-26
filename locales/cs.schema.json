@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Mřížka UGC",
+    "ugc_post": "Příspěvek komunity",
     "curated_products": "Vybrané produkty",
     "press_mention": "Zmínka v tisku",
     "press_mentions": "Zmínky v tisku",
@@ -186,6 +188,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "account_handle": "Název účtu",
+    "brand_handle": "Název vašeho účtu",
+    "brand_link": "Odkaz na profil",
+    "caption": "Popisek",
+    "follow_label": "Text odkazu Sledovat",
+    "ugc_handle_color": "Barva názvu účtu",
     "badge_1_color": "Barva odznaku 1",
     "badge_1_label": "Popisek odznaku 1",
     "badge_1_tag": "Štítek produktu odznaku 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "ugc_brand_link": "Ponechte prázdné pro odkaz na instagramový profil účtu výše",
+    "ugc_caption": "Pomocí [handle] vložíte odkaz na svůj účet",
+    "ugc_post_handle": "Bez @. Dlaždice odkazuje na tento instagramový účet",
+    "ugc_post_link": "Volitelné. Nahradí odkaz na instagramový profil, např. účet TikTok nebo konkrétní příspěvek",
     "curated_products_badges": "Odznak se zobrazí u produktů s odpovídajícím štítkem. Pokud odpovídají oba, zobrazí se odznak 1.",
     "press_mention_publication": "Použije se jako alternativní text loga a zobrazí se jako text, pokud logo není nahráno",
     "category_card_image": "Ponechte prázdné pro použití obrázku kolekce",

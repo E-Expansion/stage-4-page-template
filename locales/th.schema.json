@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "ตาราง UGC",
+    "ugc_post": "โพสต์จากชุมชน",
     "curated_products": "สินค้าคัดสรร",
     "press_mention": "การกล่าวถึงในสื่อ",
     "press_mentions": "การกล่าวถึงในสื่อ",
@@ -186,6 +188,12 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "account_handle": "ชื่อบัญชี",
+    "brand_handle": "ชื่อบัญชีของคุณ",
+    "brand_link": "ลิงก์โปรไฟล์",
+    "caption": "คำบรรยาย",
+    "follow_label": "ข้อความลิงก์ติดตาม",
+    "ugc_handle_color": "สีข้อความชื่อบัญชี",
     "badge_1_color": "สีป้าย 1",
     "badge_1_label": "ข้อความป้าย 1",
     "badge_1_tag": "แท็กสินค้าป้าย 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "ugc_brand_link": "เว้นว่างไว้เพื่อลิงก์ไปยังโปรไฟล์ Instagram ของบัญชีด้านบน",
+    "ugc_caption": "ใช้ [handle] เพื่อแทรกลิงก์ไปยังบัญชีของคุณ",
+    "ugc_post_handle": "ไม่ต้องใส่ @ ไทล์จะลิงก์ไปยังบัญชี Instagram นี้",
+    "ugc_post_link": "ไม่บังคับ แทนที่ลิงก์โปรไฟล์ Instagram เช่น บัญชี TikTok หรือโพสต์เฉพาะ",
     "curated_products_badges": "ป้ายจะแสดงบนสินค้าที่มีแท็กตรงกัน หากตรงทั้งสอง จะแสดงป้าย 1",
     "press_mention_publication": "ใช้เป็นข้อความแสดงแทนของโลโก้ และแสดงเป็นข้อความเมื่อไม่มีโลโก้",
     "category_card_image": "เว้นว่างไว้เพื่อใช้รูปภาพคอลเลกชัน",

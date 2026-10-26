@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC ızgarası",
+    "ugc_post": "Topluluk gönderisi",
     "curated_products": "Seçilmiş ürünler",
     "press_mention": "Basında yer alma",
     "press_mentions": "Basında yer almalar",
@@ -186,6 +188,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "account_handle": "Hesap adı",
+    "brand_handle": "Hesap adınız",
+    "brand_link": "Profil bağlantısı",
+    "caption": "Açıklama",
+    "follow_label": "Takip et bağlantı metni",
+    "ugc_handle_color": "Hesap adı metin rengi",
     "badge_1_color": "Rozet 1 rengi",
     "badge_1_label": "Rozet 1 etiketi",
     "badge_1_tag": "Rozet 1 ürün etiketi",
@@ -1150,6 +1158,10 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "ugc_brand_link": "Yukarıdaki hesabın Instagram profiline bağlantı vermek için boş bırakın",
+    "ugc_caption": "Hesabınıza bağlantı eklemek için [handle] kullanın",
+    "ugc_post_handle": "@ olmadan. Kutucuk bu Instagram hesabına bağlanır",
+    "ugc_post_link": "İsteğe bağlı. Instagram profil bağlantısının yerine geçer, ör. bir TikTok hesabı veya belirli bir gönderi",
     "curated_products_badges": "Eşleşen etikete sahip ürünlerde rozet gösterilir. İkisi de eşleşirse rozet 1 gösterilir.",
     "press_mention_publication": "Logonun alternatif metni olarak kullanılır ve logo yüklenmediğinde metin olarak gösterilir",
     "category_card_image": "Koleksiyon görselini kullanmak için boş bırakın",

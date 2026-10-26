@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Siatka UGC",
+    "ugc_post": "Post społeczności",
     "curated_products": "Wybrane produkty",
     "press_mention": "Wzmianka w prasie",
     "press_mentions": "Wzmianki w prasie",
@@ -186,6 +188,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "account_handle": "Nazwa konta",
+    "brand_handle": "Nazwa Twojego konta",
+    "brand_link": "Link do profilu",
+    "caption": "Podpis",
+    "follow_label": "Tekst linku Obserwuj",
+    "ugc_handle_color": "Kolor nazwy konta",
     "badge_1_color": "Kolor odznaki 1",
     "badge_1_label": "Etykieta odznaki 1",
     "badge_1_tag": "Tag produktu odznaki 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "ugc_brand_link": "Pozostaw puste, aby linkować do profilu Instagram powyższego konta",
+    "ugc_caption": "Użyj [handle], aby wstawić link do swojego konta",
+    "ugc_post_handle": "Bez @. Kafelek prowadzi do tego konta na Instagramie",
+    "ugc_post_link": "Opcjonalnie. Zastępuje link do profilu Instagram, np. konto TikTok lub konkretny post",
     "curated_products_badges": "Odznaka pojawia się przy produktach z pasującym tagiem. Gdy pasują oba, wyświetlana jest odznaka 1.",
     "press_mention_publication": "Używane jako tekst alternatywny logo i wyświetlane jako tekst, gdy logo nie zostało przesłane",
     "category_card_image": "Pozostaw puste, aby użyć obrazu kolekcji",

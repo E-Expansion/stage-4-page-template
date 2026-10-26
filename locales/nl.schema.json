@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-raster",
+    "ugc_post": "Communitypost",
     "curated_products": "Uitgelichte producten",
     "press_mention": "Persvermelding",
     "press_mentions": "Persvermeldingen",
@@ -186,6 +188,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "account_handle": "Accountnaam",
+    "brand_handle": "Je accountnaam",
+    "brand_link": "Profiellink",
+    "caption": "Bijschrift",
+    "follow_label": "Label volglink",
+    "ugc_handle_color": "Tekstkleur accountnaam",
     "badge_1_color": "Kleur badge 1",
     "badge_1_label": "Label badge 1",
     "badge_1_tag": "Producttag badge 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "ugc_brand_link": "Laat leeg om te linken naar het Instagram-profiel van het account hierboven",
+    "ugc_caption": "Gebruik [handle] om een link naar je account in te voegen",
+    "ugc_post_handle": "Zonder de @. De tegel linkt naar dit Instagram-account",
+    "ugc_post_link": "Optioneel. Vervangt de Instagram-profiellink, bijv. een TikTok-account of een specifieke post",
     "curated_products_badges": "Een badge verschijnt bij producten met de bijbehorende tag. Als beide overeenkomen, wordt badge 1 getoond.",
     "press_mention_publication": "Gebruikt als alt-tekst van het logo en getoond als tekst wanneer er geen logo is geüpload",
     "category_card_image": "Laat leeg om de collectieafbeelding te gebruiken",

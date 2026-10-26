@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Cuadrícula UGC",
+    "ugc_post": "Publicación de la comunidad",
     "curated_products": "Productos seleccionados",
     "press_mention": "Mención en prensa",
     "press_mentions": "Menciones en prensa",
@@ -186,6 +188,12 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "account_handle": "Nombre de la cuenta",
+    "brand_handle": "Nombre de tu cuenta",
+    "brand_link": "Enlace al perfil",
+    "caption": "Pie de texto",
+    "follow_label": "Texto del enlace Seguir",
+    "ugc_handle_color": "Color del nombre de la cuenta",
     "badge_1_color": "Color de la insignia 1",
     "badge_1_label": "Texto de la insignia 1",
     "badge_1_tag": "Etiqueta de producto de la insignia 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "ugc_brand_link": "Déjalo vacío para enlazar al perfil de Instagram de la cuenta anterior",
+    "ugc_caption": "Usa [handle] para insertar un enlace a tu cuenta",
+    "ugc_post_handle": "Sin la @. El mosaico enlaza a esta cuenta de Instagram",
+    "ugc_post_link": "Opcional. Sustituye el enlace al perfil de Instagram, p. ej. una cuenta de TikTok o una publicación concreta",
     "curated_products_badges": "Se muestra una insignia en los productos con la etiqueta correspondiente. Si coinciden ambas, se muestra la insignia 1.",
     "press_mention_publication": "Se usa como texto alternativo del logotipo y se muestra como texto si no hay logotipo",
     "category_card_image": "Déjalo vacío para usar la imagen de la colección",

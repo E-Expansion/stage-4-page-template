@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-ruudukko",
+    "ugc_post": "Yhteisön julkaisu",
     "curated_products": "Valitut tuotteet",
     "press_mention": "Lehdistömaininta",
     "press_mentions": "Lehdistömaininnat",
@@ -186,6 +188,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "account_handle": "Tilin nimi",
+    "brand_handle": "Tilisi nimi",
+    "brand_link": "Profiilin linkki",
+    "caption": "Kuvateksti",
+    "follow_label": "Seuraa-linkin teksti",
+    "ugc_handle_color": "Tilin nimen tekstiväri",
     "badge_1_color": "Merkin 1 väri",
     "badge_1_label": "Merkin 1 teksti",
     "badge_1_tag": "Merkin 1 tuotetunniste",
@@ -1150,6 +1158,10 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "ugc_brand_link": "Jätä tyhjäksi linkittääksesi yllä olevan tilin Instagram-profiiliin",
+    "ugc_caption": "Lisää linkki tiliisi käyttämällä [handle]",
+    "ugc_post_handle": "Ilman @-merkkiä. Ruutu linkittää tähän Instagram-tiliin",
+    "ugc_post_link": "Valinnainen. Korvaa Instagram-profiilin linkin, esim. TikTok-tili tai tietty julkaisu",
     "curated_products_badges": "Merkki näkyy tuotteissa, joilla on vastaava tunniste. Jos molemmat täsmäävät, näytetään merkki 1.",
     "press_mention_publication": "Käytetään logon vaihtoehtoisena tekstinä ja näytetään tekstinä, jos logoa ei ole ladattu",
     "category_card_image": "Jätä tyhjäksi käyttääksesi kokoelman kuvaa",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC 網格",
+    "ugc_post": "社群貼文",
     "curated_products": "精選商品",
     "press_mention": "媒體報導",
     "press_mentions": "媒體報導",
@@ -186,6 +188,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "account_handle": "帳號名稱",
+    "brand_handle": "你的帳號名稱",
+    "brand_link": "個人檔案連結",
+    "caption": "說明文字",
+    "follow_label": "追蹤連結文字",
+    "ugc_handle_color": "帳號名稱文字顏色",
     "badge_1_color": "徽章 1 顏色",
     "badge_1_label": "徽章 1 文字",
     "badge_1_tag": "徽章 1 商品標籤",
@@ -1150,6 +1158,10 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "ugc_brand_link": "留空以連結至上方帳號的 Instagram 個人檔案",
+    "ugc_caption": "使用 [handle] 插入連往你帳號的連結",
+    "ugc_post_handle": "不含 @。圖塊會連結至此 Instagram 帳號",
+    "ugc_post_link": "選填。取代 Instagram 個人檔案連結，例如 TikTok 帳號或特定貼文",
     "curated_products_badges": "帶有對應標籤的商品會顯示徽章。兩者皆符合時顯示徽章 1。",
     "press_mention_publication": "用作標誌的替代文字；未上傳標誌時以文字顯示",
     "category_card_image": "留空以使用商品系列圖片",

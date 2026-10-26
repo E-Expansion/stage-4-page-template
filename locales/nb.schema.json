@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-rutenett",
+    "ugc_post": "Fellesskapsinnlegg",
     "curated_products": "Utvalgte produkter",
     "press_mention": "Presseomtale",
     "press_mentions": "Presseomtaler",
@@ -186,6 +188,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "account_handle": "Kontonavn",
+    "brand_handle": "Kontonavnet ditt",
+    "brand_link": "Profillenke",
+    "caption": "Bildetekst",
+    "follow_label": "Tekst på følg-lenke",
+    "ugc_handle_color": "Tekstfarge for kontonavn",
     "badge_1_color": "Farge merke 1",
     "badge_1_label": "Tekst merke 1",
     "badge_1_tag": "Produkttagg merke 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "ugc_brand_link": "La stå tomt for å lenke til Instagram-profilen til kontoen over",
+    "ugc_caption": "Bruk [handle] for å sette inn en lenke til kontoen din",
+    "ugc_post_handle": "Uten @. Ruten lenker til denne Instagram-kontoen",
+    "ugc_post_link": "Valgfritt. Erstatter lenken til Instagram-profilen, f.eks. en TikTok-konto eller et bestemt innlegg",
     "curated_products_badges": "Et merke vises på produkter med tilsvarende tagg. Hvis begge passer, vises merke 1.",
     "press_mention_publication": "Brukes som logoens alt-tekst og vises som tekst når ingen logo er lastet opp",
     "category_card_image": "La stå tomt for å bruke kolleksjonsbildet",

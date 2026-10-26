@@ -1,0 +1,156 @@
+{% doc %}
+  Renders one community photo tile with the poster's handle over a gradient. The tile
+  links to the poster's account: the link setting when set, otherwise their Instagram
+  profile built from the handle. Lives inside the grid owned by sections/ugc-grid.liquid.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign handle = block.settings.handle | escape | remove: '@' | strip
+
+  assign url = block.settings.link
+  if url == blank and handle != blank
+    assign url = 'https://www.instagram.com/' | append: handle | append: '/'
+  endif
+
+  assign image = block.settings.image
+%}
+
+<li
+  class="ugc-post"
+  {{ block.shopify_attributes }}
+>
+  {% if url != blank %}
+    <a
+      href="{{ url }}"
+      class="ugc-post__tile"
+      target="_blank"
+      rel="noopener"
+    >
+  {% else %}
+    <div class="ugc-post__tile">
+  {% endif %}
+    {% if image != blank %}
+      {{
+        image
+        | image_url: width: 900
+        | image_tag:
+          widths: '240, 360, 480, 640, 900',
+          sizes: '(min-width: 750px) 25vw, 50vw',
+          loading: 'lazy',
+          class: 'ugc-post__image'
+      }}
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'ugc-post__image ugc-post__placeholder' }}
+    {% endif %}
+
+    {% if handle != blank %}
+      <span class="ugc-post__handle">@{{ handle }}</span>
+    {% endif %}
+  {% if url != blank %}
+    </a>
+  {% else %}
+    </div>
+  {% endif %}
+</li>
+
+{% stylesheet %}
+  .ugc-post {
+    min-width: 0;
+  }
+
+  .ugc-post__tile {
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+    color: var(--ugc-grid-handle-color, var(--color-background));
+    text-decoration: none;
+  }
+
+  .ugc-post__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  .ugc-post__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  /* Bottom gradient keeps the handle legible on light photos */
+  .ugc-post__tile::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 0;
+    background-image: linear-gradient(
+      to top,
+      rgb(var(--ugc-grid-overlay-rgb) / var(--opacity-50)),
+      rgb(var(--ugc-grid-overlay-rgb) / 0)
+    );
+    pointer-events: none;
+  }
+
+  .ugc-post__handle {
+    position: absolute;
+    inset-inline: var(--padding-md);
+    inset-block-end: var(--padding-md);
+    z-index: 1;
+    font-size: var(--font-size--sm);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      inset-inline: var(--padding-lg);
+      font-size: var(--font-size--md);
+    }
+  }
+
+  @media (hover: hover) {
+    .ugc-post__tile:hover .ugc-post__image {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ugc-post__image {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.ugc_post",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "handle",
+      "label": "t:settings.account_handle",
+      "info": "t:info.ugc_post_handle",
+      "default": "username"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link",
+      "info": "t:info.ugc_post_link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.ugc_post"
+    }
+  ]
+}
+{% endschema %}

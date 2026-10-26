@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Grelha UGC",
+    "ugc_post": "Publicação da comunidade",
     "curated_products": "Produtos selecionados",
     "press_mention": "Menção na imprensa",
     "press_mentions": "Menções na imprensa",
@@ -186,6 +188,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "account_handle": "Nome da conta",
+    "brand_handle": "Nome da sua conta",
+    "brand_link": "Ligação do perfil",
+    "caption": "Legenda",
+    "follow_label": "Texto da ligação Seguir",
+    "ugc_handle_color": "Cor do nome da conta",
     "badge_1_color": "Cor do selo 1",
     "badge_1_label": "Etiqueta do selo 1",
     "badge_1_tag": "Etiqueta de produto do selo 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "ugc_brand_link": "Deixe vazio para ligar ao perfil do Instagram da conta acima",
+    "ugc_caption": "Utilize [handle] para inserir uma ligação para a sua conta",
+    "ugc_post_handle": "Sem o @. O bloco liga a esta conta do Instagram",
+    "ugc_post_link": "Opcional. Substitui a ligação do perfil do Instagram, p. ex. uma conta do TikTok ou uma publicação específica",
     "curated_products_badges": "Um selo aparece nos produtos com a etiqueta correspondente. Se ambas corresponderem, é apresentado o selo 1.",
     "press_mention_publication": "Utilizado como texto alternativo do logótipo e apresentado como texto quando não há logótipo",
     "category_card_image": "Deixe vazio para utilizar a imagem da coleção",

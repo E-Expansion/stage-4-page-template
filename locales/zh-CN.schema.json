@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC 网格",
+    "ugc_post": "社区帖子",
     "curated_products": "精选产品",
     "press_mention": "媒体报道",
     "press_mentions": "媒体报道",
@@ -186,6 +188,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "account_handle": "账户名",
+    "brand_handle": "你的账户名",
+    "brand_link": "主页链接",
+    "caption": "说明文字",
+    "follow_label": "关注链接文本",
+    "ugc_handle_color": "账户名文字颜色",
     "badge_1_color": "徽章 1 颜色",
     "badge_1_label": "徽章 1 文本",
     "badge_1_tag": "徽章 1 产品标签",
@@ -1150,6 +1158,10 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "ugc_brand_link": "留空以链接到上方账户的 Instagram 主页",
+    "ugc_caption": "使用 [handle] 插入指向你账户的链接",
+    "ugc_post_handle": "不含 @。图块链接到此 Instagram 账户",
+    "ugc_post_link": "可选。替换 Instagram 主页链接，例如 TikTok 账户或特定帖子",
     "curated_products_badges": "带有对应标签的产品会显示徽章。两者都匹配时显示徽章 1。",
     "press_mention_publication": "用作徽标的替代文本；未上传徽标时以文本显示",
     "category_card_image": "留空以使用产品系列图片",

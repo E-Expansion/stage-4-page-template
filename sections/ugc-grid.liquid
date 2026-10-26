@@ -1,0 +1,272 @@
+{% comment %}
+  Section contract.
+  User-generated content grid: heading with a follow link to the brand account, square
+  community photos that each link to the poster's account, and a caption inviting
+  customers to tag the brand. Four columns on desktop, two on mobile.
+  @example
+  <!-- Homepage > Add section > UGC grid; add a post per photo with its account handle -->
+{% endcomment %}
+
+{% liquid
+  assign heading = section.settings.heading | escape
+  assign brand_handle = section.settings.brand_handle | escape | remove: '@'
+
+  assign profile_url = section.settings.brand_link
+  if profile_url == blank and brand_handle != blank
+    assign profile_url = 'https://www.instagram.com/' | append: brand_handle | append: '/'
+  endif
+
+  if brand_handle != blank
+    capture brand_link_html
+      echo '<a href="' | append: profile_url | append: '" class="ugc-grid__inline-link" target="_blank" rel="noopener">@' | append: brand_handle | append: '</a>'
+    endcapture
+  endif
+
+  assign follow_label = section.settings.follow_label | escape
+  assign caption = section.settings.caption | escape | replace: '[handle]', brand_link_html
+%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="ugc-grid section section--{{ section.settings.section_width }} spacing-style color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --ugc-grid-columns: {{ section.settings.columns }};
+    --ugc-grid-overlay-rgb: {{ section.settings.overlay_color.rgb }};
+    --ugc-grid-handle-color: {{ section.settings.handle_color }};
+    {% if section.settings.link_color != blank %}--ugc-grid-link-color: {{ section.settings.link_color }};{% endif %}
+  "
+>
+  <div class="ugc-grid__inner">
+    <div class="ugc-grid__header">
+      {% if heading != blank %}
+        <h2 class="ugc-grid__heading">{{ heading }}</h2>
+      {% endif %}
+
+      {% if follow_label != blank and brand_handle != blank %}
+        <a
+          href="{{ profile_url }}"
+          class="ugc-grid__follow"
+          target="_blank"
+          rel="noopener"
+        >
+          {{- follow_label }} @{{ brand_handle -}}
+        </a>
+      {% endif %}
+    </div>
+
+    <ul class="ugc-grid__list list-unstyled">
+      {% content_for 'blocks' %}
+    </ul>
+
+    {% if caption != blank %}
+      <p class="ugc-grid__caption">{{ caption }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .ugc-grid__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xl);
+    min-width: 0;
+  }
+
+  .ugc-grid__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--gap-xs) var(--gap-lg);
+  }
+
+  .ugc-grid__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-normal);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  .ugc-grid__follow,
+  .ugc-grid__inline-link {
+    color: var(--ugc-grid-link-color, var(--color-foreground));
+    text-underline-offset: 0.25em;
+  }
+
+  .ugc-grid__follow {
+    font-size: var(--font-size--xs);
+    text-decoration: underline;
+    white-space: nowrap;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--sm);
+    }
+  }
+
+  .ugc-grid__inline-link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .ugc-grid__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-sm);
+    margin: 0;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--ugc-grid-columns), minmax(0, 1fr));
+    }
+  }
+
+  .ugc-grid__caption {
+    margin: 0;
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.ugc_grid",
+  "blocks": [
+    {
+      "type": "_ugc-post"
+    }
+  ],
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Made for your everyday"
+    },
+    {
+      "type": "text",
+      "id": "brand_handle",
+      "label": "t:settings.brand_handle",
+      "default": "atelier.goods"
+    },
+    {
+      "type": "url",
+      "id": "brand_link",
+      "label": "t:settings.brand_link",
+      "info": "t:info.ugc_brand_link"
+    },
+    {
+      "type": "text",
+      "id": "follow_label",
+      "label": "t:settings.follow_label",
+      "default": "Follow"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "t:settings.caption",
+      "info": "t:info.ugc_caption",
+      "default": "Shared by our community. Tag [handle] for a chance to be featured."
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.section_width",
+      "options": [
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "t:settings.link_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "handle_color",
+      "label": "t:settings.ugc_handle_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:settings.overlay_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.ugc_grid",
+      "blocks": {
+        "post_1": { "type": "_ugc-post", "settings": { "handle": "milesandmakers" } },
+        "post_2": { "type": "_ugc-post", "settings": { "handle": "studio.sunday" } },
+        "post_3": { "type": "_ugc-post", "settings": { "handle": "roamingwithjules" } },
+        "post_4": { "type": "_ugc-post", "settings": { "handle": "wornandloved" } }
+      },
+      "block_order": ["post_1", "post_2", "post_3", "post_4"]
+    }
+  ]
+}
+{% endschema %}

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC 그리드",
+    "ugc_post": "커뮤니티 게시물",
     "curated_products": "엄선된 상품",
     "press_mention": "언론 보도",
     "press_mentions": "언론 보도",
@@ -186,6 +188,12 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "account_handle": "계정 이름",
+    "brand_handle": "내 계정 이름",
+    "brand_link": "프로필 링크",
+    "caption": "캡션",
+    "follow_label": "팔로우 링크 레이블",
+    "ugc_handle_color": "계정 이름 텍스트 색상",
     "badge_1_color": "배지 1 색상",
     "badge_1_label": "배지 1 레이블",
     "badge_1_tag": "배지 1 상품 태그",
@@ -1150,6 +1158,10 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "ugc_brand_link": "비워 두면 위 계정의 Instagram 프로필로 연결됩니다",
+    "ugc_caption": "[handle]을 사용하여 계정 링크를 삽입하세요",
+    "ugc_post_handle": "@ 없이 입력하세요. 타일이 이 Instagram 계정으로 연결됩니다",
+    "ugc_post_link": "선택 사항. Instagram 프로필 링크를 대체합니다(예: TikTok 계정 또는 특정 게시물)",
     "curated_products_badges": "일치하는 태그가 있는 상품에 배지가 표시됩니다. 둘 다 일치하면 배지 1이 표시됩니다.",
     "press_mention_publication": "로고의 대체 텍스트로 사용되며, 로고가 없으면 텍스트로 표시됩니다",
     "category_card_image": "비워 두면 컬렉션 이미지를 사용합니다",

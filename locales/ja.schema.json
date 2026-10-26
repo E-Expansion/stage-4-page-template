@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGCグリッド",
+    "ugc_post": "コミュニティ投稿",
     "curated_products": "厳選商品",
     "press_mention": "メディア掲載",
     "press_mentions": "メディア掲載",
@@ -186,6 +188,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "account_handle": "アカウント名",
+    "brand_handle": "あなたのアカウント名",
+    "brand_link": "プロフィールリンク",
+    "caption": "キャプション",
+    "follow_label": "フォローリンクのラベル",
+    "ugc_handle_color": "アカウント名の文字色",
     "badge_1_color": "バッジ1の色",
     "badge_1_label": "バッジ1のラベル",
     "badge_1_tag": "バッジ1の商品タグ",
@@ -1150,6 +1158,10 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "ugc_brand_link": "空欄の場合は上記アカウントのInstagramプロフィールにリンクします",
+    "ugc_caption": "[handle]を使用してアカウントへのリンクを挿入します",
+    "ugc_post_handle": "@なしで入力。タイルはこのInstagramアカウントにリンクします",
+    "ugc_post_link": "任意。Instagramプロフィールへのリンクを置き換えます（TikTokアカウントや特定の投稿など）",
     "curated_products_badges": "一致するタグを持つ商品にバッジが表示されます。両方一致する場合はバッジ1が表示されます。",
     "press_mention_publication": "ロゴの代替テキストとして使用され、ロゴがない場合はテキストとして表示されます",
     "category_card_image": "空欄の場合はコレクション画像を使用します",

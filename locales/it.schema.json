@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "Griglia UGC",
+    "ugc_post": "Post della community",
     "curated_products": "Prodotti selezionati",
     "press_mention": "Menzione stampa",
     "press_mentions": "Menzioni stampa",
@@ -186,6 +188,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "account_handle": "Nome account",
+    "brand_handle": "Nome del tuo account",
+    "brand_link": "Link al profilo",
+    "caption": "Didascalia",
+    "follow_label": "Testo del link Segui",
+    "ugc_handle_color": "Colore del nome account",
     "badge_1_color": "Colore badge 1",
     "badge_1_label": "Etichetta badge 1",
     "badge_1_tag": "Tag prodotto badge 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Informative"
   },
   "info": {
+    "ugc_brand_link": "Lascia vuoto per collegare al profilo Instagram dell'account sopra",
+    "ugc_caption": "Usa [handle] per inserire un link al tuo account",
+    "ugc_post_handle": "Senza @. Il riquadro rimanda a questo account Instagram",
+    "ugc_post_link": "Facoltativo. Sostituisce il link al profilo Instagram, ad es. un account TikTok o un post specifico",
     "curated_products_badges": "Un badge appare sui prodotti con il tag corrispondente. Se corrispondono entrambi, viene mostrato il badge 1.",
     "press_mention_publication": "Usato come testo alternativo del logo e mostrato come testo se non è caricato un logo",
     "category_card_image": "Lascia vuoto per usare l'immagine della collezione",

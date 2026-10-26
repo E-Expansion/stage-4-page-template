@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "ugc_grid": "UGC-gitter",
+    "ugc_post": "Fællesskabsopslag",
     "curated_products": "Udvalgte produkter",
     "press_mention": "Presseomtale",
     "press_mentions": "Presseomtaler",
@@ -186,6 +188,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "account_handle": "Kontonavn",
+    "brand_handle": "Dit kontonavn",
+    "brand_link": "Profillink",
+    "caption": "Billedtekst",
+    "follow_label": "Tekst på følg-link",
+    "ugc_handle_color": "Tekstfarve for kontonavn",
     "badge_1_color": "Farve badge 1",
     "badge_1_label": "Tekst badge 1",
     "badge_1_tag": "Produkttag badge 1",
@@ -1150,6 +1158,10 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "ugc_brand_link": "Lad være tom for at linke til Instagram-profilen for kontoen ovenfor",
+    "ugc_caption": "Brug [handle] til at indsætte et link til din konto",
+    "ugc_post_handle": "Uden @. Feltet linker til denne Instagram-konto",
+    "ugc_post_link": "Valgfrit. Erstatter Instagram-profillinket, fx en TikTok-konto eller et bestemt opslag",
     "curated_products_badges": "Et badge vises på produkter med det tilsvarende tag. Hvis begge passer, vises badge 1.",
     "press_mention_publication": "Bruges som logoets alt-tekst og vises som tekst, når der ikke er uploadet et logo",
     "category_card_image": "Lad være tom for at bruge kollektionens billede",
