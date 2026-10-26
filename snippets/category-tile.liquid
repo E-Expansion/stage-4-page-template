@@ -1,0 +1,144 @@
+{%- doc -%}
+  Renders the shared category tile: image with a title and optional product count below,
+  linking to a collection. Used by the category selector and the collection page's
+  subcategory strip. The image ratio is read from --category-tile-ratio (default 4 / 3).
+
+  @param {string} url - Link target
+  @param {string} title - Title, already escaped
+  @param {object} [image] - Tile image; a placeholder is shown when blank
+  @param {number} [count] - Product count, shown as "24 items"
+  @param {string} [size] - 'small' centres the title and hides the count
+  @param {string} [sizes] - Image sizes attribute, defaults to a four-column row
+  @param {string} [attributes] - Extra attributes for the list item, e.g. `block.shopify_attributes`
+
+  @example
+  {% render 'category-tile', url: collection.url, title: collection.title, image: collection.featured_image, count: collection.products_count %}
+{%- enddoc -%}
+
+{% liquid
+  assign image_sizes = sizes | default: '(min-width: 750px) 25vw, 45vw'
+%}
+
+<li
+  class="category-tile{% if size == 'small' %} category-tile--small{% endif %}"
+  {{ attributes }}
+>
+  <a
+    href="{{ url }}"
+    class="category-tile__link"
+  >
+    <span class="category-tile__media">
+      {% if image != blank %}
+        {{
+          image
+          | image_url: width: 1200
+          | image_tag:
+            widths: '240, 360, 480, 640, 800, 1000, 1200',
+            sizes: image_sizes,
+            loading: 'lazy',
+            alt: '',
+            class: 'category-tile__image'
+        }}
+      {% else %}
+        {{ 'collection-1' | placeholder_svg_tag: 'category-tile__image category-tile__placeholder' }}
+      {% endif %}
+    </span>
+
+    <span class="category-tile__info">
+      <span class="category-tile__title">{{ title }}</span>
+      {% if count != blank and size != 'small' %}
+        <span class="category-tile__count">
+          {{- 'content.item_count' | t: count: count -}}
+        </span>
+      {% endif %}
+    </span>
+  </a>
+</li>
+
+{% stylesheet %}
+  .category-tile {
+    min-width: 0;
+  }
+
+  .category-tile__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    color: var(--color-foreground);
+    text-decoration: none;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .category-tile__media {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: var(--category-tile-ratio, 4 / 3);
+  }
+
+  .category-tile__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  .category-tile__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  @media (hover: hover) {
+    .category-tile__link:hover .category-tile__image {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .category-tile__image {
+      transition: none;
+    }
+  }
+
+  .category-tile__info {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--gap-xs);
+    padding: var(--padding-sm) var(--padding-md);
+    border-block-start: var(--style-border-width) solid var(--color-border);
+  }
+
+  .category-tile__title {
+    min-width: 0;
+    font-size: var(--font-size--sm);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .category-tile__count {
+    flex-shrink: 0;
+    font-size: var(--font-size--2xs);
+    color: var(--color-foreground-muted);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xs);
+    }
+  }
+
+  /* Small tiles (e.g. a collection's subcategory strip) centre the title under the image */
+  .category-tile--small .category-tile__info {
+    justify-content: center;
+    padding: var(--padding-xs);
+  }
+
+  .category-tile--small .category-tile__title {
+    font-size: var(--font-size--xs);
+  }
+{% endstylesheet %}

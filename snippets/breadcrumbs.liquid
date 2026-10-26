@@ -1,0 +1,147 @@
+{%- doc -%}
+  Renders the breadcrumb trail for the current template, built from Shopify data so every
+  product, collection, blog and article gets the right trail without setup:
+  - product: Home / collection / product (the collection in the URL, else the first one)
+  - collection: Home / [parent] / collection
+  - blog: Home / blog, or Home / blog / tag on a tag-filtered blog page
+  - article: Home / blog / first tag / article
+  - other pages: Home / page title
+  Also outputs BreadcrumbList structured data. The last item is the current page.
+
+  @param {string} [parent_label] - Extra crumb after Home, e.g. "Shop" on collections
+  @param {string} [parent_url] - Link of the extra crumb
+
+  @example
+  {% render 'breadcrumbs', parent_label: 'Shop', parent_url: routes.all_products_collection_url %}
+{%- enddoc -%}
+
+{% liquid
+  assign separator = '|||'
+  assign crumb_labels = 'content.home' | t
+  assign crumb_urls = routes.root_url
+
+  if parent_label != blank and parent_url != blank
+    assign crumb_labels = crumb_labels | append: separator | append: parent_label
+    assign crumb_urls = crumb_urls | append: separator | append: parent_url
+  endif
+
+  case template.name
+    when 'product'
+      assign crumb_collection = collection | default: product.collections.first
+      if crumb_collection != blank
+        assign crumb_labels = crumb_labels | append: separator | append: crumb_collection.title
+        assign crumb_urls = crumb_urls | append: separator | append: crumb_collection.url
+      endif
+      assign current_label = product.title
+    when 'collection'
+      assign current_label = collection.title
+    when 'blog'
+      if current_tags.size > 0
+        assign crumb_labels = crumb_labels | append: separator | append: blog.title
+        assign crumb_urls = crumb_urls | append: separator | append: blog.url
+        assign current_label = current_tags | first
+      else
+        assign current_label = blog.title
+      endif
+    when 'article'
+      assign crumb_labels = crumb_labels | append: separator | append: blog.title
+      assign crumb_urls = crumb_urls | append: separator | append: blog.url
+      assign article_tag = article.tags | first
+      if article_tag != blank
+        assign tag_handle = article_tag | handleize
+        assign tag_url = blog.url | append: '/tagged/' | append: tag_handle
+        assign crumb_labels = crumb_labels | append: separator | append: article_tag
+        assign crumb_urls = crumb_urls | append: separator | append: tag_url
+      endif
+      assign current_label = article.title
+    else
+      assign current_label = page_title
+  endcase
+
+  assign crumb_labels = crumb_labels | split: separator
+  assign crumb_urls = crumb_urls | split: separator
+%}
+
+<nav
+  class="breadcrumbs"
+  aria-label="{{ 'accessibility.breadcrumbs' | t }}"
+>
+  <ol class="breadcrumbs__list list-unstyled">
+    {%- for label in crumb_labels -%}
+      <li class="breadcrumbs__item">
+        <a
+          href="{{ crumb_urls[forloop.index0] }}"
+          class="breadcrumbs__link"
+        >
+          {{- label | escape -}}
+        </a>
+      </li>
+    {%- endfor -%}
+    <li class="breadcrumbs__item">
+      <span
+        class="breadcrumbs__current"
+        aria-current="page"
+      >
+        {{- current_label | escape -}}
+      </span>
+    </li>
+  </ol>
+</nav>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {%- for label in crumb_labels -%}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ label | json }},
+          "item": {{ request.origin | append: crumb_urls[forloop.index0] | json }}
+        },
+      {%- endfor -%}
+      {
+        "@type": "ListItem",
+        "position": {{ crumb_labels.size | plus: 1 }},
+        "name": {{ current_label | json }}
+      }
+    ]
+  }
+</script>
+
+{% stylesheet %}
+  .breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .breadcrumbs__item {
+    min-width: 0;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-inline: var(--padding-2xs);
+    }
+  }
+
+  .breadcrumbs__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-foreground);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+  }
+
+  .breadcrumbs__current {
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}

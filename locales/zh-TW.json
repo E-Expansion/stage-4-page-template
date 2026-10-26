@@ -29,6 +29,7 @@
     "slider_label": "投影播放器"
   },
   "accessibility": {
+    "breadcrumbs": "導覽路徑",
     "play_model": "播放 3D 模型",
     "play_video": "播放影片",
     "unit_price": "單價",
@@ -87,6 +88,7 @@
     "show_submenu": "顯示 {{ title }} 子選單"
   },
   "actions": {
+    "view_product": "查看商品",
     "add_to_cart": "加入購物車",
     "clear_all": "全部清除",
     "remove": "移除",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "返回主選單"
   },
   "content": {
+    "home": "首頁",
+    "read_time": {
+      "one": "閱讀需 {{ count }} 分鐘",
+      "other": "閱讀需 {{ count }} 分鐘"
+    },
+    "updated_on": "更新於 {{ date }}",
+    "read_article": "閱讀文章",
+    "about_author": "關於作者",
     "color_count": {
       "one": "{{ count }} 種顏色",
       "other": "{{ count }} 種顏色"

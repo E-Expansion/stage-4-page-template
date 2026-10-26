@@ -29,6 +29,7 @@
     "slider_label": "滑块"
   },
   "accessibility": {
+    "breadcrumbs": "面包屑导航",
     "play_model": "演示 3D 模型",
     "play_video": "播放视频",
     "unit_price": "单价",
@@ -87,6 +88,7 @@
     "show_submenu": "显示 {{ title }} 子菜单"
   },
   "actions": {
+    "view_product": "查看商品",
     "add_to_cart": "添加到购物车",
     "clear_all": "全部清除",
     "remove": "移除",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "home": "首页",
+    "read_time": {
+      "one": "阅读需 {{ count }} 分钟",
+      "other": "阅读需 {{ count }} 分钟"
+    },
+    "updated_on": "更新于 {{ date }}",
+    "read_article": "阅读文章",
+    "about_author": "关于作者",
     "color_count": {
       "one": "{{ count }} 种颜色",
       "other": "{{ count }} 种颜色"

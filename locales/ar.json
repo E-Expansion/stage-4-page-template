@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "breadcrumbs": "مسار التنقل",
     "account": "الحساب",
     "active_filters": "عوامل التصفية النشطة:",
     "cart": "سلة التسوق",
@@ -71,6 +72,7 @@
     }
   },
   "actions": {
+    "view_product": "عرض المنتج",
     "add": "إضافة",
     "add_to_cart": "إضافة إلى سلة التسوق",
     "added": "تمت الإضافة",
@@ -162,6 +164,14 @@
     }
   },
   "content": {
+    "home": "الرئيسية",
+    "read_time": {
+      "one": "قراءة {{ count }} دقيقة",
+      "other": "قراءة {{ count }} دقائق"
+    },
+    "updated_on": "تم التحديث في {{ date }}",
+    "read_article": "اقرأ المقال",
+    "about_author": "عن الكاتب",
     "color_count": {
       "one": "{{ count }} لون",
       "other": "{{ count }} ألوان"

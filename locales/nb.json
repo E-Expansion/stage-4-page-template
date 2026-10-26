@@ -29,6 +29,7 @@
     "slider_label": "Glidefelt"
   },
   "accessibility": {
+    "breadcrumbs": "Brødsmulesti",
     "play_model": "Spill av 3D-modell",
     "play_video": "Spill av video",
     "unit_price": "Enhetspris",
@@ -87,6 +88,7 @@
     "view_disclosure_information_for_product": "Se produktopplysninger for {{ product_title }}"
   },
   "actions": {
+    "view_product": "Se produkt",
     "add_to_cart": "Legg i handlekurv",
     "clear_all": "Fjern alle",
     "remove": "Fjern",
@@ -130,6 +132,14 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "home": "Hjem",
+    "read_time": {
+      "one": "{{ count }} min lesetid",
+      "other": "{{ count }} min lesetid"
+    },
+    "updated_on": "Oppdatert {{ date }}",
+    "read_article": "Les artikkelen",
+    "about_author": "Om forfatteren",
     "color_count": {
       "one": "{{ count }} farge",
       "other": "{{ count }} farger"

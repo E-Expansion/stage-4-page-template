@@ -29,6 +29,7 @@
     "slider_label": "Thanh trượt"
   },
   "accessibility": {
+    "breadcrumbs": "Đường dẫn",
     "play_model": "Phát mô hình 3D",
     "play_video": "Phát video",
     "unit_price": "Đơn giá",
@@ -87,6 +88,7 @@
     "show_submenu": "Hiển thị menu phụ {{ title }}"
   },
   "actions": {
+    "view_product": "Xem sản phẩm",
     "add_to_cart": "Thêm vào giỏ hàng",
     "clear_all": "Xóa tất cả",
     "remove": "Xóa",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "home": "Trang chủ",
+    "read_time": {
+      "one": "{{ count }} phút đọc",
+      "other": "{{ count }} phút đọc"
+    },
+    "updated_on": "Cập nhật {{ date }}",
+    "read_article": "Đọc bài viết",
+    "about_author": "Về tác giả",
     "color_count": {
       "one": "{{ count }} màu",
       "other": "{{ count }} màu"

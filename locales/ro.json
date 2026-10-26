@@ -29,6 +29,7 @@
     "slider_label": "Cursor"
   },
   "accessibility": {
+    "breadcrumbs": "Navigare ierarhică",
     "play_model": "Redă modelul 3D",
     "play_video": "Redă videoclipul",
     "unit_price": "Preț unitar",
@@ -88,6 +89,7 @@
     "view_disclosure_information_for_product": "Vizualizează mențiunile referitoare la produsul {{ product_title }}"
   },
   "actions": {
+    "view_product": "Vezi produsul",
     "add_to_cart": "Adaugă în coș",
     "clear_all": "Ștergeți tot",
     "remove": "Eliminați",
@@ -132,6 +134,14 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "home": "Acasă",
+    "read_time": {
+      "one": "{{ count }} min de citit",
+      "other": "{{ count }} min de citit"
+    },
+    "updated_on": "Actualizat pe {{ date }}",
+    "read_article": "Citește articolul",
+    "about_author": "Despre autor",
     "color_count": {
       "one": "{{ count }} culoare",
       "other": "{{ count }} culori"

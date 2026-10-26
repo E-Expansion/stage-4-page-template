@@ -2,37 +2,15 @@
   Section contract.
   Hand-picked product cards with a heading row. Cards sit in a grid on desktop and become
   a horizontal scroll-snap carousel on mobile that bleeds to the viewport edge, matching
-  the category selector. Badges come from product tags, ratings from Shopify's standard
-  review metafields and stock status from variant inventory.
+  the category selector. Tiles are the shared product-tile snippet; badges, rating and
+  stock colours are set once in Theme settings.
   @example
   <!-- Homepage > Add section > Curated products; pick products in the product list -->
 {% endcomment %}
 
 {% liquid
-  assign heading = section.settings.heading | escape
-  assign subheading = section.settings.subheading | escape
   assign products = section.settings.products
   assign max_products = section.settings.max_products
-
-  # Badge text picks the palette extreme that contrasts with each badge colour
-  assign badge_style = ''
-  for index in (1..2)
-    assign color_key = 'badge_' | append: index | append: '_color'
-    assign badge_color = section.settings[color_key]
-    if badge_color != blank
-      assign badge_brightness = badge_color | color_brightness
-      if badge_brightness > 128
-        assign badge_text = 'var(--palette-darkest)'
-      else
-        assign badge_text = 'var(--palette-lightest)'
-      endif
-      capture badge_style
-        echo badge_style
-        echo '--curated-badge-' | append: index | append: '-color: ' | append: badge_color | append: '; '
-        echo '--curated-badge-' | append: index | append: '-text: ' | append: badge_text | append: '; '
-      endcapture
-    endif
-  endfor
 %}
 
 {% render 'contrast-override',
@@ -46,41 +24,23 @@
   class="curated-products section section--{{ section.settings.section_width }} spacing-style color-custom-{{ section.id }}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
-    --curated-columns: {{ section.settings.columns }};
-    {{ badge_style }}
-    {% if section.settings.rating_color != blank %}--curated-rating-color: {{ section.settings.rating_color }};{% endif %}
-    {% if section.settings.in_stock_color != blank %}--curated-in-stock-color: {{ section.settings.in_stock_color }};{% endif %}
-    {% if section.settings.low_stock_color != blank %}--curated-low-stock-color: {{ section.settings.low_stock_color }};{% endif %}
+    --snap-carousel-columns: {{ section.settings.columns }};
   "
 >
   <div class="curated-products__inner">
-    {% if heading != blank or subheading != blank %}
-      <div class="curated-products__header">
-        {% if heading != blank %}
-          <h2 class="curated-products__heading">{{ heading }}</h2>
-        {% endif %}
-        {% if subheading != blank %}
-          <p class="curated-products__subheading">{{ subheading }}</p>
-        {% endif %}
-      </div>
-    {% endif %}
+    {% render 'section-heading',
+      heading: section.settings.heading,
+      aside_text: section.settings.subheading
+    %}
 
-    <ul class="curated-products__list list-unstyled">
+    <ul class="curated-products__list snap-carousel list-unstyled">
       {% if products.size > 0 %}
         {% for product in products limit: max_products %}
-          {% render 'curated-product-card',
-            product: product,
-            section_id: section.id,
-            badge_1_tag: section.settings.badge_1_tag,
-            badge_1_label: section.settings.badge_1_label,
-            badge_2_tag: section.settings.badge_2_tag,
-            badge_2_label: section.settings.badge_2_label,
-            low_stock_threshold: section.settings.low_stock_threshold
-          %}
+          {% render 'product-tile', product: product, section_id: section.id %}
         {% endfor %}
       {% else %}
         {% for i in (1..4) %}
-          {% render 'curated-product-card', product: blank, section_id: section.id %}
+          {% render 'product-tile', product: blank, section_id: section.id %}
         {% endfor %}
       {% endif %}
     </ul>
@@ -93,68 +53,6 @@
     flex-direction: column;
     gap: var(--gap-xl);
     min-width: 0;
-  }
-
-  .curated-products__header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-xs);
-
-    @media screen and (min-width: 750px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      column-gap: var(--gap-xl);
-    }
-  }
-
-  .curated-products__heading {
-    margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--2xl);
-    line-height: var(--line-height--display-normal);
-    letter-spacing: var(--letter-spacing--heading-tight);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--3xl);
-    }
-  }
-
-  .curated-products__subheading {
-    margin: 0;
-    font-size: var(--font-size--sm);
-    color: var(--color-foreground-muted);
-  }
-
-  /* Same carousel pattern as the category selector */
-  .curated-products__list {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 45%;
-    gap: var(--gap-sm);
-    margin: 0;
-    margin-inline-end: calc(var(--page-margin) * -1);
-    padding-inline-end: var(--page-margin);
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media screen and (min-width: 750px) {
-      grid-auto-flow: row;
-      grid-template-columns: repeat(var(--curated-columns), minmax(0, 1fr));
-      gap: var(--gap-lg);
-      margin-inline-end: 0;
-      padding-inline-end: 0;
-      overflow: visible;
-    }
   }
 {% endstylesheet %}
 
@@ -197,81 +95,6 @@
       "max": 5,
       "step": 1,
       "default": 4
-    },
-    {
-      "type": "header",
-      "content": "t:content.badges"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:info.curated_products_badges"
-    },
-    {
-      "type": "text",
-      "id": "badge_1_tag",
-      "label": "t:settings.badge_1_tag",
-      "default": "best-seller"
-    },
-    {
-      "type": "text",
-      "id": "badge_1_label",
-      "label": "t:settings.badge_1_label",
-      "default": "Best seller"
-    },
-    {
-      "type": "color",
-      "id": "badge_1_color",
-      "label": "t:settings.badge_1_color",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "text",
-      "id": "badge_2_tag",
-      "label": "t:settings.badge_2_tag",
-      "default": "new"
-    },
-    {
-      "type": "text",
-      "id": "badge_2_label",
-      "label": "t:settings.badge_2_label",
-      "default": "New"
-    },
-    {
-      "type": "color",
-      "id": "badge_2_color",
-      "label": "t:settings.badge_2_color",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "header",
-      "content": "t:content.inventory"
-    },
-    {
-      "type": "range",
-      "id": "low_stock_threshold",
-      "label": "t:settings.low_stock_threshold",
-      "min": 1,
-      "max": 20,
-      "step": 1,
-      "default": 5
-    },
-    {
-      "type": "color",
-      "id": "in_stock_color",
-      "label": "t:settings.in_stock_color",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "color",
-      "id": "low_stock_color",
-      "label": "t:settings.low_stock_color",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "color",
-      "id": "rating_color",
-      "label": "t:settings.rating_color",
-      "placeholder": "t:settings.default"
     },
     {
       "type": "header",

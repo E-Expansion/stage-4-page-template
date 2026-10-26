@@ -29,6 +29,7 @@
     "slider_label": "แถบเลื่อน"
   },
   "accessibility": {
+    "breadcrumbs": "เส้นทางนำทาง",
     "play_model": "เล่นโมเดล 3 มิติ",
     "play_video": "เล่นวิดีโอ",
     "unit_price": "ราคาต่อหน่วย",
@@ -87,6 +88,7 @@
     "show_submenu": "แสดงเมนูย่อยของ{{ title }}"
   },
   "actions": {
+    "view_product": "ดูสินค้า",
     "add_to_cart": "เพิ่มลงในตะกร้าสินค้า",
     "clear_all": "ล้างทั้งหมด",
     "remove": "ลบออก",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "home": "หน้าแรก",
+    "read_time": {
+      "one": "อ่าน {{ count }} นาที",
+      "other": "อ่าน {{ count }} นาที"
+    },
+    "updated_on": "อัปเดตเมื่อ {{ date }}",
+    "read_article": "อ่านบทความ",
+    "about_author": "เกี่ยวกับผู้เขียน",
     "color_count": {
       "one": "{{ count }} สี",
       "other": "{{ count }} สี"

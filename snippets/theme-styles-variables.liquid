@@ -521,6 +521,11 @@
       --badge-rectangle-padding-inline: 10px;
     }
 
+    /* Product status colours shared by product tiles, mentions and the product page */
+    --color-rating: {{ settings.rating_color | default: 'var(--color-foreground)' }};
+    --color-in-stock: {{ settings.in_stock_color | default: 'var(--color-foreground)' }};
+    --color-low-stock: {{ settings.low_stock_color | default: 'var(--color-foreground)' }};
+
     /* Icons */
     --icon-size-2xs: 0.6rem;
     --icon-size-xs: 0.85rem;

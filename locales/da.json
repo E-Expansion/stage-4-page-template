@@ -29,6 +29,7 @@
     "slider_label": "Billedkarrusel"
   },
   "accessibility": {
+    "breadcrumbs": "Brødkrummesti",
     "play_model": "Afspil 3D-model",
     "play_video": "Afspil video",
     "unit_price": "Stykpris",
@@ -87,6 +88,7 @@
     "show_submenu": "Vis undermenu for {{ title }}"
   },
   "actions": {
+    "view_product": "Se produkt",
     "add_to_cart": "Læg i indkøbskurven",
     "clear_all": "Ryd alle",
     "remove": "Fjern",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "home": "Forside",
+    "read_time": {
+      "one": "{{ count }} min. læsning",
+      "other": "{{ count }} min. læsning"
+    },
+    "updated_on": "Opdateret {{ date }}",
+    "read_article": "Læs artiklen",
+    "about_author": "Om forfatteren",
     "color_count": {
       "one": "{{ count }} farve",
       "other": "{{ count }} farver"

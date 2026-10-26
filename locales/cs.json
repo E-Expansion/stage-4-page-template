@@ -29,6 +29,7 @@
     "slider_label": "Posuvník"
   },
   "accessibility": {
+    "breadcrumbs": "Drobečková navigace",
     "play_model": "Přehrát 3D model",
     "play_video": "Přehrát video",
     "unit_price": "Jednotková cena",
@@ -89,6 +90,7 @@
     "show_submenu": "Zobrazit podnabídku {{ title }}"
   },
   "actions": {
+    "view_product": "Zobrazit produkt",
     "add_to_cart": "Přidat do košíku",
     "clear_all": "Vymazat vše",
     "remove": "Odebrat",
@@ -134,6 +136,14 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "home": "Domů",
+    "read_time": {
+      "one": "{{ count }} min čtení",
+      "other": "{{ count }} min čtení"
+    },
+    "updated_on": "Aktualizováno {{ date }}",
+    "read_article": "Přečíst článek",
+    "about_author": "O autorovi",
     "color_count": {
       "one": "{{ count }} barva",
       "other": "{{ count }} barev"

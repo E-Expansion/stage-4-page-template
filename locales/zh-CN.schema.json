@@ -193,6 +193,18 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "badge_3_color": "徽章 3 颜色",
+    "badge_3_label": "徽章 3 文本",
+    "badge_3_tag": "徽章 3 产品标签",
+    "badge_4_color": "徽章 4 颜色",
+    "badge_4_label": "徽章 4 文本",
+    "badge_4_tag": "徽章 4 产品标签",
+    "badge_5_color": "徽章 5 颜色",
+    "badge_5_label": "徽章 5 文本",
+    "badge_5_tag": "徽章 5 产品标签",
+    "badge_6_color": "徽章 6 颜色",
+    "badge_6_label": "徽章 6 文本",
+    "badge_6_tag": "徽章 6 产品标签",
     "customer_tags": "客户标签",
     "download_label": "下载链接文本",
     "download_link": "下载链接",
@@ -941,6 +953,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "tag_badges": "标签徽章",
     "form": "表单",
     "badges": "徽章",
     "inventory": "库存",
@@ -1171,6 +1184,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "tag_badges": "带有匹配标签的商品和文章会显示彩色徽章，例如“best-seller”或“选购指南”。规则按顺序检查，以第一个匹配项为准。",
+    "tag_badge_label": "可选。留空则显示标签本身",
+    "faq_metafield": "在商品、商品系列和文章页面上，问题来自元字段 custom.faq（FAQ 条目列表）。为空时使用下方的问题块。",
     "newsletter_signup_download": "可选。注册后显示，例如在内容 > 文件中上传的 PDF",
     "newsletter_signup_tags": "以逗号分隔。使用这些标签触发发送指南的 Shopify Email 自动化",
     "ugc_brand_link": "留空以链接到上方账户的 Instagram 主页",

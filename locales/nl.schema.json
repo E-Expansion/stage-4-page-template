@@ -193,6 +193,18 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "badge_3_color": "Kleur badge 3",
+    "badge_3_label": "Label badge 3",
+    "badge_3_tag": "Producttag badge 3",
+    "badge_4_color": "Kleur badge 4",
+    "badge_4_label": "Label badge 4",
+    "badge_4_tag": "Producttag badge 4",
+    "badge_5_color": "Kleur badge 5",
+    "badge_5_label": "Label badge 5",
+    "badge_5_tag": "Producttag badge 5",
+    "badge_6_color": "Kleur badge 6",
+    "badge_6_label": "Label badge 6",
+    "badge_6_tag": "Producttag badge 6",
     "customer_tags": "Klanttags",
     "download_label": "Label downloadlink",
     "download_link": "Downloadlink",
@@ -941,6 +953,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "tag_badges": "Tagbadges",
     "form": "Formulier",
     "badges": "Badges",
     "inventory": "Voorraad",
@@ -1171,6 +1184,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "tag_badges": "Producten en artikelen met een overeenkomende tag tonen een gekleurde badge, bijv. \"best-seller\" of \"Koopgids\". Regels worden op volgorde gecontroleerd en de eerste match wint.",
+    "tag_badge_label": "Optioneel. Laat leeg om de tag zelf te tonen",
+    "faq_metafield": "Op product-, collectie- en artikelpagina's komen de vragen uit het metaveld custom.faq (een lijst met FAQ-items). De vraagblokken hieronder worden gebruikt als het leeg is.",
     "newsletter_signup_download": "Optioneel. Getoond na aanmelding, bijv. een pdf geüpload onder Content > Bestanden",
     "newsletter_signup_tags": "Gescheiden door komma's. Gebruik deze tags om een Shopify Email-automatisering te starten die de gids verstuurt",
     "ugc_brand_link": "Laat leeg om te linken naar het Instagram-profiel van het account hierboven",

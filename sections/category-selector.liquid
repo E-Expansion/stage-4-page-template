@@ -8,9 +8,6 @@
 {% endcomment %}
 
 {% liquid
-  assign heading = section.settings.heading | escape
-  assign link_label = section.settings.link_label | escape
-  assign link_label_mobile = section.settings.link_label_mobile | escape | default: link_label
   assign columns = section.blocks.size | at_least: 1 | at_most: 4
 %}
 
@@ -25,33 +22,21 @@
   class="category-selector section section--{{ section.settings.section_width }} spacing-style color-custom-{{ section.id }}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
-    --category-selector-columns: {{ columns }};
-    --category-selector-ratio: {{ section.settings.image_ratio }};
-    {% if section.settings.link_color != blank %}--category-selector-link-color: {{ section.settings.link_color }};{% endif %}
+    --snap-carousel-columns: {{ columns }};
+    --category-tile-ratio: {{ section.settings.image_ratio }};
+    {% if section.settings.link_color != blank %}--section-heading-link-color: {{ section.settings.link_color }};{% endif %}
   "
 >
   <div class="category-selector__inner">
-    <div class="category-selector__header">
-      {% if heading != blank %}
-        <h2 class="category-selector__heading">{{ heading }}</h2>
-      {% endif %}
+    {% render 'section-heading',
+      heading: section.settings.heading,
+      text: section.settings.text,
+      link_url: section.settings.link,
+      link_label: section.settings.link_label,
+      link_label_mobile: section.settings.link_label_mobile
+    %}
 
-      {% if section.settings.text != blank %}
-        <div class="category-selector__text rte">{{ section.settings.text }}</div>
-      {% endif %}
-
-      {% if link_label != blank and section.settings.link != blank %}
-        <a
-          href="{{ section.settings.link }}"
-          class="category-selector__link"
-        >
-          <span class="mobile:hidden">{{ link_label }}</span>
-          <span class="desktop:hidden">{{ link_label_mobile }}</span>
-        </a>
-      {% endif %}
-    </div>
-
-    <ul class="category-selector__list list-unstyled">
+    <ul class="category-selector__list snap-carousel list-unstyled">
       {% content_for 'blocks' %}
     </ul>
   </div>
@@ -63,90 +48,6 @@
     flex-direction: column;
     gap: var(--gap-xl);
     min-width: 0;
-  }
-
-  .category-selector__header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      'heading link'
-      'text text';
-    align-items: baseline;
-    column-gap: var(--gap-lg);
-    row-gap: var(--gap-xs);
-
-    @media screen and (min-width: 750px) {
-      grid-template-areas:
-        'heading .'
-        'text link';
-    }
-  }
-
-  .category-selector__heading {
-    grid-area: heading;
-    margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--2xl);
-    line-height: var(--line-height--display-normal);
-    letter-spacing: var(--letter-spacing--heading-tight);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--3xl);
-    }
-  }
-
-  .category-selector__text {
-    grid-area: text;
-    font-size: var(--font-size--sm);
-    color: var(--color-foreground-muted);
-
-    & > * {
-      margin: 0;
-    }
-  }
-
-  .category-selector__link {
-    grid-area: link;
-    color: var(--category-selector-link-color, var(--color-foreground));
-    font-size: var(--font-size--sm);
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    white-space: nowrap;
-
-    &:hover {
-      text-decoration-thickness: 2px;
-    }
-  }
-
-  .category-selector__list {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 45%;
-    gap: var(--gap-sm);
-    margin: 0;
-
-    /* Carousel bleeds into the page margin on the inline end */
-    margin-inline-end: calc(var(--page-margin) * -1);
-    padding-inline-end: var(--page-margin);
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media screen and (min-width: 750px) {
-      grid-auto-flow: row;
-      grid-template-columns: repeat(var(--category-selector-columns), minmax(0, 1fr));
-      gap: var(--gap-lg);
-      margin-inline-end: 0;
-      padding-inline-end: 0;
-      overflow: visible;
-    }
   }
 {% endstylesheet %}
 

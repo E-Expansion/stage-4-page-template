@@ -77,28 +77,11 @@
 
     {% if author != blank %}
       <figcaption class="press-mention__caption">
-        <span class="press-mention__author">
-            {% if block.settings.author_image != blank %}
-              {{
-                block.settings.author_image
-                | image_url: width: 96, height: 96, crop: 'center'
-                | image_tag: width: 24, height: 24, alt: '', loading: 'lazy', class: 'press-mention__avatar'
-              }}
-            {% else %}
-              <span
-                class="press-mention__avatar press-mention__avatar--initial"
-                aria-hidden="true"
-              >
-                {{- author | slice: 0 | upcase -}}
-              </span>
-            {% endif %}
-            <span class="press-mention__author-name">
-              {{- author -}}
-              {%- if publication != blank -%}
-                <span class="visually-hidden">, {{ publication }}</span>
-              {%- endif -%}
-            </span>
-          </span>
+        {% render 'author-byline',
+          name: block.settings.author,
+          image: block.settings.author_image,
+          hidden_suffix: block.settings.publication
+        %}
       </figcaption>
     {% endif %}
   </figure>
@@ -173,36 +156,6 @@
     display: flex;
     margin-block-start: calc(var(--gap-md) - var(--gap-2xl));
   }
-
-  .press-mention__author {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--gap-xs);
-    min-width: 0;
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground);
-  }
-
-  .press-mention__avatar {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .press-mention__avatar--initial {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size--3xs);
-    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
-  }
-
-  .press-mention__author-name {
-    overflow-wrap: anywhere;
-  }
-
 {% endstylesheet %}
 
 {% schema %}

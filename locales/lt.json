@@ -29,6 +29,7 @@
     "slider_label": "Slankiklis"
   },
   "accessibility": {
+    "breadcrumbs": "Naršymo kelias",
     "play_model": "Paleisti 3D modelį",
     "play_video": "Paleisti vaizdo įrašą",
     "unit_price": "Vieneto kaina",
@@ -89,6 +90,7 @@
     "show_submenu": "Rodyti {{ title }} submeniu"
   },
   "actions": {
+    "view_product": "Peržiūrėti produktą",
     "add_to_cart": "Įdėti į krepšelį",
     "clear_all": "Išvalyti viską",
     "remove": "Pašalinti",
@@ -134,6 +136,14 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "home": "Pradžia",
+    "read_time": {
+      "one": "{{ count }} min skaitymo",
+      "other": "{{ count }} min skaitymo"
+    },
+    "updated_on": "Atnaujinta {{ date }}",
+    "read_article": "Skaityti straipsnį",
+    "about_author": "Apie autorių",
     "color_count": {
       "one": "{{ count }} spalva",
       "other": "{{ count }} spalvos"

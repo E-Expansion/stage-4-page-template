@@ -29,6 +29,7 @@
     "slider_label": "Carrousel"
   },
   "accessibility": {
+    "breadcrumbs": "Fil d'Ariane",
     "play_model": "Jouer le modèle 3D",
     "play_video": "Lire la vidéo",
     "unit_price": "Prix unitaire",
@@ -88,6 +89,7 @@
     "view_disclosure_information_for_product": "Afficher les informations sur le produit {{ product_title }}"
   },
   "actions": {
+    "view_product": "Voir le produit",
     "add_to_cart": "Ajouter au panier",
     "clear_all": "Tout effacer",
     "remove": "Retirer",
@@ -132,6 +134,14 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "home": "Accueil",
+    "read_time": {
+      "one": "{{ count }} min de lecture",
+      "other": "{{ count }} min de lecture"
+    },
+    "updated_on": "Mis à jour le {{ date }}",
+    "read_article": "Lire l'article",
+    "about_author": "À propos de l'auteur",
     "color_count": {
       "one": "{{ count }} couleur",
       "other": "{{ count }} couleurs"

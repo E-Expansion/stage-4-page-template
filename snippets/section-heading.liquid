@@ -1,0 +1,155 @@
+{%- doc -%}
+  Renders the heading row shared by content sections: a heading with optional text below
+  and an aside on the inline end. The aside is either a link (kept beside the heading on
+  mobile) or a short line of text (moves under the heading on mobile).
+
+  The link colour is read from --section-heading-link-color when the section sets it.
+
+  @param {string} [heading] - Heading text, escaped here
+  @param {string} [text] - Rich text HTML shown under the heading
+  @param {string} [aside_text] - Plain text on the inline end, escaped here
+  @param {string} [link_url] - URL of the aside link
+  @param {string} [link_label] - Label of the aside link, escaped here
+  @param {string} [link_label_mobile] - Shorter label on mobile, defaults to link_label
+  @param {boolean} [link_external] - Open the link in a new tab
+  @param {string} [heading_tag] - Heading element, defaults to h2
+
+  @example
+  {% render 'section-heading', heading: section.settings.heading, link_url: section.settings.link, link_label: section.settings.link_label %}
+{%- enddoc -%}
+
+{% liquid
+  assign heading = heading | escape
+  assign aside_text = aside_text | escape
+  assign link_label = link_label | escape
+  assign link_label_mobile = link_label_mobile | escape | default: link_label
+  assign heading_tag = heading_tag | default: 'h2'
+
+  assign has_link = false
+  if link_url != blank and link_label != blank
+    assign has_link = true
+  endif
+%}
+
+{% if heading != blank or text != blank or aside_text != blank or has_link %}
+  <div class="section-heading{% if has_link %} section-heading--link{% endif %}">
+    {% if heading != blank %}
+      <{{ heading_tag }} class="section-heading__title">{{ heading }}</{{ heading_tag }}>
+    {% endif %}
+
+    {% if text != blank %}
+      <div class="section-heading__text rte">{{ text }}</div>
+    {% endif %}
+
+    {% if has_link %}
+      <a
+        href="{{ link_url }}"
+        class="section-heading__aside section-heading__link"
+        {% if link_external %}
+          target="_blank"
+          rel="noopener"
+        {% endif %}
+      >
+        {% if link_label_mobile != link_label %}
+          <span class="mobile:hidden">{{ link_label }}</span>
+          <span class="desktop:hidden">{{ link_label_mobile }}</span>
+        {% else %}
+          {{- link_label -}}
+        {% endif %}
+      </a>
+    {% elsif aside_text != blank %}
+      <p class="section-heading__aside section-heading__aside-text">{{ aside_text }}</p>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'title'
+      'text'
+      'aside';
+    row-gap: var(--gap-xs);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        'title aside'
+        'text aside';
+      column-gap: var(--gap-xl);
+    }
+  }
+
+  /* Links stay beside the heading on mobile */
+  .section-heading--link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'title aside'
+      'text text';
+    column-gap: var(--gap-lg);
+
+    @media screen and (min-width: 750px) {
+      grid-template-areas:
+        'title aside'
+        'text aside';
+    }
+  }
+
+  .section-heading__title {
+    grid-area: title;
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-normal);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  .section-heading__text {
+    grid-area: text;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  /* The aside lines up with the last line of the heading block */
+  .section-heading__aside {
+    grid-area: aside;
+    align-self: end;
+    margin: 0;
+    font-size: var(--font-size--sm);
+  }
+
+  .section-heading--link .section-heading__aside {
+    align-self: center;
+
+    @media screen and (min-width: 750px) {
+      align-self: end;
+    }
+  }
+
+  .section-heading__aside-text {
+    color: var(--color-foreground-muted);
+  }
+
+  .section-heading__link {
+    color: var(--section-heading-link-color, var(--color-foreground));
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+{% endstylesheet %}

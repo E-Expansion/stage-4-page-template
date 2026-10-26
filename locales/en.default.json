@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "breadcrumbs": "Breadcrumbs",
     "account": "Account",
     "active_filters": "Active filters:",
     "cart": "Cart",
@@ -68,6 +69,7 @@
     "price_filter_high": "High price"
   },
   "actions": {
+    "view_product": "View product",
     // Quick add button on product cards, shortened version of add to cart
     "add": "Add",
     "add_to_cart": "Add to cart",
@@ -163,6 +165,14 @@
     }
   },
   "content": {
+    "home": "Home",
+    "read_time": {
+      "one": "{{ count }} min read",
+      "other": "{{ count }} min read"
+    },
+    "updated_on": "Updated {{ date }}",
+    "read_article": "Read the article",
+    "about_author": "About the author",
     "color_count": {
       "one": "{{ count }} colour",
       "other": "{{ count }} colours"

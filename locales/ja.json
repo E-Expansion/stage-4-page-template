@@ -29,6 +29,7 @@
     "slider_label": "スライダー"
   },
   "accessibility": {
+    "breadcrumbs": "パンくずリスト",
     "play_model": "3Dモデルを再生",
     "play_video": "ビデオを再生",
     "unit_price": "単価",
@@ -87,6 +88,7 @@
     "show_submenu": "{{ title }} のサブメニューを表示"
   },
   "actions": {
+    "view_product": "商品を見る",
     "add_to_cart": "カートに追加",
     "clear_all": "すべてクリア",
     "remove": "削除",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "home": "ホーム",
+    "read_time": {
+      "one": "{{ count }}分で読めます",
+      "other": "{{ count }}分で読めます"
+    },
+    "updated_on": "{{ date }}更新",
+    "read_article": "記事を読む",
+    "about_author": "著者について",
     "color_count": {
       "one": "{{ count }}色",
       "other": "{{ count }}色"

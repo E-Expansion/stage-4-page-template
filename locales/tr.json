@@ -29,6 +29,7 @@
     "slider_label": "Kaydırıcı"
   },
   "accessibility": {
+    "breadcrumbs": "İçerik haritası",
     "play_model": "3B modeli oynat",
     "play_video": "Videoyu oynat",
     "unit_price": "Birim fiyatı",
@@ -87,6 +88,7 @@
     "view_disclosure_information_for_product": "{{ product_title }} için bildirim bilgilerini görüntüleyin"
   },
   "actions": {
+    "view_product": "Ürünü görüntüle",
     "add_to_cart": "Sepete ekle",
     "clear_all": "Tümünü temizle",
     "remove": "Kaldır",
@@ -130,6 +132,14 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "home": "Ana sayfa",
+    "read_time": {
+      "one": "{{ count }} dk okuma",
+      "other": "{{ count }} dk okuma"
+    },
+    "updated_on": "Güncellendi: {{ date }}",
+    "read_article": "Makaleyi oku",
+    "about_author": "Yazar hakkında",
     "color_count": {
       "one": "{{ count }} renk",
       "other": "{{ count }} renk"

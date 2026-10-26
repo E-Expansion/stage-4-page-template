@@ -29,6 +29,7 @@
     "slider_label": "슬라이더"
   },
   "accessibility": {
+    "breadcrumbs": "이동 경로",
     "play_model": "3D 모델 재생",
     "play_video": "동영상 재생",
     "unit_price": "단가",
@@ -87,6 +88,7 @@
     "view_disclosure_information_for_product": "{{ product_title }}에 대한 고지 정보 보기"
   },
   "actions": {
+    "view_product": "제품 보기",
     "add_to_cart": "카트에 추가",
     "clear_all": "모두 지우기",
     "remove": "제거",
@@ -130,6 +132,14 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "home": "홈",
+    "read_time": {
+      "one": "{{ count }}분 분량",
+      "other": "{{ count }}분 분량"
+    },
+    "updated_on": "{{ date }} 업데이트",
+    "read_article": "기사 읽기",
+    "about_author": "작성자 소개",
     "color_count": {
       "one": "{{ count }}가지 색상",
       "other": "{{ count }}가지 색상"

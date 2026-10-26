@@ -1885,3 +1885,37 @@ main > .shopify-section:first-child .section:not(.disable-section-top-offset) {
     margin-top: calc(var(--header-height) * var(--transparent-header-offset-boolean) * -1);
   }
 }
+
+/* Card row: horizontal scroll-snap carousel on mobile that bleeds into the page margin,
+   a grid of --snap-carousel-columns on desktop. Used by category, product and article rows. */
+.snap-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--snap-carousel-mobile-width, 45%);
+  gap: var(--gap-sm);
+  margin: 0;
+  margin-inline-end: calc(var(--page-margin) * -1);
+  padding-inline-end: var(--page-margin);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > * {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  @media screen and (min-width: 750px) {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(var(--snap-carousel-columns, 4), minmax(0, 1fr));
+    gap: var(--gap-lg);
+    margin-inline-end: 0;
+    padding-inline-end: 0;
+    overflow: visible;
+  }
+}

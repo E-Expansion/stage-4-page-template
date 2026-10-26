@@ -29,6 +29,7 @@
     "slider_label": "Jazdec"
   },
   "accessibility": {
+    "breadcrumbs": "Navigačná cesta",
     "play_model": "Prehrať 3D model",
     "play_video": "Prehrať video",
     "unit_price": "Jednotková cena",
@@ -89,6 +90,7 @@
     "show_submenu": "Zobraziť podponuku {{ title }}"
   },
   "actions": {
+    "view_product": "Zobraziť produkt",
     "add_to_cart": "Pridať do košíka",
     "clear_all": "Vymazať všetko",
     "remove": "Odstrániť",
@@ -134,6 +136,14 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "home": "Domov",
+    "read_time": {
+      "one": "{{ count }} min čítania",
+      "other": "{{ count }} min čítania"
+    },
+    "updated_on": "Aktualizované {{ date }}",
+    "read_article": "Prečítať článok",
+    "about_author": "O autorovi",
     "color_count": {
       "one": "{{ count }} farba",
       "other": "{{ count }} farieb"

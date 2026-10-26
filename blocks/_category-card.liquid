@@ -1,6 +1,6 @@
 {% doc %}
-  Renders a collection card for the category selector: image, title and product count,
-  all read from the chosen collection. An image or title set on the block overrides it.
+  Category selector card: reads image, title and product count from the chosen collection
+  (an image or title set on the block overrides them) and renders the shared category-tile.
 
   @example
   {% content_for 'blocks' %}
@@ -16,120 +16,13 @@
   assign url = collection.url | default: routes.all_products_collection_url
 %}
 
-<li
-  class="category-card"
-  {{ block.shopify_attributes }}
->
-  <a
-    href="{{ url }}"
-    class="category-card__link"
-  >
-    <span class="category-card__media">
-      {% if image != blank %}
-        {{
-          image
-          | image_url: width: 1200
-          | image_tag:
-            widths: '240, 360, 480, 640, 800, 1000, 1200',
-            sizes: '(min-width: 750px) 25vw, 45vw',
-            loading: 'lazy',
-            alt: '',
-            class: 'category-card__image'
-        }}
-      {% else %}
-        {{ 'collection-1' | placeholder_svg_tag: 'category-card__image category-card__placeholder' }}
-      {% endif %}
-    </span>
-
-    <span class="category-card__info">
-      <span class="category-card__title">{{ title }}</span>
-      {% if collection != blank %}
-        <span class="category-card__count">
-          {{- 'content.item_count' | t: count: collection.products_count -}}
-        </span>
-      {% endif %}
-    </span>
-  </a>
-</li>
-
-{% stylesheet %}
-  .category-card {
-    min-width: 0;
-    scroll-snap-align: start;
-  }
-
-  .category-card__link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-    color: var(--color-foreground);
-    text-decoration: none;
-    background-color: var(--color-background);
-    border: var(--style-border-width) solid var(--color-border);
-    border-radius: var(--style-border-radius-xs);
-  }
-
-  .category-card__media {
-    display: block;
-    overflow: hidden;
-    aspect-ratio: var(--category-selector-ratio, 4 / 3);
-  }
-
-  .category-card__image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--animation-speed-slow) var(--animation-easing);
-  }
-
-  .category-card__placeholder {
-    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
-    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
-  }
-
-  @media (hover: hover) {
-    .category-card__link:hover .category-card__image {
-      transform: scale(1.03);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .category-card__image {
-      transition: none;
-    }
-  }
-
-  .category-card__info {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--gap-xs);
-    padding: var(--padding-sm) var(--padding-md);
-    border-block-start: var(--style-border-width) solid var(--color-border);
-  }
-
-  .category-card__title {
-    min-width: 0;
-    font-size: var(--font-size--sm);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--md);
-    }
-  }
-
-  .category-card__count {
-    flex-shrink: 0;
-    font-size: var(--font-size--2xs);
-    color: var(--color-foreground-muted);
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--xs);
-    }
-  }
-{% endstylesheet %}
+{% render 'category-tile',
+  url: url,
+  title: title,
+  image: image,
+  count: collection.products_count,
+  attributes: block.shopify_attributes
+%}
 
 {% schema %}
 {

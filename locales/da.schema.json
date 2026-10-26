@@ -193,6 +193,18 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "badge_3_color": "Farve badge 3",
+    "badge_3_label": "Tekst badge 3",
+    "badge_3_tag": "Produkttag badge 3",
+    "badge_4_color": "Farve badge 4",
+    "badge_4_label": "Tekst badge 4",
+    "badge_4_tag": "Produkttag badge 4",
+    "badge_5_color": "Farve badge 5",
+    "badge_5_label": "Tekst badge 5",
+    "badge_5_tag": "Produkttag badge 5",
+    "badge_6_color": "Farve badge 6",
+    "badge_6_label": "Tekst badge 6",
+    "badge_6_tag": "Produkttag badge 6",
     "customer_tags": "Kundetags",
     "download_label": "Tekst på downloadlink",
     "download_link": "Downloadlink",
@@ -941,6 +953,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "tag_badges": "Tag-badges",
     "form": "Formular",
     "badges": "Badges",
     "inventory": "Lager",
@@ -1171,6 +1184,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "tag_badges": "Produkter og artikler med et matchende tag viser et farvet badge, fx \"best-seller\" eller \"Købsguide\". Reglerne tjekkes i rækkefølge, og det første match vinder.",
+    "tag_badge_label": "Valgfrit. Lad være tom for at vise selve tagget",
+    "faq_metafield": "På produkt-, kollektions- og artikelsider kommer spørgsmålene fra metafeltet custom.faq (en liste med FAQ-poster). Spørgsmålsblokkene nedenfor bruges, når det er tomt.",
     "newsletter_signup_download": "Valgfrit. Vises efter tilmelding, fx en PDF uploadet under Indhold > Filer",
     "newsletter_signup_tags": "Kommasepareret. Brug disse tags til at starte en Shopify Email-automatisering, der sender guiden",
     "ugc_brand_link": "Lad være tom for at linke til Instagram-profilen for kontoen ovenfor",

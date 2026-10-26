@@ -1,0 +1,323 @@
+{%- doc -%}
+  Renders the shared article card in one of three layouts:
+  - card: image with tag badge, title, excerpt, read time, date and author (journal grid,
+    "more from the journal" rows)
+  - featured: wide card with the image beside the text on desktop and a "read" link
+  - link: title only, for compact lists such as "Keep reading"
+  The badge comes from the article's tags (styled by Theme settings > Badges), the author
+  from the article's custom.author metafield, and the read time is estimated from the
+  article's word count. Callers wrap the card in their own list item.
+
+  The "read" link colour is read from --article-card-link-color when the section sets it.
+
+  @param {object} article - The article to render
+  @param {string} [layout] - 'card' (default), 'featured' or 'link'
+  @param {string} [link_label] - Label of the featured "read" link, defaults to "Read the article"
+  @param {boolean} [show_author] - Show the author byline, defaults to true
+  @param {boolean} [show_updated] - Show the last update date instead of the publish date
+  @param {string} [sizes] - Image sizes attribute
+  @param {boolean} [eager] - Load the image eagerly
+  @param {string} [heading_tag] - Title element, defaults to h3
+
+  @example
+  {% render 'article-card', article: article, layout: 'featured', link_label: 'Read the guide' %}
+{%- enddoc -%}
+
+{% liquid
+  assign layout = layout | default: 'card'
+  assign heading_tag = heading_tag | default: 'h3'
+  assign title = article.title | escape
+
+  if layout != 'link'
+    # Read time at roughly 200 words per minute, at least one minute
+    assign word_count = article.content | strip_html | split: ' ' | size
+    assign read_minutes = word_count | divided_by: 200 | at_least: 1
+
+    assign excerpt = article.excerpt | strip_html | strip
+    if excerpt == blank
+      assign excerpt = article.content | strip_html | truncatewords: 25
+    endif
+
+    if show_updated
+      assign formatted_date = article.updated_at | date: format: 'abbreviated_date'
+      assign card_date = 'content.updated_on' | t: date: formatted_date
+    else
+      assign card_date = article.published_at | time_tag: format: 'abbreviated_date'
+    endif
+
+    if layout == 'featured'
+      assign default_sizes = '(min-width: 750px) 55vw, 100vw'
+    else
+      assign default_sizes = '(min-width: 750px) 33vw, 80vw'
+    endif
+    assign image_sizes = sizes | default: default_sizes
+    assign image_loading = 'lazy'
+    if eager
+      assign image_loading = 'eager'
+    endif
+
+    assign link_label = link_label | escape
+    if link_label == blank
+      assign link_label = 'content.read_article' | t
+    endif
+  endif
+%}
+
+{%- if layout == 'link' -%}
+  <a
+    href="{{ article.url }}"
+    class="article-card article-card--link"
+  >
+    {{- title -}}
+  </a>
+{%- else -%}
+  <article class="article-card article-card--{{ layout }}">
+    <div class="article-card__media">
+      {% if article.image != blank %}
+        {{
+          article.image
+          | image_url: width: 1600
+          | image_tag:
+            widths: '320, 480, 640, 800, 1000, 1200, 1600',
+            sizes: image_sizes,
+            loading: image_loading,
+            alt: '',
+            class: 'article-card__image'
+        }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'article-card__image article-card__placeholder' }}
+      {% endif %}
+
+      {% if layout == 'card' %}
+        {% render 'tag-badge', tags: article.tags, class: 'article-card__badge' %}
+      {% endif %}
+    </div>
+
+    <div class="article-card__body">
+      {% if layout == 'featured' %}
+        {% render 'tag-badge', tags: article.tags %}
+      {% endif %}
+
+      <{{ heading_tag }} class="article-card__title">
+        <a
+          href="{{ article.url }}"
+          class="article-card__link"
+        >
+          {{- title -}}
+        </a>
+      </{{ heading_tag }}>
+
+      {% if excerpt != blank %}
+        <p class="article-card__excerpt">{{ excerpt }}</p>
+      {% endif %}
+
+      <div class="article-card__footer">
+        <p class="article-card__meta">
+          {{- 'content.read_time' | t: count: read_minutes }}
+          ·
+          {{ card_date -}}
+        </p>
+
+        {% if show_author != false %}
+          {% render 'author-byline', article: article, avatar_position: 'end', class: 'article-card__author' %}
+        {% endif %}
+      </div>
+
+      {% if layout == 'featured' %}
+        <span
+          class="article-card__read"
+          aria-hidden="true"
+        >
+          {{- link_label }} →
+        </span>
+      {% endif %}
+    </div>
+  </article>
+{%- endif -%}
+
+{% stylesheet %}
+  .article-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .article-card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .article-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  .article-card__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  @media (hover: hover) {
+    .article-card:hover .article-card__image {
+      transform: scale(1.03);
+    }
+  }
+
+  .article-card__badge {
+    position: absolute;
+    inset-block-start: var(--padding-sm);
+    inset-inline-end: var(--padding-sm);
+  }
+
+  .article-card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+    padding: var(--padding-md);
+  }
+
+  .article-card__title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xl);
+    }
+  }
+
+  /* Stretched link makes the whole card clickable */
+  .article-card__link {
+    color: var(--color-foreground);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .article-card__excerpt {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--sm);
+    }
+  }
+
+  .article-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-xs) var(--gap-md);
+    width: 100%;
+    margin-block-start: auto;
+    padding-block-start: var(--padding-xs);
+  }
+
+  .article-card__meta {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .article-card__read {
+    font-size: var(--font-size--sm);
+    color: var(--article-card-link-color, var(--color-foreground));
+  }
+
+  /* Featured: image beside the text on desktop */
+  .article-card--featured {
+    @media screen and (min-width: 750px) {
+      display: grid;
+      grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+    }
+
+    .article-card__media {
+      @media screen and (min-width: 750px) {
+        aspect-ratio: auto;
+        min-height: 18rem;
+      }
+    }
+
+    .article-card__body {
+      gap: var(--gap-sm);
+      padding: var(--padding-lg);
+
+      @media screen and (min-width: 750px) {
+        justify-content: center;
+        padding: var(--padding-2xl);
+      }
+    }
+
+    .article-card__title {
+      font-size: var(--font-size--xl);
+
+      @media screen and (min-width: 750px) {
+        font-size: var(--font-size--2xl);
+      }
+    }
+
+    .article-card__excerpt {
+      font-size: var(--font-size--sm);
+      -webkit-line-clamp: 4;
+
+      @media screen and (min-width: 750px) {
+        font-size: var(--font-size--md);
+      }
+    }
+
+    .article-card__footer {
+      margin-block-start: 0;
+    }
+  }
+
+  /* Link: title only */
+  .article-card--link {
+    display: block;
+    height: auto;
+    overflow: visible;
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-card__image {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

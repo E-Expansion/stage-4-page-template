@@ -193,6 +193,18 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "badge_3_color": "배지 3 색상",
+    "badge_3_label": "배지 3 레이블",
+    "badge_3_tag": "배지 3 상품 태그",
+    "badge_4_color": "배지 4 색상",
+    "badge_4_label": "배지 4 레이블",
+    "badge_4_tag": "배지 4 상품 태그",
+    "badge_5_color": "배지 5 색상",
+    "badge_5_label": "배지 5 레이블",
+    "badge_5_tag": "배지 5 상품 태그",
+    "badge_6_color": "배지 6 색상",
+    "badge_6_label": "배지 6 레이블",
+    "badge_6_tag": "배지 6 상품 태그",
     "customer_tags": "고객 태그",
     "download_label": "다운로드 링크 레이블",
     "download_link": "다운로드 링크",
@@ -941,6 +953,7 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "tag_badges": "태그 배지",
     "form": "양식",
     "badges": "배지",
     "inventory": "재고",
@@ -1171,6 +1184,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "tag_badges": "일치하는 태그가 있는 제품과 기사에 색상 배지가 표시됩니다(예: \"best-seller\", \"구매 가이드\"). 규칙은 순서대로 확인되며 처음 일치하는 규칙이 적용됩니다.",
+    "tag_badge_label": "선택 사항. 비워 두면 태그 자체가 표시됩니다",
+    "faq_metafield": "제품, 컬렉션, 기사 페이지에서는 질문이 custom.faq 메타필드(FAQ 항목 목록)에서 가져와집니다. 비어 있으면 아래 질문 블록이 사용됩니다.",
     "newsletter_signup_download": "선택 사항. 가입 후 표시됩니다(예: 콘텐츠 > 파일에 업로드한 PDF)",
     "newsletter_signup_tags": "쉼표로 구분합니다. 이 태그로 가이드를 보내는 Shopify Email 자동화를 시작하세요",
     "ugc_brand_link": "비워 두면 위 계정의 Instagram 프로필로 연결됩니다",

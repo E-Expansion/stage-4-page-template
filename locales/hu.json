@@ -29,6 +29,7 @@
     "slider_label": "Csúszka"
   },
   "accessibility": {
+    "breadcrumbs": "Morzsamenü",
     "play_model": "3D-modell lejátszása",
     "play_video": "Videó lejátszása",
     "unit_price": "Egységár",
@@ -87,6 +88,7 @@
     "show_submenu": "{{ title }} almenü megjelenítése"
   },
   "actions": {
+    "view_product": "Termék megtekintése",
     "add_to_cart": "Hozzáadás a kosárhoz",
     "clear_all": "Összes törlése",
     "remove": "Eltávolítás",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "home": "Kezdőlap",
+    "read_time": {
+      "one": "{{ count }} perc olvasás",
+      "other": "{{ count }} perc olvasás"
+    },
+    "updated_on": "Frissítve: {{ date }}",
+    "read_article": "Cikk elolvasása",
+    "about_author": "A szerzőről",
     "color_count": {
       "one": "{{ count }} szín",
       "other": "{{ count }} szín"

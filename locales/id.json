@@ -29,6 +29,7 @@
     "slider_label": "Slider"
   },
   "accessibility": {
+    "breadcrumbs": "Breadcrumb",
     "play_model": "Putar model 3D",
     "play_video": "Putar video",
     "unit_price": "Harga satuan",
@@ -87,6 +88,7 @@
     "view_disclosure_information_for_product": "Lihat informasi pengungkapan untuk {{ product_title }}"
   },
   "actions": {
+    "view_product": "Lihat produk",
     "add_to_cart": "Tambahkan ke keranjang",
     "clear_all": "Bersihkan semua",
     "remove": "Hapus",
@@ -130,6 +132,14 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "home": "Beranda",
+    "read_time": {
+      "one": "{{ count }} menit baca",
+      "other": "{{ count }} menit baca"
+    },
+    "updated_on": "Diperbarui {{ date }}",
+    "read_article": "Baca artikel",
+    "about_author": "Tentang penulis",
     "color_count": {
       "one": "{{ count }} warna",
       "other": "{{ count }} warna"

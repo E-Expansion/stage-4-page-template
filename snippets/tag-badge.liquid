@@ -1,0 +1,79 @@
+{%- doc -%}
+  Renders a small coloured badge for a product or article tag, styled by the tag badge
+  rules in Theme settings > Badges. A rule matches a tag by handle ("Buying guide" matches
+  "buying-guide"); rules are checked in order and the first match wins. The rule label
+  replaces the tag text when set. Badge text uses the palette extreme that contrasts with
+  the rule colour.
+
+  @param {string[]} tags - Tags to check, e.g. `product.tags` or `article.tags`
+  @param {boolean} [rules_only] - Only render when a rule matches (products). Otherwise the
+    first tag is shown in the default colour when no rule matches (articles).
+  @param {string} [class] - Extra classes, e.g. for positioning on an image
+
+  @example
+  {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-tile__badge' %}
+{%- enddoc -%}
+
+{% liquid
+  assign badge_label = blank
+  assign badge_color = blank
+
+  for index in (1..6)
+    assign tag_key = 'badge_' | append: index | append: '_tag'
+    assign rule_tag = settings[tag_key] | handleize
+    if rule_tag != blank
+      for tag in tags
+        assign tag_handle = tag | handleize
+        if tag_handle == rule_tag
+          assign label_key = 'badge_' | append: index | append: '_label'
+          assign color_key = 'badge_' | append: index | append: '_color'
+          assign badge_label = settings[label_key] | default: tag
+          assign badge_color = settings[color_key]
+          break
+        endif
+      endfor
+    endif
+    if badge_label != blank
+      break
+    endif
+  endfor
+
+  if badge_label == blank and rules_only != true
+    assign badge_label = tags | first
+  endif
+
+  if badge_color != blank
+    assign badge_brightness = badge_color | color_brightness
+    if badge_brightness > 128
+      assign badge_text = 'var(--palette-darkest)'
+    else
+      assign badge_text = 'var(--palette-lightest)'
+    endif
+  endif
+%}
+
+{%- if badge_label != blank -%}
+  <span
+    class="tag-badge {{ class }}"
+    {% if badge_color != blank %}
+      style="--tag-badge-color: {{ badge_color }}; --tag-badge-text: {{ badge_text }};"
+    {% endif %}
+  >
+    {{- badge_label | escape -}}
+  </span>
+{%- endif -%}
+
+{% stylesheet %}
+  .tag-badge {
+    display: inline-block;
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--3xs);
+    letter-spacing: var(--letter-spacing-sm);
+    line-height: 1.4;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--tag-badge-text, var(--color-background));
+    background-color: var(--tag-badge-color, var(--color-foreground));
+    border-radius: var(--style-border-radius-xs);
+  }
+{% endstylesheet %}

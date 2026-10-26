@@ -29,6 +29,7 @@
     "slider_label": "Плъзгач"
   },
   "accessibility": {
+    "breadcrumbs": "Навигационна пътека",
     "play_model": "Възпроизвеждане на 3D модел",
     "play_video": "Възпроизвеждане на видеоклип",
     "unit_price": "Единична цена",
@@ -87,6 +88,7 @@
     "show_submenu": "Показване на подменю {{ title }}"
   },
   "actions": {
+    "view_product": "Виж продукта",
     "add_to_cart": "Добавяне към количката",
     "clear_all": "Изчисти всички",
     "remove": "Премахни",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "home": "Начало",
+    "read_time": {
+      "one": "{{ count }} мин. четене",
+      "other": "{{ count }} мин. четене"
+    },
+    "updated_on": "Актуализирано на {{ date }}",
+    "read_article": "Прочети статията",
+    "about_author": "За автора",
     "color_count": {
       "one": "{{ count }} цвят",
       "other": "{{ count }} цвята"

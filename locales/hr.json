@@ -29,6 +29,7 @@
     "slider_label": "Kliznik"
   },
   "accessibility": {
+    "breadcrumbs": "Navigacijski put",
     "play_model": "Reproduciraj 3D model",
     "play_video": "Reproduciraj videozapis",
     "unit_price": "Jedinična cijena",
@@ -88,6 +89,7 @@
     "show_submenu": "Prikaži podizbornik {{ title }}"
   },
   "actions": {
+    "view_product": "Pogledaj proizvod",
     "add_to_cart": "Dodaj u košaricu",
     "clear_all": "Očisti sve",
     "remove": "Ukloni",
@@ -132,6 +134,14 @@
     "back_to_main_menu": "Natrag na glavni izbornik"
   },
   "content": {
+    "home": "Početna",
+    "read_time": {
+      "one": "{{ count }} min čitanja",
+      "other": "{{ count }} min čitanja"
+    },
+    "updated_on": "Ažurirano {{ date }}",
+    "read_article": "Pročitaj članak",
+    "about_author": "O autoru",
     "color_count": {
       "one": "{{ count }} boja",
       "other": "{{ count }} boja"

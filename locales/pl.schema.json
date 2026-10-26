@@ -193,6 +193,18 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "badge_3_color": "Kolor odznaki 3",
+    "badge_3_label": "Etykieta odznaki 3",
+    "badge_3_tag": "Tag produktu odznaki 3",
+    "badge_4_color": "Kolor odznaki 4",
+    "badge_4_label": "Etykieta odznaki 4",
+    "badge_4_tag": "Tag produktu odznaki 4",
+    "badge_5_color": "Kolor odznaki 5",
+    "badge_5_label": "Etykieta odznaki 5",
+    "badge_5_tag": "Tag produktu odznaki 5",
+    "badge_6_color": "Kolor odznaki 6",
+    "badge_6_label": "Etykieta odznaki 6",
+    "badge_6_tag": "Tag produktu odznaki 6",
     "customer_tags": "Tagi klienta",
     "download_label": "Etykieta linku do pobrania",
     "download_link": "Link do pobrania",
@@ -941,6 +953,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "tag_badges": "Odznaki tagów",
     "form": "Formularz",
     "badges": "Odznaki",
     "inventory": "Stan magazynowy",
@@ -1171,6 +1184,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "tag_badges": "Produkty i artykuły z pasującym tagiem pokazują kolorową odznakę, np. \"best-seller\" lub \"Poradnik zakupowy\". Reguły są sprawdzane po kolei i wygrywa pierwsze dopasowanie.",
+    "tag_badge_label": "Opcjonalnie. Pozostaw puste, aby pokazać sam tag",
+    "faq_metafield": "Na stronach produktu, kolekcji i artykułu pytania pochodzą z metapola custom.faq (lista wpisów FAQ). Bloki pytań poniżej są używane, gdy jest puste.",
     "newsletter_signup_download": "Opcjonalnie. Wyświetlany po zapisie, np. PDF przesłany w Treść > Pliki",
     "newsletter_signup_tags": "Rozdzielone przecinkami. Użyj tych tagów, aby uruchomić automatyzację Shopify Email wysyłającą przewodnik",
     "ugc_brand_link": "Pozostaw puste, aby linkować do profilu Instagram powyższego konta",

@@ -193,6 +193,18 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "badge_3_color": "徽章 3 顏色",
+    "badge_3_label": "徽章 3 文字",
+    "badge_3_tag": "徽章 3 商品標籤",
+    "badge_4_color": "徽章 4 顏色",
+    "badge_4_label": "徽章 4 文字",
+    "badge_4_tag": "徽章 4 商品標籤",
+    "badge_5_color": "徽章 5 顏色",
+    "badge_5_label": "徽章 5 文字",
+    "badge_5_tag": "徽章 5 商品標籤",
+    "badge_6_color": "徽章 6 顏色",
+    "badge_6_label": "徽章 6 文字",
+    "badge_6_tag": "徽章 6 商品標籤",
     "customer_tags": "顧客標籤",
     "download_label": "下載連結文字",
     "download_link": "下載連結",
@@ -941,6 +953,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "tag_badges": "標籤徽章",
     "form": "表單",
     "badges": "徽章",
     "inventory": "庫存",
@@ -1171,6 +1184,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "tag_badges": "帶有相符標籤的商品和文章會顯示彩色徽章，例如「best-seller」或「選購指南」。規則依序檢查，以第一個相符項目為準。",
+    "tag_badge_label": "選填。留空則顯示標籤本身",
+    "faq_metafield": "在商品、商品系列和文章頁面上，問題來自中繼欄位 custom.faq（FAQ 項目清單）。空白時使用下方的問題區塊。",
     "newsletter_signup_download": "選填。註冊後顯示，例如在內容 > 檔案中上傳的 PDF",
     "newsletter_signup_tags": "以逗號分隔。使用這些標籤觸發寄送指南的 Shopify Email 自動化流程",
     "ugc_brand_link": "留空以連結至上方帳號的 Instagram 個人檔案",

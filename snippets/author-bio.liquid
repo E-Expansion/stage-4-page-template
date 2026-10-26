@@ -1,0 +1,92 @@
+{%- doc -%}
+  Renders the "About the author" card for an article: heading, round profile picture and
+  bio. Reads the article's custom.author metafield (a reference to an "author" metaobject
+  with name, image and bio fields), so every article shows its own author. Renders nothing
+  when the author has no bio.
+
+  @param {object} article - The article whose author to show
+  @param {string} [heading] - Card heading, defaults to "About the author"
+
+  @example
+  {% render 'author-bio', article: article %}
+{%- enddoc -%}
+
+{% liquid
+  assign author = article.metafields.custom.author.value
+  assign name = author.name.value | default: article.author | escape
+  assign image = author.image.value
+
+  assign heading = heading | escape
+  if heading == blank
+    assign heading = 'content.about_author' | t
+  endif
+%}
+
+{%- if author.bio != blank -%}
+  <aside class="author-bio">
+    <div class="author-bio__header">
+      <h2 class="author-bio__heading">{{ heading }}</h2>
+      {% if image != blank %}
+        {{
+          image
+          | image_url: width: 120, height: 120, crop: 'center'
+          | image_tag: width: 40, height: 40, alt: name, loading: 'lazy', class: 'author-bio__avatar'
+        }}
+      {% endif %}
+    </div>
+    <div class="author-bio__text rte">{{ author.bio | metafield_tag }}</div>
+  </aside>
+{%- endif -%}
+
+{% stylesheet %}
+  .author-bio {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    padding: var(--padding-xl) var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-2xl);
+    }
+  }
+
+  .author-bio__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+  }
+
+  .author-bio__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+  }
+
+  .author-bio__avatar {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .author-bio__text {
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground);
+
+    & > * {
+      margin: 0;
+    }
+
+    & > * + * {
+      margin-block-start: var(--margin-xs);
+    }
+  }
+{% endstylesheet %}

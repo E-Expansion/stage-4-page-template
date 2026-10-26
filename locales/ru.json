@@ -29,6 +29,7 @@
     "slider_label": "Ползунок"
   },
   "accessibility": {
+    "breadcrumbs": "Навигационная цепочка",
     "play_model": "Открыть объемную модель",
     "play_video": "Воспроизвести видео",
     "unit_price": "Цена за единицу",
@@ -89,6 +90,7 @@
     "show_submenu": "Показать подменю {{ title }}"
   },
   "actions": {
+    "view_product": "Посмотреть товар",
     "add_to_cart": "Добавить в корзину",
     "clear_all": "Очистить всё",
     "remove": "Удалить",
@@ -134,6 +136,14 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "home": "Главная",
+    "read_time": {
+      "one": "{{ count }} мин чтения",
+      "other": "{{ count }} мин чтения"
+    },
+    "updated_on": "Обновлено {{ date }}",
+    "read_article": "Читать статью",
+    "about_author": "Об авторе",
     "color_count": {
       "one": "{{ count }} цвет",
       "other": "{{ count }} цветов"

@@ -1,0 +1,85 @@
+{%- doc -%}
+  Renders an author name with a small round profile picture, or their initial when there
+  is no picture. Pass an article to read its author from the custom.author metafield (a
+  reference to an "author" metaobject with name, image and bio fields), falling back to
+  the article's own author name. Name and image can also be passed directly.
+
+  @param {object} [article] - Article to read the author from
+  @param {string} [name] - Author name, used when no article is passed
+  @param {object} [image] - Profile picture, used when no article is passed
+  @param {string} [avatar_position] - 'start' (default) or 'end'
+  @param {string} [hidden_suffix] - Extra text for screen readers only, e.g. the publication
+  @param {string} [class] - Extra classes for the wrapper
+
+  @example
+  {% render 'author-byline', article: article, avatar_position: 'end' %}
+{%- enddoc -%}
+
+{% liquid
+  if article != blank
+    assign author = article.metafields.custom.author.value
+    assign name = author.name.value | default: article.author
+    assign image = author.image.value
+  endif
+  assign name = name | escape
+%}
+
+{%- if name != blank -%}
+  <span class="author-byline{% if avatar_position == 'end' %} author-byline--avatar-end{% endif %} {{ class }}">
+    {%- if image != blank -%}
+      {{
+        image
+        | image_url: width: 96, height: 96, crop: 'center'
+        | image_tag: width: 24, height: 24, alt: '', loading: 'lazy', class: 'author-byline__avatar'
+      }}
+    {%- else -%}
+      <span
+        class="author-byline__avatar author-byline__avatar--initial"
+        aria-hidden="true"
+      >
+        {{- name | slice: 0 | upcase -}}
+      </span>
+    {%- endif -%}
+    <span class="author-byline__name">
+      {{- name -}}
+      {%- if hidden_suffix != blank -%}
+        <span class="visually-hidden">, {{ hidden_suffix | escape }}</span>
+      {%- endif -%}
+    </span>
+  </span>
+{%- endif -%}
+
+{% stylesheet %}
+  .author-byline {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-width: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground);
+  }
+
+  .author-byline--avatar-end {
+    flex-direction: row-reverse;
+  }
+
+  .author-byline__avatar {
+    flex-shrink: 0;
+    width: var(--author-byline-avatar-size, 1.5rem);
+    height: var(--author-byline-avatar-size, 1.5rem);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .author-byline__avatar--initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size--3xs);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+  }
+
+  .author-byline__name {
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}

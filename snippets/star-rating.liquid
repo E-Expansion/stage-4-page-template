@@ -1,0 +1,77 @@
+{%- doc -%}
+  Renders a product's review rating as five stars filled to the score, followed by the
+  score and the review count. Reads Shopify's standard review metafields
+  (reviews.rating and reviews.rating_count), which review apps fill. Renders nothing when
+  the product has no rating. Star colour comes from Theme settings > Product cards.
+
+  @param {object} product - The product to show the rating for
+  @param {boolean} [show_count] - Show the review count in brackets, defaults to true
+  @param {string} [class] - Extra classes for the wrapper
+
+  @example
+  {% render 'star-rating', product: product %}
+{%- enddoc -%}
+
+{% liquid
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value
+  if rating != blank
+    assign rating_percent = rating.rating | divided_by: rating.scale_max | times: 100
+  endif
+%}
+
+{%- if rating != blank -%}
+  <p class="star-rating {{ class }}">
+    <span
+      class="star-rating__stars"
+      style="--star-rating-percent: {{ rating_percent }}%;"
+      aria-hidden="true"
+    ></span>
+    <span class="visually-hidden">{{ 'accessibility.rating' | t: rating: rating.rating, scale_max: rating.scale_max }}</span>
+    <span aria-hidden="true">{{ rating.rating | round: 1 }}</span>
+    {%- if rating_count != blank and show_count != false %}
+      <span class="star-rating__count">({{ rating_count }})</span>
+    {%- endif -%}
+  </p>
+{%- endif -%}
+
+{% stylesheet %}
+  .star-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin: 0;
+    font-size: var(--font-size--2xs);
+    color: var(--color-foreground-muted);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xs);
+    }
+  }
+
+  /* Five stars, the coloured copy clipped to the rating percentage */
+  .star-rating__stars {
+    --star-rating-glyphs: '★★★★★';
+
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.1em;
+    line-height: 1;
+
+    &::before {
+      content: var(--star-rating-glyphs);
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-20));
+    }
+
+    &::after {
+      content: var(--star-rating-glyphs);
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      width: var(--star-rating-percent);
+      overflow: hidden;
+      white-space: nowrap;
+      color: var(--color-rating);
+    }
+  }
+{% endstylesheet %}

@@ -29,6 +29,7 @@
     "slider_label": "Cursore"
   },
   "accessibility": {
+    "breadcrumbs": "Percorso di navigazione",
     "play_model": "Riproduci modello 3D",
     "play_video": "Riproduci video",
     "unit_price": "Prezzo unitario",
@@ -88,6 +89,7 @@
     "show_submenu": "Mostra sottomenu {{ title }}"
   },
   "actions": {
+    "view_product": "Visualizza prodotto",
     "add_to_cart": "Aggiungi al carrello",
     "clear_all": "Cancella tutto",
     "remove": "Rimuovi",
@@ -132,6 +134,14 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "home": "Home",
+    "read_time": {
+      "one": "{{ count }} min di lettura",
+      "other": "{{ count }} min di lettura"
+    },
+    "updated_on": "Aggiornato il {{ date }}",
+    "read_article": "Leggi l'articolo",
+    "about_author": "Informazioni sull'autore",
     "color_count": {
       "one": "{{ count }} colore",
       "other": "{{ count }} colori"

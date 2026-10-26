@@ -9,7 +9,6 @@
 {% endcomment %}
 
 {% liquid
-  assign heading = section.settings.heading | escape
   assign button_label = section.settings.button_label | escape
   assign mobile_limit = section.settings.mobile_visible
   assign can_collapse = false
@@ -42,9 +41,7 @@
   "
 >
   <press-mentions-component class="press-mentions__inner">
-    {% if heading != blank %}
-      <h2 class="press-mentions__heading">{{ heading }}</h2>
-    {% endif %}
+    {% render 'section-heading', heading: section.settings.heading %}
 
     <ul
       id="PressMentions-{{ section.id }}"
@@ -77,19 +74,6 @@
     align-items: flex-start;
     gap: var(--gap-xl);
     min-width: 0;
-  }
-
-  .press-mentions__heading {
-    margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--2xl);
-    line-height: var(--line-height--display-normal);
-    letter-spacing: var(--letter-spacing--heading-tight);
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--3xl);
-    }
   }
 
   /* Cards draw their own inline-end and block-end lines; the clipped container border closes the grid */

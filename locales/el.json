@@ -29,6 +29,7 @@
     "slider_label": "Ρυθμιστικό"
   },
   "accessibility": {
+    "breadcrumbs": "Διαδρομή πλοήγησης",
     "play_model": "Αναπαραγωγή μοντέλου 3D",
     "play_video": "Αναπαραγωγή βίντεο",
     "unit_price": "Τιμή μονάδας",
@@ -87,6 +88,7 @@
     "show_submenu": "Εμφάνιση υπομενού {{ title }}"
   },
   "actions": {
+    "view_product": "Προβολή προϊόντος",
     "add_to_cart": "Προσθήκη στο καλάθι",
     "clear_all": "Εκκαθάριση όλων",
     "remove": "Αφαίρεση",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "home": "Αρχική",
+    "read_time": {
+      "one": "{{ count }} λεπτό ανάγνωσης",
+      "other": "{{ count }} λεπτά ανάγνωσης"
+    },
+    "updated_on": "Ενημερώθηκε {{ date }}",
+    "read_article": "Διαβάστε το άρθρο",
+    "about_author": "Σχετικά με τον συγγραφέα",
     "color_count": {
       "one": "{{ count }} χρώμα",
       "other": "{{ count }} χρώματα"

@@ -193,6 +193,18 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "badge_3_color": "Merkin 3 väri",
+    "badge_3_label": "Merkin 3 teksti",
+    "badge_3_tag": "Merkin 3 tuotetunniste",
+    "badge_4_color": "Merkin 4 väri",
+    "badge_4_label": "Merkin 4 teksti",
+    "badge_4_tag": "Merkin 4 tuotetunniste",
+    "badge_5_color": "Merkin 5 väri",
+    "badge_5_label": "Merkin 5 teksti",
+    "badge_5_tag": "Merkin 5 tuotetunniste",
+    "badge_6_color": "Merkin 6 väri",
+    "badge_6_label": "Merkin 6 teksti",
+    "badge_6_tag": "Merkin 6 tuotetunniste",
     "customer_tags": "Asiakastunnisteet",
     "download_label": "Latauslinkin teksti",
     "download_link": "Latauslinkki",
@@ -941,6 +953,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "tag_badges": "Tunnistemerkit",
     "form": "Lomake",
     "badges": "Merkit",
     "inventory": "Varasto",
@@ -1171,6 +1184,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "tag_badges": "Tuotteissa ja artikkeleissa, joilla on vastaava tunniste, näkyy värillinen merkki, esim. \"best-seller\" tai \"Ostajan opas\". Säännöt tarkistetaan järjestyksessä ja ensimmäinen osuma voittaa.",
+    "tag_badge_label": "Valinnainen. Jätä tyhjäksi näyttääksesi itse tunnisteen",
+    "faq_metafield": "Tuote-, kokoelma- ja artikkelisivuilla kysymykset tulevat metakentästä custom.faq (luettelo UKK-merkinnöistä). Alla olevia kysymyslohkoja käytetään, kun se on tyhjä.",
     "newsletter_signup_download": "Valinnainen. Näytetään tilauksen jälkeen, esim. kohtaan Sisältö > Tiedostot ladattu PDF",
     "newsletter_signup_tags": "Pilkuin eroteltuina. Käynnistä näillä tunnisteilla Shopify Email -automaatio, joka lähettää oppaan",
     "ugc_brand_link": "Jätä tyhjäksi linkittääksesi yllä olevan tilin Instagram-profiiliin",

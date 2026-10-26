@@ -29,6 +29,7 @@
     "slider_label": "Slider"
   },
   "accessibility": {
+    "breadcrumbs": "Brotkrümelnavigation",
     "play_model": "3D-Modell abspielen",
     "play_video": "Video abspielen",
     "unit_price": "Stückpreis",
@@ -87,6 +88,7 @@
     "show_submenu": "Untermenü {{ title }} anzeigen"
   },
   "actions": {
+    "view_product": "Produkt ansehen",
     "add_to_cart": "In den Warenkorb legen",
     "clear_all": "Alle löschen",
     "remove": "Entfernen",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Zurück zum Hauptmenü"
   },
   "content": {
+    "home": "Startseite",
+    "read_time": {
+      "one": "{{ count }} Min. Lesezeit",
+      "other": "{{ count }} Min. Lesezeit"
+    },
+    "updated_on": "Aktualisiert am {{ date }}",
+    "read_article": "Artikel lesen",
+    "about_author": "Über die Autorin / den Autor",
     "color_count": {
       "one": "{{ count }} Farbe",
       "other": "{{ count }} Farben"

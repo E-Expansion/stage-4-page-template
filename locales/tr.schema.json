@@ -193,6 +193,18 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "badge_3_color": "Rozet 3 rengi",
+    "badge_3_label": "Rozet 3 etiketi",
+    "badge_3_tag": "Rozet 3 ürün etiketi",
+    "badge_4_color": "Rozet 4 rengi",
+    "badge_4_label": "Rozet 4 etiketi",
+    "badge_4_tag": "Rozet 4 ürün etiketi",
+    "badge_5_color": "Rozet 5 rengi",
+    "badge_5_label": "Rozet 5 etiketi",
+    "badge_5_tag": "Rozet 5 ürün etiketi",
+    "badge_6_color": "Rozet 6 rengi",
+    "badge_6_label": "Rozet 6 etiketi",
+    "badge_6_tag": "Rozet 6 ürün etiketi",
     "customer_tags": "Müşteri etiketleri",
     "download_label": "İndirme bağlantısı metni",
     "download_link": "İndirme bağlantısı",
@@ -941,6 +953,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "tag_badges": "Etiket rozetleri",
     "form": "Form",
     "badges": "Rozetler",
     "inventory": "Stok",
@@ -1171,6 +1184,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "tag_badges": "Eşleşen etikete sahip ürün ve makalelerde renkli bir rozet gösterilir, ör. \"best-seller\" veya \"Satın alma rehberi\". Kurallar sırayla kontrol edilir ve ilk eşleşme geçerli olur.",
+    "tag_badge_label": "İsteğe bağlı. Etiketin kendisini göstermek için boş bırakın",
+    "faq_metafield": "Ürün, koleksiyon ve makale sayfalarında sorular custom.faq meta alanından (SSS girişleri listesi) gelir. Boş olduğunda aşağıdaki soru blokları kullanılır.",
     "newsletter_signup_download": "İsteğe bağlı. Kayıttan sonra gösterilir, ör. İçerik > Dosyalar'a yüklenen bir PDF",
     "newsletter_signup_tags": "Virgülle ayrılmış. Rehberi gönderen bir Shopify Email otomasyonunu tetiklemek için bu etiketleri kullanın",
     "ugc_brand_link": "Yukarıdaki hesabın Instagram profiline bağlantı vermek için boş bırakın",

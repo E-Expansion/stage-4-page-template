@@ -1,0 +1,63 @@
+{%- doc -%}
+  Renders the bordered long-form text card used for SEO copy on collection pages and the
+  description on product pages: a heading and rich text. Renders nothing without content.
+
+  @param {string} [heading] - Card heading, escaped here
+  @param {string} content - Rich text HTML, e.g. `product.description` or a metafield
+  @param {string} [heading_tag] - Heading element, defaults to h2
+
+  @example
+  {% render 'seo-text-block', heading: collection.title, content: collection.description %}
+{%- enddoc -%}
+
+{% liquid
+  assign heading_tag = heading_tag | default: 'h2'
+%}
+
+{%- if content != blank -%}
+  <div class="seo-text-block">
+    {% if heading != blank %}
+      <{{ heading_tag }} class="seo-text-block__heading">{{ heading | escape }}</{{ heading_tag }}>
+    {% endif %}
+    <div class="seo-text-block__content rte">{{ content }}</div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .seo-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+    min-width: 0;
+    padding: var(--padding-xl) var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-2xl);
+    }
+  }
+
+  .seo-text-block__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+  }
+
+  .seo-text-block__content {
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground);
+
+    & > * {
+      margin: 0;
+    }
+
+    & > * + * {
+      margin-block-start: var(--margin-sm);
+    }
+  }
+{% endstylesheet %}

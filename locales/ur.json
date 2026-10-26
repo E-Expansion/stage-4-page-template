@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "breadcrumbs": "بریڈ کرمبز",
     "account": "اکاؤنٹ",
     "active_filters": "فعال فلٹر:",
     "cart": "کارٹ",
@@ -67,6 +68,7 @@
     }
   },
   "actions": {
+    "view_product": "پروڈکٹ دیکھیں",
     "add": "شامل کریں",
     "add_to_cart": "کارٹ میں شامل کریں",
     "added": "شامل کر دیا گیا",
@@ -150,6 +152,14 @@
     }
   },
   "content": {
+    "home": "ہوم",
+    "read_time": {
+      "one": "{{ count }} منٹ کا مطالعہ",
+      "other": "{{ count }} منٹ کا مطالعہ"
+    },
+    "updated_on": "{{ date }} کو اپ ڈیٹ کیا گیا",
+    "read_article": "مضمون پڑھیں",
+    "about_author": "مصنف کے بارے میں",
     "color_count": {
       "one": "{{ count }} رنگ",
       "other": "{{ count }} رنگ"

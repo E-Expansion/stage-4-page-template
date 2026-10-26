@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "tag_badges": "Tag badges",
     "form": "Form",
     "badges": "Badges",
     "inventory": "Stock",
@@ -230,6 +231,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "tag_badges": "Products and articles with a matching tag show a coloured badge, e.g. \"best-seller\" or \"Buying guide\". Rules are checked in order and the first match wins.",
+    "tag_badge_label": "Optional. Leave empty to show the tag itself",
+    "faq_metafield": "On product, collection and article pages the questions come from the custom.faq metafield (a list of FAQ entries). The question blocks below are used when it is empty.",
     "newsletter_signup_download": "Optional. Shown after signing up, e.g. a PDF uploaded under Content > Files",
     "newsletter_signup_tags": "Comma separated. Use these tags to trigger a Shopify Email automation that sends the guide",
     "ugc_brand_link": "Leave empty to link to the Instagram profile of the handle above",
@@ -789,6 +793,18 @@
     "below_media": "Below media"
   },
   "settings": {
+    "badge_3_color": "Badge 3 color",
+    "badge_3_label": "Badge 3 label",
+    "badge_3_tag": "Badge 3 product tag",
+    "badge_4_color": "Badge 4 color",
+    "badge_4_label": "Badge 4 label",
+    "badge_4_tag": "Badge 4 product tag",
+    "badge_5_color": "Badge 5 color",
+    "badge_5_label": "Badge 5 label",
+    "badge_5_tag": "Badge 5 product tag",
+    "badge_6_color": "Badge 6 color",
+    "badge_6_label": "Badge 6 label",
+    "badge_6_tag": "Badge 6 product tag",
     "customer_tags": "Customer tags",
     "download_label": "Download link label",
     "download_link": "Download link",

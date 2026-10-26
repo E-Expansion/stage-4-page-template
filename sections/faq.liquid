@@ -1,9 +1,13 @@
 {% comment %}
   Section contract.
-  FAQ card: intro (heading, text, chat/contact link) beside an accordion of question
-  blocks on desktop, stacked on mobile. Emits FAQPage structured data for the questions.
+  FAQ card: intro (heading, text, chat/contact link) beside an accordion of questions
+  (horizontal layout), or the heading above it (vertical layout); always stacked on mobile.
+  On product, collection and article templates the questions come from that resource's
+  custom.faq metafield (a list of "faq" metaobjects with question and answer fields), so
+  one template serves every item; the section's own question blocks are the fallback.
+  Emits FAQPage structured data for the questions shown.
   @example
-  <!-- Homepage > Add section > FAQ; add a question block per FAQ -->
+  <!-- Any template > Add section > FAQ; fill custom.faq per item or add question blocks -->
 {% endcomment %}
 
 {% liquid
@@ -13,6 +17,21 @@
   assign link_url = section.settings.link
   if link_url == blank
     assign link_url = routes.root_url | append: '/pages/contact' | replace: '//', '/'
+  endif
+
+  case template.name
+    when 'product'
+      assign faq_entries = product.metafields.custom.faq.value
+    when 'collection'
+      assign faq_entries = collection.metafields.custom.faq.value
+    when 'article'
+      assign faq_entries = article.metafields.custom.faq.value
+  endcase
+  if faq_entries.size > 0
+    assign uses_metafield = true
+  else
+    assign uses_metafield = false
+    assign faq_entries = section.blocks | where: 'type', '_faq-item'
   endif
 %}
 
@@ -24,7 +43,7 @@
 
 <div class="section-background color-custom-{{ section.id }}"></div>
 <div
-  class="faq section section--page-width spacing-style color-custom-{{ section.id }}"
+  class="faq faq--{{ section.settings.layout }} section section--page-width spacing-style color-custom-{{ section.id }}"
   style="
     {% render 'spacing-padding', settings: section.settings %}
     {% if section.settings.link_color != blank %}--faq-link-color: {{ section.settings.link_color }};{% endif %}
@@ -57,14 +76,21 @@
     </div>
 
     <div class="faq__list">
-      {% content_for 'blocks' %}
+      {% if uses_metafield %}
+        {% for entry in faq_entries %}
+          {% assign entry_answer = entry.answer | metafield_tag %}
+          {% render 'faq-accordion',
+            question: entry.question.value,
+            answer: entry_answer
+          %}
+        {% endfor %}
+      {% else %}
+        {% content_for 'blocks' %}
+      {% endif %}
     </div>
   </div>
 </div>
 
-{% liquid
-  assign faq_entries = section.blocks | where: 'type', '_faq-item'
-%}
 {% if faq_entries.size > 0 %}
   <script type="application/ld+json">
     {
@@ -72,12 +98,21 @@
       "@type": "FAQPage",
       "mainEntity": [
         {%- for entry in faq_entries -%}
+          {%- liquid
+            if uses_metafield
+              assign entry_question = entry.question.value
+              assign entry_answer = entry.answer | metafield_text
+            else
+              assign entry_question = entry.settings.question
+              assign entry_answer = entry.settings.answer | strip_html
+            endif
+          -%}
           {
             "@type": "Question",
-            "name": {{ entry.settings.question | json }},
+            "name": {{ entry_question | json }},
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": {{ entry.settings.answer | json }}
+              "text": {{ entry_answer | json }}
             }
           }{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
@@ -96,10 +131,20 @@
     border-radius: var(--style-border-radius-sm);
 
     @media screen and (min-width: 750px) {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
       gap: var(--padding-5xl);
       padding: var(--padding-6xl) var(--padding-5xl);
       border-radius: var(--style-border-radius-xs);
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq--horizontal .faq__card {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    }
+
+    .faq--vertical .faq__card {
+      gap: var(--gap-md);
+      padding: var(--padding-2xl) var(--padding-2xl) var(--padding-sm);
     }
   }
 
@@ -181,6 +226,10 @@
       "default": "<p>Still unsure? Our workshop answers within one working day.</p>"
     },
     {
+      "type": "paragraph",
+      "content": "t:info.faq_metafield"
+    },
+    {
       "type": "text",
       "id": "link_label",
       "label": "t:settings.link_label",
@@ -202,6 +251,16 @@
     {
       "type": "header",
       "content": "t:content.appearance"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:settings.layout",
+      "options": [
+        { "value": "horizontal", "label": "t:options.horizontal" },
+        { "value": "vertical", "label": "t:options.vertical" }
+      ],
+      "default": "horizontal"
     },
     {
       "type": "color",

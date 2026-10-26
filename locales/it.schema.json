@@ -193,6 +193,18 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "badge_3_color": "Colore badge 3",
+    "badge_3_label": "Etichetta badge 3",
+    "badge_3_tag": "Tag prodotto badge 3",
+    "badge_4_color": "Colore badge 4",
+    "badge_4_label": "Etichetta badge 4",
+    "badge_4_tag": "Tag prodotto badge 4",
+    "badge_5_color": "Colore badge 5",
+    "badge_5_label": "Etichetta badge 5",
+    "badge_5_tag": "Tag prodotto badge 5",
+    "badge_6_color": "Colore badge 6",
+    "badge_6_label": "Etichetta badge 6",
+    "badge_6_tag": "Tag prodotto badge 6",
     "customer_tags": "Tag cliente",
     "download_label": "Testo del link di download",
     "download_link": "Link di download",
@@ -941,6 +953,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "tag_badges": "Badge dei tag",
     "form": "Modulo",
     "badges": "Badge",
     "inventory": "Scorte",
@@ -1171,6 +1184,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "tag_badges": "Prodotti e articoli con un tag corrispondente mostrano un badge colorato, ad es. \"best-seller\" o \"Guida all'acquisto\". Le regole vengono verificate in ordine e vince la prima corrispondenza.",
+    "tag_badge_label": "Facoltativo. Lascia vuoto per mostrare il tag stesso",
+    "faq_metafield": "Nelle pagine di prodotto, collezione e articolo le domande provengono dal metacampo custom.faq (un elenco di voci FAQ). I blocchi di domande qui sotto vengono usati quando è vuoto.",
     "newsletter_signup_download": "Facoltativo. Mostrato dopo l'iscrizione, ad es. un PDF caricato in Contenuti > File",
     "newsletter_signup_tags": "Separati da virgole. Usa questi tag per attivare un'automazione Shopify Email che invia la guida",
     "ugc_brand_link": "Lascia vuoto per collegare al profilo Instagram dell'account sopra",

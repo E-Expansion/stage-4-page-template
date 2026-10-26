@@ -29,6 +29,7 @@
     "slider_label": "Liukusäädin"
   },
   "accessibility": {
+    "breadcrumbs": "Murupolku",
     "play_model": "Toista 3D-malli",
     "play_video": "Toista video",
     "unit_price": "Yksikköhinta",
@@ -87,6 +88,7 @@
     "show_submenu": "Näytä kohteen {{ title }} alivalikko"
   },
   "actions": {
+    "view_product": "Näytä tuote",
     "add_to_cart": "Lisää ostoskoriin",
     "clear_all": "Tyhjennä kaikki",
     "remove": "Poista",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "home": "Etusivu",
+    "read_time": {
+      "one": "{{ count }} min lukuaika",
+      "other": "{{ count }} min lukuaika"
+    },
+    "updated_on": "Päivitetty {{ date }}",
+    "read_article": "Lue artikkeli",
+    "about_author": "Tietoa kirjoittajasta",
     "color_count": {
       "one": "{{ count }} väri",
       "other": "{{ count }} väriä"

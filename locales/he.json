@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "breadcrumbs": "פירורי לחם",
     "account": "חשבון",
     "active_filters": "מסננים פעילים:",
     "cart": "סל",
@@ -69,6 +70,7 @@
     }
   },
   "actions": {
+    "view_product": "צפייה במוצר",
     "add": "הוספה",
     "add_to_cart": "הוספה לסל",
     "added": "נוסף",
@@ -156,6 +158,14 @@
     }
   },
   "content": {
+    "home": "דף הבית",
+    "read_time": {
+      "one": "קריאה של דקה {{ count }}",
+      "other": "קריאה של {{ count }} דקות"
+    },
+    "updated_on": "עודכן ב-{{ date }}",
+    "read_article": "לקריאת המאמר",
+    "about_author": "על הכותב",
     "color_count": {
       "one": "צבע {{ count }}",
       "other": "{{ count }} צבעים"

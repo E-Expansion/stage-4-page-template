@@ -1,24 +1,17 @@
 {%- doc -%}
-  Renders a compact product card for the curated products section: image with an optional
-  tag-driven badge, title, first option summary, review rating, price, stock status and a
-  cart button. Single-variant products are added through the theme's product form; others
-  link to the product page to choose options.
+  Renders the shared product tile used in product rows and grids (curated products,
+  collection grid, related products): image with a tag badge, title, first option
+  summary, star rating, price, stock status and a cart button. Single-variant products
+  are added through the theme's product form; others link to the product page to choose
+  options. Badges, low stock threshold and status colours come from Theme settings.
 
-  Badge, rating and stock colours are read from custom properties set by the section:
-  --curated-badge-1-color/-text, --curated-badge-2-color/-text, --curated-rating-color,
-  --curated-in-stock-color and --curated-low-stock-color.
-
-  @param {object} [product] - The product to render. A placeholder card is shown when blank.
+  @param {object} [product] - The product to render. A placeholder tile is shown when blank.
   @param {string} section_id - The section ID, used for unique form IDs.
-  @param {string} [badge_1_tag] - Product tag that shows the first badge
-  @param {string} [badge_1_label] - Label of the first badge
-  @param {string} [badge_2_tag] - Product tag that shows the second badge
-  @param {string} [badge_2_label] - Label of the second badge
-  @param {number} [low_stock_threshold] - Show "Only X left" at or below this quantity
+  @param {string} [sizes] - Image sizes attribute, defaults to a four-column row
   @param {boolean} [eager] - Load the image eagerly
 
   @example
-  {% render 'curated-product-card', product: product, section_id: section.id, badge_1_tag: 'best-seller', badge_1_label: 'Best seller', low_stock_threshold: 5 %}
+  {% render 'product-tile', product: product, section_id: section.id %}
 {%- enddoc -%}
 
 {% liquid
@@ -29,17 +22,6 @@
     assign title = product.title | escape
   else
     assign title = 'content.product_card_placeholder' | t
-  endif
-
-  # Badge from product tags; the first matching badge wins
-  assign badge_label = blank
-  assign badge_modifier = blank
-  if badge_1_tag != blank and product.tags contains badge_1_tag
-    assign badge_label = badge_1_label
-    assign badge_modifier = 'primary'
-  elsif badge_2_tag != blank and product.tags contains badge_2_tag
-    assign badge_label = badge_2_label
-    assign badge_modifier = 'secondary'
   endif
 
   # "Cognac · 3 colours": first option value of the shown variant plus the value count
@@ -58,18 +40,11 @@
     endif
   endif
 
-  # Reviews use Shopify's standard metafields, filled by review apps
-  assign rating = product.metafields.reviews.rating.value
-  assign rating_count = product.metafields.reviews.rating_count.value
-  if rating != blank
-    assign rating_percent = rating.rating | divided_by: rating.scale_max | times: 100
-  endif
-
   # Stock status
   assign stock_state = 'in'
   if product != blank and product.available == false
     assign stock_state = 'out'
-  elsif variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' and variant.inventory_quantity > 0 and variant.inventory_quantity <= low_stock_threshold
+  elsif variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' and variant.inventory_quantity > 0 and variant.inventory_quantity <= settings.low_stock_threshold
     assign stock_state = 'low'
   endif
 
@@ -78,50 +53,49 @@
     assign can_add_directly = true
   endif
 
-  assign form_id = 'CuratedProductForm-' | append: section_id | append: '-' | append: product.id
+  assign form_id = 'ProductTileForm-' | append: section_id | append: '-' | append: product.id
 
+  assign image_sizes = sizes | default: '(min-width: 750px) 25vw, 45vw'
   assign image_loading = 'lazy'
   if eager
     assign image_loading = 'eager'
   endif
 %}
 
-<li class="curated-card">
-  <div class="curated-card__inner">
-    <div class="curated-card__media">
+<li class="product-tile">
+  <div class="product-tile__inner">
+    <div class="product-tile__media">
       {% if image != blank %}
         {{
           image
           | image_url: width: 1000
           | image_tag:
             widths: '240, 360, 480, 640, 800, 1000',
-            sizes: '(min-width: 750px) 25vw, 45vw',
+            sizes: image_sizes,
             loading: image_loading,
             alt: '',
-            class: 'curated-card__image'
+            class: 'product-tile__image'
         }}
       {% else %}
-        {{ 'product-1' | placeholder_svg_tag: 'curated-card__image curated-card__placeholder' }}
+        {{ 'product-1' | placeholder_svg_tag: 'product-tile__image product-tile__placeholder' }}
       {% endif %}
 
-      {% if badge_label != blank %}
-        <span class="curated-card__badge curated-card__badge--{{ badge_modifier }}">{{ badge_label | escape }}</span>
-      {% endif %}
+      {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-tile__badge' %}
     </div>
 
-    <div class="curated-card__body">
-      <div class="curated-card__head">
-        <div class="curated-card__titles">
-          <h3 class="curated-card__title">
+    <div class="product-tile__body">
+      <div class="product-tile__head">
+        <div class="product-tile__titles">
+          <h3 class="product-tile__title">
             <a
               href="{{ product.url | default: '#' }}"
-              class="curated-card__link"
+              class="product-tile__link"
             >
               {{- title -}}
             </a>
           </h3>
           {% if option_summary != blank %}
-            <p class="curated-card__options">{{ option_summary }}</p>
+            <p class="product-tile__options">{{ option_summary }}</p>
           {% endif %}
         </div>
 
@@ -137,7 +111,7 @@
 
           {% if can_add_directly %}
             <product-form-component
-              class="curated-card__form"
+              class="product-tile__form"
               data-section-id="{{ section_id }}"
               data-product-id="{{ product.id }}"
               on:submit="/handleSubmit"
@@ -164,7 +138,7 @@
                 <button
                   type="submit"
                   name="add"
-                  class="curated-card__cart button-unstyled"
+                  class="product-tile__cart button-unstyled"
                   aria-label="{{ 'actions.add_to_cart' | t }}: {{ title }}"
                 >
                   {{ cart_icon }}
@@ -174,7 +148,7 @@
           {% else %}
             <a
               href="{{ product.url }}"
-              class="curated-card__cart"
+              class="product-tile__cart"
               aria-label="{{ 'actions.choose' | t }}: {{ title }}"
             >
               {{ cart_icon }}
@@ -183,27 +157,14 @@
         {% endif %}
       </div>
 
-      {% if rating != blank %}
-        <p class="curated-card__rating">
-          <span
-            class="curated-card__stars"
-            style="--curated-rating-percent: {{ rating_percent }}%;"
-            aria-hidden="true"
-          ></span>
-          <span class="visually-hidden">{{ 'accessibility.rating' | t: rating: rating.rating, scale_max: rating.scale_max }}</span>
-          <span aria-hidden="true">{{ rating.rating | round: 1 }}</span>
-          {% if rating_count != blank %}
-            <span class="curated-card__rating-count">({{ rating_count }})</span>
-          {% endif %}
-        </p>
-      {% endif %}
+      {% render 'star-rating', product: product %}
 
-      <div class="curated-card__footer">
-        <p class="curated-card__price">
+      <div class="product-tile__footer">
+        <p class="product-tile__price">
           {% if product.compare_at_price > product.price %}
             <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
             {{ product.price | money }}
-            <s class="curated-card__compare">{{ product.compare_at_price | money }}</s>
+            <s class="product-tile__compare">{{ product.compare_at_price | money }}</s>
           {% elsif product != blank %}
             {{ product.price | money }}
           {% else %}
@@ -212,7 +173,7 @@
         </p>
 
         {% if product != blank %}
-          <p class="curated-card__stock curated-card__stock--{{ stock_state }}">
+          <p class="product-tile__stock product-tile__stock--{{ stock_state }}">
             {%- case stock_state -%}
               {%- when 'out' -%}
                 {{ 'content.inventory_out_of_stock' | t }}
@@ -229,12 +190,11 @@
 </li>
 
 {% stylesheet %}
-  .curated-card {
+  .product-tile {
     min-width: 0;
-    scroll-snap-align: start;
   }
 
-  .curated-card__inner {
+  .product-tile__inner {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -245,13 +205,13 @@
     border-radius: var(--style-border-radius-xs);
   }
 
-  .curated-card__media {
+  .product-tile__media {
     position: relative;
     aspect-ratio: 1;
     overflow: hidden;
   }
 
-  .curated-card__image {
+  .product-tile__image {
     display: block;
     width: 100%;
     height: 100%;
@@ -259,40 +219,24 @@
     transition: transform var(--animation-speed-slow) var(--animation-easing);
   }
 
-  .curated-card__placeholder {
+  .product-tile__placeholder {
     background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
     fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
   }
 
   @media (hover: hover) {
-    .curated-card__inner:hover .curated-card__image {
+    .product-tile__inner:hover .product-tile__image {
       transform: scale(1.03);
     }
   }
 
-  .curated-card__badge {
+  .product-tile__badge {
     position: absolute;
     inset-block-start: var(--padding-xs);
     inset-inline-end: var(--padding-xs);
-    padding: var(--padding-3xs) var(--padding-xs);
-    font-size: var(--font-size--3xs);
-    letter-spacing: var(--letter-spacing-sm);
-    line-height: 1.4;
-    text-transform: uppercase;
-    border-radius: var(--style-border-radius-xs);
   }
 
-  .curated-card__badge--primary {
-    background-color: var(--curated-badge-1-color, var(--color-foreground));
-    color: var(--curated-badge-1-text, var(--color-background));
-  }
-
-  .curated-card__badge--secondary {
-    background-color: var(--curated-badge-2-color, var(--color-foreground));
-    color: var(--curated-badge-2-text, var(--color-background));
-  }
-
-  .curated-card__body {
+  .product-tile__body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -304,21 +248,21 @@
     }
   }
 
-  .curated-card__head {
+  .product-tile__head {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--gap-xs);
   }
 
-  .curated-card__titles {
+  .product-tile__titles {
     display: flex;
     flex-direction: column;
     gap: var(--padding-3xs);
     min-width: 0;
   }
 
-  .curated-card__title {
+  .product-tile__title {
     margin: 0;
     font-family: var(--font-body--family);
     font-weight: var(--font-body--weight);
@@ -331,7 +275,7 @@
   }
 
   /* Stretched link makes the whole card clickable; the cart button sits above it */
-  .curated-card__link {
+  .product-tile__link {
     color: var(--color-foreground);
     text-decoration: none;
     overflow-wrap: anywhere;
@@ -343,14 +287,13 @@
     }
   }
 
-  .curated-card__options,
-  .curated-card__rating,
-  .curated-card__price,
-  .curated-card__stock {
+  .product-tile__options,
+  .product-tile__price,
+  .product-tile__stock {
     margin: 0;
   }
 
-  .curated-card__options {
+  .product-tile__options {
     font-size: var(--font-size--2xs);
     color: var(--color-foreground-muted);
 
@@ -359,14 +302,14 @@
     }
   }
 
-  .curated-card__form,
-  .curated-card__cart {
+  .product-tile__form,
+  .product-tile__cart {
     position: relative;
     z-index: 1;
     flex-shrink: 0;
   }
 
-  .curated-card__cart {
+  .product-tile__cart {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -394,45 +337,7 @@
     }
   }
 
-  .curated-card__rating {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-xs);
-    font-size: var(--font-size--2xs);
-    color: var(--color-foreground-muted);
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--xs);
-    }
-  }
-
-  /* Five stars filled to the rating percentage */
-  .curated-card__stars {
-    --curated-star: '★★★★★';
-
-    position: relative;
-    display: inline-block;
-    letter-spacing: 0.1em;
-    line-height: 1;
-
-    &::before {
-      content: var(--curated-star);
-      color: rgb(var(--color-foreground-rgb) / var(--opacity-20));
-    }
-
-    &::after {
-      content: var(--curated-star);
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline-start: 0;
-      width: var(--curated-rating-percent);
-      overflow: hidden;
-      white-space: nowrap;
-      color: var(--curated-rating-color, var(--color-foreground));
-    }
-  }
-
-  .curated-card__footer {
+  .product-tile__footer {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -446,16 +351,16 @@
     }
   }
 
-  .curated-card__price {
+  .product-tile__price {
     color: var(--color-foreground);
   }
 
-  .curated-card__compare {
+  .product-tile__compare {
     margin-inline-start: var(--padding-2xs);
     color: var(--color-foreground-muted);
   }
 
-  .curated-card__stock {
+  .product-tile__stock {
     font-size: var(--font-size--2xs);
     text-align: end;
 
@@ -464,20 +369,20 @@
     }
   }
 
-  .curated-card__stock--in {
-    color: var(--curated-in-stock-color, var(--color-foreground));
+  .product-tile__stock--in {
+    color: var(--color-in-stock);
   }
 
-  .curated-card__stock--low {
-    color: var(--curated-low-stock-color, var(--color-foreground));
+  .product-tile__stock--low {
+    color: var(--color-low-stock);
   }
 
-  .curated-card__stock--out {
+  .product-tile__stock--out {
     color: var(--color-foreground-muted);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .curated-card__image {
+    .product-tile__image {
       transition: none;
     }
   }

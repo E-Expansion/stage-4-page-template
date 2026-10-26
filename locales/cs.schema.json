@@ -193,6 +193,18 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "badge_3_color": "Barva odznaku 3",
+    "badge_3_label": "Popisek odznaku 3",
+    "badge_3_tag": "Štítek produktu odznaku 3",
+    "badge_4_color": "Barva odznaku 4",
+    "badge_4_label": "Popisek odznaku 4",
+    "badge_4_tag": "Štítek produktu odznaku 4",
+    "badge_5_color": "Barva odznaku 5",
+    "badge_5_label": "Popisek odznaku 5",
+    "badge_5_tag": "Štítek produktu odznaku 5",
+    "badge_6_color": "Barva odznaku 6",
+    "badge_6_label": "Popisek odznaku 6",
+    "badge_6_tag": "Štítek produktu odznaku 6",
     "customer_tags": "Štítky zákazníka",
     "download_label": "Popisek odkazu ke stažení",
     "download_link": "Odkaz ke stažení",
@@ -941,6 +953,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "tag_badges": "Odznaky štítků",
     "form": "Formulář",
     "badges": "Odznaky",
     "inventory": "Zásoby",
@@ -1171,6 +1184,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "tag_badges": "Produkty a články s odpovídajícím štítkem zobrazí barevnou odznaku, např. „best-seller“ nebo „Nákupní průvodce“. Pravidla se kontrolují postupně a platí první shoda.",
+    "tag_badge_label": "Volitelné. Ponechte prázdné pro zobrazení samotného štítku",
+    "faq_metafield": "Na stránkách produktu, kolekce a článku pocházejí otázky z metapole custom.faq (seznam položek FAQ). Bloky otázek níže se použijí, když je prázdné.",
     "newsletter_signup_download": "Volitelné. Zobrazí se po přihlášení, např. PDF nahrané v Obsah > Soubory",
     "newsletter_signup_tags": "Oddělené čárkami. Pomocí těchto štítků spusťte automatizaci Shopify Email, která odešle průvodce",
     "ugc_brand_link": "Ponechte prázdné pro odkaz na instagramový profil účtu výše",

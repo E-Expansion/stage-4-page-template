@@ -1,0 +1,212 @@
+{%- doc -%}
+  Renders a compact product card that points to a product page, in two layouts:
+  - row: thumbnail, title, a price · stock · detail line and a button, for inline use in
+    article content
+  - stack: image on top, optional eyebrow, title, star rating, price, full-width button and
+    a small note, for sidebars
+  The button uses the theme's primary button colours, which a section can override with
+  the --color-primary-button-* custom properties.
+
+  @param {object} [product] - The product; a placeholder is shown when blank
+  @param {string} [layout] - 'row' (default) or 'stack'
+  @param {string} [title] - Replaces the product title, e.g. "The Weekday Satchel - Medium"
+  @param {string} [detail] - Extra text after price and stock in the row layout
+  @param {string} [eyebrow] - Small label above the title in the stack layout
+  @param {string} [note] - Small text under the button in the stack layout
+  @param {string} [button_label] - Button text, defaults to "View product"
+  @param {string} [url] - Replaces the product URL, e.g. to preselect a variant
+
+  @example
+  {% render 'product-mention', product: product, layout: 'stack', eyebrow: 'Featured in this guide' %}
+{%- enddoc -%}
+
+{% liquid
+  assign layout = layout | default: 'row'
+  assign image = product.featured_media.preview_image
+  assign url = url | default: product.url | default: '#'
+
+  assign title = title | default: product.title | escape
+  if title == blank
+    assign title = 'content.product_card_placeholder' | t
+  endif
+
+  assign button_label = button_label | escape
+  if button_label == blank
+    assign button_label = 'actions.view_product' | t
+  endif
+
+  if product != blank
+    assign price = product.price | money
+  else
+    assign price = 1999 | money
+  endif
+
+  if layout == 'stack'
+    assign image_width = 600
+    assign image_sizes = '(min-width: 990px) 20vw, 100vw'
+  else
+    assign image_width = 160
+    assign image_sizes = '80px'
+  endif
+%}
+
+<div class="product-mention product-mention--{{ layout }}">
+  <div class="product-mention__media">
+    {% if image != blank %}
+      {{
+        image
+        | image_url: width: image_width
+        | image_tag: sizes: image_sizes, loading: 'lazy', alt: '', class: 'product-mention__image'
+      }}
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'product-mention__image product-mention__placeholder' }}
+    {% endif %}
+  </div>
+
+  <div class="product-mention__body">
+    {% if layout == 'stack' and eyebrow != blank %}
+      <p class="product-mention__eyebrow">{{ eyebrow | escape }}</p>
+    {% endif %}
+
+    <p class="product-mention__title">{{ title }}</p>
+
+    {% if layout == 'stack' %}
+      {% render 'star-rating', product: product %}
+      <p class="product-mention__price">{{ price }}</p>
+    {% else %}
+      <p class="product-mention__meta">
+        {{- price -}}
+        {%- if product != blank %}
+          ·
+          {% if product.available -%}
+            {{- 'content.inventory_in_stock' | t | downcase -}}
+          {%- else -%}
+            {{- 'content.inventory_out_of_stock' | t | downcase -}}
+          {%- endif -%}
+        {%- endif -%}
+        {%- if detail != blank %} · {{ detail | escape }}{% endif -%}
+      </p>
+    {% endif %}
+  </div>
+
+  <a
+    href="{{ url }}"
+    class="button product-mention__button"
+  >
+    {{- button_label -}}
+    <span class="visually-hidden">: {{ title }}</span>
+  </a>
+
+  {% if layout == 'stack' and note != blank %}
+    <p class="product-mention__note">{{ note | escape }}</p>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .product-mention {
+    display: grid;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .product-mention__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-mention__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .product-mention__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .product-mention__eyebrow,
+  .product-mention__title,
+  .product-mention__meta,
+  .product-mention__price,
+  .product-mention__note {
+    margin: 0;
+  }
+
+  .product-mention__eyebrow {
+    font-size: var(--font-size--3xs);
+    letter-spacing: var(--letter-spacing-sm);
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .product-mention__title {
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+  }
+
+  .product-mention__meta,
+  .product-mention__note {
+    font-size: var(--font-size--2xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .product-mention__price {
+    margin-block-start: var(--padding-xs);
+    font-size: var(--font-size--sm);
+  }
+
+  .product-mention__button {
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  /* Row: thumbnail, text and button on one line */
+  .product-mention--row {
+    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--gap-md);
+    padding: var(--padding-sm);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+      gap: var(--gap-lg);
+      padding: var(--padding-sm) var(--padding-md);
+    }
+
+    .product-mention__media {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: var(--style-border-width) solid var(--color-border);
+      border-radius: var(--style-border-radius-xs);
+    }
+  }
+
+  /* Stack: image above, full-width button */
+  .product-mention--stack {
+    .product-mention__media {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .product-mention__body {
+      padding: var(--padding-sm) var(--padding-sm) 0;
+    }
+
+    .product-mention__button {
+      margin: var(--padding-xs) var(--padding-sm) 0;
+    }
+
+    .product-mention__note {
+      padding: var(--padding-xs) var(--padding-sm) var(--padding-sm);
+      text-align: center;
+    }
+  }
+{% endstylesheet %}

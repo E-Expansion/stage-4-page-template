@@ -29,6 +29,7 @@
     "slider_label": "Bild"
   },
   "accessibility": {
+    "breadcrumbs": "Brödsmulor",
     "play_model": "Spela 3D-modell",
     "play_video": "Spela video",
     "unit_price": "Enhetspris",
@@ -87,6 +88,7 @@
     "view_disclosure_information_for_product": "Visa produktupplysningar för {{ product_title }}"
   },
   "actions": {
+    "view_product": "Visa produkt",
     "add_to_cart": "Lägg till i varukorgen",
     "clear_all": "Rensa alla",
     "remove": "Ta bort",
@@ -130,6 +132,14 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "home": "Hem",
+    "read_time": {
+      "one": "{{ count }} min läsning",
+      "other": "{{ count }} min läsning"
+    },
+    "updated_on": "Uppdaterad {{ date }}",
+    "read_article": "Läs artikeln",
+    "about_author": "Om skribenten",
     "color_count": {
       "one": "{{ count }} färg",
       "other": "{{ count }} färger"

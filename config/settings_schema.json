@@ -1279,6 +1279,123 @@
           }
         ],
         "default": "none"
+      },
+      {
+        "type": "header",
+        "content": "t:content.tag_badges"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:info.tag_badges"
+      },
+      {
+        "type": "text",
+        "id": "badge_1_tag",
+        "label": "t:settings.badge_1_tag",
+        "default": "best-seller"
+      },
+      {
+        "type": "text",
+        "id": "badge_1_label",
+        "label": "t:settings.badge_1_label",
+        "info": "t:info.tag_badge_label",
+        "default": "Best seller"
+      },
+      {
+        "type": "color",
+        "id": "badge_1_color",
+        "label": "t:settings.badge_1_color",
+        "default": "{{ settings.color_palette.color5 }}"
+      },
+      {
+        "type": "text",
+        "id": "badge_2_tag",
+        "label": "t:settings.badge_2_tag",
+        "default": "new"
+      },
+      {
+        "type": "text",
+        "id": "badge_2_label",
+        "label": "t:settings.badge_2_label",
+        "info": "t:info.tag_badge_label",
+        "default": "New"
+      },
+      {
+        "type": "color",
+        "id": "badge_2_color",
+        "label": "t:settings.badge_2_color",
+        "default": "{{ settings.color_palette.color1 }}"
+      },
+      {
+        "type": "text",
+        "id": "badge_3_tag",
+        "label": "t:settings.badge_3_tag",
+        "default": "buying-guide"
+      },
+      {
+        "type": "text",
+        "id": "badge_3_label",
+        "label": "t:settings.badge_3_label",
+        "info": "t:info.tag_badge_label"
+      },
+      {
+        "type": "color",
+        "id": "badge_3_color",
+        "label": "t:settings.badge_3_color",
+        "default": "{{ settings.color_palette.color5 }}"
+      },
+      {
+        "type": "text",
+        "id": "badge_4_tag",
+        "label": "t:settings.badge_4_tag",
+        "default": "care-guide"
+      },
+      {
+        "type": "text",
+        "id": "badge_4_label",
+        "label": "t:settings.badge_4_label",
+        "info": "t:info.tag_badge_label"
+      },
+      {
+        "type": "color",
+        "id": "badge_4_color",
+        "label": "t:settings.badge_4_color",
+        "default": "{{ settings.color_palette.color1 }}"
+      },
+      {
+        "type": "text",
+        "id": "badge_5_tag",
+        "label": "t:settings.badge_5_tag",
+        "default": "materials"
+      },
+      {
+        "type": "text",
+        "id": "badge_5_label",
+        "label": "t:settings.badge_5_label",
+        "info": "t:info.tag_badge_label"
+      },
+      {
+        "type": "color",
+        "id": "badge_5_color",
+        "label": "t:settings.badge_5_color",
+        "default": "{{ settings.color_palette.color4 }}"
+      },
+      {
+        "type": "text",
+        "id": "badge_6_tag",
+        "label": "t:settings.badge_6_tag",
+        "default": "worn-in"
+      },
+      {
+        "type": "text",
+        "id": "badge_6_label",
+        "label": "t:settings.badge_6_label",
+        "info": "t:info.tag_badge_label"
+      },
+      {
+        "type": "color",
+        "id": "badge_6_color",
+        "label": "t:settings.badge_6_color"
       }
     ]
   },
@@ -1889,6 +2006,37 @@
         "id": "product_card_carousel",
         "label": "t:settings.product_card_carousel",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:content.inventory"
+      },
+      {
+        "type": "range",
+        "id": "low_stock_threshold",
+        "label": "t:settings.low_stock_threshold",
+        "min": 1,
+        "max": 20,
+        "step": 1,
+        "default": 5
+      },
+      {
+        "type": "color",
+        "id": "in_stock_color",
+        "label": "t:settings.in_stock_color",
+        "default": "{{ settings.color_palette.color5 }}"
+      },
+      {
+        "type": "color",
+        "id": "low_stock_color",
+        "label": "t:settings.low_stock_color",
+        "default": "{{ settings.color_palette.color3 }}"
+      },
+      {
+        "type": "color",
+        "id": "rating_color",
+        "label": "t:settings.rating_color",
+        "default": "{{ settings.color_palette.color4 }}"
       }
     ]
   },

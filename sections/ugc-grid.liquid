@@ -8,7 +8,6 @@
 {% endcomment %}
 
 {% liquid
-  assign heading = section.settings.heading | escape
   assign brand_handle = section.settings.brand_handle | escape | remove: '@'
 
   assign profile_url = section.settings.brand_link
@@ -22,7 +21,10 @@
     endcapture
   endif
 
-  assign follow_label = section.settings.follow_label | escape
+  if section.settings.follow_label != blank and brand_handle != blank
+    assign raw_handle = section.settings.brand_handle | remove: '@'
+    assign follow_link_label = section.settings.follow_label | append: ' @' | append: raw_handle
+  endif
   assign caption = section.settings.caption | escape | replace: '[handle]', brand_link_html
 %}
 
@@ -39,26 +41,16 @@
     --ugc-grid-columns: {{ section.settings.columns }};
     --ugc-grid-overlay-rgb: {{ section.settings.overlay_color.rgb }};
     --ugc-grid-handle-color: {{ section.settings.handle_color }};
-    {% if section.settings.link_color != blank %}--ugc-grid-link-color: {{ section.settings.link_color }};{% endif %}
+    {% if section.settings.link_color != blank %}--section-heading-link-color: {{ section.settings.link_color }};{% endif %}
   "
 >
   <div class="ugc-grid__inner">
-    <div class="ugc-grid__header">
-      {% if heading != blank %}
-        <h2 class="ugc-grid__heading">{{ heading }}</h2>
-      {% endif %}
-
-      {% if follow_label != blank and brand_handle != blank %}
-        <a
-          href="{{ profile_url }}"
-          class="ugc-grid__follow"
-          target="_blank"
-          rel="noopener"
-        >
-          {{- follow_label }} @{{ brand_handle -}}
-        </a>
-      {% endif %}
-    </div>
+    {% render 'section-heading',
+      heading: section.settings.heading,
+      link_url: profile_url,
+      link_label: follow_link_label,
+      link_external: true
+    %}
 
     <ul class="ugc-grid__list list-unstyled">
       {% content_for 'blocks' %}
@@ -78,46 +70,10 @@
     min-width: 0;
   }
 
-  .ugc-grid__header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--gap-xs) var(--gap-lg);
-  }
-
-  .ugc-grid__heading {
-    margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--2xl);
-    line-height: var(--line-height--display-normal);
-    letter-spacing: var(--letter-spacing--heading-tight);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--3xl);
-    }
-  }
-
-  .ugc-grid__follow,
   .ugc-grid__inline-link {
-    color: var(--ugc-grid-link-color, var(--color-foreground));
-    text-underline-offset: 0.25em;
-  }
-
-  .ugc-grid__follow {
-    font-size: var(--font-size--xs);
-    text-decoration: underline;
-    white-space: nowrap;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--sm);
-    }
-  }
-
-  .ugc-grid__inline-link {
+    color: var(--section-heading-link-color, var(--color-foreground));
     text-decoration: none;
+    text-underline-offset: 0.25em;
 
     &:hover {
       text-decoration: underline;

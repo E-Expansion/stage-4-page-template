@@ -29,6 +29,7 @@
     "slider_label": "Schuifregelaar"
   },
   "accessibility": {
+    "breadcrumbs": "Kruimelpad",
     "play_model": "3D-model afspelen",
     "play_video": "Video afspelen",
     "unit_price": "Eenheidsprijs",
@@ -87,6 +88,7 @@
     "show_submenu": "Submenu {{ title }} weergeven"
   },
   "actions": {
+    "view_product": "Bekijk product",
     "add_to_cart": "Aan winkelwagen toevoegen",
     "clear_all": "Alles wissen",
     "remove": "Verwijderen",
@@ -130,6 +132,14 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "home": "Home",
+    "read_time": {
+      "one": "{{ count }} min leestijd",
+      "other": "{{ count }} min leestijd"
+    },
+    "updated_on": "Bijgewerkt {{ date }}",
+    "read_article": "Lees het artikel",
+    "about_author": "Over de auteur",
     "color_count": {
       "one": "{{ count }} kleur",
       "other": "{{ count }} kleuren"

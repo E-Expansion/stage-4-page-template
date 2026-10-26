@@ -193,6 +193,18 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "badge_3_color": "バッジ3の色",
+    "badge_3_label": "バッジ3のラベル",
+    "badge_3_tag": "バッジ3の商品タグ",
+    "badge_4_color": "バッジ4の色",
+    "badge_4_label": "バッジ4のラベル",
+    "badge_4_tag": "バッジ4の商品タグ",
+    "badge_5_color": "バッジ5の色",
+    "badge_5_label": "バッジ5のラベル",
+    "badge_5_tag": "バッジ5の商品タグ",
+    "badge_6_color": "バッジ6の色",
+    "badge_6_label": "バッジ6のラベル",
+    "badge_6_tag": "バッジ6の商品タグ",
     "customer_tags": "顧客タグ",
     "download_label": "ダウンロードリンクのラベル",
     "download_link": "ダウンロードリンク",
@@ -941,6 +953,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "tag_badges": "タグバッジ",
     "form": "フォーム",
     "badges": "バッジ",
     "inventory": "在庫",
@@ -1171,6 +1184,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "tag_badges": "一致するタグを持つ商品や記事に色付きのバッジを表示します（例：「best-seller」「購入ガイド」）。ルールは順番に確認され、最初に一致したものが適用されます。",
+    "tag_badge_label": "任意。空欄の場合はタグそのものを表示します",
+    "faq_metafield": "商品・コレクション・記事ページでは、質問はメタフィールド custom.faq（FAQ項目のリスト）から取得されます。空の場合は下の質問ブロックが使用されます。",
     "newsletter_signup_download": "任意。登録後に表示されます（例：コンテンツ > ファイルにアップロードしたPDF）",
     "newsletter_signup_tags": "カンマ区切り。これらのタグでガイドを送信するShopify Emailの自動化を開始します",
     "ugc_brand_link": "空欄の場合は上記アカウントのInstagramプロフィールにリンクします",
