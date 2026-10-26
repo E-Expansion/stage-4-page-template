@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "form": "Form",
     "badges": "Badges",
     "inventory": "Stock",
     "author": "Author",
@@ -229,6 +230,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "newsletter_signup_download": "Optional. Shown after signing up, e.g. a PDF uploaded under Content > Files",
+    "newsletter_signup_tags": "Comma separated. Use these tags to trigger a Shopify Email automation that sends the guide",
     "ugc_brand_link": "Leave empty to link to the Instagram profile of the handle above",
     "ugc_caption": "Use [handle] to insert a link to your account",
     "ugc_post_handle": "Without the @. The tile links to this Instagram account",
@@ -280,6 +283,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "newsletter_signup": "Newsletter signup",
     "faq": "FAQ",
     "faq_item": "Question",
     "brand_story": "Brand story",
@@ -785,6 +789,10 @@
     "below_media": "Below media"
   },
   "settings": {
+    "customer_tags": "Customer tags",
+    "download_label": "Download link label",
+    "download_link": "Download link",
+    "success_message": "Success message",
     "answer": "Answer",
     "question": "Question",
     "stat_value": "Value",

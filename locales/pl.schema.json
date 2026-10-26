@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Zapis do newslettera",
     "faq": "Najczęstsze pytania",
     "faq_item": "Pytanie",
     "brand_story": "Historia marki",
@@ -192,6 +193,10 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "customer_tags": "Tagi klienta",
+    "download_label": "Etykieta linku do pobrania",
+    "download_link": "Link do pobrania",
+    "success_message": "Komunikat potwierdzenia",
     "answer": "Odpowiedź",
     "question": "Pytanie",
     "stat_value": "Wartość",
@@ -936,6 +941,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "form": "Formularz",
     "badges": "Odznaki",
     "inventory": "Stan magazynowy",
     "author": "Autor",
@@ -1165,6 +1171,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "newsletter_signup_download": "Opcjonalnie. Wyświetlany po zapisie, np. PDF przesłany w Treść > Pliki",
+    "newsletter_signup_tags": "Rozdzielone przecinkami. Użyj tych tagów, aby uruchomić automatyzację Shopify Email wysyłającą przewodnik",
     "ugc_brand_link": "Pozostaw puste, aby linkować do profilu Instagram powyższego konta",
     "ugc_caption": "Użyj [handle], aby wstawić link do swojego konta",
     "ugc_post_handle": "Bez @. Kafelek prowadzi do tego konta na Instagramie",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "新闻通讯订阅",
     "faq": "常见问题",
     "faq_item": "问题",
     "brand_story": "品牌故事",
@@ -192,6 +193,10 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "customer_tags": "客户标签",
+    "download_label": "下载链接文本",
+    "download_link": "下载链接",
+    "success_message": "成功消息",
     "answer": "答案",
     "question": "问题",
     "stat_value": "数值",
@@ -936,6 +941,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "form": "表单",
     "badges": "徽章",
     "inventory": "库存",
     "author": "作者",
@@ -1165,6 +1171,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "newsletter_signup_download": "可选。注册后显示，例如在内容 > 文件中上传的 PDF",
+    "newsletter_signup_tags": "以逗号分隔。使用这些标签触发发送指南的 Shopify Email 自动化",
     "ugc_brand_link": "留空以链接到上方账户的 Instagram 主页",
     "ugc_caption": "使用 [handle] 插入指向你账户的链接",
     "ugc_post_handle": "不含 @。图块链接到此 Instagram 账户",

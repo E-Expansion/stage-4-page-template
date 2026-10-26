@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Påmelding til nyhetsbrev",
     "faq": "Ofte stilte spørsmål",
     "faq_item": "Spørsmål",
     "brand_story": "Merkevarehistorie",
@@ -192,6 +193,10 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "customer_tags": "Kundetagger",
+    "download_label": "Tekst på nedlastingslenke",
+    "download_link": "Nedlastingslenke",
+    "success_message": "Bekreftelsesmelding",
     "answer": "Svar",
     "question": "Spørsmål",
     "stat_value": "Verdi",
@@ -936,6 +941,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "form": "Skjema",
     "badges": "Merker",
     "inventory": "Lager",
     "author": "Forfatter",
@@ -1165,6 +1171,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "newsletter_signup_download": "Valgfritt. Vises etter påmelding, f.eks. en PDF lastet opp under Innhold > Filer",
+    "newsletter_signup_tags": "Kommaseparert. Bruk disse taggene til å starte en Shopify Email-automatisering som sender guiden",
     "ugc_brand_link": "La stå tomt for å lenke til Instagram-profilen til kontoen over",
     "ugc_caption": "Bruk [handle] for å sette inn en lenke til kontoen din",
     "ugc_post_handle": "Uten @. Ruten lenker til denne Instagram-kontoen",

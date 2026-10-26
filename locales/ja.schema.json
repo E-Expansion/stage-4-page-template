@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "ニュースレター登録",
     "faq": "よくある質問",
     "faq_item": "質問",
     "brand_story": "ブランドストーリー",
@@ -192,6 +193,10 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "customer_tags": "顧客タグ",
+    "download_label": "ダウンロードリンクのラベル",
+    "download_link": "ダウンロードリンク",
+    "success_message": "完了メッセージ",
     "answer": "回答",
     "question": "質問",
     "stat_value": "値",
@@ -936,6 +941,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "form": "フォーム",
     "badges": "バッジ",
     "inventory": "在庫",
     "author": "著者",
@@ -1165,6 +1171,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "newsletter_signup_download": "任意。登録後に表示されます（例：コンテンツ > ファイルにアップロードしたPDF）",
+    "newsletter_signup_tags": "カンマ区切り。これらのタグでガイドを送信するShopify Emailの自動化を開始します",
     "ugc_brand_link": "空欄の場合は上記アカウントのInstagramプロフィールにリンクします",
     "ugc_caption": "[handle]を使用してアカウントへのリンクを挿入します",
     "ugc_post_handle": "@なしで入力。タイルはこのInstagramアカウントにリンクします",

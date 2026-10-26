@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Newsletter-Anmeldung",
     "faq": "FAQ",
     "faq_item": "Frage",
     "brand_story": "Markengeschichte",
@@ -192,6 +193,10 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "customer_tags": "Kunden-Tags",
+    "download_label": "Beschriftung des Download-Links",
+    "download_link": "Download-Link",
+    "success_message": "Erfolgsmeldung",
     "answer": "Antwort",
     "question": "Frage",
     "stat_value": "Wert",
@@ -936,6 +941,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "form": "Formular",
     "badges": "Badges",
     "inventory": "Lagerbestand",
     "author": "Autor",
@@ -1165,6 +1171,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "newsletter_signup_download": "Optional. Wird nach der Anmeldung angezeigt, z. B. ein PDF unter Inhalt > Dateien",
+    "newsletter_signup_tags": "Durch Kommas getrennt. Nutze diese Tags, um eine Shopify Email-Automatisierung auszulösen, die den Leitfaden sendet",
     "ugc_brand_link": "Leer lassen, um auf das Instagram-Profil des obigen Kontos zu verlinken",
     "ugc_caption": "Verwende [handle], um einen Link zu deinem Konto einzufügen",
     "ugc_post_handle": "Ohne @. Die Kachel verlinkt auf dieses Instagram-Konto",

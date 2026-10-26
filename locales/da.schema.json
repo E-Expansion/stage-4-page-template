@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Nyhedsbrevstilmelding",
     "faq": "Ofte stillede spørgsmål",
     "faq_item": "Spørgsmål",
     "brand_story": "Brandhistorie",
@@ -192,6 +193,10 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "customer_tags": "Kundetags",
+    "download_label": "Tekst på downloadlink",
+    "download_link": "Downloadlink",
+    "success_message": "Bekræftelsesbesked",
     "answer": "Svar",
     "question": "Spørgsmål",
     "stat_value": "Værdi",
@@ -936,6 +941,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "form": "Formular",
     "badges": "Badges",
     "inventory": "Lager",
     "author": "Forfatter",
@@ -1165,6 +1171,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "newsletter_signup_download": "Valgfrit. Vises efter tilmelding, fx en PDF uploadet under Indhold > Filer",
+    "newsletter_signup_tags": "Kommasepareret. Brug disse tags til at starte en Shopify Email-automatisering, der sender guiden",
     "ugc_brand_link": "Lad være tom for at linke til Instagram-profilen for kontoen ovenfor",
     "ugc_caption": "Brug [handle] til at indsætte et link til din konto",
     "ugc_post_handle": "Uden @. Feltet linker til denne Instagram-konto",

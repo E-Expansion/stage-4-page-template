@@ -1,0 +1,405 @@
+{% comment %}
+  Section contract.
+  Lead magnet signup card (e.g. "Get the free size & fit guide"): text beside an email
+  form on desktop, stacked on mobile. Submits Shopify's customer form with marketing
+  consent and merchant-set tags, so a Shopify Email automation can send the guide.
+  After a successful signup it shows a confirmation and an optional direct download link.
+  @example
+  <!-- Homepage > Add section > Newsletter signup; set tags and the guide download link -->
+{% endcomment %}
+
+{% liquid
+  assign heading = section.settings.heading | escape
+  assign button_label = section.settings.button_label | escape
+  if button_label == blank
+    assign button_label = 'actions.sign_up' | t
+  endif
+  assign placeholder = section.settings.placeholder | escape
+  if placeholder == blank
+    assign placeholder = 'blocks.email_signup.placeholder' | t
+  endif
+  assign success_text = section.settings.success_text | escape
+  if success_text == blank
+    assign success_text = 'blocks.email_signup.success' | t
+  endif
+  assign form_id = 'NewsletterSignup-' | append: section.id
+  assign input_id = 'NewsletterSignupEmail-' | append: section.id
+
+  # Button text picks the palette extreme that contrasts with a custom button colour
+  if section.settings.button_color != blank
+    assign button_brightness = section.settings.button_color | color_brightness
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    else
+      assign button_text = 'var(--palette-lightest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: section.settings.button_color
+    endcapture
+  endif
+%}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  border_color: section.settings.border_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="newsletter-signup section section--page-width spacing-style color-custom-{{ section.id }}"
+  style="{% render 'spacing-padding', settings: section.settings %}"
+>
+  <div class="newsletter-signup__card">
+    <div class="newsletter-signup__intro">
+      {% if heading != blank %}
+        <h2 class="newsletter-signup__heading">{{ heading }}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="newsletter-signup__text rte">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+
+    {%- form 'customer', id: form_id, class: 'newsletter-signup__form' -%}
+      <input
+        type="hidden"
+        name="contact[tags]"
+        value="{{ section.settings.tags | escape }}"
+      >
+      <input
+        type="hidden"
+        name="contact[accepts_marketing]"
+        value="true"
+      >
+
+      {% if form.posted_successfully? %}
+        <div
+          class="newsletter-signup__success"
+          role="status"
+          tabindex="-1"
+          autofocus
+        >
+          <span
+            class="svg-wrapper newsletter-signup__success-icon"
+            aria-hidden="true"
+          >
+            {{- 'icon-checkmark.svg' | inline_asset_content -}}
+          </span>
+          <p class="newsletter-signup__success-text">
+            {{ success_text }}
+          </p>
+          {% if section.settings.download_link != blank and section.settings.download_label != blank %}
+            <a
+              href="{{ section.settings.download_link }}"
+              class="newsletter-signup__download"
+              target="_blank"
+              rel="noopener"
+            >
+              {{- section.settings.download_label | escape -}}
+            </a>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="newsletter-signup__fields">
+          <label
+            for="{{ input_id }}"
+            class="visually-hidden"
+          >
+            {{- 'blocks.email_signup.label' | t -}}
+          </label>
+          <input
+            id="{{ input_id }}"
+            class="newsletter-signup__input"
+            type="email"
+            name="contact[email]"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            placeholder="{{ placeholder }}"
+            required
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="{{ form_id }}-error"
+            {% endif %}
+          >
+          <button
+            type="submit"
+            class="button newsletter-signup__button"
+            {% if section.settings.button_color != blank %}
+              style="
+                --color-primary-button-background: {{ section.settings.button_color }};
+                --color-primary-button-border: {{ section.settings.button_color }};
+                --color-primary-button-text: {{ button_text }};
+                --color-primary-button-hover-background: {{ button_hover | strip }};
+                --color-primary-button-hover-border: {{ button_hover | strip }};
+                --color-primary-button-hover-text: {{ button_text }};
+                --color-primary-button-focus-outline: {{ section.settings.button_color }};
+              "
+            {% endif %}
+          >
+            {{- button_label -}}
+          </button>
+        </div>
+
+        {% if form.errors %}
+          <p
+            id="{{ form_id }}-error"
+            class="newsletter-signup__error"
+          >
+            {{- form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email -}}
+          </p>
+        {% endif %}
+      {% endif %}
+    {%- endform -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .newsletter-signup__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    min-width: 0;
+    padding: var(--padding-xl) var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--padding-4xl);
+      padding: var(--padding-3xl) var(--padding-2xl);
+    }
+  }
+
+  .newsletter-signup__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    min-width: 0;
+    max-width: 28rem;
+  }
+
+  .newsletter-signup__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xl);
+    }
+  }
+
+  .newsletter-signup__text {
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  .newsletter-signup__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    min-width: 0;
+
+    @media screen and (min-width: 750px) {
+      flex: 0 1 29rem;
+    }
+  }
+
+  .newsletter-signup__fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+
+    @media screen and (min-width: 750px) {
+      flex-direction: row;
+    }
+  }
+
+  .newsletter-signup__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: var(--minimum-touch-target);
+    padding: var(--padding-sm) var(--padding-md);
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--md);
+    color: var(--color-input-text);
+    background-color: var(--color-input-background);
+    border: var(--style-border-width-inputs) solid var(--color-input-border);
+    border-radius: var(--style-border-radius-inputs);
+
+    &::placeholder {
+      color: rgb(var(--color-input-text-rgb) / var(--opacity-50));
+    }
+
+    &[aria-invalid='true'] {
+      border-color: var(--color-error);
+    }
+  }
+
+  .newsletter-signup__button {
+    flex-shrink: 0;
+    width: 100%;
+    white-space: nowrap;
+
+    @media screen and (min-width: 750px) {
+      width: auto;
+    }
+  }
+
+  .newsletter-signup__error {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-error);
+  }
+
+  .newsletter-signup__success {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+    outline: none;
+  }
+
+  .newsletter-signup__success-icon {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-success);
+  }
+
+  .newsletter-signup__success-text {
+    margin: 0;
+    font-size: var(--font-size--md);
+  }
+
+  .newsletter-signup__download {
+    flex-basis: 100%;
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.newsletter_signup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Get the free size & fit guide"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "<p>A one-page PDF with every measurement, what fits inside, and how the leather ages. No sales mail.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.form"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "t:settings.placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "default": "Send it to me"
+    },
+    {
+      "type": "text",
+      "id": "tags",
+      "label": "t:settings.customer_tags",
+      "info": "t:info.newsletter_signup_tags",
+      "default": "newsletter, size-guide"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "t:settings.success_message",
+      "default": "Thanks! The guide is on its way to your inbox."
+    },
+    {
+      "type": "url",
+      "id": "download_link",
+      "label": "t:settings.download_link",
+      "info": "t:info.newsletter_signup_download"
+    },
+    {
+      "type": "text",
+      "id": "download_label",
+      "label": "t:settings.download_label",
+      "default": "Download the guide now"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:settings.button_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.newsletter_signup"
+    }
+  ]
+}
+{% endschema %}

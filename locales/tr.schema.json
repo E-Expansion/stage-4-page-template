@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Bülten kaydı",
     "faq": "SSS",
     "faq_item": "Soru",
     "brand_story": "Marka hikâyesi",
@@ -192,6 +193,10 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "customer_tags": "Müşteri etiketleri",
+    "download_label": "İndirme bağlantısı metni",
+    "download_link": "İndirme bağlantısı",
+    "success_message": "Başarı mesajı",
     "answer": "Yanıt",
     "question": "Soru",
     "stat_value": "Değer",
@@ -936,6 +941,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "form": "Form",
     "badges": "Rozetler",
     "inventory": "Stok",
     "author": "Yazar",
@@ -1165,6 +1171,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "newsletter_signup_download": "İsteğe bağlı. Kayıttan sonra gösterilir, ör. İçerik > Dosyalar'a yüklenen bir PDF",
+    "newsletter_signup_tags": "Virgülle ayrılmış. Rehberi gönderen bir Shopify Email otomasyonunu tetiklemek için bu etiketleri kullanın",
     "ugc_brand_link": "Yukarıdaki hesabın Instagram profiline bağlantı vermek için boş bırakın",
     "ugc_caption": "Hesabınıza bağlantı eklemek için [handle] kullanın",
     "ugc_post_handle": "@ olmadan. Kutucuk bu Instagram hesabına bağlanır",

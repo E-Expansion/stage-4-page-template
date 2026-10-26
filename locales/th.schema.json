@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "สมัครรับจดหมายข่าว",
     "faq": "คำถามที่พบบ่อย",
     "faq_item": "คำถาม",
     "brand_story": "เรื่องราวแบรนด์",
@@ -192,6 +193,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "customer_tags": "แท็กลูกค้า",
+    "download_label": "ข้อความลิงก์ดาวน์โหลด",
+    "download_link": "ลิงก์ดาวน์โหลด",
+    "success_message": "ข้อความสำเร็จ",
     "answer": "คำตอบ",
     "question": "คำถาม",
     "stat_value": "ค่า",
@@ -936,6 +941,7 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "form": "แบบฟอร์ม",
     "badges": "ป้าย",
     "inventory": "สต็อก",
     "author": "ผู้เขียน",
@@ -1165,6 +1171,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "newsletter_signup_download": "ไม่บังคับ แสดงหลังสมัคร เช่น PDF ที่อัปโหลดใน เนื้อหา > ไฟล์",
+    "newsletter_signup_tags": "คั่นด้วยจุลภาค ใช้แท็กเหล่านี้เพื่อเริ่มระบบอัตโนมัติ Shopify Email ที่ส่งคู่มือ",
     "ugc_brand_link": "เว้นว่างไว้เพื่อลิงก์ไปยังโปรไฟล์ Instagram ของบัญชีด้านบน",
     "ugc_caption": "ใช้ [handle] เพื่อแทรกลิงก์ไปยังบัญชีของคุณ",
     "ugc_post_handle": "ไม่ต้องใส่ @ ไทล์จะลิงก์ไปยังบัญชี Instagram นี้",

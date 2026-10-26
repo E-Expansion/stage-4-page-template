@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Nyhetsbrevsregistrering",
     "faq": "Vanliga frågor",
     "faq_item": "Fråga",
     "brand_story": "Varumärkesberättelse",
@@ -192,6 +193,10 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "customer_tags": "Kundtaggar",
+    "download_label": "Text för nedladdningslänk",
+    "download_link": "Nedladdningslänk",
+    "success_message": "Bekräftelsemeddelande",
     "answer": "Svar",
     "question": "Fråga",
     "stat_value": "Värde",
@@ -936,6 +941,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "form": "Formulär",
     "badges": "Märken",
     "inventory": "Lager",
     "author": "Författare",
@@ -1165,6 +1171,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "newsletter_signup_download": "Valfritt. Visas efter registrering, t.ex. en PDF uppladdad under Innehåll > Filer",
+    "newsletter_signup_tags": "Kommaseparerade. Använd taggarna för att starta en Shopify Email-automatisering som skickar guiden",
     "ugc_brand_link": "Lämna tomt för att länka till Instagram-profilen för kontot ovan",
     "ugc_caption": "Använd [handle] för att infoga en länk till ditt konto",
     "ugc_post_handle": "Utan @. Rutan länkar till detta Instagram-konto",

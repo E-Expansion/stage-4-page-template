@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Přihlášení k newsletteru",
     "faq": "Časté dotazy",
     "faq_item": "Otázka",
     "brand_story": "Příběh značky",
@@ -192,6 +193,10 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "customer_tags": "Štítky zákazníka",
+    "download_label": "Popisek odkazu ke stažení",
+    "download_link": "Odkaz ke stažení",
+    "success_message": "Potvrzovací zpráva",
     "answer": "Odpověď",
     "question": "Otázka",
     "stat_value": "Hodnota",
@@ -936,6 +941,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "form": "Formulář",
     "badges": "Odznaky",
     "inventory": "Zásoby",
     "author": "Autor",
@@ -1165,6 +1171,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "newsletter_signup_download": "Volitelné. Zobrazí se po přihlášení, např. PDF nahrané v Obsah > Soubory",
+    "newsletter_signup_tags": "Oddělené čárkami. Pomocí těchto štítků spusťte automatizaci Shopify Email, která odešle průvodce",
     "ugc_brand_link": "Ponechte prázdné pro odkaz na instagramový profil účtu výše",
     "ugc_caption": "Pomocí [handle] vložíte odkaz na svůj účet",
     "ugc_post_handle": "Bez @. Dlaždice odkazuje na tento instagramový účet",

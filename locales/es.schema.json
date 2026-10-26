@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Registro al boletín",
     "faq": "Preguntas frecuentes",
     "faq_item": "Pregunta",
     "brand_story": "Historia de la marca",
@@ -192,6 +193,10 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "customer_tags": "Etiquetas de cliente",
+    "download_label": "Texto del enlace de descarga",
+    "download_link": "Enlace de descarga",
+    "success_message": "Mensaje de confirmación",
     "answer": "Respuesta",
     "question": "Pregunta",
     "stat_value": "Valor",
@@ -936,6 +941,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "form": "Formulario",
     "badges": "Insignias",
     "inventory": "Inventario",
     "author": "Autor",
@@ -1165,6 +1171,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "newsletter_signup_download": "Opcional. Se muestra tras registrarse, p. ej. un PDF subido en Contenido > Archivos",
+    "newsletter_signup_tags": "Separadas por comas. Usa estas etiquetas para activar una automatización de Shopify Email que envíe la guía",
     "ugc_brand_link": "Déjalo vacío para enlazar al perfil de Instagram de la cuenta anterior",
     "ugc_caption": "Usa [handle] para insertar un enlace a tu cuenta",
     "ugc_post_handle": "Sin la @. El mosaico enlaza a esta cuenta de Instagram",

@@ -447,6 +447,23 @@
         "padding-block-end": 48
       }
     },
+    "newsletter_signup": {
+      "type": "newsletter-signup",
+      "settings": {
+        "heading": "Get the free size & fit guide",
+        "text": "<p>A one-page PDF with every measurement, what fits inside, and how the leather ages. No sales mail.</p>",
+        "placeholder": "your@email.com",
+        "button_label": "Send it to me",
+        "tags": "newsletter, size-guide",
+        "success_text": "Thanks! The guide is on its way to your inbox.",
+        "download_label": "Download the guide now",
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "button_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -656,6 +673,7 @@
     "ugc_grid",
     "brand_story",
     "faq",
+    "newsletter_signup",
     "product_list_fa6P9H"
   ]
 }

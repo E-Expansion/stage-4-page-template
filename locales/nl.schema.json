@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Nieuwsbriefaanmelding",
     "faq": "Veelgestelde vragen",
     "faq_item": "Vraag",
     "brand_story": "Merkverhaal",
@@ -192,6 +193,10 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "customer_tags": "Klanttags",
+    "download_label": "Label downloadlink",
+    "download_link": "Downloadlink",
+    "success_message": "Bevestigingsbericht",
     "answer": "Antwoord",
     "question": "Vraag",
     "stat_value": "Waarde",
@@ -936,6 +941,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "form": "Formulier",
     "badges": "Badges",
     "inventory": "Voorraad",
     "author": "Auteur",
@@ -1165,6 +1171,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "newsletter_signup_download": "Optioneel. Getoond na aanmelding, bijv. een pdf geüpload onder Content > Bestanden",
+    "newsletter_signup_tags": "Gescheiden door komma's. Gebruik deze tags om een Shopify Email-automatisering te starten die de gids verstuurt",
     "ugc_brand_link": "Laat leeg om te linken naar het Instagram-profiel van het account hierboven",
     "ugc_caption": "Gebruik [handle] om een link naar je account in te voegen",
     "ugc_post_handle": "Zonder de @. De tegel linkt naar dit Instagram-account",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "電子報訂閱",
     "faq": "常見問題",
     "faq_item": "問題",
     "brand_story": "品牌故事",
@@ -192,6 +193,10 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "customer_tags": "顧客標籤",
+    "download_label": "下載連結文字",
+    "download_link": "下載連結",
+    "success_message": "成功訊息",
     "answer": "答案",
     "question": "問題",
     "stat_value": "數值",
@@ -936,6 +941,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "form": "表單",
     "badges": "徽章",
     "inventory": "庫存",
     "author": "作者",
@@ -1165,6 +1171,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "newsletter_signup_download": "選填。註冊後顯示，例如在內容 > 檔案中上傳的 PDF",
+    "newsletter_signup_tags": "以逗號分隔。使用這些標籤觸發寄送指南的 Shopify Email 自動化流程",
     "ugc_brand_link": "留空以連結至上方帳號的 Instagram 個人檔案",
     "ugc_caption": "使用 [handle] 插入連往你帳號的連結",
     "ugc_post_handle": "不含 @。圖塊會連結至此 Instagram 帳號",

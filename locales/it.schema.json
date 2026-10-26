@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Iscrizione alla newsletter",
     "faq": "FAQ",
     "faq_item": "Domanda",
     "brand_story": "Storia del marchio",
@@ -192,6 +193,10 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "customer_tags": "Tag cliente",
+    "download_label": "Testo del link di download",
+    "download_link": "Link di download",
+    "success_message": "Messaggio di conferma",
     "answer": "Risposta",
     "question": "Domanda",
     "stat_value": "Valore",
@@ -936,6 +941,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "form": "Modulo",
     "badges": "Badge",
     "inventory": "Scorte",
     "author": "Autore",
@@ -1165,6 +1171,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "newsletter_signup_download": "Facoltativo. Mostrato dopo l'iscrizione, ad es. un PDF caricato in Contenuti > File",
+    "newsletter_signup_tags": "Separati da virgole. Usa questi tag per attivare un'automazione Shopify Email che invia la guida",
     "ugc_brand_link": "Lascia vuoto per collegare al profilo Instagram dell'account sopra",
     "ugc_caption": "Usa [handle] per inserire un link al tuo account",
     "ugc_post_handle": "Senza @. Il riquadro rimanda a questo account Instagram",

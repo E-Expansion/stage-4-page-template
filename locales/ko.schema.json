@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "뉴스레터 가입",
     "faq": "자주 묻는 질문",
     "faq_item": "질문",
     "brand_story": "브랜드 스토리",
@@ -192,6 +193,10 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "customer_tags": "고객 태그",
+    "download_label": "다운로드 링크 레이블",
+    "download_link": "다운로드 링크",
+    "success_message": "완료 메시지",
     "answer": "답변",
     "question": "질문",
     "stat_value": "값",
@@ -936,6 +941,7 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "form": "양식",
     "badges": "배지",
     "inventory": "재고",
     "author": "작성자",
@@ -1165,6 +1171,8 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "newsletter_signup_download": "선택 사항. 가입 후 표시됩니다(예: 콘텐츠 > 파일에 업로드한 PDF)",
+    "newsletter_signup_tags": "쉼표로 구분합니다. 이 태그로 가이드를 보내는 Shopify Email 자동화를 시작하세요",
     "ugc_brand_link": "비워 두면 위 계정의 Instagram 프로필로 연결됩니다",
     "ugc_caption": "[handle]을 사용하여 계정 링크를 삽입하세요",
     "ugc_post_handle": "@ 없이 입력하세요. 타일이 이 Instagram 계정으로 연결됩니다",

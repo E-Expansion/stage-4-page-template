@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Uutiskirjeen tilaus",
     "faq": "Usein kysytyt kysymykset",
     "faq_item": "Kysymys",
     "brand_story": "Brändin tarina",
@@ -192,6 +193,10 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "customer_tags": "Asiakastunnisteet",
+    "download_label": "Latauslinkin teksti",
+    "download_link": "Latauslinkki",
+    "success_message": "Vahvistusviesti",
     "answer": "Vastaus",
     "question": "Kysymys",
     "stat_value": "Arvo",
@@ -936,6 +941,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "form": "Lomake",
     "badges": "Merkit",
     "inventory": "Varasto",
     "author": "Kirjoittaja",
@@ -1165,6 +1171,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "newsletter_signup_download": "Valinnainen. Näytetään tilauksen jälkeen, esim. kohtaan Sisältö > Tiedostot ladattu PDF",
+    "newsletter_signup_tags": "Pilkuin eroteltuina. Käynnistä näillä tunnisteilla Shopify Email -automaatio, joka lähettää oppaan",
     "ugc_brand_link": "Jätä tyhjäksi linkittääksesi yllä olevan tilin Instagram-profiiliin",
     "ugc_caption": "Lisää linkki tiliisi käyttämällä [handle]",
     "ugc_post_handle": "Ilman @-merkkiä. Ruutu linkittää tähän Instagram-tiliin",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "newsletter_signup": "Subscrição da newsletter",
     "faq": "Perguntas frequentes",
     "faq_item": "Pergunta",
     "brand_story": "História da marca",
@@ -192,6 +193,10 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "customer_tags": "Etiquetas de cliente",
+    "download_label": "Texto da ligação de transferência",
+    "download_link": "Ligação de transferência",
+    "success_message": "Mensagem de sucesso",
     "answer": "Resposta",
     "question": "Pergunta",
     "stat_value": "Valor",
@@ -936,6 +941,7 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "form": "Formulário",
     "badges": "Selos",
     "inventory": "Inventário",
     "author": "Autor",
@@ -1165,6 +1171,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "newsletter_signup_download": "Opcional. Apresentado após a subscrição, p. ex. um PDF carregado em Conteúdo > Ficheiros",
+    "newsletter_signup_tags": "Separadas por vírgulas. Utilize estas etiquetas para acionar uma automatização do Shopify Email que envia o guia",
     "ugc_brand_link": "Deixe vazio para ligar ao perfil do Instagram da conta acima",
     "ugc_caption": "Utilize [handle] para inserir uma ligação para a sua conta",
     "ugc_post_handle": "Sem o @. O bloco liga a esta conta do Instagram",
