@@ -344,21 +344,24 @@
           "settings": {
             "value": "1994",
             "label": "Workshop founded"
-          }
+          },
+          "blocks": {}
         },
         "stat_tannery": {
           "type": "_brand-story-stat",
           "settings": {
             "value": "1 tannery",
             "label": "Single, traceable source"
-          }
+          },
+          "blocks": {}
         },
         "stat_guarantee": {
           "type": "_brand-story-stat",
           "settings": {
             "value": "5 years",
             "label": "Repair guarantee"
-          }
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -367,6 +370,7 @@
         "stat_guarantee"
       ],
       "settings": {
+        "image": "shopify://shop_images/our_story_image.png",
         "image_position": "left",
         "heading": "Two benches, eleven pairs of hands, one town",
         "text": "<p>We buy full-grain hides from a single tannery forty kilometres from the workshop, cut them by hand, and stitch every seam on machines older than the company. Nothing leaves the bench until it has been checked twice.</p>",
