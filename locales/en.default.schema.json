@@ -224,6 +224,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "header_logo_source": "Upload a logo in Theme settings > Logo and favicon. Without one, the store name is shown.",
+    "menu_item_link": "Shown as a \"View all\" link in the mega menu, or used as the item link when it has no columns",
     "free_shipping_threshold": "In your store's default currency. Set to 0 to hide the remaining amount.",
     "free_shipping_threshold_placeholder": "Use [threshold] to insert the threshold amount",
     "free_shipping_amount_placeholder": "Shown when the cart has items. Use [amount] to insert the remaining amount",
@@ -256,6 +258,10 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "link": "Link",
+    "menu_column": "Menu column",
+    "menu_item": "Menu item",
+    "utility_link": "Utility link",
     "top_bar": "Top bar",
     "top_bar_item": "Top bar item",
     "column": "Column",
@@ -740,6 +746,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "cart_bubble_color": "Cart bubble color",
+    "placeholder": "Placeholder",
+    "show_account": "Show account",
     "free_shipping_threshold": "Free shipping threshold",
     "free_shipping_text": "Message",
     "free_shipping_remaining_text": "Remaining amount message",

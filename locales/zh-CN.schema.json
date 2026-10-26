@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "链接",
+    "menu_column": "菜单列",
+    "menu_item": "菜单项",
+    "utility_link": "实用链接",
     "top_bar": "顶部栏",
     "top_bar_item": "顶部栏项目",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "cart_bubble_color": "购物车徽章颜色",
+    "placeholder": "占位符",
+    "show_account": "显示账户",
     "free_shipping_threshold": "免费配送门槛",
     "free_shipping_text": "消息",
     "free_shipping_remaining_text": "剩余金额消息",
@@ -1094,6 +1101,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "header_logo_source": "在主题设置 > 徽标和网站图标中上传徽标。未上传时显示商店名称。",
+    "menu_item_link": "在超级菜单中显示为“查看全部”链接；若该项没有列，则用作该项的链接",
     "free_shipping_threshold": "以商店默认货币计。设置为 0 可隐藏剩余金额。",
     "free_shipping_threshold_placeholder": "使用 [threshold] 插入门槛金额",
     "free_shipping_amount_placeholder": "购物车中有商品时显示。使用 [amount] 插入剩余金额",

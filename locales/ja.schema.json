@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "リンク",
+    "menu_column": "メニュー列",
+    "menu_item": "メニュー項目",
+    "utility_link": "ユーティリティリンク",
     "top_bar": "トップバー",
     "top_bar_item": "トップバーの項目",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "cart_bubble_color": "カートバッジの色",
+    "placeholder": "プレースホルダー",
+    "show_account": "アカウントを表示",
     "free_shipping_threshold": "送料無料のしきい値",
     "free_shipping_text": "メッセージ",
     "free_shipping_remaining_text": "残りの金額のメッセージ",
@@ -1094,6 +1101,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "header_logo_source": "テーマ設定 > ロゴとファビコンでロゴをアップロードしてください。ロゴがない場合はストア名が表示されます。",
+    "menu_item_link": "メガメニューで「すべて表示」リンクとして表示されます。列がない場合は項目のリンクとして使用されます",
     "free_shipping_threshold": "ストアのデフォルト通貨で指定します。0に設定すると残りの金額が非表示になります。",
     "free_shipping_threshold_placeholder": "[threshold]を使用してしきい値を挿入します",
     "free_shipping_amount_placeholder": "カートに商品がある場合に表示されます。[amount]を使用して残りの金額を挿入します",

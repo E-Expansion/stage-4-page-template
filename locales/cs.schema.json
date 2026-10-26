@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Odkaz",
+    "menu_column": "Sloupec nabídky",
+    "menu_item": "Položka nabídky",
+    "utility_link": "Pomocný odkaz",
     "top_bar": "Horní lišta",
     "top_bar_item": "Položka horní lišty",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "cart_bubble_color": "Barva odznaku košíku",
+    "placeholder": "Zástupný text",
+    "show_account": "Zobrazit účet",
     "free_shipping_threshold": "Limit pro dopravu zdarma",
     "free_shipping_text": "Zpráva",
     "free_shipping_remaining_text": "Zpráva o zbývající částce",
@@ -1094,6 +1101,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "header_logo_source": "Nahrajte logo v Nastavení motivu > Logo a favicon. Bez loga se zobrazí název obchodu.",
+    "menu_item_link": "Zobrazí se jako odkaz „Zobrazit vše“ v mega menu, nebo se použije jako odkaz položky, pokud nemá sloupce",
     "free_shipping_threshold": "Ve výchozí měně obchodu. Nastavením na 0 skryjete zbývající částku.",
     "free_shipping_threshold_placeholder": "Pomocí [threshold] vložíte částku limitu",
     "free_shipping_amount_placeholder": "Zobrazí se, když košík obsahuje položky. Pomocí [amount] vložíte zbývající částku",

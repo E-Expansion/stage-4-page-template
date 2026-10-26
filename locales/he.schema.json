@@ -216,6 +216,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "header_logo_source": "העלה לוגו בהגדרות ערכת העיצוב > לוגו ו-favicon. ללא לוגו, יוצג שם החנות.",
+    "menu_item_link": "מוצג כקישור \"הצג הכול\" בתפריט המגה, או משמש כקישור הפריט כשאין לו עמודות",
     "free_shipping_threshold": "במטבע ברירת המחדל של החנות. הגדר 0 כדי להסתיר את הסכום הנותר.",
     "free_shipping_threshold_placeholder": "השתמש ב-[threshold] כדי להוסיף את סכום הסף",
     "free_shipping_amount_placeholder": "מוצג כשיש פריטים בעגלה. השתמש ב-[amount] כדי להוסיף את הסכום הנותר",
@@ -248,6 +250,10 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "link": "קישור",
+    "menu_column": "עמודת תפריט",
+    "menu_item": "פריט תפריט",
+    "utility_link": "קישור עזר",
     "top_bar": "סרגל עליון",
     "top_bar_item": "פריט בסרגל העליון",
     "column": "עמודה",
@@ -688,6 +694,9 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "cart_bubble_color": "צבע תג העגלה",
+    "placeholder": "טקסט מציין מיקום",
+    "show_account": "הצג חשבון",
     "free_shipping_threshold": "סף למשלוח חינם",
     "free_shipping_text": "הודעה",
     "free_shipping_remaining_text": "הודעת סכום נותר",

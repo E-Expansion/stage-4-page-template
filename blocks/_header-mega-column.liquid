@@ -1,0 +1,70 @@
+{% doc %}
+  Renders one mega menu column: an optional heading followed by its link blocks.
+  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign heading = block.settings.heading | escape
+  capture links
+    content_for 'blocks'
+  endcapture
+%}
+
+{% if heading != blank or links != blank %}
+  <li
+    class="site-mega__column"
+    {{ block.shopify_attributes }}
+  >
+    {% if heading != blank %}
+      {% if block.settings.link != blank %}
+        <a
+          href="{{ block.settings.link }}"
+          class="site-mega__column-heading"
+        >
+          {{- heading -}}
+        </a>
+      {% else %}
+        <span class="site-mega__column-heading">{{ heading }}</span>
+      {% endif %}
+    {% endif %}
+
+    {% if links != blank %}
+      <ul class="site-mega__links list-unstyled">
+        {{ links }}
+      </ul>
+    {% endif %}
+  </li>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:names.menu_column",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_header-mega-link"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Column"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.menu_column"
+    }
+  ]
+}
+{% endschema %}

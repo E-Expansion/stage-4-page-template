@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Link",
+    "menu_column": "Menüspalte",
+    "menu_item": "Menüelement",
+    "utility_link": "Hilfslink",
     "top_bar": "Obere Leiste",
     "top_bar_item": "Element der oberen Leiste",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "cart_bubble_color": "Farbe der Warenkorb-Blase",
+    "placeholder": "Platzhalter",
+    "show_account": "Konto anzeigen",
     "free_shipping_threshold": "Schwellenwert für kostenlosen Versand",
     "free_shipping_text": "Nachricht",
     "free_shipping_remaining_text": "Nachricht zum Restbetrag",
@@ -1094,6 +1101,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "header_logo_source": "Lade ein Logo unter Theme-Einstellungen > Logo und Favicon hoch. Ohne Logo wird der Shopname angezeigt.",
+    "menu_item_link": "Wird als \"Alle anzeigen\"-Link im Mega-Menü angezeigt oder als Link verwendet, wenn das Element keine Spalten hat",
     "free_shipping_threshold": "In der Standardwährung deines Shops. Auf 0 setzen, um den Restbetrag auszublenden.",
     "free_shipping_threshold_placeholder": "Verwende [threshold], um den Schwellenwert einzufügen",
     "free_shipping_amount_placeholder": "Wird angezeigt, wenn der Warenkorb Artikel enthält. Verwende [amount], um den Restbetrag einzufügen",

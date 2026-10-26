@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Länk",
+    "menu_column": "Menykolumn",
+    "menu_item": "Menyobjekt",
+    "utility_link": "Hjälplänk",
     "top_bar": "Toppfält",
     "top_bar_item": "Objekt i toppfält",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "cart_bubble_color": "Färg på varukorgsbubbla",
+    "placeholder": "Platshållare",
+    "show_account": "Visa konto",
     "free_shipping_threshold": "Gräns för fri frakt",
     "free_shipping_text": "Meddelande",
     "free_shipping_remaining_text": "Meddelande om återstående belopp",
@@ -1094,6 +1101,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "header_logo_source": "Ladda upp en logotyp under Temainställningar > Logotyp och favicon. Utan logotyp visas butikens namn.",
+    "menu_item_link": "Visas som en \"Visa alla\"-länk i megamenyn, eller används som objektets länk när det saknar kolumner",
     "free_shipping_threshold": "I butikens standardvaluta. Ange 0 för att dölja återstående belopp.",
     "free_shipping_threshold_placeholder": "Använd [threshold] för att infoga gränsbeloppet",
     "free_shipping_amount_placeholder": "Visas när varukorgen innehåller artiklar. Använd [amount] för att infoga återstående belopp",

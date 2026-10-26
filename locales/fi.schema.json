@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Linkki",
+    "menu_column": "Valikon sarake",
+    "menu_item": "Valikon kohde",
+    "utility_link": "Apulinkki",
     "top_bar": "Yläpalkki",
     "top_bar_item": "Yläpalkin kohde",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "cart_bubble_color": "Ostoskorikuplan väri",
+    "placeholder": "Paikkamerkki",
+    "show_account": "Näytä tili",
     "free_shipping_threshold": "Ilmaisen toimituksen kynnysarvo",
     "free_shipping_text": "Viesti",
     "free_shipping_remaining_text": "Jäljellä olevan summan viesti",
@@ -1094,6 +1101,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "header_logo_source": "Lataa logo kohdassa Teeman asetukset > Logo ja favicon. Ilman logoa näytetään kaupan nimi.",
+    "menu_item_link": "Näytetään \"Näytä kaikki\" -linkkinä megavalikossa tai käytetään kohteen linkkinä, jos sillä ei ole sarakkeita",
     "free_shipping_threshold": "Kauppasi oletusvaluutassa. Aseta arvoksi 0 piilottaaksesi jäljellä olevan summan.",
     "free_shipping_threshold_placeholder": "Lisää kynnysarvo käyttämällä [threshold]",
     "free_shipping_amount_placeholder": "Näytetään, kun ostoskorissa on tuotteita. Lisää jäljellä oleva summa käyttämällä [amount]",

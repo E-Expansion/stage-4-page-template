@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "링크",
+    "menu_column": "메뉴 열",
+    "menu_item": "메뉴 항목",
+    "utility_link": "유틸리티 링크",
     "top_bar": "상단 바",
     "top_bar_item": "상단 바 항목",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "cart_bubble_color": "장바구니 배지 색상",
+    "placeholder": "자리 표시자",
+    "show_account": "계정 표시",
     "free_shipping_threshold": "무료 배송 기준 금액",
     "free_shipping_text": "메시지",
     "free_shipping_remaining_text": "남은 금액 메시지",
@@ -1094,6 +1101,8 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "header_logo_source": "테마 설정 > 로고 및 파비콘에서 로고를 업로드하세요. 로고가 없으면 스토어 이름이 표시됩니다.",
+    "menu_item_link": "메가 메뉴에 \"모두 보기\" 링크로 표시되거나, 열이 없을 때 항목 링크로 사용됩니다",
     "free_shipping_threshold": "스토어 기본 통화 기준입니다. 남은 금액을 숨기려면 0으로 설정하세요.",
     "free_shipping_threshold_placeholder": "[threshold]를 사용하여 기준 금액을 삽입하세요",
     "free_shipping_amount_placeholder": "장바구니에 상품이 있을 때 표시됩니다. [amount]를 사용하여 남은 금액을 삽입하세요",

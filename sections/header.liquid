@@ -1,152 +1,15 @@
-
+{% comment %}
+  Section contract.
+  Site header: logo, search, localization, account and cart on the top row, with a
+  navigation row of mega menu items and utility links underneath. On mobile the same
+  navigation markup becomes an off-canvas sidebar opened from the menu button.
+  Keeps `#header-component` and the `--header-height` / `--header-group-height`
+  custom properties that layout scripts and sticky sections depend on.
+  @example
+  <!-- Header group > Header; add "Menu item" blocks with columns and links -->
+{% endcomment %}
 
 {% liquid
-  assign order = 'logo,menu,localization,search,drawer_search,actions'
-
-  if shop.customer_accounts_enabled
-    assign order = 'drawer_search,logo,menu,localization,search,actions'
-  endif
-
-  assign rows = 'top,bottom' | split: ','
-  assign search_style = 'none'
-
-  if section.settings.show_search
-    assign search_style = 'modal'
-  endif
-
-  if section.settings.show_search
-    render 'slideshow-styles'
-  endif
-
-  if section.settings.enable_transparent_header_home and template.name == 'index'
-    assign transparent = 'always'
-    assign transparent_text_color_setting = section.settings.text_color_transparent_home
-  elsif section.settings.enable_transparent_header_product and template.name == 'product'
-    assign transparent = 'always'
-    assign transparent_text_color_setting = section.settings.text_color_transparent_product
-  elsif section.settings.enable_transparent_header_collection and template.name == 'collection'
-    assign transparent = 'always'
-    assign transparent_text_color_setting = section.settings.text_color_transparent_collection
-  endif
-
-  if section.settings.enable_sticky_header == 'always'
-    assign sticky = 'always'
-  elsif section.settings.enable_sticky_header == 'scroll-up'
-    assign sticky = 'scroll-up'
-  endif
-
-  if transparent and sticky
-    assign transparent = 'not-sticky'
-  endif
-
-  assign text_color_transparent = transparent_text_color_setting | default: settings.page_text_color
-  assign transparent_text_brightness = text_color_transparent | color_brightness
-  if transparent_text_brightness > 128
-    assign transparent_text_contrast = 'var(--palette-darkest)'
-  else
-    assign transparent_text_contrast = 'var(--palette-lightest)'
-  endif
-
-  # Cart bubble colors: custom styles apply in every header state; default
-  # mirrors the top row's effective text color, with a contrasting text color.
-  if section.settings.bubble_style == 'custom' or section.settings.text_color_top != blank or section.settings.background_color_top != blank
-    assign cart_bubble_color_override = true
-  endif
-  if cart_bubble_color_override
-    if section.settings.bubble_style == 'custom'
-      assign cart_bubble_background = section.settings.bubble_background_color | default: section.settings.text_color_top | default: settings.page_text_color
-      assign cart_bubble_text = section.settings.bubble_text_color | default: section.settings.background_color_top | default: settings.page_background_color
-    elsif section.settings.text_color_top != blank
-      assign cart_bubble_background = section.settings.text_color_top
-      if section.settings.background_color_top != blank
-        assign cart_bubble_text = section.settings.background_color_top
-      else
-        assign cart_bubble_bg_brightness = cart_bubble_background | color_brightness
-        if cart_bubble_bg_brightness > 128
-          assign cart_bubble_text = 'var(--palette-darkest)'
-        else
-          assign cart_bubble_text = 'var(--palette-lightest)'
-        endif
-      endif
-    elsif section.settings.background_color_top != blank
-      assign bg_top = section.settings.background_color_top
-      assign bg_top_brightness = bg_top | color_brightness
-      assign cart_bubble_text = bg_top
-      if bg_top_brightness > 128
-        assign cart_bubble_background = 'var(--palette-darkest)'
-      else
-        assign cart_bubble_background = 'var(--palette-lightest)'
-      endif
-    endif
-  endif
-
-  capture logo
-    content_for 'block', type: '_header-logo', id: 'header-logo'
-  endcapture
-
-  capture menu
-    content_for 'block', type: '_header-menu', id: 'header-menu'
-  endcapture
-
-  capture drawer_menu
-    content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'mobile'
-  endcapture
-
-  capture navigation_bar
-    content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'navigation_bar', transparent: transparent
-  endcapture
-
-  capture actions
-    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, section: section
-  endcapture
-
-  if shop.customer_accounts_enabled
-    assign search_class = 'search-action--hidden-on-drawer'
-  endif
-
-  # Handle localization positioning
-  if section.settings.localization_position == 'left'
-    if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,search,localization,menu,actions'
-      else
-        assign order = 'logo,search,localization,menu,drawer_search,actions'
-      endif
-    else
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,localization,menu,search,actions'
-      else
-        assign order = 'logo,localization,menu,search,drawer_search,actions'
-      endif
-    endif
-  else
-    if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,search,menu,localization,actions'
-      else
-        assign order = 'logo,search,menu,localization,drawer_search,actions'
-      endif
-    endif
-  endif
-  capture search
-    render 'search', style: search_style, class: search_class, display_style: section.settings.actions_display_style
-  endcapture
-
-  # Skip drawer search under specific conditions:
-  # Always render if search_row is bottom
-  # Don't render when shop.customer_accounts_enabled is false and search_position is left and search_style is not none
-  assign skip_drawer_search = false
-  if shop.customer_accounts_enabled == false and section.settings.search_position == 'left' and search_style != 'none'
-    assign skip_drawer_search = true
-  endif
-
-  if section.settings.search_row == 'bottom' or search_style != 'none' and skip_drawer_search == false
-    # Mobile search duplicate for when search is not in the right order for mobile layout
-    capture drawer_search
-      render 'search', class: 'search-action--hidden-on-menu', style: search_style, display_style: section.settings.actions_display_style
-    endcapture
-  endif
-
   assign show_language = section.settings.show_language
   if localization.available_languages.size <= 1
     assign show_language = false
@@ -157,159 +20,38 @@
     assign show_country = false
   endif
 
-  assign bottom_row_blocks = ''
-
-  if section.settings.menu_row == 'bottom'
-    assign bottom_row_blocks = bottom_row_blocks | append: 'menu,'
+  assign show_localization = false
+  if show_country or show_language
+    assign show_localization = true
   endif
 
-  if section.settings.search_style != 'none'
-    if section.settings.search_row == 'bottom'
-      assign bottom_row_blocks = bottom_row_blocks | append: 'search,'
+  assign show_account = false
+  if section.settings.show_account and shop.customer_accounts_enabled
+    assign show_account = true
+  endif
+
+  # Cart bubble text picks the palette extreme that contrasts with the chosen bubble color.
+  if section.settings.cart_bubble_color != blank
+    assign bubble_brightness = section.settings.cart_bubble_color | color_brightness
+    if bubble_brightness > 128
+      assign cart_bubble_text = 'var(--palette-darkest)'
+    else
+      assign cart_bubble_text = 'var(--palette-lightest)'
     endif
   endif
 
-  if section.settings.show_country or section.settings.show_language
-    if section.settings.localization_row == 'bottom'
-      assign bottom_row_blocks = bottom_row_blocks | append: 'localization,'
-    endif
+  assign nav_font_weight = section.settings.nav_font | replace: 'family', 'weight'
+  assign panel_id = 'SiteHeaderPanel-' | append: section.id
+
+  assign section_class = 'section section--' | append: section.settings.section_width
+  if section.settings.section_width == 'full-width'
+    assign section_class = section_class | append: ' section--full-width-margin'
   endif
 
-  assign bottom_row_blocks = bottom_row_blocks | split: ',' | compact
-
-  if section.settings.section_height == 'compact'
-    assign header_height_class = ' header--compact'
-  endif
-
-  if bottom_row_blocks.size > 0 and section.settings.background_color_top == section.settings.background_color_bottom and section.settings.divider_width == 0
-    assign collapse_header_paddings_class = 'header--collapse-row-paddings'
-  endif
-
-  assign class = 'header'
-
-  if header_height_class
-    assign class = class | append: ' ' | append: header_height_class
-  endif
-
-  if collapse_header_paddings_class
-    assign class = class | append: ' ' | append: collapse_header_paddings_class
-  endif
-
-  # Determine transparent background value
-  assign top_transparent = false
-  assign bottom_transparent = false
-
-  if section.settings.background_color_top.alpha != 1
-    assign top_transparent = true
-  endif
-
-  if section.settings.background_color_bottom.alpha != 1
-    assign bottom_transparent = true
-  endif
-
-  if top_transparent and bottom_transparent
-    assign background_transparent_color_value = 'both'
-  elsif top_transparent
-    assign background_transparent_color_value = 'top'
-  elsif bottom_transparent
-    assign background_transparent_color_value = 'bottom'
-  endif
+  capture nav_blocks
+    content_for 'blocks'
+  endcapture
 %}
-
-{% capture localization_markup %}
-  {% liquid
-    assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', section.settings.localization_font
-    assign localization_font_size = '--menu-localization-font-size: [localization_font_size]; ' | replace: '[localization_font_size]', section.settings.localization_font_size
-    assign color_shadow = '--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));'
-    assign form_style = localization_font | append: localization_font_size | append: color_shadow
-  %}
-  {% if show_language and show_country == false %}
-    <div class="dropdown-localization mobile:hidden">
-      {% render 'localization-form',
-        show_country: show_country,
-        show_language: show_language,
-        localization_style: 'dropdown',
-        form_style: form_style,
-        form_id: section.id
-      %}
-    </div>
-  {% elsif show_country %}
-    <dropdown-localization-component
-      class="dropdown-localization mobile:hidden"
-    >
-      <button
-        type="button"
-        class="button dropdown-localization__button localization-selector header-actions__action"
-        aria-expanded="false"
-        aria-controls="dropdown-localization-results"
-        ref="button"
-        on:click="/toggleSelector"
-        style="{{ localization_font }} {{ localization_font_size }}"
-      >
-        {% if show_country %}
-          {% if section.settings.country_selector_style == true %}
-            {% assign localization_background_color = 'background_color_[row]' | replace: '[row]', section.settings.localization_row %}
-            {% liquid
-              assign background_brightness = section.settings[localization_background_color] | color_brightness
-              if background_brightness < 64
-                assign shadow_size = 4
-              else
-                assign shadow_size = 2
-              endif
-            %}
-            <span
-              class="icon-flag"
-              style="
-                background-image: url({{- localization.country | image_url: width: 32 }});
-                --size-shadow: {{ shadow_size }}px;
-                --color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-30-60));
-              "
-            ></span>
-          {% endif %}
-          <span
-            class="currency-code"
-            data-testid="localization-currency-code"
-          >
-            {{- localization.country.currency.iso_code -}}
-          </span>
-        {% endif %}
-        <span
-          class="visually-hidden"
-          data-testid="localization-visually-hidden"
-        >
-          {{- 'accessibility.localization_region_and_language' | t -}}
-        </span>
-
-        {%- if show_country and show_language -%}
-          <span>/</span>
-        {%- endif -%}
-
-        {%- if show_language -%}
-          <span>
-            {{ localization.language.iso_code | upcase }}
-          </span>
-        {%- endif -%}
-        <span class="svg-wrapper icon-caret">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
-      </button>
-
-      <div
-        class="localization-wrapper {{ section.settings.localization_position }}-bound color-custom-popover"
-        hidden
-        ref="panel"
-      >
-        {% render 'localization-form',
-          show_country: show_country,
-          show_language: show_language,
-          localization_style: 'dropdown',
-          form_style: form_style,
-          form_id: section.id
-        %}
-      </div>
-    </dropdown-localization-component>
-  {% endif %}
-{% endcapture %}
 
 <script type="application/ld+json">
   {
@@ -323,960 +65,787 @@
   }
 </script>
 
-<header-component
-  id="header-component"
-  class="{{ class }}"
-  data-theme-color="rgb({{ section.settings.background_color_top.rgb | default: settings.page_background_color.rgb }})"
-  data-bubble-style="{{ section.settings.bubble_style }}"
-  {% if transparent %}
-    transparent="{{ transparent }}"
-  {% endif %}
-  {% if sticky %}
-    sticky="{{ sticky }}"
-  {% endif %}
-  data-skip-node-update
-  data-scroll-direction="none"
-  {% if section.settings.menu_row == 'top' and bottom_row_blocks.size > 0 %}
-    data-submenu-overlap-bottom-row
-  {% endif %}
-  {% if background_transparent_color_value %}
-    data-transparent-background="{{ background_transparent_color_value }}"
-  {% endif %}
-  style="
-    --color-background-top-row: rgba({{ section.settings.background_color_top.rgba | default: settings.page_background_color.rgba }});
-    --color-background-bottom-row: rgba({{ section.settings.background_color_bottom.rgba | default: settings.page_background_color.rgba }});
-    {% if transparent and text_color_transparent != blank %}
-      --color-transparent-text: {{ text_color_transparent }};
-      --color-transparent-text-rgb: {{ text_color_transparent.rgb }};
-      --color-transparent-text-contrast: {{ transparent_text_contrast }};
-    {% endif %}
-    {% if cart_bubble_color_override %}
-      --cart-bubble-background: {{ cart_bubble_background }};
-      --cart-bubble-text: {{ cart_bubble_text }};
-    {% endif %}
-    {% if section.settings.actions_display_style == 'text' %}
-      --header-actions-font-size: {{ section.settings.actions_font_size | default: '1rem' }};
-      --header-actions-font-family: var(--font-{{ section.settings.actions_font | default: 'heading' }}--family);
-      --header-actions-font-weight: var(--font-{{ section.settings.actions_font | default: 'heading' }}--weight);
-      --header-actions-text-case: {{ section.settings.actions_text_case | default: 'none' }};
-    {% endif %}
-  "
->
-  <div class="header__underlay header__underlay-closed"></div>
-  <div
-    class="header__underlay header__underlay-open"
-  ></div>
-  {%- if request.page_type == 'index' -%}
-    <h1 class="visually-hidden">{{ shop.name }}</h1>
-  {%- endif -%}
-  {% for row in rows %}
-    {% liquid
-      assign background = 'background_color_' | append: row
-      assign row_setting = 'background_color_' | append: row
-      assign text_setting = 'text_color_' | append: row
-      assign row_class_id = row | append: '-' | append: section.id
-      assign row_class = ' color-custom-' | append: row_class_id
-      assign class = 'header__row header__row--[row] color-[row_background] section section--full-width-margin section--[section-width]' | replace: '[row]', row | replace: '[row_background]', section.settings[background] | replace: '[section-width]', section.settings.section_width
-
-      case row
-        when 'top'
-          assign first = drawer_menu
-
-          if bottom_row_blocks.size > 0 and section.settings.divider_size == 'page-width'
-            assign class = class | append: ' divider--page-width'
-          endif
-
-          if bottom_row_blocks.size > 0
-            assign border_bottom_setting_id = 'divider_width'
-            assign border_bottom_color_setting_id = 'divider_color'
-          else
-            assign border_bottom_setting_id = 'border_width'
-            assign border_bottom_color_setting_id = 'bottom_border_color'
-          endif
-        when 'bottom'
-          assign first = ''
-          assign class = class | append: ' mobile:hidden'
-
-          assign border_bottom_setting_id = 'border_width'
-          assign border_bottom_color_setting_id = 'bottom_border_color'
-      endcase
-
-      assign style = '--border-bottom-width: [width]px; ' | replace: '[width]', section.settings[border_bottom_setting_id]
-
-      assign border_bottom_color_value = section.settings[border_bottom_color_setting_id]
-      if border_bottom_color_value != blank
-        assign style = style | append: '--border-bottom-color: [color]; ' | replace: '[color]', border_bottom_color_value
-      endif
-
-      if row == 'top'
-        assign custom_color_styles = true
-        assign class = class | append: row_class
-        assign style = style | append: '--border-bottom-width-mobile: [width]px; ' | replace: '[width]', section.settings.border_width
-
-        assign mobile_border_color = section.settings.bottom_border_color | default: 'var(--color-border)'
-        assign style = style | append: '--border-bottom-color-mobile: [color]; ' | replace: '[color]', mobile_border_color
-      elsif bottom_row_blocks.size > 0
-        assign custom_color_styles = true
-        assign class = class | append: row_class
-      else
-        assign custom_color_styles = false
-      endif
-    %}
-
-    {% capture content %}
-      {% if custom_color_styles %}
-        {% render 'contrast-override', background_color: section.settings[row_setting], text_color: section.settings[text_setting], section_id: row_class_id %}
-      {% endif %}
-      {% render 'header-row',
-        row: row,
-        order: order,
-        settings: section.settings,
-        first: first,
-        logo: logo,
-        menu: menu,
-        actions: actions,
-        localization: localization_markup,
-        search: search,
-        drawer_search: drawer_search
-      %}
-    {% endcapture %}
-
-    {% assign content = content | strip %}
-    {% if content != blank %}
-      <div
-        class="{{ class | strip }}"
-        ref="headerRowTop"
-        {%- if style != blank -%}
-          style="{{ style | strip }}"
-        {%- endif -%}
-      >
-        <div class="header__columns spacing-style">
-          {{ content }}
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-
-  {% if navigation_bar != blank %}
-    <div class="header__row header__navigation-bar-row">
-      {{ navigation_bar }}
-    </div>
-  {% endif %}
-</header-component>
-
 <script
-  src="{{ 'header.js' | asset_url }}"
+  src="{{ 'site-header.js' | asset_url }}"
   type="module"
 ></script>
 
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  border_color: section.settings.divider_color,
+  section_id: section.id
+%}
+
+<site-header-component
+  id="header-component"
+  class="site-header color-custom-{{ section.id }}"
+  data-theme-color="rgb({{ section.settings.background_color.rgb | default: settings.page_background_color.rgb }})"
+  {% if section.settings.enable_sticky_header %}
+    data-sticky
+  {% endif %}
+  style="
+    --site-header-nav-font-family: {{ section.settings.nav_font }};
+    --site-header-nav-font-weight: {{ nav_font_weight }};
+    --site-header-nav-font-size: {{ section.settings.nav_font_size }};
+    --site-header-logo-size: {{ section.settings.logo_text_size }};
+    --site-header-logo-size-mobile: {{ section.settings.logo_text_size_mobile }};
+    --site-header-logo-height: {{ settings.logo_height }}px;
+    --site-header-logo-height-mobile: {{ settings.logo_height_mobile }}px;
+    --site-header-divider-width: {{ section.settings.divider_width }}px;
+    {% if section.settings.cart_bubble_color != blank %}
+      --cart-bubble-background: {{ section.settings.cart_bubble_color }};
+      --cart-bubble-text: {{ cart_bubble_text }};
+    {% endif %}
+  "
+>
+  {%- if request.page_type == 'index' -%}
+    <h1 class="visually-hidden">{{ shop.name }}</h1>
+  {%- endif -%}
+
+  <div class="{{ section_class }}">
+    <div class="site-header__top">
+      <button
+        type="button"
+        class="site-header__icon-button site-header__menu-button button-unstyled"
+        ref="menuButton"
+        aria-controls="{{ panel_id }}"
+        aria-expanded="false"
+        aria-label="{{ 'accessibility.menu' | t }}"
+        on:click="/openDrawer"
+      >
+        <span
+          class="svg-wrapper"
+          aria-hidden="true"
+        >
+          {{- 'icon-menu.svg' | inline_asset_content -}}
+        </span>
+      </button>
+
+      <a
+        href="{{ routes.root_url }}"
+        class="site-header__logo"
+      >
+        {%- if settings.logo -%}
+          {%- liquid
+            assign logo_width = settings.logo.aspect_ratio | times: settings.logo_height | round
+            assign logo_alt = settings.logo.alt | default: shop.name
+          -%}
+          {{
+            settings.logo
+            | image_url: width: 600
+            | image_tag:
+              width: logo_width,
+              height: settings.logo_height,
+              alt: logo_alt,
+              loading: 'eager',
+              fetchpriority: 'high',
+              class: 'site-header__logo-image'
+          }}
+        {%- else -%}
+          <span class="site-header__logo-text">{{ shop.name | escape }}</span>
+        {%- endif -%}
+      </a>
+
+      <div class="site-header__actions">
+        {% if section.settings.show_search %}
+          <form
+            action="{{ routes.search_url }}"
+            method="get"
+            role="search"
+            class="site-header__search mobile:hidden"
+          >
+            <label
+              for="SiteHeaderSearch-{{ section.id }}"
+              class="visually-hidden"
+            >
+              {{- 'content.search' | t -}}
+            </label>
+            <span
+              class="svg-wrapper site-header__search-icon"
+              aria-hidden="true"
+            >
+              {{- 'icon-search.svg' | inline_asset_content -}}
+            </span>
+            <input
+              id="SiteHeaderSearch-{{ section.id }}"
+              class="site-header__search-input"
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ section.settings.search_placeholder | escape }}"
+              autocomplete="off"
+            >
+          </form>
+        {% endif %}
+
+        {% if show_localization %}
+          <dropdown-localization-component class="site-header__localization dropdown-localization mobile:hidden">
+            <button
+              type="button"
+              class="button site-header__localization-button"
+              aria-expanded="false"
+              aria-controls="dropdown-localization-results"
+              ref="button"
+              on:click="/toggleSelector"
+            >
+              {%- if show_country -%}
+                <span
+                  class="site-header__flag"
+                  style="background-image: url({{- localization.country | image_url: width: 48 }});"
+                ></span>
+              {%- else -%}
+                <span>{{ localization.language.iso_code | upcase }}</span>
+              {%- endif -%}
+              <span class="visually-hidden">
+                {{- 'accessibility.localization_region_and_language' | t -}}
+              </span>
+              <span
+                class="svg-wrapper icon-caret"
+                aria-hidden="true"
+              >
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </button>
+
+            <div
+              class="site-header__localization-panel color-custom-popover"
+              hidden
+              ref="panel"
+            >
+              {% render 'localization-form',
+                show_country: show_country,
+                show_language: show_language,
+                localization_style: 'dropdown',
+                form_id: section.id
+              %}
+            </div>
+          </dropdown-localization-component>
+        {% endif %}
+
+        {% render 'header-actions',
+          customer_account_menu: section.settings.customer_account_menu,
+          display_style: 'icon',
+          section: section
+        %}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="site-header__overlay"
+    aria-hidden="true"
+    on:click="/closeDrawer"
+  ></div>
+
+  <div
+    id="{{ panel_id }}"
+    class="site-header__panel"
+    ref="panel"
+    on:keydown="/handlePanelKeydown"
+  >
+    <div class="site-header__drawer-header">
+      <button
+        type="button"
+        class="site-header__icon-button button-unstyled"
+        aria-label="{{ 'actions.close' | t }}"
+        on:click="/closeDrawer"
+      >
+        <span
+          class="svg-wrapper"
+          aria-hidden="true"
+        >
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </span>
+      </button>
+    </div>
+
+    {% if section.settings.show_search %}
+      <form
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+        class="site-header__search site-header__drawer-only"
+      >
+        <label
+          for="SiteHeaderDrawerSearch-{{ section.id }}"
+          class="visually-hidden"
+        >
+          {{- 'content.search' | t -}}
+        </label>
+        <span
+          class="svg-wrapper site-header__search-icon"
+          aria-hidden="true"
+        >
+          {{- 'icon-search.svg' | inline_asset_content -}}
+        </span>
+        <input
+          id="SiteHeaderDrawerSearch-{{ section.id }}"
+          class="site-header__search-input"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ section.settings.search_placeholder | escape }}"
+          autocomplete="off"
+        >
+      </form>
+    {% endif %}
+
+    <nav
+      class="site-header__nav {{ section_class }}"
+      aria-label="{{ 'accessibility.header_navigation_label' | t }}"
+    >
+      <ul class="site-nav list-unstyled">
+        {{ nav_blocks }}
+      </ul>
+    </nav>
+
+    <div class="site-header__drawer-footer site-header__drawer-only">
+      {% if show_account %}
+        <a
+          href="{{ routes.account_url }}"
+          class="site-header__drawer-link"
+        >
+          {{- 'accessibility.account' | t -}}
+        </a>
+      {% endif %}
+
+      {% if show_localization %}
+        <details class="site-header__drawer-localization">
+          <summary class="site-header__drawer-link">
+            {%- if show_country -%}
+              <span
+                class="site-header__flag"
+                style="background-image: url({{- localization.country | image_url: width: 48 }});"
+              ></span>
+              {{ localization.country.name }} ({{ localization.country.currency.iso_code }})
+            {%- else -%}
+              {{ localization.language.endonym_name }}
+            {%- endif -%}
+            <span
+              class="svg-wrapper icon-caret"
+              aria-hidden="true"
+            >
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </summary>
+          {% render 'localization-form',
+            show_country: show_country,
+            show_language: show_language,
+            localization_style: 'drawer',
+            form_id: section.id
+          %}
+        </details>
+      {% endif %}
+    </div>
+  </div>
+</site-header-component>
+
 {% stylesheet %}
-  body {
-    --header-height: 60px;
-    --header-group-height: var(--header-height);
-    --transparent-header-offset-boolean: 0; /* stylelint-disable-line declaration-property-value-disallowed-list */
-  }
-
-  .header {
-    /* Set header paddings based on height setting */
-    --header-padding: var(--padding-sm);
-    --font-paragraph--line-height: 1;
-    --header-content-transition-timing: 0s;
-
-    display: block;
-    contain: layout style;
-    background: transparent;
-
-    a,
-    .button,
-    .button-secondary,
-    .header-actions__action {
-      /* reset style from base.css */
-      transition: color var(--header-content-transition-timing), border-color var(--header-content-transition-timing);
-    }
-  }
-
-  #header-component :is(.header-menu, .dropdown-localization) {
-    display: none;
-  }
-
-  @media screen and (min-width: 750px) {
-    #header-component[data-menu-style='menu'] :is(.header-menu, .dropdown-localization) {
-      display: flex;
-    }
-  }
-
-  #header-component[data-menu-style='drawer'] .header__column {
-    display: contents;
-  }
-
-  @media screen and (min-width: 750px) {
-    #header-component[data-menu-style='menu'] .header__navigation-bar-row {
-      display: none;
-    }
-  }
-
-  .header[transparent] {
-    --language-button-background-color: transparent;
-    --language-button-border-color: transparent;
-    --header-content-transition-timing: calc(var(--submenu-animation-speed) - var(--animation-speed-fast))
-      var(--animation-speed-fast) var(--ease-out-cubic);
-
-    --closed-underlay-height: 0px;
-
-    /* used to display the appropriate logo based on transparency state */
-    --header-logo-display: none;
-    --header-logo-inverse-display: block;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    z-index: var(--layer-overlay);
-
-    &[transparent='not-sticky'][data-sticky-state='active'],
-    &:has(.menu-list__list-item > .menu-list__link:not([aria-haspopup]):hover) {
-      --header-logo-display: unset;
-      --header-logo-inverse-display: unset;
-      --color-foreground: inherit;
-      --color-foreground-rgb: inherit;
-      --color-background: inherit;
-      --color-background-rgb: inherit;
-      --color-border: inherit;
-      --color-border-rgb: inherit;
-      --closed-underlay-height: 100%;
-    }
-
-    /** For transparent header, apply transparent text color to rows when menu is not hovered */
-    &:not([data-sticky-state='active']):not(:has(.menu-list__link:hover)):not(:has(header-menu[aria-expanded='true']))
-      .header__row {
-      --color-foreground: var(--color-transparent-text);
-      --color-foreground-rgb: var(--color-transparent-text-rgb);
-      --color-border: var(--color-transparent-text);
-      --color-border-rgb: var(--color-transparent-text-rgb);
-      --color-primary-button-background: var(--color-transparent-text);
-      --color-primary-button-text: var(--color-transparent-text-contrast);
-    }
-
-    /* Swap the cart bubble in transparent state only when using the default
-       style. Custom bubble colors apply unchanged across header states. */
-    &[data-bubble-style='default']:not([data-sticky-state='active']):not(:has(.menu-list__link:hover)):not(
-        :has(header-menu[aria-expanded='true'])
-      )
-      .header__row {
-      --cart-bubble-background: var(--color-transparent-text, var(--cart-bubble-background-fallback));
-      --cart-bubble-text: var(--color-transparent-text-contrast, var(--cart-bubble-text-fallback));
-    }
-
-    /* Multiple selectors for performance: each simple :has() check is faster than one complex selector with multiple conditions */
-    &:has(.mega-menu__list:hover),
-    &:has(.menu-list__link:hover),
-    &:has(header-menu[aria-expanded='true']) {
-      --header-logo-display: unset;
-      --header-logo-inverse-display: unset;
-      --color-foreground: inherit;
-      --color-foreground-rgb: inherit;
-      --color-background: inherit;
-      --color-background-rgb: inherit;
-      --color-border: inherit;
-      --color-border-rgb: inherit;
-      --header-content-transition-timing: var(--submenu-animation-speed) var(--ease-out-cubic);
-    }
-  }
-
-  /* When top row has transparent background, make it inherit colors from header component */
-  [data-transparent-background='top']:hover .header__row--top,
-  [data-transparent-background='top']:focus-within .header__row--top,
-  [data-transparent-background='both']:hover .header__row--top,
-  [data-transparent-background='both']:focus-within .header__row--top {
-    --color-foreground: inherit;
-    --color-foreground-rgb: inherit;
-    --color-border: inherit;
-    --color-border-rgb: inherit;
-    --color-primary-button-background: inherit;
-    --color-primary-button-text: inherit;
-  }
-
-  /* When bottom row has transparent background, make it inherit colors from header component */
-  [data-transparent-background='bottom']:hover .header__row--bottom,
-  [data-transparent-background='bottom']:focus-within .header__row--bottom,
-  [data-transparent-background='both']:hover .header__row--bottom,
-  [data-transparent-background='both']:focus-within .header__row--bottom {
-    --color-foreground: inherit;
-    --color-foreground-rgb: inherit;
-    --color-border: inherit;
-    --color-border-rgb: inherit;
-    --color-primary-button-background: inherit;
-    --color-primary-button-text: inherit;
-  }
-
   .header-section {
     position: relative;
     z-index: var(--layer-menu-drawer);
   }
 
-  /* need default values for non-flash transitions on first overflow menu open */
-  #header-component {
-    --submenu-height: 0px;
-    --full-open-header-height: 0px;
-  }
-
-  #header-group:has(#header-component[sticky]) {
+  #header-group:has(#header-component[data-sticky]) {
     display: contents;
   }
 
-  .header-section:has(> #header-component[sticky='always']),
-  .header-section:has(> #header-component[sticky='scroll-up'][data-sticky-state='active']) {
+  .header-section:has(> #header-component[data-sticky]) {
     position: sticky;
-
-    /* Use -1 instead of 0 so intersection observer can track sticky state */
-    top: -1px;
-    z-index: var(--layer-menu-drawer);
+    top: 0;
   }
 
-  .header[data-sticky-state] {
-    transition: opacity var(--animation-speed) var(--animation-easing);
-    opacity: 1;
-  }
-
-  .header[data-sticky-state='active'] {
-    view-transition-name: sticky-header;
-  }
-
-  :active-view-transition-type(empty-cart-drawer) {
-    .header[data-sticky-state='active'] {
-      view-transition-name: none;
-    }
-  }
-
-  .header[data-sticky-state='idle'] {
-    opacity: 0;
-  }
-
-  /* ================================
-     * Underlays
-     * ================================ */
-  .header__underlay {
-    position: absolute;
-    inset: 0;
-  }
-
-  .header__underlay-closed {
-    height: var(--closed-underlay-height, 100%);
-    z-index: var(--layer-lowest);
-    background: linear-gradient(
-      var(--color-background-top-row) 0 var(--top-row-height),
-      var(--color-background-bottom-row) var(--top-row-height) var(--header-height)
-    );
-    transition: height var(--animation-speed-slow) var(--ease-out-cubic);
-  }
-
-  .header__underlay-open {
-    height: var(--full-open-header-height);
-    background: linear-gradient(
-      var(--color-background-top-row) 0 var(--top-row-height),
-      var(--color-background-bottom-row) var(--top-row-height) var(--header-height),
-      var(--color-submenu) var(--header-height) 100%
-    );
-    /* header-height is updated via js, the transition works automagically */
-    transition: height var(--submenu-animation-speed) var(--ease-out-cubic);
-  }
-
-  .header__underlay-open::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    box-shadow: var(--shadow-popover);
-    clip-path: inset(var(--header-height) 0 -100px 0); /* stylelint-disable-line */
-    transition: height var(--submenu-animation-speed) var(--ease-out-cubic);
-  }
-
-  /* When top row has transparent background, swap underlay to merchant's chosen color at full opacity */
-  [data-transparent-background='top']:hover,
-  [data-transparent-background='top']:focus-within,
-  [data-transparent-background='both']:hover,
-  [data-transparent-background='both']:focus-within {
-    :is(.header__underlay-open, .header__underlay-closed) {
-      --color-background-top-row: var(--color-background);
-    }
-  }
-
-  /* When bottom row has transparent background, swap underlay to merchant's chosen color at full opacity */
-  [data-transparent-background='bottom']:hover,
-  [data-transparent-background='bottom']:focus-within,
-  [data-transparent-background='both']:hover,
-  [data-transparent-background='both']:focus-within {
-    :is(.header__underlay-open, .header__underlay-closed) {
-      --color-background-bottom-row: var(--color-background);
-    }
-  }
-
-  [data-submenu-overlap-bottom-row] {
-    .header__underlay-open {
-      background: linear-gradient(
-        var(--color-background-top-row) 0 var(--top-row-height),
-        var(--color-submenu) var(--top-row-height) 100%
-      );
-    }
-
-    .header__row--bottom {
-      z-index: var(--layer-lowest);
-    }
-  }
-
-  /* End Underlays ================ */
-
-  .header__row {
-    /* The account component uses a different background color, but we need to override it to inherit the color of the header row */
-    --color-account-icon: var(--color-foreground);
+  .site-header {
+    --color-account-icon: currentColor;
+    --account-offset-top: var(--header-height);
+    --header-content-transition-timing: var(--animation-speed) var(--animation-easing);
 
     position: relative;
-
-    /* Overwrite color from section settings, background is controlled by the underlays */
-    /* stylelint-disable-next-line declaration-no-important */
-    background-color: transparent !important;
-
-    &:has(.mega-menu__list:hover),
-    &:has(.menu-list__submenu:not([inert])) {
-      /* Only elevate the row when the submenu is open to avoid overlapping other elevated content */
-      z-index: var(--layer-heightened);
-    }
+    display: block;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    border-block-end: var(--site-header-divider-width) solid var(--color-border);
   }
 
-  .header__row--top:not(.divider--page-width),
-  .header__row--top.divider--page-width .header__columns,
-  .header__row--bottom {
-    border-bottom: var(--border-bottom-width) solid var(--border-bottom-color, var(--color-border));
-  }
+  .site-header__top {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--gap-md);
+    min-height: var(--minimum-touch-target);
+    padding-block: var(--padding-sm);
 
-  @media screen and (max-width: 749px) {
-    .header__row--top:not(.divider--page-width),
-    .header__row--top.divider--page-width .header__columns {
-      border-bottom-width: var(--border-bottom-width-mobile);
-      border-bottom-color: var(--border-bottom-color-mobile);
-    }
-  }
-
-  #header-component[data-menu-style='drawer'] .header__row--top:not(.divider--page-width),
-  #header-component[data-menu-style='drawer'] .header__row--top.divider--page-width .header__columns {
-    border-bottom-width: var(--border-bottom-width-mobile);
-    border-bottom-color: var(--border-bottom-color-mobile);
-  }
-
-  .header__row.divider--page-width:not(.section--page-width) .header__columns {
     @media screen and (min-width: 750px) {
-      padding-inline-start: 0;
-      padding-inline-end: 0;
-      margin-inline-start: var(--page-margin);
-      margin-inline-end: var(--page-margin);
+      grid-template-columns: auto 1fr;
+      padding-block: var(--padding-lg) var(--padding-2xs);
     }
   }
 
-  .header__column {
+  .site-header__icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--button-size);
+    height: var(--button-size);
+    margin-inline-start: calc(var(--padding-sm) * -1);
+    color: inherit;
+    cursor: pointer;
+
+    .svg-wrapper,
+    svg {
+      width: var(--icon-size-md);
+      height: var(--icon-size-md);
+    }
+  }
+
+  .site-header__menu-button {
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+  }
+
+  .site-header__logo {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+
+    @media screen and (max-width: 749px) {
+      justify-self: center;
+    }
+  }
+
+  .site-header__logo-text {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--site-header-logo-size-mobile);
+    letter-spacing: var(--letter-spacing-sm);
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--site-header-logo-size);
+    }
+  }
+
+  .site-header__logo-image {
+    width: auto;
+    height: var(--site-header-logo-height-mobile);
+
+    @media screen and (min-width: 750px) {
+      height: var(--site-header-logo-height);
+    }
+  }
+
+  .site-header__actions {
     display: flex;
     align-items: center;
-
-    /* on mobile, header__column nodes are ignored to create a new grid-template-area based on all visible content */
-    @media screen and (max-width: 749px) {
-      display: contents;
-    }
-  }
-
-  .header__column--left,
-  .header__column--center {
-    gap: var(--gap-xl);
-    grid-area: left;
-  }
-
-  .header__column--center {
-    justify-content: center;
-    grid-area: center;
-
-    header-menu:only-child .overflow-menu::part(list) {
-      justify-content: center;
-    }
-  }
-
-  .header__column--right {
-    gap: var(--gap-xl);
     justify-content: flex-end;
-    grid-area: right;
-
-    .overflow-menu::part(list) {
-      justify-content: flex-end;
-    }
-  }
-
-  .header__columns {
-    /* Three column layout */
-    --header-left: 1fr;
-    --header-center: auto;
-    --header-right: 1fr;
-    --header-template-columns: var(--header-left) var(--header-center) var(--header-right);
-
-    /* Mobile layout */
-    --header-mobile-bookend: 44px;
-
-    display: grid;
-    grid-template-areas: 'left center right';
-    grid-gap: var(--gap-xl);
-    grid-template-columns: var(--header-template-columns);
-
-    /* If menu is in center column */
-    &:has(.header__column--center header-menu) {
-      --header-center: auto;
-      --header-left: minmax(max-content, 1fr);
-      --header-right: minmax(max-content, 1fr);
-    }
-
-    /* If there is no center column, make the column the menu is in grow eagerly */
-    &:where(:not(:has(.header__column--center))) {
-      @media screen and (min-width: 750px) {
-        --header-template-columns: var(--header-left) var(--header-right);
-
-        grid-template-areas: 'left right';
-      }
-
-      /* If the header-menu is in the right column */
-      &:has(.header__column--right header-menu) {
-        --header-right: auto;
-        --header-left: minmax(max-content, 1fr);
-      }
-
-      /* If the header-menu is in the left column */
-      &:has(.header__column--left header-menu) {
-        --header-left: auto;
-        --header-right: minmax(max-content, 1fr);
-      }
-    }
+    gap: var(--gap-lg);
+    min-width: 0;
 
     @media screen and (max-width: 749px) {
-      --header-template-columns: var(--header-mobile-bookend) var(--header-mobile-bookend) 1fr
-        var(--header-mobile-bookend) var(--header-mobile-bookend);
-
-      grid-template-areas: 'leftA leftB center rightA rightB';
-      grid-column: span 3;
-      column-gap: 0;
-      align-items: center;
-      padding-block: 0;
-      padding-inline: 0 var(--padding-3xs);
-
-      .header-logo {
-        grid-area: center;
-      }
-
-      &:not(:has(header-actions)) .search-action {
-        grid-area: leftB;
-      }
-
-      &:not(:has(shopify-account)) .search-action {
-        grid-area: rightA;
-      }
-
-      .search-action {
-        grid-area: leftB;
-      }
-
-      header-actions {
-        grid-area: rightB;
+      .account-button {
+        display: none;
       }
     }
   }
 
-  /* not ideal but we need to duplicate these styles for when touch comes into play
-    We could avoid the duplication using js to set the data-menu-style attribute on small screens instead of using @media queries */
-  #header-component[data-menu-style='drawer'] .header__columns {
-    --header-template-columns: var(--header-mobile-bookend) var(--header-mobile-bookend) 1fr
-      var(--header-mobile-bookend) var(--header-mobile-bookend);
+  /* Header action buttons (account, cart) rendered by snippets/header-actions.liquid */
+  .site-header .header-actions__action {
+    --button-color: var(--color-foreground);
 
-    grid-template-areas: 'leftA leftB center rightA rightB';
-    grid-column: span 3;
-    column-gap: 0;
-    align-items: center;
-    padding-block: 0;
-    padding-inline: 0 var(--padding-3xs);
-
-    .header-logo {
-      grid-area: center;
-    }
-
-    &:not(:has(header-actions)) .search-action {
-      grid-area: leftB;
-    }
-
-    &:not(:has(shopify-account)) .search-action {
-      grid-area: rightA;
-    }
-
-    .search-action {
-      grid-area: leftB;
-    }
-
-    header-actions {
-      grid-area: rightB;
-    }
-  }
-
-  /* Single column layout if there are no columns within */
-  .header__columns:not(:has(.header__column)) {
-    grid-template-columns: 1fr;
-  }
-
-  /* Check for hover support to avoid unnecessary expensive recalculations when tapping on mobile */
-  @media (hover: hover) {
-    /* Column-specific dimming effect when any interactive element is hovered
-        Multiple selectors for performance: each simple :has() check is faster than one complex selector with multiple conditions */
-    .header__column:has(header-menu:hover),
-    .header__column:has(.header-actions__action:hover),
-    .header__column:has(.header__icon--menu:hover) {
-      header-menu:not(:hover),
-      .header-actions__action:not(:hover),
-      .header__icon--menu:not(:hover) {
-        opacity: var(--opacity-subdued-text);
-        transition: opacity var(--animation-speed) var(--animation-easing);
-      }
-    }
-  }
-
-  /* Ensure smooth transitions for all interactive elements */
-  header-menu,
-  .header-actions__action,
-  .header__icon--menu {
+    display: flex;
+    justify-content: center;
+    color: var(--button-color);
+    cursor: pointer;
     transition: opacity var(--animation-speed) var(--animation-easing);
   }
 
-  /* Header action button styles */
-  .header-actions__action {
-    --button-color: var(--color-foreground);
-    color: var(--button-color);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-
-    &:hover {
-      --button-color: var(--color-foreground);
-    }
-  }
-
-  .header-actions__action:not(.account-button) .svg-wrapper {
-    height: var(--button-size);
+  .site-header .header-actions__action:not(.account-button) .svg-wrapper {
     width: var(--button-size);
+    height: var(--button-size);
   }
 
-  .header-actions__action:not(.account-button) svg {
+  .site-header .header-actions__action:not(.account-button) svg {
     width: var(--icon-size-md);
     height: var(--icon-size-md);
   }
 
-  .header:has(#Details-menu-drawer-container[open]) {
-    contain: style;
-  }
-
-  .header.header--compact {
-    --header-padding: var(--padding-2xs);
-  }
-
-  .header__columns {
-    --padding-block-start: var(--header-padding);
-    --padding-block-end: var(--header-padding);
-  }
-
-  .header:not(.header--compact) .header__row--bottom {
-    --header-padding: var(--padding-xs);
-  }
-
-  .header--collapse-row-paddings {
-    .header__row--top .header__columns {
-      --padding-block-end: 0px;
-    }
-
-    .header__row--bottom .header__columns {
-      --padding-block-start: 0px;
+  @media (hover: hover) {
+    .site-header .header-actions__action:hover {
+      opacity: var(--opacity-subdued-text);
     }
   }
 
-  /* Transparent header layout. Keep this in sync with snippets/section.liquid's first-section height compensation. */
-  body:has(#header-component[transparent]) .content-for-layout > .shopify-section:first-child {
-    margin-top: calc(var(--header-group-height) * -1);
-  }
-
-  body:has(#header-component[transparent]) #header-group > .header-section {
-    z-index: var(--layer-menu-drawer);
-  }
-
-  /* All other header group content should be beneath the floating header,
-  but above the rest of the page content */
-  body:has(#header-component[transparent]) #header-group > *:not(.header-section) {
-    z-index: calc(var(--layer-menu-drawer) - 1);
-  }
-
-  /* When the header is transparent, add a margin to a potential header-section below it */
-  .header-section:has(.header[transparent]) + .shopify-section {
-    margin-top: var(--header-height);
-  }
-
-  /* Optimize layout performance for hidden menus */
-  .header-menu .menu-list__submenu {
-    content-visibility: auto;
-    contain-intrinsic-size: 0px 500px;
-  }
-
-  /* Force visibility when open/animating and in overflow submenu to prevent layout issues */
-  .header-menu details[open] .menu-list__submenu,
-  .header-menu .menu-list__submenu[data-active],
-  .header-menu .menu-list__list-item[slot='overflow'] .menu-list__submenu {
-    content-visibility: visible;
-  }
-
-  /* Dropdown Localization Styles */
-  .dropdown-localization__button {
-    display: flex;
+  .site-header__search {
     position: relative;
+    display: flex;
     align-items: center;
-    gap: 4px;
-    font-family: var(--menu-localization-font);
-    font-size: var(--menu-localization-font-size);
-    font-weight: var(--menu-top-level-font-weight);
-    padding-inline: var(--padding-2xs);
-    margin-inline: calc(-1 * var(--padding-2xs));
+    width: 100%;
+    max-width: 10rem;
   }
 
-  .dropdown-localization__button .svg-wrapper.icon-caret {
-    height: var(--icon-size-xs);
+  .site-header__search-icon {
+    position: absolute;
+    inset-inline-start: var(--padding-xs);
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-foreground-muted);
+    pointer-events: none;
+  }
+
+  .site-header__search-input {
+    width: 100%;
+    min-width: 0;
+    padding-block: var(--padding-xs);
+    padding-inline: calc(var(--padding-xs) + var(--icon-size-sm) + var(--padding-2xs)) var(--padding-xs);
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--xs);
+    color: var(--color-input-text);
+    background-color: var(--color-input-background);
+    border: var(--style-border-width-inputs) solid var(--color-input-border);
+    border-radius: var(--style-border-radius-inputs);
+
+    &::placeholder {
+      color: rgb(var(--color-input-text-rgb) / var(--opacity-50));
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  /* Localization */
+  .site-header__localization {
+    position: relative;
+  }
+
+  .site-header__localization-button,
+  .site-header__localization-button:hover {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    padding-inline: var(--padding-2xs);
+    color: inherit;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .site-header__localization-button .icon-caret {
     width: var(--icon-size-xs);
-    right: var(--margin-xs);
-    top: calc(50% - var(--padding-2xs));
-    flex-shrink: 0;
+    height: var(--icon-size-xs);
+    color: var(--color-foreground-muted);
     transition: transform var(--animation-speed) var(--animation-easing);
   }
 
-  .dropdown-localization__button .icon-flag {
-    width: var(--menu-localization-font-size, var(--icon-size-sm));
-    height: var(--menu-localization-font-size, var(--icon-size-sm));
-    clip-path: circle(50%); /* stylelint-disable-line */
-    background-position: center;
-    background-size: cover;
-    margin-inline-end: 4px;
-    position: relative;
-  }
-
-  .dropdown-localization__button .icon-flag::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    box-shadow: inset 0 0 var(--size-shadow) var(--color-shadow);
-    border-radius: 50%;
-  }
-
-  .dropdown-localization__button[aria-expanded='true'] .icon-caret svg {
+  .site-header__localization-button[aria-expanded='true'] .icon-caret {
     transform: rotate(180deg);
   }
 
-  .dropdown-localization__button,
-  .dropdown-localization__button:hover {
-    box-shadow: none;
-    background-color: transparent;
-    border-color: transparent;
-    border-radius: 0;
+  .site-header__flag {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.125rem;
+    background-position: center;
+    background-size: cover;
   }
 
-  dropdown-localization-component .localization-form__list {
-    max-height: 20.5rem;
-  }
-
-  .localization-wrapper {
-    position: fixed;
-    z-index: var(--layer-raised);
+  .site-header__localization-panel {
+    position: absolute;
+    inset-block-start: calc(100% + var(--gap-xs));
+    inset-inline-end: 0;
+    z-index: calc(var(--layer-header-menu) + 1);
+    max-height: 27.5rem;
+    background-color: var(--color-background);
+    border: var(--style-border-popover);
     border-radius: var(--style-border-radius-popover);
+    box-shadow: var(--shadow-popover);
+    opacity: 0;
+    translate: 0 var(--padding-lg);
     transition-property: display, opacity, translate;
-    transition-duration: 0.3s;
+    transition-duration: var(--animation-speed-slow);
     transition-timing-function: var(--ease-out-quad);
     transition-behavior: allow-discrete;
-    translate: 0 20px;
-    opacity: 0;
-  }
 
-  .localization-wrapper:not([hidden]) {
-    translate: 0 0;
-    opacity: 1;
-  }
+    &:not([hidden]) {
+      opacity: 1;
+      translate: 0 0;
+    }
 
-  @starting-style {
-    .localization-wrapper:not([hidden]) {
-      translate: 0 20px;
-      opacity: 0;
+    .localization-form__list {
+      max-height: 20.5rem;
+    }
+
+    .localization-form__list-item {
+      margin-inline: var(--margin-xs);
     }
   }
 
-  dropdown-localization-component {
-    position: relative;
-    background-color: transparent;
+  @starting-style {
+    .site-header__localization-panel:not([hidden]) {
+      opacity: 0;
+      translate: 0 var(--padding-lg);
+    }
   }
 
-  dropdown-localization-component .country-filter {
-    position: relative;
-    padding: 8px;
+  /* Navigation row (desktop) / sidebar (mobile) */
+  .site-header__overlay,
+  .site-header__drawer-header,
+  .site-header__drawer-only {
+    display: none;
   }
 
-  dropdown-localization-component .country-filter__input {
-    border: none;
+  .site-nav {
+    display: flex;
+    margin: 0;
+    font-family: var(--site-header-nav-font-family);
+    font-weight: var(--site-header-nav-font-weight);
+    font-size: var(--site-header-nav-font-size);
   }
 
-  dropdown-localization-component .localization-form__list-item {
-    margin-inline: 8px;
+  /* Shared by menu items and utility links */
+  .site-nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    @media screen and (min-width: 750px) {
+      min-height: var(--minimum-touch-target);
+    }
+
+    @media screen and (max-width: 749px) {
+      justify-content: space-between;
+      width: 100%;
+      min-height: var(--minimum-touch-target);
+      padding-block: var(--padding-xs);
+    }
   }
 
-  dropdown-localization-component .localization-wrapper {
-    box-shadow: var(--shadow-popover);
-    border: var(--style-border-popover);
-    background-color: var(--color-background);
-    max-height: 27.5rem;
-    position: absolute;
-    top: calc(100% + 10px);
-    z-index: calc(var(--layer-header-menu) + 1);
+  @media (hover: hover) and (min-width: 750px) {
+    .site-nav__item:hover > .site-nav__link {
+      opacity: var(--opacity-subdued-text);
+    }
   }
 
-  dropdown-localization-component .localization-wrapper.right-bound {
-    right: 0;
-    left: unset;
+  @media screen and (max-width: 749px) {
+    .site-nav__item {
+      border-block-end: var(--style-border-width) solid var(--color-border);
+    }
   }
 
-  dropdown-localization-component .localization-wrapper.left-bound {
-    left: -8px;
-    right: unset;
+  @media screen and (min-width: 750px) {
+    .site-nav {
+      align-items: center;
+      column-gap: var(--gap-2xl);
+
+      /* Pushes utility links to the inline end of the row */
+      &::after {
+        content: '';
+        flex: 1;
+        order: 1;
+      }
+    }
   }
 
-  /* Additional specificity due to dropdown-localization-component getting a low score */
-  dropdown-localization-component .language-selector.language-selector {
-    padding: 10px 8px 10px 16px;
+  @media screen and (max-width: 749px) {
+    .site-header__overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: var(--layer-menu-drawer);
+      background-color: rgb(var(--color-drawer-shadow-rgb) / var(--opacity-40));
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--drawer-animation-speed) var(--animation-easing),
+        visibility var(--drawer-animation-speed) var(--animation-easing);
+    }
+
+    .site-header__panel {
+      position: fixed;
+      inset-block: 0;
+      inset-inline-start: 0;
+      z-index: calc(var(--layer-menu-drawer) + 1);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-lg);
+      width: min(85vw, 400px);
+      padding: var(--drawer-padding);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background-color: var(--color-background);
+      color: var(--color-foreground);
+      box-shadow: var(--shadow-drawer);
+      transform: translateX(-100%);
+      visibility: hidden;
+      transition: transform var(--drawer-animation-speed) var(--ease-out-cubic),
+        visibility var(--drawer-animation-speed) var(--ease-out-cubic);
+
+      &:dir(rtl) {
+        transform: translateX(100%);
+      }
+    }
+
+    .site-header[data-drawer-open] {
+      .site-header__overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .site-header__panel {
+        transform: none;
+        visibility: visible;
+      }
+    }
+
+    .site-header__drawer-header {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .site-header__drawer-only {
+      display: flex;
+    }
+
+    .site-header__search.site-header__drawer-only {
+      max-width: none;
+    }
+
+    .site-header__nav.section {
+      display: block;
+      padding: 0;
+    }
+
+    .site-nav {
+      flex-direction: column;
+    }
+
+    .site-header__drawer-footer {
+      flex-direction: column;
+      margin-block-start: auto;
+      padding-block-start: var(--padding-lg);
+      border-block-start: var(--style-border-width) solid var(--color-border);
+    }
+
+    .site-header__drawer-link {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-xs);
+      min-height: var(--minimum-touch-target);
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      .icon-caret {
+        width: var(--icon-size-xs);
+        height: var(--icon-size-xs);
+        margin-inline-start: auto;
+      }
+    }
+
+    .site-header__drawer-localization[open] .icon-caret {
+      transform: rotate(180deg);
+    }
   }
 
-  dropdown-localization-component .localization-form__currency {
-    width: max-content;
-    opacity: 0;
-    visibility: hidden;
-    transition: none;
-  }
-
-  dropdown-localization-component .localization-form__select:hover {
-    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-8));
-  }
-
-  dropdown-localization-component
-    :is(
-      .localization-form__list-item:hover,
-      .localization-form__list-item[aria-selected='true'],
-      .localization-form__list-item[aria-current='true']
-    )
-    .localization-form__currency {
-    opacity: 1;
-    color: var(--color-foreground-muted);
-    transition: opacity var(--animation-speed-slow) var(--animation-easing);
-    visibility: visible;
-  }
-
-  .dropdown-localization .language-selector:where(:not(.language-selector--top-shadow)) {
-    font-weight: var(--menu-top-level-font-weight);
-  }
-
-  .dropdown-localization:not(dropdown-localization-component) .language-selector {
-    font-family: var(--menu-localization-font);
-    font-size: var(--menu-localization-font-size);
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__panel,
+    .site-header__overlay {
+      transition: none;
+    }
   }
 {% endstylesheet %}
-
-{% unless request.design_mode %}
-  <script type="module">
-    import { hydrate } from '@theme/section-hydration';
-    const url = new URL(window.location.href);
-    url.searchParams.delete('page');
-    hydrate('{{ section.id }}', url);
-  </script>
-{% endunless %}
 
 {% schema %}
 {
   "name": "t:names.header",
   "tag": "header",
   "class": "header-section",
+  "blocks": [
+    {
+      "type": "_header-nav-item"
+    },
+    {
+      "type": "_header-utility-link"
+    }
+  ],
   "settings": [
     {
       "type": "header",
       "content": "t:content.logo"
     },
     {
-      "type": "select",
-      "id": "logo_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "center",
-          "label": "t:options.center"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "header",
-      "content": "t:content.menu"
-    },
-    {
-      "type": "select",
-      "id": "menu_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "center",
-          "label": "t:options.center"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "menu_row",
-      "label": "t:settings.row",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:options.top"
-        },
-        {
-          "value": "bottom",
-          "label": "t:options.bottom"
-        }
-      ],
-      "default": "top"
-    },
-    {
-      "type": "header",
-      "content": "t:content.customer_account"
-    },
-    {
       "type": "paragraph",
-      "content": "t:content.manage_customer_accounts"
+      "content": "t:info.header_logo_source"
     },
     {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:settings.menu",
-      "default": "customer-account-main-menu"
+      "type": "select",
+      "id": "logo_text_size",
+      "label": "t:settings.size",
+      "options": [
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" },
+        { "value": "1.75rem", "label": "28px" },
+        { "value": "2rem", "label": "32px" }
+      ],
+      "default": "1.75rem",
+      "visible_if": "{{ settings.logo == blank }}"
+    },
+    {
+      "type": "select",
+      "id": "logo_text_size_mobile",
+      "label": "t:settings.size_mobile",
+      "options": [
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.375rem", "label": "22px" },
+        { "value": "1.5rem", "label": "24px" }
+      ],
+      "default": "1.375rem",
+      "visible_if": "{{ settings.logo == blank }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.navigation"
+    },
+    {
+      "type": "select",
+      "id": "nav_font",
+      "label": "t:settings.font",
+      "options": [
+        { "value": "var(--font-body--family)", "label": "t:options.body" },
+        { "value": "var(--font-subheading--family)", "label": "t:options.subheading" },
+        { "value": "var(--font-heading--family)", "label": "t:options.heading" },
+        { "value": "var(--font-accent--family)", "label": "t:options.accent" }
+      ],
+      "default": "var(--font-body--family)"
+    },
+    {
+      "type": "select",
+      "id": "nav_font_size",
+      "label": "t:settings.size",
+      "options": [
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" }
+      ],
+      "default": "0.875rem"
     },
     {
       "type": "header",
@@ -1285,41 +854,14 @@
     {
       "type": "checkbox",
       "id": "show_search",
-      "label": "t:settings.search_icon",
+      "label": "t:settings.show_search",
       "default": true
     },
     {
-      "type": "select",
-      "id": "search_position",
-      "label": "t:settings.search_position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "right",
-      "visible_if": "{{ section.settings.show_search }}"
-    },
-    {
-      "type": "select",
-      "id": "search_row",
-      "label": "t:settings.search_row",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:options.top"
-        },
-        {
-          "value": "bottom",
-          "label": "t:options.bottom"
-        }
-      ],
-      "default": "top",
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "t:settings.placeholder",
+      "default": "Search Products",
       "visible_if": "{{ section.settings.show_search }}"
     },
     {
@@ -1330,109 +872,30 @@
       "type": "checkbox",
       "id": "show_country",
       "label": "t:settings.country_region",
-      "info": "t:info.manage_countries_regions",
       "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "country_selector_style",
-      "label": "t:settings.flag",
-      "default": true,
-      "visible_if": "{{ section.settings.show_country }}"
     },
     {
       "type": "checkbox",
       "id": "show_language",
       "label": "t:settings.language_selector",
-      "info": "t:info.manage_languages",
       "default": true
     },
     {
-      "type": "select",
-      "id": "localization_font",
-      "label": "t:settings.font",
-      "options": [
-        {
-          "value": "heading",
-          "label": "t:options.heading"
-        },
-        {
-          "value": "subheading",
-          "label": "t:options.subheading"
-        },
-        {
-          "value": "body",
-          "label": "t:options.body"
-        },
-        {
-          "value": "accent",
-          "label": "t:options.accent"
-        }
-      ],
-      "default": "heading",
-      "visible_if": "{{ section.settings.show_country or section.settings.show_language }}"
+      "type": "header",
+      "content": "t:content.customer_account"
     },
     {
-      "type": "select",
-      "id": "localization_font_size",
-      "label": "t:settings.size",
-      "options": [
-        {
-          "value": "0.625rem",
-          "label": "10px"
-        },
-        {
-          "value": "0.75rem",
-          "label": "12px"
-        },
-        {
-          "value": "0.875rem",
-          "label": "14px"
-        },
-        {
-          "value": "1rem",
-          "label": "16px"
-        },
-        {
-          "value": "1.125rem",
-          "label": "18px"
-        }
-      ],
-      "default": "1rem"
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "t:settings.show_account",
+      "default": true
     },
     {
-      "type": "select",
-      "id": "localization_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "right",
-      "visible_if": "{{ section.settings.show_country or section.settings.show_language }}"
-    },
-    {
-      "type": "select",
-      "id": "localization_row",
-      "label": "t:settings.row",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:options.top"
-        },
-        {
-          "value": "bottom",
-          "label": "t:options.bottom"
-        }
-      ],
-      "default": "top",
-      "visible_if": "{{ section.settings.show_country or section.settings.show_language }}"
+      "type": "link_list",
+      "id": "customer_account_menu",
+      "label": "t:settings.menu",
+      "default": "customer-account-main-menu",
+      "visible_if": "{{ section.settings.show_account }}"
     },
     {
       "type": "header",
@@ -1441,53 +904,36 @@
     {
       "type": "select",
       "id": "section_width",
-      "label": "t:settings.width",
+      "label": "t:settings.section_width",
       "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "section_height",
-      "label": "t:settings.height",
-      "options": [
-        {
-          "value": "compact",
-          "label": "t:options.compact"
-        },
-        {
-          "value": "standard",
-          "label": "t:options.standard"
-        }
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
       ],
-      "default": "standard"
+      "default": "page-width"
     },
     {
-      "type": "select",
+      "type": "checkbox",
       "id": "enable_sticky_header",
       "label": "t:settings.sticky_header",
-      "options": [
-        {
-          "value": "always",
-          "label": "t:options.always"
-        },
-        {
-          "value": "scroll-up",
-          "label": "t:options.on_scroll_up"
-        },
-        {
-          "value": "never",
-          "label": "t:options.never"
-        }
-      ],
-      "default": "always"
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "cart_bubble_color",
+      "label": "t:settings.cart_bubble_color",
+      "placeholder": "t:settings.default"
     },
     {
       "type": "range",
@@ -1497,274 +943,15 @@
       "max": 5,
       "step": 0.5,
       "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "select",
-      "id": "divider_size",
-      "label": "t:settings.divider_width",
-      "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ],
-      "visible_if": "{{ section.settings.divider_width > 0 and section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
+      "default": 1
     },
     {
       "type": "color",
       "id": "divider_color",
       "label": "t:settings.divider_color",
       "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.divider_width > 0 and section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "range",
-      "id": "border_width",
-      "label": "t:settings.border_width",
-      "min": 0,
-      "max": 5,
-      "step": 0.5,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "color",
-      "id": "bottom_border_color",
-      "label": "t:settings.bottom_border_color",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.border_width > 0 }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.utilities"
-    },
-    {
-      "type": "select",
-      "id": "actions_display_style",
-      "label": "t:settings.actions_display_style",
-      "info": "t:info.actions_display_style",
-      "options": [
-        {
-          "value": "icon",
-          "label": "t:options.icons"
-        },
-        {
-          "value": "text",
-          "label": "t:options.text"
-        }
-      ],
-      "default": "icon"
-    },
-    {
-      "type": "select",
-      "id": "actions_font_size",
-      "label": "t:settings.size",
-      "options": [
-        {
-          "value": "0.75rem",
-          "label": "12px"
-        },
-        {
-          "value": "0.875rem",
-          "label": "14px"
-        },
-        {
-          "value": "1rem",
-          "label": "16px"
-        },
-        {
-          "value": "1.125rem",
-          "label": "18px"
-        }
-      ],
-      "default": "0.875rem",
-      "visible_if": "{{ section.settings.actions_display_style == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "actions_font",
-      "label": "t:settings.font",
-      "options": [
-        {
-          "value": "heading",
-          "label": "t:options.heading"
-        },
-        {
-          "value": "subheading",
-          "label": "t:options.subheading"
-        },
-        {
-          "value": "body",
-          "label": "t:options.body"
-        },
-        {
-          "value": "accent",
-          "label": "t:options.accent"
-        }
-      ],
-      "default": "body",
-      "visible_if": "{{ section.settings.actions_display_style == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "actions_text_case",
-      "label": "t:settings.case",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:options.default"
-        },
-        {
-          "value": "uppercase",
-          "label": "t:options.uppercase"
-        }
-      ],
-      "default": "none",
-      "visible_if": "{{ section.settings.actions_display_style == 'text' }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.colors"
-    },
-    {
-      "type": "color",
-      "id": "background_color_top",
-      "label": "t:settings.top_row_background",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "color",
-      "id": "text_color_top",
-      "label": "t:settings.top_row_text",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "color",
-      "id": "background_color_bottom",
-      "label": "t:settings.bottom_row_background",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "color",
-      "id": "text_color_bottom",
-      "label": "t:settings.bottom_row_text",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.cart_bubble"
-    },
-    {
-      "type": "select",
-      "id": "bubble_style",
-      "label": "t:settings.bubble_style",
-      "options": [
-        {
-          "value": "default",
-          "label": "t:options.default"
-        },
-        {
-          "value": "custom",
-          "label": "t:options.custom"
-        }
-      ],
-      "default": "default"
-    },
-    {
-      "type": "color",
-      "id": "bubble_background_color",
-      "label": "t:settings.background",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.bubble_style == 'custom' }}"
-    },
-    {
-      "type": "color",
-      "id": "bubble_text_color",
-      "label": "t:settings.text",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.bubble_style == 'custom' }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.home_page"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_transparent_header_home",
-      "label": "t:settings.transparent_background",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "home_inverse_logo",
-      "label": "t:settings.inverse_logo",
-      "default": false,
-      "visible_if": "{{ section.settings.enable_transparent_header_home }}"
-    },
-    {
-      "type": "color",
-      "id": "text_color_transparent_home",
-      "label": "t:settings.text_color_transparent",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.enable_transparent_header_home }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.product_page"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_transparent_header_product",
-      "label": "t:settings.transparent_background",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "product_inverse_logo",
-      "label": "t:settings.inverse_logo",
-      "default": false,
-      "visible_if": "{{ section.settings.enable_transparent_header_product }}"
-    },
-    {
-      "type": "color",
-      "id": "text_color_transparent_product",
-      "label": "t:settings.text_color_transparent",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.enable_transparent_header_product }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.collection_page"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_transparent_header_collection",
-      "label": "t:settings.transparent_background",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "collection_inverse_logo",
-      "label": "t:settings.inverse_logo",
-      "default": false,
-      "visible_if": "{{ section.settings.enable_transparent_header_collection }}"
-    },
-    {
-      "type": "color",
-      "id": "text_color_transparent_collection",
-      "label": "t:settings.text_color_transparent",
-      "placeholder": "t:settings.default",
-      "visible_if": "{{ section.settings.enable_transparent_header_collection }}"
+      "visible_if": "{{ section.settings.divider_width > 0 }}"
     }
-  ],
-  "presets": []
+  ]
 }
 {% endschema %}

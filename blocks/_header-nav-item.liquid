@@ -1,0 +1,234 @@
+{% doc %}
+  Renders a top-level header navigation item. With column blocks it becomes a mega menu
+  trigger: a hover/click dropdown on desktop and an accordion in the mobile sidebar.
+  Without columns it renders as a plain link.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign label = block.settings.label | escape
+  assign submenu_id = 'MegaMenu-' | append: block.id
+
+  capture columns
+    content_for 'blocks'
+  endcapture
+  assign has_columns = false
+  if columns != blank
+    assign has_columns = true
+  endif
+%}
+
+{% if label != blank %}
+  <li
+    class="site-nav__item{% if has_columns %} site-nav__item--has-menu{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    {% if has_columns %}
+      <button
+        type="button"
+        class="site-nav__link button-unstyled"
+        aria-expanded="false"
+        aria-controls="{{ submenu_id }}"
+        on:click="/toggleSubmenu"
+      >
+        {{ label }}
+        <span
+          class="svg-wrapper site-nav__caret"
+          aria-hidden="true"
+        >
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+
+      <div
+        id="{{ submenu_id }}"
+        class="site-mega"
+      >
+        <div class="site-mega__inner section section--page-width">
+          <div class="site-mega__content">
+            <ul class="site-mega__columns list-unstyled">
+              {{ columns }}
+            </ul>
+
+            {% if block.settings.link != blank %}
+              <a
+                href="{{ block.settings.link }}"
+                class="site-mega__view-all"
+              >
+                {{- 'actions.view_all' | t }}
+                {{ label -}}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% elsif block.settings.link != blank %}
+      <a
+        href="{{ block.settings.link }}"
+        class="site-nav__link"
+        {% if block.settings.link == request.path %}
+          aria-current="page"
+        {% endif %}
+      >
+        {{- label -}}
+      </a>
+    {% else %}
+      <span class="site-nav__link">{{ label }}</span>
+    {% endif %}
+  </li>
+{% endif %}
+
+{% stylesheet %}
+  .site-nav__caret {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+    color: var(--color-foreground-muted);
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .site-nav__link[aria-expanded='true'] .site-nav__caret {
+    transform: rotate(180deg);
+  }
+
+  .site-mega__column-heading {
+    display: block;
+    margin-block-end: var(--padding-xs);
+    font-family: var(--font-subheading--family);
+    font-weight: var(--font-subheading--weight);
+    color: var(--color-foreground);
+    text-decoration: none;
+  }
+
+  .site-mega__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    margin: 0;
+  }
+
+  .site-mega__link {
+    color: var(--color-foreground-muted);
+    text-decoration: none;
+    transition: color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  .site-mega__view-all {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  @media screen and (min-width: 750px) {
+    /* Full-width panel anchored to the bottom edge of the header */
+    .site-mega {
+      position: absolute;
+      inset-inline: 0;
+      inset-block-start: 100%;
+      z-index: var(--layer-header-menu);
+      background-color: var(--color-background);
+      border-block-end: var(--style-border-width) solid var(--color-border);
+      box-shadow: var(--shadow-popover);
+      opacity: 0;
+      visibility: hidden;
+      translate: 0 calc(var(--padding-xs) * -1);
+      transition: opacity var(--animation-speed-slow) var(--animation-easing),
+        translate var(--animation-speed-slow) var(--animation-easing),
+        visibility var(--animation-speed-slow) var(--animation-easing);
+    }
+
+    .site-nav__item--has-menu:hover > .site-mega,
+    .site-nav__item[data-open] > .site-mega {
+      opacity: 1;
+      visibility: visible;
+      translate: 0 0;
+    }
+
+    /* A click-opened item wins over a hovered neighbour */
+    .site-nav:has([data-open]) .site-nav__item--has-menu:not([data-open]) > .site-mega {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .site-mega__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-xl);
+      padding-block: var(--padding-4xl);
+    }
+
+    .site-mega__columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: var(--gap-2xl);
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .site-mega {
+      display: none;
+      padding-block-end: var(--padding-lg);
+    }
+
+    .site-nav__item[data-open] > .site-mega {
+      display: block;
+    }
+
+    .site-mega__inner.section {
+      display: block;
+      padding: 0;
+    }
+
+    .site-mega__content,
+    .site-mega__columns {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-lg);
+      margin: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-mega,
+    .site-nav__caret {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.menu_item",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_header-mega-column"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Menu item"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link",
+      "info": "t:info.menu_item_link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.menu_item"
+    }
+  ]
+}
+{% endschema %}

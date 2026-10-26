@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Link",
+    "menu_column": "Colonna del menu",
+    "menu_item": "Voce di menu",
+    "utility_link": "Link di servizio",
     "top_bar": "Barra superiore",
     "top_bar_item": "Elemento della barra superiore",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "cart_bubble_color": "Colore del badge del carrello",
+    "placeholder": "Segnaposto",
+    "show_account": "Mostra account",
     "free_shipping_threshold": "Soglia di spedizione gratuita",
     "free_shipping_text": "Messaggio",
     "free_shipping_remaining_text": "Messaggio importo rimanente",
@@ -1094,6 +1101,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "header_logo_source": "Carica un logo in Impostazioni tema > Logo e favicon. Senza logo viene mostrato il nome del negozio.",
+    "menu_item_link": "Mostrato come link \"Visualizza tutto\" nel mega menu, o usato come link dell'elemento se non ha colonne",
     "free_shipping_threshold": "Nella valuta predefinita del tuo negozio. Imposta 0 per nascondere l'importo rimanente.",
     "free_shipping_threshold_placeholder": "Usa [threshold] per inserire l'importo della soglia",
     "free_shipping_amount_placeholder": "Mostrato quando il carrello contiene articoli. Usa [amount] per inserire l'importo rimanente",

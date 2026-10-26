@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Link",
+    "menu_column": "Menukolonne",
+    "menu_item": "Menupunkt",
+    "utility_link": "Hjælpelink",
     "top_bar": "Topbjælke",
     "top_bar_item": "Element i topbjælke",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "cart_bubble_color": "Farve på kurvboble",
+    "placeholder": "Pladsholder",
+    "show_account": "Vis konto",
     "free_shipping_threshold": "Grænse for gratis fragt",
     "free_shipping_text": "Besked",
     "free_shipping_remaining_text": "Besked om resterende beløb",
@@ -1094,6 +1101,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "header_logo_source": "Upload et logo under Temaindstillinger > Logo og favicon. Uden logo vises butikkens navn.",
+    "menu_item_link": "Vises som et \"Se alle\"-link i megamenuen eller bruges som elementets link, når det ikke har kolonner",
     "free_shipping_threshold": "I din butiks standardvaluta. Angiv 0 for at skjule det resterende beløb.",
     "free_shipping_threshold_placeholder": "Brug [threshold] til at indsætte grænsebeløbet",
     "free_shipping_amount_placeholder": "Vises, når kurven indeholder varer. Brug [amount] til at indsætte det resterende beløb",

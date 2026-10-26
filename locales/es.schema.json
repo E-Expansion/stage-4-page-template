@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "Enlace",
+    "menu_column": "Columna del menú",
+    "menu_item": "Elemento del menú",
+    "utility_link": "Enlace de utilidad",
     "top_bar": "Barra superior",
     "top_bar_item": "Elemento de la barra superior",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "cart_bubble_color": "Color de la burbuja del carrito",
+    "placeholder": "Texto de marcador",
+    "show_account": "Mostrar cuenta",
     "free_shipping_threshold": "Umbral de envío gratis",
     "free_shipping_text": "Mensaje",
     "free_shipping_remaining_text": "Mensaje del importe restante",
@@ -1094,6 +1101,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "header_logo_source": "Sube un logotipo en Configuración del tema > Logotipo y favicon. Sin él, se muestra el nombre de la tienda.",
+    "menu_item_link": "Se muestra como enlace \"Ver todo\" en el megamenú, o se usa como enlace del elemento si no tiene columnas",
     "free_shipping_threshold": "En la moneda predeterminada de tu tienda. Establece 0 para ocultar el importe restante.",
     "free_shipping_threshold_placeholder": "Usa [threshold] para insertar el importe del umbral",
     "free_shipping_amount_placeholder": "Se muestra cuando el carrito tiene artículos. Usa [amount] para insertar el importe restante",

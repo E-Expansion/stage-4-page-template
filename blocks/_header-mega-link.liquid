@@ -1,0 +1,43 @@
+{% doc %}
+  Renders a single link inside a mega menu column.
+  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% if block.settings.label != blank %}
+  <li {{ block.shopify_attributes }}>
+    <a
+      href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+      class="site-mega__link"
+    >
+      {{- block.settings.label | escape -}}
+    </a>
+  </li>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:names.link",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.link"
+    }
+  ]
+}
+{% endschema %}

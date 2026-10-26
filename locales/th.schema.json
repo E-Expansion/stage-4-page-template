@@ -9,6 +9,10 @@
  */
 {
   "names": {
+    "link": "ลิงก์",
+    "menu_column": "คอลัมน์เมนู",
+    "menu_item": "รายการเมนู",
+    "utility_link": "ลิงก์อรรถประโยชน์",
     "top_bar": "แถบด้านบน",
     "top_bar_item": "รายการในแถบด้านบน",
     "404": "404",
@@ -173,6 +177,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "cart_bubble_color": "สีป้ายตะกร้าสินค้า",
+    "placeholder": "ข้อความตัวยึด",
+    "show_account": "แสดงบัญชี",
     "free_shipping_threshold": "ยอดขั้นต่ำสำหรับจัดส่งฟรี",
     "free_shipping_text": "ข้อความ",
     "free_shipping_remaining_text": "ข้อความยอดคงเหลือ",
@@ -1094,6 +1101,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "header_logo_source": "อัปโหลดโลโก้ใน การตั้งค่าธีม > โลโก้และไอคอน Fav หากไม่มีโลโก้ ระบบจะแสดงชื่อร้านค้า",
+    "menu_item_link": "แสดงเป็นลิงก์ \"ดูทั้งหมด\" ในเมกะเมนู หรือใช้เป็นลิงก์ของรายการเมื่อไม่มีคอลัมน์",
     "free_shipping_threshold": "ในสกุลเงินเริ่มต้นของร้านค้า ตั้งค่าเป็น 0 เพื่อซ่อนยอดคงเหลือ",
     "free_shipping_threshold_placeholder": "ใช้ [threshold] เพื่อแทรกยอดขั้นต่ำ",
     "free_shipping_amount_placeholder": "แสดงเมื่อมีสินค้าในตะกร้า ใช้ [amount] เพื่อแทรกยอดคงเหลือ",
