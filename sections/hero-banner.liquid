@@ -239,7 +239,6 @@
       display: grid;
       align-items: center;
       background-color: transparent;
-      color: var(--hero-banner-text-color);
     }
 
     .hero-banner--full {
@@ -281,8 +280,10 @@
       padding-block: var(--padding-6xl);
     }
 
+    /* Set on the content, not the root: contrast-override's color rule on the root loads later and would win */
     .hero-banner__content {
       max-width: var(--hero-banner-content-width);
+      color: var(--hero-banner-text-color);
     }
 
     .hero-banner__heading {
@@ -377,6 +378,13 @@
       "content": "t:content.typography"
     },
     {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "info": "t:info.hero_banner_desktop_only",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "label": "t:settings.size",
@@ -440,13 +448,6 @@
     {
       "type": "header",
       "content": "t:content.colors"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "t:settings.text_color",
-      "info": "t:info.hero_banner_desktop_only",
-      "default": "{{ settings.color_palette.background }}"
     },
     {
       "type": "color",
