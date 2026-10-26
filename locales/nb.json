@@ -130,6 +130,18 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} farge",
+      "other": "{{ count }} farger"
+    },
+    "option_count": {
+      "one": "{{ count }} alternativ",
+      "other": "{{ count }} alternativer"
+    },
+    "inventory_only_count_left": {
+      "one": "Bare {{ count }} igjen",
+      "other": "Bare {{ count }} igjen"
+    },
     "reviews": "anmeldelser",
     "no_results_found": "Fant ingen resultater",
     "language": "Språk",

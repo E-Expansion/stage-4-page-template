@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Valitut tuotteet",
     "press_mention": "Lehdistömaininta",
     "press_mentions": "Lehdistömaininnat",
     "category_card": "Kategoriakortti",
@@ -185,6 +186,18 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "badge_1_color": "Merkin 1 väri",
+    "badge_1_label": "Merkin 1 teksti",
+    "badge_1_tag": "Merkin 1 tuotetunniste",
+    "badge_2_color": "Merkin 2 väri",
+    "badge_2_label": "Merkin 2 teksti",
+    "badge_2_tag": "Merkin 2 tuotetunniste",
+    "in_stock_color": "Varastossa-väri",
+    "low_stock_color": "Vähäisen varaston väri",
+    "low_stock_threshold": "Näytä \"Vain X jäljellä\" kun enintään",
+    "max_products": "Näytettävät tuotteet",
+    "rating_color": "Arviotähtien väri",
+    "subheading": "Alaotsikko",
     "article_link": "Artikkelin linkki",
     "author_image": "Kirjoittajan kuva",
     "author_name": "Kirjoittajan nimi",
@@ -908,6 +921,8 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "badges": "Merkit",
+    "inventory": "Varasto",
     "author": "Kirjoittaja",
     "button": "Painike",
     "footer_bottom_bar": "Alapalkki",
@@ -1135,6 +1150,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "curated_products_badges": "Merkki näkyy tuotteissa, joilla on vastaava tunniste. Jos molemmat täsmäävät, näytetään merkki 1.",
     "press_mention_publication": "Käytetään logon vaihtoehtoisena tekstinä ja näytetään tekstinä, jos logoa ei ole ladattu",
     "category_card_image": "Jätä tyhjäksi käyttääksesi kokoelman kuvaa",
     "category_card_title": "Jätä tyhjäksi käyttääksesi kokoelman otsikkoa",

@@ -150,6 +150,18 @@
     }
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} رنگ",
+      "other": "{{ count }} رنگ"
+    },
+    "option_count": {
+      "one": "{{ count }} آپشن",
+      "other": "{{ count }} آپشنز"
+    },
+    "inventory_only_count_left": {
+      "one": "صرف {{ count }} باقی",
+      "other": "صرف {{ count }} باقی"
+    },
     "cancel": "منسوخ کریں",
     "discount": "ڈسکاؤنٹ",
     "account_title": "اکاؤنٹ",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Productos seleccionados",
     "press_mention": "Mención en prensa",
     "press_mentions": "Menciones en prensa",
     "category_card": "Tarjeta de categoría",
@@ -185,6 +186,18 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "badge_1_color": "Color de la insignia 1",
+    "badge_1_label": "Texto de la insignia 1",
+    "badge_1_tag": "Etiqueta de producto de la insignia 1",
+    "badge_2_color": "Color de la insignia 2",
+    "badge_2_label": "Texto de la insignia 2",
+    "badge_2_tag": "Etiqueta de producto de la insignia 2",
+    "in_stock_color": "Color en stock",
+    "low_stock_color": "Color de stock bajo",
+    "low_stock_threshold": "Mostrar \"Solo quedan X\" a partir de",
+    "max_products": "Productos a mostrar",
+    "rating_color": "Color de las estrellas",
+    "subheading": "Subtítulo",
     "article_link": "Enlace al artículo",
     "author_image": "Foto del autor",
     "author_name": "Nombre del autor",
@@ -908,6 +921,8 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "badges": "Insignias",
+    "inventory": "Inventario",
     "author": "Autor",
     "button": "Botón",
     "footer_bottom_bar": "Barra inferior",
@@ -1135,6 +1150,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "curated_products_badges": "Se muestra una insignia en los productos con la etiqueta correspondiente. Si coinciden ambas, se muestra la insignia 1.",
     "press_mention_publication": "Se usa como texto alternativo del logotipo y se muestra como texto si no hay logotipo",
     "category_card_image": "Déjalo vacío para usar la imagen de la colección",
     "category_card_title": "Déjalo vacío para usar el título de la colección",

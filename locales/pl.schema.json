@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Wybrane produkty",
     "press_mention": "Wzmianka w prasie",
     "press_mentions": "Wzmianki w prasie",
     "category_card": "Karta kategorii",
@@ -185,6 +186,18 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "badge_1_color": "Kolor odznaki 1",
+    "badge_1_label": "Etykieta odznaki 1",
+    "badge_1_tag": "Tag produktu odznaki 1",
+    "badge_2_color": "Kolor odznaki 2",
+    "badge_2_label": "Etykieta odznaki 2",
+    "badge_2_tag": "Tag produktu odznaki 2",
+    "in_stock_color": "Kolor dostępności",
+    "low_stock_color": "Kolor niskiego stanu",
+    "low_stock_threshold": "Pokaż „Zostało tylko X” od",
+    "max_products": "Liczba produktów",
+    "rating_color": "Kolor gwiazdek oceny",
+    "subheading": "Podtytuł",
     "article_link": "Link do artykułu",
     "author_image": "Zdjęcie autora",
     "author_name": "Imię i nazwisko autora",
@@ -908,6 +921,8 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "badges": "Odznaki",
+    "inventory": "Stan magazynowy",
     "author": "Autor",
     "button": "Przycisk",
     "footer_bottom_bar": "Dolny pasek",
@@ -1135,6 +1150,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "curated_products_badges": "Odznaka pojawia się przy produktach z pasującym tagiem. Gdy pasują oba, wyświetlana jest odznaka 1.",
     "press_mention_publication": "Używane jako tekst alternatywny logo i wyświetlane jako tekst, gdy logo nie zostało przesłane",
     "category_card_image": "Pozostaw puste, aby użyć obrazu kolekcji",
     "category_card_title": "Pozostaw puste, aby użyć tytułu kolekcji",

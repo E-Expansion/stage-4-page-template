@@ -130,6 +130,18 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} χρώμα",
+      "other": "{{ count }} χρώματα"
+    },
+    "option_count": {
+      "one": "{{ count }} επιλογή",
+      "other": "{{ count }} επιλογές"
+    },
+    "inventory_only_count_left": {
+      "one": "Μόνο {{ count }} απομένει",
+      "other": "Μόνο {{ count }} απομένουν"
+    },
     "reviews": "κριτικές",
     "no_results_found": "Δεν βρέθηκαν αποτελέσματα",
     "language": "Γλώσσα",

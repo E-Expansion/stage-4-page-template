@@ -130,6 +130,18 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }}가지 색상",
+      "other": "{{ count }}가지 색상"
+    },
+    "option_count": {
+      "one": "{{ count }}가지 옵션",
+      "other": "{{ count }}가지 옵션"
+    },
+    "inventory_only_count_left": {
+      "one": "{{ count }}개 남음",
+      "other": "{{ count }}개 남음"
+    },
     "reviews": "리뷰",
     "language": "언어",
     "localization_region_and_language": "지역 및 언어",

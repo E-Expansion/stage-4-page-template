@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Seçilmiş ürünler",
     "press_mention": "Basında yer alma",
     "press_mentions": "Basında yer almalar",
     "category_card": "Kategori kartı",
@@ -185,6 +186,18 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "badge_1_color": "Rozet 1 rengi",
+    "badge_1_label": "Rozet 1 etiketi",
+    "badge_1_tag": "Rozet 1 ürün etiketi",
+    "badge_2_color": "Rozet 2 rengi",
+    "badge_2_label": "Rozet 2 etiketi",
+    "badge_2_tag": "Rozet 2 ürün etiketi",
+    "in_stock_color": "Stokta rengi",
+    "low_stock_color": "Az stok rengi",
+    "low_stock_threshold": "\"Yalnızca X kaldı\" eşiği",
+    "max_products": "Gösterilecek ürünler",
+    "rating_color": "Değerlendirme yıldızı rengi",
+    "subheading": "Alt başlık",
     "article_link": "Makale bağlantısı",
     "author_image": "Yazar fotoğrafı",
     "author_name": "Yazar adı",
@@ -908,6 +921,8 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "badges": "Rozetler",
+    "inventory": "Stok",
     "author": "Yazar",
     "button": "Düğme",
     "footer_bottom_bar": "Alt çubuk",
@@ -1135,6 +1150,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "curated_products_badges": "Eşleşen etikete sahip ürünlerde rozet gösterilir. İkisi de eşleşirse rozet 1 gösterilir.",
     "press_mention_publication": "Logonun alternatif metni olarak kullanılır ve logo yüklenmediğinde metin olarak gösterilir",
     "category_card_image": "Koleksiyon görselini kullanmak için boş bırakın",
     "category_card_title": "Koleksiyon başlığını kullanmak için boş bırakın",

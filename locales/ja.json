@@ -130,6 +130,18 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }}色",
+      "other": "{{ count }}色"
+    },
+    "option_count": {
+      "one": "{{ count }}種類",
+      "other": "{{ count }}種類"
+    },
+    "inventory_only_count_left": {
+      "one": "残り{{ count }}点",
+      "other": "残り{{ count }}点"
+    },
     "reviews": "レビュー",
     "language": "言語",
     "localization_region_and_language": "地域と言語",

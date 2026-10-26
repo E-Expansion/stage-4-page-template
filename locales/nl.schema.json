@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Uitgelichte producten",
     "press_mention": "Persvermelding",
     "press_mentions": "Persvermeldingen",
     "category_card": "Categoriekaart",
@@ -185,6 +186,18 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "badge_1_color": "Kleur badge 1",
+    "badge_1_label": "Label badge 1",
+    "badge_1_tag": "Producttag badge 1",
+    "badge_2_color": "Kleur badge 2",
+    "badge_2_label": "Label badge 2",
+    "badge_2_tag": "Producttag badge 2",
+    "in_stock_color": "Kleur op voorraad",
+    "low_stock_color": "Kleur lage voorraad",
+    "low_stock_threshold": "Toon \"Nog maar X\" bij of onder",
+    "max_products": "Aantal producten",
+    "rating_color": "Kleur beoordelingssterren",
+    "subheading": "Subkop",
     "article_link": "Link naar artikel",
     "author_image": "Foto van auteur",
     "author_name": "Naam van auteur",
@@ -908,6 +921,8 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "badges": "Badges",
+    "inventory": "Voorraad",
     "author": "Auteur",
     "button": "Knop",
     "footer_bottom_bar": "Onderbalk",
@@ -1135,6 +1150,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "curated_products_badges": "Een badge verschijnt bij producten met de bijbehorende tag. Als beide overeenkomen, wordt badge 1 getoond.",
     "press_mention_publication": "Gebruikt als alt-tekst van het logo en getoond als tekst wanneer er geen logo is geüpload",
     "category_card_image": "Laat leeg om de collectieafbeelding te gebruiken",
     "category_card_title": "Laat leeg om de collectietitel te gebruiken",

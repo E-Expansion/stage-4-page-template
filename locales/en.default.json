@@ -163,6 +163,18 @@
     }
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} colour",
+      "other": "{{ count }} colours"
+    },
+    "option_count": {
+      "one": "{{ count }} option",
+      "other": "{{ count }} options"
+    },
+    "inventory_only_count_left": {
+      "one": "Only {{ count }} left",
+      "other": "Only {{ count }} left"
+    },
     "cancel": "Cancel",
     "discount": "Discount",
     "account_title": "Account",

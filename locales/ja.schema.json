@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "厳選商品",
     "press_mention": "メディア掲載",
     "press_mentions": "メディア掲載",
     "category_card": "カテゴリーカード",
@@ -185,6 +186,18 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "badge_1_color": "バッジ1の色",
+    "badge_1_label": "バッジ1のラベル",
+    "badge_1_tag": "バッジ1の商品タグ",
+    "badge_2_color": "バッジ2の色",
+    "badge_2_label": "バッジ2のラベル",
+    "badge_2_tag": "バッジ2の商品タグ",
+    "in_stock_color": "在庫ありの色",
+    "low_stock_color": "在庫わずかの色",
+    "low_stock_threshold": "「残りわずかX点」を表示する在庫数",
+    "max_products": "表示する商品数",
+    "rating_color": "評価の星の色",
+    "subheading": "サブ見出し",
     "article_link": "記事へのリンク",
     "author_image": "著者の写真",
     "author_name": "著者名",
@@ -908,6 +921,8 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "badges": "バッジ",
+    "inventory": "在庫",
     "author": "著者",
     "button": "ボタン",
     "footer_bottom_bar": "下部バー",
@@ -1135,6 +1150,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "curated_products_badges": "一致するタグを持つ商品にバッジが表示されます。両方一致する場合はバッジ1が表示されます。",
     "press_mention_publication": "ロゴの代替テキストとして使用され、ロゴがない場合はテキストとして表示されます",
     "category_card_image": "空欄の場合はコレクション画像を使用します",
     "category_card_title": "空欄の場合はコレクションのタイトルを使用します",

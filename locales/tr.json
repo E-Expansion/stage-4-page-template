@@ -130,6 +130,18 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} renk",
+      "other": "{{ count }} renk"
+    },
+    "option_count": {
+      "one": "{{ count }} seçenek",
+      "other": "{{ count }} seçenek"
+    },
+    "inventory_only_count_left": {
+      "one": "Yalnızca {{ count }} kaldı",
+      "other": "Yalnızca {{ count }} kaldı"
+    },
     "reviews": "değerlendirme",
     "language": "Dil",
     "localization_region_and_language": "Bölge ve dil",

@@ -134,6 +134,18 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} spalva",
+      "other": "{{ count }} spalvos"
+    },
+    "option_count": {
+      "one": "{{ count }} parinktis",
+      "other": "{{ count }} parinktys"
+    },
+    "inventory_only_count_left": {
+      "one": "Liko tik {{ count }}",
+      "other": "Liko tik {{ count }}"
+    },
     "reviews": "apžvalgos (-ų; -a)",
     "language": "Kalba",
     "localization_region_and_language": "Regionas ir kalba",

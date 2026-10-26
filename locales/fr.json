@@ -132,6 +132,18 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} couleur",
+      "other": "{{ count }} couleurs"
+    },
+    "option_count": {
+      "one": "{{ count }} option",
+      "other": "{{ count }} options"
+    },
+    "inventory_only_count_left": {
+      "one": "Plus que {{ count }}",
+      "other": "Plus que {{ count }}"
+    },
     "reviews": "avis",
     "language": "Langue",
     "localization_region_and_language": "Région et langue",

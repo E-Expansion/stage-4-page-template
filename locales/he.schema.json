@@ -30,6 +30,8 @@
     "text": "טקסט"
   },
   "content": {
+    "badges": "תגים",
+    "inventory": "מלאי",
     "author": "מחבר",
     "button": "כפתור",
     "footer_bottom_bar": "סרגל תחתון",
@@ -219,6 +221,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "curated_products_badges": "תג מוצג במוצרים עם התגית המתאימה. אם שתיהן תואמות, יוצג תג 1.",
     "press_mention_publication": "משמש כטקסט חלופי ללוגו ומוצג כטקסט כשלא הועלה לוגו",
     "category_card_image": "השאר ריק כדי להשתמש בתמונת הקולקציה",
     "category_card_title": "השאר ריק כדי להשתמש בכותרת הקולקציה",
@@ -265,6 +268,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "curated_products": "מוצרים נבחרים",
     "press_mention": "אזכור בעיתונות",
     "press_mentions": "אזכורים בעיתונות",
     "category_card": "כרטיס קטגוריה",
@@ -719,6 +723,18 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "badge_1_color": "צבע תג 1",
+    "badge_1_label": "תווית תג 1",
+    "badge_1_tag": "תגית מוצר תג 1",
+    "badge_2_color": "צבע תג 2",
+    "badge_2_label": "תווית תג 2",
+    "badge_2_tag": "תגית מוצר תג 2",
+    "in_stock_color": "צבע במלאי",
+    "low_stock_color": "צבע מלאי נמוך",
+    "low_stock_threshold": "הצג \"נותרו רק X\" בכמות זו או פחות",
+    "max_products": "מוצרים להצגה",
+    "rating_color": "צבע כוכבי דירוג",
+    "subheading": "כותרת משנה",
     "article_link": "קישור לכתבה",
     "author_image": "תמונת המחבר",
     "author_name": "שם המחבר",

@@ -162,6 +162,18 @@
     }
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} لون",
+      "other": "{{ count }} ألوان"
+    },
+    "option_count": {
+      "one": "{{ count }} خيار",
+      "other": "{{ count }} خيارات"
+    },
+    "inventory_only_count_left": {
+      "one": "تبقى {{ count }} فقط",
+      "other": "تبقى {{ count }} فقط"
+    },
     "cancel": "إلغاء",
     "discount": "الخصم",
     "account_title": "الحساب",

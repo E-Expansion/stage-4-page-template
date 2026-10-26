@@ -130,6 +130,18 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} цвят",
+      "other": "{{ count }} цвята"
+    },
+    "option_count": {
+      "one": "{{ count }} опция",
+      "other": "{{ count }} опции"
+    },
+    "inventory_only_count_left": {
+      "one": "Остава само {{ count }}",
+      "other": "Остават само {{ count }}"
+    },
     "reviews": "мнения",
     "language": "Език",
     "localization_region_and_language": "Регион и език",

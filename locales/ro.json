@@ -132,6 +132,18 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} culoare",
+      "other": "{{ count }} culori"
+    },
+    "option_count": {
+      "one": "{{ count }} opțiune",
+      "other": "{{ count }} opțiuni"
+    },
+    "inventory_only_count_left": {
+      "one": "Doar {{ count }} rămas",
+      "other": "Doar {{ count }} rămase"
+    },
     "reviews": "recenzii",
     "language": "Limba",
     "localization_region_and_language": "Regiunea și limba",

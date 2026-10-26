@@ -130,6 +130,18 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} szín",
+      "other": "{{ count }} szín"
+    },
+    "option_count": {
+      "one": "{{ count }} lehetőség",
+      "other": "{{ count }} lehetőség"
+    },
+    "inventory_only_count_left": {
+      "one": "Már csak {{ count }}",
+      "other": "Már csak {{ count }}"
+    },
     "reviews": "összegzés",
     "no_results_found": "Nincs találat",
     "language": "Nyelv",

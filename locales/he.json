@@ -156,6 +156,18 @@
     }
   },
   "content": {
+    "color_count": {
+      "one": "צבע {{ count }}",
+      "other": "{{ count }} צבעים"
+    },
+    "option_count": {
+      "one": "אפשרות {{ count }}",
+      "other": "{{ count }} אפשרויות"
+    },
+    "inventory_only_count_left": {
+      "one": "נותר רק {{ count }}",
+      "other": "נותרו רק {{ count }}"
+    },
     "cancel": "ביטול",
     "discount": "הנחה",
     "account_title": "חשבון",

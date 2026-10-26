@@ -134,6 +134,18 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} farba",
+      "other": "{{ count }} farieb"
+    },
+    "option_count": {
+      "one": "{{ count }} možnosť",
+      "other": "{{ count }} možností"
+    },
+    "inventory_only_count_left": {
+      "one": "Zostáva len {{ count }}",
+      "other": "Zostáva len {{ count }}"
+    },
     "reviews": "recenz.",
     "no_results_found": "Nenašli sa žiadne výsledky",
     "language": "Jazyk",

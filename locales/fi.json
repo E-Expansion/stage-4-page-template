@@ -130,6 +130,18 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} väri",
+      "other": "{{ count }} väriä"
+    },
+    "option_count": {
+      "one": "{{ count }} vaihtoehto",
+      "other": "{{ count }} vaihtoehtoa"
+    },
+    "inventory_only_count_left": {
+      "one": "Vain {{ count }} jäljellä",
+      "other": "Vain {{ count }} jäljellä"
+    },
     "reviews": "arvostelua",
     "language": "Kieli",
     "localization_region_and_language": "Alue ja kieli",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "精选产品",
     "press_mention": "媒体报道",
     "press_mentions": "媒体报道",
     "category_card": "类别卡片",
@@ -185,6 +186,18 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "badge_1_color": "徽章 1 颜色",
+    "badge_1_label": "徽章 1 文本",
+    "badge_1_tag": "徽章 1 产品标签",
+    "badge_2_color": "徽章 2 颜色",
+    "badge_2_label": "徽章 2 文本",
+    "badge_2_tag": "徽章 2 产品标签",
+    "in_stock_color": "有货颜色",
+    "low_stock_color": "库存不足颜色",
+    "low_stock_threshold": "库存不超过此数时显示“仅剩 X 件”",
+    "max_products": "显示的产品数",
+    "rating_color": "评分星星颜色",
+    "subheading": "副标题",
     "article_link": "文章链接",
     "author_image": "作者照片",
     "author_name": "作者姓名",
@@ -908,6 +921,8 @@
     "input_field": "输入字段"
   },
   "content": {
+    "badges": "徽章",
+    "inventory": "库存",
     "author": "作者",
     "button": "按钮",
     "footer_bottom_bar": "底部栏",
@@ -1135,6 +1150,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "curated_products_badges": "带有对应标签的产品会显示徽章。两者都匹配时显示徽章 1。",
     "press_mention_publication": "用作徽标的替代文本；未上传徽标时以文本显示",
     "category_card_image": "留空以使用产品系列图片",
     "category_card_title": "留空以使用产品系列标题",

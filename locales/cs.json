@@ -134,6 +134,18 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} barva",
+      "other": "{{ count }} barev"
+    },
+    "option_count": {
+      "one": "{{ count }} možnost",
+      "other": "{{ count }} možností"
+    },
+    "inventory_only_count_left": {
+      "one": "Zbývá jen {{ count }}",
+      "other": "Zbývá jen {{ count }}"
+    },
     "reviews": "recen.",
     "language": "Jazyk",
     "localization_region_and_language": "Oblast a jazyk",

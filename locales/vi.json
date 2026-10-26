@@ -130,6 +130,18 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} màu",
+      "other": "{{ count }} màu"
+    },
+    "option_count": {
+      "one": "{{ count }} tùy chọn",
+      "other": "{{ count }} tùy chọn"
+    },
+    "inventory_only_count_left": {
+      "one": "Chỉ còn {{ count }}",
+      "other": "Chỉ còn {{ count }}"
+    },
     "reviews": "đánh giá",
     "language": "Ngôn ngữ",
     "localization_region_and_language": "Khu vực và ngôn ngữ",

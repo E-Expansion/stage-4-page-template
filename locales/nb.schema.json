@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Utvalgte produkter",
     "press_mention": "Presseomtale",
     "press_mentions": "Presseomtaler",
     "category_card": "Kategorikort",
@@ -185,6 +186,18 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "badge_1_color": "Farge merke 1",
+    "badge_1_label": "Tekst merke 1",
+    "badge_1_tag": "Produkttagg merke 1",
+    "badge_2_color": "Farge merke 2",
+    "badge_2_label": "Tekst merke 2",
+    "badge_2_tag": "Produkttagg merke 2",
+    "in_stock_color": "Farge på lager",
+    "low_stock_color": "Farge lavt lager",
+    "low_stock_threshold": "Vis «Bare X igjen» ved eller under",
+    "max_products": "Produkter som vises",
+    "rating_color": "Farge på vurderingsstjerner",
+    "subheading": "Underoverskrift",
     "article_link": "Lenke til artikkel",
     "author_image": "Forfatterbilde",
     "author_name": "Forfatternavn",
@@ -908,6 +921,8 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "badges": "Merker",
+    "inventory": "Lager",
     "author": "Forfatter",
     "button": "Knapp",
     "footer_bottom_bar": "Bunnlinje",
@@ -1135,6 +1150,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "curated_products_badges": "Et merke vises på produkter med tilsvarende tagg. Hvis begge passer, vises merke 1.",
     "press_mention_publication": "Brukes som logoens alt-tekst og vises som tekst når ingen logo er lastet opp",
     "category_card_image": "La stå tomt for å bruke kolleksjonsbildet",
     "category_card_title": "La stå tomt for å bruke kolleksjonstittelen",

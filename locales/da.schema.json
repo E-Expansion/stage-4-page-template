@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Udvalgte produkter",
     "press_mention": "Presseomtale",
     "press_mentions": "Presseomtaler",
     "category_card": "Kategorikort",
@@ -185,6 +186,18 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "badge_1_color": "Farve badge 1",
+    "badge_1_label": "Tekst badge 1",
+    "badge_1_tag": "Produkttag badge 1",
+    "badge_2_color": "Farve badge 2",
+    "badge_2_label": "Tekst badge 2",
+    "badge_2_tag": "Produkttag badge 2",
+    "in_stock_color": "Farve på lager",
+    "low_stock_color": "Farve lavt lager",
+    "low_stock_threshold": "Vis \"Kun X tilbage\" ved eller under",
+    "max_products": "Produkter der vises",
+    "rating_color": "Farve på bedømmelsesstjerner",
+    "subheading": "Underoverskrift",
     "article_link": "Link til artikel",
     "author_image": "Forfatterfoto",
     "author_name": "Forfatternavn",
@@ -908,6 +921,8 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "badges": "Badges",
+    "inventory": "Lager",
     "author": "Forfatter",
     "button": "Knap",
     "footer_bottom_bar": "Bundbjælke",
@@ -1135,6 +1150,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "curated_products_badges": "Et badge vises på produkter med det tilsvarende tag. Hvis begge passer, vises badge 1.",
     "press_mention_publication": "Bruges som logoets alt-tekst og vises som tekst, når der ikke er uploadet et logo",
     "category_card_image": "Lad være tom for at bruge kollektionens billede",
     "category_card_title": "Lad være tom for at bruge kollektionens titel",

@@ -134,6 +134,18 @@
     "back_to_main_menu": "Nazaj na glavni meni"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} barva",
+      "other": "{{ count }} barv"
+    },
+    "option_count": {
+      "one": "{{ count }} možnost",
+      "other": "{{ count }} možnosti"
+    },
+    "inventory_only_count_left": {
+      "one": "Le še {{ count }}",
+      "other": "Le še {{ count }}"
+    },
     "reviews": "ocen.",
     "no_results_found": "Nobenega rezultata ni bilo mogoče najti",
     "language": "Jezik",

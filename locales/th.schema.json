@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "สินค้าคัดสรร",
     "press_mention": "การกล่าวถึงในสื่อ",
     "press_mentions": "การกล่าวถึงในสื่อ",
     "category_card": "การ์ดหมวดหมู่",
@@ -185,6 +186,18 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "badge_1_color": "สีป้าย 1",
+    "badge_1_label": "ข้อความป้าย 1",
+    "badge_1_tag": "แท็กสินค้าป้าย 1",
+    "badge_2_color": "สีป้าย 2",
+    "badge_2_label": "ข้อความป้าย 2",
+    "badge_2_tag": "แท็กสินค้าป้าย 2",
+    "in_stock_color": "สีมีสินค้า",
+    "low_stock_color": "สีสินค้าใกล้หมด",
+    "low_stock_threshold": "แสดง \"เหลือเพียง X ชิ้น\" เมื่อไม่เกิน",
+    "max_products": "จำนวนสินค้าที่แสดง",
+    "rating_color": "สีดาวคะแนน",
+    "subheading": "หัวข้อรอง",
     "article_link": "ลิงก์บทความ",
     "author_image": "รูปผู้เขียน",
     "author_name": "ชื่อผู้เขียน",
@@ -908,6 +921,8 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "badges": "ป้าย",
+    "inventory": "สต็อก",
     "author": "ผู้เขียน",
     "button": "ปุ่ม",
     "footer_bottom_bar": "แถบด้านล่าง",
@@ -1135,6 +1150,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "curated_products_badges": "ป้ายจะแสดงบนสินค้าที่มีแท็กตรงกัน หากตรงทั้งสอง จะแสดงป้าย 1",
     "press_mention_publication": "ใช้เป็นข้อความแสดงแทนของโลโก้ และแสดงเป็นข้อความเมื่อไม่มีโลโก้",
     "category_card_image": "เว้นว่างไว้เพื่อใช้รูปภาพคอลเลกชัน",
     "category_card_title": "เว้นว่างไว้เพื่อใช้ชื่อคอลเลกชัน",

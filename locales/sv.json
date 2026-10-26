@@ -130,6 +130,18 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} färg",
+      "other": "{{ count }} färger"
+    },
+    "option_count": {
+      "one": "{{ count }} alternativ",
+      "other": "{{ count }} alternativ"
+    },
+    "inventory_only_count_left": {
+      "one": "Bara {{ count }} kvar",
+      "other": "Bara {{ count }} kvar"
+    },
     "reviews": "recensioner",
     "language": "Språk",
     "localization_region_and_language": "Region och språk",

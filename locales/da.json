@@ -130,6 +130,18 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} farve",
+      "other": "{{ count }} farver"
+    },
+    "option_count": {
+      "one": "{{ count }} mulighed",
+      "other": "{{ count }} muligheder"
+    },
+    "inventory_only_count_left": {
+      "one": "Kun {{ count }} tilbage",
+      "other": "Kun {{ count }} tilbage"
+    },
     "reviews": "anmeldelser",
     "language": "Sprog",
     "localization_region_and_language": "Område og sprog",

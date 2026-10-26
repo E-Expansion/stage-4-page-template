@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Ausgewählte Produkte",
     "press_mention": "Presseerwähnung",
     "press_mentions": "Presseerwähnungen",
     "category_card": "Kategoriekarte",
@@ -185,6 +186,18 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "badge_1_color": "Farbe Badge 1",
+    "badge_1_label": "Beschriftung Badge 1",
+    "badge_1_tag": "Produkt-Tag Badge 1",
+    "badge_2_color": "Farbe Badge 2",
+    "badge_2_label": "Beschriftung Badge 2",
+    "badge_2_tag": "Produkt-Tag Badge 2",
+    "in_stock_color": "Farbe auf Lager",
+    "low_stock_color": "Farbe geringer Bestand",
+    "low_stock_threshold": "\"Nur noch X\" anzeigen bei oder unter",
+    "max_products": "Anzuzeigende Produkte",
+    "rating_color": "Farbe der Bewertungssterne",
+    "subheading": "Unterüberschrift",
     "article_link": "Artikel-Link",
     "author_image": "Autorenfoto",
     "author_name": "Name des Autors",
@@ -908,6 +921,8 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "badges": "Badges",
+    "inventory": "Lagerbestand",
     "author": "Autor",
     "button": "Button",
     "footer_bottom_bar": "Untere Leiste",
@@ -1135,6 +1150,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "curated_products_badges": "Ein Badge erscheint bei Produkten mit dem passenden Tag. Wenn beide passen, wird Badge 1 angezeigt.",
     "press_mention_publication": "Wird als Alt-Text des Logos verwendet und als Text angezeigt, wenn kein Logo hochgeladen ist",
     "category_card_image": "Leer lassen, um das Kollektionsbild zu verwenden",
     "category_card_title": "Leer lassen, um den Kollektionstitel zu verwenden",

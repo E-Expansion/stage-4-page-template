@@ -130,6 +130,18 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} 种颜色",
+      "other": "{{ count }} 种颜色"
+    },
+    "option_count": {
+      "one": "{{ count }} 个选项",
+      "other": "{{ count }} 个选项"
+    },
+    "inventory_only_count_left": {
+      "one": "仅剩 {{ count }} 件",
+      "other": "仅剩 {{ count }} 件"
+    },
     "reviews": "评价",
     "no_results_found": "未找到结果",
     "language": "语言",

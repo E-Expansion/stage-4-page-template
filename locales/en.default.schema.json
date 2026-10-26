@@ -33,6 +33,8 @@
     "text": "Text"
   },
   "content": {
+    "badges": "Badges",
+    "inventory": "Stock",
     "author": "Author",
     "button": "Button",
     "footer_bottom_bar": "Bottom bar",
@@ -227,6 +229,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "curated_products_badges": "A badge shows on products that have the matching tag. When both match, badge 1 is shown.",
     "press_mention_publication": "Used as the logo's alt text, and shown as text when no logo is uploaded",
     "category_card_image": "Leave empty to use the collection image",
     "category_card_title": "Leave empty to use the collection title",
@@ -273,6 +276,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "curated_products": "Curated products",
     "press_mention": "Press mention",
     "press_mentions": "Press mentions",
     "category_card": "Category card",
@@ -771,6 +775,18 @@
     "below_media": "Below media"
   },
   "settings": {
+    "badge_1_color": "Badge 1 color",
+    "badge_1_label": "Badge 1 label",
+    "badge_1_tag": "Badge 1 product tag",
+    "badge_2_color": "Badge 2 color",
+    "badge_2_label": "Badge 2 label",
+    "badge_2_tag": "Badge 2 product tag",
+    "in_stock_color": "In stock color",
+    "low_stock_color": "Low stock color",
+    "low_stock_threshold": "Show \"Only X left\" at or below",
+    "max_products": "Products to show",
+    "rating_color": "Rating star color",
+    "subheading": "Subheading",
     "article_link": "Article link",
     "author_image": "Author photo",
     "author_name": "Author name",

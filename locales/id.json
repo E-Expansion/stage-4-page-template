@@ -130,6 +130,18 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} warna",
+      "other": "{{ count }} warna"
+    },
+    "option_count": {
+      "one": "{{ count }} opsi",
+      "other": "{{ count }} opsi"
+    },
+    "inventory_only_count_left": {
+      "one": "Tersisa {{ count }}",
+      "other": "Tersisa {{ count }}"
+    },
     "reviews": "ulasan",
     "language": "Bahasa",
     "localization_region_and_language": "Wilayah dan bahasa",

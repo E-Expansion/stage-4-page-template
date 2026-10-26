@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Produtos selecionados",
     "press_mention": "Menção na imprensa",
     "press_mentions": "Menções na imprensa",
     "category_card": "Cartão de categoria",
@@ -185,6 +186,18 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "badge_1_color": "Cor do selo 1",
+    "badge_1_label": "Etiqueta do selo 1",
+    "badge_1_tag": "Etiqueta de produto do selo 1",
+    "badge_2_color": "Cor do selo 2",
+    "badge_2_label": "Etiqueta do selo 2",
+    "badge_2_tag": "Etiqueta de produto do selo 2",
+    "in_stock_color": "Cor em stock",
+    "low_stock_color": "Cor de stock baixo",
+    "low_stock_threshold": "Mostrar \"Apenas X restantes\" a partir de",
+    "max_products": "Produtos a apresentar",
+    "rating_color": "Cor das estrelas",
+    "subheading": "Subtítulo",
     "article_link": "Ligação do artigo",
     "author_image": "Fotografia do autor",
     "author_name": "Nome do autor",
@@ -908,6 +921,8 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "badges": "Selos",
+    "inventory": "Inventário",
     "author": "Autor",
     "button": "Botão",
     "footer_bottom_bar": "Barra inferior",
@@ -1135,6 +1150,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "curated_products_badges": "Um selo aparece nos produtos com a etiqueta correspondente. Se ambas corresponderem, é apresentado o selo 1.",
     "press_mention_publication": "Utilizado como texto alternativo do logótipo e apresentado como texto quando não há logótipo",
     "category_card_image": "Deixe vazio para utilizar a imagem da coleção",
     "category_card_title": "Deixe vazio para utilizar o título da coleção",

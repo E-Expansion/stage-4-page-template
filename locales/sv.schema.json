@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Utvalda produkter",
     "press_mention": "Pressomnämnande",
     "press_mentions": "Pressomnämnanden",
     "category_card": "Kategorikort",
@@ -185,6 +186,18 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "badge_1_color": "Färg märke 1",
+    "badge_1_label": "Etikett märke 1",
+    "badge_1_tag": "Produkttagg märke 1",
+    "badge_2_color": "Färg märke 2",
+    "badge_2_label": "Etikett märke 2",
+    "badge_2_tag": "Produkttagg märke 2",
+    "in_stock_color": "Färg i lager",
+    "low_stock_color": "Färg lågt lager",
+    "low_stock_threshold": "Visa \"Bara X kvar\" vid eller under",
+    "max_products": "Produkter att visa",
+    "rating_color": "Färg på betygsstjärnor",
+    "subheading": "Underrubrik",
     "article_link": "Länk till artikel",
     "author_image": "Författarfoto",
     "author_name": "Författarens namn",
@@ -908,6 +921,8 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "badges": "Märken",
+    "inventory": "Lager",
     "author": "Författare",
     "button": "Knapp",
     "footer_bottom_bar": "Bottenfält",
@@ -1135,6 +1150,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "curated_products_badges": "Ett märke visas på produkter med motsvarande tagg. Om båda matchar visas märke 1.",
     "press_mention_publication": "Används som logotypens alt-text och visas som text när ingen logotyp har laddats upp",
     "category_card_image": "Lämna tomt för att använda kollektionens bild",
     "category_card_title": "Lämna tomt för att använda kollektionens titel",

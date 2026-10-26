@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "精選商品",
     "press_mention": "媒體報導",
     "press_mentions": "媒體報導",
     "category_card": "類別卡片",
@@ -185,6 +186,18 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "badge_1_color": "徽章 1 顏色",
+    "badge_1_label": "徽章 1 文字",
+    "badge_1_tag": "徽章 1 商品標籤",
+    "badge_2_color": "徽章 2 顏色",
+    "badge_2_label": "徽章 2 文字",
+    "badge_2_tag": "徽章 2 商品標籤",
+    "in_stock_color": "有現貨顏色",
+    "low_stock_color": "庫存不足顏色",
+    "low_stock_threshold": "庫存不超過此數時顯示「僅剩 X 件」",
+    "max_products": "顯示的商品數",
+    "rating_color": "評分星星顏色",
+    "subheading": "副標題",
     "article_link": "文章連結",
     "author_image": "作者照片",
     "author_name": "作者姓名",
@@ -908,6 +921,8 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "badges": "徽章",
+    "inventory": "庫存",
     "author": "作者",
     "button": "按鈕",
     "footer_bottom_bar": "底部列",
@@ -1135,6 +1150,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "curated_products_badges": "帶有對應標籤的商品會顯示徽章。兩者皆符合時顯示徽章 1。",
     "press_mention_publication": "用作標誌的替代文字；未上傳標誌時以文字顯示",
     "category_card_image": "留空以使用商品系列圖片",
     "category_card_title": "留空以使用商品系列標題",

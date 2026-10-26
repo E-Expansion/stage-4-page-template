@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "Produits sélectionnés",
     "press_mention": "Mention presse",
     "press_mentions": "Mentions presse",
     "category_card": "Carte de catégorie",
@@ -185,6 +186,18 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "badge_1_color": "Couleur du badge 1",
+    "badge_1_label": "Libellé du badge 1",
+    "badge_1_tag": "Balise produit du badge 1",
+    "badge_2_color": "Couleur du badge 2",
+    "badge_2_label": "Libellé du badge 2",
+    "badge_2_tag": "Balise produit du badge 2",
+    "in_stock_color": "Couleur en stock",
+    "low_stock_color": "Couleur stock faible",
+    "low_stock_threshold": "Afficher « Plus que X » à partir de",
+    "max_products": "Produits à afficher",
+    "rating_color": "Couleur des étoiles",
+    "subheading": "Sous-titre",
     "article_link": "Lien vers l'article",
     "author_image": "Photo de l'auteur",
     "author_name": "Nom de l'auteur",
@@ -908,6 +921,8 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "badges": "Badges",
+    "inventory": "Stock",
     "author": "Auteur",
     "button": "Bouton",
     "footer_bottom_bar": "Barre inférieure",
@@ -1135,6 +1150,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "curated_products_badges": "Un badge s'affiche sur les produits ayant la balise correspondante. Si les deux correspondent, le badge 1 est affiché.",
     "press_mention_publication": "Utilisé comme texte alternatif du logo et affiché en texte si aucun logo n'est téléversé",
     "category_card_image": "Laissez vide pour utiliser l'image de la collection",
     "category_card_title": "Laissez vide pour utiliser le titre de la collection",

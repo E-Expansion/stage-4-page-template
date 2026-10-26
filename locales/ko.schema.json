@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "curated_products": "엄선된 상품",
     "press_mention": "언론 보도",
     "press_mentions": "언론 보도",
     "category_card": "카테고리 카드",
@@ -185,6 +186,18 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "badge_1_color": "배지 1 색상",
+    "badge_1_label": "배지 1 레이블",
+    "badge_1_tag": "배지 1 상품 태그",
+    "badge_2_color": "배지 2 색상",
+    "badge_2_label": "배지 2 레이블",
+    "badge_2_tag": "배지 2 상품 태그",
+    "in_stock_color": "재고 있음 색상",
+    "low_stock_color": "재고 부족 색상",
+    "low_stock_threshold": "\"X개 남음\" 표시 기준",
+    "max_products": "표시할 상품 수",
+    "rating_color": "평점 별 색상",
+    "subheading": "부제목",
     "article_link": "기사 링크",
     "author_image": "작성자 사진",
     "author_name": "작성자 이름",
@@ -908,6 +921,8 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "badges": "배지",
+    "inventory": "재고",
     "author": "작성자",
     "button": "버튼",
     "footer_bottom_bar": "하단 바",
@@ -1135,6 +1150,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "curated_products_badges": "일치하는 태그가 있는 상품에 배지가 표시됩니다. 둘 다 일치하면 배지 1이 표시됩니다.",
     "press_mention_publication": "로고의 대체 텍스트로 사용되며, 로고가 없으면 텍스트로 표시됩니다",
     "category_card_image": "비워 두면 컬렉션 이미지를 사용합니다",
     "category_card_title": "비워 두면 컬렉션 제목을 사용합니다",

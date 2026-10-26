@@ -132,6 +132,18 @@
     "back_to_main_menu": "Voltar ao menu principal"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} cor",
+      "other": "{{ count }} cores"
+    },
+    "option_count": {
+      "one": "{{ count }} opção",
+      "other": "{{ count }} opções"
+    },
+    "inventory_only_count_left": {
+      "one": "Apenas {{ count }} restante",
+      "other": "Apenas {{ count }} restantes"
+    },
     "reviews": "avaliações",
     "language": "Idioma",
     "localization_region_and_language": "Região e idioma",

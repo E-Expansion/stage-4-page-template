@@ -130,6 +130,18 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "color_count": {
+      "one": "{{ count }} สี",
+      "other": "{{ count }} สี"
+    },
+    "option_count": {
+      "one": "{{ count }} ตัวเลือก",
+      "other": "{{ count }} ตัวเลือก"
+    },
+    "inventory_only_count_left": {
+      "one": "เหลือเพียง {{ count }} ชิ้น",
+      "other": "เหลือเพียง {{ count }} ชิ้น"
+    },
     "reviews": "รีวิว",
     "language": "ภาษา",
     "localization_region_and_language": "ภูมิภาคและภาษา",
