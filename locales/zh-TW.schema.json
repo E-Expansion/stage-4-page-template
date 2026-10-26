@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "頂部列",
+    "top_bar_item": "頂部列項目",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -171,6 +173,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "free_shipping_threshold": "免運費門檻",
+    "free_shipping_text": "訊息",
+    "free_shipping_remaining_text": "剩餘金額訊息",
+    "free_shipping_success_text": "達到門檻訊息",
+    "show_indicator": "顯示狀態圓點",
+    "indicator_color": "狀態圓點顏色",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -862,6 +870,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "free_shipping": "免運費",
     "advanced": "進階",
     "background_image": "背景圖片",
     "background_video": "背景影片",
@@ -1085,6 +1094,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "free_shipping_threshold": "以商店預設幣別計算。設為 0 可隱藏剩餘金額。",
+    "free_shipping_threshold_placeholder": "使用 [threshold] 插入門檻金額",
+    "free_shipping_amount_placeholder": "購物車中有商品時顯示。使用 [amount] 插入剩餘金額",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",
     "video_autoplay": "影片預設為靜音播放",

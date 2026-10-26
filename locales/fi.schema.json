@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Yläpalkki",
+    "top_bar_item": "Yläpalkin kohde",
     "404": "404",
     "colors": "Väripaletti",
     "custom_section": "Mukautettu osio",
@@ -171,6 +173,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "free_shipping_threshold": "Ilmaisen toimituksen kynnysarvo",
+    "free_shipping_text": "Viesti",
+    "free_shipping_remaining_text": "Jäljellä olevan summan viesti",
+    "free_shipping_success_text": "Kynnysarvo saavutettu -viesti",
+    "show_indicator": "Näytä tilapiste",
+    "indicator_color": "Tilapisteen väri",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",
@@ -862,6 +870,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "free_shipping": "Ilmainen toimitus",
     "advanced": "Lisäasetukset",
     "background_image": "Taustakuva",
     "background_video": "Taustavideo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "free_shipping_threshold": "Kauppasi oletusvaluutassa. Aseta arvoksi 0 piilottaaksesi jäljellä olevan summan.",
+    "free_shipping_threshold_placeholder": "Lisää kynnysarvo käyttämällä [threshold]",
+    "free_shipping_amount_placeholder": "Näytetään, kun ostoskorissa on tuotteita. Lisää jäljellä oleva summa käyttämällä [amount]",
     "carousel_layout_on_mobile": "Mobiilissa käytetään aina karusellia.",
     "video_alt_text": "Kuvaile video avustavan teknologian käyttäjille",
     "video_autoplay": "Videot mykistetään oletusarvoisesti",

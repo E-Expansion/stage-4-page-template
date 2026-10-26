@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Barra superior",
+    "top_bar_item": "Item da barra superior",
     "404": "404",
     "colors": "Paleta de cores",
     "custom_section": "Seção personalizada",
@@ -171,6 +173,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "free_shipping_threshold": "Limite para frete grátis",
+    "free_shipping_text": "Mensagem",
+    "free_shipping_remaining_text": "Mensagem do valor restante",
+    "free_shipping_success_text": "Mensagem de limite atingido",
+    "show_indicator": "Mostrar ponto de status",
+    "indicator_color": "Cor do ponto de status",
     "alignment": "Alinhamento",
     "autoplay": "Reprodução automática",
     "background": "Plano de fundo",
@@ -862,6 +870,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "free_shipping": "Frete grátis",
     "advanced": "Avançado",
     "background_image": "Imagem de fundo",
     "background_video": "Vídeo de fundo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "free_shipping_threshold": "Na moeda padrão da sua loja. Defina como 0 para ocultar o valor restante.",
+    "free_shipping_threshold_placeholder": "Use [threshold] para inserir o valor do limite",
+    "free_shipping_amount_placeholder": "Exibido quando o carrinho tem itens. Use [amount] para inserir o valor restante",
     "video_alt_text": "Descreva o vídeo para usuários de tecnologia assistiva",
     "video_autoplay": "Os vídeos ficarão sem som por padrão",
     "video_external": "Use um URL do YouTube ou do Vimeo",

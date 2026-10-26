@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "トップバー",
+    "top_bar_item": "トップバーの項目",
     "404": "404",
     "colors": "カラーパレット",
     "custom_section": "カスタムセクション",
@@ -171,6 +173,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "free_shipping_threshold": "送料無料のしきい値",
+    "free_shipping_text": "メッセージ",
+    "free_shipping_remaining_text": "残りの金額のメッセージ",
+    "free_shipping_success_text": "しきい値達成時のメッセージ",
+    "show_indicator": "ステータスドットを表示",
+    "indicator_color": "ステータスドットの色",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",
@@ -862,6 +870,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "free_shipping": "送料無料",
     "advanced": "高度な設定",
     "background_image": "背景画像",
     "background_video": "背景動画",
@@ -1085,6 +1094,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "free_shipping_threshold": "ストアのデフォルト通貨で指定します。0に設定すると残りの金額が非表示になります。",
+    "free_shipping_threshold_placeholder": "[threshold]を使用してしきい値を挿入します",
+    "free_shipping_amount_placeholder": "カートに商品がある場合に表示されます。[amount]を使用して残りの金額を挿入します",
     "video_alt_text": "支援技術のユーザーのために動画の説明を記述します",
     "video_autoplay": "動画はデフォルトでミュートになります",
     "video_external": "YouTubeまたはVimeoのURLを使用します",

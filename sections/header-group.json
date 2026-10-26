@@ -11,6 +11,31 @@
   "type": "header",
   "name": "t:names.header",
   "sections": {
+    "top_bar": {
+      "type": "top-bar",
+      "blocks": {
+        "item_returns": {
+          "type": "_top-bar-item",
+          "settings": {
+            "text": "30-day free returns"
+          }
+        },
+        "item_support": {
+          "type": "_top-bar-item",
+          "settings": {
+            "text": "Support: Mon-Fri 9-17"
+          }
+        }
+      },
+      "block_order": [
+        "item_returns",
+        "item_support"
+      ],
+      "settings": {
+        "free_shipping_threshold": 75,
+        "background_color": "{{ settings.color_palette.foreground }}"
+      }
+    },
     "header_announcements_9jGBFp": {
       "type": "header-announcements",
       "blocks": {
@@ -102,6 +127,7 @@
     }
   },
   "order": [
+    "top_bar",
     "header_announcements_9jGBFp",
     "header_section"
   ]

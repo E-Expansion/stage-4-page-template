@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Topbalk",
+    "top_bar_item": "Topbalkitem",
     "404": "404",
     "custom_section": "Aangepaste sectie",
     "icon": "Pictogram",
@@ -171,6 +173,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "free_shipping_threshold": "Drempel voor gratis verzending",
+    "free_shipping_text": "Bericht",
+    "free_shipping_remaining_text": "Bericht resterend bedrag",
+    "free_shipping_success_text": "Bericht drempel bereikt",
+    "show_indicator": "Statusstip tonen",
+    "indicator_color": "Kleur statusstip",
     "autoplay": "Automatisch afspelen",
     "background": "Achtergrond",
     "border_radius": "Hoekradius",
@@ -862,6 +870,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "free_shipping": "Gratis verzending",
     "background_video": "Achtergrondvideo",
     "describe_the_video_for": "Geef een beschrijving van de video voor klanten die schermlezers gebruiken. [Meer informatie](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Breedte wordt automatisch geoptimaliseerd voor mobiel.",
@@ -1085,6 +1094,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "free_shipping_threshold": "In de standaardvaluta van je winkel. Stel in op 0 om het resterende bedrag te verbergen.",
+    "free_shipping_threshold_placeholder": "Gebruik [threshold] om het drempelbedrag in te voegen",
+    "free_shipping_amount_placeholder": "Wordt getoond als de winkelwagen artikelen bevat. Gebruik [amount] om het resterende bedrag in te voegen",
     "carousel_layout_on_mobile": "Op mobiel wordt altijd een carrousel gebruikt",
     "video_alt_text": "Beschrijf de video voor gebruikers van ondersteunende technologie",
     "video_autoplay": "Video's worden standaard gedempt",

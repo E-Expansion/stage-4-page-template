@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Üst çubuk",
+    "top_bar_item": "Üst çubuk öğesi",
     "404": "404",
     "custom_section": "Özel bölüm",
     "icon": "Simge",
@@ -171,6 +173,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "free_shipping_threshold": "Ücretsiz kargo eşiği",
+    "free_shipping_text": "Mesaj",
+    "free_shipping_remaining_text": "Kalan tutar mesajı",
+    "free_shipping_success_text": "Eşiğe ulaşıldı mesajı",
+    "show_indicator": "Durum noktasını göster",
+    "indicator_color": "Durum noktası rengi",
     "autoplay": "Otomatik oynatma",
     "background": "Arka plan",
     "border_radius": "Köşe yarıçapı",
@@ -862,6 +870,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "free_shipping": "Ücretsiz kargo",
     "background_video": "Arka plan videosu",
     "describe_the_video_for": "Ekran okuyucu kullanan müşteriler için videoyu açıklayın. [Daha fazla bilgi edinin](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Genişlik, mobil cihazlar için otomatik olarak optimize edilir.",
@@ -1085,6 +1094,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "free_shipping_threshold": "Mağazanızın varsayılan para biriminde. Kalan tutarı gizlemek için 0 olarak ayarlayın.",
+    "free_shipping_threshold_placeholder": "Eşik tutarını eklemek için [threshold] kullanın",
+    "free_shipping_amount_placeholder": "Sepette ürün olduğunda gösterilir. Kalan tutarı eklemek için [amount] kullanın",
     "video_alt_text": "Yardımcı teknoloji kullanıcıları için videoyu açıklayın",
     "video_autoplay": "Videolar varsayılan olarak sessize alınır",
     "video_external": "Bir YouTube veya Vimeo URL'si kullanın",

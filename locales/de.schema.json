@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Obere Leiste",
+    "top_bar_item": "Element der oberen Leiste",
     "404": "404",
     "custom_section": "Benutzerdefinierter Abschnitt",
     "icon": "Symbol",
@@ -171,6 +173,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "free_shipping_threshold": "Schwellenwert für kostenlosen Versand",
+    "free_shipping_text": "Nachricht",
+    "free_shipping_remaining_text": "Nachricht zum Restbetrag",
+    "free_shipping_success_text": "Nachricht bei erreichtem Schwellenwert",
+    "show_indicator": "Statuspunkt anzeigen",
+    "indicator_color": "Farbe des Statuspunkts",
     "autoplay": "Autoplay",
     "background": "Hintergrund",
     "border_radius": "Eckenradius",
@@ -862,6 +870,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "free_shipping": "Kostenloser Versand",
     "background_video": "Hintergrundvideo",
     "describe_the_video_for": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Die Breite wird für Mobilgeräte automatisch optimiert.",
@@ -1085,6 +1094,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "free_shipping_threshold": "In der Standardwährung deines Shops. Auf 0 setzen, um den Restbetrag auszublenden.",
+    "free_shipping_threshold_placeholder": "Verwende [threshold], um den Schwellenwert einzufügen",
+    "free_shipping_amount_placeholder": "Wird angezeigt, wenn der Warenkorb Artikel enthält. Verwende [amount], um den Restbetrag einzufügen",
     "video_alt_text": "Beschreibe das Video für Benutzer von Hilfstechnologien",
     "video_autoplay": "Videos werden standardmäßig stummgeschaltet",
     "video_external": "Verwende eine YouTube- oder Vimeo-URL",

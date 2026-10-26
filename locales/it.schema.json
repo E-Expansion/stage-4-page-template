@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Barra superiore",
+    "top_bar_item": "Elemento della barra superiore",
     "404": "404",
     "colors": "Palette colori",
     "custom_section": "Sezione personalizzata",
@@ -171,6 +173,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "free_shipping_threshold": "Soglia di spedizione gratuita",
+    "free_shipping_text": "Messaggio",
+    "free_shipping_remaining_text": "Messaggio importo rimanente",
+    "free_shipping_success_text": "Messaggio soglia raggiunta",
+    "show_indicator": "Mostra punto di stato",
+    "indicator_color": "Colore del punto di stato",
     "alignment": "Allineamento",
     "autoplay": "Riproduzione automatica",
     "background": "Sfondo",
@@ -862,6 +870,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "free_shipping": "Spedizione gratuita",
     "advanced": "Avanzate",
     "background_image": "Immagine di sfondo",
     "background_video": "Video di sfondo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "free_shipping_threshold": "Nella valuta predefinita del tuo negozio. Imposta 0 per nascondere l'importo rimanente.",
+    "free_shipping_threshold_placeholder": "Usa [threshold] per inserire l'importo della soglia",
+    "free_shipping_amount_placeholder": "Mostrato quando il carrello contiene articoli. Usa [amount] per inserire l'importo rimanente",
     "carousel_layout_on_mobile": "Sui dispositivi mobili viene sempre utilizzato il carosello.",
     "video_alt_text": "Descrivi il video per gli utenti di tecnologie assistive",
     "video_autoplay": "I video saranno senza audio per impostazione predefinita",

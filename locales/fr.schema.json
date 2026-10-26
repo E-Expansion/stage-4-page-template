@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Barre supérieure",
+    "top_bar_item": "Élément de la barre supérieure",
     "404": "404",
     "custom_section": "Section personnalisée",
     "icon": "Icône",
@@ -171,6 +173,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "free_shipping_threshold": "Seuil de livraison gratuite",
+    "free_shipping_text": "Message",
+    "free_shipping_remaining_text": "Message du montant restant",
+    "free_shipping_success_text": "Message de seuil atteint",
+    "show_indicator": "Afficher le point de statut",
+    "indicator_color": "Couleur du point de statut",
     "autoplay": "Lecture automatique",
     "background": "Arrière-plan",
     "border_radius": "Rayon de la bordure",
@@ -862,6 +870,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "free_shipping": "Livraison gratuite",
     "background_video": "Vidéo de fond",
     "describe_the_video_for": "Décrivez la vidéo pour les clients utilisant des lecteurs d’écran. [En savoir plus](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "La largeur est automatiquement optimisée pour les appareils mobiles.",
@@ -1085,6 +1094,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "free_shipping_threshold": "Dans la devise par défaut de votre boutique. Définissez sur 0 pour masquer le montant restant.",
+    "free_shipping_threshold_placeholder": "Utilisez [threshold] pour insérer le montant du seuil",
+    "free_shipping_amount_placeholder": "Affiché lorsque le panier contient des articles. Utilisez [amount] pour insérer le montant restant",
     "carousel_layout_on_mobile": "Le carrousel est toujours utilisé sur mobile",
     "video_alt_text": "Décrivez la vidéo pour les utilisateurs de technologies d’assistance",
     "video_autoplay": "Les vidéos seront mises en sourdine par défaut",

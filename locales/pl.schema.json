@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Górny pasek",
+    "top_bar_item": "Element górnego paska",
     "404": "404",
     "custom_section": "Sekcja niestandardowa",
     "icon": "Ikona",
@@ -171,6 +173,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "free_shipping_threshold": "Próg darmowej dostawy",
+    "free_shipping_text": "Wiadomość",
+    "free_shipping_remaining_text": "Wiadomość o pozostałej kwocie",
+    "free_shipping_success_text": "Wiadomość po osiągnięciu progu",
+    "show_indicator": "Pokaż kropkę statusu",
+    "indicator_color": "Kolor kropki statusu",
     "autoplay": "Autoodtwarzanie",
     "background": "Tło",
     "border_radius": "Promień narożnika",
@@ -862,6 +870,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "free_shipping": "Darmowa dostawa",
     "background_video": "Wideo w tle",
     "describe_the_video_for": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "Szerokość jest automatycznie optymalizowana pod kątem urządzeń mobilnych.",
@@ -1085,6 +1094,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "free_shipping_threshold": "W domyślnej walucie sklepu. Ustaw 0, aby ukryć pozostałą kwotę.",
+    "free_shipping_threshold_placeholder": "Użyj [threshold], aby wstawić kwotę progu",
+    "free_shipping_amount_placeholder": "Wyświetlane, gdy koszyk zawiera produkty. Użyj [amount], aby wstawić pozostałą kwotę",
     "video_alt_text": "Opisz wideo dla użytkowników technologii wspomagających",
     "video_autoplay": "Domyślnie filmy będą wyciszone",
     "video_external": "Użyj adresu URL z YouTube lub Vimeo",

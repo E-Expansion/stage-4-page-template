@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "상단 바",
+    "top_bar_item": "상단 바 항목",
     "404": "404",
     "custom_section": "사용자 지정 섹션",
     "icon": "아이콘",
@@ -171,6 +173,12 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "free_shipping_threshold": "무료 배송 기준 금액",
+    "free_shipping_text": "메시지",
+    "free_shipping_remaining_text": "남은 금액 메시지",
+    "free_shipping_success_text": "기준 금액 달성 메시지",
+    "show_indicator": "상태 점 표시",
+    "indicator_color": "상태 점 색상",
     "autoplay": "자동 재생",
     "background": "배경",
     "border_radius": "모서리 반경",
@@ -862,6 +870,7 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "free_shipping": "무료 배송",
     "background_video": "배경 비디오",
     "describe_the_video_for": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "너비는 모바일에 맞게 자동으로 최적화됩니다.",
@@ -1085,6 +1094,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "free_shipping_threshold": "스토어 기본 통화 기준입니다. 남은 금액을 숨기려면 0으로 설정하세요.",
+    "free_shipping_threshold_placeholder": "[threshold]를 사용하여 기준 금액을 삽입하세요",
+    "free_shipping_amount_placeholder": "장바구니에 상품이 있을 때 표시됩니다. [amount]를 사용하여 남은 금액을 삽입하세요",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",
     "video_alt_text": "보조 기술 사용자를 위해 비디오를 설명하세요",
     "video_autoplay": "비디오는 기본적으로 음소거됩니다",

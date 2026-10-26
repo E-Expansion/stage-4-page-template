@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Toppfält",
+    "top_bar_item": "Objekt i toppfält",
     "404": "404",
     "colors": "Färgpalett",
     "custom_section": "Anpassad sektion",
@@ -171,6 +173,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "free_shipping_threshold": "Gräns för fri frakt",
+    "free_shipping_text": "Meddelande",
+    "free_shipping_remaining_text": "Meddelande om återstående belopp",
+    "free_shipping_success_text": "Meddelande när gränsen nåtts",
+    "show_indicator": "Visa statusprick",
+    "indicator_color": "Färg på statusprick",
     "alignment": "Justering",
     "autoplay": "Autouppspelning",
     "background": "Bakgrund",
@@ -862,6 +870,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "free_shipping": "Fri frakt",
     "advanced": "Avancerat",
     "background_image": "Bakgrundsbild",
     "background_video": "Bakgrundsvideo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "free_shipping_threshold": "I butikens standardvaluta. Ange 0 för att dölja återstående belopp.",
+    "free_shipping_threshold_placeholder": "Använd [threshold] för att infoga gränsbeloppet",
+    "free_shipping_amount_placeholder": "Visas när varukorgen innehåller artiklar. Använd [amount] för att infoga återstående belopp",
     "video_alt_text": "Beskriv videon för användare av hjälpmedelsteknik",
     "video_autoplay": "Videor kommer att vara tystade som standard",
     "video_external": "Använd en URL från YouTube eller Vimeo",

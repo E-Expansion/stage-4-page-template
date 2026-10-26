@@ -1,0 +1,378 @@
+{% comment %}
+  Section contract.
+  Slim bar above the header with a free shipping message that tracks the cart total,
+  plus merchant-managed info items (returns, support hours) on the inline end.
+  Info items are hidden on mobile; the shipping message is centered there.
+  @example
+  <!-- Add "Top bar" to the header group and set the free shipping threshold -->
+{% endcomment %}
+
+{% liquid
+  assign threshold_cents = section.settings.free_shipping_threshold | times: 100
+  assign remaining_cents = threshold_cents | minus: cart.total_price
+
+  assign show_remaining = false
+  assign qualifies = false
+  if threshold_cents > 0 and cart.item_count > 0
+    if remaining_cents > 0
+      assign show_remaining = true
+    else
+      assign qualifies = true
+    endif
+  endif
+
+  assign threshold_money = threshold_cents | money_without_trailing_zeros
+  assign remaining_money = remaining_cents | money_without_trailing_zeros
+
+  assign shipping_text = section.settings.free_shipping_text | escape | replace: '[threshold]', threshold_money
+  assign remaining_text = section.settings.free_shipping_remaining_text | escape | replace: '[amount]', remaining_money
+  assign success_text = section.settings.free_shipping_success_text | escape | replace: '[threshold]', threshold_money
+
+  assign font_weight = section.settings.font | replace: 'family', 'weight'
+  assign font_style = section.settings.font | replace: 'family', 'style'
+%}
+
+<script
+  src="{{ 'top-bar.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  text_color: section.settings.text_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<aside
+  class="top-bar spacing-style section section--{{ section.settings.section_width }} color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --top-bar-font-family: {{ section.settings.font }};
+    --top-bar-font-weight: {{ font_weight }};
+    --top-bar-font-style: {{ font_style }};
+    --top-bar-font-size: {{ section.settings.font_size }};
+    --top-bar-font-size-mobile: {{ section.settings.font_size_mobile }};
+    {% if section.settings.indicator_color != blank %}--top-bar-indicator-color: {{ section.settings.indicator_color }};{% endif %}
+  "
+>
+  <top-bar-component
+    class="top-bar__inner"
+    data-section-id="{{ section.id }}"
+  >
+    {% if shipping_text != blank %}
+      <p
+        class="top-bar__shipping"
+        role="status"
+      >
+        {% if section.settings.show_indicator %}
+          <span
+            class="top-bar__indicator"
+            aria-hidden="true"
+          ></span>
+        {% endif %}
+        <span class="top-bar__shipping-text">
+          {%- if qualifies and success_text != blank -%}
+            {{ success_text }}
+          {%- else -%}
+            {{ shipping_text }}
+            {%- if show_remaining and remaining_text != blank -%}
+              <span
+                class="top-bar__separator"
+                aria-hidden="true"
+              ></span>
+              {{- remaining_text -}}
+            {%- endif -%}
+          {%- endif -%}
+        </span>
+      </p>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <ul class="top-bar__items list-unstyled">
+        {% content_for 'blocks' %}
+      </ul>
+    {% endif %}
+  </top-bar-component>
+</aside>
+
+{% stylesheet %}
+  .top-bar {
+    font-family: var(--top-bar-font-family);
+    font-weight: var(--top-bar-font-weight);
+    font-style: var(--top-bar-font-style);
+    font-size: var(--top-bar-font-size);
+    line-height: var(--line-height--body-tight);
+    color: var(--color-foreground);
+
+    @media screen and (max-width: 749px) {
+      font-size: var(--top-bar-font-size-mobile);
+    }
+  }
+
+  .top-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+    min-width: 0;
+
+    @media screen and (max-width: 749px) {
+      justify-content: center;
+    }
+  }
+
+  .top-bar__shipping {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-width: 0;
+    margin: 0;
+  }
+
+  .top-bar__shipping-text {
+    overflow-wrap: anywhere;
+  }
+
+  .top-bar__indicator {
+    flex-shrink: 0;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: var(--style-border-radius-50);
+    background-color: var(--top-bar-indicator-color, var(--color-instock));
+  }
+
+  .top-bar__separator::before {
+    content: ' | ';
+    white-space: pre;
+
+    @media screen and (max-width: 749px) {
+      content: ' · ';
+    }
+  }
+
+  .top-bar__items {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2xl);
+    flex-shrink: 0;
+    margin: 0;
+
+    @media screen and (max-width: 749px) {
+      display: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.top_bar",
+  "blocks": [
+    {
+      "type": "_top-bar-item"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.free_shipping"
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "t:settings.free_shipping_threshold",
+      "info": "t:info.free_shipping_threshold",
+      "default": 75
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "t:settings.free_shipping_text",
+      "info": "t:info.free_shipping_threshold_placeholder",
+      "default": "Free shipping on orders over [threshold]"
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_remaining_text",
+      "label": "t:settings.free_shipping_remaining_text",
+      "info": "t:info.free_shipping_amount_placeholder",
+      "default": "you are [amount] away"
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_success_text",
+      "label": "t:settings.free_shipping_success_text",
+      "default": "You've unlocked free shipping"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_indicator",
+      "label": "t:settings.show_indicator",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "indicator_color",
+      "label": "t:settings.indicator_color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ section.settings.show_indicator }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "select",
+      "id": "font",
+      "label": "t:settings.font",
+      "options": [
+        {
+          "value": "var(--font-body--family)",
+          "label": "t:options.body"
+        },
+        {
+          "value": "var(--font-subheading--family)",
+          "label": "t:options.subheading"
+        },
+        {
+          "value": "var(--font-heading--family)",
+          "label": "t:options.heading"
+        },
+        {
+          "value": "var(--font-accent--family)",
+          "label": "t:options.accent"
+        }
+      ],
+      "default": "var(--font-body--family)"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "t:settings.size",
+      "options": [
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        }
+      ],
+      "default": "0.875rem"
+    },
+    {
+      "type": "select",
+      "id": "font_size_mobile",
+      "label": "t:settings.size_mobile",
+      "options": [
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        }
+      ],
+      "default": "0.75rem"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.section_width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.foreground }}"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.top_bar",
+      "blocks": {
+        "item_returns": {
+          "type": "_top-bar-item",
+          "settings": {
+            "text": "30-day free returns"
+          }
+        },
+        "item_support": {
+          "type": "_top-bar-item",
+          "settings": {
+            "text": "Support: Mon-Fri 9-17"
+          }
+        }
+      },
+      "block_order": ["item_returns", "item_support"]
+    }
+  ]
+}
+{% endschema %}

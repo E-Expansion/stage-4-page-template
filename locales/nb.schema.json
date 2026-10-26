@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Topplinje",
+    "top_bar_item": "Element i topplinje",
     "404": "404",
     "colors": "Fargepalett",
     "custom_section": "Egendefinert seksjon",
@@ -171,6 +173,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "free_shipping_threshold": "Grense for gratis frakt",
+    "free_shipping_text": "Melding",
+    "free_shipping_remaining_text": "Melding om gjenstående beløp",
+    "free_shipping_success_text": "Melding når grensen er nådd",
+    "show_indicator": "Vis statusprikk",
+    "indicator_color": "Farge på statusprikk",
     "alignment": "Justering",
     "autoplay": "Autospill",
     "background": "Bakgrunn",
@@ -862,6 +870,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "free_shipping": "Gratis frakt",
     "advanced": "Avansert",
     "background_image": "Bakgrunnsbilde",
     "background_video": "Bakgrunnsvideo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "free_shipping_threshold": "I butikkens standardvaluta. Angi 0 for å skjule gjenstående beløp.",
+    "free_shipping_threshold_placeholder": "Bruk [threshold] for å sette inn grensebeløpet",
+    "free_shipping_amount_placeholder": "Vises når handlekurven har varer. Bruk [amount] for å sette inn gjenstående beløp",
     "carousel_layout_on_mobile": "Karusell brukes alltid på mobil",
     "video_alt_text": "Beskriv videoen for brukere av hjelpeteknologi",
     "video_autoplay": "Videoer dempes som standard",

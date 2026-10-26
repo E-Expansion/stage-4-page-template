@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "free_shipping": "Free shipping",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
     "appearance": "Appearance",
@@ -223,6 +224,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "free_shipping_threshold": "In your store's default currency. Set to 0 to hide the remaining amount.",
+    "free_shipping_threshold_placeholder": "Use [threshold] to insert the threshold amount",
+    "free_shipping_amount_placeholder": "Shown when the cart has items. Use [amount] to insert the remaining amount",
     "actions_display_style": "Icons are always used on mobile",
     "applies_on_image_only": "Applies to images only",
     "aspect_ratio_adjusted": "Adjusted in some layouts",
@@ -252,6 +256,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "top_bar": "Top bar",
+    "top_bar_item": "Top bar item",
     "column": "Column",
     "product_title": "Product title",
     "custom_liquid": "Custom Liquid",
@@ -734,6 +740,12 @@
     "below_media": "Below media"
   },
   "settings": {
+    "free_shipping_threshold": "Free shipping threshold",
+    "free_shipping_text": "Message",
+    "free_shipping_remaining_text": "Remaining amount message",
+    "free_shipping_success_text": "Free shipping reached message",
+    "show_indicator": "Show status dot",
+    "indicator_color": "Status dot color",
     "accordion": "Accordion",
     "account": "Account",
     "actions_display_style": "Menu style",

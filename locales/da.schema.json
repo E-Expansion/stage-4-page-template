@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Topbjælke",
+    "top_bar_item": "Element i topbjælke",
     "404": "404",
     "colors": "Farvepalet",
     "custom_section": "Brugerdefineret sektion",
@@ -171,6 +173,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "free_shipping_threshold": "Grænse for gratis fragt",
+    "free_shipping_text": "Besked",
+    "free_shipping_remaining_text": "Besked om resterende beløb",
+    "free_shipping_success_text": "Besked når grænsen er nået",
+    "show_indicator": "Vis statusprik",
+    "indicator_color": "Farve på statusprik",
     "alignment": "Justering",
     "autoplay": "Automatisk afspilning",
     "background": "Baggrund",
@@ -862,6 +870,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "free_shipping": "Gratis fragt",
     "advanced": "Avanceret",
     "background_image": "Baggrundsbillede",
     "background_video": "Baggrundsvideo",
@@ -1085,6 +1094,9 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "free_shipping_threshold": "I din butiks standardvaluta. Angiv 0 for at skjule det resterende beløb.",
+    "free_shipping_threshold_placeholder": "Brug [threshold] til at indsætte grænsebeløbet",
+    "free_shipping_amount_placeholder": "Vises, når kurven indeholder varer. Brug [amount] til at indsætte det resterende beløb",
     "carousel_layout_on_mobile": "Karrusellen bruges altid på mobil",
     "video_alt_text": "Beskriv videoen for brugere af hjælpeteknologi",
     "video_autoplay": "Videoer vil som standard være uden lyd",

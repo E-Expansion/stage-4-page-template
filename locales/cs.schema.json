@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "top_bar": "Horní lišta",
+    "top_bar_item": "Položka horní lišty",
     "404": "404",
     "colors": "Paleta barev",
     "custom_section": "Vlastní sekce",
@@ -171,6 +173,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "free_shipping_threshold": "Limit pro dopravu zdarma",
+    "free_shipping_text": "Zpráva",
+    "free_shipping_remaining_text": "Zpráva o zbývající částce",
+    "free_shipping_success_text": "Zpráva po dosažení limitu",
+    "show_indicator": "Zobrazit stavovou tečku",
+    "indicator_color": "Barva stavové tečky",
     "alignment": "Zarovnání",
     "autoplay": "Automatické přehrávání",
     "background": "Pozadí",
@@ -862,6 +870,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "free_shipping": "Doprava zdarma",
     "advanced": "Pokročilé",
     "background_image": "Obrázek na pozadí",
     "background_video": "Video na pozadí",
@@ -1085,6 +1094,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "free_shipping_threshold": "Ve výchozí měně obchodu. Nastavením na 0 skryjete zbývající částku.",
+    "free_shipping_threshold_placeholder": "Pomocí [threshold] vložíte částku limitu",
+    "free_shipping_amount_placeholder": "Zobrazí se, když košík obsahuje položky. Pomocí [amount] vložíte zbývající částku",
     "video_alt_text": "Popište video pro uživatele asistivních technologií",
     "video_autoplay": "Videa budou ve výchozím nastavení ztlumená",
     "video_external": "Použijte URL z YouTube nebo Vimeo",
