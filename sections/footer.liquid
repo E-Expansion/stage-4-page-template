@@ -35,7 +35,18 @@
           class="footer__logo"
         >
           {%- if settings.logo_inverse != blank or settings.logo != blank -%}
-            {%- assign footer_logo = settings.logo_inverse | default: settings.logo -%}
+            {%- liquid
+              assign footer_logo = settings.logo_inverse | default: settings.logo
+              assign logo_class = 'footer__logo-image'
+
+              # Without an inverse logo, the regular (dark) logo is shown in white on a dark footer
+              if settings.logo_inverse == blank
+                assign footer_brightness = section.settings.background_color | color_brightness
+                if footer_brightness < 128
+                  assign logo_class = 'footer__logo-image footer__logo-image--light'
+                endif
+              endif
+            -%}
             {{
               footer_logo
               | image_url: width: 400
@@ -43,7 +54,7 @@
                 height: settings.logo_height_mobile,
                 alt: shop.name,
                 loading: 'lazy',
-                class: 'footer__logo-image'
+                class: logo_class
             }}
           {%- else -%}
             {{ shop.name | escape }}
@@ -170,6 +181,10 @@
   .footer__logo-image {
     width: auto;
     height: var(--font-size--2xl);
+  }
+
+  .footer__logo-image--light {
+    filter: brightness(0) invert(1);
   }
 
   .footer__description {

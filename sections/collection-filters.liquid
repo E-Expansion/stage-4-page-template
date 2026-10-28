@@ -564,6 +564,11 @@
     }
   }
 
+  /* The backdrop only exists while the mobile panel is open, so it never takes a grid cell */
+  .collection-filters__backdrop {
+    display: none;
+  }
+
   @media screen and (max-width: 749px) {
     [data-filters-open] .collection-filters {
       transform: none;
@@ -572,6 +577,7 @@
     }
 
     [data-filters-open] .collection-filters__backdrop {
+      display: block;
       position: fixed;
       inset: 0;
       z-index: calc(var(--layer-menu-drawer) - 1);
