@@ -92,8 +92,6 @@
     <collection-filters-component
       class="collection-products__layout{% if section.settings.enable_filtering == false %} collection-products__layout--no-filters{% endif %}"
       data-section-id="{{ section.id }}"
-      data-money-format="{{ shop.money_format | strip_html | escape }}"
-      data-currency="{{ cart.currency.iso_code }}"
     >
       {% if section.settings.enable_filtering %}
         <aside
@@ -189,53 +187,103 @@
                     assign current_min = filter.min_value.value | default: 0 | divided_by: 100
                     assign current_max = filter.max_value.value | default: filter.range_max | divided_by: 100.0 | ceil
                     if range_max > 0
-                      assign start_percent = current_min | times: 100 | divided_by: range_max
-                      assign end_percent = current_max | times: 100 | divided_by: range_max
+                      assign start_fraction = current_min | times: 1.0 | divided_by: range_max
+                      assign end_fraction = current_max | times: 1.0 | divided_by: range_max
                     else
-                      assign start_percent = 0
-                      assign end_percent = 100
+                      assign start_fraction = 0
+                      assign end_fraction = 1
                     endif
-                    assign min_label = current_min | times: 100 | money_without_trailing_zeros | strip_html
-                    assign max_label = current_max | times: 100 | money_without_trailing_zeros | strip_html
+                    assign min_id = 'PriceMin-' | append: section.id
+                    assign max_id = 'PriceMax-' | append: section.id
                   %}
                   <div
                     class="price-range"
-                    ref="priceRange"
-                    style="--price-range-start: {{ start_percent }}%; --price-range-end: {{ end_percent }}%;"
+                    style="--price-range-start: {{ start_fraction }}; --price-range-end: {{ end_fraction }};"
                   >
-                    <div class="price-range__track">
+                    {% comment %}
+                      The number fields carry the filter values, so typing works and the
+                      filter works without JavaScript. The sliders only drive them.
+                    {% endcomment %}
+                    <div
+                      class="price-range__track"
+                      aria-hidden="true"
+                    >
+                      <span class="price-range__fill"></span>
+                      <span class="price-range__thumb price-range__thumb--min"></span>
+                      <span class="price-range__thumb price-range__thumb--max"></span>
                       <input
                         type="range"
-                        class="price-range__input"
-                        name="{{ filter.min_value.param_name }}"
+                        class="price-range__slider"
                         min="0"
                         max="{{ range_max }}"
                         step="1"
                         value="{{ current_min }}"
-                        aria-label="{{ 'accessibility.price_filter_low' | t }}"
+                        tabindex="-1"
                         data-bound="min"
-                        {% if start_percent > 50 %}
+                        {% if start_fraction > 0.5 %}
                           data-raised
                         {% endif %}
                         on:input="/updatePriceRange"
                       >
                       <input
                         type="range"
-                        class="price-range__input"
-                        name="{{ filter.max_value.param_name }}"
+                        class="price-range__slider"
                         min="0"
                         max="{{ range_max }}"
                         step="1"
                         value="{{ current_max }}"
-                        aria-label="{{ 'accessibility.price_filter_high' | t }}"
+                        tabindex="-1"
                         data-bound="max"
                         on:input="/updatePriceRange"
                       >
                     </div>
-                    <p class="price-range__labels">
-                      <span data-price-label="min">{{ min_label }}</span>
-                      <span data-price-label="max">{{ max_label }}</span>
-                    </p>
+
+                    <div class="price-range__fields">
+                      <label
+                        class="price-range__field"
+                        for="{{ min_id }}"
+                      >
+                        <span class="visually-hidden">{{ 'accessibility.price_filter_low' | t }}</span>
+                        <span aria-hidden="true">{{ cart.currency.symbol }}</span>
+                        <input
+                          id="{{ min_id }}"
+                          type="number"
+                          class="price-range__number"
+                          name="{{ filter.min_value.param_name }}"
+                          min="0"
+                          max="{{ range_max }}"
+                          step="1"
+                          inputmode="numeric"
+                          value="{{ current_min }}"
+                          data-bound="min"
+                          on:input="/updatePriceRange"
+                        >
+                      </label>
+                      <span
+                        class="price-range__separator"
+                        aria-hidden="true"
+                      >–</span>
+                      <label
+                        class="price-range__field"
+                        for="{{ max_id }}"
+                      >
+                        <span class="visually-hidden">{{ 'accessibility.price_filter_high' | t }}</span>
+                        <span aria-hidden="true">{{ cart.currency.symbol }}</span>
+                        <input
+                          id="{{ max_id }}"
+                          type="number"
+                          class="price-range__number"
+                          name="{{ filter.max_value.param_name }}"
+                          min="0"
+                          max="{{ range_max }}"
+                          step="1"
+                          inputmode="numeric"
+                          value="{{ current_max }}"
+                          data-bound="max"
+                          on:input="/updatePriceRange"
+                        >
+                      </label>
+                    </div>
                   </div>
                 {% else %}
                   <ul class="collection-filters__options list-unstyled">
@@ -723,117 +771,143 @@
     }
   }
 
-  /* Price slider: two range inputs share one track */
+  /* Price slider: the line, fill and thumbs are drawn here; two transparent range
+     inputs on top handle dragging. Positions come from --price-range-start/-end (0-1). */
   .price-range {
+    --price-range-thumb: 0.875rem;
+
     clear: both;
     display: flex;
     flex-direction: column;
-    gap: var(--gap-xs);
+    gap: var(--gap-sm);
   }
 
   .price-range__track {
     position: relative;
-    height: 1rem;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      inset-block-start: 50%;
-      height: 2px;
-      transform: translateY(-50%);
-    }
+    height: var(--price-range-thumb);
+    margin-inline: 0;
 
     &::before {
-      inset-inline: 0;
+      content: '';
+      position: absolute;
+      inset-inline: calc(var(--price-range-thumb) / 2);
+      inset-block-start: 50%;
+      height: 2px;
       background-color: var(--color-border);
-    }
-
-    &::after {
-      inset-inline-start: var(--price-range-start);
-      inset-inline-end: calc(100% - var(--price-range-end));
-      background-color: var(--collection-accent, var(--color-foreground));
+      transform: translateY(-50%);
     }
   }
 
-  /* Each browser needs its own track and thumb rules; a selector list mixing
-     -webkit- and -moz- pseudo-elements is dropped entirely */
-  .price-range__input {
+  .price-range__fill {
     position: absolute;
-    inset-inline: 0;
     inset-block-start: 50%;
+    inset-inline-start: calc(
+      var(--price-range-thumb) / 2 + (100% - var(--price-range-thumb)) * var(--price-range-start)
+    );
+    width: calc((100% - var(--price-range-thumb)) * (var(--price-range-end) - var(--price-range-start)));
+    height: 2px;
+    background-color: var(--collection-accent, var(--color-foreground));
+    transform: translateY(-50%);
+  }
+
+  .price-range__thumb {
+    position: absolute;
+    inset-block-start: 0;
+    width: var(--price-range-thumb);
+    height: var(--price-range-thumb);
+    background-color: var(--color-background);
+    border: 1px solid var(--collection-accent, var(--color-foreground));
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .price-range__thumb--min {
+    inset-inline-start: calc((100% - var(--price-range-thumb)) * var(--price-range-start));
+  }
+
+  .price-range__thumb--max {
+    inset-inline-start: calc((100% - var(--price-range-thumb)) * var(--price-range-end));
+  }
+
+  /* Invisible sliders: only their thumbs catch the pointer */
+  .price-range__slider {
+    position: absolute;
+    inset: 0;
     z-index: 1;
     width: 100%;
-    height: 0.75rem;
+    height: 100%;
     margin: 0;
-    background: transparent;
-    transform: translateY(-50%);
+    opacity: 0;
     pointer-events: none;
     appearance: none;
 
-    &:focus-visible {
-      outline: none;
-    }
-
-    &::-webkit-slider-runnable-track {
-      height: 0.75rem;
-      background: transparent;
-      border: 0;
-    }
-
-    &::-moz-range-track {
-      height: 0.75rem;
-      background: transparent;
-      border: 0;
-    }
-
-    &::-moz-range-progress {
-      background: transparent;
-    }
-
     &::-webkit-slider-thumb {
-      width: 0.75rem;
-      height: 0.75rem;
-      background-color: var(--color-background);
-      border: 1px solid var(--collection-accent, var(--color-foreground));
-      border-radius: 50%;
+      width: var(--price-range-thumb);
+      height: var(--price-range-thumb);
       cursor: pointer;
       pointer-events: auto;
       appearance: none;
     }
 
     &::-moz-range-thumb {
-      box-sizing: border-box;
-      width: 0.75rem;
-      height: 0.75rem;
-      background-color: var(--color-background);
-      border: 1px solid var(--collection-accent, var(--color-foreground));
-      border-radius: 50%;
+      width: var(--price-range-thumb);
+      height: var(--price-range-thumb);
+      border: 0;
       cursor: pointer;
       pointer-events: auto;
     }
-
-    &:focus-visible::-webkit-slider-thumb {
-      outline: var(--focus-outline-width) solid var(--collection-accent, var(--color-foreground));
-      outline-offset: var(--focus-outline-offset);
-    }
-
-    &:focus-visible::-moz-range-thumb {
-      outline: var(--focus-outline-width) solid var(--collection-accent, var(--color-foreground));
-      outline-offset: var(--focus-outline-offset);
-    }
   }
 
-  /* When the low thumb sits in the upper half it goes on top, so it can still be dragged back */
-  .price-range__input[data-raised] {
+  .price-range__slider[data-raised] {
     z-index: 2;
   }
 
-  .price-range__labels {
+  .price-range__fields {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
+    align-items: center;
+    gap: var(--gap-xs);
+  }
+
+  .price-range__field {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    gap: var(--padding-3xs);
+    min-width: 0;
+    padding: var(--padding-3xs) var(--padding-xs);
     font-size: var(--font-size--2xs);
+    color: var(--color-foreground-muted);
+    background-color: var(--color-input-background);
+    border: var(--style-border-width-inputs) solid var(--color-input-border);
+    border-radius: var(--style-border-radius-inputs);
+    cursor: text;
+
+    &:focus-within {
+      border-color: var(--collection-accent, var(--color-foreground));
+    }
+  }
+
+  .price-range__number {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--xs);
+    color: var(--color-input-text);
+    background: none;
+    border: 0;
+    outline: none;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+
+  .price-range__separator {
+    font-size: var(--font-size--xs);
     color: var(--color-foreground-muted);
   }
 

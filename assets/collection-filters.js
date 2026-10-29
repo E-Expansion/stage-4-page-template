@@ -1,5 +1,4 @@
 import { Component } from '@theme/component';
-import { formatMoney } from '@theme/money-formatting';
 import { lockScroll, mediaQueryLarge, unlockScroll } from '@theme/utilities';
 
 const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled])';
@@ -56,16 +55,21 @@ class CollectionFiltersComponent extends Component {
   }
 
   /**
-   * Leaves the price filter out of the URL while the slider covers the full range.
+   * Leaves the price filter out of the URL while it covers the full range, and swaps the
+   * values when the low price was typed above the high one.
    */
   handleSubmit() {
-    const inputs = this.refs.form?.querySelectorAll('.price-range__input') ?? [];
+    for (const range of this.refs.form?.querySelectorAll('.price-range') ?? []) {
+      const minField = range.querySelector('.price-range__number[data-bound="min"]');
+      const maxField = range.querySelector('.price-range__number[data-bound="max"]');
+      if (!(minField instanceof HTMLInputElement) || !(maxField instanceof HTMLInputElement)) continue;
 
-    for (const input of inputs) {
-      if (!(input instanceof HTMLInputElement)) continue;
+      if (minField.value !== '' && maxField.value !== '' && Number(minField.value) > Number(maxField.value)) {
+        [minField.value, maxField.value] = [maxField.value, minField.value];
+      }
 
-      const atBound = input.dataset.bound === 'min' ? input.value === input.min : input.value === input.max;
-      if (atBound) input.disabled = true;
+      if (minField.value === '' || Number(minField.value) <= Number(minField.min)) minField.disabled = true;
+      if (maxField.value === '' || Number(maxField.value) >= Number(maxField.max)) maxField.disabled = true;
     }
   }
 
@@ -91,7 +95,7 @@ class CollectionFiltersComponent extends Component {
   }
 
   /**
-   * Keeps the two price thumbs from crossing and updates the track fill and labels.
+   * Keeps the price sliders and number fields in step and moves the drawn thumbs and fill.
    *
    * @param {Event} event
    */
@@ -102,26 +106,39 @@ class CollectionFiltersComponent extends Component {
     const range = input.closest('.price-range');
     if (!(range instanceof HTMLElement)) return;
 
-    const minInput = range.querySelector('[data-bound="min"]');
-    const maxInput = range.querySelector('[data-bound="max"]');
-    if (!(minInput instanceof HTMLInputElement) || !(maxInput instanceof HTMLInputElement)) return;
-
-    if (Number(minInput.value) > Number(maxInput.value)) {
-      if (input === minInput) minInput.value = maxInput.value;
-      else maxInput.value = minInput.value;
+    const minSlider = range.querySelector('.price-range__slider[data-bound="min"]');
+    const maxSlider = range.querySelector('.price-range__slider[data-bound="max"]');
+    const minField = range.querySelector('.price-range__number[data-bound="min"]');
+    const maxField = range.querySelector('.price-range__number[data-bound="max"]');
+    if (
+      !(minSlider instanceof HTMLInputElement) ||
+      !(maxSlider instanceof HTMLInputElement) ||
+      !(minField instanceof HTMLInputElement) ||
+      !(maxField instanceof HTMLInputElement)
+    ) {
+      return;
     }
 
-    const max = Number(maxInput.max) || 1;
-    minInput.toggleAttribute('data-raised', Number(minInput.value) > max / 2);
-    range.style.setProperty('--price-range-start', `${(Number(minInput.value) / max) * 100}%`);
-    range.style.setProperty('--price-range-end', `${(Number(maxInput.value) / max) * 100}%`);
+    if (input.type === 'range') {
+      // Thumbs may not cross; the moved one stops at the other
+      if (Number(minSlider.value) > Number(maxSlider.value)) {
+        if (input === minSlider) minSlider.value = maxSlider.value;
+        else maxSlider.value = minSlider.value;
+      }
+      minField.value = minSlider.value;
+      maxField.value = maxSlider.value;
+    } else {
+      // Typed values move the sliders, which clamp them to the range
+      if (minField.value !== '') minSlider.value = minField.value;
+      if (maxField.value !== '') maxSlider.value = maxField.value;
+    }
 
-    const format = this.dataset.moneyFormat ?? '';
-    const currency = this.dataset.currency ?? '';
-    const minLabel = range.querySelector('[data-price-label="min"]');
-    const maxLabel = range.querySelector('[data-price-label="max"]');
-    if (minLabel) minLabel.textContent = this.#formatWhole(minInput.value, format, currency);
-    if (maxLabel) maxLabel.textContent = this.#formatWhole(maxInput.value, format, currency);
+    const max = Number(maxSlider.max) || 1;
+    const start = Math.min(Number(minSlider.value), Number(maxSlider.value)) / max;
+    const end = Math.max(Number(minSlider.value), Number(maxSlider.value)) / max;
+    range.style.setProperty('--price-range-start', String(start));
+    range.style.setProperty('--price-range-end', String(end));
+    minSlider.toggleAttribute('data-raised', start > 0.5);
   }
 
   /**
@@ -217,16 +234,6 @@ class CollectionFiltersComponent extends Component {
     } else {
       loadMore.remove();
     }
-  }
-
-  /**
-   * @param {string} value - Whole currency units
-   * @param {string} format - The shop's money format
-   * @param {string} currency - ISO currency code
-   */
-  #formatWhole(value, format, currency) {
-    const formatted = formatMoney(Number(value) * 100, format, currency);
-    return formatted.replace(/[.,]00(?=\D*$)/, '');
   }
 
   /** @param {KeyboardEvent} event */
