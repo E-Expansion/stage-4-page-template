@@ -112,6 +112,7 @@ class CollectionFiltersComponent extends Component {
     }
 
     const max = Number(maxInput.max) || 1;
+    minInput.toggleAttribute('data-raised', Number(minInput.value) > max / 2);
     range.style.setProperty('--price-range-start', `${(Number(minInput.value) / max) * 100}%`);
     range.style.setProperty('--price-range-end', `${(Number(maxInput.value) / max) * 100}%`);
 

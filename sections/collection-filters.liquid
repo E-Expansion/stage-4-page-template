@@ -214,6 +214,9 @@
                         value="{{ current_min }}"
                         aria-label="{{ 'accessibility.price_filter_low' | t }}"
                         data-bound="min"
+                        {% if start_percent > 50 %}
+                          data-raised
+                        {% endif %}
                         on:input="/updatePriceRange"
                       >
                       <input
@@ -753,41 +756,77 @@
     }
   }
 
+  /* Each browser needs its own track and thumb rules; a selector list mixing
+     -webkit- and -moz- pseudo-elements is dropped entirely */
   .price-range__input {
     position: absolute;
-    inset: 0;
+    inset-inline: 0;
+    inset-block-start: 50%;
     z-index: 1;
     width: 100%;
+    height: 0.75rem;
     margin: 0;
-    background: none;
+    background: transparent;
+    transform: translateY(-50%);
     pointer-events: none;
     appearance: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      height: 0.75rem;
+      background: transparent;
+      border: 0;
+    }
+
+    &::-moz-range-track {
+      height: 0.75rem;
+      background: transparent;
+      border: 0;
+    }
+
+    &::-moz-range-progress {
+      background: transparent;
+    }
 
     &::-webkit-slider-thumb {
       width: 0.75rem;
       height: 0.75rem;
+      background-color: var(--color-background);
       border: 1px solid var(--collection-accent, var(--color-foreground));
       border-radius: 50%;
-      background-color: var(--color-background);
       cursor: pointer;
       pointer-events: auto;
       appearance: none;
     }
 
     &::-moz-range-thumb {
+      box-sizing: border-box;
       width: 0.75rem;
       height: 0.75rem;
+      background-color: var(--color-background);
       border: 1px solid var(--collection-accent, var(--color-foreground));
       border-radius: 50%;
-      background-color: var(--color-background);
       cursor: pointer;
       pointer-events: auto;
     }
 
-    &::-webkit-slider-runnable-track,
-    &::-moz-range-track {
-      background: none;
+    &:focus-visible::-webkit-slider-thumb {
+      outline: var(--focus-outline-width) solid var(--collection-accent, var(--color-foreground));
+      outline-offset: var(--focus-outline-offset);
     }
+
+    &:focus-visible::-moz-range-thumb {
+      outline: var(--focus-outline-width) solid var(--collection-accent, var(--color-foreground));
+      outline-offset: var(--focus-outline-offset);
+    }
+  }
+
+  /* When the low thumb sits in the upper half it goes on top, so it can still be dragged back */
+  .price-range__input[data-raised] {
+    z-index: 2;
   }
 
   .price-range__labels {
