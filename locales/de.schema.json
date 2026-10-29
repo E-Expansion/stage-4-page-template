@@ -198,6 +198,12 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "product_tile_show_badge": "Tag-Badge anzeigen",
+    "product_tile_colors": "Farboptionen",
+    "product_tile_max_swatches": "Maximale Anzahl Farbmuster",
+    "product_tile_show_rating": "Bewertung anzeigen",
+    "product_tile_show_stock": "Lagerstatus anzeigen",
+    "product_tile_show_cart": "Warenkorb-Button anzeigen",
     "parent_label": "Zusätzlicher Brotkrümel",
     "show_breadcrumbs": "Brotkrümel anzeigen",
     "show_product_count": "Produktanzahl auf Mobilgeräten anzeigen",
@@ -688,6 +694,9 @@
     "title_preset": "Titelvoreinstellung"
   },
   "options": {
+    "color_text": "Text",
+    "color_swatches": "Farbmuster",
+    "color_text_and_swatches": "Text und Farbmuster",
     "shield": "Schild",
     "tools": "Werkzeug",
     "apple": "Apfel",
@@ -966,6 +975,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "product_tiles": "Produktkacheln",
     "breadcrumbs": "Brotkrümelnavigation",
     "tag_badges": "Tag-Badges",
     "form": "Formular",
@@ -1198,6 +1208,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "product_tiles": "Gilt für jede Produktkachel: ausgewählte Produkte, Kollektionsraster und ähnliche Produkte.",
+    "product_tile_colors": "Farbmuster nutzen die Farbe oder das Bild, das pro Wert unter Inhalt > Metaobjekte > Color festgelegt ist. Beim Hovern wird das Variantenbild dieser Farbe gezeigt.",
     "page_header_parent": "Optionaler zusätzlicher Schritt nach Startseite, z. B. \"Shop\" mit Link zu allen Produkten",
     "page_header_text": "Wird verwendet, wenn die Kollektion keine Beschreibung hat, sowie auf Blogs und Seiten",
     "page_header_title": "Leer lassen, um den Titel der Kollektion, des Blogs oder der Seite zu verwenden",

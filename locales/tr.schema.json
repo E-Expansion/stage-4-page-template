@@ -198,6 +198,12 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "product_tile_show_badge": "Etiket rozetini göster",
+    "product_tile_colors": "Renk seçenekleri",
+    "product_tile_max_swatches": "Maksimum renk örneği",
+    "product_tile_show_rating": "Puanı göster",
+    "product_tile_show_stock": "Stok durumunu göster",
+    "product_tile_show_cart": "Sepet düğmesini göster",
     "parent_label": "Ek içerik haritası adımı",
     "show_breadcrumbs": "İçerik haritasını göster",
     "show_product_count": "Mobilde ürün sayısını göster",
@@ -688,6 +694,9 @@
     "title_preset": "Başlık ön ayarı"
   },
   "options": {
+    "color_text": "Metin",
+    "color_swatches": "Renk örnekleri",
+    "color_text_and_swatches": "Metin ve renk örnekleri",
     "shield": "Kalkan",
     "tools": "Aletler",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "product_tiles": "Ürün kutucukları",
     "breadcrumbs": "İçerik haritası",
     "tag_badges": "Etiket rozetleri",
     "form": "Form",
@@ -1198,6 +1208,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "product_tiles": "Her ürün kutucuğu için geçerlidir: seçili ürünler, koleksiyon ızgarası ve ilgili ürünler.",
+    "product_tile_colors": "Renk örnekleri, İçerik > Meta nesneler > Color altında her değer için ayarlanan rengi veya görseli kullanır. Üzerine gelmek o rengin varyant görselini gösterir.",
     "page_header_parent": "Ana sayfadan sonra isteğe bağlı ek adım, ör. tüm ürünlere bağlanan \"Mağaza\"",
     "page_header_text": "Koleksiyonun açıklaması olmadığında ve bloglarda ve sayfalarda kullanılır",
     "page_header_title": "Koleksiyon, blog veya sayfa başlığını kullanmak için boş bırakın",

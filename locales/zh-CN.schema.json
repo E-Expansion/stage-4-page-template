@@ -198,6 +198,12 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "product_tile_show_badge": "显示标签徽章",
+    "product_tile_colors": "颜色选项",
+    "product_tile_max_swatches": "最多色板数",
+    "product_tile_show_rating": "显示评分",
+    "product_tile_show_stock": "显示库存状态",
+    "product_tile_show_cart": "显示购物车按钮",
     "parent_label": "额外的面包屑层级",
     "show_breadcrumbs": "显示面包屑导航",
     "show_product_count": "在移动设备上显示商品数量",
@@ -688,6 +694,9 @@
     "title_preset": "标题预设"
   },
   "options": {
+    "color_text": "文本",
+    "color_swatches": "色板",
+    "color_text_and_swatches": "文本和色板",
     "shield": "盾牌",
     "tools": "工具",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "product_tiles": "商品图块",
     "breadcrumbs": "面包屑导航",
     "tag_badges": "标签徽章",
     "form": "表单",
@@ -1198,6 +1208,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "product_tiles": "适用于所有商品图块：精选商品、商品系列网格和相关商品。",
+    "product_tile_colors": "色板使用在“内容 > 元对象 > Color”中为每个值设置的颜色或图片。悬停时显示该颜色的多属性图片。",
     "page_header_parent": "首页之后的可选额外层级，例如链接到所有商品的“商店”",
     "page_header_text": "在商品系列没有描述时使用，也用于博客和页面",
     "page_header_title": "留空则使用商品系列、博客或页面的标题",

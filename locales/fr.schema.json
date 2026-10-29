@@ -198,6 +198,12 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "product_tile_show_badge": "Afficher le badge de balise",
+    "product_tile_colors": "Options de couleur",
+    "product_tile_max_swatches": "Nombre maximal de pastilles",
+    "product_tile_show_rating": "Afficher la note",
+    "product_tile_show_stock": "Afficher l'état du stock",
+    "product_tile_show_cart": "Afficher le bouton panier",
     "parent_label": "Étape de fil d'Ariane supplémentaire",
     "show_breadcrumbs": "Afficher le fil d'Ariane",
     "show_product_count": "Afficher le nombre de produits sur mobile",
@@ -688,6 +694,9 @@
     "title_preset": "Préréglage du titre"
   },
   "options": {
+    "color_text": "Texte",
+    "color_swatches": "Pastilles",
+    "color_text_and_swatches": "Texte et pastilles",
     "shield": "Bouclier",
     "tools": "Outils",
     "apple": "Pomme",
@@ -966,6 +975,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "product_tiles": "Vignettes produit",
     "breadcrumbs": "Fil d'Ariane",
     "tag_badges": "Badges de balise",
     "form": "Formulaire",
@@ -1198,6 +1208,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "product_tiles": "S'applique à chaque vignette produit : produits sélectionnés, grille de collection et produits associés.",
+    "product_tile_colors": "Les pastilles utilisent la couleur ou l'image définie pour chaque valeur dans Contenu > Métaobjets > Color. Le survol affiche l'image de variante de cette couleur.",
     "page_header_parent": "Étape supplémentaire facultative après Accueil, par ex. « Boutique » vers tous les produits",
     "page_header_text": "Utilisé si la collection n'a pas de description, ainsi que sur les blogs et les pages",
     "page_header_title": "Laissez vide pour utiliser le titre de la collection, du blog ou de la page",

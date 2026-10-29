@@ -198,6 +198,12 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "product_tile_show_badge": "Vis tag-badge",
+    "product_tile_colors": "Farvemuligheder",
+    "product_tile_max_swatches": "Maks. antal farveprøver",
+    "product_tile_show_rating": "Vis bedømmelse",
+    "product_tile_show_stock": "Vis lagerstatus",
+    "product_tile_show_cart": "Vis kurvknap",
     "parent_label": "Ekstra brødkrumme",
     "show_breadcrumbs": "Vis brødkrummesti",
     "show_product_count": "Vis antal produkter på mobil",
@@ -688,6 +694,9 @@
     "title_preset": "Forudindstilling for titel"
   },
   "options": {
+    "color_text": "Tekst",
+    "color_swatches": "Farveprøver",
+    "color_text_and_swatches": "Tekst og farveprøver",
     "shield": "Skjold",
     "tools": "Værktøj",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "product_tiles": "Produktfelter",
     "breadcrumbs": "Brødkrummesti",
     "tag_badges": "Tag-badges",
     "form": "Formular",
@@ -1198,6 +1208,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "product_tiles": "Gælder for alle produktfelter: udvalgte produkter, kollektionsgitter og relaterede produkter.",
+    "product_tile_colors": "Farveprøver bruger den farve eller det billede, der er angivet for hver værdi under Indhold > Metaobjekter > Color. Hover viser variantbilledet for den farve.",
     "page_header_parent": "Valgfrit ekstra trin efter Forside, fx \"Shop\" med link til alle produkter",
     "page_header_text": "Bruges, når kollektionen ikke har en beskrivelse, samt på blogs og sider",
     "page_header_title": "Lad være tom for at bruge kollektionens, bloggens eller sidens titel",

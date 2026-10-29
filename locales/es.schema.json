@@ -198,6 +198,12 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "product_tile_show_badge": "Mostrar insignia de etiqueta",
+    "product_tile_colors": "Opciones de color",
+    "product_tile_max_swatches": "Máximo de muestras",
+    "product_tile_show_rating": "Mostrar valoración",
+    "product_tile_show_stock": "Mostrar estado de stock",
+    "product_tile_show_cart": "Mostrar botón de carrito",
     "parent_label": "Paso adicional de la ruta",
     "show_breadcrumbs": "Mostrar ruta de navegación",
     "show_product_count": "Mostrar número de productos en móvil",
@@ -688,6 +694,9 @@
     "title_preset": "Preajuste del título"
   },
   "options": {
+    "color_text": "Texto",
+    "color_swatches": "Muestras",
+    "color_text_and_swatches": "Texto y muestras",
     "shield": "Escudo",
     "tools": "Herramientas",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "product_tiles": "Mosaicos de producto",
     "breadcrumbs": "Ruta de navegación",
     "tag_badges": "Insignias de etiqueta",
     "form": "Formulario",
@@ -1198,6 +1208,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "product_tiles": "Se aplica a cada mosaico de producto: productos seleccionados, cuadrícula de colección y productos relacionados.",
+    "product_tile_colors": "Las muestras usan el color o la imagen definidos para cada valor en Contenido > Metaobjetos > Color. Al pasar el cursor se muestra la imagen de la variante de ese color.",
     "page_header_parent": "Paso adicional opcional después de Inicio, p. ej. \"Tienda\" con enlace a todos los productos",
     "page_header_text": "Se usa cuando la colección no tiene descripción, y en blogs y páginas",
     "page_header_title": "Déjalo vacío para usar el título de la colección, el blog o la página",

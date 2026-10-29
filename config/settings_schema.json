@@ -2009,6 +2009,69 @@
       },
       {
         "type": "header",
+        "content": "t:content.product_tiles"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:info.product_tiles"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_tile_show_badge",
+        "label": "t:settings.product_tile_show_badge",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_tile_colors",
+        "label": "t:settings.product_tile_colors",
+        "info": "t:info.product_tile_colors",
+        "options": [
+          {
+            "value": "text",
+            "label": "t:options.color_text"
+          },
+          {
+            "value": "swatches",
+            "label": "t:options.color_swatches"
+          },
+          {
+            "value": "both",
+            "label": "t:options.color_text_and_swatches"
+          }
+        ],
+        "default": "swatches"
+      },
+      {
+        "type": "range",
+        "id": "product_tile_max_swatches",
+        "label": "t:settings.product_tile_max_swatches",
+        "min": 2,
+        "max": 8,
+        "step": 1,
+        "default": 4,
+        "visible_if": "{{ settings.product_tile_colors != 'text' }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_tile_show_rating",
+        "label": "t:settings.product_tile_show_rating",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_tile_show_stock",
+        "label": "t:settings.product_tile_show_stock",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_tile_show_cart",
+        "label": "t:settings.product_tile_show_cart",
+        "default": true
+      },
+      {
+        "type": "header",
         "content": "t:content.inventory"
       },
       {

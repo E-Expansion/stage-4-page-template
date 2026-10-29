@@ -1,9 +1,14 @@
 {%- doc -%}
   Renders the shared product tile used in product rows and grids (curated products,
-  collection grid, related products): image with a tag badge, title, first option
-  summary, star rating, price, stock status and a cart button. Single-variant products
-  are added through the theme's product form; others link to the product page to choose
-  options. Badges, low stock threshold and status colours come from Theme settings.
+  collection grid, related products): image with a tag badge, title, colour swatches
+  and/or an option summary, star rating, price, stock status and a cart button.
+  Single-variant products are added through the theme's product form; others link to
+  the product page to choose options. Which parts show, badges, the low stock threshold
+  and status colours come from Theme settings > Product cards.
+
+  Swatches read each colour's swatch (Content > Metaobjects > Color). Hovering, focusing
+  or tapping one previews that colour's variant image and points the links at that
+  variant (assets/product-tile.js).
 
   @param {object} [product] - The product to render. A placeholder tile is shown when blank.
   @param {string} section_id - The section ID, used for unique form IDs.
@@ -24,17 +29,43 @@
     assign title = 'content.product_card_placeholder' | t
   endif
 
-  # "Cognac · 3 colours": first option value of the shown variant plus the value count
+  # The colour option is the first one with swatches, or one named like a colour
+  assign color_option = blank
+  for option in product.options_with_values
+    assign option_name = option.name | downcase
+    assign first_value = option.values | first
+    if first_value.swatch != blank or option_name == 'color' or option_name == 'colour' or option_name == 'kleur'
+      assign color_option = option
+      break
+    endif
+  endfor
+
+  # "Cognac · 3 colours": shown value of the colour (or first) option plus the value count
   assign option_summary = blank
+  assign show_summary = false
+  assign show_swatches = false
   if product.has_only_default_variant == false
-    assign first_option = product.options_with_values | first
-    assign option_summary = variant.option1 | escape
-    if first_option.values.size > 1
-      assign option_name = first_option.name | downcase
-      if option_name == 'color' or option_name == 'colour' or option_name == 'kleur'
-        assign option_count = 'content.color_count' | t: count: first_option.values.size
+    assign summary_is_color = false
+    if color_option != blank
+      assign summary_option = color_option
+      assign summary_is_color = true
+      if settings.product_tile_colors != 'swatches'
+        assign show_summary = true
+      endif
+      if settings.product_tile_colors != 'text'
+        assign show_swatches = true
+      endif
+    else
+      assign summary_option = product.options_with_values | first
+      assign show_summary = true
+    endif
+
+    assign option_summary = summary_option.selected_value | escape
+    if summary_option.values.size > 1
+      if summary_is_color
+        assign option_count = 'content.color_count' | t: count: summary_option.values.size
       else
-        assign option_count = 'content.option_count' | t: count: first_option.values.size
+        assign option_count = 'content.option_count' | t: count: summary_option.values.size
       endif
       assign option_summary = option_summary | append: ' · ' | append: option_count
     endif
@@ -63,7 +94,15 @@
 %}
 
 <li class="product-tile">
-  <div class="product-tile__inner">
+  {% if show_swatches %}
+    <script
+      src="{{ 'product-tile.js' | asset_url }}"
+      type="module"
+      fetchpriority="low"
+    ></script>
+  {% endif %}
+
+  <product-tile-component class="product-tile__inner">
     <div class="product-tile__media">
       {% if image != blank %}
         {{
@@ -74,13 +113,16 @@
             sizes: image_sizes,
             loading: image_loading,
             alt: '',
-            class: 'product-tile__image'
+            class: 'product-tile__image',
+            ref: 'image'
         }}
       {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'product-tile__image product-tile__placeholder' }}
       {% endif %}
 
-      {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-tile__badge' %}
+      {% if settings.product_tile_show_badge %}
+        {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-tile__badge' %}
+      {% endif %}
     </div>
 
     <div class="product-tile__body">
@@ -90,16 +132,83 @@
             <a
               href="{{ product.url | default: '#' }}"
               class="product-tile__link"
+              ref="link"
             >
               {{- title -}}
             </a>
           </h3>
-          {% if option_summary != blank %}
+          {% if show_summary and option_summary != blank %}
             <p class="product-tile__options">{{ option_summary }}</p>
+          {% endif %}
+
+          {% if show_swatches %}
+            {% liquid
+              assign color_index = color_option.position | minus: 1
+              assign swatch_limit = settings.product_tile_max_swatches
+              assign hidden_count = color_option.values.size | minus: swatch_limit
+            %}
+            <div
+              class="product-tile__swatches"
+              role="group"
+              aria-label="{{ color_option.name | escape }}"
+              on:pointerenter="/preload"
+            >
+              {% for value in color_option.values limit: swatch_limit %}
+                {% liquid
+                  # The variant for this colour and its image; any variant of the colour with an image will do
+                  assign value_variant = value.variant
+                  assign value_media = value_variant.featured_media
+                  if value_media == blank
+                    for candidate in product.variants
+                      if candidate.options[color_index] == value.name and candidate.featured_media != blank
+                        assign value_media = candidate.featured_media
+                        break
+                      endif
+                    endfor
+                  endif
+
+                  assign value_srcset = ''
+                  if value_media != blank
+                    assign srcset_widths = '240,360,480,640,800,1000' | split: ','
+                    for width in srcset_widths
+                      assign width_url = value_media.preview_image | image_url: width: width
+                      assign value_srcset = value_srcset | append: width_url | append: ' ' | append: width | append: 'w'
+                      unless forloop.last
+                        assign value_srcset = value_srcset | append: ', '
+                      endunless
+                    endfor
+                  endif
+                %}
+                <button
+                  type="button"
+                  class="product-tile__swatch"
+                  aria-label="{{ value.name | escape }}"
+                  aria-pressed="{{ value.selected }}"
+                  style="
+                    {% if value.swatch.color %}--swatch-color: {{ value.swatch.color }};{% endif %}
+                    {% if value.swatch.image %}--swatch-image: url({{ value.swatch.image | image_url: width: 64 }});{% endif %}
+                  "
+                  {% if value_variant %}
+                    data-url="{{ value_variant.url }}"
+                  {% endif %}
+                  {% if value_media != blank %}
+                    data-src="{{ value_media.preview_image | image_url: width: 1000 }}"
+                    data-srcset="{{ value_srcset }}"
+                  {% endif %}
+                  ref="swatches[]"
+                  on:pointerenter="/preview"
+                  on:focus="/preview"
+                  on:click="/preview"
+                ></button>
+              {% endfor %}
+              {% if hidden_count > 0 %}
+                <span class="product-tile__swatch-more">+{{ hidden_count }}</span>
+              {% endif %}
+            </div>
           {% endif %}
         </div>
 
-        {% if product != blank and product.available %}
+        {% if product != blank and product.available and settings.product_tile_show_cart %}
           {% capture cart_icon %}
             <span
               class="svg-wrapper"
@@ -150,6 +259,7 @@
               href="{{ product.url }}"
               class="product-tile__cart"
               aria-label="{{ 'actions.choose' | t }}: {{ title }}"
+              ref="cartLink"
             >
               {{ cart_icon }}
             </a>
@@ -157,7 +267,9 @@
         {% endif %}
       </div>
 
-      {% render 'star-rating', product: product %}
+      {% if settings.product_tile_show_rating %}
+        {% render 'star-rating', product: product %}
+      {% endif %}
 
       <div class="product-tile__footer">
         <p class="product-tile__price">
@@ -172,7 +284,7 @@
           {% endif %}
         </p>
 
-        {% if product != blank %}
+        {% if product != blank and settings.product_tile_show_stock %}
           <p class="product-tile__stock product-tile__stock--{{ stock_state }}">
             {%- case stock_state -%}
               {%- when 'out' -%}
@@ -186,7 +298,7 @@
         {% endif %}
       </div>
     </div>
-  </div>
+  </product-tile-component>
 </li>
 
 {% stylesheet %}
@@ -300,6 +412,52 @@
     @media screen and (min-width: 750px) {
       font-size: var(--font-size--xs);
     }
+  }
+
+  /* Swatches sit above the stretched title link so they stay clickable */
+  .product-tile__swatches {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-2xs);
+    margin-block-start: var(--padding-3xs);
+  }
+
+  .product-tile__swatch {
+    --product-tile-swatch-size: 0.875rem;
+
+    width: var(--product-tile-swatch-size);
+    height: var(--product-tile-swatch-size);
+    padding: 0;
+    background-color: var(--swatch-color, rgb(var(--color-foreground-rgb) / var(--opacity-20)));
+    background-image: var(--swatch-image, none);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow var(--animation-speed) var(--animation-easing);
+
+    @media screen and (min-width: 750px) {
+      --product-tile-swatch-size: 1rem;
+    }
+
+    /* Ring around the colour that is shown */
+    &[aria-pressed='true'] {
+      box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3px var(--color-foreground);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-outline-width) solid var(--color-foreground);
+      outline-offset: 3px;
+    }
+  }
+
+  .product-tile__swatch-more {
+    font-size: var(--font-size--2xs);
+    color: var(--color-foreground-muted);
   }
 
   .product-tile__form,

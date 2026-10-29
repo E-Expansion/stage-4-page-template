@@ -198,6 +198,12 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "product_tile_show_badge": "Pokaż odznakę tagu",
+    "product_tile_colors": "Opcje koloru",
+    "product_tile_max_swatches": "Maksymalna liczba próbek",
+    "product_tile_show_rating": "Pokaż ocenę",
+    "product_tile_show_stock": "Pokaż stan magazynowy",
+    "product_tile_show_cart": "Pokaż przycisk koszyka",
     "parent_label": "Dodatkowy krok ścieżki",
     "show_breadcrumbs": "Pokaż ścieżkę nawigacji",
     "show_product_count": "Pokaż liczbę produktów na urządzeniach mobilnych",
@@ -688,6 +694,9 @@
     "title_preset": "Gotowe ustawienie tytułu"
   },
   "options": {
+    "color_text": "Tekst",
+    "color_swatches": "Próbki",
+    "color_text_and_swatches": "Tekst i próbki",
     "shield": "Tarcza",
     "tools": "Narzędzia",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "product_tiles": "Kafelki produktów",
     "breadcrumbs": "Ścieżka nawigacji",
     "tag_badges": "Odznaki tagów",
     "form": "Formularz",
@@ -1198,6 +1208,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "product_tiles": "Dotyczy każdego kafelka produktu: wybranych produktów, siatki kolekcji i powiązanych produktów.",
+    "product_tile_colors": "Próbki używają koloru lub obrazu ustawionego dla każdej wartości w Treści > Metaobiekty > Color. Najechanie pokazuje zdjęcie wariantu w tym kolorze.",
     "page_header_parent": "Opcjonalny dodatkowy krok po Stronie głównej, np. \"Sklep\" z linkiem do wszystkich produktów",
     "page_header_text": "Używany, gdy kolekcja nie ma opisu, oraz na blogach i stronach",
     "page_header_title": "Pozostaw puste, aby użyć tytułu kolekcji, bloga lub strony",

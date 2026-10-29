@@ -198,6 +198,12 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "product_tile_show_badge": "顯示標籤徽章",
+    "product_tile_colors": "顏色選項",
+    "product_tile_max_swatches": "色票數量上限",
+    "product_tile_show_rating": "顯示評分",
+    "product_tile_show_stock": "顯示庫存狀態",
+    "product_tile_show_cart": "顯示購物車按鈕",
     "parent_label": "額外的導覽層級",
     "show_breadcrumbs": "顯示導覽路徑",
     "show_product_count": "在行動裝置上顯示商品數量",
@@ -688,6 +694,9 @@
     "title_preset": "標題預設設定"
   },
   "options": {
+    "color_text": "文字",
+    "color_swatches": "色票",
+    "color_text_and_swatches": "文字和色票",
     "shield": "盾牌",
     "tools": "工具",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "product_tiles": "商品圖塊",
     "breadcrumbs": "導覽路徑",
     "tag_badges": "標籤徽章",
     "form": "表單",
@@ -1198,6 +1208,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "product_tiles": "適用於所有商品圖塊：精選商品、商品系列網格和相關商品。",
+    "product_tile_colors": "色票使用在「內容 > 中繼物件 > Color」中為每個值設定的顏色或圖片。滑鼠移過時會顯示該顏色的子類圖片。",
     "page_header_parent": "首頁之後的選填額外層級，例如連結至所有商品的「商店」",
     "page_header_text": "在商品系列沒有說明時使用，也用於部落格和頁面",
     "page_header_title": "留空則使用商品系列、部落格或頁面的標題",

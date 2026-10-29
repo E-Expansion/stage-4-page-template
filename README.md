@@ -66,7 +66,7 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 |---|---|---|
 | `section-heading` | Heading row: title, text, and a link or side text | Category selector, curated products, UGC, press |
 | `.snap-carousel` (class in `assets/base.css`) | Grid on desktop, swipeable row on mobile | Category selector, curated products, subcategories |
-| `product-tile` | Product card: badge, options, rating, price, stock, add to cart | Curated products, collection grid |
+| `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article page (planned) |
 | `category-tile` | Collection tile (normal or `small`) | Category selector, subcategories |
 | `article-card` | Article card (`card`, `featured` or `link` layout) | Journal and article pages (planned) |
@@ -81,7 +81,7 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 
 **Theme-wide settings for these components:**
 - *Theme settings → Badges*: six tag badge rules (tag, label, colour). They apply to both products and articles.
-- *Theme settings → Product cards*: low-stock threshold, plus stock and star colours.
+- *Theme settings → Product cards*: which parts of the product tile show (badge, colours as text/swatches/both, rating, stock, cart button), the maximum number of swatches, the low-stock threshold, plus stock and star colours.
 
 ## Sections
 
@@ -123,6 +123,16 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Product | `custom.seo_heading` | Single-line text | SEO text section (body is the product description) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
+
+### Colour swatches
+
+Swatch colours come from Shopify's standard **Color** metaobject (`shopify--color-pattern`). To set one up:
+1. Set the product category.
+2. Link the variant option to the category's Color metafield.
+3. Give each entry in *Content → Metaobjects → Color* a hex colour or image.
+4. Assign each colour variant its own image, so hovering a swatch can preview it.
+
+The values must come from Shopify's standard definition. If they come from a self-made "Color" definition, Shopify rejects them.
 
 ### Apps and other setup
 

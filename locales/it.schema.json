@@ -198,6 +198,12 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "product_tile_show_badge": "Mostra badge tag",
+    "product_tile_colors": "Opzioni colore",
+    "product_tile_max_swatches": "Numero massimo di campioni",
+    "product_tile_show_rating": "Mostra valutazione",
+    "product_tile_show_stock": "Mostra stato scorte",
+    "product_tile_show_cart": "Mostra pulsante carrello",
     "parent_label": "Passaggio aggiuntivo",
     "show_breadcrumbs": "Mostra percorso di navigazione",
     "show_product_count": "Mostra numero di prodotti su mobile",
@@ -688,6 +694,9 @@
     "title_preset": "Preimpostazione titolo"
   },
   "options": {
+    "color_text": "Testo",
+    "color_swatches": "Campioni",
+    "color_text_and_swatches": "Testo e campioni",
     "shield": "Scudo",
     "tools": "Attrezzi",
     "apple": "Mela",
@@ -966,6 +975,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "product_tiles": "Riquadri prodotto",
     "breadcrumbs": "Percorso di navigazione",
     "tag_badges": "Badge dei tag",
     "form": "Modulo",
@@ -1198,6 +1208,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "product_tiles": "Si applica a ogni riquadro prodotto: prodotti selezionati, griglia della collezione e prodotti correlati.",
+    "product_tile_colors": "I campioni usano il colore o l'immagine impostati per ogni valore in Contenuti > Metaoggetti > Color. Al passaggio del mouse viene mostrata l'immagine della variante di quel colore.",
     "page_header_parent": "Passaggio aggiuntivo facoltativo dopo Home, ad es. \"Shop\" con link a tutti i prodotti",
     "page_header_text": "Usato quando la collezione non ha descrizione, e su blog e pagine",
     "page_header_title": "Lascia vuoto per usare il titolo della collezione, del blog o della pagina",

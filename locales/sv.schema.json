@@ -198,6 +198,12 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "product_tile_show_badge": "Visa taggmärke",
+    "product_tile_colors": "Färgalternativ",
+    "product_tile_max_swatches": "Max antal färgprover",
+    "product_tile_show_rating": "Visa betyg",
+    "product_tile_show_stock": "Visa lagerstatus",
+    "product_tile_show_cart": "Visa varukorgsknapp",
     "parent_label": "Extra brödsmula",
     "show_breadcrumbs": "Visa brödsmulor",
     "show_product_count": "Visa antal produkter på mobil",
@@ -688,6 +694,9 @@
     "title_preset": "Förinställning för rubrik"
   },
   "options": {
+    "color_text": "Text",
+    "color_swatches": "Färgprover",
+    "color_text_and_swatches": "Text och färgprover",
     "shield": "Sköld",
     "tools": "Verktyg",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "product_tiles": "Produktrutor",
     "breadcrumbs": "Brödsmulor",
     "tag_badges": "Taggmärken",
     "form": "Formulär",
@@ -1198,6 +1208,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "product_tiles": "Gäller alla produktrutor: utvalda produkter, kollektionsrutnät och relaterade produkter.",
+    "product_tile_colors": "Färgprover använder färgen eller bilden som angetts för varje värde under Innehåll > Metaobjekt > Color. Hovring visar variantbilden för den färgen.",
     "page_header_parent": "Valfritt extra steg efter Hem, t.ex. \"Butik\" med länk till alla produkter",
     "page_header_text": "Används när kollektionen saknar beskrivning, samt på bloggar och sidor",
     "page_header_title": "Lämna tomt för att använda kollektionens, bloggens eller sidans titel",

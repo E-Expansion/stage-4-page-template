@@ -198,6 +198,12 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "product_tile_show_badge": "Zobrazit odznak štítku",
+    "product_tile_colors": "Možnosti barvy",
+    "product_tile_max_swatches": "Maximální počet vzorníků",
+    "product_tile_show_rating": "Zobrazit hodnocení",
+    "product_tile_show_stock": "Zobrazit stav skladu",
+    "product_tile_show_cart": "Zobrazit tlačítko košíku",
     "parent_label": "Další krok navigace",
     "show_breadcrumbs": "Zobrazit drobečkovou navigaci",
     "show_product_count": "Zobrazit počet produktů na mobilu",
@@ -688,6 +694,9 @@
     "title_preset": "Předvolba nadpisu"
   },
   "options": {
+    "color_text": "Text",
+    "color_swatches": "Vzorníky",
+    "color_text_and_swatches": "Text a vzorníky",
     "shield": "Štít",
     "tools": "Nářadí",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "product_tiles": "Dlaždice produktů",
     "breadcrumbs": "Drobečková navigace",
     "tag_badges": "Odznaky štítků",
     "form": "Formulář",
@@ -1198,6 +1208,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "product_tiles": "Platí pro každou dlaždici produktu: vybrané produkty, mřížku kolekce a související produkty.",
+    "product_tile_colors": "Vzorníky používají barvu nebo obrázek nastavený pro každou hodnotu v Obsah > Metaobjekty > Color. Najetí myší zobrazí obrázek varianty v této barvě.",
     "page_header_parent": "Volitelný další krok po Domů, např. „Obchod“ s odkazem na všechny produkty",
     "page_header_text": "Použije se, když kolekce nemá popis, a na blozích a stránkách",
     "page_header_title": "Ponechte prázdné pro použití názvu kolekce, blogu nebo stránky",

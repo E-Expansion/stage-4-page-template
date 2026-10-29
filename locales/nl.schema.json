@@ -198,6 +198,12 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "product_tile_show_badge": "Tagbadge tonen",
+    "product_tile_colors": "Kleuropties",
+    "product_tile_max_swatches": "Maximaal aantal stalen",
+    "product_tile_show_rating": "Beoordeling tonen",
+    "product_tile_show_stock": "Voorraadstatus tonen",
+    "product_tile_show_cart": "Winkelwagenknop tonen",
     "parent_label": "Extra kruimelpadstap",
     "show_breadcrumbs": "Kruimelpad tonen",
     "show_product_count": "Aantal producten tonen op mobiel",
@@ -688,6 +694,9 @@
     "title_preset": "Titelvoorinstelling"
   },
   "options": {
+    "color_text": "Tekst",
+    "color_swatches": "Kleurstalen",
+    "color_text_and_swatches": "Tekst en kleurstalen",
     "shield": "Schild",
     "tools": "Gereedschap",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "product_tiles": "Producttegels",
     "breadcrumbs": "Kruimelpad",
     "tag_badges": "Tagbadges",
     "form": "Formulier",
@@ -1198,6 +1208,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "product_tiles": "Geldt voor elke producttegel: uitgelichte producten, collectieraster en gerelateerde producten.",
+    "product_tile_colors": "Stalen gebruiken de kleur of afbeelding die per waarde is ingesteld onder Content > Metaobjecten > Color. Hoveren toont de variantafbeelding van die kleur.",
     "page_header_parent": "Optionele extra stap na Home, bijv. \"Shop\" met een link naar alle producten",
     "page_header_text": "Gebruikt als de collectie geen beschrijving heeft, en op blogs en pagina's",
     "page_header_title": "Laat leeg om de titel van de collectie, blog of pagina te gebruiken",

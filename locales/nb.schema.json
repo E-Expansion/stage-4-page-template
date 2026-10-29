@@ -198,6 +198,12 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "product_tile_show_badge": "Vis taggmerke",
+    "product_tile_colors": "Fargealternativer",
+    "product_tile_max_swatches": "Maks antall fargeprøver",
+    "product_tile_show_rating": "Vis vurdering",
+    "product_tile_show_stock": "Vis lagerstatus",
+    "product_tile_show_cart": "Vis handlekurvknapp",
     "parent_label": "Ekstra brødsmule",
     "show_breadcrumbs": "Vis brødsmulesti",
     "show_product_count": "Vis antall produkter på mobil",
@@ -688,6 +694,9 @@
     "title_preset": "Forhåndsinnstilling for tittel"
   },
   "options": {
+    "color_text": "Tekst",
+    "color_swatches": "Fargeprøver",
+    "color_text_and_swatches": "Tekst og fargeprøver",
     "shield": "Skjold",
     "tools": "Verktøy",
     "apple": "Eple",
@@ -966,6 +975,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "product_tiles": "Produktruter",
     "breadcrumbs": "Brødsmulesti",
     "tag_badges": "Taggmerker",
     "form": "Skjema",
@@ -1198,6 +1208,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "product_tiles": "Gjelder alle produktruter: utvalgte produkter, kolleksjonsrutenett og relaterte produkter.",
+    "product_tile_colors": "Fargeprøver bruker fargen eller bildet som er angitt for hver verdi under Innhold > Metaobjekter > Color. Hover viser variantbildet for den fargen.",
     "page_header_parent": "Valgfritt ekstra trinn etter Hjem, f.eks. \"Butikk\" med lenke til alle produkter",
     "page_header_text": "Brukes når kolleksjonen ikke har beskrivelse, og på blogger og sider",
     "page_header_title": "La stå tomt for å bruke tittelen på kolleksjonen, bloggen eller siden",

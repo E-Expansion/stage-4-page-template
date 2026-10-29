@@ -30,6 +30,7 @@
     "text": "טקסט"
   },
   "content": {
+    "product_tiles": "אריחי מוצר",
     "breadcrumbs": "פירורי לחם",
     "tag_badges": "תגי תגיות",
     "form": "טופס",
@@ -224,6 +225,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "product_tiles": "חל על כל אריח מוצר: מוצרים נבחרים, רשת הקולקציה ומוצרים קשורים.",
+    "product_tile_colors": "דוגמיות הצבע משתמשות בצבע או בתמונה שהוגדרו לכל ערך בתוכן > אובייקטי מטא > Color. ריחוף מציג את תמונת הווריאציה של אותו צבע.",
     "page_header_parent": "שלב נוסף אופציונלי אחרי דף הבית, למשל \"חנות\" עם קישור לכל המוצרים",
     "page_header_text": "משמש כשאין לקולקציה תיאור, וגם בבלוגים ובדפים",
     "page_header_title": "השאר ריק כדי להשתמש בכותרת הקולקציה, הבלוג או הדף",
@@ -478,6 +481,9 @@
     "comparison_slider": "מחוון השוואה"
   },
   "options": {
+    "color_text": "טקסט",
+    "color_swatches": "דוגמיות צבע",
+    "color_text_and_swatches": "טקסט ודוגמיות צבע",
     "shield": "מגן",
     "tools": "כלים",
     "above_carousel": "מעל הקרוסלה",
@@ -756,6 +762,12 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "product_tile_show_badge": "הצגת תג תגית",
+    "product_tile_colors": "אפשרויות צבע",
+    "product_tile_max_swatches": "מספר מרבי של דוגמיות",
+    "product_tile_show_rating": "הצגת דירוג",
+    "product_tile_show_stock": "הצגת מצב מלאי",
+    "product_tile_show_cart": "הצגת כפתור עגלה",
     "parent_label": "שלב ניווט נוסף",
     "show_breadcrumbs": "הצגת פירורי לחם",
     "show_product_count": "הצגת מספר המוצרים בנייד",

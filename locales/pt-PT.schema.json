@@ -198,6 +198,12 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "product_tile_show_badge": "Mostrar selo de etiqueta",
+    "product_tile_colors": "Opções de cor",
+    "product_tile_max_swatches": "Máximo de amostras",
+    "product_tile_show_rating": "Mostrar avaliação",
+    "product_tile_show_stock": "Mostrar estado do stock",
+    "product_tile_show_cart": "Mostrar botão do carrinho",
     "parent_label": "Passo extra do trilho",
     "show_breadcrumbs": "Mostrar trilho de navegação",
     "show_product_count": "Mostrar número de produtos no telemóvel",
@@ -688,6 +694,9 @@
     "title_preset": "Predefinição do título"
   },
   "options": {
+    "color_text": "Texto",
+    "color_swatches": "Amostras",
+    "color_text_and_swatches": "Texto e amostras",
     "shield": "Escudo",
     "tools": "Ferramentas",
     "apple": "Maçã",
@@ -966,6 +975,7 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "product_tiles": "Blocos de produto",
     "breadcrumbs": "Trilho de navegação",
     "tag_badges": "Selos de etiqueta",
     "form": "Formulário",
@@ -1198,6 +1208,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "product_tiles": "Aplica-se a todos os blocos de produto: produtos selecionados, grelha da coleção e produtos relacionados.",
+    "product_tile_colors": "As amostras utilizam a cor ou imagem definida para cada valor em Conteúdo > Metaobjetos > Color. Passar o cursor mostra a imagem da variante dessa cor.",
     "page_header_parent": "Passo extra opcional após Início, p. ex. \"Loja\" com ligação para todos os produtos",
     "page_header_text": "Utilizado quando a coleção não tem descrição, e em blogues e páginas",
     "page_header_title": "Deixe vazio para utilizar o título da coleção, do blogue ou da página",

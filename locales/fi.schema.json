@@ -198,6 +198,12 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "product_tile_show_badge": "Näytä tunnistemerkki",
+    "product_tile_colors": "Värivaihtoehdot",
+    "product_tile_max_swatches": "Värimallien enimmäismäärä",
+    "product_tile_show_rating": "Näytä arvio",
+    "product_tile_show_stock": "Näytä varastotilanne",
+    "product_tile_show_cart": "Näytä ostoskoripainike",
     "parent_label": "Murupolun lisävaihe",
     "show_breadcrumbs": "Näytä murupolku",
     "show_product_count": "Näytä tuotemäärä mobiilissa",
@@ -688,6 +694,9 @@
     "title_preset": "Otsikon esiasetus"
   },
   "options": {
+    "color_text": "Teksti",
+    "color_swatches": "Värimallit",
+    "color_text_and_swatches": "Teksti ja värimallit",
     "shield": "Kilpi",
     "tools": "Työkalut",
     "apple": "Omena",
@@ -966,6 +975,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "product_tiles": "Tuoteruudut",
     "breadcrumbs": "Murupolku",
     "tag_badges": "Tunnistemerkit",
     "form": "Lomake",
@@ -1198,6 +1208,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "product_tiles": "Koskee jokaista tuoteruutua: valitut tuotteet, kokoelmaruudukko ja aiheeseen liittyvät tuotteet.",
+    "product_tile_colors": "Värimallit käyttävät kullekin arvolle kohdassa Sisältö > Metaobjektit > Color asetettua väriä tai kuvaa. Hiiren vieminen näyttää kyseisen värin muunnelmakuvan.",
     "page_header_parent": "Valinnainen lisävaihe Etusivun jälkeen, esim. \"Kauppa\", joka linkittää kaikkiin tuotteisiin",
     "page_header_text": "Käytetään, kun kokoelmalla ei ole kuvausta, sekä blogeissa ja sivuilla",
     "page_header_title": "Jätä tyhjäksi käyttääksesi kokoelman, blogin tai sivun otsikkoa",

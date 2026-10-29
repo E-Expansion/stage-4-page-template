@@ -198,6 +198,12 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "product_tile_show_badge": "タグバッジを表示",
+    "product_tile_colors": "カラーオプション",
+    "product_tile_max_swatches": "スウォッチの最大数",
+    "product_tile_show_rating": "評価を表示",
+    "product_tile_show_stock": "在庫状況を表示",
+    "product_tile_show_cart": "カートボタンを表示",
     "parent_label": "追加のパンくず",
     "show_breadcrumbs": "パンくずリストを表示",
     "show_product_count": "モバイルで商品数を表示",
@@ -688,6 +694,9 @@
     "title_preset": "タイトルプリセット"
   },
   "options": {
+    "color_text": "テキスト",
+    "color_swatches": "スウォッチ",
+    "color_text_and_swatches": "テキストとスウォッチ",
     "shield": "盾",
     "tools": "工具",
     "apple": "Apple",
@@ -966,6 +975,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "product_tiles": "商品タイル",
     "breadcrumbs": "パンくずリスト",
     "tag_badges": "タグバッジ",
     "form": "フォーム",
@@ -1198,6 +1208,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "product_tiles": "すべての商品タイルに適用されます：おすすめ商品、コレクショングリッド、関連商品。",
+    "product_tile_colors": "スウォッチは「コンテンツ > メタオブジェクト > Color」で各値に設定した色または画像を使用します。ホバーするとその色のバリエーション画像が表示されます。",
     "page_header_parent": "ホームの後に追加する任意の階層（例：すべての商品にリンクする「ショップ」）",
     "page_header_text": "コレクションに説明がない場合や、ブログ・ページで使用されます",
     "page_header_title": "空欄の場合はコレクション、ブログ、ページのタイトルを使用します",

@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "product_tiles": "Product tiles",
     "breadcrumbs": "Breadcrumbs",
     "tag_badges": "Tag badges",
     "form": "Form",
@@ -232,6 +233,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "product_tiles": "Applies to every product tile: curated products, collection grid and related products.",
+    "product_tile_colors": "Swatches use the colour or image set for each value in Content > Metaobjects > Color. Hovering one shows that colour's variant image.",
     "page_header_parent": "Optional extra step after Home, e.g. \"Shop\" linking to all products",
     "page_header_text": "Used when the collection has no description, and on blogs and pages",
     "page_header_title": "Leave empty to use the collection, blog or page title",
@@ -493,6 +496,9 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "color_text": "Text",
+    "color_swatches": "Swatches",
+    "color_text_and_swatches": "Text and swatches",
     "shield": "Shield",
     "tools": "Tools",
     "above_carousel": "Above carousel",
@@ -808,6 +814,12 @@
     "below_media": "Below media"
   },
   "settings": {
+    "product_tile_show_badge": "Show tag badge",
+    "product_tile_colors": "Colour options",
+    "product_tile_max_swatches": "Maximum swatches",
+    "product_tile_show_rating": "Show rating",
+    "product_tile_show_stock": "Show stock status",
+    "product_tile_show_cart": "Show cart button",
     "parent_label": "Extra breadcrumb",
     "show_breadcrumbs": "Show breadcrumbs",
     "show_product_count": "Show product count on mobile",
