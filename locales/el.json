@@ -29,6 +29,7 @@
     "slider_label": "Ρυθμιστικό"
   },
   "accessibility": {
+    "show_media": "Εμφάνιση πολυμέσου {{ index }}",
     "breadcrumbs": "Διαδρομή πλοήγησης",
     "play_model": "Αναπαραγωγή μοντέλου 3D",
     "play_video": "Αναπαραγωγή βίντεο",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "click_to_zoom": "κάντε κλικ για μεγέθυνση",
     "showing_range_html": "Εμφάνιση <strong>{{ start }}–{{ end }}</strong> από {{ total }}",
     "products_shown": "{{ shown }} από {{ total }} προϊόντα",
     "sort_by": "Ταξινόμηση κατά:",

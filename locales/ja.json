@@ -29,6 +29,7 @@
     "slider_label": "スライダー"
   },
   "accessibility": {
+    "show_media": "メディア{{ index }}を表示",
     "breadcrumbs": "パンくずリスト",
     "play_model": "3Dモデルを再生",
     "play_video": "ビデオを再生",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "click_to_zoom": "クリックで拡大",
     "showing_range_html": "{{ total }}件中 <strong>{{ start }}–{{ end }}</strong>件を表示",
     "products_shown": "{{ total }}点中{{ shown }}点",
     "sort_by": "並べ替え:",

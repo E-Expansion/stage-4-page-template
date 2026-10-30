@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "show_media": "הצגת מדיה {{ index }}",
     "breadcrumbs": "פירורי לחם",
     "account": "חשבון",
     "active_filters": "מסננים פעילים:",
@@ -159,6 +160,7 @@
     }
   },
   "content": {
+    "click_to_zoom": "לחץ להגדלה",
     "showing_range_html": "מציג <strong>{{ start }}–{{ end }}</strong> מתוך {{ total }}",
     "products_shown": "{{ shown }} מתוך {{ total }} מוצרים",
     "sort_by": "מיון לפי:",

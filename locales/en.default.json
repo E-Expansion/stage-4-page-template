@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "show_media": "Show media {{ index }}",
     "breadcrumbs": "Breadcrumbs",
     "account": "Account",
     "active_filters": "Active filters:",
@@ -166,6 +167,7 @@
     }
   },
   "content": {
+    "click_to_zoom": "click to zoom",
     "showing_range_html": "Showing <strong>{{ start }}–{{ end }}</strong> of {{ total }}",
     "products_shown": "{{ shown }} of {{ total }} products",
     "sort_by": "Sort by:",

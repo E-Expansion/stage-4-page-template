@@ -29,6 +29,7 @@
     "slider_label": "Bild"
   },
   "accessibility": {
+    "show_media": "Visa media {{ index }}",
     "breadcrumbs": "Brödsmulor",
     "play_model": "Spela 3D-modell",
     "play_video": "Spela video",
@@ -133,6 +134,7 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "click_to_zoom": "klicka för att zooma",
     "showing_range_html": "Visar <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
     "products_shown": "{{ shown }} av {{ total }} produkter",
     "sort_by": "Sortera efter:",

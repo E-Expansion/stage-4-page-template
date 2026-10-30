@@ -29,6 +29,7 @@
     "slider_label": "Controle deslizante"
   },
   "accessibility": {
+    "show_media": "Mostrar mídia {{ index }}",
     "breadcrumbs": "Trilha de navegação",
     "play_model": "Reproduzir modelo 3D",
     "play_video": "Reproduzir vídeo",
@@ -135,6 +136,7 @@
     "back_to_main_menu": "Voltar ao menu principal"
   },
   "content": {
+    "click_to_zoom": "clique para ampliar",
     "showing_range_html": "Mostrando <strong>{{ start }}–{{ end }}</strong> de {{ total }}",
     "products_shown": "{{ shown }} de {{ total }} produtos",
     "sort_by": "Ordenar por:",

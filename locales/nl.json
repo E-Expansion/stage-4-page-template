@@ -29,6 +29,7 @@
     "slider_label": "Schuifregelaar"
   },
   "accessibility": {
+    "show_media": "Toon media {{ index }}",
     "breadcrumbs": "Kruimelpad",
     "play_model": "3D-model afspelen",
     "play_video": "Video afspelen",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "click_to_zoom": "klik om te zoomen",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> van {{ total }}",
     "products_shown": "{{ shown }} van {{ total }} producten",
     "sort_by": "Sorteer op:",

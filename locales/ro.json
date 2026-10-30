@@ -29,6 +29,7 @@
     "slider_label": "Cursor"
   },
   "accessibility": {
+    "show_media": "Afișează media {{ index }}",
     "breadcrumbs": "Navigare ierarhică",
     "play_model": "Redă modelul 3D",
     "play_video": "Redă videoclipul",
@@ -135,6 +136,7 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "click_to_zoom": "clic pentru mărire",
     "showing_range_html": "Se afișează <strong>{{ start }}–{{ end }}</strong> din {{ total }}",
     "products_shown": "{{ shown }} din {{ total }} produse",
     "sort_by": "Sortează după:",

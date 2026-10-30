@@ -1,0 +1,41 @@
+{% doc %}
+  Renders the product title as the page's main heading in the product information column.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+<h1
+  class="product-title"
+  {{ block.shopify_attributes }}
+>
+  {{- product.title | escape -}}
+</h1>
+
+{% stylesheet %}
+  .product-title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-tight);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--3xl);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_title",
+  "tag": null,
+  "presets": [
+    {
+      "name": "t:names.product_title"
+    }
+  ]
+}
+{% endschema %}

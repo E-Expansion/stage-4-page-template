@@ -29,6 +29,7 @@
     "slider_label": "Kliznik"
   },
   "accessibility": {
+    "show_media": "Prikaži medij {{ index }}",
     "breadcrumbs": "Navigacijski put",
     "play_model": "Reproduciraj 3D model",
     "play_video": "Reproduciraj videozapis",
@@ -135,6 +136,7 @@
     "back_to_main_menu": "Natrag na glavni izbornik"
   },
   "content": {
+    "click_to_zoom": "kliknite za uvećanje",
     "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
     "products_shown": "{{ shown }} od {{ total }} proizvoda",
     "sort_by": "Poredaj po:",

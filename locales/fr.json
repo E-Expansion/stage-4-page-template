@@ -29,6 +29,7 @@
     "slider_label": "Carrousel"
   },
   "accessibility": {
+    "show_media": "Afficher le média {{ index }}",
     "breadcrumbs": "Fil d'Ariane",
     "play_model": "Jouer le modèle 3D",
     "play_video": "Lire la vidéo",
@@ -135,6 +136,7 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "click_to_zoom": "cliquer pour zoomer",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> sur {{ total }}",
     "products_shown": "{{ shown }} produits sur {{ total }}",
     "sort_by": "Trier par :",

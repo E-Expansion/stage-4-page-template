@@ -29,6 +29,7 @@
     "slider_label": "Csúszka"
   },
   "accessibility": {
+    "show_media": "{{ index }}. média megjelenítése",
     "breadcrumbs": "Morzsamenü",
     "play_model": "3D-modell lejátszása",
     "play_video": "Videó lejátszása",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "click_to_zoom": "kattints a nagyításhoz",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }}",
     "products_shown": "{{ shown }} / {{ total }} termék",
     "sort_by": "Rendezés:",

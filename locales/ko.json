@@ -29,6 +29,7 @@
     "slider_label": "슬라이더"
   },
   "accessibility": {
+    "show_media": "미디어 {{ index }} 보기",
     "breadcrumbs": "이동 경로",
     "play_model": "3D 모델 재생",
     "play_video": "동영상 재생",
@@ -133,6 +134,7 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "click_to_zoom": "클릭하여 확대",
     "showing_range_html": "{{ total }}개 중 <strong>{{ start }}–{{ end }}</strong> 표시",
     "products_shown": "{{ total }}개 중 {{ shown }}개 제품",
     "sort_by": "정렬:",

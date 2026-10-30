@@ -29,6 +29,7 @@
     "slider_label": "Slider"
   },
   "accessibility": {
+    "show_media": "Medium {{ index }} anzeigen",
     "breadcrumbs": "Brotkrümelnavigation",
     "play_model": "3D-Modell abspielen",
     "play_video": "Video abspielen",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Zurück zum Hauptmenü"
   },
   "content": {
+    "click_to_zoom": "zum Zoomen klicken",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> von {{ total }}",
     "products_shown": "{{ shown }} von {{ total }} Produkten",
     "sort_by": "Sortieren nach:",

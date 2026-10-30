@@ -29,6 +29,7 @@
     "slider_label": "Posuvník"
   },
   "accessibility": {
+    "show_media": "Zobrazit médium {{ index }}",
     "breadcrumbs": "Drobečková navigace",
     "play_model": "Přehrát 3D model",
     "play_video": "Přehrát video",
@@ -137,6 +138,7 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "click_to_zoom": "kliknutím přiblížíte",
     "showing_range_html": "Zobrazeno <strong>{{ start }}–{{ end }}</strong> z {{ total }}",
     "products_shown": "{{ shown }} z {{ total }} produktů",
     "sort_by": "Řadit podle:",

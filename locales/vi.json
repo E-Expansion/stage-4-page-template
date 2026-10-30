@@ -29,6 +29,7 @@
     "slider_label": "Thanh trượt"
   },
   "accessibility": {
+    "show_media": "Hiển thị nội dung {{ index }}",
     "breadcrumbs": "Đường dẫn",
     "play_model": "Phát mô hình 3D",
     "play_video": "Phát video",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "click_to_zoom": "nhấp để phóng to",
     "showing_range_html": "Hiển thị <strong>{{ start }}–{{ end }}</strong> trên {{ total }}",
     "products_shown": "{{ shown }} trên {{ total }} sản phẩm",
     "sort_by": "Sắp xếp theo:",

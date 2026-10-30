@@ -29,6 +29,7 @@
     "slider_label": "Плъзгач"
   },
   "accessibility": {
+    "show_media": "Покажи медия {{ index }}",
     "breadcrumbs": "Навигационна пътека",
     "play_model": "Възпроизвеждане на 3D модел",
     "play_video": "Възпроизвеждане на видеоклип",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "click_to_zoom": "кликнете за увеличение",
     "showing_range_html": "Показани <strong>{{ start }}–{{ end }}</strong> от {{ total }}",
     "products_shown": "{{ shown }} от {{ total }} продукта",
     "sort_by": "Сортиране по:",

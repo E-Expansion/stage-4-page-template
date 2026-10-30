@@ -1,0 +1,179 @@
+{% comment %}
+  Section contract.
+  Main product area of the product template: breadcrumbs, the media gallery on the left
+  and an information column of blocks on the right (stacked on mobile). Everything is
+  read from the current product, so one template serves every product. The information
+  column grows block by block (title first; rating, price, variant picker and buy buttons
+  follow) and accepts app blocks.
+  @example
+  <!-- Product template > Product information; add blocks to the information column -->
+{% endcomment %}
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  border_color: section.settings.border_color,
+  section_id: section.id
+%}
+
+<div class="section-background color-custom-{{ section.id }}"></div>
+<div
+  class="product-main section section--page-width spacing-style color-custom-{{ section.id }}"
+  style="
+    {% render 'spacing-padding', settings: section.settings %}
+    --product-gallery-ratio: {{ section.settings.media_ratio }};
+  "
+>
+  {% if section.settings.show_breadcrumbs %}
+    <div class="product-main__breadcrumbs">
+      {% render 'breadcrumbs' %}
+    </div>
+  {% endif %}
+
+  <div class="product-main__layout">
+    <div class="product-main__media">
+      {% render 'product-gallery',
+        product: product,
+        section_id: section.id,
+        show_badge: section.settings.show_badge
+      %}
+    </div>
+
+    <div class="product-main__info{% if section.settings.sticky_info %} product-main__info--sticky{% endif %}">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-main__breadcrumbs {
+    margin-block-end: var(--padding-md);
+  }
+
+  .product-main__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-xl);
+    align-items: start;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+      gap: var(--padding-4xl);
+    }
+  }
+
+  .product-main__media {
+    min-width: 0;
+  }
+
+  .product-main__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+    min-width: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-main__info--sticky {
+      position: sticky;
+      inset-block-start: calc(var(--header-height, 0px) + var(--padding-lg));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_information",
+  "blocks": [
+    {
+      "type": "_product-title"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:settings.show_breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.media"
+    },
+    {
+      "type": "select",
+      "id": "media_ratio",
+      "label": "t:settings.aspect_ratio",
+      "options": [
+        { "value": "1", "label": "t:options.square" },
+        { "value": "4 / 5", "label": "t:options.portrait" },
+        { "value": "4 / 3", "label": "t:options.landscape" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "t:settings.product_tile_show_badge",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_info",
+      "label": "t:settings.enable_sticky_content",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_information",
+      "blocks": {
+        "title": { "type": "_product-title" }
+      },
+      "block_order": ["title"]
+    }
+  ]
+}
+{% endschema %}

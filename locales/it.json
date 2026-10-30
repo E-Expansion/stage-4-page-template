@@ -29,6 +29,7 @@
     "slider_label": "Cursore"
   },
   "accessibility": {
+    "show_media": "Mostra contenuto multimediale {{ index }}",
     "breadcrumbs": "Percorso di navigazione",
     "play_model": "Riproduci modello 3D",
     "play_video": "Riproduci video",
@@ -135,6 +136,7 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "click_to_zoom": "clicca per ingrandire",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> di {{ total }}",
     "products_shown": "{{ shown }} di {{ total }} prodotti",
     "sort_by": "Ordina per:",

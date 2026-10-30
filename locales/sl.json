@@ -29,6 +29,7 @@
     "slider_label": "Drsnik"
   },
   "accessibility": {
+    "show_media": "Prikaži medij {{ index }}",
     "breadcrumbs": "Drobtinice",
     "play_model": "Predvajaj 3D-model",
     "play_video": "Predvajaj videoposnetek",
@@ -137,6 +138,7 @@
     "back_to_main_menu": "Nazaj na glavni meni"
   },
   "content": {
+    "click_to_zoom": "kliknite za povečavo",
     "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
     "products_shown": "{{ shown }} od {{ total }} izdelkov",
     "sort_by": "Razvrsti po:",

@@ -29,6 +29,7 @@
     "slider_label": "Slider"
   },
   "accessibility": {
+    "show_media": "Tampilkan media {{ index }}",
     "breadcrumbs": "Breadcrumb",
     "play_model": "Putar model 3D",
     "play_video": "Putar video",
@@ -133,6 +134,7 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "click_to_zoom": "klik untuk memperbesar",
     "showing_range_html": "Menampilkan <strong>{{ start }}–{{ end }}</strong> dari {{ total }}",
     "products_shown": "{{ shown }} dari {{ total }} produk",
     "sort_by": "Urutkan:",

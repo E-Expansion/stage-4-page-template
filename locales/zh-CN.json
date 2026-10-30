@@ -29,6 +29,7 @@
     "slider_label": "滑块"
   },
   "accessibility": {
+    "show_media": "显示媒体 {{ index }}",
     "breadcrumbs": "面包屑导航",
     "play_model": "演示 3D 模型",
     "play_video": "播放视频",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "click_to_zoom": "点击放大",
     "showing_range_html": "显示第 <strong>{{ start }}–{{ end }}</strong> 件，共 {{ total }} 件",
     "products_shown": "{{ shown }} / {{ total }} 件商品",
     "sort_by": "排序方式：",

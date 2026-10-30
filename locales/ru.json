@@ -29,6 +29,7 @@
     "slider_label": "Ползунок"
   },
   "accessibility": {
+    "show_media": "Показать медиа {{ index }}",
     "breadcrumbs": "Навигационная цепочка",
     "play_model": "Открыть объемную модель",
     "play_video": "Воспроизвести видео",
@@ -137,6 +138,7 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "click_to_zoom": "нажмите для увеличения",
     "showing_range_html": "Показано <strong>{{ start }}–{{ end }}</strong> из {{ total }}",
     "products_shown": "{{ shown }} из {{ total }} товаров",
     "sort_by": "Сортировать:",

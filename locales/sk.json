@@ -29,6 +29,7 @@
     "slider_label": "Jazdec"
   },
   "accessibility": {
+    "show_media": "Zobraziť médium {{ index }}",
     "breadcrumbs": "Navigačná cesta",
     "play_model": "Prehrať 3D model",
     "play_video": "Prehrať video",
@@ -137,6 +138,7 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "click_to_zoom": "kliknutím priblížite",
     "showing_range_html": "Zobrazené <strong>{{ start }}–{{ end }}</strong> z {{ total }}",
     "products_shown": "{{ shown }} z {{ total }} produktov",
     "sort_by": "Zoradiť podľa:",

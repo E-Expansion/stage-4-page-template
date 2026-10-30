@@ -1,0 +1,439 @@
+{%- doc -%}
+  Renders a product's media gallery: a swipeable main stage with a tag badge and a
+  "1 / 5 | click to zoom" counter, thumbnails beside it on desktop and below it on mobile,
+  and a full-screen zoom dialog for images. Images, videos and 3D models are supported;
+  zoom applies to images. Starts on the selected variant's image when it has one.
+  Behaviour lives in assets/product-gallery.js; without it the stage still swipes and
+  every image stays visible.
+
+  The stage ratio is read from --product-gallery-ratio (default 1).
+
+  @param {object} product - The product whose media to show
+  @param {string} section_id - The section ID, used for unique IDs
+  @param {boolean} [show_badge] - Show the product's tag badge on the stage
+
+  @example
+  {% render 'product-gallery', product: product, section_id: section.id, show_badge: true %}
+{%- enddoc -%}
+
+{% liquid
+  assign media_count = product.media.size
+  assign selected_media_id = product.selected_or_first_available_variant.featured_media.id
+  assign start_index = 0
+  for media in product.media
+    if media.id == selected_media_id
+      assign start_index = forloop.index0
+      break
+    endif
+  endfor
+  assign start_number = start_index | plus: 1
+  assign dialog_id = 'ProductGalleryZoom-' | append: section_id
+%}
+
+<script
+  src="{{ 'product-gallery.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<product-gallery-component
+  class="product-gallery{% if media_count > 1 %} product-gallery--has-thumbs{% endif %}"
+  data-start-index="{{ start_index }}"
+>
+  <div class="product-gallery__stage">
+    <ul
+      class="product-gallery__track list-unstyled"
+      ref="track"
+    >
+      {% for media in product.media %}
+        <li
+          class="product-gallery__slide"
+          data-media-id="{{ media.id }}"
+          ref="slides[]"
+        >
+          {% case media.media_type %}
+            {% when 'image' %}
+              {% liquid
+                assign image_loading = 'lazy'
+                assign image_priority = 'auto'
+                if forloop.index0 == start_index
+                  assign image_loading = 'eager'
+                  assign image_priority = 'high'
+                endif
+              %}
+              <button
+                type="button"
+                class="product-gallery__zoom-trigger button-unstyled"
+                aria-label="{{ 'actions.zoom_media' | t: index: forloop.index }}"
+                aria-haspopup="dialog"
+                data-zoom-src="{{ media | image_url: width: 2400 }}"
+                data-zoom-alt="{{ media.alt | escape }}"
+                data-zoom-width="{{ media.width }}"
+                data-zoom-height="{{ media.height }}"
+                on:click="/openZoom/{{ forloop.index0 }}"
+              >
+                {{
+                  media
+                  | image_url: width: 1600
+                  | image_tag:
+                    widths: '480, 640, 800, 1000, 1200, 1400, 1600',
+                    sizes: '(min-width: 990px) 45vw, 100vw',
+                    loading: image_loading,
+                    fetchpriority: image_priority,
+                    class: 'product-gallery__media'
+                }}
+              </button>
+            {% when 'video' %}
+              {{ media | video_tag: controls: true, playsinline: true, class: 'product-gallery__media' }}
+            {% when 'external_video' %}
+              {{ media | external_video_tag: class: 'product-gallery__media' }}
+            {% when 'model' %}
+              {{ media | model_viewer_tag: class: 'product-gallery__media' }}
+          {% endcase %}
+        </li>
+      {% else %}
+        <li class="product-gallery__slide">
+          {{ 'product-1' | placeholder_svg_tag: 'product-gallery__media product-gallery__placeholder' }}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if show_badge %}
+      {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-gallery__badge' %}
+    {% endif %}
+
+    {% if media_count > 1 %}
+      <p
+        class="product-gallery__counter"
+        aria-hidden="true"
+      >
+        <span ref="current">{{ start_number }}</span> / {{ media_count }}
+        <span class="product-gallery__counter-hint mobile:hidden">
+          <span class="product-gallery__counter-separator">|</span>
+          {{ 'content.click_to_zoom' | t }}
+        </span>
+      </p>
+    {% endif %}
+  </div>
+
+  {% if media_count > 1 %}
+    <ul class="product-gallery__thumbs list-unstyled">
+      {% for media in product.media %}
+        <li>
+          <button
+            type="button"
+            class="product-gallery__thumb button-unstyled"
+            aria-label="{{ 'accessibility.show_media' | t: index: forloop.index }}"
+            {% if forloop.index0 == start_index %}
+              aria-current="true"
+            {% endif %}
+            ref="thumbs[]"
+            on:click="/selectThumb/{{ forloop.index0 }}"
+          >
+            {{
+              media.preview_image
+              | image_url: width: 160
+              | image_tag: width: 80, height: 80, loading: 'lazy', alt: '', class: 'product-gallery__thumb-image'
+            }}
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <dialog
+    id="{{ dialog_id }}"
+    class="product-gallery__zoom"
+    ref="zoomDialog"
+    aria-label="{{ product.title | escape }}"
+    on:click="/handleZoomClick"
+  >
+    {% assign first_image = product.media | where: 'media_type', 'image' | first %}
+    <img
+      class="product-gallery__zoom-image"
+      ref="zoomImage"
+      alt=""
+      width="{{ first_image.width | default: 1600 }}"
+      height="{{ first_image.height | default: 1600 }}"
+    >
+    <button
+      type="button"
+      class="product-gallery__zoom-button product-gallery__zoom-button--close button-unstyled"
+      aria-label="{{ 'accessibility.close_dialog' | t }}"
+      on:click="/closeZoom"
+    >
+      <span
+        class="svg-wrapper"
+        aria-hidden="true"
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </span>
+    </button>
+    {% if media_count > 1 %}
+      <button
+        type="button"
+        class="product-gallery__zoom-button product-gallery__zoom-button--prev button-unstyled"
+        aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+        on:click="/zoomStep/-1"
+      >
+        <span
+          class="svg-wrapper"
+          aria-hidden="true"
+        >
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+      <button
+        type="button"
+        class="product-gallery__zoom-button product-gallery__zoom-button--next button-unstyled"
+        aria-label="{{ 'accessibility.slideshow_next' | t }}"
+        on:click="/zoomStep/1"
+      >
+        <span
+          class="svg-wrapper"
+          aria-hidden="true"
+        >
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </button>
+    {% endif %}
+  </dialog>
+</product-gallery-component>
+
+{% stylesheet %}
+  .product-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-sm);
+    min-width: 0;
+  }
+
+  /* Desktop: thumbnails in a column beside the stage */
+  @media screen and (min-width: 750px) {
+    .product-gallery--has-thumbs {
+      grid-template-columns: 4.5rem minmax(0, 1fr);
+      gap: var(--gap-md);
+    }
+
+    .product-gallery--has-thumbs .product-gallery__thumbs {
+      grid-column: 1;
+      grid-row: 1;
+      flex-direction: column;
+
+      /* Takes the stage's height without stretching the row, then scrolls */
+      height: 0;
+      min-height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .product-gallery--has-thumbs .product-gallery__stage {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .product-gallery__stage {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .product-gallery__track {
+    display: flex;
+    margin: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .product-gallery__slide {
+    flex: 0 0 100%;
+    aspect-ratio: var(--product-gallery-ratio, 1);
+    scroll-snap-align: start;
+  }
+
+  .product-gallery__zoom-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+  }
+
+  .product-gallery__media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-gallery__placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .product-gallery__badge {
+    position: absolute;
+    inset-block-start: var(--padding-sm);
+    inset-inline-start: var(--padding-sm);
+  }
+
+  .product-gallery__counter {
+    position: absolute;
+    inset-block-end: var(--padding-sm);
+    inset-inline-end: var(--padding-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--padding-3xs);
+    margin: 0;
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--3xs);
+    color: var(--color-background);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+    border-radius: var(--style-border-radius-xs);
+    pointer-events: none;
+  }
+
+  .product-gallery__counter-hint {
+    display: inline-flex;
+    gap: var(--padding-3xs);
+  }
+
+  .product-gallery__counter-separator {
+    opacity: var(--opacity-50);
+  }
+
+  .product-gallery__thumbs {
+    display: flex;
+    gap: var(--gap-xs);
+    min-width: 0;
+    margin: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .product-gallery__thumb {
+    display: block;
+    flex-shrink: 0;
+    width: 4.5rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+    cursor: pointer;
+    transition: border-color var(--animation-speed) var(--animation-easing);
+
+    &[aria-current='true'] {
+      border-color: var(--color-foreground);
+    }
+
+    &:hover {
+      border-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    }
+  }
+
+  .product-gallery__thumb-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Zoom dialog: the image fills the screen, controls float above it */
+  .product-gallery__zoom {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    border: 0;
+
+    &::backdrop {
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    }
+
+    &[open] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .product-gallery__zoom-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .product-gallery__zoom-button {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--minimum-touch-target);
+    height: var(--minimum-touch-target);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: 50%;
+    cursor: pointer;
+
+    .svg-wrapper {
+      width: var(--icon-size-sm);
+      height: var(--icon-size-sm);
+    }
+  }
+
+  .product-gallery__zoom-button--close {
+    inset-block-start: var(--padding-lg);
+    inset-inline-end: var(--padding-lg);
+  }
+
+  .product-gallery__zoom-button--prev,
+  .product-gallery__zoom-button--next {
+    inset-block-start: 50%;
+    translate: 0 -50%;
+  }
+
+  .product-gallery__zoom-button--prev {
+    inset-inline-start: var(--padding-lg);
+
+    .svg-wrapper {
+      rotate: 90deg;
+    }
+  }
+
+  .product-gallery__zoom-button--next {
+    inset-inline-end: var(--padding-lg);
+
+    .svg-wrapper {
+      rotate: -90deg;
+    }
+  }
+
+  /* Caret icons point the other way in right-to-left languages */
+  :dir(rtl) .product-gallery__zoom-button--prev .svg-wrapper {
+    rotate: -90deg;
+  }
+
+  :dir(rtl) .product-gallery__zoom-button--next .svg-wrapper {
+    rotate: 90deg;
+  }
+{% endstylesheet %}

@@ -29,6 +29,7 @@
     "slider_label": "Kaydırıcı"
   },
   "accessibility": {
+    "show_media": "Medya {{ index }} göster",
     "breadcrumbs": "İçerik haritası",
     "play_model": "3B modeli oynat",
     "play_video": "Videoyu oynat",
@@ -133,6 +134,7 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "click_to_zoom": "yakınlaştırmak için tıklayın",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }} gösteriliyor",
     "products_shown": "{{ shown }} / {{ total }} ürün",
     "sort_by": "Sırala:",

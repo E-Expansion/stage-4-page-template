@@ -29,6 +29,7 @@
     "slider_label": "Liukusäädin"
   },
   "accessibility": {
+    "show_media": "Näytä media {{ index }}",
     "breadcrumbs": "Murupolku",
     "play_model": "Toista 3D-malli",
     "play_video": "Toista video",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "click_to_zoom": "zoomaa napsauttamalla",
     "showing_range_html": "Näytetään <strong>{{ start }}–{{ end }}</strong> / {{ total }}",
     "products_shown": "{{ shown }} / {{ total }} tuotetta",
     "sort_by": "Lajittele:",

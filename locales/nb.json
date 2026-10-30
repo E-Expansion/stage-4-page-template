@@ -29,6 +29,7 @@
     "slider_label": "Glidefelt"
   },
   "accessibility": {
+    "show_media": "Vis medium {{ index }}",
     "breadcrumbs": "Brødsmulesti",
     "play_model": "Spill av 3D-modell",
     "play_video": "Spill av video",
@@ -133,6 +134,7 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "click_to_zoom": "klikk for å zoome",
     "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
     "products_shown": "{{ shown }} av {{ total }} produkter",
     "sort_by": "Sorter etter:",

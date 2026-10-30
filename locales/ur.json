@@ -9,6 +9,7 @@
  */
 {
   "accessibility": {
+    "show_media": "میڈیا {{ index }} دکھائیں",
     "breadcrumbs": "بریڈ کرمبز",
     "account": "اکاؤنٹ",
     "active_filters": "فعال فلٹر:",
@@ -153,6 +154,7 @@
     }
   },
   "content": {
+    "click_to_zoom": "زوم کرنے کے لیے کلک کریں",
     "showing_range_html": "{{ total }} میں سے <strong>{{ start }}–{{ end }}</strong> دکھا رہے ہیں",
     "products_shown": "{{ total }} میں سے {{ shown }} پروڈکٹس",
     "sort_by": "ترتیب دیں:",

@@ -29,6 +29,7 @@
     "slider_label": "Slankiklis"
   },
   "accessibility": {
+    "show_media": "Rodyti mediją {{ index }}",
     "breadcrumbs": "Naršymo kelias",
     "play_model": "Paleisti 3D modelį",
     "play_video": "Paleisti vaizdo įrašą",
@@ -137,6 +138,7 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "click_to_zoom": "spustelėkite, kad padidintumėte",
     "showing_range_html": "Rodoma <strong>{{ start }}–{{ end }}</strong> iš {{ total }}",
     "products_shown": "{{ shown }} iš {{ total }} produktų",
     "sort_by": "Rikiuoti pagal:",

@@ -29,6 +29,7 @@
     "slider_label": "投影播放器"
   },
   "accessibility": {
+    "show_media": "顯示媒體 {{ index }}",
     "breadcrumbs": "導覽路徑",
     "play_model": "播放 3D 模型",
     "play_video": "播放影片",
@@ -133,6 +134,7 @@
     "back_to_main_menu": "返回主選單"
   },
   "content": {
+    "click_to_zoom": "點擊放大",
     "showing_range_html": "顯示第 <strong>{{ start }}–{{ end }}</strong> 件，共 {{ total }} 件",
     "products_shown": "{{ shown }} / {{ total }} 件商品",
     "sort_by": "排序方式：",
