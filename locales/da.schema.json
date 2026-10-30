@@ -1208,6 +1208,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "menu_featured_collection": "Vises som sidste kolonne i hver menu-dropdown, fx for at promovere en ny eller begrænset kollektion.",
     "menu_featured_text": "Lad være tom for at bruge kollektionens beskrivelse",
     "product_tiles": "Gælder for alle produktfelter: udvalgte produkter, kollektionsgitter og relaterede produkter.",
     "product_tile_colors": "Farveprøver bruger den farve eller det billede, der er angivet for hver værdi under Indhold > Metaobjekter > Color. Hover viser variantbilledet for den farve.",

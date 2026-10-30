@@ -1208,6 +1208,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "menu_featured_collection": "Getoond als laatste kolom in elk menu-dropdown, bijv. om een nieuwe of gelimiteerde collectie te promoten.",
     "menu_featured_text": "Laat leeg om de beschrijving van de collectie te gebruiken",
     "product_tiles": "Geldt voor elke producttegel: uitgelichte producten, collectieraster en gerelateerde producten.",
     "product_tile_colors": "Stalen gebruiken de kleur of afbeelding die per waarde is ingesteld onder Content > Metaobjecten > Color. Hoveren toont de variantafbeelding van die kleur.",

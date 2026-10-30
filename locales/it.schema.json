@@ -1208,6 +1208,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "menu_featured_collection": "Mostrata nell'ultima colonna di ogni menu a discesa, ad es. per promuovere una collezione nuova o limitata.",
     "menu_featured_text": "Lascia vuoto per usare la descrizione della collezione",
     "product_tiles": "Si applica a ogni riquadro prodotto: prodotti selezionati, griglia della collezione e prodotti correlati.",
     "product_tile_colors": "I campioni usano il colore o l'immagine impostati per ogni valore in Contenuti > Metaoggetti > Color. Al passaggio del mouse viene mostrata l'immagine della variante di quel colore.",

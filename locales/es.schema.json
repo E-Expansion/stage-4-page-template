@@ -1208,6 +1208,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "menu_featured_collection": "Se muestra en la última columna de cada menú desplegable, p. ej. para promocionar una colección nueva o limitada.",
     "menu_featured_text": "Déjalo vacío para usar la descripción de la colección",
     "product_tiles": "Se aplica a cada mosaico de producto: productos seleccionados, cuadrícula de colección y productos relacionados.",
     "product_tile_colors": "Las muestras usan el color o la imagen definidos para cada valor en Contenido > Metaobjetos > Color. Al pasar el cursor se muestra la imagen de la variante de ese color.",

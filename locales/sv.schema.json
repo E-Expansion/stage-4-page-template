@@ -1208,6 +1208,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "menu_featured_collection": "Visas som sista kolumnen i varje rullgardinsmeny, t.ex. för att marknadsföra en ny eller begränsad kollektion.",
     "menu_featured_text": "Lämna tomt för att använda kollektionens beskrivning",
     "product_tiles": "Gäller alla produktrutor: utvalda produkter, kollektionsrutnät och relaterade produkter.",
     "product_tile_colors": "Färgprover använder färgen eller bilden som angetts för varje värde under Innehåll > Metaobjekt > Color. Hovring visar variantbilden för den färgen.",

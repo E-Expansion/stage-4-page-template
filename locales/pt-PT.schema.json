@@ -1208,6 +1208,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "menu_featured_collection": "Apresentada na última coluna de cada menu pendente, p. ex. para promover uma coleção nova ou limitada.",
     "menu_featured_text": "Deixe vazio para utilizar a descrição da coleção",
     "product_tiles": "Aplica-se a todos os blocos de produto: produtos selecionados, grelha da coleção e produtos relacionados.",
     "product_tile_colors": "As amostras utilizam a cor ou imagem definida para cada valor em Conteúdo > Metaobjetos > Color. Passar o cursor mostra a imagem da variante dessa cor.",

@@ -1208,6 +1208,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "menu_featured_collection": "Her açılır menünün son sütununda gösterilir, ör. yeni veya sınırlı bir koleksiyonu tanıtmak için.",
     "menu_featured_text": "Koleksiyon açıklamasını kullanmak için boş bırakın",
     "product_tiles": "Her ürün kutucuğu için geçerlidir: seçili ürünler, koleksiyon ızgarası ve ilgili ürünler.",
     "product_tile_colors": "Renk örnekleri, İçerik > Meta nesneler > Color altında her değer için ayarlanan rengi veya görseli kullanır. Üzerine gelmek o rengin varyant görselini gösterir.",

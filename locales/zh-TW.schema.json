@@ -1208,6 +1208,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "menu_featured_collection": "顯示在每個選單下拉清單的最後一欄，例如用於推廣新品或限量商品系列。",
     "menu_featured_text": "留空則使用商品系列說明",
     "product_tiles": "適用於所有商品圖塊：精選商品、商品系列網格和相關商品。",
     "product_tile_colors": "色票使用在「內容 > 中繼物件 > Color」中為每個值設定的顏色或圖片。滑鼠移過時會顯示該顏色的子類圖片。",

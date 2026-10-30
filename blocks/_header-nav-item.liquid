@@ -2,7 +2,8 @@
   Renders a top-level header navigation item. With column blocks it becomes a mega menu
   trigger: a hover/click dropdown on desktop and an accordion in the mobile sidebar.
   Without columns it renders as a plain link. The desktop dropdown is a grid of four equal
-  columns; an optional featured collection (image and short text) always takes the fourth.
+  columns; the featured collection set on the header section (image and short text) takes
+  the fourth in every dropdown, so one new or limited collection is promoted everywhere.
 
   @example
   {% content_for 'blocks' %}
@@ -20,10 +21,11 @@
     assign has_columns = true
   endif
 
-  assign featured = block.settings.featured_collection
+  # Shared by every dropdown: set once in the header section's settings
+  assign featured = section.settings.featured_collection
   if featured != blank
-    assign featured_image = block.settings.featured_image | default: featured.featured_image
-    assign featured_text = block.settings.featured_text | escape
+    assign featured_image = section.settings.featured_image | default: featured.featured_image
+    assign featured_text = section.settings.featured_text | escape
     if featured_text == blank
       assign featured_text = featured.description | strip_html | truncatewords: 14 | escape
     endif
@@ -323,27 +325,6 @@
       "id": "link",
       "label": "t:settings.link",
       "info": "t:info.menu_item_link"
-    },
-    {
-      "type": "header",
-      "content": "t:names.featured_collection"
-    },
-    {
-      "type": "collection",
-      "id": "featured_collection",
-      "label": "t:settings.collection"
-    },
-    {
-      "type": "image_picker",
-      "id": "featured_image",
-      "label": "t:settings.image",
-      "info": "t:info.category_card_image"
-    },
-    {
-      "type": "text",
-      "id": "featured_text",
-      "label": "t:settings.text",
-      "info": "t:info.menu_featured_text"
     }
   ],
   "presets": [

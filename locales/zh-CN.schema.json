@@ -1208,6 +1208,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "menu_featured_collection": "显示在每个菜单下拉列表的最后一列，例如用于推广新品或限量商品系列。",
     "menu_featured_text": "留空则使用商品系列描述",
     "product_tiles": "适用于所有商品图块：精选商品、商品系列网格和相关商品。",
     "product_tile_colors": "色板使用在“内容 > 元对象 > Color”中为每个值设置的颜色或图片。悬停时显示该颜色的多属性图片。",

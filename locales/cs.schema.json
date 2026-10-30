@@ -1208,6 +1208,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "menu_featured_collection": "Zobrazí se jako poslední sloupec každé rozbalovací nabídky, např. k propagaci nové nebo limitované kolekce.",
     "menu_featured_text": "Ponechte prázdné pro použití popisu kolekce",
     "product_tiles": "Platí pro každou dlaždici produktu: vybrané produkty, mřížku kolekce a související produkty.",
     "product_tile_colors": "Vzorníky používají barvu nebo obrázek nastavený pro každou hodnotu v Obsah > Metaobjekty > Color. Najetí myší zobrazí obrázek varianty v této barvě.",
