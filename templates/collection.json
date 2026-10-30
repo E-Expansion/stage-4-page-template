@@ -27,7 +27,7 @@
       "type": "subcategories",
       "settings": {
         "image_ratio": "16 / 9",
-        "view_all_label": "View all",
+        "view_all_label": "",
         "view_all_link": "shopify://collections/all",
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
