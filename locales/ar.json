@@ -166,6 +166,8 @@
     }
   },
   "content": {
+    "no_reviews_yet": "لا توجد مراجعات بعد",
+    "sold_this_week": "تم بيع {{ count }} هذا الأسبوع",
     "click_to_zoom": "انقر للتكبير",
     "showing_range_html": "عرض <strong>{{ start }}–{{ end }}</strong> من {{ total }}",
     "products_shown": "{{ shown }} من {{ total }} منتجات",

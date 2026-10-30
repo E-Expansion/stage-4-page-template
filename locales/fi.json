@@ -134,6 +134,8 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "no_reviews_yet": "Ei vielä arvosteluja",
+    "sold_this_week": "{{ count }} myyty tällä viikolla",
     "click_to_zoom": "zoomaa napsauttamalla",
     "showing_range_html": "Näytetään <strong>{{ start }}–{{ end }}</strong> / {{ total }}",
     "products_shown": "{{ shown }} / {{ total }} tuotetta",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "คะแนนและสต็อก",
     "page_header": "ส่วนหัวของหน้า",
     "subcategories": "หมวดหมู่ย่อย",
     "collection_products": "สินค้าในคอลเลกชัน",
@@ -198,6 +199,11 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "in_stock_note": "หมายเหตุเมื่อมีสินค้า",
+    "lowest_price_guarantee_text": "ข้อความการรับประกัน",
+    "price_description": "คำอธิบายราคา",
+    "show_lowest_price_guarantee": "แสดงการรับประกันราคาต่ำสุด",
+    "show_sold_this_week": "แสดง \"ขายแล้วสัปดาห์นี้\"",
     "payment_types": "วิธีการชำระเงิน",
     "product_tile_show_badge": "แสดงป้ายแท็ก",
     "product_tile_colors": "ตัวเลือกสี",
@@ -1209,6 +1215,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "product_rating_placeholder": "อ่านเมตาฟิลด์ reviews.rating ที่แอปรีวิวกรอกไว้ แสดงดาวว่างจนกว่าจะมีรีวิว",
+    "sold_this_week": "อ่านเมตาฟิลด์ custom.sold_this_week (จำนวนเต็ม) ของสินค้า เช่น กรอกผ่าน Shopify Flow หรือแอป ซ่อนเมื่อว่าง",
     "footer_payment_types": "คั่นด้วยเครื่องหมายจุลภาค เว้นว่างไว้เพื่อแสดงวิธีการชำระเงินที่เปิดใช้งานในร้านค้า ตัวเลือก ได้แก่: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "แสดงเป็นคอลัมน์สุดท้ายของเมนูดรอปดาวน์ทุกเมนู เช่น เพื่อโปรโมตคอลเลกชันใหม่หรือรุ่นจำกัด",
     "menu_featured_text": "เว้นว่างไว้เพื่อใช้คำอธิบายคอลเลกชัน",

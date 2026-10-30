@@ -134,6 +134,8 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "no_reviews_yet": "Ingen anmeldelser endnu",
+    "sold_this_week": "{{ count }} solgt i denne uge",
     "click_to_zoom": "klik for at zoome",
     "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> af {{ total }}",
     "products_shown": "{{ shown }} af {{ total }} produkter",

@@ -136,6 +136,8 @@
     "back_to_main_menu": "Voltar ao menu principal"
   },
   "content": {
+    "no_reviews_yet": "Ainda sem avaliações",
+    "sold_this_week": "{{ count }} vendidos esta semana",
     "click_to_zoom": "clique para ampliar",
     "showing_range_html": "A mostrar <strong>{{ start }}–{{ end }}</strong> de {{ total }}",
     "products_shown": "{{ shown }} de {{ total }} produtos",

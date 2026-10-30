@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Betyg och lager",
     "page_header": "Sidhuvud",
     "subcategories": "Underkategorier",
     "collection_products": "Kollektionsprodukter",
@@ -198,6 +199,11 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "in_stock_note": "Notering vid i lager",
+    "lowest_price_guarantee_text": "Garantitext",
+    "price_description": "Prisbeskrivning",
+    "show_lowest_price_guarantee": "Visa lägsta pris-garanti",
+    "show_sold_this_week": "Visa \"sålda denna vecka\"",
     "payment_types": "Betalningsmetoder",
     "product_tile_show_badge": "Visa taggmärke",
     "product_tile_colors": "Färgalternativ",
@@ -1209,6 +1215,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "product_rating_placeholder": "Läser metafältet reviews.rating som recensionsappar fyller i. Visar tomma stjärnor tills det finns recensioner.",
+    "sold_this_week": "Läser produktens metafält custom.sold_this_week (heltal), till exempel ifyllt via Shopify Flow eller en app. Dolt när det är tomt.",
     "footer_payment_types": "Separerade med kommatecken. Lämna tomt för att visa betalningsmetoderna som är aktiverade i din butik. Alternativ är bland annat: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Visas som sista kolumnen i varje rullgardinsmeny, t.ex. för att marknadsföra en ny eller begränsad kollektion.",
     "menu_featured_text": "Lämna tomt för att använda kollektionens beskrivning",

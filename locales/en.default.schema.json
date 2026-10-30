@@ -233,6 +233,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "product_rating_placeholder": "Reads the reviews.rating metafield that review apps fill. Shows empty stars until there are reviews.",
+    "sold_this_week": "Reads the product's custom.sold_this_week metafield (integer), for example filled by Shopify Flow or an app. Hidden when empty.",
     "footer_payment_types": "Comma-separated. Leave empty to show the payment methods enabled in your store. Options include: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Shown as the last column of every menu dropdown, e.g. to promote a new or limited collection.",
     "menu_featured_text": "Leave empty to use the collection description",
@@ -303,6 +305,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "product_rating_stock": "Rating & stock",
     "page_header": "Page header",
     "subcategories": "Subcategories",
     "collection_products": "Collection products",
@@ -817,6 +820,11 @@
     "below_media": "Below media"
   },
   "settings": {
+    "in_stock_note": "In stock note",
+    "lowest_price_guarantee_text": "Guarantee text",
+    "price_description": "Price description",
+    "show_lowest_price_guarantee": "Show lowest price guarantee",
+    "show_sold_this_week": "Show \"sold this week\"",
     "payment_types": "Payment methods",
     "product_tile_show_badge": "Show tag badge",
     "product_tile_colors": "Colour options",

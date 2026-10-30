@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "评分和库存",
     "page_header": "页面标题区",
     "subcategories": "子类别",
     "collection_products": "商品系列商品",
@@ -198,6 +199,11 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "in_stock_note": "有货备注",
+    "lowest_price_guarantee_text": "保证文本",
+    "price_description": "价格说明",
+    "show_lowest_price_guarantee": "显示最低价保证",
+    "show_sold_this_week": "显示“本周已售”",
     "payment_types": "支付方式",
     "product_tile_show_badge": "显示标签徽章",
     "product_tile_colors": "颜色选项",
@@ -1209,6 +1215,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "product_rating_placeholder": "读取评论应用填写的 reviews.rating 元字段。在有评论之前显示空星。",
+    "sold_this_week": "读取产品的 custom.sold_this_week 元字段（整数），例如通过 Shopify Flow 或应用填写。为空时隐藏。",
     "footer_payment_types": "以逗号分隔。留空则显示商店中已启用的支付方式。可用选项包括：visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "显示在每个菜单下拉列表的最后一列，例如用于推广新品或限量商品系列。",
     "menu_featured_text": "留空则使用商品系列描述",

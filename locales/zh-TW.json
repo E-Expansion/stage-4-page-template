@@ -134,6 +134,8 @@
     "back_to_main_menu": "返回主選單"
   },
   "content": {
+    "no_reviews_yet": "尚無評價",
+    "sold_this_week": "本週已售 {{ count }} 件",
     "click_to_zoom": "點擊放大",
     "showing_range_html": "顯示第 <strong>{{ start }}–{{ end }}</strong> 件，共 {{ total }} 件",
     "products_shown": "{{ shown }} / {{ total }} 件商品",

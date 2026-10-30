@@ -134,6 +134,8 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "no_reviews_yet": "Belum ada ulasan",
+    "sold_this_week": "{{ count }} terjual minggu ini",
     "click_to_zoom": "klik untuk memperbesar",
     "showing_range_html": "Menampilkan <strong>{{ start }}–{{ end }}</strong> dari {{ total }}",
     "products_shown": "{{ shown }} dari {{ total }} produk",

@@ -134,6 +134,8 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "no_reviews_yet": "レビューはまだありません",
+    "sold_this_week": "今週{{ count }}点販売",
     "click_to_zoom": "クリックで拡大",
     "showing_range_html": "{{ total }}件中 <strong>{{ start }}–{{ end }}</strong>件を表示",
     "products_shown": "{{ total }}点中{{ shown }}点",

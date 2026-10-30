@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Beoordeling & voorraad",
     "page_header": "Paginakop",
     "subcategories": "Subcategorieën",
     "collection_products": "Collectieproducten",
@@ -198,6 +199,11 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "in_stock_note": "Notitie bij op voorraad",
+    "lowest_price_guarantee_text": "Garantietekst",
+    "price_description": "Prijsomschrijving",
+    "show_lowest_price_guarantee": "Laagsteprijsgarantie tonen",
+    "show_sold_this_week": "\"Verkocht deze week\" tonen",
     "payment_types": "Betaalmethoden",
     "product_tile_show_badge": "Tagbadge tonen",
     "product_tile_colors": "Kleuropties",
@@ -1209,6 +1215,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "product_rating_placeholder": "Leest het metaveld reviews.rating dat review-apps vullen. Toont lege sterren zolang er geen reviews zijn.",
+    "sold_this_week": "Leest het metaveld custom.sold_this_week (geheel getal) van het product, bijvoorbeeld gevuld via Shopify Flow of een app. Verborgen als het leeg is.",
     "footer_payment_types": "Gescheiden door komma's. Laat leeg om de betaalmethoden te tonen die in je winkel actief zijn. Opties zijn onder andere: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Getoond als laatste kolom in elk menu-dropdown, bijv. om een nieuwe of gelimiteerde collectie te promoten.",
     "menu_featured_text": "Laat leeg om de beschrijving van de collectie te gebruiken",

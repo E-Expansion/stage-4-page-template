@@ -134,6 +134,8 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "no_reviews_yet": "아직 리뷰가 없습니다",
+    "sold_this_week": "이번 주 {{ count }}개 판매",
     "click_to_zoom": "클릭하여 확대",
     "showing_range_html": "{{ total }}개 중 <strong>{{ start }}–{{ end }}</strong> 표시",
     "products_shown": "{{ total }}개 중 {{ shown }}개 제품",

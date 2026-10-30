@@ -2,10 +2,12 @@
   Renders a product's review rating as five stars filled to the score, followed by the
   score and the review count. Reads Shopify's standard review metafields
   (reviews.rating and reviews.rating_count), which review apps fill. Renders nothing when
-  the product has no rating. Star colour comes from Theme settings > Product cards.
+  the product has no rating, or empty stars with "No reviews yet" when placeholder is set.
+  Star colour comes from Theme settings > Product cards.
 
   @param {object} product - The product to show the rating for
   @param {boolean} [show_count] - Show the review count in brackets, defaults to true
+  @param {boolean} [placeholder] - Show empty stars when there is no rating yet
   @param {string} [class] - Extra classes for the wrapper
 
   @example
@@ -32,6 +34,15 @@
     {%- if rating_count != blank and show_count != false %}
       <span class="star-rating__count">({{ rating_count }})</span>
     {%- endif -%}
+  </p>
+{%- elsif placeholder -%}
+  <p class="star-rating star-rating--empty {{ class }}">
+    <span
+      class="star-rating__stars"
+      style="--star-rating-percent: 0%;"
+      aria-hidden="true"
+    ></span>
+    <span>{{ 'content.no_reviews_yet' | t }}</span>
   </p>
 {%- endif -%}
 

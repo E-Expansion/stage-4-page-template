@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "評分和庫存",
     "page_header": "頁面標題區",
     "subcategories": "子類別",
     "collection_products": "商品系列商品",
@@ -198,6 +199,11 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "in_stock_note": "有庫存備註",
+    "lowest_price_guarantee_text": "保證文字",
+    "price_description": "價格說明",
+    "show_lowest_price_guarantee": "顯示最低價保證",
+    "show_sold_this_week": "顯示「本週已售」",
     "payment_types": "付款方式",
     "product_tile_show_badge": "顯示標籤徽章",
     "product_tile_colors": "顏色選項",
@@ -1209,6 +1215,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "product_rating_placeholder": "讀取評論應用程式填寫的 reviews.rating 中繼欄位。在有評論之前顯示空星。",
+    "sold_this_week": "讀取產品的 custom.sold_this_week 中繼欄位（整數），例如透過 Shopify Flow 或應用程式填寫。為空時隱藏。",
     "footer_payment_types": "以逗號分隔。留空則顯示商店中已啟用的付款方式。可用選項包括：visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "顯示在每個選單下拉清單的最後一欄，例如用於推廣新品或限量商品系列。",
     "menu_featured_text": "留空則使用商品系列說明",

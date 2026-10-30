@@ -134,6 +134,8 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "no_reviews_yet": "Ingen anmeldelser ennå",
+    "sold_this_week": "{{ count }} solgt denne uken",
     "click_to_zoom": "klikk for å zoome",
     "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
     "products_shown": "{{ shown }} av {{ total }} produkter",

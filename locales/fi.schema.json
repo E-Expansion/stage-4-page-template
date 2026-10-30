@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Arvio ja varasto",
     "page_header": "Sivun ylätunniste",
     "subcategories": "Alaluokat",
     "collection_products": "Kokoelman tuotteet",
@@ -198,6 +199,11 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "in_stock_note": "Varastossa-huomautus",
+    "lowest_price_guarantee_text": "Takuuteksti",
+    "price_description": "Hinnan kuvaus",
+    "show_lowest_price_guarantee": "Näytä halvimman hinnan takuu",
+    "show_sold_this_week": "Näytä \"myyty tällä viikolla\"",
     "payment_types": "Maksutavat",
     "product_tile_show_badge": "Näytä tunnistemerkki",
     "product_tile_colors": "Värivaihtoehdot",
@@ -1209,6 +1215,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "product_rating_placeholder": "Lukee metakentän reviews.rating, jonka arvostelusovellukset täyttävät. Näyttää tyhjät tähdet, kunnes arvosteluja on.",
+    "sold_this_week": "Lukee tuotteen metakentän custom.sold_this_week (kokonaisluku), jonka voi täyttää esimerkiksi Shopify Flow'lla tai sovelluksella. Piilotettu, kun tyhjä.",
     "footer_payment_types": "Pilkuilla erotettuina. Jätä tyhjäksi näyttääksesi kaupassa käytössä olevat maksutavat. Vaihtoehtoja ovat esimerkiksi: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Näytetään jokaisen valikon pudotusvalikon viimeisenä sarakkeena, esim. uuden tai rajoitetun kokoelman mainostamiseen.",
     "menu_featured_text": "Jätä tyhjäksi käyttääksesi kokoelman kuvausta",

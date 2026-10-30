@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Hodnocení a sklad",
     "page_header": "Záhlaví stránky",
     "subcategories": "Podkategorie",
     "collection_products": "Produkty kolekce",
@@ -198,6 +199,11 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "in_stock_note": "Poznámka u skladem",
+    "lowest_price_guarantee_text": "Text záruky",
+    "price_description": "Popis ceny",
+    "show_lowest_price_guarantee": "Zobrazit záruku nejnižší ceny",
+    "show_sold_this_week": "Zobrazit „prodáno tento týden“",
     "payment_types": "Platební metody",
     "product_tile_show_badge": "Zobrazit odznak štítku",
     "product_tile_colors": "Možnosti barvy",
@@ -1209,6 +1215,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "product_rating_placeholder": "Čte metapole reviews.rating, které vyplňují aplikace pro recenze. Dokud nejsou recenze, zobrazuje prázdné hvězdičky.",
+    "sold_this_week": "Čte metapole produktu custom.sold_this_week (celé číslo), vyplněné např. přes Shopify Flow nebo aplikaci. Skryto, když je prázdné.",
     "footer_payment_types": "Oddělené čárkami. Ponechte prázdné pro zobrazení platebních metod aktivních v obchodě. Možnosti zahrnují: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Zobrazí se jako poslední sloupec každé rozbalovací nabídky, např. k propagaci nové nebo limitované kolekce.",
     "menu_featured_text": "Ponechte prázdné pro použití popisu kolekce",

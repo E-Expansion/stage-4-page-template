@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Bedømmelse og lager",
     "page_header": "Sidehoved",
     "subcategories": "Underkategorier",
     "collection_products": "Kollektionsprodukter",
@@ -198,6 +199,11 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "in_stock_note": "Note ved på lager",
+    "lowest_price_guarantee_text": "Garantitekst",
+    "price_description": "Prisbeskrivelse",
+    "show_lowest_price_guarantee": "Vis laveste pris-garanti",
+    "show_sold_this_week": "Vis \"solgt i denne uge\"",
     "payment_types": "Betalingsmetoder",
     "product_tile_show_badge": "Vis tag-badge",
     "product_tile_colors": "Farvemuligheder",
@@ -1209,6 +1215,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "product_rating_placeholder": "Læser metafeltet reviews.rating, som anmeldelsesapps udfylder. Viser tomme stjerner, indtil der er anmeldelser.",
+    "sold_this_week": "Læser produktets metafelt custom.sold_this_week (heltal), f.eks. udfyldt via Shopify Flow eller en app. Skjult, når det er tomt.",
     "footer_payment_types": "Adskilt af kommaer. Lad være tom for at vise de betalingsmetoder, der er aktiveret i din butik. Muligheder omfatter: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Vises som sidste kolonne i hver menu-dropdown, fx for at promovere en ny eller begrænset kollektion.",
     "menu_featured_text": "Lad være tom for at bruge kollektionens beskrivelse",

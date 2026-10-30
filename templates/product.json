@@ -15,10 +15,20 @@
         "title": {
           "type": "_product-title",
           "settings": {}
+        },
+        "meta": {
+          "type": "_product-meta",
+          "settings": {}
+        },
+        "price": {
+          "type": "_product-price",
+          "settings": {}
         }
       },
       "block_order": [
-        "title"
+        "title",
+        "meta",
+        "price"
       ],
       "settings": {
         "show_breadcrumbs": true,

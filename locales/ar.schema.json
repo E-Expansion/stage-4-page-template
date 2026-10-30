@@ -225,6 +225,8 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "product_rating_placeholder": "يقرأ الحقل الوصفي reviews.rating الذي تملؤه تطبيقات المراجعات. يعرض نجومًا فارغة حتى تتوفر مراجعات.",
+    "sold_this_week": "يقرأ الحقل الوصفي custom.sold_this_week (عدد صحيح) للمنتج، الذي يُملأ مثلًا عبر Shopify Flow أو تطبيق. يُخفى عندما يكون فارغًا.",
     "footer_payment_types": "مفصولة بفواصل. اتركه فارغًا لعرض طرق الدفع المفعلة في متجرك. تشمل الخيارات: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "تُعرض كآخر عمود في كل قائمة منسدلة، مثلًا للترويج لمجموعة جديدة أو محدودة.",
     "menu_featured_text": "اتركه فارغًا لاستخدام وصف المجموعة",
@@ -295,6 +297,7 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "product_rating_stock": "التقييم والمخزون",
     "page_header": "رأس الصفحة",
     "subcategories": "الفئات الفرعية",
     "collection_products": "منتجات المجموعة",
@@ -765,6 +768,11 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "in_stock_note": "ملاحظة متوفر",
+    "lowest_price_guarantee_text": "نص الضمان",
+    "price_description": "وصف السعر",
+    "show_lowest_price_guarantee": "إظهار ضمان أقل سعر",
+    "show_sold_this_week": "إظهار \"المبيعات هذا الأسبوع\"",
     "payment_types": "طرق الدفع",
     "product_tile_show_badge": "إظهار شارة الوسم",
     "product_tile_colors": "خيارات اللون",

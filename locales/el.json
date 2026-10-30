@@ -134,6 +134,8 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "no_reviews_yet": "Δεν υπάρχουν ακόμη κριτικές",
+    "sold_this_week": "{{ count }} πωλήθηκαν αυτή την εβδομάδα",
     "click_to_zoom": "κάντε κλικ για μεγέθυνση",
     "showing_range_html": "Εμφάνιση <strong>{{ start }}–{{ end }}</strong> από {{ total }}",
     "products_shown": "{{ shown }} από {{ total }} προϊόντα",

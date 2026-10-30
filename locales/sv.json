@@ -134,6 +134,8 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "no_reviews_yet": "Inga recensioner än",
+    "sold_this_week": "{{ count }} sålda denna vecka",
     "click_to_zoom": "klicka för att zooma",
     "showing_range_html": "Visar <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
     "products_shown": "{{ shown }} av {{ total }} produkter",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Valoración y stock",
     "page_header": "Encabezado de página",
     "subcategories": "Subcategorías",
     "collection_products": "Productos de la colección",
@@ -198,6 +199,11 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "in_stock_note": "Nota de en stock",
+    "lowest_price_guarantee_text": "Texto de la garantía",
+    "price_description": "Descripción del precio",
+    "show_lowest_price_guarantee": "Mostrar garantía de precio más bajo",
+    "show_sold_this_week": "Mostrar \"vendidos esta semana\"",
     "payment_types": "Métodos de pago",
     "product_tile_show_badge": "Mostrar insignia de etiqueta",
     "product_tile_colors": "Opciones de color",
@@ -1209,6 +1215,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "product_rating_placeholder": "Lee el metacampo reviews.rating que rellenan las apps de reseñas. Muestra estrellas vacías mientras no haya reseñas.",
+    "sold_this_week": "Lee el metacampo custom.sold_this_week (entero) del producto, por ejemplo rellenado con Shopify Flow o una app. Oculto si está vacío.",
     "footer_payment_types": "Separados por comas. Déjalo vacío para mostrar los métodos de pago activados en tu tienda. Opciones posibles: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Se muestra en la última columna de cada menú desplegable, p. ej. para promocionar una colección nueva o limitada.",
     "menu_featured_text": "Déjalo vacío para usar la descripción de la colección",

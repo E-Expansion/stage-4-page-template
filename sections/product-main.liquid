@@ -3,7 +3,7 @@
   Main product area of the product template: breadcrumbs, the media gallery on the left
   and an information column of blocks on the right (stacked on mobile). Everything is
   read from the current product, so one template serves every product. The information
-  column grows block by block (title first; rating, price, variant picker and buy buttons
+  column grows block by block (title, rating and stock, price; variant picker and buy buttons
   follow) and accepts app blocks.
   @example
   <!-- Product template > Product information; add blocks to the information column -->
@@ -88,6 +88,12 @@
       "type": "_product-title"
     },
     {
+      "type": "_product-meta"
+    },
+    {
+      "type": "_product-price"
+    },
+    {
       "type": "@app"
     }
   ],
@@ -170,9 +176,11 @@
     {
       "name": "t:names.product_information",
       "blocks": {
-        "title": { "type": "_product-title" }
+        "title": { "type": "_product-title" },
+        "meta": { "type": "_product-meta" },
+        "price": { "type": "_product-price" }
       },
-      "block_order": ["title"]
+      "block_order": ["title", "meta", "price"]
     }
   ]
 }

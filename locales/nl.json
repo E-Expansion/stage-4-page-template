@@ -134,6 +134,8 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "no_reviews_yet": "Nog geen reviews",
+    "sold_this_week": "{{ count }} verkocht deze week",
     "click_to_zoom": "klik om te zoomen",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> van {{ total }}",
     "products_shown": "{{ shown }} van {{ total }} producten",

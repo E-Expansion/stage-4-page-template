@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Puan ve stok",
     "page_header": "Sayfa başlığı",
     "subcategories": "Alt kategoriler",
     "collection_products": "Koleksiyon ürünleri",
@@ -198,6 +199,11 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "in_stock_note": "Stokta notu",
+    "lowest_price_guarantee_text": "Garanti metni",
+    "price_description": "Fiyat açıklaması",
+    "show_lowest_price_guarantee": "En düşük fiyat garantisini göster",
+    "show_sold_this_week": "\"Bu hafta satılan\"ı göster",
     "payment_types": "Ödeme yöntemleri",
     "product_tile_show_badge": "Etiket rozetini göster",
     "product_tile_colors": "Renk seçenekleri",
@@ -1209,6 +1215,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "product_rating_placeholder": "Değerlendirme uygulamalarının doldurduğu reviews.rating meta alanını okur. Değerlendirme olana kadar boş yıldızlar gösterir.",
+    "sold_this_week": "Ürünün custom.sold_this_week meta alanını (tam sayı) okur; örneğin Shopify Flow veya bir uygulama ile doldurulur. Boşsa gizlenir.",
     "footer_payment_types": "Virgülle ayrılmış. Mağazanızda etkin olan ödeme yöntemlerini göstermek için boş bırakın. Seçenekler şunları içerir: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Her açılır menünün son sütununda gösterilir, ör. yeni veya sınırlı bir koleksiyonu tanıtmak için.",
     "menu_featured_text": "Koleksiyon açıklamasını kullanmak için boş bırakın",

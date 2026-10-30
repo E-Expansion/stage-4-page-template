@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "Bewertung & Lagerbestand",
     "page_header": "Seitenkopf",
     "subcategories": "Unterkategorien",
     "collection_products": "Kollektionsprodukte",
@@ -198,6 +199,11 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "in_stock_note": "Hinweis bei „Auf Lager“",
+    "lowest_price_guarantee_text": "Garantietext",
+    "price_description": "Preisbeschreibung",
+    "show_lowest_price_guarantee": "Tiefstpreisgarantie anzeigen",
+    "show_sold_this_week": "„Diese Woche verkauft“ anzeigen",
     "payment_types": "Zahlungsmethoden",
     "product_tile_show_badge": "Tag-Badge anzeigen",
     "product_tile_colors": "Farboptionen",
@@ -1209,6 +1215,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "product_rating_placeholder": "Liest das Metafeld reviews.rating, das Bewertungs-Apps befüllen. Zeigt leere Sterne, solange es keine Bewertungen gibt.",
+    "sold_this_week": "Liest das Metafeld custom.sold_this_week (Ganzzahl) des Produkts, z. B. befüllt über Shopify Flow oder eine App. Ausgeblendet, wenn leer.",
     "footer_payment_types": "Durch Kommas getrennt. Leer lassen, um die in deinem Shop aktivierten Zahlungsmethoden anzuzeigen. Optionen sind u. a.: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Wird als letzte Spalte in jedem Menü-Dropdown angezeigt, z. B. um eine neue oder limitierte Kollektion zu bewerben.",
     "menu_featured_text": "Leer lassen, um die Kollektionsbeschreibung zu verwenden",

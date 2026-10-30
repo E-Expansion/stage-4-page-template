@@ -1,0 +1,153 @@
+{% doc %}
+  Renders the row under the product title: the review rating, then the "sold this week"
+  and stock labels. The rating reads Shopify's reviews.rating metafields (filled by a review
+  app) and shows empty stars as a placeholder until there are reviews. "Sold this week" reads
+  the product's custom.sold_this_week metafield (an integer) and hides when it is empty.
+  Stock follows the selected variant and the low stock threshold in Theme settings.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign sold_count = product.metafields.custom.sold_this_week.value | default: 0
+
+  assign stock_state = 'in'
+  if variant.available == false
+    assign stock_state = 'out'
+  elsif variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' and variant.inventory_quantity > 0 and variant.inventory_quantity <= settings.low_stock_threshold
+    assign stock_state = 'low'
+  endif
+
+  assign show_sold = false
+  if block.settings.show_sold_this_week and sold_count > 0
+    assign show_sold = true
+  endif
+%}
+
+<div
+  class="product-meta"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_rating %}
+    {% render 'star-rating', product: product, placeholder: true, class: 'product-meta__rating' %}
+  {% endif %}
+
+  {% if show_sold or block.settings.show_stock %}
+    <div class="product-meta__labels">
+      {% if show_sold %}
+        <p class="product-meta__label product-meta__label--sold">
+          {{ 'content.sold_this_week' | t: count: sold_count }}
+        </p>
+      {% endif %}
+
+      {% if block.settings.show_stock %}
+        <p class="product-meta__label product-meta__label--{{ stock_state }}">
+          {%- case stock_state -%}
+            {%- when 'out' -%}
+              {{ 'content.inventory_out_of_stock' | t }}
+            {%- when 'low' -%}
+              {{ 'content.inventory_only_count_left' | t: count: variant.inventory_quantity }}
+            {%- else -%}
+              {{ 'content.inventory_in_stock' | t }}
+              {%- if block.settings.in_stock_note != blank %} - {{ block.settings.in_stock_note | escape }}{% endif -%}
+          {%- endcase -%}
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+    font-size: var(--font-size--xs);
+  }
+
+  .product-meta__labels {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+  }
+
+  /* Divider between the rating and the labels when they share a line */
+  .product-meta__rating + .product-meta__labels {
+    padding-inline-start: var(--gap-md);
+    border-inline-start: var(--style-border-width) solid var(--color-border);
+  }
+
+  .product-meta__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-2xs);
+    margin: 0;
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 0.5em;
+      height: 0.5em;
+      background-color: currentcolor;
+      border-radius: var(--style-border-radius-xs);
+    }
+  }
+
+  .product-meta__label--sold,
+  .product-meta__label--in {
+    color: var(--color-in-stock);
+  }
+
+  .product-meta__label--low {
+    color: var(--color-low-stock);
+  }
+
+  .product-meta__label--out {
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_rating_stock",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "t:settings.product_tile_show_rating",
+      "info": "t:info.product_rating_placeholder",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sold_this_week",
+      "label": "t:settings.show_sold_this_week",
+      "info": "t:info.sold_this_week",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stock",
+      "label": "t:settings.product_tile_show_stock",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "in_stock_note",
+      "label": "t:settings.in_stock_note",
+      "default": "ships today",
+      "visible_if": "{{ block.settings.show_stock }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_rating_stock"
+    }
+  ]
+}
+{% endschema %}

@@ -136,6 +136,8 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "no_reviews_yet": "Nicio recenzie încă",
+    "sold_this_week": "{{ count }} vândute săptămâna aceasta",
     "click_to_zoom": "clic pentru mărire",
     "showing_range_html": "Se afișează <strong>{{ start }}–{{ end }}</strong> din {{ total }}",
     "products_shown": "{{ shown }} din {{ total }} produse",

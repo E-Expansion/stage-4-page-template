@@ -134,6 +134,8 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "no_reviews_yet": "Még nincsenek értékelések",
+    "sold_this_week": "{{ count }} eladva ezen a héten",
     "click_to_zoom": "kattints a nagyításhoz",
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }}",
     "products_shown": "{{ shown }} / {{ total }} termék",

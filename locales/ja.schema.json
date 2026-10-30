@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_rating_stock": "評価と在庫",
     "page_header": "ページヘッダー",
     "subcategories": "サブカテゴリー",
     "collection_products": "コレクションの商品",
@@ -198,6 +199,11 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "in_stock_note": "在庫ありの補足",
+    "lowest_price_guarantee_text": "保証のテキスト",
+    "price_description": "価格の説明",
+    "show_lowest_price_guarantee": "最低価格保証を表示",
+    "show_sold_this_week": "「今週の販売数」を表示",
     "payment_types": "支払い方法",
     "product_tile_show_badge": "タグバッジを表示",
     "product_tile_colors": "カラーオプション",
@@ -1209,6 +1215,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "product_rating_placeholder": "レビューアプリが入力するメタフィールド reviews.rating を読み込みます。レビューがない間は空の星を表示します。",
+    "sold_this_week": "商品のメタフィールド custom.sold_this_week（整数）を読み込みます。Shopify Flow やアプリで入力できます。空の場合は非表示です。",
     "footer_payment_types": "カンマ区切り。空欄の場合はストアで有効な支払い方法を表示します。使用できる値: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "すべてのメニューのドロップダウンの最後の列に表示されます（新作や限定コレクションの紹介など）。",
     "menu_featured_text": "空欄の場合はコレクションの説明を使用します",

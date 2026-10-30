@@ -225,6 +225,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "product_rating_placeholder": "קורא את שדה המטא reviews.rating שאפליקציות ביקורות ממלאות. מציג כוכבים ריקים עד שיש ביקורות.",
+    "sold_this_week": "קורא את שדה המטא custom.sold_this_week (מספר שלם) של המוצר, שממולא למשל דרך Shopify Flow או אפליקציה. מוסתר כשהוא ריק.",
     "footer_payment_types": "מופרדים בפסיקים. השאר ריק כדי להציג את אמצעי התשלום הפעילים בחנות. האפשרויות כוללות: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "מוצגת כעמודה האחרונה בכל תפריט נפתח, למשל כדי לקדם קולקציה חדשה או מוגבלת.",
     "menu_featured_text": "השאר ריק כדי להשתמש בתיאור הקולקציה",
@@ -295,6 +297,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "product_rating_stock": "דירוג ומלאי",
     "page_header": "כותרת הדף",
     "subcategories": "קטגוריות משנה",
     "collection_products": "מוצרי הקולקציה",
@@ -765,6 +768,11 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "in_stock_note": "הערה ליד במלאי",
+    "lowest_price_guarantee_text": "טקסט האחריות",
+    "price_description": "תיאור המחיר",
+    "show_lowest_price_guarantee": "הצגת אחריות למחיר הנמוך ביותר",
+    "show_sold_this_week": "הצגת \"נמכרו השבוע\"",
     "payment_types": "אמצעי תשלום",
     "product_tile_show_badge": "הצגת תג תגית",
     "product_tile_colors": "אפשרויות צבע",

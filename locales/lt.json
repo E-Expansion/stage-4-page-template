@@ -138,6 +138,8 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "no_reviews_yet": "Atsiliepimų dar nėra",
+    "sold_this_week": "Šią savaitę parduota: {{ count }}",
     "click_to_zoom": "spustelėkite, kad padidintumėte",
     "showing_range_html": "Rodoma <strong>{{ start }}–{{ end }}</strong> iš {{ total }}",
     "products_shown": "{{ shown }} iš {{ total }} produktų",

@@ -134,6 +134,8 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "no_reviews_yet": "Все още няма отзиви",
+    "sold_this_week": "{{ count }} продадени тази седмица",
     "click_to_zoom": "кликнете за увеличение",
     "showing_range_html": "Показани <strong>{{ start }}–{{ end }}</strong> от {{ total }}",
     "products_shown": "{{ shown }} от {{ total }} продукта",

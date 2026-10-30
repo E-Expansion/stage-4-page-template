@@ -138,6 +138,8 @@
     "back_to_main_menu": "Nazaj na glavni meni"
   },
   "content": {
+    "no_reviews_yet": "Še ni ocen",
+    "sold_this_week": "{{ count }} prodanih ta teden",
     "click_to_zoom": "kliknite za povečavo",
     "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
     "products_shown": "{{ shown }} od {{ total }} izdelkov",
