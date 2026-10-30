@@ -134,6 +134,7 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "installments": "Tai {{ count }} x {{ price }} palvelulla {{ provider }}",
     "no_reviews_yet": "Ei vielä arvosteluja",
     "sold_this_week": "{{ count }} myyty tällä viikolla",
     "click_to_zoom": "zoomaa napsauttamalla",

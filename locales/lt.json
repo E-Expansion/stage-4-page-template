@@ -138,6 +138,7 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "installments": "Arba {{ count }}x {{ price }} su {{ provider }}",
     "no_reviews_yet": "Atsiliepimų dar nėra",
     "sold_this_week": "Šią savaitę parduota: {{ count }}",
     "click_to_zoom": "spustelėkite, kad padidintumėte",

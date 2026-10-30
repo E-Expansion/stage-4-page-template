@@ -199,6 +199,10 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "installments_provider": "Aanbieder gespreid betalen",
+    "show_price_in_button": "Prijs in knop tonen",
+    "size_guide_page": "Pagina met maatgids",
+    "size_option": "Maatoptie",
     "in_stock_note": "Notitie bij op voorraad",
     "lowest_price_guarantee_text": "Garantietekst",
     "price_description": "Prijsomschrijving",
@@ -1215,6 +1219,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "installments": "Aantal termijnen in de regel onder de knop. Bij 0 of 1 wordt hij verborgen.",
+    "size_option": "Naam van de optie die de knop voor de maatgids toont en de variant-metavelden custom.size_dimensions (onder elke waarde) en custom.size_note (na de gekozen waarde).",
     "product_rating_placeholder": "Leest het metaveld reviews.rating dat review-apps vullen. Toont lege sterren zolang er geen reviews zijn.",
     "sold_this_week": "Leest het metaveld custom.sold_this_week (geheel getal) van het product, bijvoorbeeld gevuld via Shopify Flow of een app. Verborgen als het leeg is.",
     "footer_payment_types": "Gescheiden door komma's. Laat leeg om de betaalmethoden te tonen die in je winkel actief zijn. Opties zijn onder andere: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

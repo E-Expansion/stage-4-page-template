@@ -199,6 +199,10 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "installments_provider": "分期付款提供商",
+    "show_price_in_button": "在按钮中显示价格",
+    "size_guide_page": "尺码指南页面",
+    "size_option": "尺码选项",
     "in_stock_note": "有货备注",
     "lowest_price_guarantee_text": "保证文本",
     "price_description": "价格说明",
@@ -1215,6 +1219,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "installments": "按钮下方提示中的分期数。0 或 1 时隐藏。",
+    "size_option": "显示尺码指南按钮以及多属性元字段 custom.size_dimensions（每个值下方）和 custom.size_note（所选值之后）的选项名称。",
     "product_rating_placeholder": "读取评论应用填写的 reviews.rating 元字段。在有评论之前显示空星。",
     "sold_this_week": "读取产品的 custom.sold_this_week 元字段（整数），例如通过 Shopify Flow 或应用填写。为空时隐藏。",
     "footer_payment_types": "以逗号分隔。留空则显示商店中已启用的支付方式。可用选项包括：visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

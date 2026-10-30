@@ -134,6 +134,7 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "installments": "Eller {{ count }}x {{ price }} med {{ provider }}",
     "no_reviews_yet": "Inga recensioner än",
     "sold_this_week": "{{ count }} sålda denna vecka",
     "click_to_zoom": "klicka för att zooma",

@@ -225,6 +225,8 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "installments": "عدد الأقساط في النص أسفل الزر. القيمة 0 أو 1 تخفيه.",
+    "size_option": "اسم الخيار الذي يعرض زر دليل المقاسات والحقلين الوصفيين للمتغير custom.size_dimensions (أسفل كل قيمة) وcustom.size_note (بعد القيمة المحددة).",
     "product_rating_placeholder": "يقرأ الحقل الوصفي reviews.rating الذي تملؤه تطبيقات المراجعات. يعرض نجومًا فارغة حتى تتوفر مراجعات.",
     "sold_this_week": "يقرأ الحقل الوصفي custom.sold_this_week (عدد صحيح) للمنتج، الذي يُملأ مثلًا عبر Shopify Flow أو تطبيق. يُخفى عندما يكون فارغًا.",
     "footer_payment_types": "مفصولة بفواصل. اتركه فارغًا لعرض طرق الدفع المفعلة في متجرك. تشمل الخيارات: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
@@ -768,6 +770,10 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "installments_provider": "مزوّد التقسيط",
+    "show_price_in_button": "إظهار السعر في الزر",
+    "size_guide_page": "صفحة دليل المقاسات",
+    "size_option": "خيار المقاس",
     "in_stock_note": "ملاحظة متوفر",
     "lowest_price_guarantee_text": "نص الضمان",
     "price_description": "وصف السعر",

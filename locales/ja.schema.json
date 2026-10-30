@@ -199,6 +199,10 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "installments_provider": "分割払いの提供元",
+    "show_price_in_button": "ボタンに価格を表示",
+    "size_guide_page": "サイズガイドのページ",
+    "size_option": "サイズのオプション",
     "in_stock_note": "在庫ありの補足",
     "lowest_price_guarantee_text": "保証のテキスト",
     "price_description": "価格の説明",
@@ -1215,6 +1219,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "installments": "ボタン下の案内に表示する分割回数。0 または 1 で非表示になります。",
+    "size_option": "サイズガイドボタンと、バリエーションのメタフィールド custom.size_dimensions（各値の下）と custom.size_note（選択した値の後）を表示するオプションの名前。",
     "product_rating_placeholder": "レビューアプリが入力するメタフィールド reviews.rating を読み込みます。レビューがない間は空の星を表示します。",
     "sold_this_week": "商品のメタフィールド custom.sold_this_week（整数）を読み込みます。Shopify Flow やアプリで入力できます。空の場合は非表示です。",
     "footer_payment_types": "カンマ区切り。空欄の場合はストアで有効な支払い方法を表示します。使用できる値: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

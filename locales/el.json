@@ -134,6 +134,7 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "installments": "Ή {{ count }}x {{ price }} με {{ provider }}",
     "no_reviews_yet": "Δεν υπάρχουν ακόμη κριτικές",
     "sold_this_week": "{{ count }} πωλήθηκαν αυτή την εβδομάδα",
     "click_to_zoom": "κάντε κλικ για μεγέθυνση",

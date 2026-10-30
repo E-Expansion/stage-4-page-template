@@ -199,6 +199,10 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "installments_provider": "Proveedor de pago a plazos",
+    "show_price_in_button": "Mostrar precio en el botón",
+    "size_guide_page": "Página de guía de tallas",
+    "size_option": "Opción de talla",
     "in_stock_note": "Nota de en stock",
     "lowest_price_guarantee_text": "Texto de la garantía",
     "price_description": "Descripción del precio",
@@ -1215,6 +1219,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "installments": "Número de plazos en el texto bajo el botón. 0 o 1 lo oculta.",
+    "size_option": "Nombre de la opción que muestra el botón de la guía de tallas y los metacampos de variante custom.size_dimensions (bajo cada valor) y custom.size_note (tras el valor elegido).",
     "product_rating_placeholder": "Lee el metacampo reviews.rating que rellenan las apps de reseñas. Muestra estrellas vacías mientras no haya reseñas.",
     "sold_this_week": "Lee el metacampo custom.sold_this_week (entero) del producto, por ejemplo rellenado con Shopify Flow o una app. Oculto si está vacío.",
     "footer_payment_types": "Separados por comas. Déjalo vacío para mostrar los métodos de pago activados en tu tienda. Opciones posibles: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

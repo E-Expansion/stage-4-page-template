@@ -136,6 +136,7 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "installments": "Sau {{ count }}x {{ price }} cu {{ provider }}",
     "no_reviews_yet": "Nicio recenzie încă",
     "sold_this_week": "{{ count }} vândute săptămâna aceasta",
     "click_to_zoom": "clic pentru mărire",

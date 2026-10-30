@@ -134,6 +134,7 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "installments": "Veya {{ provider }} ile {{ count }}x {{ price }}",
     "no_reviews_yet": "Henüz değerlendirme yok",
     "sold_this_week": "Bu hafta {{ count }} satıldı",
     "click_to_zoom": "yakınlaştırmak için tıklayın",

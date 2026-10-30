@@ -199,6 +199,10 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "installments_provider": "Poskytovatel splátek",
+    "show_price_in_button": "Zobrazit cenu v tlačítku",
+    "size_guide_page": "Stránka s tabulkou velikostí",
+    "size_option": "Možnost velikosti",
     "in_stock_note": "Poznámka u skladem",
     "lowest_price_guarantee_text": "Text záruky",
     "price_description": "Popis ceny",
@@ -1215,6 +1219,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "installments": "Počet splátek v textu pod tlačítkem. 0 nebo 1 jej skryje.",
+    "size_option": "Název možnosti, která zobrazuje tlačítko tabulky velikostí a metapole varianty custom.size_dimensions (pod každou hodnotou) a custom.size_note (za vybranou hodnotou).",
     "product_rating_placeholder": "Čte metapole reviews.rating, které vyplňují aplikace pro recenze. Dokud nejsou recenze, zobrazuje prázdné hvězdičky.",
     "sold_this_week": "Čte metapole produktu custom.sold_this_week (celé číslo), vyplněné např. přes Shopify Flow nebo aplikaci. Skryto, když je prázdné.",
     "footer_payment_types": "Oddělené čárkami. Ponechte prázdné pro zobrazení platebních metod aktivních v obchodě. Možnosti zahrnují: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

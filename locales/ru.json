@@ -138,6 +138,7 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "installments": "Или {{ count }} × {{ price }} с {{ provider }}",
     "no_reviews_yet": "Отзывов пока нет",
     "sold_this_week": "Продано за неделю: {{ count }}",
     "click_to_zoom": "нажмите для увеличения",

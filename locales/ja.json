@@ -134,6 +134,7 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "installments": "または {{ provider }} で {{ price }} × {{ count }} 回",
     "no_reviews_yet": "レビューはまだありません",
     "sold_this_week": "今週{{ count }}点販売",
     "click_to_zoom": "クリックで拡大",

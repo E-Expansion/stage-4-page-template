@@ -138,6 +138,7 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "installments": "Alebo {{ count }}× {{ price }} s {{ provider }}",
     "no_reviews_yet": "Zatiaľ žiadne recenzie",
     "sold_this_week": "{{ count }} predaných tento týždeň",
     "click_to_zoom": "kliknutím priblížite",

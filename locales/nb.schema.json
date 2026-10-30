@@ -199,6 +199,10 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "installments_provider": "Leverandør av delbetaling",
+    "show_price_in_button": "Vis pris i knappen",
+    "size_guide_page": "Side med størrelsesguide",
+    "size_option": "Størrelsesalternativ",
     "in_stock_note": "Merknad ved på lager",
     "lowest_price_guarantee_text": "Garantitekst",
     "price_description": "Prisbeskrivelse",
@@ -1215,6 +1219,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "installments": "Antall avdrag i teksten under knappen. 0 eller 1 skjuler den.",
+    "size_option": "Navnet på alternativet som viser knappen for størrelsesguiden og variantmetafeltene custom.size_dimensions (under hver verdi) og custom.size_note (etter den valgte verdien).",
     "product_rating_placeholder": "Leser metafeltet reviews.rating som anmeldelsesapper fyller ut. Viser tomme stjerner til det finnes anmeldelser.",
     "sold_this_week": "Leser produktets metafelt custom.sold_this_week (heltall), for eksempel fylt ut via Shopify Flow eller en app. Skjult når det er tomt.",
     "footer_payment_types": "Adskilt med komma. La stå tomt for å vise betalingsmåtene som er aktivert i butikken. Alternativer omfatter: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

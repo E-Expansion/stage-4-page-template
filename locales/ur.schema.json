@@ -225,6 +225,8 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "installments": "بٹن کے نیچے متن میں قسطوں کی تعداد۔ 0 یا 1 اسے چھپا دیتا ہے۔",
+    "size_option": "اس آپشن کا نام جو سائز گائیڈ بٹن اور ویریئنٹ میٹا فیلڈز custom.size_dimensions (ہر ویلیو کے نیچے) اور custom.size_note (منتخب ویلیو کے بعد) دکھاتا ہے۔",
     "product_rating_placeholder": "ریویو ایپس کا بھرا ہوا reviews.rating میٹا فیلڈ پڑھتا ہے۔ ریویوز آنے تک خالی ستارے دکھاتا ہے۔",
     "sold_this_week": "پروڈکٹ کا custom.sold_this_week میٹا فیلڈ (عدد صحیح) پڑھتا ہے، جو مثلاً Shopify Flow یا کسی ایپ سے بھرا جاتا ہے۔ خالی ہو تو چھپا رہتا ہے۔",
     "footer_payment_types": "کوما سے الگ۔ اپنے اسٹور میں فعال ادائیگی کے طریقے دکھانے کے لیے خالی چھوڑیں۔ اختیارات میں شامل ہیں: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
@@ -768,6 +770,10 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "installments_provider": "قسطوں کا فراہم کنندہ",
+    "show_price_in_button": "بٹن میں قیمت دکھائیں",
+    "size_guide_page": "سائز گائیڈ کا صفحہ",
+    "size_option": "سائز کا آپشن",
     "in_stock_note": "اسٹاک میں ہونے کا نوٹ",
     "lowest_price_guarantee_text": "ضمانت کا متن",
     "price_description": "قیمت کی تفصیل",

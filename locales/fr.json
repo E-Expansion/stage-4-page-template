@@ -136,6 +136,7 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "installments": "Ou {{ count }}x {{ price }} avec {{ provider }}",
     "no_reviews_yet": "Pas encore d'avis",
     "sold_this_week": "{{ count }} vendus cette semaine",
     "click_to_zoom": "cliquer pour zoomer",

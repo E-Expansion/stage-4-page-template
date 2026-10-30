@@ -199,6 +199,10 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "installments_provider": "分期付款提供者",
+    "show_price_in_button": "在按鈕中顯示價格",
+    "size_guide_page": "尺寸指南頁面",
+    "size_option": "尺寸選項",
     "in_stock_note": "有庫存備註",
     "lowest_price_guarantee_text": "保證文字",
     "price_description": "價格說明",
@@ -1215,6 +1219,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "installments": "按鈕下方提示中的分期數。0 或 1 時隱藏。",
+    "size_option": "顯示尺寸指南按鈕以及子類中繼欄位 custom.size_dimensions（每個值下方）和 custom.size_note（所選值之後）的選項名稱。",
     "product_rating_placeholder": "讀取評論應用程式填寫的 reviews.rating 中繼欄位。在有評論之前顯示空星。",
     "sold_this_week": "讀取產品的 custom.sold_this_week 中繼欄位（整數），例如透過 Shopify Flow 或應用程式填寫。為空時隱藏。",
     "footer_payment_types": "以逗號分隔。留空則顯示商店中已啟用的付款方式。可用選項包括：visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

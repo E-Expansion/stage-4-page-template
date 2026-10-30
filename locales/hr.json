@@ -136,6 +136,7 @@
     "back_to_main_menu": "Natrag na glavni izbornik"
   },
   "content": {
+    "installments": "Ili {{ count }}x {{ price }} uz {{ provider }}",
     "no_reviews_yet": "Još nema recenzija",
     "sold_this_week": "{{ count }} prodano ovaj tjedan",
     "click_to_zoom": "kliknite za uvećanje",

@@ -138,6 +138,7 @@
     "back_to_main_menu": "Wróć do menu głównego"
   },
   "content": {
+    "installments": "Lub {{ count }}x {{ price }} z {{ provider }}",
     "no_reviews_yet": "Brak opinii",
     "sold_this_week": "{{ count }} sprzedanych w tym tygodniu",
     "click_to_zoom": "kliknij, aby powiększyć",

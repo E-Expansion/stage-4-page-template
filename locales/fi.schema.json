@@ -199,6 +199,10 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "installments_provider": "Osamaksun tarjoaja",
+    "show_price_in_button": "Näytä hinta painikkeessa",
+    "size_guide_page": "Kokotaulukon sivu",
+    "size_option": "Kokovaihtoehto",
     "in_stock_note": "Varastossa-huomautus",
     "lowest_price_guarantee_text": "Takuuteksti",
     "price_description": "Hinnan kuvaus",
@@ -1215,6 +1219,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "installments": "Erien määrä painikkeen alla olevassa tekstissä. 0 tai 1 piilottaa sen.",
+    "size_option": "Vaihtoehdon nimi, joka näyttää kokotaulukon painikkeen sekä muunnelman metakentät custom.size_dimensions (jokaisen arvon alla) ja custom.size_note (valitun arvon perässä).",
     "product_rating_placeholder": "Lukee metakentän reviews.rating, jonka arvostelusovellukset täyttävät. Näyttää tyhjät tähdet, kunnes arvosteluja on.",
     "sold_this_week": "Lukee tuotteen metakentän custom.sold_this_week (kokonaisluku), jonka voi täyttää esimerkiksi Shopify Flow'lla tai sovelluksella. Piilotettu, kun tyhjä.",
     "footer_payment_types": "Pilkuilla erotettuina. Jätä tyhjäksi näyttääksesi kaupassa käytössä olevat maksutavat. Vaihtoehtoja ovat esimerkiksi: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

@@ -23,12 +23,22 @@
         "price": {
           "type": "_product-price",
           "settings": {}
+        },
+        "variant_picker": {
+          "type": "_product-variant-picker",
+          "settings": {}
+        },
+        "buy": {
+          "type": "_product-buy",
+          "settings": {}
         }
       },
       "block_order": [
         "title",
         "meta",
-        "price"
+        "price",
+        "variant_picker",
+        "buy"
       ],
       "settings": {
         "show_breadcrumbs": true,

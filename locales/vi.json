@@ -134,6 +134,7 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "installments": "Hoặc {{ count }}x {{ price }} với {{ provider }}",
     "no_reviews_yet": "Chưa có đánh giá",
     "sold_this_week": "Đã bán {{ count }} trong tuần này",
     "click_to_zoom": "nhấp để phóng to",

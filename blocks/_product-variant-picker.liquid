@@ -1,0 +1,355 @@
+{% doc %}
+  Renders the product options as rows of buttons ("Colour - Cognac", "Size - Medium, fits 14"
+  laptop"). Values that cannot be bought with the current selection show as sold out but stay
+  selectable. The size option (named in the block settings) shows two extra variant
+  metafields: custom.size_dimensions under each value and custom.size_note after the
+  selected value, plus an optional size guide page in a dialog.
+
+  Choosing a value re-renders the information column for the new variant (stock, price,
+  buy button) and moves the gallery to the variant's image; see
+  assets/product-variant-picker.js. Hidden for products without options.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign size_option = block.settings.size_option | strip | downcase
+  assign guide_page = block.settings.size_guide_page
+  assign guide_label = block.settings.size_guide_label | escape
+
+  if block.settings.size_guide_color != blank
+    assign guide_brightness = block.settings.size_guide_color | color_brightness
+    if guide_brightness > 128
+      assign guide_text = 'var(--palette-darkest)'
+    else
+      assign guide_text = 'var(--palette-lightest)'
+    endif
+  endif
+%}
+
+{% unless product.has_only_default_variant %}
+  <script
+    src="{{ 'product-variant-picker.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <product-variant-picker-component
+    class="variant-options"
+    data-product-url="{{ product.url }}"
+    data-section-id="{{ section.id }}"
+    data-variant-id="{{ variant.id }}"
+    data-media-id="{{ variant.featured_media.id }}"
+    {% if guide_text %}
+      style="--variant-guide-background: {{ block.settings.size_guide_color }}; --variant-guide-text: {{ guide_text }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    {% for option in product.options_with_values %}
+      {% liquid
+        assign option_index = forloop.index0
+        assign option_key = option.name | strip | downcase
+        assign is_size = false
+        if size_option != blank and option_key == size_option
+          assign is_size = true
+        endif
+        assign label_id = 'VariantOption-' | append: block.id | append: '-' | append: option_index
+        assign size_note = blank
+        if is_size
+          assign size_note = variant.metafields.custom.size_note.value
+        endif
+      %}
+      <div
+        class="variant-option"
+        role="radiogroup"
+        aria-labelledby="{{ label_id }}"
+      >
+        <div class="variant-option__header">
+          <p
+            class="variant-option__legend"
+            id="{{ label_id }}"
+          >
+            <span class="variant-option__name">{{ option.name | escape }}</span>
+            <span aria-hidden="true">-</span>
+            <span class="variant-option__selected">
+              {{- option.selected_value | escape -}}
+              {%- if size_note != blank %}, {{ size_note | escape }}{% endif -%}
+            </span>
+          </p>
+
+          {% if is_size and guide_page != blank and guide_label != blank %}
+            <button
+              type="button"
+              class="variant-option__guide button-unstyled"
+              aria-haspopup="dialog"
+              on:click="/openGuide"
+            >
+              {{ guide_label }}
+            </button>
+          {% endif %}
+        </div>
+
+        <div class="variant-option__values">
+          {% for value in option.values %}
+            {% liquid
+              assign input_id = label_id | append: '-' | append: forloop.index0
+              assign value_detail = blank
+              if is_size
+                assign value_variant = value.variant
+                if value_variant == blank
+                  for candidate in product.variants
+                    if candidate.options[option_index] == value.name
+                      assign value_variant = candidate
+                      break
+                    endif
+                  endfor
+                endif
+                assign value_detail = value_variant.metafields.custom.size_dimensions.value
+              endif
+            %}
+            <label
+              class="variant-option__button{% unless value.available %} variant-option__button--unavailable{% endunless %}"
+              for="{{ input_id }}"
+            >
+              <input
+                type="radio"
+                class="variant-option__input visually-hidden"
+                id="{{ input_id }}"
+                name="{{ label_id }}"
+                value="{{ value.name | escape }}"
+                data-option-value-id="{{ value.id }}"
+                {% if value.selected %}
+                  checked
+                {% endif %}
+              >
+              <span class="variant-option__label">
+                {{- value.name | escape -}}
+                {%- unless value.available %} - {{ 'blocks.sold_out' | t | downcase }}{% endunless -%}
+              </span>
+              {% if value_detail != blank %}
+                <span class="variant-option__detail">{{ value_detail | escape }}</span>
+              {% endif %}
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    {% if guide_page != blank %}
+      <dialog
+        class="variant-guide"
+        ref="guideDialog"
+        aria-label="{{ guide_page.title | escape }}"
+        on:click="/handleGuideClick"
+      >
+        <div class="variant-guide__header">
+          <h2 class="variant-guide__title">{{ guide_page.title | escape }}</h2>
+          <button
+            type="button"
+            class="variant-guide__close button-unstyled"
+            aria-label="{{ 'accessibility.close_dialog' | t }}"
+            on:click="/closeGuide"
+          >
+            <span
+              class="svg-wrapper"
+              aria-hidden="true"
+            >
+              {{- 'icon-close.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+        <div class="variant-guide__content rte">{{ guide_page.content }}</div>
+      </dialog>
+    {% endif %}
+  </product-variant-picker-component>
+{% endunless %}
+
+{% stylesheet %}
+  .variant-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+
+    &[aria-busy='true'] {
+      cursor: progress;
+    }
+  }
+
+  .variant-option {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+
+  .variant-option__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-xs) var(--gap-md);
+  }
+
+  .variant-option__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-3xs);
+    margin: 0;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground-muted);
+  }
+
+  .variant-option__selected {
+    font-weight: var(--font-heading--weight);
+    color: var(--color-foreground);
+  }
+
+  .variant-option__guide {
+    padding: var(--padding-2xs) var(--padding-sm);
+    font-size: var(--font-size--xs);
+    color: var(--variant-guide-text, var(--color-primary-button-text));
+    background-color: var(--variant-guide-background, var(--color-primary-button-background));
+    border-radius: var(--style-border-radius-xs);
+    cursor: pointer;
+
+    &:hover {
+      opacity: var(--opacity-80);
+    }
+  }
+
+  .variant-option__values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-xs);
+  }
+
+  .variant-option__button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: var(--minimum-touch-target);
+    padding: var(--padding-xs) var(--padding-md);
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-tight);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+    cursor: pointer;
+    transition: border-color var(--animation-speed) var(--animation-easing),
+      background-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      border-color: var(--color-foreground);
+    }
+
+    &:has(:checked) {
+      color: var(--color-background);
+      background-color: var(--color-foreground);
+      border-color: var(--color-foreground);
+    }
+
+    &:has(:focus-visible) {
+      outline: var(--focus-outline-width, 2px) solid var(--color-foreground);
+      outline-offset: var(--focus-outline-offset, 2px);
+    }
+  }
+
+  .variant-option__button--unavailable .variant-option__label {
+    text-decoration: line-through;
+    opacity: var(--opacity-50);
+  }
+
+  .variant-option__detail {
+    font-size: var(--font-size--2xs);
+    opacity: var(--opacity-70);
+  }
+
+  .variant-guide {
+    width: min(40rem, calc(100vw - 2 * var(--padding-lg)));
+    max-height: 85dvh;
+    padding: 0;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-sm);
+
+    &::backdrop {
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-50));
+    }
+  }
+
+  .variant-guide__header {
+    position: sticky;
+    inset-block-start: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+    padding: var(--padding-md) var(--padding-lg);
+    background-color: var(--color-background);
+    border-block-end: var(--style-border-width) solid var(--color-border);
+  }
+
+  .variant-guide__title {
+    margin: 0;
+    font-size: var(--font-size--lg);
+  }
+
+  .variant-guide__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--minimum-touch-target);
+    height: var(--minimum-touch-target);
+    cursor: pointer;
+
+    .svg-wrapper {
+      width: var(--icon-size-sm);
+      height: var(--icon-size-sm);
+    }
+  }
+
+  .variant-guide__content {
+    padding: var(--padding-lg);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_variant_picker",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "size_option",
+      "label": "t:settings.size_option",
+      "info": "t:info.size_option",
+      "default": "Size"
+    },
+    {
+      "type": "page",
+      "id": "size_guide_page",
+      "label": "t:settings.size_guide_page"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_label",
+      "label": "t:settings.button_label",
+      "default": "Size & fit guide"
+    },
+    {
+      "type": "color",
+      "id": "size_guide_color",
+      "label": "t:settings.button_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_variant_picker"
+    }
+  ]
+}
+{% endschema %}

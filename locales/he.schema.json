@@ -225,6 +225,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "installments": "מספר התשלומים בטקסט שמתחת לכפתור. 0 או 1 מסתיר אותו.",
+    "size_option": "שם האפשרות שמציגה את כפתור מדריך המידות ואת שדות המטא של הווריאנט custom.size_dimensions (מתחת לכל ערך) ו-custom.size_note (אחרי הערך שנבחר).",
     "product_rating_placeholder": "קורא את שדה המטא reviews.rating שאפליקציות ביקורות ממלאות. מציג כוכבים ריקים עד שיש ביקורות.",
     "sold_this_week": "קורא את שדה המטא custom.sold_this_week (מספר שלם) של המוצר, שממולא למשל דרך Shopify Flow או אפליקציה. מוסתר כשהוא ריק.",
     "footer_payment_types": "מופרדים בפסיקים. השאר ריק כדי להציג את אמצעי התשלום הפעילים בחנות. האפשרויות כוללות: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
@@ -768,6 +770,10 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "installments_provider": "ספק תשלומים",
+    "show_price_in_button": "הצגת המחיר בכפתור",
+    "size_guide_page": "דף מדריך מידות",
+    "size_option": "אפשרות מידה",
     "in_stock_note": "הערה ליד במלאי",
     "lowest_price_guarantee_text": "טקסט האחריות",
     "price_description": "תיאור המחיר",

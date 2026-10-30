@@ -136,6 +136,7 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "installments": "Oppure {{ count }}x {{ price }} con {{ provider }}",
     "no_reviews_yet": "Ancora nessuna recensione",
     "sold_this_week": "{{ count }} venduti questa settimana",
     "click_to_zoom": "clicca per ingrandire",

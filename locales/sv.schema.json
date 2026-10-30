@@ -199,6 +199,10 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "installments_provider": "Leverantör av delbetalning",
+    "show_price_in_button": "Visa pris i knappen",
+    "size_guide_page": "Sida med storleksguide",
+    "size_option": "Storleksalternativ",
     "in_stock_note": "Notering vid i lager",
     "lowest_price_guarantee_text": "Garantitext",
     "price_description": "Prisbeskrivning",
@@ -1215,6 +1219,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "installments": "Antal delbetalningar i texten under knappen. 0 eller 1 döljer den.",
+    "size_option": "Namnet på alternativet som visar knappen för storleksguiden och variantmetafälten custom.size_dimensions (under varje värde) och custom.size_note (efter det valda värdet).",
     "product_rating_placeholder": "Läser metafältet reviews.rating som recensionsappar fyller i. Visar tomma stjärnor tills det finns recensioner.",
     "sold_this_week": "Läser produktens metafält custom.sold_this_week (heltal), till exempel ifyllt via Shopify Flow eller en app. Dolt när det är tomt.",
     "footer_payment_types": "Separerade med kommatecken. Lämna tomt för att visa betalningsmetoderna som är aktiverade i din butik. Alternativ är bland annat: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

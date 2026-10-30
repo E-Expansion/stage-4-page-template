@@ -154,6 +154,7 @@
     }
   },
   "content": {
+    "installments": "یا {{ provider }} کے ساتھ {{ count }} قسطیں، ہر ایک {{ price }}",
     "no_reviews_yet": "ابھی تک کوئی جائزہ نہیں",
     "sold_this_week": "اس ہفتے {{ count }} فروخت ہوئے",
     "click_to_zoom": "زوم کرنے کے لیے کلک کریں",

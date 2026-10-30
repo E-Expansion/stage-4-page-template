@@ -134,6 +134,7 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "installments": "หรือ {{ count }} งวด งวดละ {{ price }} กับ {{ provider }}",
     "no_reviews_yet": "ยังไม่มีรีวิว",
     "sold_this_week": "ขายแล้ว {{ count }} ชิ้นในสัปดาห์นี้",
     "click_to_zoom": "คลิกเพื่อซูม",

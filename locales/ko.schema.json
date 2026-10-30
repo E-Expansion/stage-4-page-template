@@ -199,6 +199,10 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "installments_provider": "할부 제공업체",
+    "show_price_in_button": "버튼에 가격 표시",
+    "size_guide_page": "사이즈 가이드 페이지",
+    "size_option": "사이즈 옵션",
     "in_stock_note": "재고 있음 메모",
     "lowest_price_guarantee_text": "보장 문구",
     "price_description": "가격 설명",
@@ -1215,6 +1219,8 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "installments": "버튼 아래 안내에 표시할 할부 횟수입니다. 0 또는 1이면 숨겨집니다.",
+    "size_option": "사이즈 가이드 버튼과 변형 메타필드 custom.size_dimensions(각 값 아래) 및 custom.size_note(선택한 값 뒤)를 표시하는 옵션의 이름입니다.",
     "product_rating_placeholder": "리뷰 앱이 채우는 reviews.rating 메타필드를 읽습니다. 리뷰가 생길 때까지 빈 별을 표시합니다.",
     "sold_this_week": "제품의 custom.sold_this_week 메타필드(정수)를 읽습니다. Shopify Flow나 앱으로 채울 수 있습니다. 비어 있으면 숨겨집니다.",
     "footer_payment_types": "쉼표로 구분합니다. 비워 두면 스토어에서 활성화된 결제 수단이 표시됩니다. 사용 가능한 값: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

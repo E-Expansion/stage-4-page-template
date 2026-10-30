@@ -199,6 +199,10 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "installments_provider": "Taksit sağlayıcısı",
+    "show_price_in_button": "Fiyatı butonda göster",
+    "size_guide_page": "Beden rehberi sayfası",
+    "size_option": "Beden seçeneği",
     "in_stock_note": "Stokta notu",
     "lowest_price_guarantee_text": "Garanti metni",
     "price_description": "Fiyat açıklaması",
@@ -1215,6 +1219,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "installments": "Butonun altındaki metindeki taksit sayısı. 0 veya 1 gizler.",
+    "size_option": "Beden rehberi butonunu ve custom.size_dimensions (her değerin altında) ile custom.size_note (seçilen değerden sonra) varyant meta alanlarını gösteren seçeneğin adı.",
     "product_rating_placeholder": "Değerlendirme uygulamalarının doldurduğu reviews.rating meta alanını okur. Değerlendirme olana kadar boş yıldızlar gösterir.",
     "sold_this_week": "Ürünün custom.sold_this_week meta alanını (tam sayı) okur; örneğin Shopify Flow veya bir uygulama ile doldurulur. Boşsa gizlenir.",
     "footer_payment_types": "Virgülle ayrılmış. Mağazanızda etkin olan ödeme yöntemlerini göstermek için boş bırakın. Seçenekler şunları içerir: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

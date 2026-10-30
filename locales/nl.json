@@ -134,6 +134,7 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "installments": "Of {{ count }}x {{ price }} met {{ provider }}",
     "no_reviews_yet": "Nog geen reviews",
     "sold_this_week": "{{ count }} verkocht deze week",
     "click_to_zoom": "klik om te zoomen",

@@ -1,0 +1,223 @@
+{% doc %}
+  Renders the full-width add to cart button for the selected variant ("Add to cart - €189.00")
+  and a reassurance line below it: an installment hint ("Or 3x €63.00 with Klarna") and a
+  short note ("30-day money back guarantee"). Uses Horizon's product form, so adding opens the
+  cart drawer and updates the cart count. The variant picker re-renders this block when the
+  selection changes.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% render 'add-to-cart-button-styles' %}
+{% render 'fly-to-cart-styles' %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign form_id = 'ProductBuyForm-' | append: section.id
+  # Horizon's add to cart styles target this ID prefix
+  assign button_id = 'BuyButtons-ProductSubmitButton-' | append: block.id
+
+  if settings.currency_code_enabled_product_pages
+    assign variant_price = variant.price | money_with_currency
+  else
+    assign variant_price = variant.price | money
+  endif
+
+  assign can_add_to_cart = false
+  if variant.available
+    assign can_add_to_cart = true
+    assign add_to_cart_text = 'products.product.add_to_cart' | t
+    if block.settings.show_price
+      assign add_to_cart_text = add_to_cart_text | append: ' - ' | append: variant_price
+    endif
+  elsif variant == blank
+    assign add_to_cart_text = 'products.product.unavailable' | t
+  else
+    assign add_to_cart_text = 'products.product.sold_out' | t
+  endif
+
+  assign installments = block.settings.installments
+  assign installments_provider = block.settings.installments_provider | escape
+  assign show_installments = false
+  if installments > 1 and installments_provider != blank and variant.price > 0
+    assign show_installments = true
+    assign installment_price = variant.price | divided_by: installments | money
+  endif
+
+  if block.settings.button_color != blank
+    assign button_brightness = block.settings.button_color | color_brightness
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    else
+      assign button_text = 'var(--palette-lightest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: block.settings.button_color
+    endcapture
+  endif
+%}
+
+<div
+  class="product-buy"
+  {% if block.settings.button_color != blank %}
+    style="
+      --color-primary-button-background: {{ block.settings.button_color }};
+      --color-primary-button-border: {{ block.settings.button_color }};
+      --color-primary-button-text: {{ button_text }};
+      --color-primary-button-hover-background: {{ button_hover | strip }};
+      --color-primary-button-hover-border: {{ button_hover | strip }};
+      --color-primary-button-hover-text: {{ button_text }};
+    "
+  {% endif %}
+  {{ block.shopify_attributes }}
+>
+  <product-form-component
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-product-url="{{ product.url }}"
+    data-quantity-default="{{ variant.quantity_rule.min | default: 1 }}"
+    data-quantity-error-max="{{ 'products.product.quantity_error_max' | t }}"
+    on:submit="/handleSubmit"
+  >
+    <div
+      class="visually-hidden"
+      aria-live="assertive"
+      role="status"
+      aria-atomic="true"
+      ref="liveRegion"
+    ></div>
+
+    {% form 'product', product, id: form_id, data-type: 'add-to-cart-form' %}
+      <input
+        type="hidden"
+        name="id"
+        ref="variantId"
+        value="{{ variant.id }}"
+      >
+      <span
+        class="product-buy__error hidden"
+        ref="addToCartTextError"
+      >
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+      </span>
+      {% render 'add-to-cart-button',
+        can_add_to_cart: can_add_to_cart,
+        add_to_cart_text: add_to_cart_text,
+        product: product,
+        show_icon: false,
+        id: button_id,
+        class: 'add-to-cart-button product-buy__button'
+      %}
+    {% endform %}
+  </product-form-component>
+
+  {% if show_installments or block.settings.note != blank %}
+    <p class="product-buy__note">
+      {% if show_installments %}
+        <span>
+          {{- 'content.installments' | t: count: installments, price: installment_price, provider: installments_provider -}}
+        </span>
+      {% endif %}
+      {% if block.settings.note != blank %}
+        <span>{{ block.settings.note | escape }}</span>
+      {% endif %}
+    </p>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .product-buy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+
+  .product-buy__button {
+    width: 100%;
+    min-height: var(--height-buy-buttons, var(--minimum-touch-target));
+    padding-block: var(--padding-md);
+  }
+
+  .product-buy__error {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+    margin-block-end: var(--gap-xs);
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .product-buy__note {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-2xs) var(--gap-sm);
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    text-align: center;
+
+    /* Divider between the parts when they share a line */
+    & > span + span {
+      padding-inline-start: var(--gap-sm);
+      border-inline-start: var(--style-border-width) solid var(--color-border);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_buy_buttons",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "t:settings.show_price_in_button",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:settings.button_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "range",
+      "id": "installments",
+      "label": "t:settings.installments",
+      "info": "t:info.installments",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "installments_provider",
+      "label": "t:settings.installments_provider",
+      "default": "Klarna"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "t:settings.text",
+      "default": "30-day money back guarantee"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_buy_buttons"
+    }
+  ]
+}
+{% endschema %}

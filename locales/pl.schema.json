@@ -199,6 +199,10 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "installments_provider": "Dostawca płatności ratalnych",
+    "show_price_in_button": "Pokaż cenę w przycisku",
+    "size_guide_page": "Strona z tabelą rozmiarów",
+    "size_option": "Opcja rozmiaru",
     "in_stock_note": "Notatka przy dostępności",
     "lowest_price_guarantee_text": "Tekst gwarancji",
     "price_description": "Opis ceny",
@@ -1215,6 +1219,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "installments": "Liczba rat w tekście pod przyciskiem. 0 lub 1 go ukrywa.",
+    "size_option": "Nazwa opcji, która pokazuje przycisk tabeli rozmiarów oraz metapola wariantu custom.size_dimensions (pod każdą wartością) i custom.size_note (po wybranej wartości).",
     "product_rating_placeholder": "Odczytuje metapole reviews.rating wypełniane przez aplikacje z opiniami. Pokazuje puste gwiazdki, dopóki nie ma opinii.",
     "sold_this_week": "Odczytuje metapole produktu custom.sold_this_week (liczba całkowita), wypełniane np. przez Shopify Flow lub aplikację. Ukryte, gdy puste.",
     "footer_payment_types": "Rozdzielone przecinkami. Pozostaw puste, aby pokazać metody płatności włączone w sklepie. Dostępne opcje to m.in.: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

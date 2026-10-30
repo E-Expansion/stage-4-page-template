@@ -166,6 +166,7 @@
     }
   },
   "content": {
+    "installments": "أو {{ count }} دفعات بقيمة {{ price }} مع {{ provider }}",
     "no_reviews_yet": "لا توجد مراجعات بعد",
     "sold_this_week": "تم بيع {{ count }} هذا الأسبوع",
     "click_to_zoom": "انقر للتكبير",

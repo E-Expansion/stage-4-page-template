@@ -233,6 +233,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "installments": "Number of installments in the hint below the button. 0 or 1 hides it.",
+    "size_option": "Name of the option that shows the size guide button and the variant metafields custom.size_dimensions (under each value) and custom.size_note (after the selected value).",
     "product_rating_placeholder": "Reads the reviews.rating metafield that review apps fill. Shows empty stars until there are reviews.",
     "sold_this_week": "Reads the product's custom.sold_this_week metafield (integer), for example filled by Shopify Flow or an app. Hidden when empty.",
     "footer_payment_types": "Comma-separated. Leave empty to show the payment methods enabled in your store. Options include: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
@@ -820,6 +822,10 @@
     "below_media": "Below media"
   },
   "settings": {
+    "installments_provider": "Installment provider",
+    "show_price_in_button": "Show price in button",
+    "size_guide_page": "Size guide page",
+    "size_option": "Size option",
     "in_stock_note": "In stock note",
     "lowest_price_guarantee_text": "Guarantee text",
     "price_description": "Price description",

@@ -199,6 +199,10 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "installments_provider": "Provedor de parcelamento",
+    "show_price_in_button": "Mostrar preço no botão",
+    "size_guide_page": "Página do guia de tamanhos",
+    "size_option": "Opção de tamanho",
     "in_stock_note": "Observação de em estoque",
     "lowest_price_guarantee_text": "Texto da garantia",
     "price_description": "Descrição do preço",
@@ -1215,6 +1219,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "installments": "Número de parcelas no texto abaixo do botão. 0 ou 1 oculta.",
+    "size_option": "Nome da opção que mostra o botão do guia de tamanhos e os metacampos de variante custom.size_dimensions (abaixo de cada valor) e custom.size_note (após o valor escolhido).",
     "product_rating_placeholder": "Lê o metacampo reviews.rating preenchido por apps de avaliação. Mostra estrelas vazias enquanto não houver avaliações.",
     "sold_this_week": "Lê o metacampo custom.sold_this_week (inteiro) do produto, por exemplo preenchido pelo Shopify Flow ou por um app. Oculto quando vazio.",
     "footer_payment_types": "Separadas por vírgulas. Deixe vazio para mostrar as formas de pagamento ativas na loja. Opções incluem: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",

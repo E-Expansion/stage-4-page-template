@@ -134,6 +134,7 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "installments": "Vagy {{ count }}x {{ price }} a(z) {{ provider }} szolgáltatással",
     "no_reviews_yet": "Még nincsenek értékelések",
     "sold_this_week": "{{ count }} eladva ezen a héten",
     "click_to_zoom": "kattints a nagyításhoz",

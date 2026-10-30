@@ -134,6 +134,7 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "installments": "Atau {{ count }}x {{ price }} dengan {{ provider }}",
     "no_reviews_yet": "Belum ada ulasan",
     "sold_this_week": "{{ count }} terjual minggu ini",
     "click_to_zoom": "klik untuk memperbesar",

@@ -134,6 +134,7 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "installments": "或通过 {{ provider }} 分 {{ count }} 期，每期 {{ price }}",
     "no_reviews_yet": "暂无评价",
     "sold_this_week": "本周已售 {{ count }} 件",
     "click_to_zoom": "点击放大",

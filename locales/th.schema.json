@@ -199,6 +199,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "installments_provider": "ผู้ให้บริการผ่อนชำระ",
+    "show_price_in_button": "แสดงราคาในปุ่ม",
+    "size_guide_page": "หน้าคู่มือขนาด",
+    "size_option": "ตัวเลือกขนาด",
     "in_stock_note": "หมายเหตุเมื่อมีสินค้า",
     "lowest_price_guarantee_text": "ข้อความการรับประกัน",
     "price_description": "คำอธิบายราคา",
@@ -1215,6 +1219,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "installments": "จำนวนงวดในข้อความใต้ปุ่ม 0 หรือ 1 จะซ่อนไว้",
+    "size_option": "ชื่อของตัวเลือกที่แสดงปุ่มคู่มือขนาด และเมตาฟิลด์ของตัวเลือกสินค้า custom.size_dimensions (ใต้แต่ละค่า) และ custom.size_note (หลังค่าที่เลือก)",
     "product_rating_placeholder": "อ่านเมตาฟิลด์ reviews.rating ที่แอปรีวิวกรอกไว้ แสดงดาวว่างจนกว่าจะมีรีวิว",
     "sold_this_week": "อ่านเมตาฟิลด์ custom.sold_this_week (จำนวนเต็ม) ของสินค้า เช่น กรอกผ่าน Shopify Flow หรือแอป ซ่อนเมื่อว่าง",
     "footer_payment_types": "คั่นด้วยเครื่องหมายจุลภาค เว้นว่างไว้เพื่อแสดงวิธีการชำระเงินที่เปิดใช้งานในร้านค้า ตัวเลือก ได้แก่: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
