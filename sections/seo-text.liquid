@@ -3,7 +3,8 @@
   Long-form text card (the shared seo-text-block snippet). On collection pages the text
   comes from the collection's custom.seo_heading and custom.seo_text metafields, on product
   pages from the product description, so one template serves every item. The section's
-  own heading and text are the fallback.
+  own heading and text are the fallback; [title] in them becomes the collection or
+  product title, so one fallback reads naturally on every page.
   @example
   <!-- Collection or product template > Add section > SEO text -->
 {% endcomment %}
@@ -13,16 +14,20 @@
     when 'collection'
       assign seo_heading = collection.metafields.custom.seo_heading.value
       assign seo_content = collection.metafields.custom.seo_text | metafield_tag
+      assign resource_title = collection.title
     when 'product'
       assign seo_heading = product.metafields.custom.seo_heading.value
       assign seo_content = product.description
+      assign resource_title = product.title
   endcase
 
+  # The heading is escaped by seo-text-block; the rich text needs an escaped title
+  assign escaped_title = resource_title | escape
   if seo_heading == blank
-    assign seo_heading = section.settings.heading
+    assign seo_heading = section.settings.heading | replace: '[title]', resource_title
   endif
   if seo_content == blank
-    assign seo_content = section.settings.text
+    assign seo_content = section.settings.text | replace: '[title]', escaped_title
   endif
 %}
 
@@ -61,7 +66,8 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "t:settings.heading"
+      "label": "t:settings.heading",
+      "info": "t:info.faq_heading_title"
     },
     {
       "type": "richtext",

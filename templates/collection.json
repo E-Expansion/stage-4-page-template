@@ -70,8 +70,8 @@
     "seo_text": {
       "type": "seo-text",
       "settings": {
-        "heading": "",
-        "text": "",
+        "heading": "[title]: leather goods made for every day",
+        "text": "<p>Good everyday carry combines function, comfort and a look that lasts. In our [title] collection you will find carefully designed leather bags and accessories made for daily use, from classic laptop bags to compact shoulder bags and practical sleeves for work, travel and everything in between.</p><p>Our bags are made from full-grain, vegetable-tanned leather that ages beautifully and gains character the more you use it. Thoughtful compartments keep a laptop, notebook, documents and other essentials organised, without making the bag bulky or heavy.</p><p>Whether you are looking for a stylish leather work bag, a laptop bag or a compact everyday tote, every piece is cut, stitched and finished in our own workshop, and every part is kept in stock so it can be repaired for years to come.</p>",
         "align_with_grid": true,
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
@@ -81,8 +81,50 @@
     },
     "faq": {
       "type": "faq",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "faq_delivery": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Orders placed before 15:00 on a working day leave the workshop the same day. Within the Netherlands and Belgium they usually arrive in 1–2 working days, elsewhere in the EU in 2–5.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_returns": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I return something I have used?",
+            "answer": "<p>You can return any item within 30 days. If it has been used, we will inspect it and refund the full amount when it can be restored to as-new condition.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_guarantee": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "What does the 5-year repair guarantee cover?",
+            "answer": "<p>Stitching, hardware, zips and edge finishing are repaired free of charge for five years. Wear from normal use, such as scratches and patina, is part of the leather's character and not covered.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_leather": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Is the leather vegetable-tanned?",
+            "answer": "<p>Yes. All our leather is full-grain and vegetable-tanned at a single tannery forty kilometres from the workshop, without chromium.</p>",
+            "open": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "faq_delivery",
+        "faq_returns",
+        "faq_guarantee",
+        "faq_leather"
+      ],
       "settings": {
         "heading": "About [title]",
         "text": "",

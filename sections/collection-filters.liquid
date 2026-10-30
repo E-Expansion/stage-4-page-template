@@ -474,7 +474,11 @@
           </div>
         {% endif %}
 
-        {% if paginate.pages > 1 %}
+        {% comment %}
+          Always shown when there are products, so shoppers see how many there are; the
+          page buttons just stay disabled on a single page.
+        {% endcomment %}
+        {% if paginate.items > 0 %}
           <nav
             class="collection-pagination"
             aria-label="{{ 'content.pagination.nav_label' | t }}"
@@ -512,28 +516,39 @@
                   </span>
                 {% endif %}
               </li>
-              {% for part in paginate.parts %}
+              {% if paginate.pages <= 1 %}
                 <li>
-                  {% if part.is_link %}
-                    <a
-                      href="{{ part.url }}"
-                      class="collection-pagination__page"
-                      aria-label="{{ 'content.pagination.page' | t: page: part.title }}"
-                    >
-                      {{- part.title -}}
-                    </a>
-                  {% elsif part.title != '&hellip;' %}
-                    <span
-                      class="collection-pagination__page collection-pagination__page--current"
-                      aria-current="page"
-                    >
-                      {{- part.title -}}
-                    </span>
-                  {% else %}
-                    <span class="collection-pagination__gap">{{ part.title }}</span>
-                  {% endif %}
+                  <span
+                    class="collection-pagination__page collection-pagination__page--current"
+                    aria-current="page"
+                  >
+                    1
+                  </span>
                 </li>
-              {% endfor %}
+              {% else %}
+                {% for part in paginate.parts %}
+                  <li>
+                    {% if part.is_link %}
+                      <a
+                        href="{{ part.url }}"
+                        class="collection-pagination__page"
+                        aria-label="{{ 'content.pagination.page' | t: page: part.title }}"
+                      >
+                        {{- part.title -}}
+                      </a>
+                    {% elsif part.title != '&hellip;' %}
+                      <span
+                        class="collection-pagination__page collection-pagination__page--current"
+                        aria-current="page"
+                      >
+                        {{- part.title -}}
+                      </span>
+                    {% else %}
+                      <span class="collection-pagination__gap">{{ part.title }}</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              {% endif %}
               <li>
                 {% if paginate.next %}
                   <a
