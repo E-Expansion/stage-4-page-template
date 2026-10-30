@@ -26,6 +26,13 @@
     "subcategories": {
       "type": "subcategories",
       "settings": {
+        "collections": [
+          "shop-all",
+          "small-goods",
+          "refill-care",
+          "travel",
+          "everyday-carry"
+        ],
         "image_ratio": "16 / 9",
         "view_all_label": "",
         "view_all_link": "shopify://collections/all",
@@ -47,7 +54,8 @@
             "show_on_mobile": false,
             "text_color": "{{ settings.color_palette.background }}",
             "overlay_color": "{{ settings.color_palette.foreground }}"
-          }
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -129,11 +137,13 @@
         "heading": "About [title]",
         "text": "",
         "link_label": "",
+        "link": "",
         "link_opens_chat": true,
         "layout": "vertical",
         "align_with_grid": true,
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "",
         "padding-block-start": 8,
         "padding-block-end": 48
       }
