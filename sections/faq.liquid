@@ -47,7 +47,8 @@
     assign uses_metafield = true
   else
     assign uses_metafield = false
-    assign faq_entries = section.blocks | where: 'type', '_faq-item'
+    # The section only accepts question blocks, so every block is a question
+    assign faq_entries = section.blocks
   endif
 %}
 
