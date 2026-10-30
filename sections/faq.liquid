@@ -32,7 +32,18 @@
   endcase
   assign resource_title = resource_title | escape
   assign heading = heading | replace: '[title]', resource_title
+  # Use the metafield only when it holds entries with a question; a wrong metafield
+  # type or differently named fields would otherwise leave the FAQ empty
+  assign metafield_questions = 0
   if faq_entries.size > 0
+    for entry in faq_entries
+      if entry.question.value != blank
+        assign metafield_questions = metafield_questions | plus: 1
+      endif
+    endfor
+  endif
+
+  if metafield_questions > 0
     assign uses_metafield = true
   else
     assign uses_metafield = false
@@ -103,6 +114,7 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {%- assign needs_comma = false -%}
         {%- for entry in faq_entries -%}
           {%- liquid
             if uses_metafield
@@ -112,7 +124,11 @@
               assign entry_question = entry.settings.question
               assign entry_answer = entry.settings.answer | strip_html
             endif
+            if entry_question == blank
+              continue
+            endif
           -%}
+          {%- if needs_comma %},{% endif -%}
           {
             "@type": "Question",
             "name": {{ entry_question | json }},
@@ -120,7 +136,8 @@
               "@type": "Answer",
               "text": {{ entry_answer | json }}
             }
-          }{% unless forloop.last %},{% endunless %}
+          }
+          {%- assign needs_comma = true -%}
         {%- endfor -%}
       ]
     }
