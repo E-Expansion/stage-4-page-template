@@ -198,6 +198,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "payment_types": "Ödeme yöntemleri",
     "product_tile_show_badge": "Etiket rozetini göster",
     "product_tile_colors": "Renk seçenekleri",
     "product_tile_max_swatches": "Maksimum renk örneği",
@@ -1208,6 +1209,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "footer_payment_types": "Virgülle ayrılmış. Mağazanızda etkin olan ödeme yöntemlerini göstermek için boş bırakın. Seçenekler şunları içerir: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Her açılır menünün son sütununda gösterilir, ör. yeni veya sınırlı bir koleksiyonu tanıtmak için.",
     "menu_featured_text": "Koleksiyon açıklamasını kullanmak için boş bırakın",
     "product_tiles": "Her ürün kutucuğu için geçerlidir: seçili ürünler, koleksiyon ızgarası ve ilgili ürünler.",

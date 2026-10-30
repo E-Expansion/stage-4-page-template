@@ -198,6 +198,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "payment_types": "Betaalmethoden",
     "product_tile_show_badge": "Tagbadge tonen",
     "product_tile_colors": "Kleuropties",
     "product_tile_max_swatches": "Maximaal aantal stalen",
@@ -1208,6 +1209,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "footer_payment_types": "Gescheiden door komma's. Laat leeg om de betaalmethoden te tonen die in je winkel actief zijn. Opties zijn onder andere: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Getoond als laatste kolom in elk menu-dropdown, bijv. om een nieuwe of gelimiteerde collectie te promoten.",
     "menu_featured_text": "Laat leeg om de beschrijving van de collectie te gebruiken",
     "product_tiles": "Geldt voor elke producttegel: uitgelichte producten, collectieraster en gerelateerde producten.",

@@ -198,6 +198,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "payment_types": "Betalingsmetoder",
     "product_tile_show_badge": "Vis tag-badge",
     "product_tile_colors": "Farvemuligheder",
     "product_tile_max_swatches": "Maks. antal farveprøver",
@@ -1208,6 +1209,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "footer_payment_types": "Adskilt af kommaer. Lad være tom for at vise de betalingsmetoder, der er aktiveret i din butik. Muligheder omfatter: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Vises som sidste kolonne i hver menu-dropdown, fx for at promovere en ny eller begrænset kollektion.",
     "menu_featured_text": "Lad være tom for at bruge kollektionens beskrivelse",
     "product_tiles": "Gælder for alle produktfelter: udvalgte produkter, kollektionsgitter og relaterede produkter.",

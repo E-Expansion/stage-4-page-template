@@ -198,6 +198,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "payment_types": "Platební metody",
     "product_tile_show_badge": "Zobrazit odznak štítku",
     "product_tile_colors": "Možnosti barvy",
     "product_tile_max_swatches": "Maximální počet vzorníků",
@@ -1208,6 +1209,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "footer_payment_types": "Oddělené čárkami. Ponechte prázdné pro zobrazení platebních metod aktivních v obchodě. Možnosti zahrnují: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Zobrazí se jako poslední sloupec každé rozbalovací nabídky, např. k propagaci nové nebo limitované kolekce.",
     "menu_featured_text": "Ponechte prázdné pro použití popisu kolekce",
     "product_tiles": "Platí pro každou dlaždici produktu: vybrané produkty, mřížku kolekce a související produkty.",

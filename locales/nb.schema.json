@@ -198,6 +198,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "payment_types": "Betalingsmåter",
     "product_tile_show_badge": "Vis taggmerke",
     "product_tile_colors": "Fargealternativer",
     "product_tile_max_swatches": "Maks antall fargeprøver",
@@ -1208,6 +1209,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "footer_payment_types": "Adskilt med komma. La stå tomt for å vise betalingsmåtene som er aktivert i butikken. Alternativer omfatter: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Vises som siste kolonne i hver rullegardinmeny, f.eks. for å promotere en ny eller begrenset kolleksjon.",
     "menu_featured_text": "La stå tomt for å bruke kolleksjonens beskrivelse",
     "product_tiles": "Gjelder alle produktruter: utvalgte produkter, kolleksjonsrutenett og relaterte produkter.",

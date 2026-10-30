@@ -65,14 +65,21 @@
           <div class="footer__description rte">{{ section.settings.description }}</div>
         {% endif %}
 
-        {% if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 %}
+        {% liquid
+          # A merchant-set list wins; otherwise show the methods enabled in the store
+          assign payment_types = shop.enabled_payment_types
+          if section.settings.payment_types != blank
+            assign payment_types = section.settings.payment_types | remove: ' ' | split: ','
+          endif
+        %}
+        {% if section.settings.show_payment_icons and payment_types.size > 0 %}
           <div class="footer__payments">
             <span class="visually-hidden">{{ 'blocks.payment_methods' | t }}</span>
             <ul
               class="footer__payment-list list-unstyled"
               role="list"
             >
-              {%- for type in shop.enabled_payment_types -%}
+              {%- for type in payment_types -%}
                 <li class="footer__payment-item">
                   {{ type | payment_type_svg_tag: class: 'icon icon--full-color footer__payment-icon' }}
                 </li>
@@ -296,6 +303,14 @@
       "id": "show_payment_icons",
       "label": "t:settings.show_payment_icons",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "payment_types",
+      "label": "t:settings.payment_types",
+      "info": "t:info.footer_payment_types",
+      "default": "paypal, ideal, maestro, visa, master, apple_pay, american_express, klarna",
+      "visible_if": "{{ section.settings.show_payment_icons }}"
     },
     {
       "type": "header",

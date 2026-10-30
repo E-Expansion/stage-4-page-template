@@ -198,6 +198,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "payment_types": "支払い方法",
     "product_tile_show_badge": "タグバッジを表示",
     "product_tile_colors": "カラーオプション",
     "product_tile_max_swatches": "スウォッチの最大数",
@@ -1208,6 +1209,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "footer_payment_types": "カンマ区切り。空欄の場合はストアで有効な支払い方法を表示します。使用できる値: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "すべてのメニューのドロップダウンの最後の列に表示されます（新作や限定コレクションの紹介など）。",
     "menu_featured_text": "空欄の場合はコレクションの説明を使用します",
     "product_tiles": "すべての商品タイルに適用されます：おすすめ商品、コレクショングリッド、関連商品。",

@@ -198,6 +198,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "payment_types": "Métodos de pagamento",
     "product_tile_show_badge": "Mostrar selo de etiqueta",
     "product_tile_colors": "Opções de cor",
     "product_tile_max_swatches": "Máximo de amostras",
@@ -1208,6 +1209,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "footer_payment_types": "Separados por vírgulas. Deixe vazio para mostrar os métodos de pagamento ativos na loja. Opções incluem: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Apresentada na última coluna de cada menu pendente, p. ex. para promover uma coleção nova ou limitada.",
     "menu_featured_text": "Deixe vazio para utilizar a descrição da coleção",
     "product_tiles": "Aplica-se a todos os blocos de produto: produtos selecionados, grelha da coleção e produtos relacionados.",

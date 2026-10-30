@@ -198,6 +198,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "payment_types": "付款方式",
     "product_tile_show_badge": "顯示標籤徽章",
     "product_tile_colors": "顏色選項",
     "product_tile_max_swatches": "色票數量上限",
@@ -1208,6 +1209,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "footer_payment_types": "以逗號分隔。留空則顯示商店中已啟用的付款方式。可用選項包括：visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "顯示在每個選單下拉清單的最後一欄，例如用於推廣新品或限量商品系列。",
     "menu_featured_text": "留空則使用商品系列說明",
     "product_tiles": "適用於所有商品圖塊：精選商品、商品系列網格和相關商品。",

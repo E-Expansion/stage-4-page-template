@@ -225,6 +225,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "footer_payment_types": "מופרדים בפסיקים. השאר ריק כדי להציג את אמצעי התשלום הפעילים בחנות. האפשרויות כוללות: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "מוצגת כעמודה האחרונה בכל תפריט נפתח, למשל כדי לקדם קולקציה חדשה או מוגבלת.",
     "menu_featured_text": "השאר ריק כדי להשתמש בתיאור הקולקציה",
     "product_tiles": "חל על כל אריח מוצר: מוצרים נבחרים, רשת הקולקציה ומוצרים קשורים.",
@@ -764,6 +765,7 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "payment_types": "אמצעי תשלום",
     "product_tile_show_badge": "הצגת תג תגית",
     "product_tile_colors": "אפשרויות צבע",
     "product_tile_max_swatches": "מספר מרבי של דוגמיות",

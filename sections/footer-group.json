@@ -64,7 +64,8 @@
         "background_color": "{{ settings.color_palette.foreground }}",
         "divider_color": "",
         "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-end": 40,
+        "payment_types": "paypal, ideal, maestro, visa, master, apple_pay, american_express, klarna"
       }
     }
   },

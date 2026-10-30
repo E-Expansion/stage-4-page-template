@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "footer_payment_types": "Comma-separated. Leave empty to show the payment methods enabled in your store. Options include: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Shown as the last column of every menu dropdown, e.g. to promote a new or limited collection.",
     "menu_featured_text": "Leave empty to use the collection description",
     "product_tiles": "Applies to every product tile: curated products, collection grid and related products.",
@@ -816,6 +817,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "payment_types": "Payment methods",
     "product_tile_show_badge": "Show tag badge",
     "product_tile_colors": "Colour options",
     "product_tile_max_swatches": "Maximum swatches",

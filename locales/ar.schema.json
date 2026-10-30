@@ -225,6 +225,7 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "footer_payment_types": "مفصولة بفواصل. اتركه فارغًا لعرض طرق الدفع المفعلة في متجرك. تشمل الخيارات: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "تُعرض كآخر عمود في كل قائمة منسدلة، مثلًا للترويج لمجموعة جديدة أو محدودة.",
     "menu_featured_text": "اتركه فارغًا لاستخدام وصف المجموعة",
     "product_tiles": "يُطبق على كل مربع منتج: المنتجات المختارة وشبكة المجموعة والمنتجات ذات الصلة.",
@@ -764,6 +765,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "payment_types": "طرق الدفع",
     "product_tile_show_badge": "إظهار شارة الوسم",
     "product_tile_colors": "خيارات اللون",
     "product_tile_max_swatches": "الحد الأقصى لعينات الألوان",

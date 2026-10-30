@@ -198,6 +198,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "payment_types": "Zahlungsmethoden",
     "product_tile_show_badge": "Tag-Badge anzeigen",
     "product_tile_colors": "Farboptionen",
     "product_tile_max_swatches": "Maximale Anzahl Farbmuster",
@@ -1208,6 +1209,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "footer_payment_types": "Durch Kommas getrennt. Leer lassen, um die in deinem Shop aktivierten Zahlungsmethoden anzuzeigen. Optionen sind u. a.: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Wird als letzte Spalte in jedem Menü-Dropdown angezeigt, z. B. um eine neue oder limitierte Kollektion zu bewerben.",
     "menu_featured_text": "Leer lassen, um die Kollektionsbeschreibung zu verwenden",
     "product_tiles": "Gilt für jede Produktkachel: ausgewählte Produkte, Kollektionsraster und ähnliche Produkte.",

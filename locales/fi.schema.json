@@ -198,6 +198,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "payment_types": "Maksutavat",
     "product_tile_show_badge": "Näytä tunnistemerkki",
     "product_tile_colors": "Värivaihtoehdot",
     "product_tile_max_swatches": "Värimallien enimmäismäärä",
@@ -1208,6 +1209,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "footer_payment_types": "Pilkuilla erotettuina. Jätä tyhjäksi näyttääksesi kaupassa käytössä olevat maksutavat. Vaihtoehtoja ovat esimerkiksi: visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Näytetään jokaisen valikon pudotusvalikon viimeisenä sarakkeena, esim. uuden tai rajoitetun kokoelman mainostamiseen.",
     "menu_featured_text": "Jätä tyhjäksi käyttääksesi kokoelman kuvausta",
     "product_tiles": "Koskee jokaista tuoteruutua: valitut tuotteet, kokoelmaruudukko ja aiheeseen liittyvät tuotteet.",

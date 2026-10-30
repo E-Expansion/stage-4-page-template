@@ -198,6 +198,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "payment_types": "Moyens de paiement",
     "product_tile_show_badge": "Afficher le badge de balise",
     "product_tile_colors": "Options de couleur",
     "product_tile_max_swatches": "Nombre maximal de pastilles",
@@ -1208,6 +1209,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "footer_payment_types": "Séparés par des virgules. Laissez vide pour afficher les moyens de paiement activés dans votre boutique. Options possibles : visa, master, american_express, paypal, apple_pay, google_pay, shopify_pay, maestro, klarna, ideal, bancontact",
     "menu_featured_collection": "Affichée dans la dernière colonne de chaque menu déroulant, par ex. pour promouvoir une collection nouvelle ou limitée.",
     "menu_featured_text": "Laissez vide pour utiliser la description de la collection",
     "product_tiles": "S'applique à chaque vignette produit : produits sélectionnés, grille de collection et produits associés.",
