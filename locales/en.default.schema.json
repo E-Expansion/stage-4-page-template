@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "menu_featured_text": "Leave empty to use the collection description",
     "product_tiles": "Applies to every product tile: curated products, collection grid and related products.",
     "product_tile_colors": "Swatches use the colour or image set for each value in Content > Metaobjects > Color. Hovering one shows that colour's variant image.",
     "page_header_parent": "Optional extra step after Home, e.g. \"Shop\" linking to all products",

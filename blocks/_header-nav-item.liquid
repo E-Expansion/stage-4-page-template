@@ -1,7 +1,8 @@
 {% doc %}
   Renders a top-level header navigation item. With column blocks it becomes a mega menu
   trigger: a hover/click dropdown on desktop and an accordion in the mobile sidebar.
-  Without columns it renders as a plain link.
+  Without columns it renders as a plain link. The desktop dropdown is a grid of four equal
+  columns; an optional featured collection (image and short text) always takes the fourth.
 
   @example
   {% content_for 'blocks' %}
@@ -17,6 +18,18 @@
   assign has_columns = false
   if columns != blank
     assign has_columns = true
+  endif
+
+  assign featured = block.settings.featured_collection
+  if featured != blank
+    assign featured_image = block.settings.featured_image | default: featured.featured_image
+    assign featured_text = block.settings.featured_text | escape
+    if featured_text == blank
+      assign featured_text = featured.description | strip_html | truncatewords: 14 | escape
+    endif
+    if featured_text == blank
+      assign featured_text = featured.title | escape
+    endif
   endif
 %}
 
@@ -50,6 +63,35 @@
           <div class="site-mega__content">
             <ul class="site-mega__columns list-unstyled">
               {{ columns }}
+
+              {% if featured != blank %}
+                <li class="site-mega__featured">
+                  <a
+                    href="{{ featured.url }}"
+                    class="site-mega__featured-link"
+                  >
+                    <span class="site-mega__featured-media">
+                      {% if featured_image != blank %}
+                        {{
+                          featured_image
+                          | image_url: width: 800
+                          | image_tag:
+                            widths: '320, 480, 640, 800',
+                            sizes: '(min-width: 750px) 22vw, 100vw',
+                            loading: 'lazy',
+                            alt: '',
+                            class: 'site-mega__featured-image'
+                        }}
+                      {% else %}
+                        {{ 'collection-1' | placeholder_svg_tag: 'site-mega__featured-image site-mega__featured-placeholder' }}
+                      {% endif %}
+                    </span>
+                    <span class="site-mega__featured-text">
+                      {{- featured_text -}}
+                    </span>
+                  </a>
+                </li>
+              {% endif %}
             </ul>
 
             {% if block.settings.link != blank %}
@@ -162,12 +204,69 @@
       padding-block: var(--padding-4xl);
     }
 
+    /* Four equal columns; the featured collection is pinned to the last one */
     .site-mega__columns {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: var(--gap-2xl);
       margin: 0;
     }
+
+    .site-mega__featured {
+      grid-column: 4;
+      grid-row: 1;
+      padding-inline-start: var(--gap-2xl);
+      border-inline-start: var(--style-border-width) solid var(--color-border);
+    }
+  }
+
+  .site-mega__featured {
+    min-width: 0;
+  }
+
+  .site-mega__featured-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    color: var(--color-foreground-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  .site-mega__featured-media {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-md);
+  }
+
+  .site-mega__featured-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  .site-mega__featured-placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  @media (hover: hover) {
+    .site-mega__featured-link:hover .site-mega__featured-image {
+      transform: scale(1.03);
+    }
+  }
+
+  .site-mega__featured-text {
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    overflow-wrap: anywhere;
   }
 
   @media screen and (max-width: 749px) {
@@ -196,6 +295,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .site-mega,
+    .site-mega__featured-image,
     .site-nav__caret {
       transition: none;
     }
@@ -223,6 +323,27 @@
       "id": "link",
       "label": "t:settings.link",
       "info": "t:info.menu_item_link"
+    },
+    {
+      "type": "header",
+      "content": "t:names.featured_collection"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "t:settings.collection"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "t:settings.image",
+      "info": "t:info.category_card_image"
+    },
+    {
+      "type": "text",
+      "id": "featured_text",
+      "label": "t:settings.text",
+      "info": "t:info.menu_featured_text"
     }
   ],
   "presets": [

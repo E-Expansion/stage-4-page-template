@@ -1208,6 +1208,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "menu_featured_text": "Leer lassen, um die Kollektionsbeschreibung zu verwenden",
     "product_tiles": "Gilt für jede Produktkachel: ausgewählte Produkte, Kollektionsraster und ähnliche Produkte.",
     "product_tile_colors": "Farbmuster nutzen die Farbe oder das Bild, das pro Wert unter Inhalt > Metaobjekte > Color festgelegt ist. Beim Hovern wird das Variantenbild dieser Farbe gezeigt.",
     "page_header_parent": "Optionaler zusätzlicher Schritt nach Startseite, z. B. \"Shop\" mit Link zu allen Produkten",

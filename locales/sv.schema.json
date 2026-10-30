@@ -1208,6 +1208,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "menu_featured_text": "Lämna tomt för att använda kollektionens beskrivning",
     "product_tiles": "Gäller alla produktrutor: utvalda produkter, kollektionsrutnät och relaterade produkter.",
     "product_tile_colors": "Färgprover använder färgen eller bilden som angetts för varje värde under Innehåll > Metaobjekt > Color. Hovring visar variantbilden för den färgen.",
     "page_header_parent": "Valfritt extra steg efter Hem, t.ex. \"Butik\" med länk till alla produkter",

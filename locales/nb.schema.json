@@ -1208,6 +1208,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "menu_featured_text": "La stå tomt for å bruke kolleksjonens beskrivelse",
     "product_tiles": "Gjelder alle produktruter: utvalgte produkter, kolleksjonsrutenett og relaterte produkter.",
     "product_tile_colors": "Fargeprøver bruker fargen eller bildet som er angitt for hver verdi under Innhold > Metaobjekter > Color. Hover viser variantbildet for den fargen.",
     "page_header_parent": "Valgfritt ekstra trinn etter Hjem, f.eks. \"Butikk\" med lenke til alle produkter",

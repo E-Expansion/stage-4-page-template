@@ -1208,6 +1208,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "menu_featured_text": "Pozostaw puste, aby użyć opisu kolekcji",
     "product_tiles": "Dotyczy każdego kafelka produktu: wybranych produktów, siatki kolekcji i powiązanych produktów.",
     "product_tile_colors": "Próbki używają koloru lub obrazu ustawionego dla każdej wartości w Treści > Metaobiekty > Color. Najechanie pokazuje zdjęcie wariantu w tym kolorze.",
     "page_header_parent": "Opcjonalny dodatkowy krok po Stronie głównej, np. \"Sklep\" z linkiem do wszystkich produktów",

@@ -1208,6 +1208,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "menu_featured_text": "Jätä tyhjäksi käyttääksesi kokoelman kuvausta",
     "product_tiles": "Koskee jokaista tuoteruutua: valitut tuotteet, kokoelmaruudukko ja aiheeseen liittyvät tuotteet.",
     "product_tile_colors": "Värimallit käyttävät kullekin arvolle kohdassa Sisältö > Metaobjektit > Color asetettua väriä tai kuvaa. Hiiren vieminen näyttää kyseisen värin muunnelmakuvan.",
     "page_header_parent": "Valinnainen lisävaihe Etusivun jälkeen, esim. \"Kauppa\", joka linkittää kaikkiin tuotteisiin",

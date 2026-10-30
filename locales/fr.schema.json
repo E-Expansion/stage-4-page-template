@@ -1208,6 +1208,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "menu_featured_text": "Laissez vide pour utiliser la description de la collection",
     "product_tiles": "S'applique à chaque vignette produit : produits sélectionnés, grille de collection et produits associés.",
     "product_tile_colors": "Les pastilles utilisent la couleur ou l'image définie pour chaque valeur dans Contenu > Métaobjets > Color. Le survol affiche l'image de variante de cette couleur.",
     "page_header_parent": "Étape supplémentaire facultative après Accueil, par ex. « Boutique » vers tous les produits",

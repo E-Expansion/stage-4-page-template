@@ -1208,6 +1208,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "menu_featured_text": "Koleksiyon açıklamasını kullanmak için boş bırakın",
     "product_tiles": "Her ürün kutucuğu için geçerlidir: seçili ürünler, koleksiyon ızgarası ve ilgili ürünler.",
     "product_tile_colors": "Renk örnekleri, İçerik > Meta nesneler > Color altında her değer için ayarlanan rengi veya görseli kullanır. Üzerine gelmek o rengin varyant görselini gösterir.",
     "page_header_parent": "Ana sayfadan sonra isteğe bağlı ek adım, ör. tüm ürünlere bağlanan \"Mağaza\"",
