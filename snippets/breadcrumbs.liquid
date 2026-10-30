@@ -20,7 +20,9 @@
   assign crumb_labels = 'content.home' | t
   assign crumb_urls = routes.root_url
 
-  if parent_label != blank and parent_url != blank
+  # A parent that points at the current page (e.g. "Shop" on /collections/all) is skipped
+  assign current_path = request.path
+  if parent_label != blank and parent_url != blank and parent_url != current_path
     assign crumb_labels = crumb_labels | append: separator | append: parent_label
     assign crumb_urls = crumb_urls | append: separator | append: parent_url
   endif

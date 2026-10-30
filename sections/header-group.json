@@ -546,9 +546,18 @@
             "link": "shopify://pages/contact"
           },
           "blocks": {}
+        },
+        "nav_shop_all": {
+          "type": "_header-nav-item",
+          "settings": {
+            "label": "Shop all",
+            "link": "shopify://collections/all"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
+        "nav_shop_all",
         "nav_everyday_carry",
         "nav_small_goods",
         "nav_travel",

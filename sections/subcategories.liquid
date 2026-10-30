@@ -1,7 +1,8 @@
 {% comment %}
   Section contract.
   Strip of small collection tiles under a collection's header (e.g. Satchels, Totes,
-  Backpacks) with an optional "View all" tile at the end. The collections come from the
+  Backpacks) with an optional "View all" tile at the end. On the all-products page
+  (/collections/all) it shows every collection instead, without the "View all" tile. The collections come from the
   current collection's custom.subcategories metafield (a list of collections), so each
   collection shows its own strip from one template; the section's collection list is the
   fallback. A grid on desktop, a swipeable row on mobile.
@@ -15,7 +16,20 @@
     assign subcollections = section.settings.collections
   endif
 
+  # The all-products page (/collections/all) lists every collection when nothing is set
+  assign is_all_page = false
+  if collection.handle == 'all'
+    assign is_all_page = true
+    if subcollections == blank or subcollections.size == 0
+      assign subcollections = collections
+    endif
+  endif
+
+  # The all-products page is itself "view all", so it gets no extra tile
   assign view_all_label = section.settings.view_all_label | escape
+  if is_all_page
+    assign view_all_label = blank
+  endif
   if view_all_label != blank
     assign view_all_title = view_all_label | append: ' →'
     assign view_all_url = section.settings.view_all_link | default: routes.all_products_collection_url
@@ -46,7 +60,13 @@
     "
   >
     <ul class="subcategories__list snap-carousel list-unstyled">
-      {% for subcollection in subcollections %}
+      {% for subcollection in subcollections limit: 12 %}
+        {% liquid
+          # Skip the store's built-in home page collection and empty collections
+          if subcollection.handle == 'frontpage' or subcollection.products_count == 0
+            continue
+          endif
+        %}
         {% liquid
           assign subcollection_title = subcollection.title | escape
         %}
