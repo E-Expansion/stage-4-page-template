@@ -186,8 +186,12 @@
 
   .shipping-countdown__heading {
     margin: 0;
-    font-size: var(--font-size--lg);
+    font-size: var(--font-size--md);
     color: var(--color-foreground);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--lg);
+    }
   }
 
   .shipping-countdown__text {
@@ -212,9 +216,13 @@
 
   .shipping-countdown__value,
   .shipping-countdown__separator {
-    font-size: var(--font-size--2xl);
+    font-size: var(--font-size--xl);
     line-height: 1;
     font-variant-numeric: tabular-nums;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--2xl);
+    }
   }
 
   .shipping-countdown__separator {

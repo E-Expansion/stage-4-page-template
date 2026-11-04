@@ -162,7 +162,8 @@
     border-radius: var(--style-border-radius-xs);
   }
 
-  .purchase-options__tab {
+  /* Scoped to the tab row so it outranks base.css's label:has(input) rule */
+  .purchase-options__tabs .purchase-options__tab {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -178,7 +179,7 @@
     transition: background-color var(--animation-speed) var(--animation-easing),
       color var(--animation-speed) var(--animation-easing);
 
-    & + & {
+    & + .purchase-options__tab {
       border-inline-start: var(--style-border-width) solid var(--color-border);
     }
 

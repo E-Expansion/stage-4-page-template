@@ -52,8 +52,9 @@
 </label>
 
 {% stylesheet %}
-  /* Each tier spans the card's grid so prices and badges line up across rows */
-  .volume-tier {
+  /* Each tier spans the card's grid so prices and badges line up across rows. Scoped to the
+     card so it outranks base.css's label:has(input) inline-flex rule */
+  .volume-pricing .volume-tier {
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: subgrid;
@@ -62,15 +63,22 @@
     cursor: pointer;
   }
 
+  /* Theme radio (base.css), in the card's accent color */
   .volume-tier__input {
-    width: 1rem;
-    height: 1rem;
     margin: 0;
-    accent-color: var(--volume-accent, var(--color-foreground));
-    cursor: pointer;
+
+    &:checked {
+      border-color: var(--volume-accent, var(--color-foreground));
+    }
+
+    &:checked::after {
+      background: var(--volume-accent, var(--color-foreground));
+    }
   }
 
   .volume-tier__price {
+    justify-self: end;
+    text-align: end;
     color: var(--color-foreground-muted);
     white-space: nowrap;
   }

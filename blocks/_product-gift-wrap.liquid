@@ -117,20 +117,23 @@
     border-style: dashed;
   }
 
-  .gift-wrap__option {
+  /* Scoped to the card so it outranks base.css's label:has(input) rule */
+  .gift-wrap .gift-wrap__option {
     display: flex;
     align-items: flex-start;
     gap: var(--gap-sm);
     cursor: pointer;
   }
 
+  /* Theme checkbox (base.css), centred on the label's first line */
   .gift-wrap__checkbox {
     flex-shrink: 0;
-    width: 1.125rem;
-    height: 1.125rem;
-    margin: 0.15em 0 0;
-    accent-color: var(--gift-wrap-accent, var(--color-foreground));
-    cursor: pointer;
+    margin: calc((1lh - var(--checkbox-size)) / 2) 0 0;
+
+    &:checked {
+      background-color: var(--gift-wrap-accent, var(--color-foreground));
+      border-color: var(--gift-wrap-accent, var(--color-foreground));
+    }
   }
 
   .gift-wrap__text {
@@ -140,7 +143,11 @@
   }
 
   .gift-wrap__label {
-    font-size: var(--font-size--md);
+    font-size: var(--font-size--sm);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
   }
 
   .gift-wrap__description {
@@ -151,7 +158,7 @@
   /* The note only matters once gift wrap is ticked */
   .gift-wrap__note {
     display: none;
-    padding-inline-start: calc(1.125rem + var(--gap-sm));
+    padding-inline-start: calc(var(--checkbox-size) + var(--gap-sm));
   }
 
   .gift-wrap:has(.gift-wrap__checkbox:checked) .gift-wrap__note {

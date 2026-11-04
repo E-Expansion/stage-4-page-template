@@ -223,10 +223,13 @@
     gap: var(--gap-xs);
   }
 
-  .variant-option__button {
+  /* Scoped to the list so it outranks base.css's label:has(input) rule */
+  .variant-option__values .variant-option__button {
     display: inline-flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
+    gap: 0;
     min-height: var(--minimum-touch-target);
     padding: var(--padding-xs) var(--padding-md);
     font-size: var(--font-size--sm);

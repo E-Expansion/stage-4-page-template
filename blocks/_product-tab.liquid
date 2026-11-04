@@ -57,8 +57,8 @@
     flex: 1 1 0;
     order: 0;
     min-width: 0;
-    padding: var(--padding-md) var(--padding-sm);
-    font-size: var(--font-size--md);
+    padding: var(--padding-sm) var(--padding-xs);
+    font-size: var(--font-size--sm);
     text-align: center;
     overflow-wrap: anywhere;
     color: var(--color-foreground-muted);
@@ -70,6 +70,11 @@
     &:hover {
       color: var(--color-foreground);
     }
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-md) var(--padding-sm);
+      font-size: var(--font-size--md);
+    }
   }
 
   .product-tab__panel {
@@ -77,7 +82,7 @@
     flex: 1 0 100%;
     order: 1;
     min-width: 0;
-    padding: var(--padding-xl) var(--padding-lg);
+    padding: var(--padding-lg) var(--padding-md);
 
     @media screen and (min-width: 750px) {
       padding: var(--padding-2xl);
@@ -95,7 +100,11 @@
   .product-tabs:not(:has(.product-tab__input:checked)) .product-tab:first-child .product-tab__panel {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-lg);
+    gap: var(--gap-md);
+
+    @media screen and (min-width: 750px) {
+      gap: var(--gap-lg);
+    }
   }
 
   .product-tab__input:focus-visible + .product-tab__label {
@@ -116,8 +125,12 @@
   }
 
   .product-tab__content {
-    font-size: var(--font-size--md);
+    font-size: var(--font-size--sm);
     line-height: var(--line-height--body-loose);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
 
     & > :first-child {
       margin-block-start: 0;

@@ -162,7 +162,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: var(--gap-md);
+    gap: var(--gap-sm);
     width: min(100%, var(--page-width, 100%));
     margin-inline: auto;
     padding: var(--padding-sm) var(--page-margin, var(--padding-md));
@@ -173,11 +173,16 @@
   }
 
   .sticky-buy__image {
+    display: none;
     flex-shrink: 0;
     width: 3.5rem;
     height: 3.5rem;
     object-fit: cover;
     border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      display: block;
+    }
   }
 
   .sticky-buy__info {
@@ -193,7 +198,7 @@
     overflow: hidden;
     font-family: var(--font-heading--family);
     font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--md);
+    font-size: var(--font-size--sm);
     white-space: nowrap;
     text-overflow: ellipsis;
 
@@ -210,21 +215,27 @@
   }
 
   .sticky-buy__price {
+    flex-shrink: 0;
     margin: 0;
-    font-size: var(--font-size--lg);
+    font-size: var(--font-size--md);
 
     @media screen and (min-width: 750px) {
       font-size: var(--font-size--2xl);
     }
   }
 
-  .sticky-buy__button {
+  /* Scoped to the bar so it outranks the theme's .button sizing */
+  .sticky-buy .sticky-buy__button {
     flex-shrink: 0;
     min-height: var(--minimum-touch-target);
-    padding-inline: var(--padding-lg);
+    padding-block: var(--padding-xs);
+    padding-inline: var(--padding-md);
+    font-size: var(--font-size--sm);
+    white-space: nowrap;
 
     @media screen and (min-width: 750px) {
       padding-inline: var(--padding-xl);
+      font-size: var(--font-size--md);
     }
   }
 {% endstylesheet %}

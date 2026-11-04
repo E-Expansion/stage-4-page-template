@@ -254,8 +254,12 @@
 
   .product-bundle__price {
     margin: 0;
-    font-size: var(--font-size--2xl);
+    font-size: var(--font-size--xl);
     line-height: 1;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--2xl);
+    }
   }
 
   .product-bundle__badge {
