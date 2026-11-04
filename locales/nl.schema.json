@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Aankoopopties",
     "product_rating_stock": "Beoordeling & voorraad",
     "page_header": "Paginakop",
     "subcategories": "Subcategorieën",
@@ -199,6 +200,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "badge_color": "Kleur badge",
+    "one_time_label": "Label eenmalige aankoop",
+    "subscribe_label": "Label abonnement",
     "installments_provider": "Aanbieder gespreid betalen",
     "show_price_in_button": "Prijs in knop tonen",
     "size_guide_page": "Pagina met maatgids",
@@ -1219,6 +1223,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "purchase_options": "Verschijnt als het product abonnementen heeft via een abonnementsapp, zoals Shopify Subscriptions. Anders verborgen.",
     "installments": "Aantal termijnen in de regel onder de knop. Bij 0 of 1 wordt hij verborgen.",
     "size_option": "Naam van de optie die de knop voor de maatgids toont en de variant-metavelden custom.size_dimensions (onder elke waarde) en custom.size_note (na de gekozen waarde).",
     "product_rating_placeholder": "Leest het metaveld reviews.rating dat review-apps vullen. Toont lege sterren zolang er geen reviews zijn.",

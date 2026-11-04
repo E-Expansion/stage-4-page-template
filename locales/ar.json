@@ -166,6 +166,9 @@
     }
   },
   "content": {
+    "delivery_frequency": "تكرار التوصيل",
+    "purchase_options": "خيارات الشراء",
+    "subscription_discount": "خصم حتى {{ percent }}%",
     "installments": "أو {{ count }} دفعات بقيمة {{ price }} مع {{ provider }}",
     "no_reviews_yet": "لا توجد مراجعات بعد",
     "sold_this_week": "تم بيع {{ count }} هذا الأسبوع",

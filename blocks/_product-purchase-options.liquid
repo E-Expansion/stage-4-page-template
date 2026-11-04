@@ -1,0 +1,274 @@
+{% doc %}
+  Renders the "One-time purchase / Subscribe & save" switch for products with subscription
+  plans (selling plans from a subscription app such as Shopify Subscriptions). The subscribe
+  tab shows the largest percentage discount among its plans ("up to 10% off"); with more
+  than one plan a delivery frequency select appears. The chosen plan travels in the URL
+  (?selling_plan=), so price and buy button render the subscription price and the buy form
+  sends it to the cart. Renders nothing for products without selling plans.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign allocation = variant.selected_selling_plan_allocation
+  if allocation == blank and product.requires_selling_plan
+    assign allocation = variant.selling_plan_allocations.first
+  endif
+  assign active_plan = allocation.selling_plan
+
+  if block.settings.badge_color != blank
+    assign badge_brightness = block.settings.badge_color | color_brightness
+    if badge_brightness > 128
+      assign badge_text = 'var(--palette-darkest)'
+    else
+      assign badge_text = 'var(--palette-lightest)'
+    endif
+  endif
+%}
+
+{% if product.selling_plan_groups.size > 0 %}
+  <script
+    src="{{ 'product-purchase-options.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <product-purchase-options-component
+    class="purchase-options"
+    {% if badge_text %}
+      style="--purchase-badge-background: {{ block.settings.badge_color }}; --purchase-badge-text: {{ badge_text }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    <div
+      class="purchase-options__tabs"
+      role="radiogroup"
+      aria-label="{{ 'content.purchase_options' | t }}"
+    >
+      {% unless product.requires_selling_plan %}
+        <label class="purchase-options__tab">
+          <input
+            type="radio"
+            class="visually-hidden"
+            name="PurchaseType-{{ block.id }}"
+            value=""
+            {% if active_plan == blank %}
+              checked
+            {% endif %}
+          >
+          <span>{{ block.settings.one_time_label | escape }}</span>
+        </label>
+      {% endunless %}
+
+      {% for group in product.selling_plan_groups %}
+        {% liquid
+          assign group_active = false
+          if active_plan != blank and active_plan.group_id == group.id
+            assign group_active = true
+          endif
+
+          # Largest percentage discount among the group's plans
+          assign max_discount = 0
+          for plan in group.selling_plans
+            assign adjustment = plan.price_adjustments.first
+            if adjustment.value_type == 'percentage' and adjustment.value > max_discount
+              assign max_discount = adjustment.value
+            endif
+          endfor
+
+          assign group_label = block.settings.subscribe_label | escape
+          if product.selling_plan_groups.size > 1 or group_label == blank
+            assign group_label = group.name | escape
+          endif
+        %}
+        <label class="purchase-options__tab">
+          <input
+            type="radio"
+            class="visually-hidden"
+            name="PurchaseType-{{ block.id }}"
+            value="{{ group.selling_plans.first.id }}"
+            {% if group_active %}
+              checked
+            {% endif %}
+          >
+          <span>{{ group_label }}</span>
+          {% if max_discount > 0 %}
+            <span class="purchase-options__badge">
+              {{- 'content.subscription_discount' | t: percent: max_discount -}}
+            </span>
+          {% endif %}
+        </label>
+      {% endfor %}
+    </div>
+
+    {% if active_plan != blank %}
+      {% for group in product.selling_plan_groups %}
+        {% if group.id == active_plan.group_id and group.selling_plans.size > 1 %}
+          {% liquid
+            assign select_id = 'SellingPlan-' | append: block.id
+            assign select_label = group.options.first.name | escape
+            if select_label == blank
+              assign select_label = 'content.delivery_frequency' | t
+            endif
+          %}
+          <div class="purchase-options__plan">
+            <label
+              class="purchase-options__plan-label"
+              for="{{ select_id }}"
+            >
+              {{- select_label -}}
+            </label>
+            <select
+              id="{{ select_id }}"
+              class="purchase-options__select"
+            >
+              {% for plan in group.selling_plans %}
+                <option
+                  value="{{ plan.id }}"
+                  {% if plan.id == active_plan.id %}
+                    selected
+                  {% endif %}
+                >
+                  {{ plan.name | escape }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if active_plan.description != blank %}
+        <p class="purchase-options__description">{{ active_plan.description | escape }}</p>
+      {% endif %}
+    {% endif %}
+  </product-purchase-options-component>
+{% endif %}
+
+{% stylesheet %}
+  .purchase-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+
+  .purchase-options__tabs {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    overflow: hidden;
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .purchase-options__tab {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-2xs) var(--gap-xs);
+    min-height: var(--minimum-touch-target);
+    padding: var(--padding-sm) var(--padding-md);
+    font-size: var(--font-size--sm);
+    text-align: center;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    cursor: pointer;
+    transition: background-color var(--animation-speed) var(--animation-easing),
+      color var(--animation-speed) var(--animation-easing);
+
+    & + & {
+      border-inline-start: var(--style-border-width) solid var(--color-border);
+    }
+
+    &:hover {
+      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    }
+
+    &:has(:checked) {
+      color: var(--color-background);
+      background-color: var(--color-foreground);
+    }
+
+    &:has(:focus-visible) {
+      outline: var(--focus-outline-width) solid var(--color-foreground);
+      outline-offset: calc(var(--focus-outline-width) * -1);
+    }
+  }
+
+  .purchase-options__badge {
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--2xs);
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--purchase-badge-text, var(--color-background));
+    background-color: var(--purchase-badge-background, var(--color-foreground));
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .purchase-options__plan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+    font-size: var(--font-size--sm);
+  }
+
+  .purchase-options__plan-label {
+    color: var(--color-foreground-muted);
+  }
+
+  .purchase-options__select {
+    flex: 1 1 12rem;
+    min-height: var(--minimum-touch-target);
+    padding-inline: var(--padding-sm);
+    font: inherit;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .purchase-options__description {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.purchase_options",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.purchase_options"
+    },
+    {
+      "type": "text",
+      "id": "one_time_label",
+      "label": "t:settings.one_time_label",
+      "default": "One-time purchase"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_label",
+      "label": "t:settings.subscribe_label",
+      "default": "Subscribe & save"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "t:settings.badge_color",
+      "default": "{{ settings.color_palette.color5 }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.purchase_options"
+    }
+  ]
+}
+{% endschema %}

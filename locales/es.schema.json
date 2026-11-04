@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Opciones de compra",
     "product_rating_stock": "Valoración y stock",
     "page_header": "Encabezado de página",
     "subcategories": "Subcategorías",
@@ -199,6 +200,9 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "badge_color": "Color de la insignia",
+    "one_time_label": "Etiqueta de compra única",
+    "subscribe_label": "Etiqueta de suscripción",
     "installments_provider": "Proveedor de pago a plazos",
     "show_price_in_button": "Mostrar precio en el botón",
     "size_guide_page": "Página de guía de tallas",
@@ -1219,6 +1223,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "purchase_options": "Se muestra cuando el producto tiene planes de suscripción de una app como Shopify Subscriptions. Oculto en caso contrario.",
     "installments": "Número de plazos en el texto bajo el botón. 0 o 1 lo oculta.",
     "size_option": "Nombre de la opción que muestra el botón de la guía de tallas y los metacampos de variante custom.size_dimensions (bajo cada valor) y custom.size_note (tras el valor elegido).",
     "product_rating_placeholder": "Lee el metacampo reviews.rating que rellenan las apps de reseñas. Muestra estrellas vacías mientras no haya reseñas.",

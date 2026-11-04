@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Opzioni di acquisto",
     "product_rating_stock": "Valutazione e disponibilità",
     "page_header": "Intestazione pagina",
     "subcategories": "Sottocategorie",
@@ -199,6 +200,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "badge_color": "Colore del badge",
+    "one_time_label": "Etichetta acquisto singolo",
+    "subscribe_label": "Etichetta abbonamento",
     "installments_provider": "Fornitore pagamento a rate",
     "show_price_in_button": "Mostra prezzo nel pulsante",
     "size_guide_page": "Pagina guida alle taglie",
@@ -1219,6 +1223,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "purchase_options": "Visibile quando il prodotto ha piani di abbonamento da un'app come Shopify Subscriptions. Altrimenti nascosto.",
     "installments": "Numero di rate nel testo sotto il pulsante. 0 o 1 lo nasconde.",
     "size_option": "Nome dell'opzione che mostra il pulsante della guida alle taglie e i metacampi della variante custom.size_dimensions (sotto ogni valore) e custom.size_note (dopo il valore scelto).",
     "product_rating_placeholder": "Legge il metacampo reviews.rating compilato dalle app di recensioni. Mostra stelle vuote finché non ci sono recensioni.",

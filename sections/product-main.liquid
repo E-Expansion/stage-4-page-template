@@ -3,7 +3,7 @@
   Main product area of the product template: breadcrumbs, the media gallery on the left
   and an information column of blocks on the right (stacked on mobile). Everything is
   read from the current product, so one template serves every product. The information
-  column grows block by block (title, rating and stock, price, variant picker, buy button) and accepts app blocks.
+  column grows block by block (title, rating and stock, price, variant picker, purchase options, buy button) and accepts app blocks.
   @example
   <!-- Product template > Product information; add blocks to the information column -->
 {% endcomment %}
@@ -37,7 +37,15 @@
       %}
     </div>
 
-    <div class="product-main__info{% if section.settings.sticky_info %} product-main__info--sticky{% endif %}">
+    {% comment %} Read by assets/product-info.js when an option or purchase type changes {% endcomment %}
+    <div
+      class="product-main__info{% if section.settings.sticky_info %} product-main__info--sticky{% endif %}"
+      data-section-id="{{ section.id }}"
+      data-product-url="{{ product.url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-selling-plan-id="{{ product.selected_or_first_available_variant.selected_selling_plan_allocation.selling_plan.id }}"
+      data-media-id="{{ product.selected_or_first_available_variant.featured_media.id }}"
+    >
       {% content_for 'blocks' %}
     </div>
   </div>
@@ -94,6 +102,9 @@
     },
     {
       "type": "_product-variant-picker"
+    },
+    {
+      "type": "_product-purchase-options"
     },
     {
       "type": "_product-buy"
@@ -185,9 +196,10 @@
         "meta": { "type": "_product-meta" },
         "price": { "type": "_product-price" },
         "variant_picker": { "type": "_product-variant-picker" },
+        "purchase_options": { "type": "_product-purchase-options" },
         "buy": { "type": "_product-buy" }
       },
-      "block_order": ["title", "meta", "price", "variant_picker", "buy"]
+      "block_order": ["title", "meta", "price", "variant_picker", "purchase_options", "buy"]
     }
   ]
 }

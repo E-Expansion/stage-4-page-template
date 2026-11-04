@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "购买选项",
     "product_rating_stock": "评分和库存",
     "page_header": "页面标题区",
     "subcategories": "子类别",
@@ -199,6 +200,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "badge_color": "徽章颜色",
+    "one_time_label": "单次购买标签",
+    "subscribe_label": "订阅标签",
     "installments_provider": "分期付款提供商",
     "show_price_in_button": "在按钮中显示价格",
     "size_guide_page": "尺码指南页面",
@@ -1219,6 +1223,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "purchase_options": "当产品有来自订阅应用（如 Shopify Subscriptions）的订阅计划时显示，否则隐藏。",
     "installments": "按钮下方提示中的分期数。0 或 1 时隐藏。",
     "size_option": "显示尺码指南按钮以及多属性元字段 custom.size_dimensions（每个值下方）和 custom.size_note（所选值之后）的选项名称。",
     "product_rating_placeholder": "读取评论应用填写的 reviews.rating 元字段。在有评论之前显示空星。",

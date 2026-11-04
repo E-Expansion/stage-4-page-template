@@ -2,8 +2,9 @@
   Renders the full-width add to cart button for the selected variant ("Add to cart - €189.00")
   and a reassurance line below it: an installment hint ("Or 3x €63.00 with Klarna") and a
   short note ("30-day money back guarantee"). Uses Horizon's product form, so adding opens the
-  cart drawer and updates the cart count. The variant picker re-renders this block when the
-  selection changes.
+  cart drawer and updates the cart count. With a subscription plan selected (?selling_plan=)
+  it shows the plan price and adds the plan to the cart. The variant picker and purchase
+  options re-render this block when the selection changes.
 
   @example
   {% content_for 'blocks' %}
@@ -18,10 +19,19 @@
   # Horizon's add to cart styles target this ID prefix
   assign button_id = 'BuyButtons-ProductSubmitButton-' | append: block.id
 
+  assign allocation = variant.selected_selling_plan_allocation
+  if allocation == blank and product.requires_selling_plan
+    assign allocation = variant.selling_plan_allocations.first
+  endif
+  assign price_cents = variant.price
+  if allocation != blank
+    assign price_cents = allocation.price
+  endif
+
   if settings.currency_code_enabled_product_pages
-    assign variant_price = variant.price | money_with_currency
+    assign variant_price = price_cents | money_with_currency
   else
-    assign variant_price = variant.price | money
+    assign variant_price = price_cents | money
   endif
 
   assign can_add_to_cart = false
@@ -40,9 +50,9 @@
   assign installments = block.settings.installments
   assign installments_provider = block.settings.installments_provider | escape
   assign show_installments = false
-  if installments > 1 and installments_provider != blank and variant.price > 0
+  if installments > 1 and installments_provider != blank and price_cents > 0
     assign show_installments = true
-    assign installment_price = variant.price | divided_by: installments | money
+    assign installment_price = price_cents | divided_by: installments | money
   endif
 
   if block.settings.button_color != blank
@@ -95,6 +105,13 @@
         ref="variantId"
         value="{{ variant.id }}"
       >
+      {% if allocation != blank %}
+        <input
+          type="hidden"
+          name="selling_plan"
+          value="{{ allocation.selling_plan.id }}"
+        >
+      {% endif %}
       <span
         class="product-buy__error hidden"
         ref="addToCartTextError"

@@ -134,6 +134,9 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "delivery_frequency": "Teslimat sıklığı",
+    "purchase_options": "Satın alma seçenekleri",
+    "subscription_discount": "%{{ percent }}'e varan indirim",
     "installments": "Veya {{ provider }} ile {{ count }}x {{ price }}",
     "no_reviews_yet": "Henüz değerlendirme yok",
     "sold_this_week": "Bu hafta {{ count }} satıldı",

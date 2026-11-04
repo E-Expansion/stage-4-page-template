@@ -6,8 +6,8 @@
   selected value, plus an optional size guide page in a dialog.
 
   Choosing a value re-renders the information column for the new variant (stock, price,
-  buy button) and moves the gallery to the variant's image; see
-  assets/product-variant-picker.js. Hidden for products without options.
+  buy button) and moves the gallery to the variant's image; see assets/product-info.js.
+  Hidden for products without options.
 
   @example
   {% content_for 'blocks' %}
@@ -38,10 +38,6 @@
 
   <product-variant-picker-component
     class="variant-options"
-    data-product-url="{{ product.url }}"
-    data-section-id="{{ section.id }}"
-    data-variant-id="{{ variant.id }}"
-    data-media-id="{{ variant.featured_media.id }}"
     {% if guide_text %}
       style="--variant-guide-background: {{ block.settings.size_guide_color }}; --variant-guide-text: {{ guide_text }};"
     {% endif %}
@@ -82,7 +78,7 @@
           {% if is_size and guide_page != blank and guide_label != blank %}
             <button
               type="button"
-              class="variant-option__guide button-unstyled"
+              class="variant-option__guide"
               aria-haspopup="dialog"
               on:click="/openGuide"
             >
@@ -207,11 +203,14 @@
 
   .variant-option__guide {
     padding: var(--padding-2xs) var(--padding-sm);
+    font-family: inherit;
     font-size: var(--font-size--xs);
     color: var(--variant-guide-text, var(--color-primary-button-text));
     background-color: var(--variant-guide-background, var(--color-primary-button-background));
+    border: 0;
     border-radius: var(--style-border-radius-xs);
     cursor: pointer;
+    transition: opacity var(--animation-speed) var(--animation-easing);
 
     &:hover {
       opacity: var(--opacity-80);

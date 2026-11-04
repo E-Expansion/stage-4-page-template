@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Købsmuligheder",
     "product_rating_stock": "Bedømmelse og lager",
     "page_header": "Sidehoved",
     "subcategories": "Underkategorier",
@@ -199,6 +200,9 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "badge_color": "Badgefarve",
+    "one_time_label": "Etiket for engangskøb",
+    "subscribe_label": "Etiket for abonnement",
     "installments_provider": "Udbyder af afbetaling",
     "show_price_in_button": "Vis pris i knappen",
     "size_guide_page": "Side med størrelsesguide",
@@ -1219,6 +1223,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "purchase_options": "Vises, når produktet har abonnementsplaner fra en abonnementsapp som Shopify Subscriptions. Ellers skjult.",
     "installments": "Antal rater i teksten under knappen. 0 eller 1 skjuler den.",
     "size_option": "Navnet på den mulighed, der viser knappen til størrelsesguiden og variant-metafelterne custom.size_dimensions (under hver værdi) og custom.size_note (efter den valgte værdi).",
     "product_rating_placeholder": "Læser metafeltet reviews.rating, som anmeldelsesapps udfylder. Viser tomme stjerner, indtil der er anmeldelser.",

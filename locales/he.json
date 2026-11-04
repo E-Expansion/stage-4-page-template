@@ -160,6 +160,9 @@
     }
   },
   "content": {
+    "delivery_frequency": "תדירות משלוח",
+    "purchase_options": "אפשרויות רכישה",
+    "subscription_discount": "עד {{ percent }}% הנחה",
     "installments": "או {{ count }} תשלומים של {{ price }} עם {{ provider }}",
     "no_reviews_yet": "אין עדיין ביקורות",
     "sold_this_week": "{{ count }} נמכרו השבוע",

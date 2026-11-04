@@ -225,6 +225,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "purchase_options": "מוצג כשלמוצר יש תוכניות מינוי מאפליקציית מינויים כמו Shopify Subscriptions. אחרת מוסתר.",
     "installments": "מספר התשלומים בטקסט שמתחת לכפתור. 0 או 1 מסתיר אותו.",
     "size_option": "שם האפשרות שמציגה את כפתור מדריך המידות ואת שדות המטא של הווריאנט custom.size_dimensions (מתחת לכל ערך) ו-custom.size_note (אחרי הערך שנבחר).",
     "product_rating_placeholder": "קורא את שדה המטא reviews.rating שאפליקציות ביקורות ממלאות. מציג כוכבים ריקים עד שיש ביקורות.",
@@ -299,6 +300,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "purchase_options": "אפשרויות רכישה",
     "product_rating_stock": "דירוג ומלאי",
     "page_header": "כותרת הדף",
     "subcategories": "קטגוריות משנה",
@@ -770,6 +772,9 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "badge_color": "צבע התג",
+    "one_time_label": "תווית רכישה חד-פעמית",
+    "subscribe_label": "תווית מינוי",
     "installments_provider": "ספק תשלומים",
     "show_price_in_button": "הצגת המחיר בכפתור",
     "size_guide_page": "דף מדריך מידות",

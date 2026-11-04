@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Možnosti nákupu",
     "product_rating_stock": "Hodnocení a sklad",
     "page_header": "Záhlaví stránky",
     "subcategories": "Podkategorie",
@@ -199,6 +200,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "badge_color": "Barva odznaku",
+    "one_time_label": "Popisek jednorázového nákupu",
+    "subscribe_label": "Popisek předplatného",
     "installments_provider": "Poskytovatel splátek",
     "show_price_in_button": "Zobrazit cenu v tlačítku",
     "size_guide_page": "Stránka s tabulkou velikostí",
@@ -1219,6 +1223,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "purchase_options": "Zobrazí se, když má produkt plány předplatného z aplikace jako Shopify Subscriptions. Jinak skryto.",
     "installments": "Počet splátek v textu pod tlačítkem. 0 nebo 1 jej skryje.",
     "size_option": "Název možnosti, která zobrazuje tlačítko tabulky velikostí a metapole varianty custom.size_dimensions (pod každou hodnotou) a custom.size_note (za vybranou hodnotou).",
     "product_rating_placeholder": "Čte metapole reviews.rating, které vyplňují aplikace pro recenze. Dokud nejsou recenze, zobrazuje prázdné hvězdičky.",

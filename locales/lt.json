@@ -138,6 +138,9 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "delivery_frequency": "Pristatymo dažnumas",
+    "purchase_options": "Pirkimo parinktys",
+    "subscription_discount": "iki {{ percent }} % nuolaida",
     "installments": "Arba {{ count }}x {{ price }} su {{ provider }}",
     "no_reviews_yet": "Atsiliepimų dar nėra",
     "sold_this_week": "Šią savaitę parduota: {{ count }}",

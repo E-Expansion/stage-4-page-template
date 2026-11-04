@@ -154,6 +154,9 @@
     }
   },
   "content": {
+    "delivery_frequency": "ترسیل کی تعدد",
+    "purchase_options": "خریداری کے اختیارات",
+    "subscription_discount": "{{ percent }}% تک رعایت",
     "installments": "یا {{ provider }} کے ساتھ {{ count }} قسطیں، ہر ایک {{ price }}",
     "no_reviews_yet": "ابھی تک کوئی جائزہ نہیں",
     "sold_this_week": "اس ہفتے {{ count }} فروخت ہوئے",

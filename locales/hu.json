@@ -134,6 +134,9 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "delivery_frequency": "Szállítási gyakoriság",
+    "purchase_options": "Vásárlási lehetőségek",
+    "subscription_discount": "akár {{ percent }}% kedvezmény",
     "installments": "Vagy {{ count }}x {{ price }} a(z) {{ provider }} szolgáltatással",
     "no_reviews_yet": "Még nincsenek értékelések",
     "sold_this_week": "{{ count }} eladva ezen a héten",

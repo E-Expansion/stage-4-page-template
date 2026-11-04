@@ -134,6 +134,9 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "delivery_frequency": "Честота на доставка",
+    "purchase_options": "Опции за покупка",
+    "subscription_discount": "до {{ percent }}% отстъпка",
     "installments": "Или {{ count }}x {{ price }} с {{ provider }}",
     "no_reviews_yet": "Все още няма отзиви",
     "sold_this_week": "{{ count }} продадени тази седмица",

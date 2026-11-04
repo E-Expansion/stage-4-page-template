@@ -136,6 +136,9 @@
     "back_to_main_menu": "Volver al menú principal"
   },
   "content": {
+    "delivery_frequency": "Frecuencia de entrega",
+    "purchase_options": "Opciones de compra",
+    "subscription_discount": "hasta {{ percent }} % de descuento",
     "installments": "O {{ count }}x {{ price }} con {{ provider }}",
     "no_reviews_yet": "Aún no hay reseñas",
     "sold_this_week": "{{ count }} vendidos esta semana",

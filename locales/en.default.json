@@ -167,6 +167,9 @@
     }
   },
   "content": {
+    "delivery_frequency": "Delivery frequency",
+    "purchase_options": "Purchase options",
+    "subscription_discount": "up to {{ percent }}% off",
     "installments": "Or {{ count }}x {{ price }} with {{ provider }}",
     "no_reviews_yet": "No reviews yet",
     "sold_this_week": "{{ count }} sold this week",

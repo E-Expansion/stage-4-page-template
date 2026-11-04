@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Opções de compra",
     "product_rating_stock": "Avaliação e estoque",
     "page_header": "Cabeçalho da página",
     "subcategories": "Subcategorias",
@@ -199,6 +200,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "badge_color": "Cor do selo",
+    "one_time_label": "Rótulo de compra única",
+    "subscribe_label": "Rótulo de assinatura",
     "installments_provider": "Provedor de parcelamento",
     "show_price_in_button": "Mostrar preço no botão",
     "size_guide_page": "Página do guia de tamanhos",
@@ -1219,6 +1223,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "purchase_options": "Aparece quando o produto tem planos de assinatura de um app como o Shopify Subscriptions. Caso contrário, fica oculto.",
     "installments": "Número de parcelas no texto abaixo do botão. 0 ou 1 oculta.",
     "size_option": "Nome da opção que mostra o botão do guia de tamanhos e os metacampos de variante custom.size_dimensions (abaixo de cada valor) e custom.size_note (após o valor escolhido).",
     "product_rating_placeholder": "Lê o metacampo reviews.rating preenchido por apps de avaliação. Mostra estrelas vazias enquanto não houver avaliações.",

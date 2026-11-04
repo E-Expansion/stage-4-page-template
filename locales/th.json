@@ -134,6 +134,9 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "delivery_frequency": "ความถี่ในการจัดส่ง",
+    "purchase_options": "ตัวเลือกการซื้อ",
+    "subscription_discount": "ลดสูงสุด {{ percent }}%",
     "installments": "หรือ {{ count }} งวด งวดละ {{ price }} กับ {{ provider }}",
     "no_reviews_yet": "ยังไม่มีรีวิว",
     "sold_this_week": "ขายแล้ว {{ count }} ชิ้นในสัปดาห์นี้",

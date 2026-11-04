@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Kjøpsalternativer",
     "product_rating_stock": "Vurdering og lager",
     "page_header": "Sidehode",
     "subcategories": "Underkategorier",
@@ -199,6 +200,9 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "badge_color": "Merkefarge",
+    "one_time_label": "Etikett for engangskjøp",
+    "subscribe_label": "Etikett for abonnement",
     "installments_provider": "Leverandør av delbetaling",
     "show_price_in_button": "Vis pris i knappen",
     "size_guide_page": "Side med størrelsesguide",
@@ -1219,6 +1223,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "purchase_options": "Vises når produktet har abonnementsplaner fra en abonnementsapp som Shopify Subscriptions. Ellers skjult.",
     "installments": "Antall avdrag i teksten under knappen. 0 eller 1 skjuler den.",
     "size_option": "Navnet på alternativet som viser knappen for størrelsesguiden og variantmetafeltene custom.size_dimensions (under hver verdi) og custom.size_note (etter den valgte verdien).",
     "product_rating_placeholder": "Leser metafeltet reviews.rating som anmeldelsesapper fyller ut. Viser tomme stjerner til det finnes anmeldelser.",

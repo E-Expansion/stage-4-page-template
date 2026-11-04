@@ -136,6 +136,9 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "delivery_frequency": "Fréquence de livraison",
+    "purchase_options": "Options d'achat",
+    "subscription_discount": "jusqu'à {{ percent }} % de réduction",
     "installments": "Ou {{ count }}x {{ price }} avec {{ provider }}",
     "no_reviews_yet": "Pas encore d'avis",
     "sold_this_week": "{{ count }} vendus cette semaine",

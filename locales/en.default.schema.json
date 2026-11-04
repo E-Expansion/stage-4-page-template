@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "purchase_options": "Shows when the product has subscription plans from a subscription app, such as Shopify Subscriptions. Hidden otherwise.",
     "installments": "Number of installments in the hint below the button. 0 or 1 hides it.",
     "size_option": "Name of the option that shows the size guide button and the variant metafields custom.size_dimensions (under each value) and custom.size_note (after the selected value).",
     "product_rating_placeholder": "Reads the reviews.rating metafield that review apps fill. Shows empty stars until there are reviews.",
@@ -307,6 +308,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "purchase_options": "Purchase options",
     "product_rating_stock": "Rating & stock",
     "page_header": "Page header",
     "subcategories": "Subcategories",
@@ -822,6 +824,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "badge_color": "Badge color",
+    "one_time_label": "One-time label",
+    "subscribe_label": "Subscription label",
     "installments_provider": "Installment provider",
     "show_price_in_button": "Show price in button",
     "size_guide_page": "Size guide page",

@@ -136,6 +136,9 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "delivery_frequency": "Frecvența livrării",
+    "purchase_options": "Opțiuni de cumpărare",
+    "subscription_discount": "până la {{ percent }}% reducere",
     "installments": "Sau {{ count }}x {{ price }} cu {{ provider }}",
     "no_reviews_yet": "Nicio recenzie încă",
     "sold_this_week": "{{ count }} vândute săptămâna aceasta",

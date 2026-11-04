@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Opcje zakupu",
     "product_rating_stock": "Ocena i stan magazynu",
     "page_header": "Nagłówek strony",
     "subcategories": "Podkategorie",
@@ -199,6 +200,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "badge_color": "Kolor plakietki",
+    "one_time_label": "Etykieta zakupu jednorazowego",
+    "subscribe_label": "Etykieta subskrypcji",
     "installments_provider": "Dostawca płatności ratalnych",
     "show_price_in_button": "Pokaż cenę w przycisku",
     "size_guide_page": "Strona z tabelą rozmiarów",
@@ -1219,6 +1223,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "purchase_options": "Widoczne, gdy produkt ma plany subskrypcji z aplikacji, np. Shopify Subscriptions. W przeciwnym razie ukryte.",
     "installments": "Liczba rat w tekście pod przyciskiem. 0 lub 1 go ukrywa.",
     "size_option": "Nazwa opcji, która pokazuje przycisk tabeli rozmiarów oraz metapola wariantu custom.size_dimensions (pod każdą wartością) i custom.size_note (po wybranej wartości).",
     "product_rating_placeholder": "Odczytuje metapole reviews.rating wypełniane przez aplikacje z opiniami. Pokazuje puste gwiazdki, dopóki nie ma opinii.",

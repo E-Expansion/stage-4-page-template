@@ -1,11 +1,20 @@
 {% doc %}
   Renders the selected variant's price (with compare-at and unit price) beside a short
   price description such as tax and shipping terms, and an optional lowest price guarantee
-  line below it.
+  line below it. With a subscription plan selected (?selling_plan=) it shows the plan price
+  with the one-time price struck through.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign allocation = variant.selected_selling_plan_allocation
+  if allocation == blank and product.requires_selling_plan
+    assign allocation = variant.selling_plan_allocations.first
+  endif
+%}
 
 <div
   class="product-price"
@@ -13,7 +22,32 @@
 >
   <div class="product-price__row">
     <div class="product-price__amount">
-      {% render 'price', product_resource: product, show_unit_price: true %}
+      {% if allocation != blank %}
+        {% render 'price-styles' %}
+        {% liquid
+          if settings.currency_code_enabled_product_pages
+            assign plan_price = allocation.price | money_with_currency
+            assign plan_compare_price = allocation.compare_at_price | money_with_currency
+          else
+            assign plan_price = allocation.price | money
+            assign plan_compare_price = allocation.compare_at_price | money
+          endif
+        %}
+        <div>
+          {% if allocation.compare_at_price > allocation.price %}
+            <span class="price-item__group price-item--regular compare-at-price">
+              <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
+              {{- plan_compare_price -}}
+            </span>
+          {% endif %}
+          <span class="price-item__group price">
+            <span class="visually-hidden">{{ 'content.price_sale' | t }}&nbsp;</span>
+            {{- plan_price -}}
+          </span>
+        </div>
+      {% else %}
+        {% render 'price', product_resource: product, show_unit_price: true %}
+      {% endif %}
     </div>
 
     {% if block.settings.description != blank %}

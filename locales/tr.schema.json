@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Satın alma seçenekleri",
     "product_rating_stock": "Puan ve stok",
     "page_header": "Sayfa başlığı",
     "subcategories": "Alt kategoriler",
@@ -199,6 +200,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "badge_color": "Rozet rengi",
+    "one_time_label": "Tek seferlik satın alma etiketi",
+    "subscribe_label": "Abonelik etiketi",
     "installments_provider": "Taksit sağlayıcısı",
     "show_price_in_button": "Fiyatı butonda göster",
     "size_guide_page": "Beden rehberi sayfası",
@@ -1219,6 +1223,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "purchase_options": "Ürünün Shopify Subscriptions gibi bir abonelik uygulamasından abonelik planları olduğunda görünür. Aksi halde gizlidir.",
     "installments": "Butonun altındaki metindeki taksit sayısı. 0 veya 1 gizler.",
     "size_option": "Beden rehberi butonunu ve custom.size_dimensions (her değerin altında) ile custom.size_note (seçilen değerden sonra) varyant meta alanlarını gösteren seçeneğin adı.",
     "product_rating_placeholder": "Değerlendirme uygulamalarının doldurduğu reviews.rating meta alanını okur. Değerlendirme olana kadar boş yıldızlar gösterir.",

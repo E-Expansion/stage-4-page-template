@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Ostovaihtoehdot",
     "product_rating_stock": "Arvio ja varasto",
     "page_header": "Sivun ylätunniste",
     "subcategories": "Alaluokat",
@@ -199,6 +200,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "badge_color": "Merkin väri",
+    "one_time_label": "Kertaoston nimi",
+    "subscribe_label": "Tilauksen nimi",
     "installments_provider": "Osamaksun tarjoaja",
     "show_price_in_button": "Näytä hinta painikkeessa",
     "size_guide_page": "Kokotaulukon sivu",
@@ -1219,6 +1223,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "purchase_options": "Näytetään, kun tuotteella on tilaussuunnitelmia tilaussovelluksesta, kuten Shopify Subscriptions. Muuten piilotettu.",
     "installments": "Erien määrä painikkeen alla olevassa tekstissä. 0 tai 1 piilottaa sen.",
     "size_option": "Vaihtoehdon nimi, joka näyttää kokotaulukon painikkeen sekä muunnelman metakentät custom.size_dimensions (jokaisen arvon alla) ja custom.size_note (valitun arvon perässä).",
     "product_rating_placeholder": "Lukee metakentän reviews.rating, jonka arvostelusovellukset täyttävät. Näyttää tyhjät tähdet, kunnes arvosteluja on.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Kaufoptionen",
     "product_rating_stock": "Bewertung & Lagerbestand",
     "page_header": "Seitenkopf",
     "subcategories": "Unterkategorien",
@@ -199,6 +200,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "badge_color": "Badge-Farbe",
+    "one_time_label": "Label für Einmalkauf",
+    "subscribe_label": "Label für Abo",
     "installments_provider": "Ratenzahlungsanbieter",
     "show_price_in_button": "Preis im Button anzeigen",
     "size_guide_page": "Seite mit Größentabelle",
@@ -1219,6 +1223,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "purchase_options": "Wird angezeigt, wenn das Produkt Abo-Pläne aus einer Abo-App wie Shopify Subscriptions hat. Sonst ausgeblendet.",
     "installments": "Anzahl der Raten im Hinweis unter dem Button. 0 oder 1 blendet ihn aus.",
     "size_option": "Name der Option, die den Größentabellen-Button sowie die Varianten-Metafelder custom.size_dimensions (unter jedem Wert) und custom.size_note (nach dem gewählten Wert) zeigt.",
     "product_rating_placeholder": "Liest das Metafeld reviews.rating, das Bewertungs-Apps befüllen. Zeigt leere Sterne, solange es keine Bewertungen gibt.",

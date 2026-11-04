@@ -134,6 +134,9 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "delivery_frequency": "Frekuensi pengiriman",
+    "purchase_options": "Opsi pembelian",
+    "subscription_discount": "hemat hingga {{ percent }}%",
     "installments": "Atau {{ count }}x {{ price }} dengan {{ provider }}",
     "no_reviews_yet": "Belum ada ulasan",
     "sold_this_week": "{{ count }} terjual minggu ini",

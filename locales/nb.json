@@ -134,6 +134,9 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "delivery_frequency": "Leveringsfrekvens",
+    "purchase_options": "Kjøpsalternativer",
+    "subscription_discount": "opptil {{ percent }} % rabatt",
     "installments": "Eller {{ count }}x {{ price }} med {{ provider }}",
     "no_reviews_yet": "Ingen anmeldelser ennå",
     "sold_this_week": "{{ count }} solgt denne uken",

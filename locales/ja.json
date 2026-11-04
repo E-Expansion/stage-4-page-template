@@ -134,6 +134,9 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "delivery_frequency": "配送頻度",
+    "purchase_options": "購入オプション",
+    "subscription_discount": "最大{{ percent }}%オフ",
     "installments": "または {{ provider }} で {{ price }} × {{ count }} 回",
     "no_reviews_yet": "レビューはまだありません",
     "sold_this_week": "今週{{ count }}点販売",

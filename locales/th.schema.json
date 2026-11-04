@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "ตัวเลือกการซื้อ",
     "product_rating_stock": "คะแนนและสต็อก",
     "page_header": "ส่วนหัวของหน้า",
     "subcategories": "หมวดหมู่ย่อย",
@@ -199,6 +200,9 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "badge_color": "สีป้าย",
+    "one_time_label": "ป้ายซื้อครั้งเดียว",
+    "subscribe_label": "ป้ายการสมัครสมาชิก",
     "installments_provider": "ผู้ให้บริการผ่อนชำระ",
     "show_price_in_button": "แสดงราคาในปุ่ม",
     "size_guide_page": "หน้าคู่มือขนาด",
@@ -1219,6 +1223,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "purchase_options": "แสดงเมื่อสินค้ามีแผนสมัครสมาชิกจากแอป เช่น Shopify Subscriptions มิฉะนั้นจะซ่อนไว้",
     "installments": "จำนวนงวดในข้อความใต้ปุ่ม 0 หรือ 1 จะซ่อนไว้",
     "size_option": "ชื่อของตัวเลือกที่แสดงปุ่มคู่มือขนาด และเมตาฟิลด์ของตัวเลือกสินค้า custom.size_dimensions (ใต้แต่ละค่า) และ custom.size_note (หลังค่าที่เลือก)",
     "product_rating_placeholder": "อ่านเมตาฟิลด์ reviews.rating ที่แอปรีวิวกรอกไว้ แสดงดาวว่างจนกว่าจะมีรีวิว",

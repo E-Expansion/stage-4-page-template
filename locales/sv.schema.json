@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "Köpalternativ",
     "product_rating_stock": "Betyg och lager",
     "page_header": "Sidhuvud",
     "subcategories": "Underkategorier",
@@ -199,6 +200,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "badge_color": "Märkets färg",
+    "one_time_label": "Etikett för engångsköp",
+    "subscribe_label": "Etikett för prenumeration",
     "installments_provider": "Leverantör av delbetalning",
     "show_price_in_button": "Visa pris i knappen",
     "size_guide_page": "Sida med storleksguide",
@@ -1219,6 +1223,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "purchase_options": "Visas när produkten har prenumerationsplaner från en prenumerationsapp som Shopify Subscriptions. Annars dold.",
     "installments": "Antal delbetalningar i texten under knappen. 0 eller 1 döljer den.",
     "size_option": "Namnet på alternativet som visar knappen för storleksguiden och variantmetafälten custom.size_dimensions (under varje värde) och custom.size_note (efter det valda värdet).",
     "product_rating_placeholder": "Läser metafältet reviews.rating som recensionsappar fyller i. Visar tomma stjärnor tills det finns recensioner.",

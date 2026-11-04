@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "purchase_options": "購買選項",
     "product_rating_stock": "評分和庫存",
     "page_header": "頁面標題區",
     "subcategories": "子類別",
@@ -199,6 +200,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "badge_color": "徽章顏色",
+    "one_time_label": "單次購買標籤",
+    "subscribe_label": "訂閱標籤",
     "installments_provider": "分期付款提供者",
     "show_price_in_button": "在按鈕中顯示價格",
     "size_guide_page": "尺寸指南頁面",
@@ -1219,6 +1223,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "purchase_options": "當產品有來自訂閱應用程式（例如 Shopify Subscriptions）的訂閱方案時顯示，否則隱藏。",
     "installments": "按鈕下方提示中的分期數。0 或 1 時隱藏。",
     "size_option": "顯示尺寸指南按鈕以及子類中繼欄位 custom.size_dimensions（每個值下方）和 custom.size_note（所選值之後）的選項名稱。",
     "product_rating_placeholder": "讀取評論應用程式填寫的 reviews.rating 中繼欄位。在有評論之前顯示空星。",

@@ -138,6 +138,9 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "delivery_frequency": "Frekvencia doručenia",
+    "purchase_options": "Možnosti nákupu",
+    "subscription_discount": "až {{ percent }} % zľava",
     "installments": "Alebo {{ count }}× {{ price }} s {{ provider }}",
     "no_reviews_yet": "Zatiaľ žiadne recenzie",
     "sold_this_week": "{{ count }} predaných tento týždeň",
