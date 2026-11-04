@@ -58,6 +58,18 @@
           },
           "blocks": {}
         },
+        "back_in_stock": {
+          "type": "_product-back-in-stock",
+          "settings": {
+            "heading": "Notify me when back in stock",
+            "text": "Leave your email and we'll let you know the moment this item is available again. No spam, unsubscribe any time.",
+            "placeholder": "your@email.com",
+            "button_label": "Notify me",
+            "success_text": "Thanks! We'll email you as soon as it's back in stock.",
+            "button_color": "{{ settings.color_palette.color1 }}"
+          },
+          "blocks": {}
+        },
         "purchase_options": {
           "type": "_product-purchase-options",
           "settings": {
@@ -123,7 +135,13 @@
         },
         "free_gift": {
           "type": "_product-free-gift",
-          "settings": {}
+          "settings": {
+            "threshold": 220,
+            "message": "[amount] away from a free gift with your order.",
+            "success_message": "You've unlocked a free gift with your order!",
+            "accent_color": "{{ settings.color_palette.color3 }}"
+          },
+          "blocks": {}
         },
         "usps": {
           "type": "_product-usps",
@@ -135,7 +153,8 @@
                 "icon": "tools",
                 "title": "5-year repair guarantee",
                 "text": ""
-              }
+              },
+              "blocks": {}
             },
             "checkout": {
               "type": "_usp-item",
@@ -143,7 +162,8 @@
                 "icon": "shield",
                 "title": "Secure checkout, PCI-compliant",
                 "text": ""
-              }
+              },
+              "blocks": {}
             },
             "returns": {
               "type": "_usp-item",
@@ -151,7 +171,8 @@
                 "icon": "return",
                 "title": "Free returns, prepaid label",
                 "text": ""
-              }
+              },
+              "blocks": {}
             },
             "delivery": {
               "type": "_usp-delivery",
@@ -161,7 +182,8 @@
                 "min_days": 2,
                 "max_days": 4,
                 "working_days": true
-              }
+              },
+              "blocks": {}
             },
             "late": {
               "type": "_usp-item",
@@ -169,7 +191,8 @@
                 "icon": "stopwatch",
                 "title": "Delivered too late? Get shipping back.",
                 "text": ""
-              }
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -182,11 +205,22 @@
         },
         "shipping_countdown": {
           "type": "_product-shipping-countdown",
-          "settings": {}
-        },
-        "back_in_stock": {
-          "type": "_product-back-in-stock",
-          "settings": {}
+          "settings": {
+            "heading": "Same-day shipping",
+            "text": "Complete your order before the timer runs out.",
+            "status_text": "Order in time and it ships today",
+            "cutoff_hour": 16,
+            "cutoff_minute": 0,
+            "ship_monday": true,
+            "ship_tuesday": true,
+            "ship_wednesday": true,
+            "ship_thursday": true,
+            "ship_friday": true,
+            "ship_saturday": false,
+            "ship_sunday": false,
+            "accent_color": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -207,18 +241,18 @@
         "show_breadcrumbs": true,
         "media_ratio": "1",
         "show_badge": true,
-        "sticky_info": true,
-        "background_color": "{{ settings.color_palette.background }}",
-        "border_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 24,
-        "padding-block-end": 48,
         "show_sticky_buy": true,
-        "sticky_button_color": "{{ settings.color_palette.color3 }}",
         "sticky_show_image": true,
         "sticky_show_rating": true,
         "sticky_show_sold": true,
         "sticky_show_stock": true,
-        "sticky_in_stock_note": "ships today"
+        "sticky_in_stock_note": "ships today",
+        "sticky_button_color": "{{ settings.color_palette.color3 }}",
+        "sticky_info": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 24,
+        "padding-block-end": 48
       }
     },
     "product_recommendations_qggXJq": {
