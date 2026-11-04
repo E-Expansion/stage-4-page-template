@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Compre mais, pague menos",
+    "volume_tier": "Faixa de quantidade",
     "purchase_options": "Opções de compra",
     "product_rating_stock": "Avaliação e estoque",
     "page_header": "Cabeçalho da página",
@@ -200,6 +202,8 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "discount_percent": "Desconto",
+    "tier_quantity": "Quantidade",
     "badge_color": "Cor do selo",
     "one_time_label": "Rótulo de compra única",
     "subscribe_label": "Rótulo de assinatura",
@@ -1223,6 +1227,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "volume_pricing": "Mostra apenas os preços. Crie descontos automáticos correspondentes no Shopify (Descontos > Valor em produtos, com quantidade mínima) para que o checkout os aplique.",
     "purchase_options": "Aparece quando o produto tem planos de assinatura de um app como o Shopify Subscriptions. Caso contrário, fica oculto.",
     "installments": "Número de parcelas no texto abaixo do botão. 0 ou 1 oculta.",
     "size_option": "Nome da opção que mostra o botão do guia de tamanhos e os metacampos de variante custom.size_dimensions (abaixo de cada valor) e custom.size_note (após o valor escolhido).",

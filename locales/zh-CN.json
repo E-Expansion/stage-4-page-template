@@ -134,6 +134,8 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "price_each": "每件 {{ price }}",
+    "save_percent": "省 {{ percent }}%",
     "delivery_frequency": "配送频率",
     "purchase_options": "购买选项",
     "subscription_discount": "最高优惠 {{ percent }}%",

@@ -1,0 +1,127 @@
+{% doc %}
+  Renders the "Buy more, pay less" card: a heading above a list of quantity tiers
+  (_volume-tier blocks), each a radio row with a label, the price per item and a
+  "Save 7%" badge. The chosen tier sets the quantity the buy button adds to the cart.
+  The prices shown are calculated from the tier's discount; checkout only applies them
+  when a matching automatic discount exists in Shopify.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  if block.settings.badge_color != blank
+    assign badge_brightness = block.settings.badge_color | color_brightness
+    if badge_brightness > 128
+      assign badge_text = 'var(--palette-darkest)'
+    else
+      assign badge_text = 'var(--palette-lightest)'
+    endif
+  endif
+%}
+
+<fieldset
+  class="volume-pricing"
+  style="
+    {% if block.settings.accent_color != blank %}--volume-accent: {{ block.settings.accent_color }};{% endif %}
+    {% if badge_text %}--volume-badge-background: {{ block.settings.badge_color }}; --volume-badge-text: {{ badge_text }};{% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.heading != blank %}
+    <legend class="volume-pricing__heading">{{ block.settings.heading | escape }}</legend>
+  {% endif %}
+
+  <div class="volume-pricing__tiers">
+    {% content_for 'blocks' %}
+  </div>
+</fieldset>
+
+{% stylesheet %}
+  .volume-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    min-width: 0;
+    margin: 0;
+    padding: var(--padding-md) var(--padding-lg);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  /* A legend sits on the fieldset border by default; float keeps it inside the card */
+  .volume-pricing__heading {
+    float: inline-start;
+    width: 100%;
+    padding: 0;
+    margin-block-end: var(--gap-sm);
+    font-size: var(--font-size--xs);
+    letter-spacing: var(--letter-spacing--body-loose);
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .volume-pricing__tiers {
+    clear: both;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: var(--gap-xs) var(--gap-sm);
+    align-items: center;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.volume_pricing",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_volume-tier"
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.volume_pricing"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Buy more, pay less"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "t:settings.badge_color",
+      "default": "{{ settings.color_palette.color5 }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.volume_pricing",
+      "blocks": {
+        "tier_1": {
+          "type": "_volume-tier",
+          "settings": { "label": "One item", "quantity": 1, "discount": 0 }
+        },
+        "tier_2": {
+          "type": "_volume-tier",
+          "settings": { "label": "Two - mix any colour", "quantity": 2, "discount": 7 }
+        },
+        "tier_3": {
+          "type": "_volume-tier",
+          "settings": { "label": "Three or more", "quantity": 3, "discount": 13 }
+        }
+      },
+      "block_order": ["tier_1", "tier_2", "tier_3"]
+    }
+  ]
+}
+{% endschema %}

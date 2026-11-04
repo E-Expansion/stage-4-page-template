@@ -134,6 +134,8 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "price_each": "{{ price }} за брой",
+    "save_percent": "Спестете {{ percent }}%",
     "delivery_frequency": "Честота на доставка",
     "purchase_options": "Опции за покупка",
     "subscription_discount": "до {{ percent }}% отстъпка",

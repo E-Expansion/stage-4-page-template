@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "まとめ買いでお得",
+    "volume_tier": "数量段階",
     "purchase_options": "購入オプション",
     "product_rating_stock": "評価と在庫",
     "page_header": "ページヘッダー",
@@ -200,6 +202,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "discount_percent": "割引",
+    "tier_quantity": "数量",
     "badge_color": "バッジの色",
     "one_time_label": "1回購入のラベル",
     "subscribe_label": "定期購入のラベル",
@@ -1223,6 +1227,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "volume_pricing": "価格を表示するだけです。チェックアウトで適用されるよう、Shopify で対応する自動割引（ディスカウント > 商品の金額割引、最低数量あり）を作成してください。",
     "purchase_options": "Shopify Subscriptions などの定期購入アプリのプランがある商品で表示されます。それ以外は非表示です。",
     "installments": "ボタン下の案内に表示する分割回数。0 または 1 で非表示になります。",
     "size_option": "サイズガイドボタンと、バリエーションのメタフィールド custom.size_dimensions（各値の下）と custom.size_note（選択した値の後）を表示するオプションの名前。",

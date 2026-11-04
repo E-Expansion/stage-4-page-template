@@ -167,6 +167,8 @@
     }
   },
   "content": {
+    "price_each": "{{ price }} each",
+    "save_percent": "Save {{ percent }}%",
     "delivery_frequency": "Delivery frequency",
     "purchase_options": "Purchase options",
     "subscription_discount": "up to {{ percent }}% off",

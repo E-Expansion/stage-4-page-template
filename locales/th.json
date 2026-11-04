@@ -134,6 +134,8 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "price_each": "ชิ้นละ {{ price }}",
+    "save_percent": "ประหยัด {{ percent }}%",
     "delivery_frequency": "ความถี่ในการจัดส่ง",
     "purchase_options": "ตัวเลือกการซื้อ",
     "subscription_discount": "ลดสูงสุด {{ percent }}%",

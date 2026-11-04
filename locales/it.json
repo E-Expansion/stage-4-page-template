@@ -136,6 +136,8 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "price_each": "{{ price }} cad.",
+    "save_percent": "Risparmia il {{ percent }}%",
     "delivery_frequency": "Frequenza di consegna",
     "purchase_options": "Opzioni di acquisto",
     "subscription_discount": "fino al {{ percent }}% di sconto",

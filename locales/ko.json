@@ -134,6 +134,8 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "price_each": "개당 {{ price }}",
+    "save_percent": "{{ percent }}% 절약",
     "delivery_frequency": "배송 주기",
     "purchase_options": "구매 옵션",
     "subscription_discount": "최대 {{ percent }}% 할인",

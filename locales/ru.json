@@ -138,6 +138,8 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "price_each": "{{ price }} за шт.",
+    "save_percent": "Экономия {{ percent }}%",
     "delivery_frequency": "Частота доставки",
     "purchase_options": "Варианты покупки",
     "subscription_discount": "скидка до {{ percent }}%",

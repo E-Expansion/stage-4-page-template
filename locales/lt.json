@@ -138,6 +138,8 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "price_each": "{{ price }} už vnt.",
+    "save_percent": "Sutaupykite {{ percent }} %",
     "delivery_frequency": "Pristatymo dažnumas",
     "purchase_options": "Pirkimo parinktys",
     "subscription_discount": "iki {{ percent }} % nuolaida",

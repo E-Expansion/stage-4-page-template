@@ -134,6 +134,8 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "price_each": "{{ price }} mỗi món",
+    "save_percent": "Tiết kiệm {{ percent }}%",
     "delivery_frequency": "Tần suất giao hàng",
     "purchase_options": "Tùy chọn mua hàng",
     "subscription_discount": "giảm đến {{ percent }}%",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Osta enemmän, maksa vähemmän",
+    "volume_tier": "Määräporras",
     "purchase_options": "Ostovaihtoehdot",
     "product_rating_stock": "Arvio ja varasto",
     "page_header": "Sivun ylätunniste",
@@ -200,6 +202,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "discount_percent": "Alennus",
+    "tier_quantity": "Määrä",
     "badge_color": "Merkin väri",
     "one_time_label": "Kertaoston nimi",
     "subscribe_label": "Tilauksen nimi",
@@ -1223,6 +1227,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "volume_pricing": "Näyttää vain hinnat. Luo vastaavat automaattiset alennukset Shopifyssa (Alennukset > Summa tuotteista, vähimmäismäärällä), jotta kassa veloittaa ne.",
     "purchase_options": "Näytetään, kun tuotteella on tilaussuunnitelmia tilaussovelluksesta, kuten Shopify Subscriptions. Muuten piilotettu.",
     "installments": "Erien määrä painikkeen alla olevassa tekstissä. 0 tai 1 piilottaa sen.",
     "size_option": "Vaihtoehdon nimi, joka näyttää kokotaulukon painikkeen sekä muunnelman metakentät custom.size_dimensions (jokaisen arvon alla) ja custom.size_note (valitun arvon perässä).",

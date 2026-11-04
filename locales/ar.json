@@ -166,6 +166,8 @@
     }
   },
   "content": {
+    "price_each": "{{ price }} للقطعة",
+    "save_percent": "وفّر {{ percent }}%",
     "delivery_frequency": "تكرار التوصيل",
     "purchase_options": "خيارات الشراء",
     "subscription_discount": "خصم حتى {{ percent }}%",

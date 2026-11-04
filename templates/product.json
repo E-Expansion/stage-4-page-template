@@ -61,6 +61,43 @@
         "purchase_options": {
           "type": "_product-purchase-options",
           "settings": {}
+        },
+        "volume_pricing": {
+          "type": "_product-volume-pricing",
+          "settings": {
+            "heading": "Buy more, pay less"
+          },
+          "blocks": {
+            "tier_1": {
+              "type": "_volume-tier",
+              "settings": {
+                "label": "One satchel",
+                "quantity": 1,
+                "discount": 0
+              }
+            },
+            "tier_2": {
+              "type": "_volume-tier",
+              "settings": {
+                "label": "Two - mix any colour",
+                "quantity": 2,
+                "discount": 7
+              }
+            },
+            "tier_3": {
+              "type": "_volume-tier",
+              "settings": {
+                "label": "Three or more",
+                "quantity": 3,
+                "discount": 13
+              }
+            }
+          },
+          "block_order": [
+            "tier_1",
+            "tier_2",
+            "tier_3"
+          ]
         }
       },
       "block_order": [
@@ -69,6 +106,7 @@
         "price",
         "variant_picker",
         "purchase_options",
+        "volume_pricing",
         "buy"
       ],
       "settings": {

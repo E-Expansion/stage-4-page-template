@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Meer kopen, minder betalen",
+    "volume_tier": "Staffel",
     "purchase_options": "Aankoopopties",
     "product_rating_stock": "Beoordeling & voorraad",
     "page_header": "Paginakop",
@@ -200,6 +202,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "discount_percent": "Korting",
+    "tier_quantity": "Aantal",
     "badge_color": "Kleur badge",
     "one_time_label": "Label eenmalige aankoop",
     "subscribe_label": "Label abonnement",
@@ -1223,6 +1227,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "volume_pricing": "Toont alleen de prijzen. Maak bijpassende automatische kortingen in Shopify (Discounts > Amount off products, met een minimumaantal) zodat de checkout ze ook rekent.",
     "purchase_options": "Verschijnt als het product abonnementen heeft via een abonnementsapp, zoals Shopify Subscriptions. Anders verborgen.",
     "installments": "Aantal termijnen in de regel onder de knop. Bij 0 of 1 wordt hij verborgen.",
     "size_option": "Naam van de optie die de knop voor de maatgids toont en de variant-metavelden custom.size_dimensions (onder elke waarde) en custom.size_note (na de gekozen waarde).",

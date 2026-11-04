@@ -134,6 +134,8 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "price_each": "1点あたり{{ price }}",
+    "save_percent": "{{ percent }}%お得",
     "delivery_frequency": "配送頻度",
     "purchase_options": "購入オプション",
     "subscription_discount": "最大{{ percent }}%オフ",

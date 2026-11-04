@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Kupte víc, zaplaťte méně",
+    "volume_tier": "Množstevní stupeň",
     "purchase_options": "Možnosti nákupu",
     "product_rating_stock": "Hodnocení a sklad",
     "page_header": "Záhlaví stránky",
@@ -200,6 +202,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "discount_percent": "Sleva",
+    "tier_quantity": "Množství",
     "badge_color": "Barva odznaku",
     "one_time_label": "Popisek jednorázového nákupu",
     "subscribe_label": "Popisek předplatného",
@@ -1223,6 +1227,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "volume_pricing": "Zobrazuje jen ceny. Vytvořte odpovídající automatické slevy v Shopify (Slevy > Částka z produktů, s minimálním množstvím), aby je pokladna uplatnila.",
     "purchase_options": "Zobrazí se, když má produkt plány předplatného z aplikace jako Shopify Subscriptions. Jinak skryto.",
     "installments": "Počet splátek v textu pod tlačítkem. 0 nebo 1 jej skryje.",
     "size_option": "Název možnosti, která zobrazuje tlačítko tabulky velikostí a metapole varianty custom.size_dimensions (pod každou hodnotou) a custom.size_note (za vybranou hodnotou).",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "多買更省",
+    "volume_tier": "數量級距",
     "purchase_options": "購買選項",
     "product_rating_stock": "評分和庫存",
     "page_header": "頁面標題區",
@@ -200,6 +202,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "discount_percent": "折扣",
+    "tier_quantity": "數量",
     "badge_color": "徽章顏色",
     "one_time_label": "單次購買標籤",
     "subscribe_label": "訂閱標籤",
@@ -1223,6 +1227,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "volume_pricing": "僅顯示價格。請在 Shopify 中建立對應的自動折扣（折扣 > 產品金額折扣，設定最低數量），結帳時才會套用。",
     "purchase_options": "當產品有來自訂閱應用程式（例如 Shopify Subscriptions）的訂閱方案時顯示，否則隱藏。",
     "installments": "按鈕下方提示中的分期數。0 或 1 時隱藏。",
     "size_option": "顯示尺寸指南按鈕以及子類中繼欄位 custom.size_dimensions（每個值下方）和 custom.size_note（所選值之後）的選項名稱。",

@@ -134,6 +134,8 @@
     "back_to_main_menu": "Zurück zum Hauptmenü"
   },
   "content": {
+    "price_each": "{{ price }} pro Stück",
+    "save_percent": "{{ percent }} % sparen",
     "delivery_frequency": "Lieferhäufigkeit",
     "purchase_options": "Kaufoptionen",
     "subscription_discount": "bis zu {{ percent }} % Rabatt",

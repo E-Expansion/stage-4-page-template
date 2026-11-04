@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Køb mere, betal mindre",
+    "volume_tier": "Mængdetrin",
     "purchase_options": "Købsmuligheder",
     "product_rating_stock": "Bedømmelse og lager",
     "page_header": "Sidehoved",
@@ -200,6 +202,8 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "discount_percent": "Rabat",
+    "tier_quantity": "Antal",
     "badge_color": "Badgefarve",
     "one_time_label": "Etiket for engangskøb",
     "subscribe_label": "Etiket for abonnement",
@@ -1223,6 +1227,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "volume_pricing": "Viser kun priserne. Opret tilsvarende automatiske rabatter i Shopify (Rabatter > Beløb af produkter, med minimumsantal), så kassen trækker dem.",
     "purchase_options": "Vises, når produktet har abonnementsplaner fra en abonnementsapp som Shopify Subscriptions. Ellers skjult.",
     "installments": "Antal rater i teksten under knappen. 0 eller 1 skjuler den.",
     "size_option": "Navnet på den mulighed, der viser knappen til størrelsesguiden og variant-metafelterne custom.size_dimensions (under hver værdi) og custom.size_note (efter den valgte værdi).",

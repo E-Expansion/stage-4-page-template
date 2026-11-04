@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Achetez plus, payez moins",
+    "volume_tier": "Palier de quantité",
     "purchase_options": "Options d'achat",
     "product_rating_stock": "Note et stock",
     "page_header": "En-tête de page",
@@ -200,6 +202,8 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "discount_percent": "Remise",
+    "tier_quantity": "Quantité",
     "badge_color": "Couleur du badge",
     "one_time_label": "Libellé achat unique",
     "subscribe_label": "Libellé abonnement",
@@ -1223,6 +1227,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "volume_pricing": "Affiche uniquement les prix. Créez des réductions automatiques correspondantes dans Shopify (Réductions > Montant sur les produits, avec quantité minimale) pour que le paiement les applique.",
     "purchase_options": "S'affiche si le produit a des plans d'abonnement d'une application comme Shopify Subscriptions. Masqué sinon.",
     "installments": "Nombre d'échéances dans la mention sous le bouton. 0 ou 1 la masque.",
     "size_option": "Nom de l'option qui affiche le bouton du guide des tailles et les métachamps de variante custom.size_dimensions (sous chaque valeur) et custom.size_note (après la valeur choisie).",

@@ -134,6 +134,8 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "price_each": "{{ price }} per item",
+    "save_percent": "Hemat {{ percent }}%",
     "delivery_frequency": "Frekuensi pengiriman",
     "purchase_options": "Opsi pembelian",
     "subscription_discount": "hemat hingga {{ percent }}%",

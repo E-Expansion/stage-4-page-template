@@ -134,6 +134,8 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "price_each": "{{ price }} / kpl",
+    "save_percent": "Säästä {{ percent }} %",
     "delivery_frequency": "Toimitusväli",
     "purchase_options": "Ostovaihtoehdot",
     "subscription_discount": "jopa {{ percent }} % alennus",

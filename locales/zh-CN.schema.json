@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "多买更省",
+    "volume_tier": "数量档位",
     "purchase_options": "购买选项",
     "product_rating_stock": "评分和库存",
     "page_header": "页面标题区",
@@ -200,6 +202,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "discount_percent": "折扣",
+    "tier_quantity": "数量",
     "badge_color": "徽章颜色",
     "one_time_label": "单次购买标签",
     "subscribe_label": "订阅标签",
@@ -1223,6 +1227,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "volume_pricing": "仅显示价格。请在 Shopify 中创建对应的自动折扣（折扣 > 产品金额折扣，设置最低数量），结账时才会生效。",
     "purchase_options": "当产品有来自订阅应用（如 Shopify Subscriptions）的订阅计划时显示，否则隐藏。",
     "installments": "按钮下方提示中的分期数。0 或 1 时隐藏。",
     "size_option": "显示尺码指南按钮以及多属性元字段 custom.size_dimensions（每个值下方）和 custom.size_note（所选值之后）的选项名称。",

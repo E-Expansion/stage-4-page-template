@@ -134,6 +134,8 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "price_each": "{{ price }} το καθένα",
+    "save_percent": "Εξοικονόμηση {{ percent }}%",
     "delivery_frequency": "Συχνότητα παράδοσης",
     "purchase_options": "Επιλογές αγοράς",
     "subscription_discount": "έως {{ percent }}% έκπτωση",

@@ -134,6 +134,8 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "price_each": "{{ price }} pr. stk.",
+    "save_percent": "Spar {{ percent }}%",
     "delivery_frequency": "Leveringsfrekvens",
     "purchase_options": "Købsmuligheder",
     "subscription_discount": "op til {{ percent }}% rabat",

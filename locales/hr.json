@@ -136,6 +136,8 @@
     "back_to_main_menu": "Natrag na glavni izbornik"
   },
   "content": {
+    "price_each": "{{ price }} po komadu",
+    "save_percent": "Uštedite {{ percent }} %",
     "delivery_frequency": "Učestalost dostave",
     "purchase_options": "Mogućnosti kupnje",
     "subscription_discount": "do {{ percent }} % popusta",

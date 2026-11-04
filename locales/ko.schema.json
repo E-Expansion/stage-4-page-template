@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "더 많이 사고 덜 내기",
+    "volume_tier": "수량 단계",
     "purchase_options": "구매 옵션",
     "product_rating_stock": "평점 및 재고",
     "page_header": "페이지 헤더",
@@ -200,6 +202,8 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "discount_percent": "할인",
+    "tier_quantity": "수량",
     "badge_color": "배지 색상",
     "one_time_label": "일회성 구매 레이블",
     "subscribe_label": "구독 레이블",
@@ -1223,6 +1227,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "volume_pricing": "가격만 표시합니다. 결제 시 적용되도록 Shopify에서 해당 자동 할인(할인 > 제품 금액 할인, 최소 수량)을 만드세요.",
     "purchase_options": "Shopify Subscriptions 같은 구독 앱의 구독 플랜이 있는 제품에 표시됩니다. 그렇지 않으면 숨겨집니다.",
     "installments": "버튼 아래 안내에 표시할 할부 횟수입니다. 0 또는 1이면 숨겨집니다.",
     "size_option": "사이즈 가이드 버튼과 변형 메타필드 custom.size_dimensions(각 값 아래) 및 custom.size_note(선택한 값 뒤)를 표시하는 옵션의 이름입니다.",

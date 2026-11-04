@@ -134,6 +134,8 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "price_each": "{{ price }} per stk.",
+    "save_percent": "Spar {{ percent }} %",
     "delivery_frequency": "Leveringsfrekvens",
     "purchase_options": "Kjøpsalternativer",
     "subscription_discount": "opptil {{ percent }} % rabatt",

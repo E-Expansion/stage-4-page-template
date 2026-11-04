@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "volume_pricing": "Shows the prices only. Create matching automatic discounts in Shopify (Discounts > Amount off products, with a minimum quantity) so checkout charges them.",
     "purchase_options": "Shows when the product has subscription plans from a subscription app, such as Shopify Subscriptions. Hidden otherwise.",
     "installments": "Number of installments in the hint below the button. 0 or 1 hides it.",
     "size_option": "Name of the option that shows the size guide button and the variant metafields custom.size_dimensions (under each value) and custom.size_note (after the selected value).",
@@ -308,6 +309,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "volume_pricing": "Buy more, pay less",
+    "volume_tier": "Quantity tier",
     "purchase_options": "Purchase options",
     "product_rating_stock": "Rating & stock",
     "page_header": "Page header",
@@ -824,6 +827,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "discount_percent": "Discount",
+    "tier_quantity": "Quantity",
     "badge_color": "Badge color",
     "one_time_label": "One-time label",
     "subscribe_label": "Subscription label",

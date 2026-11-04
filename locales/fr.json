@@ -136,6 +136,8 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "price_each": "{{ price }} l'unité",
+    "save_percent": "Économisez {{ percent }} %",
     "delivery_frequency": "Fréquence de livraison",
     "purchase_options": "Options d'achat",
     "subscription_discount": "jusqu'à {{ percent }} % de réduction",

@@ -134,6 +134,8 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "price_each": "Adet başı {{ price }}",
+    "save_percent": "%{{ percent }} tasarruf",
     "delivery_frequency": "Teslimat sıklığı",
     "purchase_options": "Satın alma seçenekleri",
     "subscription_discount": "%{{ percent }}'e varan indirim",

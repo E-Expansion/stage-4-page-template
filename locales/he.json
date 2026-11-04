@@ -160,6 +160,8 @@
     }
   },
   "content": {
+    "price_each": "{{ price }} ליחידה",
+    "save_percent": "חיסכון של {{ percent }}%",
     "delivery_frequency": "תדירות משלוח",
     "purchase_options": "אפשרויות רכישה",
     "subscription_discount": "עד {{ percent }}% הנחה",

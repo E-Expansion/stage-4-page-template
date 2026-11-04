@@ -134,6 +134,8 @@
     "back_to_main_menu": "返回主選單"
   },
   "content": {
+    "price_each": "每件 {{ price }}",
+    "save_percent": "省 {{ percent }}%",
     "delivery_frequency": "配送頻率",
     "purchase_options": "購買選項",
     "subscription_discount": "最高優惠 {{ percent }}%",

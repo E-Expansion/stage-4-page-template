@@ -134,6 +134,8 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "price_each": "{{ price }} / db",
+    "save_percent": "{{ percent }}% megtakarítás",
     "delivery_frequency": "Szállítási gyakoriság",
     "purchase_options": "Vásárlási lehetőségek",
     "subscription_discount": "akár {{ percent }}% kedvezmény",

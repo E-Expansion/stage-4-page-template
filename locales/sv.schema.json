@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Köp mer, betala mindre",
+    "volume_tier": "Mängdnivå",
     "purchase_options": "Köpalternativ",
     "product_rating_stock": "Betyg och lager",
     "page_header": "Sidhuvud",
@@ -200,6 +202,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "discount_percent": "Rabatt",
+    "tier_quantity": "Antal",
     "badge_color": "Märkets färg",
     "one_time_label": "Etikett för engångsköp",
     "subscribe_label": "Etikett för prenumeration",
@@ -1223,6 +1227,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "volume_pricing": "Visar bara priserna. Skapa motsvarande automatiska rabatter i Shopify (Rabatter > Belopp på produkter, med minsta antal) så att kassan drar av dem.",
     "purchase_options": "Visas när produkten har prenumerationsplaner från en prenumerationsapp som Shopify Subscriptions. Annars dold.",
     "installments": "Antal delbetalningar i texten under knappen. 0 eller 1 döljer den.",
     "size_option": "Namnet på alternativet som visar knappen för storleksguiden och variantmetafälten custom.size_dimensions (under varje värde) och custom.size_note (efter det valda värdet).",

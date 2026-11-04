@@ -134,6 +134,8 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "price_each": "{{ price }} per stuk",
+    "save_percent": "Bespaar {{ percent }}%",
     "delivery_frequency": "Leveringsfrequentie",
     "purchase_options": "Aankoopopties",
     "subscription_discount": "tot {{ percent }}% korting",

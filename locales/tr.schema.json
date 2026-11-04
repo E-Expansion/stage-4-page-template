@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "volume_pricing": "Fazla al, az öde",
+    "volume_tier": "Miktar kademesi",
     "purchase_options": "Satın alma seçenekleri",
     "product_rating_stock": "Puan ve stok",
     "page_header": "Sayfa başlığı",
@@ -200,6 +202,8 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "discount_percent": "İndirim",
+    "tier_quantity": "Miktar",
     "badge_color": "Rozet rengi",
     "one_time_label": "Tek seferlik satın alma etiketi",
     "subscribe_label": "Abonelik etiketi",
@@ -1223,6 +1227,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "volume_pricing": "Yalnızca fiyatları gösterir. Ödemede uygulanması için Shopify'da eşleşen otomatik indirimler oluşturun (İndirimler > Ürünlerde tutar indirimi, minimum miktarla).",
     "purchase_options": "Ürünün Shopify Subscriptions gibi bir abonelik uygulamasından abonelik planları olduğunda görünür. Aksi halde gizlidir.",
     "installments": "Butonun altındaki metindeki taksit sayısı. 0 veya 1 gizler.",
     "size_option": "Beden rehberi butonunu ve custom.size_dimensions (her değerin altında) ile custom.size_note (seçilen değerden sonra) varyant meta alanlarını gösteren seçeneğin adı.",

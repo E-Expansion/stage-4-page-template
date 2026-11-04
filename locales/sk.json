@@ -138,6 +138,8 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "price_each": "{{ price }} / ks",
+    "save_percent": "Ušetríte {{ percent }} %",
     "delivery_frequency": "Frekvencia doručenia",
     "purchase_options": "Možnosti nákupu",
     "subscription_discount": "až {{ percent }} % zľava",
