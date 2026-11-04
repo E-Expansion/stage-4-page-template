@@ -206,7 +206,9 @@
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 24,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "show_sticky_buy": true,
+        "sticky_button_color": "{{ settings.color_palette.color3 }}"
       }
     },
     "product_recommendations_qggXJq": {

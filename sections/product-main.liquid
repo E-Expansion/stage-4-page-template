@@ -52,20 +52,19 @@
 </div>
 
 {% liquid
-  # The sticky bar mirrors the rating block's row and needs the buy block's form
+  # The sticky bar mirrors the rating block's row. Block type comparisons are unreliable on
+  # the live storefront, so the rating block is also recognised by one of its own settings.
   assign meta_block = blank
-  assign has_buy_block = false
   for item in section.blocks
-    case item.type
-      when '_product-meta'
-        assign meta_block = item
-      when '_product-buy'
-        assign has_buy_block = true
-    endcase
+    if item.type == '_product-meta' or item.settings.show_sold_this_week != nil
+      assign meta_block = item
+      break
+    endif
   endfor
 %}
 
-{% if section.settings.show_sticky_buy and has_buy_block %}
+{% if section.settings.show_sticky_buy %}
+  {% comment %} Stays hidden when there is no buy block to scroll past; see assets/sticky-buy.js {% endcomment %}
   {% render 'product-sticky-buy',
     product: product,
     section_id: section.id,
