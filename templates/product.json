@@ -70,7 +70,9 @@
         "volume_pricing": {
           "type": "_product-volume-pricing",
           "settings": {
-            "heading": "Buy more, pay less"
+            "heading": "Buy more, pay less",
+            "accent_color": "{{ settings.color_palette.color3 }}",
+            "badge_color": "{{ settings.color_palette.color5 }}"
           },
           "blocks": {
             "tier_1": {
@@ -79,7 +81,8 @@
                 "label": "One satchel",
                 "quantity": 1,
                 "discount": 0
-              }
+              },
+              "blocks": {}
             },
             "tier_2": {
               "type": "_volume-tier",
@@ -87,7 +90,8 @@
                 "label": "Two - mix any colour",
                 "quantity": 2,
                 "discount": 7
-              }
+              },
+              "blocks": {}
             },
             "tier_3": {
               "type": "_volume-tier",
@@ -95,7 +99,8 @@
                 "label": "Three or more",
                 "quantity": 3,
                 "discount": 13
-              }
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -106,7 +111,15 @@
         },
         "gift_wrap": {
           "type": "_product-gift-wrap",
-          "settings": {}
+          "settings": {
+            "gift_wrap_product": "gift-wrap",
+            "label": "Add gift wrap and a handwritten note",
+            "description": "Recycled paper, brass seal, no price on the packing slip.",
+            "show_note": true,
+            "note_placeholder": "Write your note (max. 250 characters)",
+            "accent_color": "{{ settings.color_palette.color3 }}"
+          },
+          "blocks": {}
         },
         "free_gift": {
           "type": "_product-free-gift",
