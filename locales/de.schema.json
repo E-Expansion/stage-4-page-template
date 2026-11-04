@@ -207,6 +207,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_image": "Bild anzeigen",
     "show_sticky_add_to_cart": "Fixierten Warenkorb-Button anzeigen",
     "cutoff_hour": "Stunde des Bestellschlusses",
     "cutoff_minute": "Minute des Bestellschlusses",

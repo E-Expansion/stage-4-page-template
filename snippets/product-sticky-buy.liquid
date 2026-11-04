@@ -1,18 +1,22 @@
 {%- doc -%}
   Renders the sticky add to cart bar that slides in at the bottom of the viewport once the
-  main add to cart button has scrolled out of view: product title, rating and stock row,
-  price and an add to cart button. The button submits the main buy form, so the chosen
+  main add to cart button has scrolled out of view: the selected variant's image, product
+  title, rating and stock row, price and an add to cart button. The button submits the main buy form, so the chosen
   variant, purchase option, quantity tier and gift wrap all apply. The inner content is
   re-rendered with the information column when the variant changes. Behaviour lives in
   assets/sticky-buy.js.
 
   @param {object} product - The product
   @param {string} section_id - The product section ID; ties the bar to the buy form
-  @param {object} [meta_settings] - Settings of the product rating block, to mirror its row
+  @param {boolean} [show_image] - Show the selected variant's image
+  @param {boolean} [show_rating] - Show the star rating
+  @param {boolean} [show_sold_this_week] - Show the "sold this week" label
+  @param {boolean} [show_stock] - Show the stock label
+  @param {string} [in_stock_note] - Text after "In stock", e.g. "ships today"
   @param {string} [button_color] - Button background color
 
   @example
-  {% render 'product-sticky-buy', product: product, section_id: section.id, meta_settings: meta_block.settings %}
+  {% render 'product-sticky-buy', product: product, section_id: section.id, show_image: true, show_rating: true %}
 {%- enddoc -%}
 
 {% render 'price-styles' %}
@@ -40,6 +44,8 @@
   endif
 
   assign form_id = 'ProductBuyForm-' | append: section_id
+
+  assign image = variant.featured_media.preview_image | default: product.featured_media.preview_image
 
   if button_color != blank
     assign button_brightness = button_color | color_brightness
@@ -82,15 +88,23 @@
     id="StickyBuy-{{ section_id }}"
     data-variant-refresh
   >
+    {% if show_image and image != blank %}
+      {{
+        image
+        | image_url: width: 160
+        | image_tag: width: 56, height: 56, loading: 'lazy', alt: '', class: 'sticky-buy__image'
+      }}
+    {% endif %}
+
     <div class="sticky-buy__info">
       <p class="sticky-buy__title">{{ product.title | escape }}</p>
-      {% if meta_settings != blank %}
+      {% if show_rating or show_sold_this_week or show_stock %}
         {% render 'product-meta-row',
           product: product,
-          show_rating: meta_settings.show_rating,
-          show_sold_this_week: meta_settings.show_sold_this_week,
-          show_stock: meta_settings.show_stock,
-          in_stock_note: meta_settings.in_stock_note,
+          show_rating: show_rating,
+          show_sold_this_week: show_sold_this_week,
+          show_stock: show_stock,
+          in_stock_note: in_stock_note,
           class: 'sticky-buy__meta'
         %}
       {% endif %}
@@ -157,6 +171,15 @@
     @media screen and (min-width: 750px) {
       gap: var(--gap-xl);
     }
+  }
+
+  .sticky-buy__image {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
   }
 
   .sticky-buy__info {

@@ -51,24 +51,16 @@
   </div>
 </div>
 
-{% liquid
-  # The sticky bar mirrors the rating block's row. Block type comparisons are unreliable on
-  # the live storefront, so the rating block is also recognised by one of its own settings.
-  assign meta_block = blank
-  for item in section.blocks
-    if item.type == '_product-meta' or item.settings.show_sold_this_week != nil
-      assign meta_block = item
-      break
-    endif
-  endfor
-%}
-
 {% if section.settings.show_sticky_buy %}
   {% comment %} Stays hidden when there is no buy block to scroll past; see assets/sticky-buy.js {% endcomment %}
   {% render 'product-sticky-buy',
     product: product,
     section_id: section.id,
-    meta_settings: meta_block.settings,
+    show_image: section.settings.sticky_show_image,
+    show_rating: section.settings.sticky_show_rating,
+    show_sold_this_week: section.settings.sticky_show_sold,
+    show_stock: section.settings.sticky_show_stock,
+    in_stock_note: section.settings.sticky_in_stock_note,
     button_color: section.settings.sticky_button_color
   %}
 {% endif %}
@@ -188,6 +180,41 @@
       "label": "t:settings.show_sticky_add_to_cart",
       "info": "t:info.show_sticky_add_to_cart",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_show_image",
+      "label": "t:settings.show_image",
+      "default": true,
+      "visible_if": "{{ section.settings.show_sticky_buy }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_show_rating",
+      "label": "t:settings.product_tile_show_rating",
+      "default": true,
+      "visible_if": "{{ section.settings.show_sticky_buy }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_show_sold",
+      "label": "t:settings.show_sold_this_week",
+      "default": true,
+      "visible_if": "{{ section.settings.show_sticky_buy }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_show_stock",
+      "label": "t:settings.product_tile_show_stock",
+      "default": true,
+      "visible_if": "{{ section.settings.show_sticky_buy }}"
+    },
+    {
+      "type": "text",
+      "id": "sticky_in_stock_note",
+      "label": "t:settings.in_stock_note",
+      "default": "ships today",
+      "visible_if": "{{ section.settings.show_sticky_buy and section.settings.sticky_show_stock }}"
     },
     {
       "type": "color",

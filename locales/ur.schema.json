@@ -789,6 +789,7 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "show_image": "تصویر دکھائیں",
     "show_sticky_add_to_cart": "چپکا ہوا کارٹ میں شامل کریں دکھائیں",
     "cutoff_hour": "آخری وقت (گھنٹہ)",
     "cutoff_minute": "آخری وقت (منٹ)",

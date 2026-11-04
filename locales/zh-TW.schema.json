@@ -207,6 +207,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_image": "顯示圖片",
     "show_sticky_add_to_cart": "顯示固定加入購物車列",
     "cutoff_hour": "截單時（小時）",
     "cutoff_minute": "截單時（分鐘）",

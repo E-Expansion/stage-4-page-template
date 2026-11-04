@@ -207,6 +207,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_image": "Visa bild",
     "show_sticky_add_to_cart": "Visa fast lägg i varukorg",
     "cutoff_hour": "Timme för deadline",
     "cutoff_minute": "Minut för deadline",

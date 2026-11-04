@@ -207,6 +207,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_image": "Näytä kuva",
     "show_sticky_add_to_cart": "Näytä kiinteä lisää ostoskoriin",
     "cutoff_hour": "Määräajan tunti",
     "cutoff_minute": "Määräajan minuutti",

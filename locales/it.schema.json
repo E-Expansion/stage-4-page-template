@@ -207,6 +207,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_image": "Mostra immagine",
     "show_sticky_add_to_cart": "Mostra aggiunta al carrello fissa",
     "cutoff_hour": "Ora limite",
     "cutoff_minute": "Minuto limite",

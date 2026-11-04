@@ -207,6 +207,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_image": "Vis billede",
     "show_sticky_add_to_cart": "Vis fastgjort læg i kurv",
     "cutoff_hour": "Time for deadline",
     "cutoff_minute": "Minut for deadline",

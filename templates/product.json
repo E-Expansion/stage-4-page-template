@@ -208,7 +208,12 @@
         "padding-block-start": 24,
         "padding-block-end": 48,
         "show_sticky_buy": true,
-        "sticky_button_color": "{{ settings.color_palette.color3 }}"
+        "sticky_button_color": "{{ settings.color_palette.color3 }}",
+        "sticky_show_image": true,
+        "sticky_show_rating": true,
+        "sticky_show_sold": true,
+        "sticky_show_stock": true,
+        "sticky_in_stock_note": "ships today"
       }
     },
     "product_recommendations_qggXJq": {

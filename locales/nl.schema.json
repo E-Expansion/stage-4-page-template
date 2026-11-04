@@ -207,6 +207,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_image": "Afbeelding tonen",
     "show_sticky_add_to_cart": "Sticky add to cart tonen",
     "cutoff_hour": "Uur van de deadline",
     "cutoff_minute": "Minuut van de deadline",

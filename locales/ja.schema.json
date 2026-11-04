@@ -207,6 +207,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_image": "画像を表示",
     "show_sticky_add_to_cart": "追従するカートに追加を表示",
     "cutoff_hour": "締め切り（時）",
     "cutoff_minute": "締め切り（分）",

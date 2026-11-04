@@ -789,6 +789,7 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "show_image": "הצגת תמונה",
     "show_sticky_add_to_cart": "הצגת סרגל הוספה לעגלה קבוע",
     "cutoff_hour": "שעת סגירה",
     "cutoff_minute": "דקת סגירה",

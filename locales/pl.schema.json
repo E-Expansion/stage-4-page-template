@@ -207,6 +207,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_image": "Pokaż obraz",
     "show_sticky_add_to_cart": "Pokaż przyklejony przycisk koszyka",
     "cutoff_hour": "Godzina graniczna",
     "cutoff_minute": "Minuta graniczna",

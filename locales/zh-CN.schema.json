@@ -207,6 +207,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_image": "显示图片",
     "show_sticky_add_to_cart": "显示固定加入购物车栏",
     "cutoff_hour": "截单时（小时）",
     "cutoff_minute": "截单时（分钟）",

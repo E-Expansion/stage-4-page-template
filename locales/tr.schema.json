@@ -207,6 +207,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_image": "Görseli göster",
     "show_sticky_add_to_cart": "Sabit sepete ekle göster",
     "cutoff_hour": "Son sipariş saati",
     "cutoff_minute": "Son sipariş dakikası",

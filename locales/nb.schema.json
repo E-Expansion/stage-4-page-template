@@ -207,6 +207,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "show_image": "Vis bilde",
     "show_sticky_add_to_cart": "Vis fast legg i handlekurv",
     "cutoff_hour": "Time for frist",
     "cutoff_minute": "Minutt for frist",

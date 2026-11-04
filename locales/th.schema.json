@@ -207,6 +207,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "show_image": "แสดงรูปภาพ",
     "show_sticky_add_to_cart": "แสดงแถบเพิ่มลงตะกร้าแบบติดหน้าจอ",
     "cutoff_hour": "ชั่วโมงปิดรับ",
     "cutoff_minute": "นาทีปิดรับ",

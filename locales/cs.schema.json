@@ -207,6 +207,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_image": "Zobrazit obrázek",
     "show_sticky_add_to_cart": "Zobrazit připnuté přidání do košíku",
     "cutoff_hour": "Hodina uzávěrky",
     "cutoff_minute": "Minuta uzávěrky",

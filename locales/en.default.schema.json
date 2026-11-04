@@ -841,6 +841,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "show_image": "Show image",
     "show_sticky_add_to_cart": "Show sticky add to cart",
     "cutoff_hour": "Cut-off hour",
     "cutoff_minute": "Cut-off minute",
