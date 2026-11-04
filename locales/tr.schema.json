@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Sekme",
+    "product_tabs": "Ürün sekmeleri",
     "back_in_stock": "Yeniden stokta",
     "same_day_shipping": "Aynı gün kargo",
     "delivery_estimate": "Teslimat tahmini",
@@ -1255,6 +1257,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "product_tab_content": "Listeler kontrol listesi olarak görünür. Ürün başına farklı içerik için bir ürün meta alanı (zengin metin) bağlayın.",
+    "product_tab_page": "Metnin altına bir sayfanın içeriğini ekler, ör. karşılaştırma tablosu.",
+    "product_tabs_accent": "Etkin sekme metni ve liste işaretleri.",
     "back_in_stock": "Yalnızca seçilen varyant tükendiğinde görünür. Her kayıt, e-posta pazarlama onayı veren ve \"back-in-stock\" ile ürün ve varyant etiketi taşıyan bir müşteri olur. Stok geldiğinde haber vermek için Müşteriler bölümünde bulabilirsiniz.",
     "show_sticky_add_to_cart": "Sepete ekle butonu görünümden çıkınca ekranın altında belirir. Başlık, değerlendirme bloğunun satırı, fiyat ve bir buton gösterir.",
     "order_cutoff": "İşaretli bir günde bu saatten önce verilen siparişler aynı gün kargolanır. Saatler mağazanızın saat diliminde (Ayarlar > Genel).",

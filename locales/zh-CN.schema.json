@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "标签页",
+    "product_tabs": "产品标签页",
     "back_in_stock": "到货通知",
     "same_day_shipping": "当日发货",
     "delivery_estimate": "预计送达",
@@ -1255,6 +1257,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "product_tab_content": "列表显示为清单。连接产品元字段（富文本）即可为每个产品显示不同内容。",
+    "product_tab_page": "在文本下方添加页面内容，例如对比表。",
+    "product_tabs_accent": "当前标签页文字和列表勾选标记。",
     "back_in_stock": "仅在所选多属性售罄时显示。每次登记都会创建一个同意电子邮件营销的客户，并带有“back-in-stock”标签以及产品和多属性标签。到货后可在客户中找到他们并发送通知。",
     "show_sticky_add_to_cart": "当加入购物车按钮滚出视野时，从屏幕底部滑入。显示标题、评分区块的行、价格和按钮。",
     "order_cutoff": "在勾选的日期于此时间前下的订单当日发货。时间以商店时区为准（设置 > 通用）。",

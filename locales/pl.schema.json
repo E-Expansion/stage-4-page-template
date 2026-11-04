@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Zakładka",
+    "product_tabs": "Zakładki produktu",
     "back_in_stock": "Ponownie dostępne",
     "same_day_shipping": "Wysyłka tego samego dnia",
     "delivery_estimate": "Szacowana dostawa",
@@ -1255,6 +1257,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "product_tab_content": "Listy wyświetlają się jako checklista. Połącz metapole produktu (rich text), by pokazać inną treść dla każdego produktu.",
+    "product_tab_page": "Dodaje treść strony pod tekstem, np. tabelę porównawczą.",
+    "product_tabs_accent": "Tekst aktywnej zakładki i znaczniki list.",
     "back_in_stock": "Pojawia się tylko, gdy wybrany wariant jest wyprzedany. Każde zgłoszenie tworzy klienta ze zgodą na marketing e-mailowy, z tagiem „back-in-stock” i tagiem produktu i wariantu. Znajdziesz ich w Klientach, by powiadomić o dostępności.",
     "show_sticky_add_to_cart": "Pojawia się u dołu ekranu, gdy przycisk dodania do koszyka zniknie z widoku. Pokazuje tytuł, wiersz bloku ocen, cenę i przycisk.",
     "order_cutoff": "Zamówienia złożone przed tą godziną w zaznaczony dzień są wysyłane tego samego dnia. Godziny w strefie czasowej sklepu (Ustawienia > Ogólne).",

@@ -235,6 +235,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "product_tab_content": "Lists show as a checklist. Connect a product metafield (rich text) to show different content per product.",
+    "product_tab_page": "Adds a page's content below the text, e.g. a comparison table.",
+    "product_tabs_accent": "Active tab text and list check marks.",
     "back_in_stock": "Shows only when the selected variant is sold out. Each signup becomes a customer with email marketing consent, tagged \"back-in-stock\" and with the product and variant. Find them under Customers to email them when stock returns.",
     "show_sticky_add_to_cart": "Slides in at the bottom of the screen once the add to cart button scrolls out of view. Shows the title, the rating block's row, the price and an add to cart button.",
     "order_cutoff": "Orders placed before this time on a ticked day ship the same day. Times are in your shop's time zone (Settings > General).",
@@ -319,6 +322,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "product_tab": "Tab",
+    "product_tabs": "Product tabs",
     "back_in_stock": "Back in stock",
     "same_day_shipping": "Same-day shipping",
     "delivery_estimate": "Delivery estimate",

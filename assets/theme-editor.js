@@ -404,3 +404,10 @@ if (window.Shopify?.designMode && !isIOS) {
     })();
   })();
 }
+
+// Open a product detail tab when it is selected in the editor's block list
+document.addEventListener('shopify:block:select', (event) => {
+  if (!(event.target instanceof HTMLElement)) return;
+  const input = event.target.closest('.product-tab')?.querySelector('.product-tab__input');
+  if (input instanceof HTMLInputElement) input.checked = true;
+});

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Fane",
+    "product_tabs": "Produktfaner",
     "back_in_stock": "På lager igjen",
     "same_day_shipping": "Sending samme dag",
     "delivery_estimate": "Leveringsestimat",
@@ -1255,6 +1257,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "product_tab_content": "Lister vises som sjekkliste. Koble til et produktmetafelt (rik tekst) for ulikt innhold per produkt.",
+    "product_tab_page": "Legger til innholdet på en side under teksten, f.eks. en sammenligningstabell.",
+    "product_tabs_accent": "Tekst på aktiv fane og hakemerker i lister.",
     "back_in_stock": "Vises bare når valgt variant er utsolgt. Hver påmelding blir en kunde med samtykke til e-postmarkedsføring, merket \"back-in-stock\" og med produkt og variant. Finn dem under Kunder for å gi beskjed når varen er tilbake.",
     "show_sticky_add_to_cart": "Glir inn nederst på skjermen når knappen Legg i handlekurv ruller ut av syne. Viser tittel, raden fra vurderingsblokken, pris og en knapp.",
     "order_cutoff": "Bestillinger før dette tidspunktet på en avkrysset dag sendes samme dag. Tider i butikkens tidssone (Innstillinger > Generelt).",

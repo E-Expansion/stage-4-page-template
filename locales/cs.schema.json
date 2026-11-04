@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Záložka",
+    "product_tabs": "Záložky produktu",
     "back_in_stock": "Opět skladem",
     "same_day_shipping": "Odeslání tentýž den",
     "delivery_estimate": "Odhad doručení",
@@ -1255,6 +1257,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "product_tab_content": "Seznamy se zobrazí jako checklist. Propojte metapole produktu (rich text) pro jiný obsah u každého produktu.",
+    "product_tab_page": "Přidá obsah stránky pod text, např. srovnávací tabulku.",
+    "product_tabs_accent": "Text aktivní záložky a zaškrtnutí v seznamech.",
     "back_in_stock": "Zobrazí se jen, když je vybraná varianta vyprodaná. Každá registrace vytvoří zákazníka se souhlasem s e-mailovým marketingem, se štítkem „back-in-stock“ a štítkem produktu a varianty. Najdete je v Zákaznících a dáte jim vědět, až bude zboží zpět.",
     "show_sticky_add_to_cart": "Vysune se dole na obrazovce, jakmile tlačítko přidání do košíku zmizí z dohledu. Zobrazuje název, řádek bloku hodnocení, cenu a tlačítko.",
     "order_cutoff": "Objednávky před tímto časem v zaškrtnutý den odejdou tentýž den. Časy v časovém pásmu obchodu (Nastavení > Obecné).",

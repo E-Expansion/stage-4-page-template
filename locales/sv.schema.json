@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Flik",
+    "product_tabs": "Produktflikar",
     "back_in_stock": "Åter i lager",
     "same_day_shipping": "Leverans samma dag",
     "delivery_estimate": "Leveransuppskattning",
@@ -1255,6 +1257,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "product_tab_content": "Listor visas som checklista. Koppla ett produktmetafält (rich text) för olika innehåll per produkt.",
+    "product_tab_page": "Lägger till en sidas innehåll under texten, t.ex. en jämförelsetabell.",
+    "product_tabs_accent": "Text på aktiv flik och bockar i listor.",
     "back_in_stock": "Visas bara när vald variant är slutsåld. Varje anmälan blir en kund med samtycke till e-postmarknadsföring, taggad \"back-in-stock\" samt produkt och variant. Hitta dem under Kunder för att meddela när varan är tillbaka.",
     "show_sticky_add_to_cart": "Glider in längst ned när knappen Lägg i varukorg rullar ur bild. Visar titel, betygsblockets rad, pris och en knapp.",
     "order_cutoff": "Beställningar före denna tid på en markerad dag skickas samma dag. Tider i butikens tidszon (Inställningar > Allmänt).",

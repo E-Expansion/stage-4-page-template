@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_tab": "Aba",
+    "product_tabs": "Abas do produto",
     "back_in_stock": "De volta ao estoque",
     "same_day_shipping": "Envio no mesmo dia",
     "delivery_estimate": "Estimativa de entrega",
@@ -1255,6 +1257,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "product_tab_content": "Listas aparecem como checklist. Conecte um metacampo de produto (rich text) para conteúdo diferente por produto.",
+    "product_tab_page": "Adiciona o conteúdo de uma página abaixo do texto, por ex. uma tabela comparativa.",
+    "product_tabs_accent": "Texto da aba ativa e marcações das listas.",
     "back_in_stock": "Aparece só quando a variante escolhida está esgotada. Cada cadastro vira um cliente com consentimento de marketing por e-mail, com a tag \"back-in-stock\" e uma de produto e variante. Encontre-os em Clientes para avisar quando o estoque voltar.",
     "show_sticky_add_to_cart": "Aparece na parte inferior da tela quando o botão de adicionar ao carrinho sai da vista. Mostra título, a linha do bloco de avaliação, preço e um botão.",
     "order_cutoff": "Pedidos feitos antes deste horário em um dia marcado são enviados no mesmo dia. Horários no fuso da loja (Configurações > Geral).",
