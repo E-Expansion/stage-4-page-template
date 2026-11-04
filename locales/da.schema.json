@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Afsendelse samme dag",
     "delivery_estimate": "Forventet levering",
     "usp_badges": "USP-mærker",
     "free_gift": "Fremskridt mod gratis gave",
@@ -206,6 +207,16 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "cutoff_hour": "Time for deadline",
+    "cutoff_minute": "Minut for deadline",
+    "ships_today_text": "Tekst for afsendelse i dag",
+    "monday": "Mandag",
+    "tuesday": "Tirsdag",
+    "wednesday": "Onsdag",
+    "thursday": "Torsdag",
+    "friday": "Fredag",
+    "saturday": "Lørdag",
+    "sunday": "Søndag",
     "delivery_max_days": "Levering op til (dage)",
     "delivery_min_days": "Levering fra (dage)",
     "delivery_working_days": "Tæl kun hverdage",
@@ -1006,6 +1017,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "order_cutoff": "Bestillingsdeadline og afsendelsesdage",
     "product_tiles": "Produktfelter",
     "breadcrumbs": "Brødkrummesti",
     "tag_badges": "Tag-badges",
@@ -1239,6 +1251,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "order_cutoff": "Ordrer afgivet før dette tidspunkt på en markeret dag sendes samme dag. Tider er i butikkens tidszone (Indstillinger > Generelt).",
+    "shipping_countdown_color": "Standard er farven for på lager fra temaindstillingerne.",
     "delivery_working_days": "Springer lørdag og søndag over. Datoerne beregnes fra i dag i den besøgendes browser.",
     "free_gift": "Viser hvor langt kurven er fra en gratis gave. Opsæt selve gaven i Shopify, f.eks. med en automatisk rabat eller en gave-app.",
     "free_gift_message": "Brug [amount] for det manglende beløb.",

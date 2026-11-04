@@ -134,6 +134,11 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "countdown_hours": "Tuntia",
+    "countdown_minutes": "Minuuttia",
+    "countdown_seconds": "Sekuntia",
+    "ships_on_day": "Tilaa nyt, lähetys: {{ day }}",
+    "ships_tomorrow": "Tilaa nyt, lähetys huomenna",
     "delivery_in_days": "{{ label }} {{ min }}-{{ max }} päivässä",
     "delivery_in_working_days": "{{ label }} {{ min }}-{{ max }} arkipäivässä",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

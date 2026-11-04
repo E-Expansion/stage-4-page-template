@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Verzending dezelfde dag",
     "delivery_estimate": "Leverschatting",
     "usp_badges": "USP-badges",
     "free_gift": "Voortgang gratis cadeau",
@@ -206,6 +207,16 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "cutoff_hour": "Uur van de deadline",
+    "cutoff_minute": "Minuut van de deadline",
+    "ships_today_text": "Tekst verzonden vandaag",
+    "monday": "Maandag",
+    "tuesday": "Dinsdag",
+    "wednesday": "Woensdag",
+    "thursday": "Donderdag",
+    "friday": "Vrijdag",
+    "saturday": "Zaterdag",
+    "sunday": "Zondag",
     "delivery_max_days": "Levering tot (dagen)",
     "delivery_min_days": "Levering vanaf (dagen)",
     "delivery_working_days": "Alleen werkdagen tellen",
@@ -1006,6 +1017,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "order_cutoff": "Besteldeadline en verzenddagen",
     "product_tiles": "Producttegels",
     "breadcrumbs": "Kruimelpad",
     "tag_badges": "Tagbadges",
@@ -1239,6 +1251,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "order_cutoff": "Bestellingen vóór dit tijdstip op een aangevinkte dag worden dezelfde dag verzonden. Tijden zijn in de tijdzone van je winkel (Settings > General).",
+    "shipping_countdown_color": "Standaard de kleur voor op voorraad uit de theme-instellingen.",
     "delivery_working_days": "Slaat zaterdag en zondag over. De datums worden vanaf vandaag in de browser van de bezoeker berekend.",
     "free_gift": "Laat zien hoe ver de winkelwagen van een gratis cadeau af zit. Stel het cadeau zelf in Shopify in, bijvoorbeeld met een automatische korting of een cadeau-app.",
     "free_gift_message": "Gebruik [amount] voor het bedrag dat nog nodig is.",

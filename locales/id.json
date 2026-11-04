@@ -134,6 +134,11 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "countdown_hours": "Jam",
+    "countdown_minutes": "Menit",
+    "countdown_seconds": "Detik",
+    "ships_on_day": "Pesan sekarang, dikirim {{ day }}",
+    "ships_tomorrow": "Pesan sekarang, dikirim besok",
     "delivery_in_days": "{{ label }} dalam {{ min }}-{{ max }} hari",
     "delivery_in_working_days": "{{ label }} dalam {{ min }}-{{ max }} hari kerja",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

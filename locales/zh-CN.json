@@ -134,6 +134,11 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "countdown_hours": "小时",
+    "countdown_minutes": "分钟",
+    "countdown_seconds": "秒",
+    "ships_on_day": "立即下单，{{ day }}发货",
+    "ships_tomorrow": "立即下单，明天发货",
     "delivery_in_days": "{{ label }}：{{ min }}-{{ max }} 天",
     "delivery_in_working_days": "{{ label }}：{{ min }}-{{ max }} 个工作日",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

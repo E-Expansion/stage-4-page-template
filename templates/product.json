@@ -179,6 +179,10 @@
             "delivery",
             "late"
           ]
+        },
+        "shipping_countdown": {
+          "type": "_product-shipping-countdown",
+          "settings": {}
         }
       },
       "block_order": [
@@ -191,7 +195,8 @@
         "volume_pricing",
         "gift_wrap",
         "free_gift",
-        "usps"
+        "usps",
+        "shipping_countdown"
       ],
       "settings": {
         "show_breadcrumbs": true,

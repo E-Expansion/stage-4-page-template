@@ -134,6 +134,11 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "countdown_hours": "Timer",
+    "countdown_minutes": "Minutter",
+    "countdown_seconds": "Sekunder",
+    "ships_on_day": "Bestil nu, så sendes den {{ day }}",
+    "ships_tomorrow": "Bestil nu, så sendes den i morgen",
     "delivery_in_days": "{{ label }} om {{ min }}-{{ max }} dage",
     "delivery_in_working_days": "{{ label }} om {{ min }}-{{ max }} hverdage",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

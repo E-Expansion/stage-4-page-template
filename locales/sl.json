@@ -138,6 +138,11 @@
     "back_to_main_menu": "Nazaj na glavni meni"
   },
   "content": {
+    "countdown_hours": "Ure",
+    "countdown_minutes": "Minute",
+    "countdown_seconds": "Sekunde",
+    "ships_on_day": "Naročite zdaj, odpošljemo: {{ day }}",
+    "ships_tomorrow": "Naročite zdaj, odpošljemo jutri",
     "delivery_in_days": "{{ label }} v {{ min }}-{{ max }} dneh",
     "delivery_in_working_days": "{{ label }} v {{ min }}-{{ max }} delovnih dneh",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

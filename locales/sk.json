@@ -138,6 +138,11 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "countdown_hours": "Hodiny",
+    "countdown_minutes": "Minúty",
+    "countdown_seconds": "Sekundy",
+    "ships_on_day": "Objednajte teraz, odoslanie: {{ day }}",
+    "ships_tomorrow": "Objednajte teraz a odošleme zajtra",
     "delivery_in_days": "{{ label }} do {{ min }}-{{ max }} dní",
     "delivery_in_working_days": "{{ label }} do {{ min }}-{{ max }} pracovných dní",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

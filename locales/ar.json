@@ -166,6 +166,11 @@
     }
   },
   "content": {
+    "countdown_hours": "ساعات",
+    "countdown_minutes": "دقائق",
+    "countdown_seconds": "ثوانٍ",
+    "ships_on_day": "اطلب الآن ويُشحن يوم {{ day }}",
+    "ships_tomorrow": "اطلب الآن ويُشحن غدًا",
     "delivery_in_days": "{{ label }} خلال {{ min }}-{{ max }} أيام",
     "delivery_in_working_days": "{{ label }} خلال {{ min }}-{{ max }} أيام عمل",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Leverans samma dag",
     "delivery_estimate": "Leveransuppskattning",
     "usp_badges": "USP-märken",
     "free_gift": "Framsteg mot gratis gåva",
@@ -206,6 +207,16 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "cutoff_hour": "Timme för deadline",
+    "cutoff_minute": "Minut för deadline",
+    "ships_today_text": "Text för skickas i dag",
+    "monday": "Måndag",
+    "tuesday": "Tisdag",
+    "wednesday": "Onsdag",
+    "thursday": "Torsdag",
+    "friday": "Fredag",
+    "saturday": "Lördag",
+    "sunday": "Söndag",
     "delivery_max_days": "Leverans upp till (dagar)",
     "delivery_min_days": "Leverans från (dagar)",
     "delivery_working_days": "Räkna bara arbetsdagar",
@@ -1006,6 +1017,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "order_cutoff": "Beställningsdeadline och leveransdagar",
     "product_tiles": "Produktrutor",
     "breadcrumbs": "Brödsmulor",
     "tag_badges": "Taggmärken",
@@ -1239,6 +1251,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "order_cutoff": "Beställningar före denna tid på en markerad dag skickas samma dag. Tider i butikens tidszon (Inställningar > Allmänt).",
+    "shipping_countdown_color": "Standard är färgen för i lager från temainställningarna.",
     "delivery_working_days": "Hoppar över lördag och söndag. Datumen beräknas från i dag i besökarens webbläsare.",
     "free_gift": "Visar hur långt varukorgen är från en gratis gåva. Ställ in själva gåvan i Shopify, t.ex. med en automatisk rabatt eller en gåvoapp.",
     "free_gift_message": "Använd [amount] för beloppet som saknas.",

@@ -134,6 +134,11 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "countdown_hours": "Timmar",
+    "countdown_minutes": "Minuter",
+    "countdown_seconds": "Sekunder",
+    "ships_on_day": "Beställ nu så skickas den på {{ day }}",
+    "ships_tomorrow": "Beställ nu så skickas den i morgon",
     "delivery_in_days": "{{ label }} inom {{ min }}-{{ max }} dagar",
     "delivery_in_working_days": "{{ label }} inom {{ min }}-{{ max }} arbetsdagar",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

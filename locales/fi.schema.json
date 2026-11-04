@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Lähetys samana päivänä",
     "delivery_estimate": "Toimitusarvio",
     "usp_badges": "USP-merkit",
     "free_gift": "Ilmaisen lahjan edistyminen",
@@ -206,6 +207,16 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "cutoff_hour": "Määräajan tunti",
+    "cutoff_minute": "Määräajan minuutti",
+    "ships_today_text": "Teksti lähetys tänään",
+    "monday": "Maanantai",
+    "tuesday": "Tiistai",
+    "wednesday": "Keskiviikko",
+    "thursday": "Torstai",
+    "friday": "Perjantai",
+    "saturday": "Lauantai",
+    "sunday": "Sunnuntai",
     "delivery_max_days": "Toimitus enintään (päivää)",
     "delivery_min_days": "Toimitus alkaen (päivää)",
     "delivery_working_days": "Laske vain arkipäivät",
@@ -1006,6 +1017,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "order_cutoff": "Tilauksen määräaika ja lähetyspäivät",
     "product_tiles": "Tuoteruudut",
     "breadcrumbs": "Murupolku",
     "tag_badges": "Tunnistemerkit",
@@ -1239,6 +1251,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "order_cutoff": "Ennen tätä aikaa valittuna päivänä tehdyt tilaukset lähtevät samana päivänä. Ajat kaupan aikavyöhykkeellä (Asetukset > Yleiset).",
+    "shipping_countdown_color": "Oletuksena teeman asetusten varastossa-väri.",
     "delivery_working_days": "Ohittaa lauantait ja sunnuntait. Päivämäärät lasketaan tästä päivästä kävijän selaimessa.",
     "free_gift": "Näyttää, kuinka paljon ostoskorista puuttuu ilmaiseen lahjaan. Määritä itse lahja Shopifyssa, esim. automaattisella alennuksella tai lahjasovelluksella.",
     "free_gift_message": "Käytä [amount] puuttuvalle summalle.",

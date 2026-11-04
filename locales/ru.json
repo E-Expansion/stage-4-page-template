@@ -138,6 +138,11 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "countdown_hours": "Часы",
+    "countdown_minutes": "Минуты",
+    "countdown_seconds": "Секунды",
+    "ships_on_day": "Закажите сейчас — отправка: {{ day }}",
+    "ships_tomorrow": "Закажите сейчас — отправим завтра",
     "delivery_in_days": "{{ label }}: {{ min }}-{{ max }} дн.",
     "delivery_in_working_days": "{{ label }}: {{ min }}-{{ max }} рабочих дн.",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

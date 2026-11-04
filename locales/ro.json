@@ -136,6 +136,11 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "countdown_hours": "Ore",
+    "countdown_minutes": "Minute",
+    "countdown_seconds": "Secunde",
+    "ships_on_day": "Comandă acum, expediere: {{ day }}",
+    "ships_tomorrow": "Comandă acum și se expediază mâine",
     "delivery_in_days": "{{ label }} în {{ min }}-{{ max }} zile",
     "delivery_in_working_days": "{{ label }} în {{ min }}-{{ max }} zile lucrătoare",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

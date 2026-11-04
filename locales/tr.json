@@ -134,6 +134,11 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "countdown_hours": "Saat",
+    "countdown_minutes": "Dakika",
+    "countdown_seconds": "Saniye",
+    "ships_on_day": "Şimdi sipariş verin, kargo: {{ day }}",
+    "ships_tomorrow": "Şimdi sipariş verin, yarın kargoda",
     "delivery_in_days": "{{ label }}: {{ min }}-{{ max }} gün",
     "delivery_in_working_days": "{{ label }}: {{ min }}-{{ max }} iş günü",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

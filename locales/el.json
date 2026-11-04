@@ -134,6 +134,11 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "countdown_hours": "Ώρες",
+    "countdown_minutes": "Λεπτά",
+    "countdown_seconds": "Δευτερόλεπτα",
+    "ships_on_day": "Παραγγείλτε τώρα, αποστολή: {{ day }}",
+    "ships_tomorrow": "Παραγγείλτε τώρα, αποστολή αύριο",
     "delivery_in_days": "{{ label }} σε {{ min }}-{{ max }} ημέρες",
     "delivery_in_working_days": "{{ label }} σε {{ min }}-{{ max }} εργάσιμες ημέρες",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

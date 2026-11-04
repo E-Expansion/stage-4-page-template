@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Envio no mesmo dia",
     "delivery_estimate": "Estimativa de entrega",
     "usp_badges": "Selos de vantagens",
     "free_gift": "Progresso do brinde",
@@ -206,6 +207,16 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "cutoff_hour": "Hora limite",
+    "cutoff_minute": "Minuto limite",
+    "ships_today_text": "Texto de envio hoje",
+    "monday": "Segunda-feira",
+    "tuesday": "Terça-feira",
+    "wednesday": "Quarta-feira",
+    "thursday": "Quinta-feira",
+    "friday": "Sexta-feira",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
     "delivery_max_days": "Entrega até (dias)",
     "delivery_min_days": "Entrega a partir de (dias)",
     "delivery_working_days": "Contar só dias úteis",
@@ -1006,6 +1017,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "order_cutoff": "Horário limite e dias de envio",
     "product_tiles": "Blocos de produto",
     "breadcrumbs": "Trilha de navegação",
     "tag_badges": "Selos de tag",
@@ -1239,6 +1251,8 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "order_cutoff": "Pedidos feitos antes deste horário em um dia marcado são enviados no mesmo dia. Horários no fuso da loja (Configurações > Geral).",
+    "shipping_countdown_color": "Padrão: a cor de em estoque das configurações do tema.",
     "delivery_working_days": "Ignora sábados e domingos. As datas são calculadas a partir de hoje no navegador do visitante.",
     "free_gift": "Mostra quanto falta no carrinho para um brinde. Configure o brinde no Shopify, por exemplo com um desconto automático ou um app de brindes.",
     "free_gift_message": "Use [amount] para o valor que falta.",

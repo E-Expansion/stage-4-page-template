@@ -134,6 +134,11 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "countdown_hours": "시간",
+    "countdown_minutes": "분",
+    "countdown_seconds": "초",
+    "ships_on_day": "지금 주문하면 {{ day }} 발송",
+    "ships_tomorrow": "지금 주문하면 내일 발송",
     "delivery_in_days": "{{ label }}: {{ min }}~{{ max }}일",
     "delivery_in_working_days": "{{ label }}: {{ min }}~{{ max }}영업일",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

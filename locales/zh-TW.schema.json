@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "當日出貨",
     "delivery_estimate": "預計送達",
     "usp_badges": "賣點徽章",
     "free_gift": "免費贈品進度",
@@ -206,6 +207,16 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "cutoff_hour": "截單時（小時）",
+    "cutoff_minute": "截單時（分鐘）",
+    "ships_today_text": "今日出貨文字",
+    "monday": "星期一",
+    "tuesday": "星期二",
+    "wednesday": "星期三",
+    "thursday": "星期四",
+    "friday": "星期五",
+    "saturday": "星期六",
+    "sunday": "星期日",
     "delivery_max_days": "最晚送達（天）",
     "delivery_min_days": "最快送達（天）",
     "delivery_working_days": "僅計算工作天",
@@ -1006,6 +1017,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "order_cutoff": "截單時間和出貨日",
     "product_tiles": "商品圖塊",
     "breadcrumbs": "導覽路徑",
     "tag_badges": "標籤徽章",
@@ -1239,6 +1251,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "order_cutoff": "在勾選的日期於此時間前下的訂單當日出貨。時間以商店時區為準（設定 > 一般）。",
+    "shipping_countdown_color": "預設使用佈景主題設定中的有庫存顏色。",
     "delivery_working_days": "略過週六和週日。日期會在訪客的瀏覽器中從今天開始計算。",
     "free_gift": "顯示購物車距離免費贈品還差多少。贈品本身需在 Shopify 中設定，例如使用自動折扣或贈品應用程式。",
     "free_gift_message": "使用 [amount] 表示仍需的金額。",

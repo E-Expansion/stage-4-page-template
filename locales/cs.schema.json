@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Odeslání tentýž den",
     "delivery_estimate": "Odhad doručení",
     "usp_badges": "Odznaky výhod",
     "free_gift": "Postup k dárku zdarma",
@@ -206,6 +207,16 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "cutoff_hour": "Hodina uzávěrky",
+    "cutoff_minute": "Minuta uzávěrky",
+    "ships_today_text": "Text odeslání dnes",
+    "monday": "Pondělí",
+    "tuesday": "Úterý",
+    "wednesday": "Středa",
+    "thursday": "Čtvrtek",
+    "friday": "Pátek",
+    "saturday": "Sobota",
+    "sunday": "Neděle",
     "delivery_max_days": "Doručení do (dnů)",
     "delivery_min_days": "Doručení od (dnů)",
     "delivery_working_days": "Počítat jen pracovní dny",
@@ -1006,6 +1017,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "order_cutoff": "Uzávěrka objednávek a dny odeslání",
     "product_tiles": "Dlaždice produktů",
     "breadcrumbs": "Drobečková navigace",
     "tag_badges": "Odznaky štítků",
@@ -1239,6 +1251,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "order_cutoff": "Objednávky před tímto časem v zaškrtnutý den odejdou tentýž den. Časy v časovém pásmu obchodu (Nastavení > Obecné).",
+    "shipping_countdown_color": "Výchozí je barva skladem z nastavení motivu.",
     "delivery_working_days": "Přeskakuje soboty a neděle. Data se počítají od dneška v prohlížeči návštěvníka.",
     "free_gift": "Ukazuje, kolik v košíku chybí do dárku zdarma. Samotný dárek nastavte v Shopify, např. automatickou slevou nebo aplikací.",
     "free_gift_message": "Použijte [amount] pro chybějící částku.",

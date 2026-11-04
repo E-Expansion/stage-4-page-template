@@ -134,6 +134,11 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "countdown_hours": "時間",
+    "countdown_minutes": "分",
+    "countdown_seconds": "秒",
+    "ships_on_day": "今注文すると{{ day }}に発送",
+    "ships_tomorrow": "今注文すると明日発送",
     "delivery_in_days": "{{ label }}：{{ min }}〜{{ max }}日",
     "delivery_in_working_days": "{{ label }}：{{ min }}〜{{ max }}営業日",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

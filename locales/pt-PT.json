@@ -136,6 +136,11 @@
     "back_to_main_menu": "Voltar ao menu principal"
   },
   "content": {
+    "countdown_hours": "Horas",
+    "countdown_minutes": "Minutos",
+    "countdown_seconds": "Segundos",
+    "ships_on_day": "Encomende já e enviamos na {{ day }}",
+    "ships_tomorrow": "Encomende já e enviamos amanhã",
     "delivery_in_days": "{{ label }} em {{ min }}-{{ max }} dias",
     "delivery_in_working_days": "{{ label }} em {{ min }}-{{ max }} dias úteis",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

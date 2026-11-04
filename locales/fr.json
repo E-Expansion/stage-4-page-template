@@ -136,6 +136,11 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "countdown_hours": "Heures",
+    "countdown_minutes": "Minutes",
+    "countdown_seconds": "Secondes",
+    "ships_on_day": "Commandez maintenant, expédition {{ day }}",
+    "ships_tomorrow": "Commandez maintenant, expédition demain",
     "delivery_in_days": "{{ label }} sous {{ min }} à {{ max }} jours",
     "delivery_in_working_days": "{{ label }} sous {{ min }} à {{ max }} jours ouvrés",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

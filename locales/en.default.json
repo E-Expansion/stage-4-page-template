@@ -167,6 +167,11 @@
     }
   },
   "content": {
+    "countdown_hours": "Hours",
+    "countdown_minutes": "Minutes",
+    "countdown_seconds": "Seconds",
+    "ships_on_day": "Order now and it ships on {{ day }}",
+    "ships_tomorrow": "Order now and it ships tomorrow",
     "delivery_in_days": "{{ label }} in {{ min }}-{{ max }} days",
     "delivery_in_working_days": "{{ label }} in {{ min }}-{{ max }} working days",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

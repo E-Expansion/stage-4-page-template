@@ -134,6 +134,11 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "countdown_hours": "Uren",
+    "countdown_minutes": "Minuten",
+    "countdown_seconds": "Seconden",
+    "ships_on_day": "Bestel nu en het wordt op {{ day }} verzonden",
+    "ships_tomorrow": "Bestel nu en het wordt morgen verzonden",
     "delivery_in_days": "{{ label }} in {{ min }}-{{ max }} dagen",
     "delivery_in_working_days": "{{ label }} in {{ min }}-{{ max }} werkdagen",
     "gift_wrap_no_product": "Cadeauverpakking is verborgen: kies een product voor de cadeauverpakking in de instellingen van dit blok.",

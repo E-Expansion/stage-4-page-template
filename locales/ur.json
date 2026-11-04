@@ -154,6 +154,11 @@
     }
   },
   "content": {
+    "countdown_hours": "گھنٹے",
+    "countdown_minutes": "منٹ",
+    "countdown_seconds": "سیکنڈ",
+    "ships_on_day": "ابھی آرڈر کریں، {{ day }} کو روانہ ہوگا",
+    "ships_tomorrow": "ابھی آرڈر کریں، کل روانہ ہوگا",
     "delivery_in_days": "{{ label }} {{ min }}-{{ max }} دنوں میں",
     "delivery_in_working_days": "{{ label }} {{ min }}-{{ max }} کاروباری دنوں میں",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

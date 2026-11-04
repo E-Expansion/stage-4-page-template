@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "当日発送",
     "delivery_estimate": "お届け予定",
     "usp_badges": "USP バッジ",
     "free_gift": "無料ギフトまでの進捗",
@@ -206,6 +207,16 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "cutoff_hour": "締め切り（時）",
+    "cutoff_minute": "締め切り（分）",
+    "ships_today_text": "本日発送のテキスト",
+    "monday": "月曜日",
+    "tuesday": "火曜日",
+    "wednesday": "水曜日",
+    "thursday": "木曜日",
+    "friday": "金曜日",
+    "saturday": "土曜日",
+    "sunday": "日曜日",
     "delivery_max_days": "お届けまで最長（日）",
     "delivery_min_days": "お届けまで最短（日）",
     "delivery_working_days": "営業日のみ数える",
@@ -1006,6 +1017,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "order_cutoff": "注文締め切りと発送日",
     "product_tiles": "商品タイル",
     "breadcrumbs": "パンくずリスト",
     "tag_badges": "タグバッジ",
@@ -1239,6 +1251,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "order_cutoff": "チェックした曜日にこの時刻までの注文は当日発送されます。時刻はストアのタイムゾーン（設定 > 一般）です。",
+    "shipping_countdown_color": "既定はテーマ設定の在庫ありの色です。",
     "delivery_working_days": "土曜と日曜を除きます。日付は訪問者のブラウザで今日から計算されます。",
     "free_gift": "カートが無料ギフトまであといくらかを表示します。ギフト自体は Shopify で、自動割引やギフトアプリなどで設定してください。",
     "free_gift_message": "不足額には [amount] を使用します。",

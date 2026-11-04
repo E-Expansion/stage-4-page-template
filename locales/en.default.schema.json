@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "order_cutoff": "Order cut-off and shipping days",
     "product_tiles": "Product tiles",
     "breadcrumbs": "Breadcrumbs",
     "tag_badges": "Tag badges",
@@ -233,6 +234,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "order_cutoff": "Orders placed before this time on a ticked day ship the same day. Times are in your shop's time zone (Settings > General).",
+    "shipping_countdown_color": "Defaults to the in stock color from Theme settings.",
     "delivery_working_days": "Skips Saturdays and Sundays. Dates are calculated from today in the visitor's browser.",
     "free_gift": "Shows how far the cart is from a free gift. Set up the gift itself in Shopify, for example with an automatic discount or a gift app.",
     "free_gift_message": "Use [amount] for the amount still needed.",
@@ -313,6 +316,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "same_day_shipping": "Same-day shipping",
     "delivery_estimate": "Delivery estimate",
     "usp_badges": "USP badges",
     "free_gift": "Free gift progress",
@@ -835,6 +839,16 @@
     "below_media": "Below media"
   },
   "settings": {
+    "cutoff_hour": "Cut-off hour",
+    "cutoff_minute": "Cut-off minute",
+    "ships_today_text": "Ships today text",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
     "delivery_max_days": "Delivery up to (days)",
     "delivery_min_days": "Delivery from (days)",
     "delivery_working_days": "Count working days only",

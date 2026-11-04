@@ -134,6 +134,11 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "countdown_hours": "Giờ",
+    "countdown_minutes": "Phút",
+    "countdown_seconds": "Giây",
+    "ships_on_day": "Đặt ngay, gửi hàng vào {{ day }}",
+    "ships_tomorrow": "Đặt ngay, gửi hàng ngày mai",
     "delivery_in_days": "{{ label }} trong {{ min }}-{{ max }} ngày",
     "delivery_in_working_days": "{{ label }} trong {{ min }}-{{ max }} ngày làm việc",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

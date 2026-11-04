@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Aynı gün kargo",
     "delivery_estimate": "Teslimat tahmini",
     "usp_badges": "Avantaj rozetleri",
     "free_gift": "Hediye ilerlemesi",
@@ -206,6 +207,16 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "cutoff_hour": "Son sipariş saati",
+    "cutoff_minute": "Son sipariş dakikası",
+    "ships_today_text": "Bugün kargoda metni",
+    "monday": "Pazartesi",
+    "tuesday": "Salı",
+    "wednesday": "Çarşamba",
+    "thursday": "Perşembe",
+    "friday": "Cuma",
+    "saturday": "Cumartesi",
+    "sunday": "Pazar",
     "delivery_max_days": "Teslimat en geç (gün)",
     "delivery_min_days": "Teslimat en erken (gün)",
     "delivery_working_days": "Yalnızca iş günlerini say",
@@ -1006,6 +1017,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "order_cutoff": "Son sipariş saati ve kargo günleri",
     "product_tiles": "Ürün kutucukları",
     "breadcrumbs": "İçerik haritası",
     "tag_badges": "Etiket rozetleri",
@@ -1239,6 +1251,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "order_cutoff": "İşaretli bir günde bu saatten önce verilen siparişler aynı gün kargolanır. Saatler mağazanızın saat diliminde (Ayarlar > Genel).",
+    "shipping_countdown_color": "Varsayılan olarak tema ayarlarındaki stokta rengi.",
     "delivery_working_days": "Cumartesi ve pazarı atlar. Tarihler ziyaretçinin tarayıcısında bugünden itibaren hesaplanır.",
     "free_gift": "Sepetin ücretsiz hediyeye ne kadar uzak olduğunu gösterir. Hediyenin kendisini Shopify'da, örneğin otomatik indirim veya bir hediye uygulamasıyla ayarlayın.",
     "free_gift_message": "Kalan tutar için [amount] kullanın.",

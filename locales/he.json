@@ -160,6 +160,11 @@
     }
   },
   "content": {
+    "countdown_hours": "שעות",
+    "countdown_minutes": "דקות",
+    "countdown_seconds": "שניות",
+    "ships_on_day": "הזמינו עכשיו וזה יישלח ביום {{ day }}",
+    "ships_tomorrow": "הזמינו עכשיו וזה יישלח מחר",
     "delivery_in_days": "{{ label }} תוך {{ min }}-{{ max }} ימים",
     "delivery_in_working_days": "{{ label }} תוך {{ min }}-{{ max }} ימי עסקים",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

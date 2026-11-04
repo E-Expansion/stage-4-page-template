@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Versand am selben Tag",
     "delivery_estimate": "Lieferschätzung",
     "usp_badges": "USP-Badges",
     "free_gift": "Fortschritt Gratisgeschenk",
@@ -206,6 +207,16 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "cutoff_hour": "Stunde des Bestellschlusses",
+    "cutoff_minute": "Minute des Bestellschlusses",
+    "ships_today_text": "Text für Versand heute",
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
     "delivery_max_days": "Lieferung bis (Tage)",
     "delivery_min_days": "Lieferung ab (Tage)",
     "delivery_working_days": "Nur Werktage zählen",
@@ -1006,6 +1017,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "order_cutoff": "Bestellschluss und Versandtage",
     "product_tiles": "Produktkacheln",
     "breadcrumbs": "Brotkrümelnavigation",
     "tag_badges": "Tag-Badges",
@@ -1239,6 +1251,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "order_cutoff": "Bestellungen vor dieser Uhrzeit an einem angehakten Tag werden am selben Tag versendet. Zeiten in der Zeitzone deines Shops (Einstellungen > Allgemein).",
+    "shipping_countdown_color": "Standard ist die Farbe für „Auf Lager“ aus den Theme-Einstellungen.",
     "delivery_working_days": "Überspringt Samstag und Sonntag. Die Daten werden ab heute im Browser des Besuchers berechnet.",
     "free_gift": "Zeigt, wie weit der Warenkorb von einem Gratisgeschenk entfernt ist. Richte das Geschenk selbst in Shopify ein, z. B. mit einem automatischen Rabatt oder einer Geschenk-App.",
     "free_gift_message": "Verwende [amount] für den noch fehlenden Betrag.",

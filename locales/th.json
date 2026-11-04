@@ -134,6 +134,11 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "countdown_hours": "ชั่วโมง",
+    "countdown_minutes": "นาที",
+    "countdown_seconds": "วินาที",
+    "ships_on_day": "สั่งตอนนี้ จัดส่งวัน{{ day }}",
+    "ships_tomorrow": "สั่งตอนนี้ จัดส่งพรุ่งนี้",
     "delivery_in_days": "{{ label }} ภายใน {{ min }}-{{ max }} วัน",
     "delivery_in_working_days": "{{ label }} ภายใน {{ min }}-{{ max }} วันทำการ",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",

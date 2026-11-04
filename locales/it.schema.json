@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Spedizione in giornata",
     "delivery_estimate": "Stima di consegna",
     "usp_badges": "Badge dei vantaggi",
     "free_gift": "Avanzamento omaggio",
@@ -206,6 +207,16 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "cutoff_hour": "Ora limite",
+    "cutoff_minute": "Minuto limite",
+    "ships_today_text": "Testo spedizione oggi",
+    "monday": "Lunedì",
+    "tuesday": "Martedì",
+    "wednesday": "Mercoledì",
+    "thursday": "Giovedì",
+    "friday": "Venerdì",
+    "saturday": "Sabato",
+    "sunday": "Domenica",
     "delivery_max_days": "Consegna fino a (giorni)",
     "delivery_min_days": "Consegna da (giorni)",
     "delivery_working_days": "Conta solo i giorni lavorativi",
@@ -1006,6 +1017,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "order_cutoff": "Orario limite e giorni di spedizione",
     "product_tiles": "Riquadri prodotto",
     "breadcrumbs": "Percorso di navigazione",
     "tag_badges": "Badge dei tag",
@@ -1239,6 +1251,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "order_cutoff": "Gli ordini effettuati prima di quest'ora in un giorno selezionato partono in giornata. Orari nel fuso orario del negozio (Impostazioni > Generali).",
+    "shipping_countdown_color": "Predefinito: il colore disponibile delle impostazioni del tema.",
     "delivery_working_days": "Salta sabato e domenica. Le date vengono calcolate da oggi nel browser del visitatore.",
     "free_gift": "Mostra quanto manca al carrello per un omaggio. Configura l'omaggio in Shopify, ad esempio con uno sconto automatico o un'app per omaggi.",
     "free_gift_message": "Usa [amount] per l'importo mancante.",

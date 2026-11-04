@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Wysyłka tego samego dnia",
     "delivery_estimate": "Szacowana dostawa",
     "usp_badges": "Odznaki zalet",
     "free_gift": "Postęp do prezentu",
@@ -206,6 +207,16 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "cutoff_hour": "Godzina graniczna",
+    "cutoff_minute": "Minuta graniczna",
+    "ships_today_text": "Tekst wysyłki dzisiaj",
+    "monday": "Poniedziałek",
+    "tuesday": "Wtorek",
+    "wednesday": "Środa",
+    "thursday": "Czwartek",
+    "friday": "Piątek",
+    "saturday": "Sobota",
+    "sunday": "Niedziela",
     "delivery_max_days": "Dostawa do (dni)",
     "delivery_min_days": "Dostawa od (dni)",
     "delivery_working_days": "Licz tylko dni robocze",
@@ -1006,6 +1017,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "order_cutoff": "Godzina graniczna i dni wysyłki",
     "product_tiles": "Kafelki produktów",
     "breadcrumbs": "Ścieżka nawigacji",
     "tag_badges": "Odznaki tagów",
@@ -1239,6 +1251,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "order_cutoff": "Zamówienia złożone przed tą godziną w zaznaczony dzień są wysyłane tego samego dnia. Godziny w strefie czasowej sklepu (Ustawienia > Ogólne).",
+    "shipping_countdown_color": "Domyślnie kolor dostępności z ustawień motywu.",
     "delivery_working_days": "Pomija soboty i niedziele. Daty są liczone od dziś w przeglądarce odwiedzającego.",
     "free_gift": "Pokazuje, ile brakuje w koszyku do darmowego prezentu. Skonfiguruj prezent w Shopify, np. rabatem automatycznym lub aplikacją.",
     "free_gift_message": "Użyj [amount] dla brakującej kwoty.",

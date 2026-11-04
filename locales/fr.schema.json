@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "same_day_shipping": "Expédition le jour même",
     "delivery_estimate": "Estimation de livraison",
     "usp_badges": "Badges d'atouts",
     "free_gift": "Progression du cadeau offert",
@@ -206,6 +207,16 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "cutoff_hour": "Heure limite",
+    "cutoff_minute": "Minute limite",
+    "ships_today_text": "Texte expédition aujourd'hui",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
     "delivery_max_days": "Livraison jusqu'à (jours)",
     "delivery_min_days": "Livraison à partir de (jours)",
     "delivery_working_days": "Compter uniquement les jours ouvrés",
@@ -1006,6 +1017,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "order_cutoff": "Heure limite de commande et jours d'expédition",
     "product_tiles": "Vignettes produit",
     "breadcrumbs": "Fil d'Ariane",
     "tag_badges": "Badges de balise",
@@ -1239,6 +1251,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "order_cutoff": "Les commandes passées avant cette heure un jour coché partent le jour même. Heures dans le fuseau horaire de la boutique (Paramètres > Général).",
+    "shipping_countdown_color": "Par défaut, la couleur « en stock » des paramètres du thème.",
     "delivery_working_days": "Ignore le samedi et le dimanche. Les dates sont calculées à partir d'aujourd'hui dans le navigateur du visiteur.",
     "free_gift": "Indique combien il manque au panier pour un cadeau offert. Configurez le cadeau dans Shopify, par exemple avec une réduction automatique ou une application de cadeaux.",
     "free_gift_message": "Utilisez [amount] pour le montant restant.",

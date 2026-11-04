@@ -134,6 +134,11 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "countdown_hours": "Óra",
+    "countdown_minutes": "Perc",
+    "countdown_seconds": "Másodperc",
+    "ships_on_day": "Rendelje meg most, feladás: {{ day }}",
+    "ships_tomorrow": "Rendelje meg most, holnap feladjuk",
     "delivery_in_days": "{{ label }} {{ min }}-{{ max }} napon belül",
     "delivery_in_working_days": "{{ label }} {{ min }}-{{ max }} munkanapon belül",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",
