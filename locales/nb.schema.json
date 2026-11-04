@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "På lager igjen",
     "same_day_shipping": "Sending samme dag",
     "delivery_estimate": "Leveringsestimat",
     "usp_badges": "USP-merker",
@@ -1254,6 +1255,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "back_in_stock": "Vises bare når valgt variant er utsolgt. Hver påmelding blir en kunde med samtykke til e-postmarkedsføring, merket \"back-in-stock\" og med produkt og variant. Finn dem under Kunder for å gi beskjed når varen er tilbake.",
     "show_sticky_add_to_cart": "Glir inn nederst på skjermen når knappen Legg i handlekurv ruller ut av syne. Viser tittel, raden fra vurderingsblokken, pris og en knapp.",
     "order_cutoff": "Bestillinger før dette tidspunktet på en avkrysset dag sendes samme dag. Tider i butikkens tidssone (Innstillinger > Generelt).",
     "shipping_countdown_color": "Standard er fargen for på lager fra temainnstillingene.",

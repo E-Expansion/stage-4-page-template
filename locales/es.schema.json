@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "De nuevo en stock",
     "same_day_shipping": "Envío el mismo día",
     "delivery_estimate": "Estimación de entrega",
     "usp_badges": "Insignias de ventajas",
@@ -1254,6 +1255,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "back_in_stock": "Solo aparece si la variante elegida está agotada. Cada registro se convierte en un cliente con consentimiento de marketing por correo, con la etiqueta \"back-in-stock\" y otra de producto y variante. Encuéntralos en Clientes para avisarles cuando vuelva el stock.",
     "show_sticky_add_to_cart": "Aparece en la parte inferior de la pantalla cuando el botón de añadir al carrito sale de la vista. Muestra el título, la fila del bloque de valoración, el precio y un botón.",
     "order_cutoff": "Los pedidos hechos antes de esta hora en un día marcado se envían el mismo día. Horas en la zona horaria de la tienda (Configuración > General).",
     "shipping_countdown_color": "Por defecto, el color de en stock de la configuración del tema.",

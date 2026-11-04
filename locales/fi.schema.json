@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Takaisin varastossa",
     "same_day_shipping": "Lähetys samana päivänä",
     "delivery_estimate": "Toimitusarvio",
     "usp_badges": "USP-merkit",
@@ -1254,6 +1255,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "back_in_stock": "Näkyy vain, kun valittu muunnelma on loppu. Jokaisesta ilmoittautumisesta tulee asiakas, joka on antanut sähköpostimarkkinointiluvan, tunnisteilla \"back-in-stock\" sekä tuote ja muunnelma. Löydät heidät Asiakkaat-kohdasta ilmoittaaksesi, kun tuotetta on taas.",
     "show_sticky_add_to_cart": "Liukuu näkyviin näytön alareunaan, kun ostoskoripainike vierii pois näkyvistä. Näyttää nimen, arvioinnit-lohkon rivin, hinnan ja painikkeen.",
     "order_cutoff": "Ennen tätä aikaa valittuna päivänä tehdyt tilaukset lähtevät samana päivänä. Ajat kaupan aikavyöhykkeellä (Asetukset > Yleiset).",
     "shipping_countdown_color": "Oletuksena teeman asetusten varastossa-väri.",

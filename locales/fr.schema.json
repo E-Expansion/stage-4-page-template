@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "De retour en stock",
     "same_day_shipping": "Expédition le jour même",
     "delivery_estimate": "Estimation de livraison",
     "usp_badges": "Badges d'atouts",
@@ -1254,6 +1255,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "back_in_stock": "S'affiche uniquement si la variante choisie est épuisée. Chaque inscription devient un client consentant au marketing par e-mail, avec la balise « back-in-stock » et une balise produit et variante. Retrouvez-les dans Clients pour les prévenir du retour en stock.",
     "show_sticky_add_to_cart": "Apparaît en bas de l'écran dès que le bouton d'ajout au panier sort de la vue. Affiche le titre, la ligne du bloc d'avis, le prix et un bouton d'ajout au panier.",
     "order_cutoff": "Les commandes passées avant cette heure un jour coché partent le jour même. Heures dans le fuseau horaire de la boutique (Paramètres > Général).",
     "shipping_countdown_color": "Par défaut, la couleur « en stock » des paramètres du thème.",

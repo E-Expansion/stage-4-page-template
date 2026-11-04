@@ -1,0 +1,5 @@
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-bell">
+<path d="M5 8.5C5 5.73858 7.23858 3.5 10 3.5C12.7614 3.5 15 5.73858 15 8.5V12L16.5 14.5H3.5L5 12V8.5Z" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linejoin="round"/>
+<path d="M8 16.5C8.4 17.3 9.15 17.75 10 17.75C10.85 17.75 11.6 17.3 12 16.5" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+<path d="M10 3.5V2.25" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+</svg>

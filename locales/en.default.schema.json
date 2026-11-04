@@ -235,6 +235,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "back_in_stock": "Shows only when the selected variant is sold out. Each signup becomes a customer with email marketing consent, tagged \"back-in-stock\" and with the product and variant. Find them under Customers to email them when stock returns.",
     "show_sticky_add_to_cart": "Slides in at the bottom of the screen once the add to cart button scrolls out of view. Shows the title, the rating block's row, the price and an add to cart button.",
     "order_cutoff": "Orders placed before this time on a ticked day ship the same day. Times are in your shop's time zone (Settings > General).",
     "shipping_countdown_color": "Defaults to the in stock color from Theme settings.",
@@ -318,6 +319,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "back_in_stock": "Back in stock",
     "same_day_shipping": "Same-day shipping",
     "delivery_estimate": "Delivery estimate",
     "usp_badges": "USP badges",

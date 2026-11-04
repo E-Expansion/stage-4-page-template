@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Yeniden stokta",
     "same_day_shipping": "Aynı gün kargo",
     "delivery_estimate": "Teslimat tahmini",
     "usp_badges": "Avantaj rozetleri",
@@ -1254,6 +1255,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "back_in_stock": "Yalnızca seçilen varyant tükendiğinde görünür. Her kayıt, e-posta pazarlama onayı veren ve \"back-in-stock\" ile ürün ve varyant etiketi taşıyan bir müşteri olur. Stok geldiğinde haber vermek için Müşteriler bölümünde bulabilirsiniz.",
     "show_sticky_add_to_cart": "Sepete ekle butonu görünümden çıkınca ekranın altında belirir. Başlık, değerlendirme bloğunun satırı, fiyat ve bir buton gösterir.",
     "order_cutoff": "İşaretli bir günde bu saatten önce verilen siparişler aynı gün kargolanır. Saatler mağazanızın saat diliminde (Ayarlar > Genel).",
     "shipping_countdown_color": "Varsayılan olarak tema ayarlarındaki stokta rengi.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "到貨通知",
     "same_day_shipping": "當日出貨",
     "delivery_estimate": "預計送達",
     "usp_badges": "賣點徽章",
@@ -1254,6 +1255,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "back_in_stock": "僅在所選子類售完時顯示。每次登記都會建立一位同意電子郵件行銷的顧客，並加上「back-in-stock」標籤及產品與子類標籤。到貨後可在顧客中找到他們並通知。",
     "show_sticky_add_to_cart": "當加入購物車按鈕捲出畫面時，從螢幕底部滑入。顯示標題、評分區塊的列、價格和按鈕。",
     "order_cutoff": "在勾選的日期於此時間前下的訂單當日出貨。時間以商店時區為準（設定 > 一般）。",
     "shipping_countdown_color": "預設使用佈景主題設定中的有庫存顏色。",

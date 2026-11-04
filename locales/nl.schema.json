@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Weer op voorraad",
     "same_day_shipping": "Verzending dezelfde dag",
     "delivery_estimate": "Leverschatting",
     "usp_badges": "USP-badges",
@@ -1254,6 +1255,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "back_in_stock": "Verschijnt alleen als de gekozen variant uitverkocht is. Elke aanmelding wordt een klant met toestemming voor e-mailmarketing, met de tag \"back-in-stock\" en een tag voor product en variant. Je vindt ze onder Customers om ze te mailen zodra er weer voorraad is.",
     "show_sticky_add_to_cart": "Schuift onderaan het scherm in zodra de winkelwagenknop uit beeld scrolt. Toont de titel, de rij van het beoordelingsblok, de prijs en een winkelwagenknop.",
     "order_cutoff": "Bestellingen vóór dit tijdstip op een aangevinkte dag worden dezelfde dag verzonden. Tijden zijn in de tijdzone van je winkel (Settings > General).",
     "shipping_countdown_color": "Standaard de kleur voor op voorraad uit de theme-instellingen.",

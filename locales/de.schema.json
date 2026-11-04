@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Wieder verfügbar",
     "same_day_shipping": "Versand am selben Tag",
     "delivery_estimate": "Lieferschätzung",
     "usp_badges": "USP-Badges",
@@ -1254,6 +1255,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "back_in_stock": "Erscheint nur, wenn die gewählte Variante ausverkauft ist. Jede Anmeldung wird ein Kunde mit E-Mail-Marketing-Einwilligung, getaggt mit „back-in-stock“ sowie Produkt und Variante. Unter Kunden findest du sie, um sie bei neuem Bestand zu benachrichtigen.",
     "show_sticky_add_to_cart": "Erscheint unten am Bildschirm, sobald der Warenkorb-Button aus dem Bild scrollt. Zeigt Titel, die Zeile des Bewertungsblocks, Preis und einen Warenkorb-Button.",
     "order_cutoff": "Bestellungen vor dieser Uhrzeit an einem angehakten Tag werden am selben Tag versendet. Zeiten in der Zeitzone deines Shops (Einstellungen > Allgemein).",
     "shipping_countdown_color": "Standard ist die Farbe für „Auf Lager“ aus den Theme-Einstellungen.",

@@ -183,6 +183,10 @@
         "shipping_countdown": {
           "type": "_product-shipping-countdown",
           "settings": {}
+        },
+        "back_in_stock": {
+          "type": "_product-back-in-stock",
+          "settings": {}
         }
       },
       "block_order": [
@@ -196,7 +200,8 @@
         "gift_wrap",
         "free_gift",
         "usps",
-        "shipping_countdown"
+        "shipping_countdown",
+        "back_in_stock"
       ],
       "settings": {
         "show_breadcrumbs": true,

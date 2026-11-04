@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Di nuovo disponibile",
     "same_day_shipping": "Spedizione in giornata",
     "delivery_estimate": "Stima di consegna",
     "usp_badges": "Badge dei vantaggi",
@@ -1254,6 +1255,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "back_in_stock": "Appare solo se la variante scelta è esaurita. Ogni iscrizione diventa un cliente con consenso al marketing via email, con il tag \"back-in-stock\" e uno per prodotto e variante. Trovali in Clienti per avvisarli quando torna disponibile.",
     "show_sticky_add_to_cart": "Compare in basso quando il pulsante di aggiunta al carrello esce dalla vista. Mostra titolo, riga del blocco valutazioni, prezzo e un pulsante.",
     "order_cutoff": "Gli ordini effettuati prima di quest'ora in un giorno selezionato partono in giornata. Orari nel fuso orario del negozio (Impostazioni > Generali).",
     "shipping_countdown_color": "Predefinito: il colore disponibile delle impostazioni del tema.",

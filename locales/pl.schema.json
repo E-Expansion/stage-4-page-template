@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "Ponownie dostępne",
     "same_day_shipping": "Wysyłka tego samego dnia",
     "delivery_estimate": "Szacowana dostawa",
     "usp_badges": "Odznaki zalet",
@@ -1254,6 +1255,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "back_in_stock": "Pojawia się tylko, gdy wybrany wariant jest wyprzedany. Każde zgłoszenie tworzy klienta ze zgodą na marketing e-mailowy, z tagiem „back-in-stock” i tagiem produktu i wariantu. Znajdziesz ich w Klientach, by powiadomić o dostępności.",
     "show_sticky_add_to_cart": "Pojawia się u dołu ekranu, gdy przycisk dodania do koszyka zniknie z widoku. Pokazuje tytuł, wiersz bloku ocen, cenę i przycisk.",
     "order_cutoff": "Zamówienia złożone przed tą godziną w zaznaczony dzień są wysyłane tego samego dnia. Godziny w strefie czasowej sklepu (Ustawienia > Ogólne).",
     "shipping_countdown_color": "Domyślnie kolor dostępności z ustawień motywu.",

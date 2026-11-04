@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "back_in_stock": "재입고",
     "same_day_shipping": "당일 발송",
     "delivery_estimate": "배송 예상",
     "usp_badges": "USP 배지",
@@ -1254,6 +1255,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "back_in_stock": "선택한 옵션이 품절일 때만 표시됩니다. 등록할 때마다 이메일 마케팅에 동의한 고객이 생성되며 \"back-in-stock\"과 제품·옵션 태그가 붙습니다. 재입고 시 고객 메뉴에서 찾아 알릴 수 있습니다.",
     "show_sticky_add_to_cart": "장바구니 담기 버튼이 화면 밖으로 스크롤되면 화면 하단에 나타납니다. 제목, 평점 블록의 행, 가격, 버튼을 표시합니다.",
     "order_cutoff": "선택한 요일에 이 시간 전에 한 주문은 당일 발송됩니다. 시간은 스토어 시간대 기준입니다(설정 > 일반).",
     "shipping_countdown_color": "기본값은 테마 설정의 재고 있음 색상입니다.",
