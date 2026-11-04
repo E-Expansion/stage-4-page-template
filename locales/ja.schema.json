@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "一緒に購入",
     "product_certificate": "製品証明書",
     "product_tab": "タブ",
     "product_tabs": "商品タブ",
@@ -211,6 +212,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "bundle_max_products": "この商品以外の商品数",
     "show_image": "画像を表示",
     "show_sticky_add_to_cart": "追従するカートに追加を表示",
     "cutoff_hour": "締め切り（時）",
@@ -1258,6 +1260,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "bundle_discount": "セット価格として表示されます。チェックアウトで適用されるよう対応する自動割引を作成してください。0 で通常の合計を表示します。",
+    "frequently_bought_together": "Search & Discovery の補完商品、なければ custom.frequently_bought_together メタフィールド（商品リスト）を表示します。ない場合は非表示です。",
     "certificate_background": "既定はテーマ設定の評価色の淡い色です。",
     "certificate_image": "円形で表示されます。画像を選ぶまではプレースホルダーが表示されます。",
     "certificate_link": "認証機関のウェブサイト。新しいタブで開きます。",

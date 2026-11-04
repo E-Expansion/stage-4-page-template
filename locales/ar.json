@@ -166,6 +166,12 @@
     }
   },
   "content": {
+    "bundle_add_all": {
+      "one": "أضف إلى السلة",
+      "other": "أضف الـ {{ count }} كلها"
+    },
+    "bundle_empty": "لا توجد منتجات مكملة بعد. أضفها في Search & Discovery أو في الحقل الوصفي frequently_bought_together.",
+    "bundle_total": "إجمالي الحزمة",
     "countdown_hours": "ساعات",
     "countdown_minutes": "دقائق",
     "countdown_seconds": "ثوانٍ",

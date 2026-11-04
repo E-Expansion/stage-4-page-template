@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Kupováno společně",
     "product_certificate": "Certifikát produktu",
     "product_tab": "Záložka",
     "product_tabs": "Záložky produktu",
@@ -211,6 +212,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "bundle_max_products": "Produkty kromě tohoto",
     "show_image": "Zobrazit obrázek",
     "show_sticky_add_to_cart": "Zobrazit připnuté přidání do košíku",
     "cutoff_hour": "Hodina uzávěrky",
@@ -1258,6 +1260,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "bundle_discount": "Zobrazí se jako nižší cena sady. Vytvořte odpovídající automatickou slevu, aby ji pokladna uplatnila. 0 zobrazí běžný součet.",
+    "frequently_bought_together": "Zobrazuje doplňkové produkty ze Search & Discovery, jinak metapole custom.frequently_bought_together (seznam produktů). Skryto, pokud žádné nejsou.",
     "certificate_background": "Výchozí je světlý odstín barvy hodnocení z nastavení motivu.",
     "certificate_image": "Zobrazí se v kruhu. Dokud nevyberete obrázek, zobrazí se zástupný symbol.",
     "certificate_link": "Web certifikační organizace. Otevře se na nové kartě.",

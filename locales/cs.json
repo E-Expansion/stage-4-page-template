@@ -138,6 +138,12 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Přidat do košíku",
+      "other": "Přidat všechny {{ count }}"
+    },
+    "bundle_empty": "Zatím žádné doplňkové produkty. Přidejte je v Search & Discovery nebo v metapoli frequently_bought_together.",
+    "bundle_total": "Celkem za sadu",
     "countdown_hours": "Hodiny",
     "countdown_minutes": "Minuty",
     "countdown_seconds": "Sekundy",

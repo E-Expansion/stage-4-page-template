@@ -154,6 +154,12 @@
     }
   },
   "content": {
+    "bundle_add_all": {
+      "one": "کارٹ میں شامل کریں",
+      "other": "تمام {{ count }} شامل کریں"
+    },
+    "bundle_empty": "ابھی کوئی تکمیلی پروڈکٹ نہیں۔ انہیں Search & Discovery یا frequently_bought_together میٹا فیلڈ میں شامل کریں۔",
+    "bundle_total": "بنڈل کل",
     "countdown_hours": "گھنٹے",
     "countdown_minutes": "منٹ",
     "countdown_seconds": "سیکنڈ",

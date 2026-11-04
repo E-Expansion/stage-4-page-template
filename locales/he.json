@@ -160,6 +160,12 @@
     }
   },
   "content": {
+    "bundle_add_all": {
+      "one": "הוספה לעגלה",
+      "other": "הוספת כל ה-{{ count }}"
+    },
+    "bundle_empty": "אין עדיין מוצרים משלימים. הוסף אותם ב-Search & Discovery או בשדה המטא frequently_bought_together.",
+    "bundle_total": "סה\"כ לחבילה",
     "countdown_hours": "שעות",
     "countdown_minutes": "דקות",
     "countdown_seconds": "שניות",

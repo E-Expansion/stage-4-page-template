@@ -134,6 +134,12 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "In winkelwagen",
+      "other": "Alle {{ count }} toevoegen"
+    },
+    "bundle_empty": "Nog geen aanvullende producten. Voeg ze toe in Search & Discovery of in het metaveld frequently_bought_together van het product.",
+    "bundle_total": "Totaal bundel",
     "countdown_hours": "Uren",
     "countdown_minutes": "Minuten",
     "countdown_seconds": "Seconden",

@@ -134,6 +134,12 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "加入购物车",
+      "other": "全部 {{ count }} 件加入"
+    },
+    "bundle_empty": "暂无搭配产品。请在 Search & Discovery 或 frequently_bought_together 元字段中添加。",
+    "bundle_total": "组合总价",
     "countdown_hours": "小时",
     "countdown_minutes": "分钟",
     "countdown_seconds": "秒",

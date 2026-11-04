@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Ostetaan yhdessä",
     "product_certificate": "Tuotesertifikaatti",
     "product_tab": "Välilehti",
     "product_tabs": "Tuotevälilehdet",
@@ -211,6 +212,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "bundle_max_products": "Tuotteet tämän lisäksi",
     "show_image": "Näytä kuva",
     "show_sticky_add_to_cart": "Näytä kiinteä lisää ostoskoriin",
     "cutoff_hour": "Määräajan tunti",
@@ -1258,6 +1260,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "bundle_discount": "Näytetään alempana pakettihintana. Luo vastaava automaattinen alennus, jotta kassa veloittaa sen. 0 näyttää normaalin summan.",
+    "frequently_bought_together": "Näyttää Search & Discoveryn täydentävät tuotteet, muuten metakentän custom.frequently_bought_together (tuoteluettelo). Piilotettu, jos niitä ei ole.",
     "certificate_background": "Oletuksena teeman asetusten arvioväristä vaalea sävy.",
     "certificate_image": "Näytetään pyöreänä. Kunnes kuva valitaan, näkyy paikkamerkki.",
     "certificate_link": "Sertifioijan verkkosivusto. Avautuu uuteen välilehteen.",

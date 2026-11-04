@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Zusammen gekauft",
     "product_certificate": "Produktzertifikat",
     "product_tab": "Tab",
     "product_tabs": "Produkt-Tabs",
@@ -211,6 +212,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "bundle_max_products": "Produkte neben diesem",
     "show_image": "Bild anzeigen",
     "show_sticky_add_to_cart": "Fixierten Warenkorb-Button anzeigen",
     "cutoff_hour": "Stunde des Bestellschlusses",
@@ -1258,6 +1260,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "bundle_discount": "Wird als niedrigerer Bundle-Preis gezeigt. Lege einen passenden automatischen Rabatt an, damit der Checkout ihn berechnet. 0 zeigt die normale Summe.",
+    "frequently_bought_together": "Zeigt die ergänzenden Produkte aus Search & Discovery, sonst das Metafeld custom.frequently_bought_together (Produktliste). Ausgeblendet, wenn keine vorhanden.",
     "certificate_background": "Standard ist ein heller Ton der Bewertungsfarbe aus den Theme-Einstellungen.",
     "certificate_image": "Wird rund angezeigt. Bis ein Bild gewählt ist, erscheint ein Platzhalter.",
     "certificate_link": "Die Website der Zertifizierungsstelle. Öffnet sich in einem neuen Tab.",

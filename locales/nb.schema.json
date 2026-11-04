@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Kjøpt sammen",
     "product_certificate": "Produktsertifikat",
     "product_tab": "Fane",
     "product_tabs": "Produktfaner",
@@ -211,6 +212,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "bundle_max_products": "Produkter i tillegg til dette",
     "show_image": "Vis bilde",
     "show_sticky_add_to_cart": "Vis fast legg i handlekurv",
     "cutoff_hour": "Time for frist",
@@ -1258,6 +1260,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "bundle_discount": "Vises som lavere pakkepris. Opprett en tilsvarende automatisk rabatt slik at kassen trekker den. 0 viser vanlig sum.",
+    "frequently_bought_together": "Viser utfyllende produkter fra Search & Discovery, ellers metafeltet custom.frequently_bought_together (produktliste). Skjult hvis ingen.",
     "certificate_background": "Standard er en lys tone av vurderingsfargen fra temainnstillingene.",
     "certificate_image": "Vises rundt. Til et bilde er valgt, vises en plassholder.",
     "certificate_link": "Nettstedet til sertifiseringsorganet. Åpnes i en ny fane.",

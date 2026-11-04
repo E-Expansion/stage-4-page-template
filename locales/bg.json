@@ -134,6 +134,12 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Добави в количката",
+      "other": "Добави всички {{ count }}"
+    },
+    "bundle_empty": "Все още няма допълващи продукти. Добавете ги в Search & Discovery или в метаполето frequently_bought_together.",
+    "bundle_total": "Общо за комплекта",
     "countdown_hours": "Часа",
     "countdown_minutes": "Минути",
     "countdown_seconds": "Секунди",

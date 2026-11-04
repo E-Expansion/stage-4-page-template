@@ -136,6 +136,12 @@
     "back_to_main_menu": "Natrag na glavni izbornik"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Dodaj u košaricu",
+      "other": "Dodaj sve {{ count }}"
+    },
+    "bundle_empty": "Još nema dodatnih proizvoda. Dodajte ih u Search & Discovery ili u metapolje frequently_bought_together.",
+    "bundle_total": "Ukupno za paket",
     "countdown_hours": "Sati",
     "countdown_minutes": "Minute",
     "countdown_seconds": "Sekunde",

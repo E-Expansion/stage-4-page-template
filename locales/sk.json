@@ -138,6 +138,12 @@
     "back_to_main_menu": "Späť do hlavnej ponuky"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Pridať do košíka",
+      "other": "Pridať všetky {{ count }}"
+    },
+    "bundle_empty": "Zatiaľ žiadne doplnkové produkty. Pridajte ich v Search & Discovery alebo v metapoli frequently_bought_together.",
+    "bundle_total": "Spolu za sadu",
     "countdown_hours": "Hodiny",
     "countdown_minutes": "Minúty",
     "countdown_seconds": "Sekundy",

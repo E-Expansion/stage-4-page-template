@@ -134,6 +134,12 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Legg i handlekurv",
+      "other": "Legg til alle {{ count }}"
+    },
+    "bundle_empty": "Ingen utfyllende produkter ennå. Legg dem til i Search & Discovery eller metafeltet frequently_bought_together.",
+    "bundle_total": "Samlet pris",
     "countdown_hours": "Timer",
     "countdown_minutes": "Minutter",
     "countdown_seconds": "Sekunder",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Köps tillsammans",
     "product_certificate": "Produktcertifikat",
     "product_tab": "Flik",
     "product_tabs": "Produktflikar",
@@ -211,6 +212,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "bundle_max_products": "Produkter utöver denna",
     "show_image": "Visa bild",
     "show_sticky_add_to_cart": "Visa fast lägg i varukorg",
     "cutoff_hour": "Timme för deadline",
@@ -1258,6 +1260,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "bundle_discount": "Visas som lägre paketpris. Skapa en motsvarande automatisk rabatt så att kassan drar av den. 0 visar normal summa.",
+    "frequently_bought_together": "Visar kompletterande produkter från Search & Discovery, annars metafältet custom.frequently_bought_together (produktlista). Dolt om inga finns.",
     "certificate_background": "Standard är en ljus ton av betygsfärgen från temainställningarna.",
     "certificate_image": "Visas runt. Tills en bild valts visas en platshållare.",
     "certificate_link": "Certifieringsorganets webbplats. Öppnas i en ny flik.",

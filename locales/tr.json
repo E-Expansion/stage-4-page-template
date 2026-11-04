@@ -134,6 +134,12 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Sepete ekle",
+      "other": "{{ count }} ürünün hepsini ekle"
+    },
+    "bundle_empty": "Henüz tamamlayıcı ürün yok. Search & Discovery'de veya frequently_bought_together meta alanında ekleyin.",
+    "bundle_total": "Paket toplamı",
     "countdown_hours": "Saat",
     "countdown_minutes": "Dakika",
     "countdown_seconds": "Saniye",

@@ -136,6 +136,12 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Ajouter au panier",
+      "other": "Ajouter les {{ count }}"
+    },
+    "bundle_empty": "Aucun produit complémentaire. Ajoutez-en dans Search & Discovery ou dans le métachamp frequently_bought_together.",
+    "bundle_total": "Total du lot",
     "countdown_hours": "Heures",
     "countdown_minutes": "Minutes",
     "countdown_seconds": "Secondes",

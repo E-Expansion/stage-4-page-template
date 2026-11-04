@@ -167,6 +167,12 @@
     }
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Add to cart",
+      "other": "Add all {{ count }}"
+    },
+    "bundle_empty": "No complementary products yet. Add them in Search & Discovery or the product's frequently_bought_together metafield.",
+    "bundle_total": "Bundle total",
     "countdown_hours": "Hours",
     "countdown_minutes": "Minutes",
     "countdown_seconds": "Seconds",

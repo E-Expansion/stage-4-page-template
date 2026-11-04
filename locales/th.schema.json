@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "ซื้อด้วยกัน",
     "product_certificate": "ใบรับรองสินค้า",
     "product_tab": "แท็บ",
     "product_tabs": "แท็บสินค้า",
@@ -211,6 +212,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "bundle_max_products": "สินค้านอกเหนือจากชิ้นนี้",
     "show_image": "แสดงรูปภาพ",
     "show_sticky_add_to_cart": "แสดงแถบเพิ่มลงตะกร้าแบบติดหน้าจอ",
     "cutoff_hour": "ชั่วโมงปิดรับ",
@@ -1258,6 +1260,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "bundle_discount": "แสดงเป็นราคาชุดที่ต่ำลง สร้างส่วนลดอัตโนมัติที่ตรงกันใน Shopify เพื่อให้ชำระเงินคิดตามนั้น 0 แสดงราคารวมปกติ",
+    "frequently_bought_together": "แสดงสินค้าที่ใช้คู่กันจาก Search & Discovery หรือเมตาฟิลด์ custom.frequently_bought_together (รายการสินค้า) ซ่อนเมื่อไม่มี",
     "certificate_background": "ค่าเริ่มต้นคือโทนอ่อนของสีคะแนนจากการตั้งค่าธีม",
     "certificate_image": "แสดงเป็นวงกลม จนกว่าจะเลือกรูปจะแสดงตัวยึดตำแหน่ง",
     "certificate_link": "เว็บไซต์ของหน่วยงานรับรอง เปิดในแท็บใหม่",

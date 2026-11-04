@@ -136,6 +136,12 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Adaugă în coș",
+      "other": "Adaugă toate {{ count }}"
+    },
+    "bundle_empty": "Încă nu există produse complementare. Adaugă-le în Search & Discovery sau în câmpul meta frequently_bought_together.",
+    "bundle_total": "Total pachet",
     "countdown_hours": "Ore",
     "countdown_minutes": "Minute",
     "countdown_seconds": "Secunde",

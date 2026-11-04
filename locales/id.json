@@ -134,6 +134,12 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Tambah ke keranjang",
+      "other": "Tambah semua {{ count }}"
+    },
+    "bundle_empty": "Belum ada produk pelengkap. Tambahkan di Search & Discovery atau metafield frequently_bought_together.",
+    "bundle_total": "Total paket",
     "countdown_hours": "Jam",
     "countdown_minutes": "Menit",
     "countdown_seconds": "Detik",

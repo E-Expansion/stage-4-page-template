@@ -136,6 +136,12 @@
     "back_to_main_menu": "Voltar ao menu principal"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Adicionar ao carrinho",
+      "other": "Adicionar os {{ count }}"
+    },
+    "bundle_empty": "Ainda sem produtos complementares. Adicione-os no Search & Discovery ou no metacampo frequently_bought_together.",
+    "bundle_total": "Total do pack",
     "countdown_hours": "Horas",
     "countdown_minutes": "Minutos",
     "countdown_seconds": "Segundos",

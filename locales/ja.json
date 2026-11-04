@@ -134,6 +134,12 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "カートに追加",
+      "other": "{{ count }}点すべて追加"
+    },
+    "bundle_empty": "補完商品はまだありません。Search & Discovery または frequently_bought_together メタフィールドで追加してください。",
+    "bundle_total": "セット合計",
     "countdown_hours": "時間",
     "countdown_minutes": "分",
     "countdown_seconds": "秒",

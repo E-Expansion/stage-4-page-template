@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "一起購買",
     "product_certificate": "產品證書",
     "product_tab": "分頁",
     "product_tabs": "產品分頁",
@@ -211,6 +212,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "bundle_max_products": "除本產品外的產品數",
     "show_image": "顯示圖片",
     "show_sticky_add_to_cart": "顯示固定加入購物車列",
     "cutoff_hour": "截單時（小時）",
@@ -1258,6 +1260,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "bundle_discount": "顯示為較低的組合價。請在 Shopify 建立對應的自動折扣，結帳時才會套用。0 顯示一般總價。",
+    "frequently_bought_together": "顯示 Search & Discovery 中的搭配產品，否則顯示 custom.frequently_bought_together 中繼欄位（產品清單）。沒有時隱藏。",
     "certificate_background": "預設使用佈景主題設定中評分顏色的淺色。",
     "certificate_image": "以圓形顯示。選擇圖片前會顯示預留位置。",
     "certificate_link": "認證機構的網站。在新分頁中開啟。",

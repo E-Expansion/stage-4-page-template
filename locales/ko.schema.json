@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "함께 구매",
     "product_certificate": "제품 인증서",
     "product_tab": "탭",
     "product_tabs": "제품 탭",
@@ -211,6 +212,7 @@
     "disclosures": "고지 사항"
   },
   "settings": {
+    "bundle_max_products": "이 제품 외 제품 수",
     "show_image": "이미지 표시",
     "show_sticky_add_to_cart": "고정 장바구니 담기 표시",
     "cutoff_hour": "마감 시",
@@ -1258,6 +1260,8 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "bundle_discount": "더 낮은 세트 가격으로 표시됩니다. 결제 시 적용되도록 해당 자동 할인을 만드세요. 0이면 일반 합계를 표시합니다.",
+    "frequently_bought_together": "Search & Discovery의 보완 제품을, 없으면 custom.frequently_bought_together 메타필드(제품 목록)를 표시합니다. 없으면 숨겨집니다.",
     "certificate_background": "기본값은 테마 설정의 평점 색상을 연하게 한 색입니다.",
     "certificate_image": "원형으로 표시됩니다. 이미지를 선택하기 전까지 자리 표시자가 표시됩니다.",
     "certificate_link": "인증 기관의 웹사이트입니다. 새 탭에서 열립니다.",

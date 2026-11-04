@@ -134,6 +134,12 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Thêm vào giỏ",
+      "other": "Thêm cả {{ count }}"
+    },
+    "bundle_empty": "Chưa có sản phẩm bổ sung. Thêm chúng trong Search & Discovery hoặc metafield frequently_bought_together.",
+    "bundle_total": "Tổng gói",
     "countdown_hours": "Giờ",
     "countdown_minutes": "Phút",
     "countdown_seconds": "Giây",

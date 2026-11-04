@@ -134,6 +134,12 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Προσθήκη στο καλάθι",
+      "other": "Προσθήκη και των {{ count }}"
+    },
+    "bundle_empty": "Δεν υπάρχουν ακόμη συμπληρωματικά προϊόντα. Προσθέστε τα στο Search & Discovery ή στο μεταπεδίο frequently_bought_together.",
+    "bundle_total": "Σύνολο πακέτου",
     "countdown_hours": "Ώρες",
     "countdown_minutes": "Λεπτά",
     "countdown_seconds": "Δευτερόλεπτα",

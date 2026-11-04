@@ -134,6 +134,12 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Lisää ostoskoriin",
+      "other": "Lisää kaikki {{ count }}"
+    },
+    "bundle_empty": "Ei vielä täydentäviä tuotteita. Lisää ne Search & Discoveryssä tai metakentässä frequently_bought_together.",
+    "bundle_total": "Paketin hinta",
     "countdown_hours": "Tuntia",
     "countdown_minutes": "Minuuttia",
     "countdown_seconds": "Sekuntia",

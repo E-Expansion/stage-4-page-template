@@ -138,6 +138,12 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Į krepšelį",
+      "other": "Pridėti visus {{ count }}"
+    },
+    "bundle_empty": "Papildomų prekių dar nėra. Pridėkite jas Search & Discovery arba metalauke frequently_bought_together.",
+    "bundle_total": "Rinkinio suma",
     "countdown_hours": "Valandos",
     "countdown_minutes": "Minutės",
     "countdown_seconds": "Sekundės",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Købt sammen",
     "product_certificate": "Produktcertifikat",
     "product_tab": "Fane",
     "product_tabs": "Produktfaner",
@@ -211,6 +212,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "bundle_max_products": "Produkter ud over dette",
     "show_image": "Vis billede",
     "show_sticky_add_to_cart": "Vis fastgjort læg i kurv",
     "cutoff_hour": "Time for deadline",
@@ -1258,6 +1260,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "bundle_discount": "Vises som lavere samlet pris. Opret en tilsvarende automatisk rabat, så kassen trækker den. 0 viser den normale sum.",
+    "frequently_bought_together": "Viser de supplerende produkter fra Search & Discovery, ellers metafeltet custom.frequently_bought_together (produktliste). Skjult, hvis der ingen er.",
     "certificate_background": "Standard er en lys nuance af bedømmelsesfarven fra temaindstillingerne.",
     "certificate_image": "Vises rundt. Indtil et billede er valgt, vises en pladsholder.",
     "certificate_link": "Certificeringsorganets websted. Åbner i en ny fane.",

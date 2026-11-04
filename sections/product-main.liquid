@@ -28,7 +28,7 @@
     </div>
   {% endif %}
 
-  <div class="product-main__layout">
+  <div class="product-main__layout{% if section.settings.sticky_info %} product-main__layout--sticky{% endif %}">
     <div class="product-main__media">
       {% render 'product-gallery',
         product: product,
@@ -39,7 +39,7 @@
 
     {% comment %} Read by assets/product-info.js when an option or purchase type changes {% endcomment %}
     <div
-      class="product-main__info{% if section.settings.sticky_info %} product-main__info--sticky{% endif %}"
+      class="product-main__info"
       data-section-id="{{ section.id }}"
       data-product-url="{{ product.url }}"
       data-variant-id="{{ product.selected_or_first_available_variant.id }}"
@@ -93,8 +93,11 @@
     min-width: 0;
   }
 
+  /* Both columns stick; the shorter one (usually the gallery) stays in view while the
+     taller one scrolls past, the taller one has no room to stick */
   @media screen and (min-width: 990px) {
-    .product-main__info--sticky {
+    .product-main__layout--sticky > .product-main__media,
+    .product-main__layout--sticky > .product-main__info {
       position: sticky;
       inset-block-start: calc(var(--header-height, 0px) + var(--padding-lg));
     }

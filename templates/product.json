@@ -514,10 +514,19 @@
         "padding-block-start": 8,
         "padding-block-end": 48
       }
+    },
+    "bundle": {
+      "type": "product-bundle",
+      "settings": {
+        "heading": "Frequently bought together",
+        "max_products": 2,
+        "discount_percent": 10
+      }
     }
   },
   "order": [
     "main",
+    "bundle",
     "faq",
     "product_recommendations_qggXJq"
   ]

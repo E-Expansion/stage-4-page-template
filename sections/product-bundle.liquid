@@ -1,0 +1,377 @@
+{% comment %}
+  Section contract.
+  "Frequently bought together" for the product template: the current product (selected
+  variant) plus its complementary products, each with image, title and price, then the
+  bundle total with an optional bundle discount and one button that adds them all to the
+  cart. Complementary products come from Search & Discovery (complementary products) or,
+  failing that, the product's custom.frequently_bought_together metafield (list of
+  products); one template serves every product. Hidden when a product has none.
+  The discount shown here is only charged when a matching automatic discount exists.
+  @example
+  <!-- Product template > Add section > Frequently bought together -->
+{% endcomment %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign max_products = section.settings.max_products
+
+  assign complementary = product.metafields['shopify--discovery--product_recommendation'].complementary_products.value
+  if complementary == blank
+    assign complementary = product.metafields.custom.frequently_bought_together.value
+  endif
+
+  # Collect buyable extras and the bundle total
+  assign extra_ids = ''
+  assign extra_count = 0
+  assign total = variant.price
+  for extra in complementary
+    if extra_count >= max_products
+      break
+    endif
+    if extra.id == product.id or extra.available == false
+      continue
+    endif
+    assign extra_count = extra_count | plus: 1
+    assign total = total | plus: extra.selected_or_first_available_variant.price
+    assign extra_ids = extra_ids | append: ',' | append: extra.selected_or_first_available_variant.id
+  endfor
+
+  assign discount = section.settings.discount_percent
+  assign price_factor = 100 | minus: discount
+  assign bundle_price = total | times: price_factor | divided_by: 100
+  assign item_count = extra_count | plus: 1
+
+  if section.settings.button_color != blank
+    assign button_brightness = section.settings.button_color | color_brightness
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    else
+      assign button_text = 'var(--palette-lightest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: section.settings.button_color
+    endcapture
+  endif
+  if section.settings.badge_color != blank
+    assign badge_brightness = section.settings.badge_color | color_brightness
+    if badge_brightness > 128
+      assign badge_text = 'var(--palette-darkest)'
+    else
+      assign badge_text = 'var(--palette-lightest)'
+    endif
+  endif
+%}
+
+{% if extra_count > 0 or request.design_mode %}
+  {% render 'contrast-override',
+    background_color: section.settings.background_color,
+    border_color: section.settings.border_color,
+    section_id: section.id
+  %}
+
+  <script
+    src="{{ 'product-bundle.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <div class="section-background color-custom-{{ section.id }}"></div>
+  <div
+    class="product-bundle section section--page-width spacing-style color-custom-{{ section.id }}"
+    style="
+      {% render 'spacing-padding', settings: section.settings %}
+      {% if badge_text %}--product-bundle-badge-background: {{ section.settings.badge_color }}; --product-bundle-badge-text: {{ badge_text }};{% endif %}
+    "
+  >
+    <product-bundle-component
+      class="product-bundle__inner"
+      data-section-id="{{ section.id }}"
+    >
+      {% if section.settings.heading != blank %}
+        <h2 class="product-bundle__heading">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+
+      {% if extra_count == 0 %}
+        <p class="product-bundle__notice">{{ 'content.bundle_empty' | t }}</p>
+      {% else %}
+        {% comment %} Re-rendered when the product's variant changes {% endcomment %}
+        <div
+          class="product-bundle__card"
+          id="ProductBundle-{{ section.id }}"
+          data-bundle-content
+        >
+          <ul class="product-bundle__items list-unstyled">
+            {% render 'product-bundle-item', product: product, variant: variant, show_plus: false %}
+            {% assign shown = 0 %}
+            {% for extra in complementary %}
+              {% if shown >= max_products %}
+                {% break %}
+              {% endif %}
+              {% if extra.id == product.id or extra.available == false %}
+                {% continue %}
+              {% endif %}
+              {% assign shown = shown | plus: 1 %}
+              {% render 'product-bundle-item',
+                product: extra,
+                variant: extra.selected_or_first_available_variant,
+                show_plus: true
+              %}
+            {% endfor %}
+            <li
+              class="product-bundle__equals"
+              aria-hidden="true"
+            >
+              =
+            </li>
+          </ul>
+
+          <div class="product-bundle__summary">
+            <p class="product-bundle__total-label">
+              {{ 'content.bundle_total' | t }}
+              {% if discount > 0 %}
+                <s class="product-bundle__compare">{{ total | money }}</s>
+              {% endif %}
+            </p>
+            <p class="product-bundle__price">{{ bundle_price | money }}</p>
+            {% if discount > 0 %}
+              <span class="product-bundle__badge">{{ 'content.save_percent' | t: percent: discount }}</span>
+            {% endif %}
+            <button
+              type="button"
+              class="button product-bundle__button"
+              ref="addButton"
+              on:click="/addAll"
+              data-items="{{ variant.id }}{{ extra_ids }}"
+              {% unless variant.available %}
+                disabled
+              {% endunless %}
+              {% if button_text %}
+                style="
+                  --color-primary-button-background: {{ section.settings.button_color }};
+                  --color-primary-button-border: {{ section.settings.button_color }};
+                  --color-primary-button-text: {{ button_text }};
+                  --color-primary-button-hover-background: {{ button_hover | strip }};
+                  --color-primary-button-hover-border: {{ button_hover | strip }};
+                  --color-primary-button-hover-text: {{ button_text }};
+                "
+              {% endif %}
+            >
+              {{ 'content.bundle_add_all' | t: count: item_count }}
+            </button>
+            <p
+              class="product-bundle__status visually-hidden"
+              role="status"
+              ref="status"
+            ></p>
+          </div>
+        </div>
+      {% endif %}
+    </product-bundle-component>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .product-bundle__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+  }
+
+  .product-bundle__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-tight);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--3xl);
+    }
+  }
+
+  .product-bundle__notice {
+    margin: 0;
+    color: var(--color-foreground-muted);
+  }
+
+  .product-bundle__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    padding: var(--padding-md);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 750px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .product-bundle__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--gap-sm);
+    margin: 0;
+  }
+
+  .product-bundle__equals {
+    display: none;
+    align-self: center;
+
+    @media screen and (min-width: 750px) {
+      display: block;
+    }
+  }
+
+  .product-bundle__summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+    flex-shrink: 0;
+
+    @media screen and (min-width: 750px) {
+      align-self: stretch;
+      justify-content: center;
+      padding-inline-start: var(--padding-md);
+      border-inline-start: var(--style-border-width) solid var(--color-border);
+    }
+  }
+
+  .product-bundle__total-label {
+    margin: 0;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground-muted);
+  }
+
+  .product-bundle__compare {
+    text-decoration-thickness: 1.5px;
+  }
+
+  .product-bundle__price {
+    margin: 0;
+    font-size: var(--font-size--2xl);
+    line-height: 1;
+  }
+
+  .product-bundle__badge {
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--2xs);
+    line-height: 1;
+    color: var(--product-bundle-badge-text, var(--color-background));
+    background-color: var(--product-bundle-badge-background, var(--color-foreground));
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .product-bundle__button {
+    width: 100%;
+    min-height: var(--minimum-touch-target);
+    margin-block-start: var(--gap-2xs);
+  }
+
+  .product-bundle__inner[aria-busy='true'] .product-bundle__button {
+    cursor: progress;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.frequently_bought_together",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.frequently_bought_together"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Frequently bought together"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "t:settings.bundle_max_products",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "discount_percent",
+      "label": "t:settings.discount_percent",
+      "info": "t:info.bundle_discount",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:settings.button_color",
+      "default": "{{ settings.color_palette.color1 }}"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "t:settings.badge_color",
+      "default": "{{ settings.color_palette.color5 }}"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.frequently_bought_together"
+    }
+  ]
+}
+{% endschema %}

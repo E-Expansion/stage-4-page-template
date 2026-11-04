@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "Acquistati insieme",
     "product_certificate": "Certificato del prodotto",
     "product_tab": "Scheda",
     "product_tabs": "Schede prodotto",
@@ -211,6 +212,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "bundle_max_products": "Prodotti oltre a questo",
     "show_image": "Mostra immagine",
     "show_sticky_add_to_cart": "Mostra aggiunta al carrello fissa",
     "cutoff_hour": "Ora limite",
@@ -1258,6 +1260,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "bundle_discount": "Mostrato come prezzo bundle ridotto. Crea uno sconto automatico corrispondente perché il checkout lo applichi. 0 mostra il totale normale.",
+    "frequently_bought_together": "Mostra i prodotti complementari di Search & Discovery, altrimenti il metacampo custom.frequently_bought_together (elenco prodotti). Nascosto se non ce ne sono.",
     "certificate_background": "Predefinito: una tinta chiara del colore delle valutazioni delle impostazioni del tema.",
     "certificate_image": "Mostrata in un cerchio. Finché non scegli un'immagine appare un segnaposto.",
     "certificate_link": "Il sito dell'ente certificatore. Si apre in una nuova scheda.",

@@ -138,6 +138,12 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "В корзину",
+      "other": "Добавить все {{ count }}"
+    },
+    "bundle_empty": "Пока нет сопутствующих товаров. Добавьте их в Search & Discovery или в метаполе frequently_bought_together.",
+    "bundle_total": "Итого за комплект",
     "countdown_hours": "Часы",
     "countdown_minutes": "Минуты",
     "countdown_seconds": "Секунды",

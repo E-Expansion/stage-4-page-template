@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "frequently_bought_together": "一起购买",
     "product_certificate": "产品证书",
     "product_tab": "标签页",
     "product_tabs": "产品标签页",
@@ -211,6 +212,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "bundle_max_products": "除本产品外的产品数",
     "show_image": "显示图片",
     "show_sticky_add_to_cart": "显示固定加入购物车栏",
     "cutoff_hour": "截单时（小时）",
@@ -1258,6 +1260,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "bundle_discount": "显示为较低的组合价。请在 Shopify 中创建对应的自动折扣，结账时才会生效。0 显示普通总价。",
+    "frequently_bought_together": "显示 Search & Discovery 中的搭配产品，否则显示 custom.frequently_bought_together 元字段（产品列表）。没有时隐藏。",
     "certificate_background": "默认使用主题设置中评分颜色的浅色。",
     "certificate_image": "以圆形显示。选择图片前显示占位图。",
     "certificate_link": "认证机构的网站。在新标签页中打开。",

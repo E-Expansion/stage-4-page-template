@@ -134,6 +134,12 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Lägg i varukorg",
+      "other": "Lägg till alla {{ count }}"
+    },
+    "bundle_empty": "Inga kompletterande produkter än. Lägg till dem i Search & Discovery eller metafältet frequently_bought_together.",
+    "bundle_total": "Paketpris",
     "countdown_hours": "Timmar",
     "countdown_minutes": "Minuter",
     "countdown_seconds": "Sekunder",

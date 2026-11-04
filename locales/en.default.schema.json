@@ -235,6 +235,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "bundle_discount": "Shown as a lower bundle price. Create a matching automatic discount in Shopify so checkout charges it. 0 shows the plain total.",
+    "frequently_bought_together": "Shows the product's complementary products from Search & Discovery, or else its custom.frequently_bought_together metafield (list of products). Hidden when there are none.",
     "certificate_background": "Defaults to a light tint of the rating color from Theme settings.",
     "certificate_image": "Shown in a circle. Until an image is chosen, a placeholder shows.",
     "certificate_link": "The certifying organisation's website. Opens in a new tab.",
@@ -325,6 +327,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "frequently_bought_together": "Bought together",
     "product_certificate": "Product certificate",
     "product_tab": "Tab",
     "product_tabs": "Product tabs",
@@ -852,6 +855,7 @@
     "below_media": "Below media"
   },
   "settings": {
+    "bundle_max_products": "Products besides this one",
     "show_image": "Show image",
     "show_sticky_add_to_cart": "Show sticky add to cart",
     "cutoff_hour": "Cut-off hour",

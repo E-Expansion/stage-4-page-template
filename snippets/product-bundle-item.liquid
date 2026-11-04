@@ -1,0 +1,95 @@
+{%- doc -%}
+  Renders one product in the "Frequently bought together" row: image, title and price of
+  the given variant, preceded by a "+" when it follows another item.
+
+  @param {object} product - The product
+  @param {object} variant - The variant whose image and price to show
+  @param {boolean} [show_plus] - Show a "+" before the item
+
+  @example
+  {% render 'product-bundle-item', product: product, variant: product.selected_or_first_available_variant %}
+{%- enddoc -%}
+
+{% liquid
+  assign image = variant.featured_media.preview_image | default: product.featured_media.preview_image
+%}
+
+{% if show_plus %}
+  <li
+    class="product-bundle__plus"
+    aria-hidden="true"
+  >
+    +
+  </li>
+{% endif %}
+<li class="product-bundle__item">
+  <a
+    href="{{ variant.url | default: product.url }}"
+    class="product-bundle__link"
+  >
+    {% if image != blank %}
+      {{
+        image
+        | image_url: width: 240
+        | image_tag: width: 80, height: 80, loading: 'lazy', alt: '', class: 'product-bundle__image'
+      }}
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'product-bundle__image product-bundle__image--placeholder' }}
+    {% endif %}
+    <span class="product-bundle__title">{{ product.title | escape }}</span>
+  </a>
+  <span class="product-bundle__item-price">{{ variant.price | money }}</span>
+</li>
+
+{% stylesheet %}
+  .product-bundle__plus {
+    align-self: center;
+    margin-block-end: var(--padding-4xl);
+  }
+
+  .product-bundle__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3xs);
+    width: 5rem;
+    font-size: var(--font-size--sm);
+
+    @media screen and (min-width: 750px) {
+      width: 6.5rem;
+    }
+  }
+
+  .product-bundle__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    color: var(--color-foreground);
+    text-decoration: none;
+
+    &:hover .product-bundle__title {
+      text-decoration: underline;
+    }
+  }
+
+  .product-bundle__image {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .product-bundle__image--placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    fill: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .product-bundle__title {
+    line-height: var(--line-height--body-normal);
+    overflow-wrap: anywhere;
+  }
+
+  .product-bundle__item-price {
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}

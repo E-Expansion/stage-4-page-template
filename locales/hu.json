@@ -134,6 +134,12 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Kosárba",
+      "other": "Mind a(z) {{ count }} kosárba"
+    },
+    "bundle_empty": "Még nincsenek kiegészítő termékek. Add hozzá őket a Search & Discoveryben vagy a frequently_bought_together metamezőben.",
+    "bundle_total": "Csomag összesen",
     "countdown_hours": "Óra",
     "countdown_minutes": "Perc",
     "countdown_seconds": "Másodperc",

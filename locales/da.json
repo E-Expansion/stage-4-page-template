@@ -134,6 +134,12 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "bundle_add_all": {
+      "one": "Læg i kurv",
+      "other": "Tilføj alle {{ count }}"
+    },
+    "bundle_empty": "Ingen supplerende produkter endnu. Tilføj dem i Search & Discovery eller metafeltet frequently_bought_together.",
+    "bundle_total": "Samlet pris",
     "countdown_hours": "Timer",
     "countdown_minutes": "Minutter",
     "countdown_seconds": "Sekunder",
