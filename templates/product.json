@@ -60,7 +60,12 @@
         },
         "purchase_options": {
           "type": "_product-purchase-options",
-          "settings": {}
+          "settings": {
+            "one_time_label": "One-time purchase",
+            "subscribe_label": "Subscribe & save",
+            "badge_color": "{{ settings.color_palette.color5 }}"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -68,8 +73,8 @@
         "meta",
         "price",
         "variant_picker",
-        "purchase_options",
-        "buy"
+        "buy",
+        "purchase_options"
       ],
       "settings": {
         "show_breadcrumbs": true,
