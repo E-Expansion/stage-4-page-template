@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "免費贈品進度",
     "gift_wrap": "禮品包裝",
     "volume_pricing": "多買更省",
     "volume_tier": "數量級距",
@@ -203,6 +204,8 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "free_gift_success": "達成時的訊息",
+    "free_gift_threshold": "免費贈品門檻（商店幣別）",
     "description": "說明",
     "gift_wrap_product": "禮品包裝產品",
     "show_gift_note": "顯示留言欄位",
@@ -1231,6 +1234,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "free_gift": "顯示購物車距離免費贈品還差多少。贈品本身需在 Shopify 中設定，例如使用自動折扣或贈品應用程式。",
+    "free_gift_message": "使用 [amount] 表示仍需的金額。",
     "gift_wrap_product": "一個承載禮品包裝價格的產品，例如售價 €4.50 的「禮品包裝」。將它加入線上商店通路，但不要放入任何商品系列。",
     "volume_pricing": "僅顯示價格。請在 Shopify 中建立對應的自動折扣（折扣 > 產品金額折扣，設定最低數量），結帳時才會套用。",
     "purchase_options": "當產品有來自訂閱應用程式（例如 Shopify Subscriptions）的訂閱方案時顯示，否則隱藏。",

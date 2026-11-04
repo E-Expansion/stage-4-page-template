@@ -138,6 +138,8 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",
+    "gift_wrap_unavailable": "Gift wrap is hidden: \"{{ product }}\" can't be bought. Set it to Active, add it to the Online Store channel, and give it stock or turn off inventory tracking.",
     "gift_note": "Записка к подарку",
     "price_each": "{{ price }} за шт.",
     "save_percent": "Экономия {{ percent }}%",

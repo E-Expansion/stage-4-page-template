@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Postup k dárku zdarma",
     "gift_wrap": "Dárkové balení",
     "volume_pricing": "Kupte víc, zaplaťte méně",
     "volume_tier": "Množstevní stupeň",
@@ -203,6 +204,8 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "free_gift_success": "Zpráva po dosažení",
+    "free_gift_threshold": "Dárek zdarma od (měna obchodu)",
     "description": "Popis",
     "gift_wrap_product": "Produkt dárkového balení",
     "show_gift_note": "Zobrazit pole pro vzkaz",
@@ -1231,6 +1234,8 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "free_gift": "Ukazuje, kolik v košíku chybí do dárku zdarma. Samotný dárek nastavte v Shopify, např. automatickou slevou nebo aplikací.",
+    "free_gift_message": "Použijte [amount] pro chybějící částku.",
     "gift_wrap_product": "Produkt s cenou dárkového balení, např. „Dárkové balení“ za 4,50 €. Přidejte ho do prodejního kanálu Online obchod, ale ne do kolekcí.",
     "volume_pricing": "Zobrazuje jen ceny. Vytvořte odpovídající automatické slevy v Shopify (Slevy > Částka z produktů, s minimálním množstvím), aby je pokladna uplatnila.",
     "purchase_options": "Zobrazí se, když má produkt plány předplatného z aplikace jako Shopify Subscriptions. Jinak skryto.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Postęp do prezentu",
     "gift_wrap": "Pakowanie na prezent",
     "volume_pricing": "Kup więcej, zapłać mniej",
     "volume_tier": "Próg ilościowy",
@@ -203,6 +204,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "free_gift_success": "Komunikat po osiągnięciu",
+    "free_gift_threshold": "Prezent od (waluta sklepu)",
     "description": "Opis",
     "gift_wrap_product": "Produkt pakowania",
     "show_gift_note": "Pokaż pole wiadomości",
@@ -1231,6 +1234,8 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "free_gift": "Pokazuje, ile brakuje w koszyku do darmowego prezentu. Skonfiguruj prezent w Shopify, np. rabatem automatycznym lub aplikacją.",
+    "free_gift_message": "Użyj [amount] dla brakującej kwoty.",
     "gift_wrap_product": "Produkt z ceną pakowania, np. „Pakowanie na prezent” za 4,50 €. Dodaj go do kanału Sklep internetowy, ale nie do kolekcji.",
     "volume_pricing": "Pokazuje tylko ceny. Utwórz odpowiadające rabaty automatyczne w Shopify (Rabaty > Kwota na produkty, z minimalną ilością), aby kasa je naliczała.",
     "purchase_options": "Widoczne, gdy produkt ma plany subskrypcji z aplikacji, np. Shopify Subscriptions. W przeciwnym razie ukryte.",

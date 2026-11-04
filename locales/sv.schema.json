@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Framsteg mot gratis gåva",
     "gift_wrap": "Presentinslagning",
     "volume_pricing": "Köp mer, betala mindre",
     "volume_tier": "Mängdnivå",
@@ -203,6 +204,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "free_gift_success": "Meddelande när det nås",
+    "free_gift_threshold": "Gratis gåva från (butikens valuta)",
     "description": "Beskrivning",
     "gift_wrap_product": "Produkt för presentinslagning",
     "show_gift_note": "Visa fält för hälsning",
@@ -1231,6 +1234,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "free_gift": "Visar hur långt varukorgen är från en gratis gåva. Ställ in själva gåvan i Shopify, t.ex. med en automatisk rabatt eller en gåvoapp.",
+    "free_gift_message": "Använd [amount] för beloppet som saknas.",
     "gift_wrap_product": "En produkt med priset för presentinslagning, t.ex. \"Presentinslagning\" för 4,50 €. Lägg till den i försäljningskanalen Webbutik men inte i kollektioner.",
     "volume_pricing": "Visar bara priserna. Skapa motsvarande automatiska rabatter i Shopify (Rabatter > Belopp på produkter, med minsta antal) så att kassan drar av dem.",
     "purchase_options": "Visas när produkten har prenumerationsplaner från en prenumerationsapp som Shopify Subscriptions. Annars dold.",

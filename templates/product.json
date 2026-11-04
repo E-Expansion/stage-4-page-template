@@ -107,6 +107,10 @@
         "gift_wrap": {
           "type": "_product-gift-wrap",
           "settings": {}
+        },
+        "free_gift": {
+          "type": "_product-free-gift",
+          "settings": {}
         }
       },
       "block_order": [
@@ -117,7 +121,8 @@
         "buy",
         "purchase_options",
         "volume_pricing",
-        "gift_wrap"
+        "gift_wrap",
+        "free_gift"
       ],
       "settings": {
         "show_breadcrumbs": true,

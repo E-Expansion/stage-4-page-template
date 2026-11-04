@@ -233,6 +233,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "free_gift": "Shows how far the cart is from a free gift. Set up the gift itself in Shopify, for example with an automatic discount or a gift app.",
+    "free_gift_message": "Use [amount] for the amount still needed.",
     "gift_wrap_product": "A product that holds the gift wrap price, e.g. \"Gift wrap\" at €4.50. Add it to the Online Store channel but leave it out of collections.",
     "volume_pricing": "Shows the prices only. Create matching automatic discounts in Shopify (Discounts > Amount off products, with a minimum quantity) so checkout charges them.",
     "purchase_options": "Shows when the product has subscription plans from a subscription app, such as Shopify Subscriptions. Hidden otherwise.",
@@ -310,6 +312,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "free_gift": "Free gift progress",
     "gift_wrap": "Gift wrap",
     "volume_pricing": "Buy more, pay less",
     "volume_tier": "Quantity tier",
@@ -829,6 +832,8 @@
     "below_media": "Below media"
   },
   "settings": {
+    "free_gift_success": "Message when reached",
+    "free_gift_threshold": "Free gift from (store currency)",
     "description": "Description",
     "gift_wrap_product": "Gift wrap product",
     "show_gift_note": "Show note field",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Ilmaisen lahjan edistyminen",
     "gift_wrap": "Lahjapaketointi",
     "volume_pricing": "Osta enemmän, maksa vähemmän",
     "volume_tier": "Määräporras",
@@ -203,6 +204,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "free_gift_success": "Viesti, kun saavutettu",
+    "free_gift_threshold": "Ilmainen lahja alkaen (kaupan valuutta)",
     "description": "Kuvaus",
     "gift_wrap_product": "Lahjapaketoinnin tuote",
     "show_gift_note": "Näytä viestikenttä",
@@ -1231,6 +1234,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "free_gift": "Näyttää, kuinka paljon ostoskorista puuttuu ilmaiseen lahjaan. Määritä itse lahja Shopifyssa, esim. automaattisella alennuksella tai lahjasovelluksella.",
+    "free_gift_message": "Käytä [amount] puuttuvalle summalle.",
     "gift_wrap_product": "Tuote, jossa on lahjapaketoinnin hinta, esim. \"Lahjapaketointi\" 4,50 €. Lisää se Verkkokauppa-myyntikanavaan, mutta ei kokoelmiin.",
     "volume_pricing": "Näyttää vain hinnat. Luo vastaavat automaattiset alennukset Shopifyssa (Alennukset > Summa tuotteista, vähimmäismäärällä), jotta kassa veloittaa ne.",
     "purchase_options": "Näytetään, kun tuotteella on tilaussuunnitelmia tilaussovelluksesta, kuten Shopify Subscriptions. Muuten piilotettu.",

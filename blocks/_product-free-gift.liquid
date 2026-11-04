@@ -1,0 +1,198 @@
+{% doc %}
+  Renders the free gift progress card: "€35.00 away from a free gift with your order.",
+  the percentage reached and a progress bar, based on the cart total and the threshold in
+  the block settings. Once the threshold is reached the success message shows instead.
+  Updates live when the cart changes (assets/product-free-gift.js). Shows progress only;
+  the gift itself comes from a discount or app set up in Shopify.
+
+  The threshold is in the store's currency; with other presentment currencies the
+  amounts are not converted.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign threshold = block.settings.threshold | times: 100 | round
+  assign total = cart.total_price
+  assign remaining = threshold | minus: total | at_least: 0
+  assign percent = 0
+  if threshold > 0
+    assign percent = total | times: 100 | divided_by: threshold | at_most: 100
+  endif
+  assign reached = false
+  if remaining == 0
+    assign reached = true
+  endif
+
+  capture amount_html
+    echo '<span class="free-gift__amount" ref="amount">'
+    echo remaining | money
+    echo '</span>'
+  endcapture
+  assign message = block.settings.message | escape | replace: '[amount]', amount_html
+%}
+
+{% if threshold > 0 %}
+  <script
+    src="{{ 'product-free-gift.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <product-free-gift-component
+    class="free-gift{% if reached %} free-gift--reached{% endif %}"
+    data-threshold="{{ threshold }}"
+    data-money-format="{{ shop.money_format | strip_html | escape }}"
+    data-currency="{{ cart.currency.iso_code }}"
+    {% if block.settings.accent_color != blank %}
+      style="--free-gift-accent: {{ block.settings.accent_color }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    <div class="free-gift__row">
+      <span
+        class="free-gift__icon svg-wrapper"
+        aria-hidden="true"
+      >
+        {{- 'icon-gift.svg' | inline_asset_content -}}
+      </span>
+      <p
+        class="free-gift__message"
+        aria-live="polite"
+      >
+        <span class="free-gift__progress-text">{{ message }}</span>
+        <span class="free-gift__success-text">{{ block.settings.success_message | escape }}</span>
+      </p>
+      <span
+        class="free-gift__percent"
+        ref="percent"
+        aria-hidden="true"
+        >{{ percent }}%</span
+      >
+    </div>
+
+    <div
+      class="free-gift__bar"
+      role="progressbar"
+      aria-label="{{ block.settings.success_message | escape }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="{{ percent }}"
+      ref="bar"
+      style="--free-gift-progress: {{ percent }}%;"
+    ></div>
+  </product-free-gift-component>
+{% endif %}
+
+{% stylesheet %}
+  .free-gift {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding: var(--padding-md) var(--padding-lg);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .free-gift__row {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+  }
+
+  .free-gift__icon {
+    flex-shrink: 0;
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-foreground-muted);
+  }
+
+  .free-gift__message {
+    flex: 1;
+    margin: 0;
+    font-size: var(--font-size--sm);
+  }
+
+  .free-gift__amount {
+    color: var(--free-gift-accent, var(--color-foreground));
+  }
+
+  .free-gift__percent {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .free-gift__success-text,
+  .free-gift--reached .free-gift__progress-text,
+  .free-gift--reached .free-gift__percent {
+    display: none;
+  }
+
+  .free-gift--reached .free-gift__success-text {
+    display: inline;
+    color: var(--free-gift-accent, var(--color-foreground));
+  }
+
+  .free-gift__bar {
+    position: relative;
+    height: 0.375rem;
+    overflow: hidden;
+    background-color: var(--color-border);
+    border-radius: var(--style-border-radius-pills);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      width: var(--free-gift-progress, 0%);
+      background-color: var(--free-gift-accent, var(--color-foreground));
+      border-radius: inherit;
+      transition: width var(--animation-speed) var(--animation-easing);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.free_gift",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.free_gift"
+    },
+    {
+      "type": "number",
+      "id": "threshold",
+      "label": "t:settings.free_gift_threshold",
+      "default": 220
+    },
+    {
+      "type": "text",
+      "id": "message",
+      "label": "t:settings.text",
+      "info": "t:info.free_gift_message",
+      "default": "[amount] away from a free gift with your order."
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "t:settings.free_gift_success",
+      "default": "You've unlocked a free gift with your order!"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.free_gift"
+    }
+  ]
+}
+{% endschema %}

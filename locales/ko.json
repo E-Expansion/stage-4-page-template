@@ -134,6 +134,8 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",
+    "gift_wrap_unavailable": "Gift wrap is hidden: \"{{ product }}\" can't be bought. Set it to Active, add it to the Online Store channel, and give it stock or turn off inventory tracking.",
     "gift_note": "선물 메시지",
     "price_each": "개당 {{ price }}",
     "save_percent": "{{ percent }}% 절약",

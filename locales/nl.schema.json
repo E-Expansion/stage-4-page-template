@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Voortgang gratis cadeau",
     "gift_wrap": "Cadeauverpakking",
     "volume_pricing": "Meer kopen, minder betalen",
     "volume_tier": "Staffel",
@@ -203,6 +204,8 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "free_gift_success": "Bericht als het bereikt is",
+    "free_gift_threshold": "Gratis cadeau vanaf (winkelvaluta)",
     "description": "Omschrijving",
     "gift_wrap_product": "Product voor cadeauverpakking",
     "show_gift_note": "Notitieveld tonen",
@@ -1231,6 +1234,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "free_gift": "Laat zien hoe ver de winkelwagen van een gratis cadeau af zit. Stel het cadeau zelf in Shopify in, bijvoorbeeld met een automatische korting of een cadeau-app.",
+    "free_gift_message": "Gebruik [amount] voor het bedrag dat nog nodig is.",
     "gift_wrap_product": "Een product met de prijs van de cadeauverpakking, bijv. \"Gift wrap\" à €4,50. Zet het op het verkoopkanaal Online Store, maar niet in collecties.",
     "volume_pricing": "Toont alleen de prijzen. Maak bijpassende automatische kortingen in Shopify (Discounts > Amount off products, met een minimumaantal) zodat de checkout ze ook rekent.",
     "purchase_options": "Verschijnt als het product abonnementen heeft via een abonnementsapp, zoals Shopify Subscriptions. Anders verborgen.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Fremdrift mot gratis gave",
     "gift_wrap": "Gaveinnpakning",
     "volume_pricing": "Kjøp mer, betal mindre",
     "volume_tier": "Mengdetrinn",
@@ -203,6 +204,8 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "free_gift_success": "Melding når nådd",
+    "free_gift_threshold": "Gratis gave fra (butikkens valuta)",
     "description": "Beskrivelse",
     "gift_wrap_product": "Produkt for gaveinnpakning",
     "show_gift_note": "Vis felt for hilsen",
@@ -1231,6 +1234,8 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "free_gift": "Viser hvor langt handlekurven er fra en gratis gave. Sett opp selve gaven i Shopify, f.eks. med en automatisk rabatt eller en gaveapp.",
+    "free_gift_message": "Bruk [amount] for beløpet som mangler.",
     "gift_wrap_product": "Et produkt med prisen for gaveinnpakning, f.eks. «Gaveinnpakning» til €4,50. Legg det til i salgskanalen Nettbutikk, men ikke i kolleksjoner.",
     "volume_pricing": "Viser bare prisene. Opprett tilsvarende automatiske rabatter i Shopify (Rabatter > Beløp av produkter, med minimumsantall) slik at kassen trekker dem.",
     "purchase_options": "Vises når produktet har abonnementsplaner fra en abonnementsapp som Shopify Subscriptions. Ellers skjult.",

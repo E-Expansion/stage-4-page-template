@@ -3,7 +3,8 @@
   with a short description, and a note field that appears when it is ticked. The gift wrap
   is a separate product chosen in the block settings; when ticked, add to cart first adds
   that product (with the note as a line item property) and then the main product, so the
-  charge shows up in the cart and at checkout. Renders nothing until a product is chosen.
+  charge shows up in the cart and at checkout. Renders nothing for shoppers until a buyable
+  product is chosen; the editor shows why instead.
   Behaviour lives in assets/product-gift-wrap.js.
 
   @example
@@ -85,6 +86,18 @@
       </div>
     {% endif %}
   </product-gift-wrap-component>
+{% elsif request.design_mode %}
+  {% comment %} Editor only: explain why shoppers don't see the block {% endcomment %}
+  <p
+    class="gift-wrap gift-wrap--notice"
+    {{ block.shopify_attributes }}
+  >
+    {%- if wrap_product == blank -%}
+      {{ 'content.gift_wrap_no_product' | t }}
+    {%- else -%}
+      {{ 'content.gift_wrap_unavailable' | t: product: wrap_product.title }}
+    {%- endif -%}
+  </p>
 {% endif %}
 
 {% stylesheet %}
@@ -95,6 +108,13 @@
     padding: var(--padding-md) var(--padding-lg);
     border: var(--style-border-width) solid var(--color-border);
     border-radius: var(--style-border-radius-xs);
+  }
+
+  .gift-wrap--notice {
+    margin: 0;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground-muted);
+    border-style: dashed;
   }
 
   .gift-wrap__option {

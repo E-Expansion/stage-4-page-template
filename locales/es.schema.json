@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Progreso del regalo",
     "gift_wrap": "Envoltorio de regalo",
     "volume_pricing": "Compra más, paga menos",
     "volume_tier": "Nivel de cantidad",
@@ -203,6 +204,8 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "free_gift_success": "Mensaje al alcanzarlo",
+    "free_gift_threshold": "Regalo a partir de (moneda de la tienda)",
     "description": "Descripción",
     "gift_wrap_product": "Producto de envoltorio",
     "show_gift_note": "Mostrar campo de nota",
@@ -1231,6 +1234,8 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "free_gift": "Muestra cuánto le falta al carrito para un regalo. Configura el regalo en Shopify, por ejemplo con un descuento automático o una app de regalos.",
+    "free_gift_message": "Usa [amount] para el importe que falta.",
     "gift_wrap_product": "Un producto con el precio del envoltorio, p. ej. \"Envoltorio de regalo\" a 4,50 €. Añádelo al canal Tienda online, pero no a colecciones.",
     "volume_pricing": "Solo muestra los precios. Crea descuentos automáticos equivalentes en Shopify (Descuentos > Importe de descuento en productos, con cantidad mínima) para que el pago los aplique.",
     "purchase_options": "Se muestra cuando el producto tiene planes de suscripción de una app como Shopify Subscriptions. Oculto en caso contrario.",

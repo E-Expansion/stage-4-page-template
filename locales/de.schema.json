@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "free_gift": "Fortschritt Gratisgeschenk",
     "gift_wrap": "Geschenkverpackung",
     "volume_pricing": "Mehr kaufen, weniger zahlen",
     "volume_tier": "Mengenstaffel",
@@ -203,6 +204,8 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "free_gift_success": "Nachricht bei Erreichen",
+    "free_gift_threshold": "Gratisgeschenk ab (Shopwährung)",
     "description": "Beschreibung",
     "gift_wrap_product": "Produkt für Geschenkverpackung",
     "show_gift_note": "Notizfeld anzeigen",
@@ -1231,6 +1234,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "free_gift": "Zeigt, wie weit der Warenkorb von einem Gratisgeschenk entfernt ist. Richte das Geschenk selbst in Shopify ein, z. B. mit einem automatischen Rabatt oder einer Geschenk-App.",
+    "free_gift_message": "Verwende [amount] für den noch fehlenden Betrag.",
     "gift_wrap_product": "Ein Produkt mit dem Preis der Geschenkverpackung, z. B. „Geschenkverpackung“ für 4,50 €. Im Vertriebskanal Onlineshop verfügbar machen, aber in keine Kollektion aufnehmen.",
     "volume_pricing": "Zeigt nur die Preise. Lege passende automatische Rabatte in Shopify an (Rabatte > Betrag auf Produkte, mit Mindestmenge), damit der Checkout sie berechnet.",
     "purchase_options": "Wird angezeigt, wenn das Produkt Abo-Pläne aus einer Abo-App wie Shopify Subscriptions hat. Sonst ausgeblendet.",
