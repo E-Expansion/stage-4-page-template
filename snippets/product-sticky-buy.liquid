@@ -1,0 +1,209 @@
+{%- doc -%}
+  Renders the sticky add to cart bar that slides in at the bottom of the viewport once the
+  main add to cart button has scrolled out of view: product title, rating and stock row,
+  price and an add to cart button. The button submits the main buy form, so the chosen
+  variant, purchase option, quantity tier and gift wrap all apply. The inner content is
+  re-rendered with the information column when the variant changes. Behaviour lives in
+  assets/sticky-buy.js.
+
+  @param {object} product - The product
+  @param {string} section_id - The product section ID; ties the bar to the buy form
+  @param {object} [meta_settings] - Settings of the product rating block, to mirror its row
+  @param {string} [button_color] - Button background color
+
+  @example
+  {% render 'product-sticky-buy', product: product, section_id: section.id, meta_settings: meta_block.settings %}
+{%- enddoc -%}
+
+{% render 'price-styles' %}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign allocation = variant.selected_selling_plan_allocation
+  if allocation == blank and product.requires_selling_plan
+    assign allocation = variant.selling_plan_allocations.first
+  endif
+  assign price_cents = variant.price
+  if allocation != blank
+    assign price_cents = allocation.price
+  endif
+  if settings.currency_code_enabled_product_pages
+    assign price = price_cents | money_with_currency
+  else
+    assign price = price_cents | money
+  endif
+
+  if variant.available
+    assign button_label = 'products.product.add_to_cart' | t
+  else
+    assign button_label = 'products.product.sold_out' | t
+  endif
+
+  assign form_id = 'ProductBuyForm-' | append: section_id
+
+  if button_color != blank
+    assign button_brightness = button_color | color_brightness
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    else
+      assign button_text = 'var(--palette-lightest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: button_color
+    endcapture
+  endif
+%}
+
+<script
+  src="{{ 'sticky-buy.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<sticky-buy-component
+  class="sticky-buy"
+  data-form-id="{{ form_id }}"
+  aria-hidden="true"
+  inert
+  {% if button_color != blank %}
+    style="
+      --color-primary-button-background: {{ button_color }};
+      --color-primary-button-border: {{ button_color }};
+      --color-primary-button-text: {{ button_text }};
+      --color-primary-button-hover-background: {{ button_hover | strip }};
+      --color-primary-button-hover-border: {{ button_hover | strip }};
+      --color-primary-button-hover-text: {{ button_text }};
+    "
+  {% endif %}
+>
+  {% comment %} Re-rendered on variant change by assets/product-info.js {% endcomment %}
+  <div
+    class="sticky-buy__inner"
+    id="StickyBuy-{{ section_id }}"
+    data-variant-refresh
+  >
+    <div class="sticky-buy__info">
+      <p class="sticky-buy__title">{{ product.title | escape }}</p>
+      {% if meta_settings != blank %}
+        {% render 'product-meta-row',
+          product: product,
+          show_rating: meta_settings.show_rating,
+          show_sold_this_week: meta_settings.show_sold_this_week,
+          show_stock: meta_settings.show_stock,
+          in_stock_note: meta_settings.in_stock_note,
+          class: 'sticky-buy__meta'
+        %}
+      {% endif %}
+    </div>
+
+    <p class="sticky-buy__price price">{{ price }}</p>
+
+    <button
+      type="button"
+      class="button sticky-buy__button"
+      on:click="/addToCart"
+      {% unless variant.available %}
+        disabled
+      {% endunless %}
+    >
+      {{ button_label }}
+    </button>
+  </div>
+</sticky-buy-component>
+
+{% stylesheet %}
+  .sticky-buy {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: var(--layer-sticky);
+    display: block;
+    background-color: var(--color-background);
+    border-block-start: var(--style-border-width) solid var(--color-border);
+    box-shadow: 0 -4px 16px rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform var(--animation-speed) var(--animation-easing),
+      visibility 0s linear var(--animation-speed);
+
+    &[data-visible] {
+      transform: none;
+      visibility: visible;
+      transition: transform var(--animation-speed) var(--animation-easing), visibility 0s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+
+      &[data-visible] {
+        transition: none;
+      }
+    }
+  }
+
+  body:has(.sticky-buy[data-visible]) {
+    padding-block-end: var(--sticky-buy-height, 0px);
+  }
+
+  .sticky-buy__inner {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    width: min(100%, var(--page-width, 100%));
+    margin-inline: auto;
+    padding: var(--padding-sm) var(--page-margin, var(--padding-md));
+
+    @media screen and (min-width: 750px) {
+      gap: var(--gap-xl);
+    }
+  }
+
+  .sticky-buy__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3xs);
+    min-width: 0;
+  }
+
+  .sticky-buy__title {
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--md);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xl);
+    }
+  }
+
+  /* The row of labels needs more room than a phone offers */
+  @media screen and (max-width: 749px) {
+    .sticky-buy .sticky-buy__meta {
+      display: none;
+    }
+  }
+
+  .sticky-buy__price {
+    margin: 0;
+    font-size: var(--font-size--lg);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--2xl);
+    }
+  }
+
+  .sticky-buy__button {
+    flex-shrink: 0;
+    min-height: var(--minimum-touch-target);
+    padding-inline: var(--padding-lg);
+
+    @media screen and (min-width: 750px) {
+      padding-inline: var(--padding-xl);
+    }
+  }
+{% endstylesheet %}

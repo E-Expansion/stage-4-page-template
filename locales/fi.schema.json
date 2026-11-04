@@ -207,6 +207,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Näytä kiinteä lisää ostoskoriin",
     "cutoff_hour": "Määräajan tunti",
     "cutoff_minute": "Määräajan minuutti",
     "ships_today_text": "Teksti lähetys tänään",
@@ -1017,6 +1018,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "sticky_add_to_cart": "Kiinteä Lisää ostoskoriin -toiminto",
     "order_cutoff": "Tilauksen määräaika ja lähetyspäivät",
     "product_tiles": "Tuoteruudut",
     "breadcrumbs": "Murupolku",
@@ -1251,6 +1253,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "show_sticky_add_to_cart": "Liukuu näkyviin näytön alareunaan, kun ostoskoripainike vierii pois näkyvistä. Näyttää nimen, arvioinnit-lohkon rivin, hinnan ja painikkeen.",
     "order_cutoff": "Ennen tätä aikaa valittuna päivänä tehdyt tilaukset lähtevät samana päivänä. Ajat kaupan aikavyöhykkeellä (Asetukset > Yleiset).",
     "shipping_countdown_color": "Oletuksena teeman asetusten varastossa-väri.",
     "delivery_working_days": "Ohittaa lauantait ja sunnuntait. Päivämäärät lasketaan tästä päivästä kävijän selaimessa.",

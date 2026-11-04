@@ -207,6 +207,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Sticky add to cart tonen",
     "cutoff_hour": "Uur van de deadline",
     "cutoff_minute": "Minuut van de deadline",
     "ships_today_text": "Tekst verzonden vandaag",
@@ -1017,6 +1018,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "sticky_add_to_cart": "Vaste 'Toevoegen aan winkelwagen'-balk",
     "order_cutoff": "Besteldeadline en verzenddagen",
     "product_tiles": "Producttegels",
     "breadcrumbs": "Kruimelpad",
@@ -1251,6 +1253,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "show_sticky_add_to_cart": "Schuift onderaan het scherm in zodra de winkelwagenknop uit beeld scrolt. Toont de titel, de rij van het beoordelingsblok, de prijs en een winkelwagenknop.",
     "order_cutoff": "Bestellingen vóór dit tijdstip op een aangevinkte dag worden dezelfde dag verzonden. Tijden zijn in de tijdzone van je winkel (Settings > General).",
     "shipping_countdown_color": "Standaard de kleur voor op voorraad uit de theme-instellingen.",
     "delivery_working_days": "Slaat zaterdag en zondag over. De datums worden vanaf vandaag in de browser van de bezoeker berekend.",

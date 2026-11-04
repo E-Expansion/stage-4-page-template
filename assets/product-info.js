@@ -62,6 +62,14 @@ export async function refreshProductInfo(source, { optionValues, variantId, sell
       if (input instanceof HTMLInputElement) input.checked = true;
     }
 
+    // Parts outside the column that also follow the variant, e.g. the sticky add to cart bar
+    for (const part of column.closest('.shopify-section')?.querySelectorAll('[data-variant-refresh][id]') ?? []) {
+      const nextPart = html.getElementById(part.id);
+      if (nextPart) morph(part, nextPart);
+    }
+
+    column.dispatchEvent(new CustomEvent('product-info:render', { bubbles: true }));
+
     const { variantId: newVariantId, sellingPlanId: newSellingPlanId, mediaId } = column.dataset;
     updateUrl(newVariantId, newSellingPlanId);
 

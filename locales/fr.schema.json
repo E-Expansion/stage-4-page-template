@@ -207,6 +207,7 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Afficher l'ajout au panier fixe",
     "cutoff_hour": "Heure limite",
     "cutoff_minute": "Minute limite",
     "ships_today_text": "Texte expédition aujourd'hui",
@@ -1017,6 +1018,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "sticky_add_to_cart": "Ajout au panier flottant",
     "order_cutoff": "Heure limite de commande et jours d'expédition",
     "product_tiles": "Vignettes produit",
     "breadcrumbs": "Fil d'Ariane",
@@ -1251,6 +1253,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "show_sticky_add_to_cart": "Apparaît en bas de l'écran dès que le bouton d'ajout au panier sort de la vue. Affiche le titre, la ligne du bloc d'avis, le prix et un bouton d'ajout au panier.",
     "order_cutoff": "Les commandes passées avant cette heure un jour coché partent le jour même. Heures dans le fuseau horaire de la boutique (Paramètres > Général).",
     "shipping_countdown_color": "Par défaut, la couleur « en stock » des paramètres du thème.",
     "delivery_working_days": "Ignore le samedi et le dimanche. Les dates sont calculées à partir d'aujourd'hui dans le navigateur du visiteur.",

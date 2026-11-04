@@ -207,6 +207,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Visa fast lägg i varukorg",
     "cutoff_hour": "Timme för deadline",
     "cutoff_minute": "Minut för deadline",
     "ships_today_text": "Text för skickas i dag",
@@ -1017,6 +1018,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "sticky_add_to_cart": "Fast ”Lägg till i varukorgen”",
     "order_cutoff": "Beställningsdeadline och leveransdagar",
     "product_tiles": "Produktrutor",
     "breadcrumbs": "Brödsmulor",
@@ -1251,6 +1253,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "show_sticky_add_to_cart": "Glider in längst ned när knappen Lägg i varukorg rullar ur bild. Visar titel, betygsblockets rad, pris och en knapp.",
     "order_cutoff": "Beställningar före denna tid på en markerad dag skickas samma dag. Tider i butikens tidszon (Inställningar > Allmänt).",
     "shipping_countdown_color": "Standard är färgen för i lager från temainställningarna.",
     "delivery_working_days": "Hoppar över lördag och söndag. Datumen beräknas från i dag i besökarens webbläsare.",

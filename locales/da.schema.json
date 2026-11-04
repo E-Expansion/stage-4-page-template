@@ -207,6 +207,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Vis fastgjort læg i kurv",
     "cutoff_hour": "Time for deadline",
     "cutoff_minute": "Minut for deadline",
     "ships_today_text": "Tekst for afsendelse i dag",
@@ -1017,6 +1018,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "sticky_add_to_cart": "Fastgjort 'Læg i kurv'",
     "order_cutoff": "Bestillingsdeadline og afsendelsesdage",
     "product_tiles": "Produktfelter",
     "breadcrumbs": "Brødkrummesti",
@@ -1251,6 +1253,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "show_sticky_add_to_cart": "Glider ind nederst på skærmen, når knappen Læg i kurv ruller ud af syne. Viser titel, bedømmelsesblokkens række, pris og en knap.",
     "order_cutoff": "Ordrer afgivet før dette tidspunkt på en markeret dag sendes samme dag. Tider er i butikkens tidszone (Indstillinger > Generelt).",
     "shipping_countdown_color": "Standard er farven for på lager fra temaindstillingerne.",
     "delivery_working_days": "Springer lørdag og søndag over. Datoerne beregnes fra i dag i den besøgendes browser.",

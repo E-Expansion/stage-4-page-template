@@ -207,6 +207,7 @@
     "disclosures": "Divulgaciones"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Mostrar botón fijo de añadir al carrito",
     "cutoff_hour": "Hora límite",
     "cutoff_minute": "Minuto límite",
     "ships_today_text": "Texto de envío hoy",
@@ -1017,6 +1018,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "sticky_add_to_cart": "Agregar al carrito fijo",
     "order_cutoff": "Hora límite de pedido y días de envío",
     "product_tiles": "Mosaicos de producto",
     "breadcrumbs": "Ruta de navegación",
@@ -1251,6 +1253,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "show_sticky_add_to_cart": "Aparece en la parte inferior de la pantalla cuando el botón de añadir al carrito sale de la vista. Muestra el título, la fila del bloque de valoración, el precio y un botón.",
     "order_cutoff": "Los pedidos hechos antes de esta hora en un día marcado se envían el mismo día. Horas en la zona horaria de la tienda (Configuración > General).",
     "shipping_countdown_color": "Por defecto, el color de en stock de la configuración del tema.",
     "delivery_working_days": "Omite sábados y domingos. Las fechas se calculan desde hoy en el navegador del visitante.",

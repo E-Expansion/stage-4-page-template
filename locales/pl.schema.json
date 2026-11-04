@@ -207,6 +207,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Pokaż przyklejony przycisk koszyka",
     "cutoff_hour": "Godzina graniczna",
     "cutoff_minute": "Minuta graniczna",
     "ships_today_text": "Tekst wysyłki dzisiaj",
@@ -1017,6 +1018,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "sticky_add_to_cart": "Przypięte dodawanie do koszyka",
     "order_cutoff": "Godzina graniczna i dni wysyłki",
     "product_tiles": "Kafelki produktów",
     "breadcrumbs": "Ścieżka nawigacji",
@@ -1251,6 +1253,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "show_sticky_add_to_cart": "Pojawia się u dołu ekranu, gdy przycisk dodania do koszyka zniknie z widoku. Pokazuje tytuł, wiersz bloku ocen, cenę i przycisk.",
     "order_cutoff": "Zamówienia złożone przed tą godziną w zaznaczony dzień są wysyłane tego samego dnia. Godziny w strefie czasowej sklepu (Ustawienia > Ogólne).",
     "shipping_countdown_color": "Domyślnie kolor dostępności z ustawień motywu.",
     "delivery_working_days": "Pomija soboty i niedziele. Daty są liczone od dziś w przeglądarce odwiedzającego.",

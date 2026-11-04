@@ -207,6 +207,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "show_sticky_add_to_cart": "追従するカートに追加を表示",
     "cutoff_hour": "締め切り（時）",
     "cutoff_minute": "締め切り（分）",
     "ships_today_text": "本日発送のテキスト",
@@ -1017,6 +1018,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "sticky_add_to_cart": "固定「カートに追加」",
     "order_cutoff": "注文締め切りと発送日",
     "product_tiles": "商品タイル",
     "breadcrumbs": "パンくずリスト",
@@ -1251,6 +1253,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "show_sticky_add_to_cart": "カートに追加ボタンが画面外にスクロールすると画面下部に表示されます。商品名、評価ブロックの行、価格、ボタンを表示します。",
     "order_cutoff": "チェックした曜日にこの時刻までの注文は当日発送されます。時刻はストアのタイムゾーン（設定 > 一般）です。",
     "shipping_countdown_color": "既定はテーマ設定の在庫ありの色です。",
     "delivery_working_days": "土曜と日曜を除きます。日付は訪問者のブラウザで今日から計算されます。",

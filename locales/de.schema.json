@@ -207,6 +207,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Fixierten Warenkorb-Button anzeigen",
     "cutoff_hour": "Stunde des Bestellschlusses",
     "cutoff_minute": "Minute des Bestellschlusses",
     "ships_today_text": "Text für Versand heute",
@@ -1017,6 +1018,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "sticky_add_to_cart": "Fixierte Schaltfläche „In den Warenkorb“",
     "order_cutoff": "Bestellschluss und Versandtage",
     "product_tiles": "Produktkacheln",
     "breadcrumbs": "Brotkrümelnavigation",
@@ -1251,6 +1253,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "show_sticky_add_to_cart": "Erscheint unten am Bildschirm, sobald der Warenkorb-Button aus dem Bild scrollt. Zeigt Titel, die Zeile des Bewertungsblocks, Preis und einen Warenkorb-Button.",
     "order_cutoff": "Bestellungen vor dieser Uhrzeit an einem angehakten Tag werden am selben Tag versendet. Zeiten in der Zeitzone deines Shops (Einstellungen > Allgemein).",
     "shipping_countdown_color": "Standard ist die Farbe für „Auf Lager“ aus den Theme-Einstellungen.",
     "delivery_working_days": "Überspringt Samstag und Sonntag. Die Daten werden ab heute im Browser des Besuchers berechnet.",

@@ -1,0 +1,120 @@
+{%- doc -%}
+  Renders the product rating, "sold this week" and stock labels in one row. The rating
+  reads Shopify's reviews.rating metafields and shows empty stars until there are reviews.
+  "Sold this week" reads the product's custom.sold_this_week metafield (an integer) and
+  hides when empty. Stock follows the selected variant and the low stock threshold in
+  Theme settings. Used by the product rating block and the sticky add to cart bar.
+
+  @param {object} product - The product
+  @param {boolean} [show_rating] - Show the star rating
+  @param {boolean} [show_sold_this_week] - Show the "sold this week" label
+  @param {boolean} [show_stock] - Show the stock label
+  @param {string} [in_stock_note] - Text after "In stock", e.g. "ships today"
+  @param {string} [class] - Extra classes for the wrapper
+  @param {string} [attributes] - Extra attributes for the wrapper, e.g. block.shopify_attributes
+
+  @example
+  {% render 'product-meta-row', product: product, show_rating: true, show_stock: true %}
+{%- enddoc -%}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign sold_count = product.metafields.custom.sold_this_week.value | default: 0
+
+  assign stock_state = 'in'
+  if variant.available == false
+    assign stock_state = 'out'
+  elsif variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' and variant.inventory_quantity > 0 and variant.inventory_quantity <= settings.low_stock_threshold
+    assign stock_state = 'low'
+  endif
+
+  assign show_sold = false
+  if show_sold_this_week and sold_count > 0
+    assign show_sold = true
+  endif
+%}
+
+<div
+  class="product-meta {{ class }}"
+  {{ attributes }}
+>
+  {% if show_rating %}
+    {% render 'star-rating', product: product, placeholder: true, class: 'product-meta__rating' %}
+  {% endif %}
+
+  {% if show_sold or show_stock %}
+    <div class="product-meta__labels">
+      {% if show_sold %}
+        <p class="product-meta__label product-meta__label--sold">
+          {{ 'content.sold_this_week' | t: count: sold_count }}
+        </p>
+      {% endif %}
+
+      {% if show_stock %}
+        <p class="product-meta__label product-meta__label--{{ stock_state }}">
+          {%- case stock_state -%}
+            {%- when 'out' -%}
+              {{ 'content.inventory_out_of_stock' | t }}
+            {%- when 'low' -%}
+              {{ 'content.inventory_only_count_left' | t: count: variant.inventory_quantity }}
+            {%- else -%}
+              {{ 'content.inventory_in_stock' | t }}
+              {%- if in_stock_note != blank %} - {{ in_stock_note | escape }}{% endif -%}
+          {%- endcase -%}
+        </p>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+    font-size: var(--font-size--xs);
+  }
+
+  .product-meta__labels {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+  }
+
+  /* Divider between the rating and the labels when they share a line */
+  .product-meta__rating + .product-meta__labels {
+    padding-inline-start: var(--gap-md);
+    border-inline-start: var(--style-border-width) solid var(--color-border);
+  }
+
+  .product-meta__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-2xs);
+    margin: 0;
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 0.5em;
+      height: 0.5em;
+      background-color: currentcolor;
+      border-radius: var(--style-border-radius-xs);
+    }
+  }
+
+  .product-meta__label--sold,
+  .product-meta__label--in {
+    color: var(--color-in-stock);
+  }
+
+  .product-meta__label--low {
+    color: var(--color-low-stock);
+  }
+
+  .product-meta__label--out {
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}

@@ -207,6 +207,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Zobrazit připnuté přidání do košíku",
     "cutoff_hour": "Hodina uzávěrky",
     "cutoff_minute": "Minuta uzávěrky",
     "ships_today_text": "Text odeslání dnes",
@@ -1017,6 +1018,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "sticky_add_to_cart": "Přilepené tlačítko Přidat do košíku",
     "order_cutoff": "Uzávěrka objednávek a dny odeslání",
     "product_tiles": "Dlaždice produktů",
     "breadcrumbs": "Drobečková navigace",
@@ -1251,6 +1253,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "show_sticky_add_to_cart": "Vysune se dole na obrazovce, jakmile tlačítko přidání do košíku zmizí z dohledu. Zobrazuje název, řádek bloku hodnocení, cenu a tlačítko.",
     "order_cutoff": "Objednávky před tímto časem v zaškrtnutý den odejdou tentýž den. Časy v časovém pásmu obchodu (Nastavení > Obecné).",
     "shipping_countdown_color": "Výchozí je barva skladem z nastavení motivu.",
     "delivery_working_days": "Přeskakuje soboty a neděle. Data se počítají od dneška v prohlížeči návštěvníka.",

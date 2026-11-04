@@ -207,6 +207,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Vis fast legg i handlekurv",
     "cutoff_hour": "Time for frist",
     "cutoff_minute": "Minutt for frist",
     "ships_today_text": "Tekst for sendes i dag",
@@ -1017,6 +1018,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "sticky_add_to_cart": "Festet «Legg i handlekurv»",
     "order_cutoff": "Bestillingsfrist og sendedager",
     "product_tiles": "Produktruter",
     "breadcrumbs": "Brødsmulesti",
@@ -1251,6 +1253,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "show_sticky_add_to_cart": "Glir inn nederst på skjermen når knappen Legg i handlekurv ruller ut av syne. Viser tittel, raden fra vurderingsblokken, pris og en knapp.",
     "order_cutoff": "Bestillinger før dette tidspunktet på en avkrysset dag sendes samme dag. Tider i butikkens tidssone (Innstillinger > Generelt).",
     "shipping_countdown_color": "Standard er fargen for på lager fra temainnstillingene.",
     "delivery_working_days": "Hopper over lørdag og søndag. Datoene beregnes fra i dag i besøkendes nettleser.",

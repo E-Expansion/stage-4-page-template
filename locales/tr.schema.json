@@ -207,6 +207,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Sabit sepete ekle göster",
     "cutoff_hour": "Son sipariş saati",
     "cutoff_minute": "Son sipariş dakikası",
     "ships_today_text": "Bugün kargoda metni",
@@ -1017,6 +1018,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "sticky_add_to_cart": "Sabit sepete ekle",
     "order_cutoff": "Son sipariş saati ve kargo günleri",
     "product_tiles": "Ürün kutucukları",
     "breadcrumbs": "İçerik haritası",
@@ -1251,6 +1253,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "show_sticky_add_to_cart": "Sepete ekle butonu görünümden çıkınca ekranın altında belirir. Başlık, değerlendirme bloğunun satırı, fiyat ve bir buton gösterir.",
     "order_cutoff": "İşaretli bir günde bu saatten önce verilen siparişler aynı gün kargolanır. Saatler mağazanızın saat diliminde (Ayarlar > Genel).",
     "shipping_countdown_color": "Varsayılan olarak tema ayarlarındaki stokta rengi.",
     "delivery_working_days": "Cumartesi ve pazarı atlar. Tarihler ziyaretçinin tarayıcısında bugünden itibaren hesaplanır.",

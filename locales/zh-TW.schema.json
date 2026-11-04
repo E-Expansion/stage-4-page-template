@@ -207,6 +207,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "show_sticky_add_to_cart": "顯示固定加入購物車列",
     "cutoff_hour": "截單時（小時）",
     "cutoff_minute": "截單時（分鐘）",
     "ships_today_text": "今日出貨文字",
@@ -1017,6 +1018,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "sticky_add_to_cart": "固定加入購物車",
     "order_cutoff": "截單時間和出貨日",
     "product_tiles": "商品圖塊",
     "breadcrumbs": "導覽路徑",
@@ -1251,6 +1253,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "show_sticky_add_to_cart": "當加入購物車按鈕捲出畫面時，從螢幕底部滑入。顯示標題、評分區塊的列、價格和按鈕。",
     "order_cutoff": "在勾選的日期於此時間前下的訂單當日出貨。時間以商店時區為準（設定 > 一般）。",
     "shipping_countdown_color": "預設使用佈景主題設定中的有庫存顏色。",
     "delivery_working_days": "略過週六和週日。日期會在訪客的瀏覽器中從今天開始計算。",

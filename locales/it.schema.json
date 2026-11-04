@@ -207,6 +207,7 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "show_sticky_add_to_cart": "Mostra aggiunta al carrello fissa",
     "cutoff_hour": "Ora limite",
     "cutoff_minute": "Minuto limite",
     "ships_today_text": "Testo spedizione oggi",
@@ -1017,6 +1018,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "sticky_add_to_cart": "Aggiunta al carrello fissa",
     "order_cutoff": "Orario limite e giorni di spedizione",
     "product_tiles": "Riquadri prodotto",
     "breadcrumbs": "Percorso di navigazione",
@@ -1251,6 +1253,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "show_sticky_add_to_cart": "Compare in basso quando il pulsante di aggiunta al carrello esce dalla vista. Mostra titolo, riga del blocco valutazioni, prezzo e un pulsante.",
     "order_cutoff": "Gli ordini effettuati prima di quest'ora in un giorno selezionato partono in giornata. Orari nel fuso orario del negozio (Impostazioni > Generali).",
     "shipping_countdown_color": "Predefinito: il colore disponibile delle impostazioni del tema.",
     "delivery_working_days": "Salta sabato e domenica. Le date vengono calcolate da oggi nel browser del visitatore.",

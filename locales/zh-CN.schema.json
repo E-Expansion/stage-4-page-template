@@ -207,6 +207,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "show_sticky_add_to_cart": "显示固定加入购物车栏",
     "cutoff_hour": "截单时（小时）",
     "cutoff_minute": "截单时（分钟）",
     "ships_today_text": "今日发货文本",
@@ -1017,6 +1018,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "sticky_add_to_cart": "悬浮“添加到购物车”",
     "order_cutoff": "截单时间和发货日",
     "product_tiles": "商品图块",
     "breadcrumbs": "面包屑导航",
@@ -1251,6 +1253,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "show_sticky_add_to_cart": "当加入购物车按钮滚出视野时，从屏幕底部滑入。显示标题、评分区块的行、价格和按钮。",
     "order_cutoff": "在勾选的日期于此时间前下的订单当日发货。时间以商店时区为准（设置 > 通用）。",
     "shipping_countdown_color": "默认使用主题设置中的有货颜色。",
     "delivery_working_days": "跳过周六和周日。日期在访客的浏览器中从今天开始计算。",
