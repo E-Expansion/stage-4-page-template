@@ -195,13 +195,13 @@
         "price",
         "variant_picker",
         "buy",
+        "back_in_stock",
         "purchase_options",
         "volume_pricing",
         "gift_wrap",
         "free_gift",
         "usps",
-        "shipping_countdown",
-        "back_in_stock"
+        "shipping_countdown"
       ],
       "settings": {
         "show_breadcrumbs": true,
