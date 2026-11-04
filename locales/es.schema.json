@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "También te puede gustar",
     "frequently_bought_together": "Comprados juntos",
     "product_certificate": "Certificado del producto",
     "product_tab": "Pestaña",
@@ -1260,6 +1261,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "related_products_intent": "Relacionados: productos similares. Complementarios: productos que combinan, definidos en Search & Discovery.",
     "bundle_discount": "Se muestra como precio de pack reducido. Crea un descuento automático equivalente para que el pago lo aplique. 0 muestra el total normal.",
     "frequently_bought_together": "Muestra los productos complementarios de Search & Discovery o, si no, el metacampo custom.frequently_bought_together (lista de productos). Oculto si no hay.",
     "certificate_background": "Por defecto, un tono claro del color de valoración de la configuración del tema.",

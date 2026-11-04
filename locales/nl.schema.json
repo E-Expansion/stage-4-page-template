@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Misschien ook leuk",
     "frequently_bought_together": "Samen gekocht",
     "product_certificate": "Productcertificaat",
     "product_tab": "Tab",
@@ -1260,6 +1261,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "related_products_intent": "Gerelateerd: vergelijkbare producten. Aanvullend: producten die erbij passen, ingesteld in Search & Discovery.",
     "bundle_discount": "Wordt getoond als lagere bundelprijs. Maak een bijpassende automatische korting in Shopify zodat de checkout die rekent. Bij 0 zie je het gewone totaal.",
     "frequently_bought_together": "Toont de aanvullende producten uit Search & Discovery, of anders het metaveld custom.frequently_bought_together (lijst van producten). Verborgen als er geen zijn.",
     "certificate_background": "Standaard een lichte tint van de ratingkleur uit de theme-instellingen.",

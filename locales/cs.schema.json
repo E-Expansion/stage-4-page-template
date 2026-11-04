@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Mohlo by se vám líbit",
     "frequently_bought_together": "Kupováno společně",
     "product_certificate": "Certifikát produktu",
     "product_tab": "Záložka",
@@ -1260,6 +1261,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "related_products_intent": "Související: podobné produkty. Doplňkové: produkty, které se hodí, nastavené v Search & Discovery.",
     "bundle_discount": "Zobrazí se jako nižší cena sady. Vytvořte odpovídající automatickou slevu, aby ji pokladna uplatnila. 0 zobrazí běžný součet.",
     "frequently_bought_together": "Zobrazuje doplňkové produkty ze Search & Discovery, jinak metapole custom.frequently_bought_together (seznam produktů). Skryto, pokud žádné nejsou.",
     "certificate_background": "Výchozí je světlý odstín barvy hodnocení z nastavení motivu.",

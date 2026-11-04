@@ -1,0 +1,165 @@
+{% comment %}
+  Section contract.
+  "You may also like" for the product template: Shopify's product recommendations for the
+  current product, shown as the shared product tiles in a grid (a scroll-snap carousel on
+  mobile), like the homepage curated products. Recommendations load after the page through
+  Horizon's product-recommendations component, which injects the tiles' styles with them
+  and hides the section when there are none. Search & Discovery tunes the results.
+  @example
+  <!-- Product template > Add section > You may also like -->
+{% endcomment %}
+
+<script
+  src="{{ 'product-recommendations.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+{% comment %} Defines the tile swatch component before tiles arrive in the fetched markup {% endcomment %}
+<script
+  src="{{ 'product-tile.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% render 'contrast-override',
+  background_color: section.settings.background_color,
+  border_color: section.settings.border_color,
+  section_id: section.id
+%}
+
+<product-recommendations
+  id="product-recommendations-{{ section.id }}"
+  class="related-products-wrapper"
+  data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.max_products }}"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-intent="{{ section.settings.intent }}"
+  data-recommendations-performed="{{ recommendations.performed }}"
+  data-hydration-key="related-products-{{ section.id }}"
+>
+  <div class="section-background color-custom-{{ section.id }}"></div>
+  <div
+    class="related-products section section--page-width spacing-style color-custom-{{ section.id }}"
+    style="
+      {% render 'spacing-padding', settings: section.settings %}
+      --snap-carousel-columns: {{ section.settings.columns }};
+    "
+  >
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <div class="related-products__inner">
+        {% render 'section-heading', heading: section.settings.heading %}
+
+        <ul class="related-products__list snap-carousel list-unstyled">
+          {% for recommendation in recommendations.products %}
+            {% render 'product-tile', product: recommendation, section_id: section.id %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</product-recommendations>
+
+{% stylesheet %}
+  .related-products__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xl);
+    min-width: 0;
+  }
+
+  /* Takes no room until recommendations have loaded */
+  .related-products-wrapper[data-recommendations-performed='false'] .related-products {
+    padding: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.related_products",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "select",
+      "id": "intent",
+      "label": "t:settings.type",
+      "info": "t:info.related_products_intent",
+      "options": [
+        { "value": "related", "label": "t:options.related" },
+        { "value": "complementary", "label": "t:options.complementary" }
+      ],
+      "default": "related"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "t:settings.max_products",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "default": "{{ settings.color_palette.color2 }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.related_products"
+    }
+  ]
+}
+{% endschema %}

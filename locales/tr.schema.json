@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Bunları da sevebilirsiniz",
     "frequently_bought_together": "Birlikte alınanlar",
     "product_certificate": "Ürün sertifikası",
     "product_tab": "Sekme",
@@ -1260,6 +1261,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "related_products_intent": "İlgili: benzer ürünler. Tamamlayıcı: uyumlu ürünler, Search & Discovery'de belirlenir.",
     "bundle_discount": "Daha düşük paket fiyatı olarak gösterilir. Ödemede uygulanması için eşleşen otomatik indirim oluşturun. 0 normal toplamı gösterir.",
     "frequently_bought_together": "Search & Discovery'deki tamamlayıcı ürünleri, yoksa custom.frequently_bought_together meta alanını (ürün listesi) gösterir. Yoksa gizlenir.",
     "certificate_background": "Varsayılan olarak tema ayarlarındaki puan renginin açık tonu.",

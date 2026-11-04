@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Du kanske också gillar",
     "frequently_bought_together": "Köps tillsammans",
     "product_certificate": "Produktcertifikat",
     "product_tab": "Flik",
@@ -1260,6 +1261,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "related_products_intent": "Relaterade: liknande produkter. Kompletterande: produkter som passar till, valda i Search & Discovery.",
     "bundle_discount": "Visas som lägre paketpris. Skapa en motsvarande automatisk rabatt så att kassan drar av den. 0 visar normal summa.",
     "frequently_bought_together": "Visar kompletterande produkter från Search & Discovery, annars metafältet custom.frequently_bought_together (produktlista). Dolt om inga finns.",
     "certificate_background": "Standard är en ljus ton av betygsfärgen från temainställningarna.",

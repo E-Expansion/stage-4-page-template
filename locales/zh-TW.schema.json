@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "你可能也會喜歡",
     "frequently_bought_together": "一起購買",
     "product_certificate": "產品證書",
     "product_tab": "分頁",
@@ -1260,6 +1261,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "related_products_intent": "相關：類似產品。搭配：適合搭配的產品，在 Search & Discovery 中設定。",
     "bundle_discount": "顯示為較低的組合價。請在 Shopify 建立對應的自動折扣，結帳時才會套用。0 顯示一般總價。",
     "frequently_bought_together": "顯示 Search & Discovery 中的搭配產品，否則顯示 custom.frequently_bought_together 中繼欄位（產品清單）。沒有時隱藏。",
     "certificate_background": "預設使用佈景主題設定中評分顏色的淺色。",

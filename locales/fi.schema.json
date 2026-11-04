@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Saatat pitää myös",
     "frequently_bought_together": "Ostetaan yhdessä",
     "product_certificate": "Tuotesertifikaatti",
     "product_tab": "Välilehti",
@@ -1260,6 +1261,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "related_products_intent": "Samankaltaiset: vastaavat tuotteet. Täydentävät: sopivat tuotteet, valitaan Search & Discoveryssä.",
     "bundle_discount": "Näytetään alempana pakettihintana. Luo vastaava automaattinen alennus, jotta kassa veloittaa sen. 0 näyttää normaalin summan.",
     "frequently_bought_together": "Näyttää Search & Discoveryn täydentävät tuotteet, muuten metakentän custom.frequently_bought_together (tuoteluettelo). Piilotettu, jos niitä ei ole.",
     "certificate_background": "Oletuksena teeman asetusten arvioväristä vaalea sävy.",

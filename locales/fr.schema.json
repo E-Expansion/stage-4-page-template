@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Vous aimerez aussi",
     "frequently_bought_together": "Achetés ensemble",
     "product_certificate": "Certificat produit",
     "product_tab": "Onglet",
@@ -1260,6 +1261,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "related_products_intent": "Associés : produits similaires. Complémentaires : produits qui vont avec, définis dans Search & Discovery.",
     "bundle_discount": "Affiché comme prix de lot réduit. Créez une réduction automatique correspondante pour que le paiement l'applique. 0 affiche le total normal.",
     "frequently_bought_together": "Affiche les produits complémentaires de Search & Discovery, sinon le métachamp custom.frequently_bought_together (liste de produits). Masqué s'il n'y en a pas.",
     "certificate_background": "Par défaut, une teinte claire de la couleur des avis des paramètres du thème.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Måske kan du lide",
     "frequently_bought_together": "Købt sammen",
     "product_certificate": "Produktcertifikat",
     "product_tab": "Fane",
@@ -1260,6 +1261,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "related_products_intent": "Relaterede: lignende produkter. Supplerende: produkter der passer til, valgt i Search & Discovery.",
     "bundle_discount": "Vises som lavere samlet pris. Opret en tilsvarende automatisk rabat, så kassen trækker den. 0 viser den normale sum.",
     "frequently_bought_together": "Viser de supplerende produkter fra Search & Discovery, ellers metafeltet custom.frequently_bought_together (produktliste). Skjult, hvis der ingen er.",
     "certificate_background": "Standard er en lys nuance af bedømmelsesfarven fra temaindstillingerne.",

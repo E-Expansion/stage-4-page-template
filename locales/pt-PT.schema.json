@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Também poderá gostar",
     "frequently_bought_together": "Comprados juntos",
     "product_certificate": "Certificado do produto",
     "product_tab": "Separador",
@@ -1260,6 +1261,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "related_products_intent": "Relacionados: produtos semelhantes. Complementares: produtos que combinam, definidos no Search & Discovery.",
     "bundle_discount": "Mostrado como preço de pack reduzido. Crie um desconto automático correspondente para o checkout o aplicar. 0 mostra o total normal.",
     "frequently_bought_together": "Mostra os produtos complementares do Search & Discovery ou, caso contrário, o metacampo custom.frequently_bought_together (lista de produtos). Oculto se não houver.",
     "certificate_background": "Por predefinição, um tom claro da cor de avaliação das definições do tema.",

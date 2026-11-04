@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Você também pode gostar",
     "frequently_bought_together": "Comprados juntos",
     "product_certificate": "Certificado do produto",
     "product_tab": "Aba",
@@ -1260,6 +1261,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "related_products_intent": "Relacionados: produtos semelhantes. Complementares: produtos que combinam, definidos no Search & Discovery.",
     "bundle_discount": "Exibido como preço de kit menor. Crie um desconto automático correspondente para o checkout aplicá-lo. 0 mostra o total normal.",
     "frequently_bought_together": "Mostra os produtos complementares do Search & Discovery ou, senão, o metacampo custom.frequently_bought_together (lista de produtos). Oculto se não houver.",
     "certificate_background": "Padrão: um tom claro da cor de avaliação das configurações do tema.",

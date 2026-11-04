@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "คุณอาจชอบ",
     "frequently_bought_together": "ซื้อด้วยกัน",
     "product_certificate": "ใบรับรองสินค้า",
     "product_tab": "แท็บ",
@@ -1260,6 +1261,7 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "related_products_intent": "ที่เกี่ยวข้อง: สินค้าที่คล้ายกัน ใช้คู่กัน: สินค้าที่เข้ากัน ตั้งค่าใน Search & Discovery",
     "bundle_discount": "แสดงเป็นราคาชุดที่ต่ำลง สร้างส่วนลดอัตโนมัติที่ตรงกันใน Shopify เพื่อให้ชำระเงินคิดตามนั้น 0 แสดงราคารวมปกติ",
     "frequently_bought_together": "แสดงสินค้าที่ใช้คู่กันจาก Search & Discovery หรือเมตาฟิลด์ custom.frequently_bought_together (รายการสินค้า) ซ่อนเมื่อไม่มี",
     "certificate_background": "ค่าเริ่มต้นคือโทนอ่อนของสีคะแนนจากการตั้งค่าธีม",

@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "related_products_intent": "קשורים: מוצרים דומים. משלימים: מוצרים שמתאימים, מוגדרים ב-Search & Discovery.",
     "bundle_discount": "מוצג כמחיר חבילה נמוך יותר. צור הנחה אוטומטית תואמת כדי שהקופה תחייב לפיה. 0 מציג את הסכום הרגיל.",
     "frequently_bought_together": "מציג את המוצרים המשלימים מ-Search & Discovery, אחרת את שדה המטא custom.frequently_bought_together (רשימת מוצרים). מוסתר אם אין.",
     "certificate_background": "ברירת המחדל היא גוון בהיר של צבע הדירוג מהגדרות העיצוב.",
@@ -319,6 +320,7 @@
     "media_type_info": "התכונות מאוכלסות מקישורי התפריט שלך"
   },
   "names": {
+    "related_products": "אולי תאהבו גם",
     "frequently_bought_together": "נקנים יחד",
     "product_certificate": "תעודת מוצר",
     "product_tab": "לשונית",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Potrebbe piacerti",
     "frequently_bought_together": "Acquistati insieme",
     "product_certificate": "Certificato del prodotto",
     "product_tab": "Scheda",
@@ -1260,6 +1261,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "related_products_intent": "Correlati: prodotti simili. Complementari: prodotti abbinabili, impostati in Search & Discovery.",
     "bundle_discount": "Mostrato come prezzo bundle ridotto. Crea uno sconto automatico corrispondente perché il checkout lo applichi. 0 mostra il totale normale.",
     "frequently_bought_together": "Mostra i prodotti complementari di Search & Discovery, altrimenti il metacampo custom.frequently_bought_together (elenco prodotti). Nascosto se non ce ne sono.",
     "certificate_background": "Predefinito: una tinta chiara del colore delle valutazioni delle impostazioni del tema.",

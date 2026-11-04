@@ -235,6 +235,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "related_products_intent": "Related: similar products. Complementary: products that go with this one, set in Search & Discovery.",
     "bundle_discount": "Shown as a lower bundle price. Create a matching automatic discount in Shopify so checkout charges it. 0 shows the plain total.",
     "frequently_bought_together": "Shows the product's complementary products from Search & Discovery, or else its custom.frequently_bought_together metafield (list of products). Hidden when there are none.",
     "certificate_background": "Defaults to a light tint of the rating color from Theme settings.",
@@ -327,6 +328,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "related_products": "You may also like",
     "frequently_bought_together": "Bought together",
     "product_certificate": "Product certificate",
     "product_tab": "Tab",

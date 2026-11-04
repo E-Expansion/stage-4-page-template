@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "related_products": "Może ci się spodobać",
     "frequently_bought_together": "Kupowane razem",
     "product_certificate": "Certyfikat produktu",
     "product_tab": "Zakładka",
@@ -1260,6 +1261,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "related_products_intent": "Powiązane: podobne produkty. Uzupełniające: pasujące produkty, ustawione w Search & Discovery.",
     "bundle_discount": "Pokazywane jako niższa cena zestawu. Utwórz pasujący rabat automatyczny, aby kasa go naliczyła. 0 pokazuje zwykłą sumę.",
     "frequently_bought_together": "Pokazuje produkty uzupełniające z Search & Discovery, a w przeciwnym razie metapole custom.frequently_bought_together (lista produktów). Ukryte, gdy ich brak.",
     "certificate_background": "Domyślnie jasny odcień koloru ocen z ustawień motywu.",
