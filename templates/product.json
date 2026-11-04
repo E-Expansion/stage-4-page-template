@@ -523,11 +523,24 @@
         "discount_percent": 10,
         "border_color": "{{ settings.color_palette.color2 }}"
       }
+    },
+    "seo_text": {
+      "type": "seo-text",
+      "settings": {
+        "heading": "About [title]",
+        "text": "",
+        "align_with_grid": false,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 8,
+        "padding-block-end": 8
+      }
     }
   },
   "order": [
     "main",
     "bundle",
+    "seo_text",
     "faq",
     "product_recommendations_qggXJq"
   ]
