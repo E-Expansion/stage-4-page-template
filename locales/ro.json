@@ -136,6 +136,7 @@
     "zoom_media": "Fă zoom pe elementul media {{ index }}"
   },
   "content": {
+    "gift_note": "Mesaj cadou",
     "price_each": "{{ price }} bucata",
     "save_percent": "Economisești {{ percent }}%",
     "delivery_frequency": "Frecvența livrării",

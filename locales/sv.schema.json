@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Presentinslagning",
     "volume_pricing": "Köp mer, betala mindre",
     "volume_tier": "Mängdnivå",
     "purchase_options": "Köpalternativ",
@@ -202,6 +203,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "description": "Beskrivning",
+    "gift_wrap_product": "Produkt för presentinslagning",
+    "show_gift_note": "Visa fält för hälsning",
     "discount_percent": "Rabatt",
     "tier_quantity": "Antal",
     "badge_color": "Märkets färg",
@@ -1227,6 +1231,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "gift_wrap_product": "En produkt med priset för presentinslagning, t.ex. \"Presentinslagning\" för 4,50 €. Lägg till den i försäljningskanalen Webbutik men inte i kollektioner.",
     "volume_pricing": "Visar bara priserna. Skapa motsvarande automatiska rabatter i Shopify (Rabatter > Belopp på produkter, med minsta antal) så att kassan drar av dem.",
     "purchase_options": "Visas när produkten har prenumerationsplaner från en prenumerationsapp som Shopify Subscriptions. Annars dold.",
     "installments": "Antal delbetalningar i texten under knappen. 0 eller 1 döljer den.",

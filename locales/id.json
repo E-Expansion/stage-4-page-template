@@ -134,6 +134,7 @@
     "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
+    "gift_note": "Catatan hadiah",
     "price_each": "{{ price }} per item",
     "save_percent": "Hemat {{ percent }}%",
     "delivery_frequency": "Frekuensi pengiriman",

@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "gift_wrap_product": "A product that holds the gift wrap price, e.g. \"Gift wrap\" at €4.50. Add it to the Online Store channel but leave it out of collections.",
     "volume_pricing": "Shows the prices only. Create matching automatic discounts in Shopify (Discounts > Amount off products, with a minimum quantity) so checkout charges them.",
     "purchase_options": "Shows when the product has subscription plans from a subscription app, such as Shopify Subscriptions. Hidden otherwise.",
     "installments": "Number of installments in the hint below the button. 0 or 1 hides it.",
@@ -309,6 +310,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "gift_wrap": "Gift wrap",
     "volume_pricing": "Buy more, pay less",
     "volume_tier": "Quantity tier",
     "purchase_options": "Purchase options",
@@ -827,6 +829,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "description": "Description",
+    "gift_wrap_product": "Gift wrap product",
+    "show_gift_note": "Show note field",
     "discount_percent": "Discount",
     "tier_quantity": "Quantity",
     "badge_color": "Badge color",

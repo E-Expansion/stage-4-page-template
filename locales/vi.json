@@ -134,6 +134,7 @@
     "back_to_main_menu": "Quay lại menu chính"
   },
   "content": {
+    "gift_note": "Lời nhắn quà tặng",
     "price_each": "{{ price }} mỗi món",
     "save_percent": "Tiết kiệm {{ percent }}%",
     "delivery_frequency": "Tần suất giao hàng",

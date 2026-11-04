@@ -103,6 +103,10 @@
             "tier_2",
             "tier_3"
           ]
+        },
+        "gift_wrap": {
+          "type": "_product-gift-wrap",
+          "settings": {}
         }
       },
       "block_order": [
@@ -112,7 +116,8 @@
         "variant_picker",
         "buy",
         "purchase_options",
-        "volume_pricing"
+        "volume_pricing",
+        "gift_wrap"
       ],
       "settings": {
         "show_breadcrumbs": true,

@@ -166,6 +166,7 @@
     }
   },
   "content": {
+    "gift_note": "ملاحظة الهدية",
     "price_each": "{{ price }} للقطعة",
     "save_percent": "وفّر {{ percent }}%",
     "delivery_frequency": "تكرار التوصيل",

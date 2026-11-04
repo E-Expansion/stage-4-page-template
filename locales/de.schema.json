@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Geschenkverpackung",
     "volume_pricing": "Mehr kaufen, weniger zahlen",
     "volume_tier": "Mengenstaffel",
     "purchase_options": "Kaufoptionen",
@@ -202,6 +203,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "description": "Beschreibung",
+    "gift_wrap_product": "Produkt für Geschenkverpackung",
+    "show_gift_note": "Notizfeld anzeigen",
     "discount_percent": "Rabatt",
     "tier_quantity": "Menge",
     "badge_color": "Badge-Farbe",
@@ -1227,6 +1231,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "gift_wrap_product": "Ein Produkt mit dem Preis der Geschenkverpackung, z. B. „Geschenkverpackung“ für 4,50 €. Im Vertriebskanal Onlineshop verfügbar machen, aber in keine Kollektion aufnehmen.",
     "volume_pricing": "Zeigt nur die Preise. Lege passende automatische Rabatte in Shopify an (Rabatte > Betrag auf Produkte, mit Mindestmenge), damit der Checkout sie berechnet.",
     "purchase_options": "Wird angezeigt, wenn das Produkt Abo-Pläne aus einer Abo-App wie Shopify Subscriptions hat. Sonst ausgeblendet.",
     "installments": "Anzahl der Raten im Hinweis unter dem Button. 0 oder 1 blendet ihn aus.",

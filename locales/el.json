@@ -134,6 +134,7 @@
     "back_to_main_menu": "Επιστροφή στο κύριο μενού"
   },
   "content": {
+    "gift_note": "Σημείωμα δώρου",
     "price_each": "{{ price }} το καθένα",
     "save_percent": "Εξοικονόμηση {{ percent }}%",
     "delivery_frequency": "Συχνότητα παράδοσης",

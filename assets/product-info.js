@@ -39,12 +39,21 @@ export async function refreshProductInfo(source, { optionValues, variantId, sell
     const nextColumn = html.querySelector('.product-main__info');
     if (!nextColumn) return;
 
-    // Choices that only live in the browser (e.g. the quantity tier) survive the re-render
+    // Choices that only live in the browser (quantity tier, gift wrap and its note) survive the re-render
     const keptChoices = Array.from(column.querySelectorAll('input[data-keep-checked]:checked'), (input) =>
       input instanceof HTMLInputElement ? [input.name, input.value] : []
     );
 
+    const keptValues = Array.from(column.querySelectorAll('[data-keep-value][id]'), (field) =>
+      field instanceof HTMLTextAreaElement || field instanceof HTMLInputElement ? [field.id, field.value] : []
+    );
+
     morph(column, nextColumn);
+
+    for (const [id, value] of keptValues) {
+      const field = id ? document.getElementById(id) : null;
+      if (field instanceof HTMLTextAreaElement || field instanceof HTMLInputElement) field.value = value ?? '';
+    }
 
     for (const [name, value] of keptChoices) {
       const input = column.querySelector(

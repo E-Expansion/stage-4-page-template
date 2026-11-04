@@ -134,6 +134,7 @@
     "back_to_main_menu": "Назад към главното меню"
   },
   "content": {
+    "gift_note": "Бележка към подаръка",
     "price_each": "{{ price }} за брой",
     "save_percent": "Спестете {{ percent }}%",
     "delivery_frequency": "Честота на доставка",

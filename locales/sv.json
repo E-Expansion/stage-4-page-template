@@ -134,6 +134,7 @@
     "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
+    "gift_note": "Gåvohälsning",
     "price_each": "{{ price }} st",
     "save_percent": "Spara {{ percent }} %",
     "delivery_frequency": "Leveransfrekvens",

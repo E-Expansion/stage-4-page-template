@@ -134,6 +134,7 @@
     "back_to_main_menu": "กลับไปที่เมนูหลัก"
   },
   "content": {
+    "gift_note": "ข้อความของขวัญ",
     "price_each": "ชิ้นละ {{ price }}",
     "save_percent": "ประหยัด {{ percent }}%",
     "delivery_frequency": "ความถี่ในการจัดส่ง",

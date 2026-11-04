@@ -138,6 +138,7 @@
     "back_to_main_menu": "Назад в главное меню"
   },
   "content": {
+    "gift_note": "Записка к подарку",
     "price_each": "{{ price }} за шт.",
     "save_percent": "Экономия {{ percent }}%",
     "delivery_frequency": "Частота доставки",

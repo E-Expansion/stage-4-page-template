@@ -154,6 +154,7 @@
     }
   },
   "content": {
+    "gift_note": "تحفے کا نوٹ",
     "price_each": "{{ price }} فی عدد",
     "save_percent": "{{ percent }}% بچت",
     "delivery_frequency": "ترسیل کی تعدد",

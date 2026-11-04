@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Dárkové balení",
     "volume_pricing": "Kupte víc, zaplaťte méně",
     "volume_tier": "Množstevní stupeň",
     "purchase_options": "Možnosti nákupu",
@@ -202,6 +203,9 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
+    "description": "Popis",
+    "gift_wrap_product": "Produkt dárkového balení",
+    "show_gift_note": "Zobrazit pole pro vzkaz",
     "discount_percent": "Sleva",
     "tier_quantity": "Množství",
     "badge_color": "Barva odznaku",
@@ -1227,6 +1231,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "gift_wrap_product": "Produkt s cenou dárkového balení, např. „Dárkové balení“ za 4,50 €. Přidejte ho do prodejního kanálu Online obchod, ale ne do kolekcí.",
     "volume_pricing": "Zobrazuje jen ceny. Vytvořte odpovídající automatické slevy v Shopify (Slevy > Částka z produktů, s minimálním množstvím), aby je pokladna uplatnila.",
     "purchase_options": "Zobrazí se, když má produkt plány předplatného z aplikace jako Shopify Subscriptions. Jinak skryto.",
     "installments": "Počet splátek v textu pod tlačítkem. 0 nebo 1 jej skryje.",

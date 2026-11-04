@@ -138,6 +138,7 @@
     "back_to_main_menu": "Zpět do hlavní nabídky"
   },
   "content": {
+    "gift_note": "Vzkaz k dárku",
     "price_each": "{{ price }} / ks",
     "save_percent": "Ušetřete {{ percent }} %",
     "delivery_frequency": "Frekvence doručení",

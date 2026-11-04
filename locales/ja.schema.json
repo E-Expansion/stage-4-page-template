@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "ギフトラッピング",
     "volume_pricing": "まとめ買いでお得",
     "volume_tier": "数量段階",
     "purchase_options": "購入オプション",
@@ -202,6 +203,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "description": "説明",
+    "gift_wrap_product": "ギフトラッピング商品",
+    "show_gift_note": "メッセージ欄を表示",
     "discount_percent": "割引",
     "tier_quantity": "数量",
     "badge_color": "バッジの色",
@@ -1227,6 +1231,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "gift_wrap_product": "ギフトラッピングの価格を持つ商品（例: 4.50 € の「ギフトラッピング」）。オンラインストアのチャネルに追加し、コレクションには含めないでください。",
     "volume_pricing": "価格を表示するだけです。チェックアウトで適用されるよう、Shopify で対応する自動割引（ディスカウント > 商品の金額割引、最低数量あり）を作成してください。",
     "purchase_options": "Shopify Subscriptions などの定期購入アプリのプランがある商品で表示されます。それ以外は非表示です。",
     "installments": "ボタン下の案内に表示する分割回数。0 または 1 で非表示になります。",

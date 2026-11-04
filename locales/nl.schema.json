@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Cadeauverpakking",
     "volume_pricing": "Meer kopen, minder betalen",
     "volume_tier": "Staffel",
     "purchase_options": "Aankoopopties",
@@ -202,6 +203,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "description": "Omschrijving",
+    "gift_wrap_product": "Product voor cadeauverpakking",
+    "show_gift_note": "Notitieveld tonen",
     "discount_percent": "Korting",
     "tier_quantity": "Aantal",
     "badge_color": "Kleur badge",
@@ -1227,6 +1231,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "gift_wrap_product": "Een product met de prijs van de cadeauverpakking, bijv. \"Gift wrap\" à €4,50. Zet het op het verkoopkanaal Online Store, maar niet in collecties.",
     "volume_pricing": "Toont alleen de prijzen. Maak bijpassende automatische kortingen in Shopify (Discounts > Amount off products, met een minimumaantal) zodat de checkout ze ook rekent.",
     "purchase_options": "Verschijnt als het product abonnementen heeft via een abonnementsapp, zoals Shopify Subscriptions. Anders verborgen.",
     "installments": "Aantal termijnen in de regel onder de knop. Bij 0 of 1 wordt hij verborgen.",

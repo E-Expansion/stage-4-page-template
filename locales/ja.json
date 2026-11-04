@@ -134,6 +134,7 @@
     "back_to_main_menu": "メインメニューに戻る"
   },
   "content": {
+    "gift_note": "ギフトメッセージ",
     "price_each": "1点あたり{{ price }}",
     "save_percent": "{{ percent }}%お得",
     "delivery_frequency": "配送頻度",

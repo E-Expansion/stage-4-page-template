@@ -134,6 +134,7 @@
     "zoom_media": "Zoom medier {{ index }}"
   },
   "content": {
+    "gift_note": "Gavehilsen",
     "price_each": "{{ price }} per stk.",
     "save_percent": "Spar {{ percent }} %",
     "delivery_frequency": "Leveringsfrekvens",

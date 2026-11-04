@@ -134,6 +134,7 @@
     "back_to_main_menu": "Takaisin päävalikkoon"
   },
   "content": {
+    "gift_note": "Lahjaviesti",
     "price_each": "{{ price }} / kpl",
     "save_percent": "Säästä {{ percent }} %",
     "delivery_frequency": "Toimitusväli",

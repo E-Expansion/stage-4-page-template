@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Lahjapaketointi",
     "volume_pricing": "Osta enemmän, maksa vähemmän",
     "volume_tier": "Määräporras",
     "purchase_options": "Ostovaihtoehdot",
@@ -202,6 +203,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "description": "Kuvaus",
+    "gift_wrap_product": "Lahjapaketoinnin tuote",
+    "show_gift_note": "Näytä viestikenttä",
     "discount_percent": "Alennus",
     "tier_quantity": "Määrä",
     "badge_color": "Merkin väri",
@@ -1227,6 +1231,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "gift_wrap_product": "Tuote, jossa on lahjapaketoinnin hinta, esim. \"Lahjapaketointi\" 4,50 €. Lisää se Verkkokauppa-myyntikanavaan, mutta ei kokoelmiin.",
     "volume_pricing": "Näyttää vain hinnat. Luo vastaavat automaattiset alennukset Shopifyssa (Alennukset > Summa tuotteista, vähimmäismäärällä), jotta kassa veloittaa ne.",
     "purchase_options": "Näytetään, kun tuotteella on tilaussuunnitelmia tilaussovelluksesta, kuten Shopify Subscriptions. Muuten piilotettu.",
     "installments": "Erien määrä painikkeen alla olevassa tekstissä. 0 tai 1 piilottaa sen.",

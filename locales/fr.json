@@ -136,6 +136,7 @@
     "zoom_media": "Zoom du support multimédia {{ index }}"
   },
   "content": {
+    "gift_note": "Message cadeau",
     "price_each": "{{ price }} l'unité",
     "save_percent": "Économisez {{ percent }} %",
     "delivery_frequency": "Fréquence de livraison",

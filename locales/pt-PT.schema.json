@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Embrulho de oferta",
     "volume_pricing": "Compre mais, pague menos",
     "volume_tier": "Escalão de quantidade",
     "purchase_options": "Opções de compra",
@@ -202,6 +203,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "description": "Descrição",
+    "gift_wrap_product": "Produto de embrulho",
+    "show_gift_note": "Mostrar campo de mensagem",
     "discount_percent": "Desconto",
     "tier_quantity": "Quantidade",
     "badge_color": "Cor do distintivo",
@@ -1227,6 +1231,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "gift_wrap_product": "Um produto com o preço do embrulho, p. ex. \"Embrulho de oferta\" a 4,50 €. Adicione-o ao canal Loja online, mas não a coleções.",
     "volume_pricing": "Mostra apenas os preços. Crie descontos automáticos correspondentes no Shopify (Descontos > Valor em produtos, com quantidade mínima) para que o checkout os aplique.",
     "purchase_options": "Aparece quando o produto tem planos de subscrição de uma app como o Shopify Subscriptions. Caso contrário, fica oculto.",
     "installments": "Número de prestações no texto abaixo do botão. 0 ou 1 oculta-o.",

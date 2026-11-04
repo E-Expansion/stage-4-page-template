@@ -134,6 +134,7 @@
     "back_to_main_menu": "返回主菜单"
   },
   "content": {
+    "gift_note": "礼品留言",
     "price_each": "每件 {{ price }}",
     "save_percent": "省 {{ percent }}%",
     "delivery_frequency": "配送频率",

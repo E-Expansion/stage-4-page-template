@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Pakowanie na prezent",
     "volume_pricing": "Kup więcej, zapłać mniej",
     "volume_tier": "Próg ilościowy",
     "purchase_options": "Opcje zakupu",
@@ -202,6 +203,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "description": "Opis",
+    "gift_wrap_product": "Produkt pakowania",
+    "show_gift_note": "Pokaż pole wiadomości",
     "discount_percent": "Rabat",
     "tier_quantity": "Ilość",
     "badge_color": "Kolor plakietki",
@@ -1227,6 +1231,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "gift_wrap_product": "Produkt z ceną pakowania, np. „Pakowanie na prezent” za 4,50 €. Dodaj go do kanału Sklep internetowy, ale nie do kolekcji.",
     "volume_pricing": "Pokazuje tylko ceny. Utwórz odpowiadające rabaty automatyczne w Shopify (Rabaty > Kwota na produkty, z minimalną ilością), aby kasa je naliczała.",
     "purchase_options": "Widoczne, gdy produkt ma plany subskrypcji z aplikacji, np. Shopify Subscriptions. W przeciwnym razie ukryte.",
     "installments": "Liczba rat w tekście pod przyciskiem. 0 lub 1 go ukrywa.",

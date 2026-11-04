@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Confezione regalo",
     "volume_pricing": "Compra di più, paghi meno",
     "volume_tier": "Fascia di quantità",
     "purchase_options": "Opzioni di acquisto",
@@ -202,6 +203,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "description": "Descrizione",
+    "gift_wrap_product": "Prodotto confezione regalo",
+    "show_gift_note": "Mostra campo messaggio",
     "discount_percent": "Sconto",
     "tier_quantity": "Quantità",
     "badge_color": "Colore del badge",
@@ -1227,6 +1231,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "gift_wrap_product": "Un prodotto con il prezzo della confezione regalo, ad es. \"Confezione regalo\" a 4,50 €. Aggiungilo al canale Negozio online ma non alle collezioni.",
     "volume_pricing": "Mostra solo i prezzi. Crea sconti automatici corrispondenti in Shopify (Sconti > Importo sui prodotti, con quantità minima) affinché il checkout li applichi.",
     "purchase_options": "Visibile quando il prodotto ha piani di abbonamento da un'app come Shopify Subscriptions. Altrimenti nascosto.",
     "installments": "Numero di rate nel testo sotto il pulsante. 0 o 1 lo nasconde.",

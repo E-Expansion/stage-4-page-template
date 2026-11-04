@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Hediye paketi",
     "volume_pricing": "Fazla al, az öde",
     "volume_tier": "Miktar kademesi",
     "purchase_options": "Satın alma seçenekleri",
@@ -202,6 +203,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "description": "Açıklama",
+    "gift_wrap_product": "Hediye paketi ürünü",
+    "show_gift_note": "Not alanını göster",
     "discount_percent": "İndirim",
     "tier_quantity": "Miktar",
     "badge_color": "Rozet rengi",
@@ -1227,6 +1231,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "gift_wrap_product": "Hediye paketi fiyatını taşıyan bir ürün, ör. 4,50 € fiyatlı \"Hediye paketi\". Online Mağaza kanalına ekleyin ama koleksiyonlara eklemeyin.",
     "volume_pricing": "Yalnızca fiyatları gösterir. Ödemede uygulanması için Shopify'da eşleşen otomatik indirimler oluşturun (İndirimler > Ürünlerde tutar indirimi, minimum miktarla).",
     "purchase_options": "Ürünün Shopify Subscriptions gibi bir abonelik uygulamasından abonelik planları olduğunda görünür. Aksi halde gizlidir.",
     "installments": "Butonun altındaki metindeki taksit sayısı. 0 veya 1 gizler.",

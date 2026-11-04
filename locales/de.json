@@ -134,6 +134,7 @@
     "back_to_main_menu": "Zurück zum Hauptmenü"
   },
   "content": {
+    "gift_note": "Geschenknachricht",
     "price_each": "{{ price }} pro Stück",
     "save_percent": "{{ percent }} % sparen",
     "delivery_frequency": "Lieferhäufigkeit",

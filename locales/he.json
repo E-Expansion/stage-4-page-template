@@ -160,6 +160,7 @@
     }
   },
   "content": {
+    "gift_note": "ברכה למתנה",
     "price_each": "{{ price }} ליחידה",
     "save_percent": "חיסכון של {{ percent }}%",
     "delivery_frequency": "תדירות משלוח",

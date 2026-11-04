@@ -1,0 +1,205 @@
+{% doc %}
+  Renders the gift wrap option: a checkbox card "Add gift wrap and a handwritten note - €4.50"
+  with a short description, and a note field that appears when it is ticked. The gift wrap
+  is a separate product chosen in the block settings; when ticked, add to cart first adds
+  that product (with the note as a line item property) and then the main product, so the
+  charge shows up in the cart and at checkout. Renders nothing until a product is chosen.
+  Behaviour lives in assets/product-gift-wrap.js.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% liquid
+  assign wrap_product = block.settings.gift_wrap_product
+  assign wrap_variant = wrap_product.selected_or_first_available_variant
+  assign form_id = 'ProductBuyForm-' | append: section.id
+  assign checkbox_id = 'GiftWrap-' | append: block.id
+  assign note_id = 'GiftWrapNote-' | append: block.id
+
+  if settings.currency_code_enabled_product_pages
+    assign wrap_price = wrap_variant.price | money_with_currency
+  else
+    assign wrap_price = wrap_variant.price | money
+  endif
+%}
+
+{% if wrap_variant != blank and wrap_variant.available %}
+  <script
+    src="{{ 'product-gift-wrap.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <product-gift-wrap-component
+    class="gift-wrap"
+    data-form-id="{{ form_id }}"
+    data-variant-id="{{ wrap_variant.id }}"
+    data-note-property="{{ 'content.gift_note' | t | escape }}"
+    {% if block.settings.accent_color != blank %}
+      style="--gift-wrap-accent: {{ block.settings.accent_color }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    <label
+      class="gift-wrap__option"
+      for="{{ checkbox_id }}"
+    >
+      <input
+        type="checkbox"
+        class="gift-wrap__checkbox"
+        id="{{ checkbox_id }}"
+        ref="checkbox"
+        data-keep-checked
+        name="gift_wrap"
+        value="1"
+      >
+      <span class="gift-wrap__text">
+        <span class="gift-wrap__label">
+          {{- block.settings.label | escape -}}
+          {%- if wrap_variant.price > 0 %} - {{ wrap_price }}{% endif -%}
+        </span>
+        {% if block.settings.description != blank %}
+          <span class="gift-wrap__description">{{ block.settings.description | escape }}</span>
+        {% endif %}
+      </span>
+    </label>
+
+    {% if block.settings.show_note %}
+      <div class="gift-wrap__note">
+        <label
+          class="visually-hidden"
+          for="{{ note_id }}"
+        >
+          {{- 'content.gift_note' | t -}}
+        </label>
+        <textarea
+          class="gift-wrap__note-field"
+          id="{{ note_id }}"
+          ref="note"
+          data-keep-value
+          rows="3"
+          maxlength="250"
+          placeholder="{{ block.settings.note_placeholder | escape }}"
+        ></textarea>
+      </div>
+    {% endif %}
+  </product-gift-wrap-component>
+{% endif %}
+
+{% stylesheet %}
+  .gift-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding: var(--padding-md) var(--padding-lg);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .gift-wrap__option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap-sm);
+    cursor: pointer;
+  }
+
+  .gift-wrap__checkbox {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0.15em 0 0;
+    accent-color: var(--gift-wrap-accent, var(--color-foreground));
+    cursor: pointer;
+  }
+
+  .gift-wrap__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3xs);
+  }
+
+  .gift-wrap__label {
+    font-size: var(--font-size--md);
+  }
+
+  .gift-wrap__description {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  /* The note only matters once gift wrap is ticked */
+  .gift-wrap__note {
+    display: none;
+    padding-inline-start: calc(1.125rem + var(--gap-sm));
+  }
+
+  .gift-wrap:has(.gift-wrap__checkbox:checked) .gift-wrap__note {
+    display: block;
+  }
+
+  .gift-wrap__note-field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--padding-xs) var(--padding-sm);
+    font: inherit;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+    resize: vertical;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.gift_wrap",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product",
+      "id": "gift_wrap_product",
+      "label": "t:settings.gift_wrap_product",
+      "info": "t:info.gift_wrap_product"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Add gift wrap and a handwritten note"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "t:settings.description",
+      "default": "Recycled paper, brass seal, no price on the packing slip."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "t:settings.show_gift_note",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "note_placeholder",
+      "label": "t:settings.placeholder",
+      "default": "Write your note (max. 250 characters)",
+      "visible_if": "{{ block.settings.show_note }}"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.gift_wrap"
+    }
+  ]
+}
+{% endschema %}

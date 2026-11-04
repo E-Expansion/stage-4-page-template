@@ -138,6 +138,7 @@
     "back_to_main_menu": "Atgal į pagrindinį meniu"
   },
   "content": {
+    "gift_note": "Dovanos žinutė",
     "price_each": "{{ price }} už vnt.",
     "save_percent": "Sutaupykite {{ percent }} %",
     "delivery_frequency": "Pristatymo dažnumas",

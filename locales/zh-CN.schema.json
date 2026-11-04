@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "礼品包装",
     "volume_pricing": "多买更省",
     "volume_tier": "数量档位",
     "purchase_options": "购买选项",
@@ -202,6 +203,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "description": "描述",
+    "gift_wrap_product": "礼品包装产品",
+    "show_gift_note": "显示留言框",
     "discount_percent": "折扣",
     "tier_quantity": "数量",
     "badge_color": "徽章颜色",
@@ -1227,6 +1231,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "gift_wrap_product": "一个承载礼品包装价格的产品，例如售价 €4.50 的“礼品包装”。将其添加到在线商店渠道，但不要加入任何产品系列。",
     "volume_pricing": "仅显示价格。请在 Shopify 中创建对应的自动折扣（折扣 > 产品金额折扣，设置最低数量），结账时才会生效。",
     "purchase_options": "当产品有来自订阅应用（如 Shopify Subscriptions）的订阅计划时显示，否则隐藏。",
     "installments": "按钮下方提示中的分期数。0 或 1 时隐藏。",

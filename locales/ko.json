@@ -134,6 +134,7 @@
     "zoom_media": "{{ index }} 미디어 확대/축소"
   },
   "content": {
+    "gift_note": "선물 메시지",
     "price_each": "개당 {{ price }}",
     "save_percent": "{{ percent }}% 절약",
     "delivery_frequency": "배송 주기",

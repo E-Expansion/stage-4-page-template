@@ -136,6 +136,7 @@
     "back_to_main_menu": "Torna al menu principale"
   },
   "content": {
+    "gift_note": "Messaggio regalo",
     "price_each": "{{ price }} cad.",
     "save_percent": "Risparmia il {{ percent }}%",
     "delivery_frequency": "Frequenza di consegna",

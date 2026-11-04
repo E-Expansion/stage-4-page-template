@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "gift_wrap": "Emballage cadeau",
     "volume_pricing": "Achetez plus, payez moins",
     "volume_tier": "Palier de quantité",
     "purchase_options": "Options d'achat",
@@ -202,6 +203,9 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "description": "Description",
+    "gift_wrap_product": "Produit d'emballage cadeau",
+    "show_gift_note": "Afficher le champ de message",
     "discount_percent": "Remise",
     "tier_quantity": "Quantité",
     "badge_color": "Couleur du badge",
@@ -1227,6 +1231,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "gift_wrap_product": "Un produit portant le prix de l'emballage cadeau, p. ex. « Emballage cadeau » à 4,50 €. Ajoutez-le au canal Boutique en ligne sans l'inclure dans des collections.",
     "volume_pricing": "Affiche uniquement les prix. Créez des réductions automatiques correspondantes dans Shopify (Réductions > Montant sur les produits, avec quantité minimale) pour que le paiement les applique.",
     "purchase_options": "S'affiche si le produit a des plans d'abonnement d'une application comme Shopify Subscriptions. Masqué sinon.",
     "installments": "Nombre d'échéances dans la mention sous le bouton. 0 ou 1 la masque.",

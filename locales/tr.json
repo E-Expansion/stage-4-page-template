@@ -134,6 +134,7 @@
     "zoom_media": "Medyayı yakınlaştır: {{ index }}"
   },
   "content": {
+    "gift_note": "Hediye notu",
     "price_each": "Adet başı {{ price }}",
     "save_percent": "%{{ percent }} tasarruf",
     "delivery_frequency": "Teslimat sıklığı",

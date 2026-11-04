@@ -134,6 +134,7 @@
     "back_to_main_menu": "Vissza a főmenübe"
   },
   "content": {
+    "gift_note": "Ajándéküzenet",
     "price_each": "{{ price }} / db",
     "save_percent": "{{ percent }}% megtakarítás",
     "delivery_frequency": "Szállítási gyakoriság",

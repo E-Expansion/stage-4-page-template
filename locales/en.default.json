@@ -167,6 +167,7 @@
     }
   },
   "content": {
+    "gift_note": "Gift note",
     "price_each": "{{ price }} each",
     "save_percent": "Save {{ percent }}%",
     "delivery_frequency": "Delivery frequency",

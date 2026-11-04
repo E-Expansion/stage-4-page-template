@@ -134,6 +134,7 @@
     "back_to_main_menu": "Tilbage til hovedmenu"
   },
   "content": {
+    "gift_note": "Gavehilsen",
     "price_each": "{{ price }} pr. stk.",
     "save_percent": "Spar {{ percent }}%",
     "delivery_frequency": "Leveringsfrekvens",
