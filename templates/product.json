@@ -520,7 +520,8 @@
       "settings": {
         "heading": "Frequently bought together",
         "max_products": 2,
-        "discount_percent": 10
+        "discount_percent": 10,
+        "border_color": "{{ settings.color_palette.color2 }}"
       }
     }
   },
