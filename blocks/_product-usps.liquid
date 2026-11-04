@@ -1,0 +1,83 @@
+{% doc %}
+  Renders the product page USP badges: a two-column grid of small bordered cards (repair
+  guarantee, secure checkout, free returns, delivery estimate...). Reuses the homepage USP
+  item block (_usp-item) for each card and adds the delivery estimate (_usp-delivery); an
+  odd last card spans the full width.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+<ul
+  class="product-usps list-unstyled"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</ul>
+
+{% stylesheet %}
+  .product-usps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-xs);
+    margin: 0;
+
+    /* Compact cards; overrides the roomier homepage USP bar styling */
+    .usp-item {
+      gap: var(--gap-sm);
+      padding: var(--padding-sm) var(--padding-md);
+      border: var(--style-border-width) solid var(--color-border);
+      border-radius: var(--style-border-radius-xs);
+    }
+
+    .usp-item__title {
+      font-size: var(--font-size--xs);
+    }
+
+    .usp-item:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.usp_badges",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_usp-item"
+    },
+    {
+      "type": "_usp-delivery"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.usp_badges",
+      "blocks": {
+        "repair": {
+          "type": "_usp-item",
+          "settings": { "icon": "tools", "title": "5-year repair guarantee", "text": "" }
+        },
+        "checkout": {
+          "type": "_usp-item",
+          "settings": { "icon": "shield", "title": "Secure checkout, PCI-compliant", "text": "" }
+        },
+        "returns": {
+          "type": "_usp-item",
+          "settings": { "icon": "return", "title": "Free returns, prepaid label", "text": "" }
+        },
+        "delivery": {
+          "type": "_usp-delivery"
+        },
+        "late": {
+          "type": "_usp-item",
+          "settings": { "icon": "stopwatch", "title": "Delivered too late? Get shipping back.", "text": "" }
+        }
+      },
+      "block_order": ["repair", "checkout", "returns", "delivery", "late"]
+    }
+  ]
+}
+{% endschema %}

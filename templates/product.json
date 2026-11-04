@@ -124,6 +124,61 @@
         "free_gift": {
           "type": "_product-free-gift",
           "settings": {}
+        },
+        "usps": {
+          "type": "_product-usps",
+          "settings": {},
+          "blocks": {
+            "repair": {
+              "type": "_usp-item",
+              "settings": {
+                "icon": "tools",
+                "title": "5-year repair guarantee",
+                "text": ""
+              }
+            },
+            "checkout": {
+              "type": "_usp-item",
+              "settings": {
+                "icon": "shield",
+                "title": "Secure checkout, PCI-compliant",
+                "text": ""
+              }
+            },
+            "returns": {
+              "type": "_usp-item",
+              "settings": {
+                "icon": "return",
+                "title": "Free returns, prepaid label",
+                "text": ""
+              }
+            },
+            "delivery": {
+              "type": "_usp-delivery",
+              "settings": {
+                "icon": "truck",
+                "label": "Delivery",
+                "min_days": 2,
+                "max_days": 4,
+                "working_days": true
+              }
+            },
+            "late": {
+              "type": "_usp-item",
+              "settings": {
+                "icon": "stopwatch",
+                "title": "Delivered too late? Get shipping back.",
+                "text": ""
+              }
+            }
+          },
+          "block_order": [
+            "repair",
+            "checkout",
+            "returns",
+            "delivery",
+            "late"
+          ]
         }
       },
       "block_order": [
@@ -135,7 +190,8 @@
         "purchase_options",
         "volume_pricing",
         "gift_wrap",
-        "free_gift"
+        "free_gift",
+        "usps"
       ],
       "settings": {
         "show_breadcrumbs": true,

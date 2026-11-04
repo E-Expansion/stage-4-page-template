@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Leveransuppskattning",
+    "usp_badges": "USP-märken",
     "free_gift": "Framsteg mot gratis gåva",
     "gift_wrap": "Presentinslagning",
     "volume_pricing": "Köp mer, betala mindre",
@@ -204,6 +206,9 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "delivery_max_days": "Leverans upp till (dagar)",
+    "delivery_min_days": "Leverans från (dagar)",
+    "delivery_working_days": "Räkna bara arbetsdagar",
     "free_gift_success": "Meddelande när det nås",
     "free_gift_threshold": "Gratis gåva från (butikens valuta)",
     "description": "Beskrivning",
@@ -1234,6 +1239,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "delivery_working_days": "Hoppar över lördag och söndag. Datumen beräknas från i dag i besökarens webbläsare.",
     "free_gift": "Visar hur långt varukorgen är från en gratis gåva. Ställ in själva gåvan i Shopify, t.ex. med en automatisk rabatt eller en gåvoapp.",
     "free_gift_message": "Använd [amount] för beloppet som saknas.",
     "gift_wrap_product": "En produkt med priset för presentinslagning, t.ex. \"Presentinslagning\" för 4,50 €. Lägg till den i försäljningskanalen Webbutik men inte i kollektioner.",

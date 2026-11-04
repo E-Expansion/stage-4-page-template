@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Toimitusarvio",
+    "usp_badges": "USP-merkit",
     "free_gift": "Ilmaisen lahjan edistyminen",
     "gift_wrap": "Lahjapaketointi",
     "volume_pricing": "Osta enemmän, maksa vähemmän",
@@ -204,6 +206,9 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "delivery_max_days": "Toimitus enintään (päivää)",
+    "delivery_min_days": "Toimitus alkaen (päivää)",
+    "delivery_working_days": "Laske vain arkipäivät",
     "free_gift_success": "Viesti, kun saavutettu",
     "free_gift_threshold": "Ilmainen lahja alkaen (kaupan valuutta)",
     "description": "Kuvaus",
@@ -1234,6 +1239,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "delivery_working_days": "Ohittaa lauantait ja sunnuntait. Päivämäärät lasketaan tästä päivästä kävijän selaimessa.",
     "free_gift": "Näyttää, kuinka paljon ostoskorista puuttuu ilmaiseen lahjaan. Määritä itse lahja Shopifyssa, esim. automaattisella alennuksella tai lahjasovelluksella.",
     "free_gift_message": "Käytä [amount] puuttuvalle summalle.",
     "gift_wrap_product": "Tuote, jossa on lahjapaketoinnin hinta, esim. \"Lahjapaketointi\" 4,50 €. Lisää se Verkkokauppa-myyntikanavaan, mutta ei kokoelmiin.",

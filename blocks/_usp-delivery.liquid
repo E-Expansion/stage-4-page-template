@@ -1,0 +1,109 @@
+{% doc %}
+  Renders a USP card with the expected delivery window ("Delivery Tue 15 - Thu 17 Sep"),
+  counted from today in working days (or calendar days). The dates are filled in by
+  assets/delivery-estimate.js in the visitor's browser, so cached pages never show a stale
+  date; without JavaScript it reads "Delivery in 2-4 working days". Uses the USP item
+  styles, so it fits in any USP grid.
+
+  @example
+  {% content_for 'blocks' %}
+{% enddoc %}
+
+{% render 'usp-item-styles' %}
+
+{% liquid
+  assign min_days = block.settings.min_days
+  assign max_days = block.settings.max_days | at_least: min_days
+  assign label = block.settings.label | escape
+%}
+
+<script
+  src="{{ 'delivery-estimate.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<li
+  class="usp-item"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.icon != 'none' %}
+    <span class="usp-item__icon">
+      {% render 'icon-or-image', icon: block.settings.icon, width: 20, class_name: 'usp-item__icon-graphic' %}
+    </span>
+  {% endif %}
+
+  <span class="usp-item__body">
+    <delivery-estimate-component
+      class="usp-item__title"
+      data-min-days="{{ min_days }}"
+      data-max-days="{{ max_days }}"
+      data-working-days="{{ block.settings.working_days }}"
+      data-label="{{ label }}"
+    >
+      {%- if block.settings.working_days -%}
+        {{ 'content.delivery_in_working_days' | t: label: label, min: min_days, max: max_days }}
+      {%- else -%}
+        {{ 'content.delivery_in_days' | t: label: label, min: min_days, max: max_days }}
+      {%- endif -%}
+    </delivery-estimate-component>
+  </span>
+</li>
+
+{% schema %}
+{
+  "name": "t:names.delivery_estimate",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "truck", "label": "t:options.truck" },
+        { "value": "box", "label": "t:options.box" },
+        { "value": "plane", "label": "t:options.plane" },
+        { "value": "stopwatch", "label": "t:options.stopwatch" }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Delivery"
+    },
+    {
+      "type": "range",
+      "id": "min_days",
+      "label": "t:settings.delivery_min_days",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "max_days",
+      "label": "t:settings.delivery_max_days",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "working_days",
+      "label": "t:settings.delivery_working_days",
+      "info": "t:info.delivery_working_days",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.delivery_estimate"
+    }
+  ]
+}
+{% endschema %}

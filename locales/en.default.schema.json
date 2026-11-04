@@ -233,6 +233,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "delivery_working_days": "Skips Saturdays and Sundays. Dates are calculated from today in the visitor's browser.",
     "free_gift": "Shows how far the cart is from a free gift. Set up the gift itself in Shopify, for example with an automatic discount or a gift app.",
     "free_gift_message": "Use [amount] for the amount still needed.",
     "gift_wrap_product": "A product that holds the gift wrap price, e.g. \"Gift wrap\" at €4.50. Add it to the Online Store channel but leave it out of collections.",
@@ -312,6 +313,8 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "delivery_estimate": "Delivery estimate",
+    "usp_badges": "USP badges",
     "free_gift": "Free gift progress",
     "gift_wrap": "Gift wrap",
     "volume_pricing": "Buy more, pay less",
@@ -832,6 +835,9 @@
     "below_media": "Below media"
   },
   "settings": {
+    "delivery_max_days": "Delivery up to (days)",
+    "delivery_min_days": "Delivery from (days)",
+    "delivery_working_days": "Count working days only",
     "free_gift_success": "Message when reached",
     "free_gift_threshold": "Free gift from (store currency)",
     "description": "Description",

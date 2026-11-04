@@ -1,0 +1,54 @@
+{%- doc -%}
+  Shared styles for USP cards (.usp-item and its icon, title and text), used by the USP
+  item and delivery estimate blocks in the homepage USP bar and the product page badges.
+
+  @example
+  {% render 'usp-item-styles' %}
+{%- enddoc -%}
+
+{% stylesheet %}
+  .usp-item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+    min-width: 0;
+    padding: var(--padding-md) var(--padding-lg);
+    background-color: var(--color-background);
+  }
+
+  .usp-item__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    color: var(--color-foreground-muted);
+  }
+
+  .usp-item__icon-graphic {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    object-fit: contain;
+  }
+
+  .usp-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .usp-item__title {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 990px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .usp-item__text {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}

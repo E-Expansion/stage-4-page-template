@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Leverschatting",
+    "usp_badges": "USP-badges",
     "free_gift": "Voortgang gratis cadeau",
     "gift_wrap": "Cadeauverpakking",
     "volume_pricing": "Meer kopen, minder betalen",
@@ -204,6 +206,9 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "delivery_max_days": "Levering tot (dagen)",
+    "delivery_min_days": "Levering vanaf (dagen)",
+    "delivery_working_days": "Alleen werkdagen tellen",
     "free_gift_success": "Bericht als het bereikt is",
     "free_gift_threshold": "Gratis cadeau vanaf (winkelvaluta)",
     "description": "Omschrijving",
@@ -1234,6 +1239,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "delivery_working_days": "Slaat zaterdag en zondag over. De datums worden vanaf vandaag in de browser van de bezoeker berekend.",
     "free_gift": "Laat zien hoe ver de winkelwagen van een gratis cadeau af zit. Stel het cadeau zelf in Shopify in, bijvoorbeeld met een automatische korting of een cadeau-app.",
     "free_gift_message": "Gebruik [amount] voor het bedrag dat nog nodig is.",
     "gift_wrap_product": "Een product met de prijs van de cadeauverpakking, bijv. \"Gift wrap\" à €4,50. Zet het op het verkoopkanaal Online Store, maar niet in collecties.",

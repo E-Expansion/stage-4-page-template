@@ -1,10 +1,13 @@
 {% doc %}
   Renders one USP cell: an icon (theme icon or uploaded image), a title and a short line
-  of supporting text. Lives inside the grid owned by sections/usp-bar.liquid.
+  of supporting text. Lives inside a USP grid: sections/usp-bar.liquid on the homepage or
+  blocks/_product-usps.liquid on the product page, which restyles it as a compact card.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
+
+{% render 'usp-item-styles' %}
 
 {% liquid
   assign title = block.settings.title | escape
@@ -38,52 +41,6 @@
   </li>
 {% endif %}
 
-{% stylesheet %}
-  .usp-item {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-md);
-    min-width: 0;
-    padding: var(--padding-md) var(--padding-lg);
-    background-color: var(--color-background);
-  }
-
-  .usp-item__icon {
-    flex-shrink: 0;
-    display: inline-flex;
-    color: var(--color-foreground-muted);
-  }
-
-  .usp-item__icon-graphic {
-    width: var(--icon-size-sm);
-    height: var(--icon-size-sm);
-    object-fit: contain;
-  }
-
-  .usp-item__body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding-3xs);
-    min-width: 0;
-  }
-
-  .usp-item__title {
-    font-family: var(--font-body--family);
-    font-size: var(--font-size--sm);
-    color: var(--color-foreground);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 990px) {
-      font-size: var(--font-size--md);
-    }
-  }
-
-  .usp-item__text {
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground-muted);
-    overflow-wrap: anywhere;
-  }
-{% endstylesheet %}
 
 {% schema %}
 {

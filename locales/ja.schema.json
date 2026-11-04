@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "お届け予定",
+    "usp_badges": "USP バッジ",
     "free_gift": "無料ギフトまでの進捗",
     "gift_wrap": "ギフトラッピング",
     "volume_pricing": "まとめ買いでお得",
@@ -204,6 +206,9 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "delivery_max_days": "お届けまで最長（日）",
+    "delivery_min_days": "お届けまで最短（日）",
+    "delivery_working_days": "営業日のみ数える",
     "free_gift_success": "達成時のメッセージ",
     "free_gift_threshold": "無料ギフトの条件額（ストア通貨）",
     "description": "説明",
@@ -1234,6 +1239,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "delivery_working_days": "土曜と日曜を除きます。日付は訪問者のブラウザで今日から計算されます。",
     "free_gift": "カートが無料ギフトまであといくらかを表示します。ギフト自体は Shopify で、自動割引やギフトアプリなどで設定してください。",
     "free_gift_message": "不足額には [amount] を使用します。",
     "gift_wrap_product": "ギフトラッピングの価格を持つ商品（例: 4.50 € の「ギフトラッピング」）。オンラインストアのチャネルに追加し、コレクションには含めないでください。",

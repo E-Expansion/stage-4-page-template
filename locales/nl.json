@@ -134,6 +134,8 @@
     "back_to_main_menu": "Terug naar hoofdmenu"
   },
   "content": {
+    "delivery_in_days": "{{ label }} in {{ min }}-{{ max }} dagen",
+    "delivery_in_working_days": "{{ label }} in {{ min }}-{{ max }} werkdagen",
     "gift_wrap_no_product": "Cadeauverpakking is verborgen: kies een product voor de cadeauverpakking in de instellingen van dit blok.",
     "gift_wrap_unavailable": "Cadeauverpakking is verborgen: \"{{ product }}\" is niet te koop. Zet het op Actief, voeg het toe aan het verkoopkanaal Online Store en geef het voorraad of zet voorraad bijhouden uit.",
     "gift_note": "Cadeaubericht",

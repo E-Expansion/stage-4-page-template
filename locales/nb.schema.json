@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Leveringsestimat",
+    "usp_badges": "USP-merker",
     "free_gift": "Fremdrift mot gratis gave",
     "gift_wrap": "Gaveinnpakning",
     "volume_pricing": "Kjøp mer, betal mindre",
@@ -204,6 +206,9 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
+    "delivery_max_days": "Levering opptil (dager)",
+    "delivery_min_days": "Levering fra (dager)",
+    "delivery_working_days": "Tell bare virkedager",
     "free_gift_success": "Melding når nådd",
     "free_gift_threshold": "Gratis gave fra (butikkens valuta)",
     "description": "Beskrivelse",
@@ -1234,6 +1239,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "delivery_working_days": "Hopper over lørdag og søndag. Datoene beregnes fra i dag i besøkendes nettleser.",
     "free_gift": "Viser hvor langt handlekurven er fra en gratis gave. Sett opp selve gaven i Shopify, f.eks. med en automatisk rabatt eller en gaveapp.",
     "free_gift_message": "Bruk [amount] for beløpet som mangler.",
     "gift_wrap_product": "Et produkt med prisen for gaveinnpakning, f.eks. «Gaveinnpakning» til €4,50. Legg det til i salgskanalen Nettbutikk, men ikke i kolleksjoner.",

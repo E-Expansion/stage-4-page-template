@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Stima di consegna",
+    "usp_badges": "Badge dei vantaggi",
     "free_gift": "Avanzamento omaggio",
     "gift_wrap": "Confezione regalo",
     "volume_pricing": "Compra di più, paghi meno",
@@ -204,6 +206,9 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "delivery_max_days": "Consegna fino a (giorni)",
+    "delivery_min_days": "Consegna da (giorni)",
+    "delivery_working_days": "Conta solo i giorni lavorativi",
     "free_gift_success": "Messaggio al raggiungimento",
     "free_gift_threshold": "Omaggio a partire da (valuta del negozio)",
     "description": "Descrizione",
@@ -1234,6 +1239,7 @@
     "disclosures": "Informative"
   },
   "info": {
+    "delivery_working_days": "Salta sabato e domenica. Le date vengono calcolate da oggi nel browser del visitatore.",
     "free_gift": "Mostra quanto manca al carrello per un omaggio. Configura l'omaggio in Shopify, ad esempio con uno sconto automatico o un'app per omaggi.",
     "free_gift_message": "Usa [amount] per l'importo mancante.",
     "gift_wrap_product": "Un prodotto con il prezzo della confezione regalo, ad es. \"Confezione regalo\" a 4,50 €. Aggiungilo al canale Negozio online ma non alle collezioni.",

@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Estimation de livraison",
+    "usp_badges": "Badges d'atouts",
     "free_gift": "Progression du cadeau offert",
     "gift_wrap": "Emballage cadeau",
     "volume_pricing": "Achetez plus, payez moins",
@@ -204,6 +206,9 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "delivery_max_days": "Livraison jusqu'à (jours)",
+    "delivery_min_days": "Livraison à partir de (jours)",
+    "delivery_working_days": "Compter uniquement les jours ouvrés",
     "free_gift_success": "Message une fois atteint",
     "free_gift_threshold": "Cadeau offert dès (devise de la boutique)",
     "description": "Description",
@@ -1234,6 +1239,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "delivery_working_days": "Ignore le samedi et le dimanche. Les dates sont calculées à partir d'aujourd'hui dans le navigateur du visiteur.",
     "free_gift": "Indique combien il manque au panier pour un cadeau offert. Configurez le cadeau dans Shopify, par exemple avec une réduction automatique ou une application de cadeaux.",
     "free_gift_message": "Utilisez [amount] pour le montant restant.",
     "gift_wrap_product": "Un produit portant le prix de l'emballage cadeau, p. ex. « Emballage cadeau » à 4,50 €. Ajoutez-le au canal Boutique en ligne sans l'inclure dans des collections.",

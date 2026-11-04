@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Teslimat tahmini",
+    "usp_badges": "Avantaj rozetleri",
     "free_gift": "Hediye ilerlemesi",
     "gift_wrap": "Hediye paketi",
     "volume_pricing": "Fazla al, az öde",
@@ -204,6 +206,9 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "delivery_max_days": "Teslimat en geç (gün)",
+    "delivery_min_days": "Teslimat en erken (gün)",
+    "delivery_working_days": "Yalnızca iş günlerini say",
     "free_gift_success": "Ulaşıldığında mesaj",
     "free_gift_threshold": "Ücretsiz hediye eşiği (mağaza para birimi)",
     "description": "Açıklama",
@@ -1234,6 +1239,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "delivery_working_days": "Cumartesi ve pazarı atlar. Tarihler ziyaretçinin tarayıcısında bugünden itibaren hesaplanır.",
     "free_gift": "Sepetin ücretsiz hediyeye ne kadar uzak olduğunu gösterir. Hediyenin kendisini Shopify'da, örneğin otomatik indirim veya bir hediye uygulamasıyla ayarlayın.",
     "free_gift_message": "Kalan tutar için [amount] kullanın.",
     "gift_wrap_product": "Hediye paketi fiyatını taşıyan bir ürün, ör. 4,50 € fiyatlı \"Hediye paketi\". Online Mağaza kanalına ekleyin ama koleksiyonlara eklemeyin.",

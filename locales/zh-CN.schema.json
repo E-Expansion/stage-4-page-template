@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "预计送达",
+    "usp_badges": "卖点徽章",
     "free_gift": "免费赠品进度",
     "gift_wrap": "礼品包装",
     "volume_pricing": "多买更省",
@@ -204,6 +206,9 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "delivery_max_days": "最迟送达（天）",
+    "delivery_min_days": "最快送达（天）",
+    "delivery_working_days": "仅计算工作日",
     "free_gift_success": "达成时的消息",
     "free_gift_threshold": "免费赠品门槛（商店货币）",
     "description": "描述",
@@ -1234,6 +1239,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "delivery_working_days": "跳过周六和周日。日期在访客的浏览器中从今天开始计算。",
     "free_gift": "显示购物车距离免费赠品还差多少。赠品本身需在 Shopify 中设置，例如使用自动折扣或赠品应用。",
     "free_gift_message": "使用 [amount] 表示仍需的金额。",
     "gift_wrap_product": "一个承载礼品包装价格的产品，例如售价 €4.50 的“礼品包装”。将其添加到在线商店渠道，但不要加入任何产品系列。",

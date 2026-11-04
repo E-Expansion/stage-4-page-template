@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Szacowana dostawa",
+    "usp_badges": "Odznaki zalet",
     "free_gift": "Postęp do prezentu",
     "gift_wrap": "Pakowanie na prezent",
     "volume_pricing": "Kup więcej, zapłać mniej",
@@ -204,6 +206,9 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "delivery_max_days": "Dostawa do (dni)",
+    "delivery_min_days": "Dostawa od (dni)",
+    "delivery_working_days": "Licz tylko dni robocze",
     "free_gift_success": "Komunikat po osiągnięciu",
     "free_gift_threshold": "Prezent od (waluta sklepu)",
     "description": "Opis",
@@ -1234,6 +1239,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "delivery_working_days": "Pomija soboty i niedziele. Daty są liczone od dziś w przeglądarce odwiedzającego.",
     "free_gift": "Pokazuje, ile brakuje w koszyku do darmowego prezentu. Skonfiguruj prezent w Shopify, np. rabatem automatycznym lub aplikacją.",
     "free_gift_message": "Użyj [amount] dla brakującej kwoty.",
     "gift_wrap_product": "Produkt z ceną pakowania, np. „Pakowanie na prezent” za 4,50 €. Dodaj go do kanału Sklep internetowy, ale nie do kolekcji.",

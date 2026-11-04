@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "預計送達",
+    "usp_badges": "賣點徽章",
     "free_gift": "免費贈品進度",
     "gift_wrap": "禮品包裝",
     "volume_pricing": "多買更省",
@@ -204,6 +206,9 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "delivery_max_days": "最晚送達（天）",
+    "delivery_min_days": "最快送達（天）",
+    "delivery_working_days": "僅計算工作天",
     "free_gift_success": "達成時的訊息",
     "free_gift_threshold": "免費贈品門檻（商店幣別）",
     "description": "說明",
@@ -1234,6 +1239,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "delivery_working_days": "略過週六和週日。日期會在訪客的瀏覽器中從今天開始計算。",
     "free_gift": "顯示購物車距離免費贈品還差多少。贈品本身需在 Shopify 中設定，例如使用自動折扣或贈品應用程式。",
     "free_gift_message": "使用 [amount] 表示仍需的金額。",
     "gift_wrap_product": "一個承載禮品包裝價格的產品，例如售價 €4.50 的「禮品包裝」。將它加入線上商店通路，但不要放入任何商品系列。",

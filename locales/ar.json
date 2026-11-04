@@ -166,6 +166,8 @@
     }
   },
   "content": {
+    "delivery_in_days": "{{ label }} خلال {{ min }}-{{ max }} أيام",
+    "delivery_in_working_days": "{{ label }} خلال {{ min }}-{{ max }} أيام عمل",
     "gift_wrap_no_product": "Gift wrap is hidden: choose a gift wrap product in this block's settings.",
     "gift_wrap_unavailable": "Gift wrap is hidden: \"{{ product }}\" can't be bought. Set it to Active, add it to the Online Store channel, and give it stock or turn off inventory tracking.",
     "gift_note": "ملاحظة الهدية",

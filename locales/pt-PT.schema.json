@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Estimativa de entrega",
+    "usp_badges": "Distintivos de vantagens",
     "free_gift": "Progresso da oferta",
     "gift_wrap": "Embrulho de oferta",
     "volume_pricing": "Compre mais, pague menos",
@@ -204,6 +206,9 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "delivery_max_days": "Entrega até (dias)",
+    "delivery_min_days": "Entrega a partir de (dias)",
+    "delivery_working_days": "Contar só dias úteis",
     "free_gift_success": "Mensagem ao atingir",
     "free_gift_threshold": "Oferta a partir de (moeda da loja)",
     "description": "Descrição",
@@ -1234,6 +1239,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "delivery_working_days": "Ignora sábados e domingos. As datas são calculadas a partir de hoje no navegador do visitante.",
     "free_gift": "Mostra quanto falta no carrinho para uma oferta. Configure a oferta no Shopify, por exemplo com um desconto automático ou uma app de ofertas.",
     "free_gift_message": "Use [amount] para o valor em falta.",
     "gift_wrap_product": "Um produto com o preço do embrulho, p. ex. \"Embrulho de oferta\" a 4,50 €. Adicione-o ao canal Loja online, mas não a coleções.",

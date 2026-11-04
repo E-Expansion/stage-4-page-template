@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "delivery_estimate": "Lieferschätzung",
+    "usp_badges": "USP-Badges",
     "free_gift": "Fortschritt Gratisgeschenk",
     "gift_wrap": "Geschenkverpackung",
     "volume_pricing": "Mehr kaufen, weniger zahlen",
@@ -204,6 +206,9 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "delivery_max_days": "Lieferung bis (Tage)",
+    "delivery_min_days": "Lieferung ab (Tage)",
+    "delivery_working_days": "Nur Werktage zählen",
     "free_gift_success": "Nachricht bei Erreichen",
     "free_gift_threshold": "Gratisgeschenk ab (Shopwährung)",
     "description": "Beschreibung",
@@ -1234,6 +1239,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "delivery_working_days": "Überspringt Samstag und Sonntag. Die Daten werden ab heute im Browser des Besuchers berechnet.",
     "free_gift": "Zeigt, wie weit der Warenkorb von einem Gratisgeschenk entfernt ist. Richte das Geschenk selbst in Shopify ein, z. B. mit einem automatischen Rabatt oder einer Geschenk-App.",
     "free_gift_message": "Verwende [amount] für den noch fehlenden Betrag.",
     "gift_wrap_product": "Ein Produkt mit dem Preis der Geschenkverpackung, z. B. „Geschenkverpackung“ für 4,50 €. Im Vertriebskanal Onlineshop verfügbar machen, aber in keine Kollektion aufnehmen.",
