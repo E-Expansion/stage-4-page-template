@@ -14,23 +14,49 @@
       "blocks": {
         "title": {
           "type": "_product-title",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "meta": {
           "type": "_product-meta",
-          "settings": {}
+          "settings": {
+            "show_rating": true,
+            "show_sold_this_week": true,
+            "show_stock": true,
+            "in_stock_note": "ships today"
+          },
+          "blocks": {}
         },
         "price": {
           "type": "_product-price",
-          "settings": {}
+          "settings": {
+            "description": "Incl. VAT · shipping calculated at checkout, free over €75",
+            "show_guarantee": true,
+            "guarantee_text": "Lowest price guarantee: found it cheaper elsewhere within 30 days? We'll match the price.",
+            "guarantee_color": "{{ settings.color_palette.color3 }}"
+          },
+          "blocks": {}
         },
         "variant_picker": {
           "type": "_product-variant-picker",
-          "settings": {}
+          "settings": {
+            "size_option": "Size",
+            "size_guide_page": "size-guide",
+            "size_guide_label": "Size & fit guide",
+            "size_guide_color": "{{ settings.color_palette.color3 }}"
+          },
+          "blocks": {}
         },
         "buy": {
           "type": "_product-buy",
-          "settings": {}
+          "settings": {
+            "show_price": true,
+            "button_color": "{{ settings.color_palette.color3 }}",
+            "installments": 3,
+            "installments_provider": "Klarna",
+            "note": "30-day money back guarantee"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
