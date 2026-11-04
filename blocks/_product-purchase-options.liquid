@@ -51,7 +51,7 @@
         <label class="purchase-options__tab">
           <input
             type="radio"
-            class="visually-hidden"
+            class="visually-hidden-input"
             name="PurchaseType-{{ block.id }}"
             value=""
             {% if active_plan == blank %}
@@ -86,7 +86,7 @@
         <label class="purchase-options__tab">
           <input
             type="radio"
-            class="visually-hidden"
+            class="visually-hidden-input"
             name="PurchaseType-{{ block.id }}"
             value="{{ group.selling_plans.first.id }}"
             {% if group_active %}

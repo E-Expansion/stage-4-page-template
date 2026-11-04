@@ -458,6 +458,21 @@ p:empty {
   word-wrap: normal !important;
 }
 
+/* Hides a native radio or checkbox that is styled through its label. Unlike
+   .visually-hidden it stays hidden while focused; the label shows the focus ring. */
+.visually-hidden-input {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  opacity: 0;
+}
+
 .contents {
   display: contents;
 }
