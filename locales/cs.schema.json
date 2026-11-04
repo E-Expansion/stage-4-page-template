@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certifikát produktu",
     "product_tab": "Záložka",
     "product_tabs": "Záložky produktu",
     "back_in_stock": "Opět skladem",
@@ -1257,6 +1258,9 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "certificate_background": "Výchozí je světlý odstín barvy hodnocení z nastavení motivu.",
+    "certificate_image": "Zobrazí se v kruhu. Dokud nevyberete obrázek, zobrazí se zástupný symbol.",
+    "certificate_link": "Web certifikační organizace. Otevře se na nové kartě.",
     "product_tab_content": "Seznamy se zobrazí jako checklist. Propojte metapole produktu (rich text) pro jiný obsah u každého produktu.",
     "product_tab_page": "Přidá obsah stránky pod text, např. srovnávací tabulku.",
     "product_tabs_accent": "Text aktivní záložky a zaškrtnutí v seznamech.",

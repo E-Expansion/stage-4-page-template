@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Ürün sertifikası",
     "product_tab": "Sekme",
     "product_tabs": "Ürün sekmeleri",
     "back_in_stock": "Yeniden stokta",
@@ -1257,6 +1258,9 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "certificate_background": "Varsayılan olarak tema ayarlarındaki puan renginin açık tonu.",
+    "certificate_image": "Daire içinde gösterilir. Görsel seçilene kadar yer tutucu görünür.",
+    "certificate_link": "Sertifika kuruluşunun web sitesi. Yeni sekmede açılır.",
     "product_tab_content": "Listeler kontrol listesi olarak görünür. Ürün başına farklı içerik için bir ürün meta alanı (zengin metin) bağlayın.",
     "product_tab_page": "Metnin altına bir sayfanın içeriğini ekler, ör. karşılaştırma tablosu.",
     "product_tabs_accent": "Etkin sekme metni ve liste işaretleri.",

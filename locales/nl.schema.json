@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Productcertificaat",
     "product_tab": "Tab",
     "product_tabs": "Producttabs",
     "back_in_stock": "Weer op voorraad",
@@ -1257,6 +1258,9 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "certificate_background": "Standaard een lichte tint van de ratingkleur uit de theme-instellingen.",
+    "certificate_image": "Wordt rond getoond. Zolang er geen afbeelding is gekozen, staat er een placeholder.",
+    "certificate_link": "De website van de certificerende organisatie. Opent in een nieuw tabblad.",
     "product_tab_content": "Lijsten worden een checklist. Koppel een productmetaveld (rich text) om per product andere inhoud te tonen.",
     "product_tab_page": "Voegt de inhoud van een pagina toe onder de tekst, bijv. een vergelijkingstabel.",
     "product_tabs_accent": "Tekst van de actieve tab en de vinkjes in lijsten.",

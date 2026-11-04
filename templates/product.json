@@ -256,6 +256,15 @@
             "compare",
             "sustainability"
           ]
+        },
+        "certificate": {
+          "type": "_product-certificate",
+          "settings": {
+            "heading": "Responsibly sourced leather",
+            "text": "<p>Made with leather from a tannery audited for environmental performance and responsible production practices.</p>",
+            "link_label": "Read more",
+            "link": "https://www.leatherworkinggroup.com/"
+          }
         }
       },
       "block_order": [
@@ -271,7 +280,8 @@
         "free_gift",
         "usps",
         "shipping_countdown",
-        "tabs"
+        "tabs",
+        "certificate"
       ],
       "settings": {
         "show_breadcrumbs": true,

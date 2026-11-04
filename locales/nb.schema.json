@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Produktsertifikat",
     "product_tab": "Fane",
     "product_tabs": "Produktfaner",
     "back_in_stock": "På lager igjen",
@@ -1257,6 +1258,9 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "certificate_background": "Standard er en lys tone av vurderingsfargen fra temainnstillingene.",
+    "certificate_image": "Vises rundt. Til et bilde er valgt, vises en plassholder.",
+    "certificate_link": "Nettstedet til sertifiseringsorganet. Åpnes i en ny fane.",
     "product_tab_content": "Lister vises som sjekkliste. Koble til et produktmetafelt (rik tekst) for ulikt innhold per produkt.",
     "product_tab_page": "Legger til innholdet på en side under teksten, f.eks. en sammenligningstabell.",
     "product_tabs_accent": "Tekst på aktiv fane og hakemerker i lister.",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "產品證書",
     "product_tab": "分頁",
     "product_tabs": "產品分頁",
     "back_in_stock": "到貨通知",
@@ -1257,6 +1258,9 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "certificate_background": "預設使用佈景主題設定中評分顏色的淺色。",
+    "certificate_image": "以圓形顯示。選擇圖片前會顯示預留位置。",
+    "certificate_link": "認證機構的網站。在新分頁中開啟。",
     "product_tab_content": "清單會顯示為檢查清單。連結產品中繼欄位（RTF）即可為每項產品顯示不同內容。",
     "product_tab_page": "在文字下方加入頁面內容，例如比較表。",
     "product_tabs_accent": "目前分頁文字和清單勾選標記。",

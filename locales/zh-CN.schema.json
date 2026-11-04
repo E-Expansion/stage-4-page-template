@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "产品证书",
     "product_tab": "标签页",
     "product_tabs": "产品标签页",
     "back_in_stock": "到货通知",
@@ -1257,6 +1258,9 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "certificate_background": "默认使用主题设置中评分颜色的浅色。",
+    "certificate_image": "以圆形显示。选择图片前显示占位图。",
+    "certificate_link": "认证机构的网站。在新标签页中打开。",
     "product_tab_content": "列表显示为清单。连接产品元字段（富文本）即可为每个产品显示不同内容。",
     "product_tab_page": "在文本下方添加页面内容，例如对比表。",
     "product_tabs_accent": "当前标签页文字和列表勾选标记。",

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Produktcertifikat",
     "product_tab": "Flik",
     "product_tabs": "Produktflikar",
     "back_in_stock": "Åter i lager",
@@ -1257,6 +1258,9 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "certificate_background": "Standard är en ljus ton av betygsfärgen från temainställningarna.",
+    "certificate_image": "Visas runt. Tills en bild valts visas en platshållare.",
+    "certificate_link": "Certifieringsorganets webbplats. Öppnas i en ny flik.",
     "product_tab_content": "Listor visas som checklista. Koppla ett produktmetafält (rich text) för olika innehåll per produkt.",
     "product_tab_page": "Lägger till en sidas innehåll under texten, t.ex. en jämförelsetabell.",
     "product_tabs_accent": "Text på aktiv flik och bockar i listor.",

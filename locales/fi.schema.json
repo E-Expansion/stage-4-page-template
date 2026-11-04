@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Tuotesertifikaatti",
     "product_tab": "Välilehti",
     "product_tabs": "Tuotevälilehdet",
     "back_in_stock": "Takaisin varastossa",
@@ -1257,6 +1258,9 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "certificate_background": "Oletuksena teeman asetusten arvioväristä vaalea sävy.",
+    "certificate_image": "Näytetään pyöreänä. Kunnes kuva valitaan, näkyy paikkamerkki.",
+    "certificate_link": "Sertifioijan verkkosivusto. Avautuu uuteen välilehteen.",
     "product_tab_content": "Listat näytetään tarkistuslistana. Yhdistä tuotteen metakenttä (rich text), jotta jokaisella tuotteella on oma sisältönsä.",
     "product_tab_page": "Lisää sivun sisällön tekstin alle, esim. vertailutaulukon.",
     "product_tabs_accent": "Aktiivisen välilehden teksti ja listojen valintamerkit.",

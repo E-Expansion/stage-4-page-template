@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certyfikat produktu",
     "product_tab": "Zakładka",
     "product_tabs": "Zakładki produktu",
     "back_in_stock": "Ponownie dostępne",
@@ -1257,6 +1258,9 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "certificate_background": "Domyślnie jasny odcień koloru ocen z ustawień motywu.",
+    "certificate_image": "Wyświetlany w kółku. Dopóki nie wybierzesz obrazu, widać symbol zastępczy.",
+    "certificate_link": "Strona jednostki certyfikującej. Otwiera się w nowej karcie.",
     "product_tab_content": "Listy wyświetlają się jako checklista. Połącz metapole produktu (rich text), by pokazać inną treść dla każdego produktu.",
     "product_tab_page": "Dodaje treść strony pod tekstem, np. tabelę porównawczą.",
     "product_tabs_accent": "Tekst aktywnej zakładki i znaczniki list.",

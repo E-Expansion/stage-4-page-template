@@ -235,6 +235,9 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "certificate_background": "Defaults to a light tint of the rating color from Theme settings.",
+    "certificate_image": "Shown in a circle. Until an image is chosen, a placeholder shows.",
+    "certificate_link": "The certifying organisation's website. Opens in a new tab.",
     "product_tab_content": "Lists show as a checklist. Connect a product metafield (rich text) to show different content per product.",
     "product_tab_page": "Adds a page's content below the text, e.g. a comparison table.",
     "product_tabs_accent": "Active tab text and list check marks.",
@@ -322,6 +325,7 @@
     "media_type_info": "Features are populated from your menu links"
   },
   "names": {
+    "product_certificate": "Product certificate",
     "product_tab": "Tab",
     "product_tabs": "Product tabs",
     "back_in_stock": "Back in stock",

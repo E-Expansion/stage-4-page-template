@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certificado del producto",
     "product_tab": "Pestaña",
     "product_tabs": "Pestañas de producto",
     "back_in_stock": "De nuevo en stock",
@@ -1257,6 +1258,9 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "certificate_background": "Por defecto, un tono claro del color de valoración de la configuración del tema.",
+    "certificate_image": "Se muestra en un círculo. Hasta elegir una imagen se ve un marcador.",
+    "certificate_link": "El sitio web del organismo certificador. Se abre en una pestaña nueva.",
     "product_tab_content": "Las listas se muestran como checklist. Conecta un metacampo de producto (texto enriquecido) para mostrar contenido distinto por producto.",
     "product_tab_page": "Añade el contenido de una página bajo el texto, p. ej. una tabla comparativa.",
     "product_tabs_accent": "Texto de la pestaña activa y marcas de las listas.",

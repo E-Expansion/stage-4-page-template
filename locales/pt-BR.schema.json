@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certificado do produto",
     "product_tab": "Aba",
     "product_tabs": "Abas do produto",
     "back_in_stock": "De volta ao estoque",
@@ -1257,6 +1258,9 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "certificate_background": "Padrão: um tom claro da cor de avaliação das configurações do tema.",
+    "certificate_image": "Exibida em círculo. Até escolher uma imagem, aparece um espaço reservado.",
+    "certificate_link": "O site da certificadora. Abre em uma nova aba.",
     "product_tab_content": "Listas aparecem como checklist. Conecte um metacampo de produto (rich text) para conteúdo diferente por produto.",
     "product_tab_page": "Adiciona o conteúdo de uma página abaixo do texto, por ex. uma tabela comparativa.",
     "product_tabs_accent": "Texto da aba ativa e marcações das listas.",

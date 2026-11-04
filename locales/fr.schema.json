@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certificat produit",
     "product_tab": "Onglet",
     "product_tabs": "Onglets produit",
     "back_in_stock": "De retour en stock",
@@ -1257,6 +1258,9 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "certificate_background": "Par défaut, une teinte claire de la couleur des avis des paramètres du thème.",
+    "certificate_image": "Affichée en cercle. Un espace réservé s'affiche tant qu'aucune image n'est choisie.",
+    "certificate_link": "Le site de l'organisme certificateur. S'ouvre dans un nouvel onglet.",
     "product_tab_content": "Les listes s'affichent comme une checklist. Connectez un métachamp produit (texte enrichi) pour un contenu différent par produit.",
     "product_tab_page": "Ajoute le contenu d'une page sous le texte, p. ex. un tableau comparatif.",
     "product_tabs_accent": "Texte de l'onglet actif et coches des listes.",

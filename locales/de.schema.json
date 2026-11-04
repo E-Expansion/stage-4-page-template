@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Produktzertifikat",
     "product_tab": "Tab",
     "product_tabs": "Produkt-Tabs",
     "back_in_stock": "Wieder verfügbar",
@@ -1257,6 +1258,9 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "certificate_background": "Standard ist ein heller Ton der Bewertungsfarbe aus den Theme-Einstellungen.",
+    "certificate_image": "Wird rund angezeigt. Bis ein Bild gewählt ist, erscheint ein Platzhalter.",
+    "certificate_link": "Die Website der Zertifizierungsstelle. Öffnet sich in einem neuen Tab.",
     "product_tab_content": "Listen werden als Checkliste angezeigt. Verbinde ein Produkt-Metafeld (Rich Text), um je Produkt andere Inhalte zu zeigen.",
     "product_tab_page": "Fügt den Inhalt einer Seite unter dem Text hinzu, z. B. eine Vergleichstabelle.",
     "product_tabs_accent": "Text des aktiven Tabs und Häkchen in Listen.",

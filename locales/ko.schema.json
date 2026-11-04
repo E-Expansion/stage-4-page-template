@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "제품 인증서",
     "product_tab": "탭",
     "product_tabs": "제품 탭",
     "back_in_stock": "재입고",
@@ -1257,6 +1258,9 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "certificate_background": "기본값은 테마 설정의 평점 색상을 연하게 한 색입니다.",
+    "certificate_image": "원형으로 표시됩니다. 이미지를 선택하기 전까지 자리 표시자가 표시됩니다.",
+    "certificate_link": "인증 기관의 웹사이트입니다. 새 탭에서 열립니다.",
     "product_tab_content": "목록은 체크리스트로 표시됩니다. 제품 메타필드(리치 텍스트)를 연결하면 제품마다 다른 내용을 표시합니다.",
     "product_tab_page": "텍스트 아래에 페이지 내용(예: 비교표)을 추가합니다.",
     "product_tabs_accent": "활성 탭 텍스트와 목록 체크 표시.",

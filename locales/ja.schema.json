@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "製品証明書",
     "product_tab": "タブ",
     "product_tabs": "商品タブ",
     "back_in_stock": "再入荷",
@@ -1257,6 +1258,9 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "certificate_background": "既定はテーマ設定の評価色の淡い色です。",
+    "certificate_image": "円形で表示されます。画像を選ぶまではプレースホルダーが表示されます。",
+    "certificate_link": "認証機関のウェブサイト。新しいタブで開きます。",
     "product_tab_content": "リストはチェックリストとして表示されます。商品メタフィールド（リッチテキスト）を接続すると商品ごとに内容を変えられます。",
     "product_tab_page": "テキストの下にページの内容（比較表など）を追加します。",
     "product_tabs_accent": "アクティブなタブの文字とリストのチェックマーク。",

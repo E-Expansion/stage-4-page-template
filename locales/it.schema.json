@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_certificate": "Certificato del prodotto",
     "product_tab": "Scheda",
     "product_tabs": "Schede prodotto",
     "back_in_stock": "Di nuovo disponibile",
@@ -1257,6 +1258,9 @@
     "disclosures": "Informative"
   },
   "info": {
+    "certificate_background": "Predefinito: una tinta chiara del colore delle valutazioni delle impostazioni del tema.",
+    "certificate_image": "Mostrata in un cerchio. Finché non scegli un'immagine appare un segnaposto.",
+    "certificate_link": "Il sito dell'ente certificatore. Si apre in una nuova scheda.",
     "product_tab_content": "Gli elenchi appaiono come checklist. Collega un metacampo prodotto (rich text) per contenuti diversi per prodotto.",
     "product_tab_page": "Aggiunge il contenuto di una pagina sotto il testo, ad es. una tabella di confronto.",
     "product_tabs_accent": "Testo della scheda attiva e spunte degli elenchi.",
