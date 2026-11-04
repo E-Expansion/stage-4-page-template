@@ -60,8 +60,12 @@
         },
         "purchase_options": {
           "type": "_product-purchase-options",
-<<<<<<< HEAD
-          "settings": {}
+          "settings": {
+            "one_time_label": "One-time purchase",
+            "subscribe_label": "Subscribe & save",
+            "badge_color": "{{ settings.color_palette.color5 }}"
+          },
+          "blocks": {}
         },
         "volume_pricing": {
           "type": "_product-volume-pricing",
@@ -99,14 +103,6 @@
             "tier_2",
             "tier_3"
           ]
-=======
-          "settings": {
-            "one_time_label": "One-time purchase",
-            "subscribe_label": "Subscribe & save",
-            "badge_color": "{{ settings.color_palette.color5 }}"
-          },
-          "blocks": {}
->>>>>>> 36fa7bbad60fdd07fac6d0037e8f8a5037272925
         }
       },
       "block_order": [
@@ -114,14 +110,9 @@
         "meta",
         "price",
         "variant_picker",
-<<<<<<< HEAD
-        "purchase_options",
-        "volume_pricing",
-        "buy"
-=======
         "buy",
-        "purchase_options"
->>>>>>> 36fa7bbad60fdd07fac6d0037e8f8a5037272925
+        "purchase_options",
+        "volume_pricing"
       ],
       "settings": {
         "show_breadcrumbs": true,
