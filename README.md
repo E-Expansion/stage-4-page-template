@@ -15,7 +15,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
 | Journal (blog) | `templates/blog.json` | Done; optional store setup (see below) |
-| Article | `templates/article.json` | In progress: header, author line and content done; sidebar, FAQ and author bio to do |
+| Article | `templates/article.json` | In progress: all done except the sidebar |
 
 ## Working on the theme
 
@@ -78,10 +78,11 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `listing-toolbar-styles` | Styles for the bar above a listing and the paging below it | Collection and blog listings |
 | `star-rating` | Five stars from the review metafields | Product tile, product mention |
 | `author-byline` | Avatar and author name, from the article's `custom.author` | Press mentions, article card |
-| `author-bio` | "About the author" card | Article page (planned) |
+| `author-bio` | "About the author" card | Article page |
 | `page-heading` | Breadcrumbs, h1, optional tag badge and text | Page header, article header |
 | `breadcrumbs` | Trail built from the current page, with structured data | Page heading |
-| `faq-accordion` | One FAQ question (native `<details>`) | FAQ section |
+| `faq-accordion` | One FAQ question (native `<details>`) | FAQ section, article FAQ |
+| `faq-structured-data` | FAQPage structured data | FAQ section, article FAQ |
 | `seo-text-block` | Bordered long-form text card | SEO text section |
 | `chat-trigger-script` | Opens Shopify Inbox from any `[data-chat-trigger]` link | Footer, FAQ |
 
@@ -107,7 +108,7 @@ Shopify cannot sort blogs and Liquid cannot read a sort parameter, so `blog-filt
 
 ### Article (`templates/article.json`)
 
-`main-blog-post`: `_blog-post-header` → `_blog-post-byline` → featured image → `_blog-post-content`. The second column on desktop is reserved for the sidebar.
+`main-blog-post`: `_blog-post-header` → `_blog-post-byline` → featured image → `_blog-post-content` → `_blog-post-faq` → `_blog-post-author-bio`. The second column on desktop is reserved for the sidebar.
 
 The article text can place components between paragraphs with a marker on its own line: `[product]`, `[images]` and `[cta]`, filled from the metafields below.
 
@@ -143,6 +144,7 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Blog | `custom.subtitle` | Single-line text | Page header subtitle (falls back to the section's own text) |
 | Blog | `custom.featured_article` | Blog post | Featured article (falls back to the latest article) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
+| Article | `custom.faq_heading` | Single-line text | Article FAQ heading (falls back to the block's heading) |
 | Article | `custom.product` | Product | `[product]` marker |
 | Article | `custom.product_detail` | Single-line text | Extra text in the `[product]` row, e.g. "fits a 14\" laptop" |
 | Article | `custom.images` | List of files (images) | `[images]` marker |

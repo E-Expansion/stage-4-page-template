@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "著者プロフィール",
     "featured_article": "注目の記事",
     "related_products": "こちらもおすすめ",
     "frequently_bought_together": "一緒に購入",

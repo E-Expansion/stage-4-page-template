@@ -56,13 +56,27 @@
             "cta_link": "shopify://collections/all"
           },
           "blocks": {}
+        },
+        "blog-post-faq": {
+          "type": "_blog-post-faq",
+          "settings": {
+            "heading": "Frequently asked questions"
+          },
+          "blocks": {}
+        },
+        "blog-post-author-bio": {
+          "type": "_blog-post-author-bio",
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
         "blog-post-header",
         "blog-post-byline",
         "blog-post-image",
-        "blog-post-content"
+        "blog-post-content",
+        "blog-post-faq",
+        "blog-post-author-bio"
       ],
       "settings": {
         "content_direction": "column",

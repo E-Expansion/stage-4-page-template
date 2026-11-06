@@ -5,7 +5,7 @@
   On product, collection and article templates the questions come from that resource's
   custom.faq metafield (a list of "faq" metaobjects with question and answer fields), so
   one template serves every item; the section's own question blocks are the fallback.
-  Emits FAQPage structured data for the questions shown.
+  Emits FAQPage structured data for the questions shown (faq-structured-data snippet).
   @example
   <!-- Any template > Add section > FAQ; fill custom.faq per item or add question blocks -->
 {% endcomment %}
@@ -110,39 +110,7 @@
 </div>
 
 {% if faq_entries.size > 0 %}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {%- assign needs_comma = false -%}
-        {%- for entry in faq_entries -%}
-          {%- liquid
-            if uses_metafield
-              assign entry_question = entry.question.value
-              assign entry_answer = entry.answer | metafield_text
-            else
-              assign entry_question = entry.settings.question
-              assign entry_answer = entry.settings.answer | strip_html
-            endif
-            if entry_question == blank
-              continue
-            endif
-          -%}
-          {%- if needs_comma %},{% endif -%}
-          {
-            "@type": "Question",
-            "name": {{ entry_question | json }},
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": {{ entry_answer | json }}
-            }
-          }
-          {%- assign needs_comma = true -%}
-        {%- endfor -%}
-      ]
-    }
-  </script>
+  {% render 'faq-structured-data', entries: faq_entries, uses_metafield: uses_metafield %}
 {% endif %}
 {% endif %}
 

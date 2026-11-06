@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "Biografía del autor",
     "featured_article": "Artículo destacado",
     "related_products": "También te puede gustar",
     "frequently_bought_together": "Comprados juntos",

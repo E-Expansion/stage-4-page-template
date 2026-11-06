@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "Yazar biyografisi",
     "featured_article": "Öne çıkan makale",
     "related_products": "Bunları da sevebilirsiniz",
     "frequently_bought_together": "Birlikte alınanlar",

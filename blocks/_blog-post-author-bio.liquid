@@ -1,0 +1,33 @@
+{%- doc -%}
+  Renders the "About the author" card in the article column, using the shared author-bio
+  snippet. Renders nothing when the article's author has no bio.
+{%- enddoc -%}
+
+{% if article.metafields.custom.author.value.bio != blank %}
+  <div
+    class="blog-post-author-bio"
+    {{ block.shopify_attributes }}
+  >
+    {% render 'author-bio', article: article %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .blog-post-author-bio {
+    width: 100%;
+    max-width: var(--narrow-content-width);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.author_bio",
+  "tag": null,
+  "presets": [
+    {
+      "name": "t:names.author_bio",
+      "category": "t:categories.blog_post"
+    }
+  ]
+}
+{% endschema %}

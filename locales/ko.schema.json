@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "작성자 소개",
     "featured_article": "추천 게시물",
     "related_products": "함께 보면 좋은 상품",
     "frequently_bought_together": "함께 구매",

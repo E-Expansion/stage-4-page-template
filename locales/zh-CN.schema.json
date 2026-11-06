@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "作者简介",
     "featured_article": "精选文章",
     "related_products": "你可能还喜欢",
     "frequently_bought_together": "一起购买",

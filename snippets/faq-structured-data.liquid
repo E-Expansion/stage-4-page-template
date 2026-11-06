@@ -1,0 +1,43 @@
+{%- doc -%}
+  Outputs FAQPage structured data for a list of questions.
+
+  @param {object[]} entries - "faq" metaobjects, or section blocks with question and answer settings
+  @param {boolean} [uses_metafield] - The entries are metaobjects instead of blocks
+
+  @example
+  {% render 'faq-structured-data', entries: article.metafields.custom.faq.value, uses_metafield: true %}
+{%- enddoc -%}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {%- assign needs_comma = false -%}
+      {%- for entry in entries -%}
+        {%- liquid
+          if uses_metafield
+            assign entry_question = entry.question.value
+            assign entry_answer = entry.answer | metafield_text
+          else
+            assign entry_question = entry.settings.question
+            assign entry_answer = entry.settings.answer | strip_html
+          endif
+          if entry_question == blank
+            continue
+          endif
+        -%}
+        {%- if needs_comma %},{% endif -%}
+        {
+          "@type": "Question",
+          "name": {{ entry_question | json }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ entry_answer | json }}
+          }
+        }
+        {%- assign needs_comma = true -%}
+      {%- endfor -%}
+    ]
+  }
+</script>

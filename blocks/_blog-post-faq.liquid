@@ -1,0 +1,87 @@
+{%- doc -%}
+  Renders the article's questions as a compact card in the article column, using the
+  shared faq-accordion snippet. Questions come from the article's custom.faq metafield and
+  the heading from custom.faq_heading, or this block's heading when empty. Renders nothing
+  without questions.
+{%- enddoc -%}
+
+{% liquid
+  assign faq_entries = article.metafields.custom.faq.value
+  assign heading = article.metafields.custom.faq_heading.value | default: block.settings.heading
+  assign heading = heading | replace: '[title]', article.title | escape
+%}
+
+{% if faq_entries.size > 0 %}
+  <div
+    class="blog-post-faq"
+    {{ block.shopify_attributes }}
+  >
+    {% if heading != blank %}
+      <h2 class="blog-post-faq__heading">{{ heading }}</h2>
+    {% endif %}
+
+    {% for entry in faq_entries %}
+      {% assign entry_answer = entry.answer | metafield_tag %}
+      {% render 'faq-accordion', question: entry.question.value, answer: entry_answer %}
+    {% endfor %}
+  </div>
+
+  {% render 'faq-structured-data', entries: faq_entries, uses_metafield: true %}
+{% endif %}
+
+{% stylesheet %}
+  .blog-post-faq {
+    width: 100%;
+    max-width: var(--narrow-content-width);
+    margin-block-start: var(--padding-xs);
+    padding: var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    .faq-accordion__summary {
+      padding-block: var(--padding-sm);
+    }
+
+    .faq-accordion__question,
+    .faq-accordion__answer {
+      font-size: var(--font-size--sm);
+    }
+
+    .faq-accordion__answer {
+      padding-block-end: var(--padding-sm);
+    }
+  }
+
+  .blog-post-faq__heading {
+    margin: 0;
+    padding-block-end: var(--padding-sm);
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--xl);
+    line-height: var(--line-height--display-normal);
+    overflow-wrap: anywhere;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.faq",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:info.faq_heading_title",
+      "default": "Frequently asked questions"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.faq",
+      "category": "t:categories.blog_post"
+    }
+  ]
+}
+{% endschema %}

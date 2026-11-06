@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "author_bio": "Kirjoittajan esittely",
     "featured_article": "Nostettu artikkeli",
     "related_products": "Saatat pitää myös",
     "frequently_bought_together": "Ostetaan yhdessä",
