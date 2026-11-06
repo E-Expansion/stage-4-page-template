@@ -1,0 +1,139 @@
+{% comment %}
+  Section contract.
+  Large article card (the shared article-card snippet in its featured layout). Shows the
+  article picked in the section, or the blog's latest article when none is picked, so the
+  template needs no upkeep. Only shows on the first page of an unfiltered blog; on tag and
+  later pages the visitor is looking for something else.
+  @example
+  <!-- Blog template > Add section > Featured article -->
+{% endcomment %}
+
+{% liquid
+  assign featured_article = section.settings.article | default: blog.articles.first
+
+  assign is_filtered = false
+  if current_tags.size > 0 or current_page > 1
+    assign is_filtered = true
+  endif
+%}
+
+{% if featured_article != blank and is_filtered == false %}
+  {% render 'contrast-override',
+    background_color: section.settings.background_color,
+    border_color: section.settings.border_color,
+    section_id: section.id
+  %}
+
+  <div class="section-background color-custom-{{ section.id }}"></div>
+  <div
+    class="featured-article section section--page-width spacing-style color-custom-{{ section.id }}"
+    style="
+      {% render 'spacing-padding', settings: section.settings %}
+      {% if section.settings.link_color != blank %}--article-card-link-color: {{ section.settings.link_color }};{% endif %}
+    "
+  >
+    {% render 'article-card',
+      article: featured_article,
+      layout: 'featured',
+      link_label: section.settings.link_label,
+      show_author: section.settings.show_author,
+      show_updated: section.settings.show_updated,
+      heading_tag: 'h2',
+      eager: true
+    %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  /* Sections sit closer together on mobile */
+  @media screen and (max-width: 749px) {
+    .featured-article.spacing-style {
+      padding-block-end: min(var(--padding-block-end), var(--padding-xl));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.featured_article",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "t:settings.article",
+      "info": "t:info.featured_article"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "t:settings.link_label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "t:settings.show_author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_updated",
+      "label": "t:settings.show_updated",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "{{ settings.color_palette.background }}"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "default": "{{ settings.color_palette.color2 }}"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "t:settings.link_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.featured_article"
+    }
+  ]
+}
+{% endschema %}

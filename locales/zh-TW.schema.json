@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "featured_article": "精選文章",
     "related_products": "你可能也會喜歡",
     "frequently_bought_together": "一起購買",
     "product_certificate": "產品證書",
@@ -213,6 +214,7 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "article": "文章",
     "bundle_max_products": "除本產品外的產品數",
     "show_image": "顯示圖片",
     "show_sticky_add_to_cart": "顯示固定加入購物車列",
@@ -220,6 +222,7 @@
     "cutoff_minute": "截單時（分鐘）",
     "ships_today_text": "今日出貨文字",
     "monday": "星期一",
+    "show_updated": "顯示最後更新日期",
     "tuesday": "星期二",
     "wednesday": "星期三",
     "thursday": "星期四",
@@ -1261,6 +1264,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "featured_article": "留空以顯示最新文章",
     "related_products_intent": "相關：類似產品。搭配：適合搭配的產品，在 Search & Discovery 中設定。",
     "bundle_discount": "顯示為較低的組合價。請在 Shopify 建立對應的自動折扣，結帳時才會套用。0 顯示一般總價。",
     "frequently_bought_together": "顯示 Search & Discovery 中的搭配產品，否則顯示 custom.frequently_bought_together 中繼欄位（產品清單）。沒有時隱藏。",

@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "accessibility": {
     "show_media": "میڈیا {{ index }} دکھائیں",
     "breadcrumbs": "بریڈ کرمبز",

@@ -39,10 +39,10 @@
     endif
 
     if show_updated
-      assign formatted_date = article.updated_at | date: format: 'abbreviated_date'
+      assign formatted_date = article.updated_at | date: format: 'article_date'
       assign card_date = 'content.updated_on' | t: date: formatted_date
     else
-      assign card_date = article.published_at | time_tag: format: 'abbreviated_date'
+      assign card_date = article.published_at | time_tag: format: 'article_date'
     endif
 
     if layout == 'featured'
@@ -245,9 +245,22 @@
     color: var(--color-foreground-muted);
   }
 
+  /* The design drops the author on mobile, the card is tight enough there */
+  .article-card .article-card__author {
+    color: var(--color-foreground-muted);
+
+    @media screen and (max-width: 749px) {
+      display: none;
+    }
+  }
+
   .article-card__read {
     font-size: var(--font-size--sm);
     color: var(--article-card-link-color, var(--color-foreground));
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xs);
+    }
   }
 
   /* Featured: image beside the text on desktop */
@@ -264,6 +277,14 @@
       }
     }
 
+    /* Out of flow so a tall image fills its column without stretching the card */
+    .article-card__image {
+      @media screen and (min-width: 750px) {
+        position: absolute;
+        inset: 0;
+      }
+    }
+
     .article-card__body {
       gap: var(--gap-sm);
       padding: var(--padding-lg);
@@ -275,20 +296,16 @@
     }
 
     .article-card__title {
-      font-size: var(--font-size--xl);
+      font-size: var(--font-size--2xl);
 
       @media screen and (min-width: 750px) {
-        font-size: var(--font-size--2xl);
+        font-size: var(--font-size--3xl);
       }
     }
 
     .article-card__excerpt {
-      font-size: var(--font-size--sm);
+      font-size: var(--font-size--md);
       -webkit-line-clamp: 4;
-
-      @media screen and (min-width: 750px) {
-        font-size: var(--font-size--md);
-      }
     }
 
     .article-card__footer {

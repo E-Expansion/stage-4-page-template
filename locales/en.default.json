@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "accessibility": {
     "show_media": "Show media {{ index }}",
     "breadcrumbs": "Breadcrumbs",
@@ -200,7 +203,7 @@
       "one": "{{ count }} min read",
       "other": "{{ count }} min read"
     },
-    "updated_on": "Updated {{ date }}",
+    "updated_on": "updated {{ date }}",
     "read_article": "Read the article",
     "about_author": "About the author",
     "color_count": {

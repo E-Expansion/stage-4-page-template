@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "featured_article": "Fremhævet artikel",
     "related_products": "Måske kan du lide",
     "frequently_bought_together": "Købt sammen",
     "product_certificate": "Produktcertifikat",
@@ -213,6 +214,7 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "article": "Artikel",
     "bundle_max_products": "Produkter ud over dette",
     "show_image": "Vis billede",
     "show_sticky_add_to_cart": "Vis fastgjort læg i kurv",
@@ -220,6 +222,7 @@
     "cutoff_minute": "Minut for deadline",
     "ships_today_text": "Tekst for afsendelse i dag",
     "monday": "Mandag",
+    "show_updated": "Vis dato for seneste opdatering",
     "tuesday": "Tirsdag",
     "wednesday": "Onsdag",
     "thursday": "Torsdag",
@@ -1261,6 +1264,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "featured_article": "Lad feltet stå tomt for at vise den seneste artikel",
     "related_products_intent": "Relaterede: lignende produkter. Supplerende: produkter der passer til, valgt i Search & Discovery.",
     "bundle_discount": "Vises som lavere samlet pris. Opret en tilsvarende automatisk rabat, så kassen trækker den. 0 viser den normale sum.",
     "frequently_bought_together": "Viser de supplerende produkter fra Search & Discovery, ellers metafeltet custom.frequently_bought_together (produktliste). Skjult, hvis der ingen er.",

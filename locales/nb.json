@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "blocks": {
     "load_video": "Last inn video: {{ description }}",
     "sold_out": "Utsolgt",

@@ -22,6 +22,20 @@
         "padding-block-end": 24
       }
     },
+    "featured_article": {
+      "type": "featured-article",
+      "settings": {
+        "article": "",
+        "link_label": "Read the guide",
+        "show_author": true,
+        "show_updated": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "link_color": "{{ settings.color_palette.color3 }}",
+        "padding-block-start": 0,
+        "padding-block-end": 48
+      }
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -93,6 +107,7 @@
   },
   "order": [
     "page_header",
+    "featured_article",
     "main"
   ]
 }

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "featured_article": "注目の記事",
     "related_products": "こちらもおすすめ",
     "frequently_bought_together": "一緒に購入",
     "product_certificate": "製品証明書",
@@ -213,6 +214,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "article": "記事",
     "bundle_max_products": "この商品以外の商品数",
     "show_image": "画像を表示",
     "show_sticky_add_to_cart": "追従するカートに追加を表示",
@@ -220,6 +222,7 @@
     "cutoff_minute": "締め切り（分）",
     "ships_today_text": "本日発送のテキスト",
     "monday": "月曜日",
+    "show_updated": "最終更新日を表示",
     "tuesday": "火曜日",
     "wednesday": "水曜日",
     "thursday": "木曜日",
@@ -1261,6 +1264,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "featured_article": "最新の記事を表示するには空欄のままにします",
     "related_products_intent": "関連: 似た商品。補完: 一緒に使う商品（Search & Discovery で設定）。",
     "bundle_discount": "セット価格として表示されます。チェックアウトで適用されるよう対応する自動割引を作成してください。0 で通常の合計を表示します。",
     "frequently_bought_together": "Search & Discovery の補完商品、なければ custom.frequently_bought_together メタフィールド（商品リスト）を表示します。ない場合は非表示です。",

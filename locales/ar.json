@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "accessibility": {
     "show_media": "عرض الوسائط {{ index }}",
     "breadcrumbs": "مسار التنقل",

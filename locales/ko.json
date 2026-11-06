@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "blocks": {
     "load_video": "동영상 로드: {{ description }}",
     "sold_out": "품절",

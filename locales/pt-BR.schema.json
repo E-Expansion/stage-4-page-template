@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "featured_article": "Artigo em destaque",
     "related_products": "Você também pode gostar",
     "frequently_bought_together": "Comprados juntos",
     "product_certificate": "Certificado do produto",
@@ -213,6 +214,7 @@
     "disclosures": "Divulgações"
   },
   "settings": {
+    "article": "Artigo",
     "bundle_max_products": "Produtos além deste",
     "show_image": "Mostrar imagem",
     "show_sticky_add_to_cart": "Mostrar adicionar ao carrinho fixo",
@@ -220,6 +222,7 @@
     "cutoff_minute": "Minuto limite",
     "ships_today_text": "Texto de envio hoje",
     "monday": "Segunda-feira",
+    "show_updated": "Mostrar data da última atualização",
     "tuesday": "Terça-feira",
     "wednesday": "Quarta-feira",
     "thursday": "Quinta-feira",
@@ -1261,6 +1264,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "featured_article": "Deixe em branco para mostrar o artigo mais recente",
     "related_products_intent": "Relacionados: produtos semelhantes. Complementares: produtos que combinam, definidos no Search & Discovery.",
     "bundle_discount": "Exibido como preço de kit menor. Crie um desconto automático correspondente para o checkout aplicá-lo. 0 mostra o total normal.",
     "frequently_bought_together": "Mostra os produtos complementares do Search & Discovery ou, senão, o metacampo custom.frequently_bought_together (lista de produtos). Oculto se não houver.",

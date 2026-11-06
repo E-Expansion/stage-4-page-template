@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "blocks": {
     "load_video": "ビデオを読み込む: {{ description }}",
     "sold_out": "売り切れ",

@@ -8,6 +8,9 @@
  * ------------------------------------------------------------
  */
 {
+  "date_formats": {
+    "article_date": "%-d %b %Y"
+  },
   "blocks": {
     "load_video": "Įkelti vaizdo įrašą „{{ description }}“",
     "sold_out": "Išparduota",

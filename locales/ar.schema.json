@@ -227,6 +227,7 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "featured_article": "اتركه فارغًا لعرض أحدث مقال",
     "related_products_intent": "ذات صلة: منتجات مشابهة. مكملة: منتجات تناسبه، تُحدد في Search & Discovery.",
     "bundle_discount": "يظهر كسعر حزمة أقل. أنشئ خصمًا تلقائيًا مطابقًا ليُطبق عند الدفع. 0 يعرض الإجمالي العادي.",
     "frequently_bought_together": "يعرض المنتجات المكملة من Search & Discovery، وإلا الحقل الوصفي custom.frequently_bought_together (قائمة منتجات). مخفي إن لم توجد.",
@@ -320,6 +321,7 @@
     "media_type_info": "تمت تعبئة الميزات من روابط القائمة الخاصة بك"
   },
   "names": {
+    "featured_article": "مقال مميز",
     "related_products": "قد يعجبك أيضًا",
     "frequently_bought_together": "يُشترى معًا",
     "product_certificate": "شهادة المنتج",
@@ -805,6 +807,7 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "article": "مقال",
     "bundle_max_products": "منتجات إلى جانب هذا",
     "show_image": "إظهار الصورة",
     "show_sticky_add_to_cart": "إظهار شريط الإضافة إلى السلة الثابت",
@@ -812,6 +815,7 @@
     "cutoff_minute": "دقيقة الإغلاق",
     "ships_today_text": "نص الشحن اليوم",
     "monday": "الاثنين",
+    "show_updated": "عرض تاريخ آخر تحديث",
     "tuesday": "الثلاثاء",
     "wednesday": "الأربعاء",
     "thursday": "الخميس",

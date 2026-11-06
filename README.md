@@ -14,7 +14,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Header, top bar, footer | `sections/header-group.json`, `sections/footer-group.json` | Done |
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
-| Journal (blog) | `templates/blog.json` | In progress: page header done, article list still Horizon default |
+| Journal (blog) | `templates/blog.json` | In progress: page header and featured article done, article list still Horizon default |
 | Article | `templates/article.json` | To do (still Horizon default) |
 
 ## Working on the theme
@@ -69,10 +69,10 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article page (planned) |
 | `category-tile` | Collection tile (normal or `small`) | Category selector, subcategories |
-| `article-card` | Article card (`card`, `featured` or `link` layout) | Journal and article pages (planned) |
+| `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article; article pages (planned) |
 | `tag-badge` | Coloured badge from product or article tags | Product tile, article card |
 | `star-rating` | Five stars from the review metafields | Product tile, product mention |
-| `author-byline` | Avatar and author name | Press mentions, article card |
+| `author-byline` | Avatar and author name, from the article's `custom.author` | Press mentions, article card |
 | `author-bio` | "About the author" card | Article page (planned) |
 | `breadcrumbs` | Trail built from the current page, with structured data | Page header |
 | `faq-accordion` | One FAQ question (native `<details>`) | FAQ section |
@@ -95,7 +95,7 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 
 ### Journal (`templates/blog.json`)
 
-`page-header` → `main-blog` (still Horizon default)
+`page-header` → `featured-article` → `main-blog` (still Horizon default)
 
 ### Header and footer groups
 
