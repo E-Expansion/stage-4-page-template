@@ -3,8 +3,9 @@
   Page intro for listing pages: breadcrumbs, the page title and a short description.
   Title and description are read from the current collection, blog or page, so one
   template serves every collection or blog. The section's own title and text are used
-  when set (title) or when the resource has no description (text). Collections can also
-  show their product count on mobile.
+  when set (title) or when the resource has no description (text). Blogs have no
+  description field in Shopify, so they read the custom.subtitle metafield instead.
+  Collections can also show their product count on mobile.
   @example
   <!-- Collection or blog template > Add section > Page header -->
 {% endcomment %}
@@ -16,6 +17,7 @@
       assign resource_description = collection.description
     when 'blog'
       assign resource_title = blog.title
+      assign resource_description = blog.metafields.custom.subtitle.value | escape
     when 'page'
       assign resource_title = page.title
     else

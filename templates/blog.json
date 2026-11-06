@@ -8,33 +8,23 @@
  * ------------------------------------------------------------
  */{
   "sections": {
+    "page_header": {
+      "type": "page-header",
+      "settings": {
+        "title": "The Journal",
+        "text": "<p>Buying guides, comparisons, repair how-tos and customer stories. Written by the people at the bench, not by a content agency.</p>",
+        "show_product_count": false,
+        "show_breadcrumbs": true,
+        "parent_label": "",
+        "parent_link": "",
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 24,
+        "padding-block-end": 24
+      }
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
-        "title": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h1>{{ closest.blog.title }}</h1>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "static-blog-post-card": {
           "type": "_blog-post-card",
           "static": true,
@@ -93,9 +83,7 @@
           "block_order": []
         }
       },
-      "block_order": [
-        "title"
-      ],
+      "block_order": [],
       "settings": {
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 0,
@@ -104,6 +92,7 @@
     }
   },
   "order": [
+    "page_header",
     "main"
   ]
 }

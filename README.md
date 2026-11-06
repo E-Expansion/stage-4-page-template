@@ -14,7 +14,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Header, top bar, footer | `sections/header-group.json`, `sections/footer-group.json` | Done |
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
-| Journal (blog) | `templates/blog.json` | To do (still Horizon default) |
+| Journal (blog) | `templates/blog.json` | In progress: page header done, article list still Horizon default |
 | Article | `templates/article.json` | To do (still Horizon default) |
 
 ## Working on the theme
@@ -93,6 +93,10 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 
 `page-header` → `subcategories` → `collection-filters` (products, filters, sorting, pagination) → `seo-text` → `faq`
 
+### Journal (`templates/blog.json`)
+
+`page-header` → `main-blog` (still Horizon default)
+
 ### Header and footer groups
 
 `top-bar` and `header` sit in the header group. `footer` sits in the footer group.
@@ -121,6 +125,7 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Collection | `custom.seo_heading` | Single-line text | SEO text section |
 | Collection | `custom.seo_text` | Rich text | SEO text section |
 | Product | `custom.seo_heading` | Single-line text | SEO text section (body is the product description) |
+| Blog | `custom.subtitle` | Single-line text | Page header subtitle (falls back to the section's own text) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
 
