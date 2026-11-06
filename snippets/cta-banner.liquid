@@ -1,0 +1,77 @@
+{%- doc -%}
+  Renders a dark banner with a heading, short text and a button. Renders nothing without
+  a heading. The button uses the theme's primary button colours, which the caller can
+  override with the button-color-vars snippet.
+
+  @param {string} heading - Banner heading
+  @param {string} [text] - Short text under the heading
+  @param {string} [link_label] - Button label
+  @param {string} [link_url] - Button link
+
+  @example
+  {% render 'cta-banner', heading: 'Still not sure?', link_label: 'Shop now', link_url: routes.all_products_collection_url %}
+{%- enddoc -%}
+
+{%- if heading != blank -%}
+  <div class="cta-banner">
+    <div class="cta-banner__body">
+      <p class="cta-banner__heading">{{ heading | escape }}</p>
+      {% if text != blank %}
+        <p class="cta-banner__text">{{ text | escape }}</p>
+      {% endif %}
+    </div>
+    {% if link_label != blank and link_url != blank %}
+      <a
+        href="{{ link_url }}"
+        class="button cta-banner__button"
+      >
+        {{- link_label | escape -}}
+      </a>
+    {% endif %}
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .cta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+    padding: var(--padding-lg);
+    color: var(--color-background);
+    background-color: var(--color-foreground);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .cta-banner__body {
+    flex: 1 1 9rem;
+    min-width: 0;
+  }
+
+  .cta-banner__heading,
+  .cta-banner__text {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .cta-banner__heading {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+  }
+
+  .cta-banner__text {
+    margin-block-start: var(--padding-3xs);
+    font-size: var(--font-size--xs);
+    opacity: var(--opacity-70);
+  }
+
+  .cta-banner__button {
+    flex-shrink: 0;
+    padding: var(--padding-xs) var(--padding-md);
+    font-size: var(--font-size--xs);
+    white-space: nowrap;
+  }
+{% endstylesheet %}

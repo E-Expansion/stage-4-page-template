@@ -1029,6 +1029,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "call_to_action": "Call-to-action",
     "sticky_add_to_cart": "Vaste 'Toevoegen aan winkelwagen'-balk",
     "order_cutoff": "Besteldeadline en verzenddagen",
     "product_tiles": "Producttegels",
@@ -1264,6 +1265,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "article_cta": "Wordt getoond waar de artikeltekst [cta] bevat. Het metaveld custom.cta gaat voor.",
     "blog_filters_heading": "Wordt op mobiel boven de artikelen getoond",
     "related_products_intent": "Gerelateerd: vergelijkbare producten. Aanvullend: producten die erbij passen, ingesteld in Search & Discovery.",
     "bundle_discount": "Wordt getoond als lagere bundelprijs. Maak een bijpassende automatische korting in Shopify zodat de checkout die rekent. Bij 0 zie je het gewone totaal.",

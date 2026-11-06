@@ -5,8 +5,8 @@
   - featured: wide card with the image beside the text on desktop and a "read" link
   - link: title only, for compact lists such as "Keep reading"
   The badge comes from the article's tags (styled by Theme settings > Badges), the author
-  from the article's custom.author metafield, and the read time is estimated from the
-  article's word count. Callers wrap the card in their own list item.
+  from the article's custom.author metafield, and read time and date from article-meta.
+  Callers wrap the card in their own list item.
 
   The "read" link colour is read from --article-card-link-color when the section sets it.
 
@@ -29,20 +29,9 @@
   assign title = article.title | escape
 
   if layout != 'link'
-    # Read time at roughly 200 words per minute, at least one minute
-    assign word_count = article.content | strip_html | split: ' ' | size
-    assign read_minutes = word_count | divided_by: 200 | at_least: 1
-
     assign excerpt = article.excerpt | strip_html | strip
     if excerpt == blank
       assign excerpt = article.content | strip_html | truncatewords: 25
-    endif
-
-    if show_updated
-      assign formatted_date = article.updated_at | date: format: 'article_date'
-      assign card_date = 'content.updated_on' | t: date: formatted_date
-    else
-      assign card_date = article.published_at | time_tag: format: 'article_date'
     endif
 
     if layout == 'featured'
@@ -112,11 +101,7 @@
       {% endif %}
 
       <div class="article-card__footer">
-        <p class="article-card__meta">
-          {{- 'content.read_time' | t: count: read_minutes }}
-          ·
-          {{ card_date -}}
-        </p>
+        {% render 'article-meta', article: article, show_updated: show_updated, dotted: true %}
 
         {% if show_author != false %}
           {% render 'author-byline', article: article, avatar_position: 'end', class: 'article-card__author' %}
@@ -233,12 +218,6 @@
     width: 100%;
     margin-block-start: auto;
     padding-block-start: var(--padding-xs);
-  }
-
-  .article-card__meta {
-    margin: 0;
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground-muted);
   }
 
   /* The design drops the author on mobile, the card is tight enough there */

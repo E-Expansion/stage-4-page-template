@@ -15,7 +15,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
 | Journal (blog) | `templates/blog.json` | Done; optional store setup (see below) |
-| Article | `templates/article.json` | In progress: header done, rest still Horizon default |
+| Article | `templates/article.json` | In progress: header, author line and content done; sidebar, FAQ and author bio to do |
 
 ## Working on the theme
 
@@ -67,7 +67,11 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `section-heading` | Heading row: title, text, and a link or side text | Category selector, curated products, UGC, press |
 | `.snap-carousel` (class in `assets/base.css`) | Grid on desktop, swipeable row on mobile | Category selector, curated products, subcategories |
 | `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid |
-| `product-mention` | Small product card (`row` or `stack` layout) | Article page (planned) |
+| `product-mention` | Small product card (`row` or `stack` layout) | Article content |
+| `article-meta` | Read time and date of an article | Article card, article author line |
+| `article-images` | Row of images inside an article | Article content |
+| `cta-banner` | Dark banner with text and a button | Article content |
+| `button-color-vars` | Custom properties that recolour primary buttons | Newsletter signup, article content |
 | `category-tile` | Collection tile (normal or `small`) | Category selector, subcategories |
 | `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article, blog grid; article pages (planned) |
 | `tag-badge` | Coloured badge from product or article tags | Product tile, article card |
@@ -103,7 +107,9 @@ Shopify cannot sort blogs and Liquid cannot read a sort parameter, so `blog-filt
 
 ### Article (`templates/article.json`)
 
-`main-blog-post`: `_blog-post-header` → Horizon's date, image and content blocks. The second column on desktop is reserved for the sidebar.
+`main-blog-post`: `_blog-post-header` → `_blog-post-byline` → featured image → `_blog-post-content`. The second column on desktop is reserved for the sidebar.
+
+The article text can place components between paragraphs with a marker on its own line: `[product]`, `[images]` and `[cta]`, filled from the metafields below.
 
 ### Header and footer groups
 
@@ -123,6 +129,7 @@ These are configured in Shopify admin, not in code. Pages still render without t
 |---|---|
 | `faq` | `question` (single-line text), `answer` (rich text) |
 | `author` | `name` (single-line text), `image` (file), `bio` (rich text) |
+| `article_cta` | `heading`, `text`, `link_label` (single-line text), `link` (URL) |
 
 ### Metafields
 
@@ -136,6 +143,10 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Blog | `custom.subtitle` | Single-line text | Page header subtitle (falls back to the section's own text) |
 | Blog | `custom.featured_article` | Blog post | Featured article (falls back to the latest article) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
+| Article | `custom.product` | Product | `[product]` marker |
+| Article | `custom.product_detail` | Single-line text | Extra text in the `[product]` row, e.g. "fits a 14\" laptop" |
+| Article | `custom.images` | List of files (images) | `[images]` marker |
+| Article | `custom.cta` | `article_cta` metaobject | `[cta]` marker (falls back to the content block's settings) |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
 
 ### Colour swatches

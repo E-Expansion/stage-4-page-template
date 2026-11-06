@@ -1,4 +1,46 @@
+{%- doc -%}
+  Renders the article text. The text can place components between paragraphs with a
+  marker on its own line, filled from the article's metafields:
+  - [product]: product row from custom.product, with custom.product_detail as extra text
+  - [images]: row of images from custom.images
+  - [cta]: banner from the custom.cta metaobject, or this block's settings when empty
+  A marker without content is removed.
+{%- enddoc -%}
 
+{% liquid
+  assign content = article.content
+
+  if content contains '[product]'
+    capture marker_html
+      if article.metafields.custom.product.value != blank
+        render 'product-mention', product: article.metafields.custom.product.value, detail: article.metafields.custom.product_detail.value
+      endif
+    endcapture
+    assign content = content | replace: '<p>[product]</p>', marker_html | replace: '[product]', marker_html
+  endif
+
+  if content contains '[images]'
+    assign images = article.metafields.custom.images.value
+    capture marker_html
+      if images != blank
+        render 'article-images', images: images
+      endif
+    endcapture
+    assign content = content | replace: '<p>[images]</p>', marker_html | replace: '[images]', marker_html
+  endif
+
+  if content contains '[cta]'
+    assign cta = article.metafields.custom.cta.value
+    capture marker_html
+      if cta != blank
+        render 'cta-banner', heading: cta.heading.value, text: cta.text.value, link_label: cta.link_label.value, link_url: cta.link.value
+      else
+        render 'cta-banner', heading: block.settings.cta_heading, text: block.settings.cta_text, link_label: block.settings.cta_link_label, link_url: block.settings.cta_link
+      endif
+    endcapture
+    assign content = content | replace: '<p>[cta]</p>', marker_html | replace: '[cta]', marker_html
+  endif
+%}
 
 <div
   class="blog-post-content rte"
@@ -7,21 +49,82 @@
       --color: {{ block.settings.text_color }};
       --color-rgb: {{ block.settings.text_color.rgb }};
     {% endif %}
+    {% render 'button-color-vars', color: block.settings.button_color %}
   "
 >
   <rte-formatter>
-    {{ article.content }}
+    {{ content }}
   </rte-formatter>
 </div>
 
 {% stylesheet %}
   .blog-post-content {
-    max-width: var(--normal-content-width);
+    width: 100%;
+    max-width: var(--narrow-content-width);
+    margin-block-start: var(--padding-xs);
     color: var(--color, inherit);
-  }
 
-  .blog-post-content a {
-    color: currentcolor;
+    rte-formatter {
+      display: block;
+    }
+
+    rte-formatter > p {
+      margin-block: 0 var(--padding-lg);
+    }
+
+    rte-formatter > h2 {
+      margin-block: var(--padding-3xl) var(--padding-lg);
+      font-size: var(--font-size--2xl);
+
+      @media screen and (min-width: 750px) {
+        font-size: var(--font-size--3xl);
+      }
+    }
+
+    /* Components and tables placed between paragraphs */
+    rte-formatter > :is(.product-mention, .cta-banner, .article-images, .rte-table-wrapper, table) {
+      margin-block: var(--padding-lg);
+    }
+
+    a:where(:not(.button)) {
+      color: currentcolor;
+    }
+
+    .rte-table-wrapper {
+      border-radius: var(--style-border-radius-xs);
+    }
+
+    table {
+      font-size: var(--font-size--2xs);
+      line-height: var(--line-height--body-normal);
+
+      @media screen and (min-width: 750px) {
+        font-size: var(--font-size--xs);
+      }
+    }
+
+    th,
+    td {
+      padding: var(--padding-xs) var(--padding-sm);
+      font-weight: var(--font-body--weight);
+      color: var(--color-foreground-muted);
+      vertical-align: top;
+    }
+
+    th:first-child,
+    td:first-child {
+      color: var(--color-foreground);
+    }
+
+    /* The article editor has no header rows, so the first row counts as one */
+    :is(thead tr, table:not(:has(thead)) tr:first-child) {
+      text-transform: none;
+      background-color: var(--color-foreground);
+
+      :is(th, td) {
+        color: var(--color-background);
+      }
+    }
   }
 {% endstylesheet %}
 
@@ -34,6 +137,37 @@
       "id": "text_color",
       "label": "t:settings.text_color",
       "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:settings.button_color",
+      "default": "{{ settings.color_palette.color3 }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.call_to_action",
+      "info": "t:info.article_cta"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "t:settings.heading"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "t:settings.text"
+    },
+    {
+      "type": "text",
+      "id": "cta_link_label",
+      "label": "t:settings.link_label"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "t:settings.link"
     }
   ],
   "presets": [

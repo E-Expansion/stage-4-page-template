@@ -2,7 +2,7 @@
 
 {% liquid
   if section.settings.background_color != blank
-    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+    render 'contrast-override', background_color: section.settings.background_color, border_color: section.settings.border_color, section_id: section.id
   endif
 %}
 
@@ -143,6 +143,9 @@
       "type": "_blog-post-header"
     },
     {
+      "type": "_blog-post-byline"
+    },
+    {
       "type": "_blog-post-info-text"
     },
     {
@@ -182,6 +185,12 @@
       "id": "background_color",
       "label": "t:settings.background_color",
       "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "default": "{{ settings.color_palette.color2 }}"
     },
     {
       "type": "header",

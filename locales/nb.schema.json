@@ -1029,6 +1029,7 @@
     "input_field": "Inndatafelt"
   },
   "content": {
+    "call_to_action": "Handlingsoppfordring",
     "sticky_add_to_cart": "Festet «Legg i handlekurv»",
     "order_cutoff": "Bestillingsfrist og sendedager",
     "product_tiles": "Produktruter",
@@ -1264,6 +1265,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
+    "article_cta": "Vises der artikkelteksten inneholder [cta]. Metafeltet custom.cta har forrang.",
     "blog_filters_heading": "Vises over artiklene på mobil",
     "related_products_intent": "Relaterte: lignende produkter. Utfyllende: produkter som passer til, valgt i Search & Discovery.",
     "bundle_discount": "Vises som lavere pakkepris. Opprett en tilsvarende automatisk rabatt slik at kassen trekker den. 0 viser vanlig sum.",

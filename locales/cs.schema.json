@@ -1029,6 +1029,7 @@
     "input_field": "Vstupní pole"
   },
   "content": {
+    "call_to_action": "Výzva k akci",
     "sticky_add_to_cart": "Přilepené tlačítko Přidat do košíku",
     "order_cutoff": "Uzávěrka objednávek a dny odeslání",
     "product_tiles": "Dlaždice produktů",
@@ -1264,6 +1265,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
+    "article_cta": "Zobrazí se tam, kde text článku obsahuje [cta]. Metapole custom.cta má přednost.",
     "blog_filters_heading": "Zobrazuje se nad články na mobilu",
     "related_products_intent": "Související: podobné produkty. Doplňkové: produkty, které se hodí, nastavené v Search & Discovery.",
     "bundle_discount": "Zobrazí se jako nižší cena sady. Vytvořte odpovídající automatickou slevu, aby ji pokladna uplatnila. 0 zobrazí běžný součet.",

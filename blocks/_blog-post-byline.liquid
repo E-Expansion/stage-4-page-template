@@ -1,0 +1,56 @@
+{%- doc -%}
+  Renders the line under the article header: author, read time and date, between two
+  rules. Uses the shared author-byline and article-meta snippets.
+{%- enddoc -%}
+
+<div
+  class="blog-post-byline"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_author %}
+    {% render 'author-byline', article: article %}
+  {% endif %}
+  {% render 'article-meta', article: article, show_updated: block.settings.show_updated %}
+</div>
+
+{% stylesheet %}
+  .blog-post-byline {
+    --author-byline-avatar-size: 2rem;
+    --article-meta-gap: var(--gap-lg);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-lg);
+    width: 100%;
+    padding-block: var(--padding-sm);
+    border-block: var(--style-border-width) solid var(--color-border);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.details",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "t:settings.show_author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_updated",
+      "label": "t:settings.show_updated",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.details",
+      "category": "t:categories.blog_post"
+    }
+  ]
+}
+{% endschema %}

@@ -1029,6 +1029,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "call_to_action": "Opfordring til handling",
     "sticky_add_to_cart": "Fastgjort 'Læg i kurv'",
     "order_cutoff": "Bestillingsdeadline og afsendelsesdage",
     "product_tiles": "Produktfelter",
@@ -1264,6 +1265,7 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "article_cta": "Vises, hvor artiklens tekst indeholder [cta]. Metafeltet custom.cta har forrang.",
     "blog_filters_heading": "Vises over artiklerne på mobil",
     "related_products_intent": "Relaterede: lignende produkter. Supplerende: produkter der passer til, valgt i Search & Discovery.",
     "bundle_discount": "Vises som lavere samlet pris. Opret en tilsvarende automatisk rabat, så kassen trækker den. 0 viser den normale sum.",

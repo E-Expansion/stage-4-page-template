@@ -1029,6 +1029,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "call_to_action": "Uppmaning till handling",
     "sticky_add_to_cart": "Fast ”Lägg till i varukorgen”",
     "order_cutoff": "Beställningsdeadline och leveransdagar",
     "product_tiles": "Produktrutor",
@@ -1264,6 +1265,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "article_cta": "Visas där artikeltexten innehåller [cta]. Metafältet custom.cta har företräde.",
     "blog_filters_heading": "Visas ovanför artiklarna på mobilen",
     "related_products_intent": "Relaterade: liknande produkter. Kompletterande: produkter som passar till, valda i Search & Discovery.",
     "bundle_discount": "Visas som lägre paketpris. Skapa en motsvarande automatisk rabatt så att kassan drar av den. 0 visar normal summa.",

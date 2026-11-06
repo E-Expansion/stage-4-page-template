@@ -1029,6 +1029,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "call_to_action": "行動喚起",
     "sticky_add_to_cart": "固定「カートに追加」",
     "order_cutoff": "注文締め切りと発送日",
     "product_tiles": "商品タイル",
@@ -1264,6 +1265,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "article_cta": "記事の本文に [cta] がある位置に表示されます。メタフィールド custom.cta が優先されます。",
     "blog_filters_heading": "モバイルで記事の上に表示されます",
     "related_products_intent": "関連: 似た商品。補完: 一緒に使う商品（Search & Discovery で設定）。",
     "bundle_discount": "セット価格として表示されます。チェックアウトで適用されるよう対応する自動割引を作成してください。0 で通常の合計を表示します。",

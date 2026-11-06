@@ -1029,6 +1029,7 @@
     "input_field": "Campo de introdução"
   },
   "content": {
+    "call_to_action": "Apelo à ação",
     "sticky_add_to_cart": "Barra fixa de adicionar ao carrinho",
     "order_cutoff": "Hora limite e dias de envio",
     "product_tiles": "Blocos de produto",
@@ -1264,6 +1265,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "article_cta": "Apresentado onde o texto do artigo contém [cta]. O metacampo custom.cta tem prioridade.",
     "blog_filters_heading": "Apresentado acima dos artigos em dispositivos móveis",
     "related_products_intent": "Relacionados: produtos semelhantes. Complementares: produtos que combinam, definidos no Search & Discovery.",
     "bundle_discount": "Mostrado como preço de pack reduzido. Crie um desconto automático correspondente para o checkout o aplicar. 0 mostra o total normal.",

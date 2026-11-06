@@ -1,0 +1,49 @@
+{%- doc -%}
+  Renders an article's estimated read time and its date. The read time is based on the
+  word count, at roughly 200 words per minute and at least one minute.
+
+  @param {object} article - The article
+  @param {boolean} [show_updated] - Show the last update date instead of the publish date
+  @param {boolean} [dotted] - Separate the items with a dot, for compact cards
+
+  @example
+  {% render 'article-meta', article: article, show_updated: true %}
+{%- enddoc -%}
+
+{% liquid
+  assign word_count = article.content | strip_html | split: ' ' | size
+  assign read_minutes = word_count | divided_by: 200 | at_least: 1
+
+  if show_updated
+    assign formatted_date = article.updated_at | date: format: 'article_date'
+    assign article_date = 'content.updated_on' | t: date: formatted_date
+  else
+    assign article_date = article.published_at | time_tag: format: 'article_date'
+  endif
+%}
+
+<p class="article-meta{% if dotted %} article-meta--dotted{% endif %}">
+  <span class="article-meta__item">{{ 'content.read_time' | t: count: read_minutes }}</span>
+  <span class="article-meta__item">{{ article_date }}</span>
+</p>
+
+{% stylesheet %}
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--padding-3xs) var(--article-meta-gap, 0.25em);
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .article-meta--dotted .article-meta__item + .article-meta__item::before {
+    content: '·';
+    margin-inline-end: 0.25em;
+  }
+
+  /* "updated" follows other text in cards, but starts a line here */
+  .article-meta:not(.article-meta--dotted) .article-meta__item::first-letter {
+    text-transform: uppercase;
+  }
+{% endstylesheet %}

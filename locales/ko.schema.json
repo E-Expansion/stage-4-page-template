@@ -1029,6 +1029,7 @@
     "input_field": "입력 필드"
   },
   "content": {
+    "call_to_action": "클릭 유도 문구",
     "sticky_add_to_cart": "고정 카트 추가",
     "order_cutoff": "주문 마감 및 발송 요일",
     "product_tiles": "제품 타일",
@@ -1264,6 +1265,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "article_cta": "게시물 본문에 [cta]가 있는 위치에 표시됩니다. 메타필드 custom.cta가 우선 적용됩니다.",
     "blog_filters_heading": "모바일에서 게시물 위에 표시됩니다",
     "related_products_intent": "관련: 비슷한 제품. 보완: 함께 쓰는 제품(Search & Discovery에서 설정).",
     "bundle_discount": "더 낮은 세트 가격으로 표시됩니다. 결제 시 적용되도록 해당 자동 할인을 만드세요. 0이면 일반 합계를 표시합니다.",

@@ -24,19 +24,6 @@
   endif
   assign form_id = 'NewsletterSignup-' | append: section.id
   assign input_id = 'NewsletterSignupEmail-' | append: section.id
-
-  # Button text picks the palette extreme that contrasts with a custom button colour
-  if section.settings.button_color != blank
-    assign button_brightness = section.settings.button_color | color_brightness
-    if button_brightness > 128
-      assign button_text = 'var(--palette-darkest)'
-    else
-      assign button_text = 'var(--palette-lightest)'
-    endif
-    capture button_hover
-      render 'util-palette-hover-shift', color: section.settings.button_color
-    endcapture
-  endif
 %}
 
 {% render 'contrast-override',
@@ -126,17 +113,7 @@
           <button
             type="submit"
             class="button newsletter-signup__button"
-            {% if section.settings.button_color != blank %}
-              style="
-                --color-primary-button-background: {{ section.settings.button_color }};
-                --color-primary-button-border: {{ section.settings.button_color }};
-                --color-primary-button-text: {{ button_text }};
-                --color-primary-button-hover-background: {{ button_hover | strip }};
-                --color-primary-button-hover-border: {{ button_hover | strip }};
-                --color-primary-button-hover-text: {{ button_text }};
-                --color-primary-button-focus-outline: {{ section.settings.button_color }};
-              "
-            {% endif %}
+            style="{% render 'button-color-vars', color: section.settings.button_color %}"
           >
             {{- button_label -}}
           </button>

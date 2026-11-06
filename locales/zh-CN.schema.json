@@ -1029,6 +1029,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "call_to_action": "行动号召",
     "sticky_add_to_cart": "悬浮“添加到购物车”",
     "order_cutoff": "截单时间和发货日",
     "product_tiles": "商品图块",
@@ -1264,6 +1265,7 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "article_cta": "显示在文章正文包含 [cta] 的位置。元字段 custom.cta 优先。",
     "blog_filters_heading": "在移动设备上显示在文章上方",
     "related_products_intent": "相关：类似产品。搭配：与之相配的产品，在 Search & Discovery 中设置。",
     "bundle_discount": "显示为较低的组合价。请在 Shopify 中创建对应的自动折扣，结账时才会生效。0 显示普通总价。",

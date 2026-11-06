@@ -1029,6 +1029,7 @@
     "input_field": "Pole wprowadzania"
   },
   "content": {
+    "call_to_action": "Wezwanie do działania",
     "sticky_add_to_cart": "Przypięte dodawanie do koszyka",
     "order_cutoff": "Godzina graniczna i dni wysyłki",
     "product_tiles": "Kafelki produktów",
@@ -1264,6 +1265,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
+    "article_cta": "Wyświetlane tam, gdzie tekst artykułu zawiera [cta]. Metapole custom.cta ma pierwszeństwo.",
     "blog_filters_heading": "Wyświetlane nad artykułami na urządzeniach mobilnych",
     "related_products_intent": "Powiązane: podobne produkty. Uzupełniające: pasujące produkty, ustawione w Search & Discovery.",
     "bundle_discount": "Pokazywane jako niższa cena zestawu. Utwórz pasujący rabat automatyczny, aby kasa go naliczyła. 0 pokazuje zwykłą sumę.",

@@ -1029,6 +1029,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "call_to_action": "Harekete geçirici mesaj",
     "sticky_add_to_cart": "Sabit sepete ekle",
     "order_cutoff": "Son sipariş saati ve kargo günleri",
     "product_tiles": "Ürün kutucukları",
@@ -1264,6 +1265,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "article_cta": "Makale metninde [cta] bulunan yerde gösterilir. custom.cta meta alanı önceliklidir.",
     "blog_filters_heading": "Mobilde makalelerin üzerinde gösterilir",
     "related_products_intent": "İlgili: benzer ürünler. Tamamlayıcı: uyumlu ürünler, Search & Discovery'de belirlenir.",
     "bundle_discount": "Daha düşük paket fiyatı olarak gösterilir. Ödemede uygulanması için eşleşen otomatik indirim oluşturun. 0 normal toplamı gösterir.",

@@ -1029,6 +1029,7 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "call_to_action": "Chamada para ação",
     "sticky_add_to_cart": "Adicionar ao carrinho fixo",
     "order_cutoff": "Horário limite e dias de envio",
     "product_tiles": "Blocos de produto",
@@ -1264,6 +1265,7 @@
     "disclosures": "Divulgações"
   },
   "info": {
+    "article_cta": "Exibido onde o texto do artigo contém [cta]. O metacampo custom.cta tem prioridade.",
     "blog_filters_heading": "Exibido acima dos artigos no celular",
     "related_products_intent": "Relacionados: produtos semelhantes. Complementares: produtos que combinam, definidos no Search & Discovery.",
     "bundle_discount": "Exibido como preço de kit menor. Crie um desconto automático correspondente para o checkout aplicá-lo. 0 mostra o total normal.",

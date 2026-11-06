@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "call_to_action": "Call to action",
     "sticky_add_to_cart": "Sticky add to cart",
     "order_cutoff": "Order cut-off and shipping days",
     "product_tiles": "Product tiles",
@@ -235,6 +236,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "article_cta": "Shown where the article text contains [cta]. The custom.cta metafield takes priority.",
     "blog_filters_heading": "Shown above the articles on mobile",
     "related_products_intent": "Related: similar products. Complementary: products that go with this one, set in Search & Discovery.",
     "bundle_discount": "Shown as a lower bundle price. Create a matching automatic discount in Shopify so checkout charges it. 0 shows the plain total.",

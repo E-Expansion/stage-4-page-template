@@ -1029,6 +1029,7 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "call_to_action": "Appel à l’action",
     "sticky_add_to_cart": "Ajout au panier flottant",
     "order_cutoff": "Heure limite de commande et jours d'expédition",
     "product_tiles": "Vignettes produit",
@@ -1264,6 +1265,7 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "article_cta": "Affiché là où le texte de l’article contient [cta]. Le métachamp custom.cta est prioritaire.",
     "blog_filters_heading": "Affiché au-dessus des articles sur mobile",
     "related_products_intent": "Associés : produits similaires. Complémentaires : produits qui vont avec, définis dans Search & Discovery.",
     "bundle_discount": "Affiché comme prix de lot réduit. Créez une réduction automatique correspondante pour que le paiement l'applique. 0 affiche le total normal.",

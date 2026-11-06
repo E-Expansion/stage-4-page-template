@@ -1029,6 +1029,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "call_to_action": "Handlungsaufforderung",
     "sticky_add_to_cart": "Fixierte Schaltfläche „In den Warenkorb“",
     "order_cutoff": "Bestellschluss und Versandtage",
     "product_tiles": "Produktkacheln",
@@ -1264,6 +1265,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "article_cta": "Erscheint dort, wo der Artikeltext [cta] enthält. Das Metafeld custom.cta hat Vorrang.",
     "blog_filters_heading": "Wird auf Mobilgeräten über den Artikeln angezeigt",
     "related_products_intent": "Ähnlich: vergleichbare Produkte. Ergänzend: passende Produkte, festgelegt in Search & Discovery.",
     "bundle_discount": "Wird als niedrigerer Bundle-Preis gezeigt. Lege einen passenden automatischen Rabatt an, damit der Checkout ihn berechnet. 0 zeigt die normale Summe.",

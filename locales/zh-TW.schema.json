@@ -1029,6 +1029,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "call_to_action": "行動呼籲",
     "sticky_add_to_cart": "固定加入購物車",
     "order_cutoff": "截單時間和出貨日",
     "product_tiles": "商品圖塊",
@@ -1264,6 +1265,7 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "article_cta": "顯示於文章內文包含 [cta] 的位置。中繼欄位 custom.cta 優先。",
     "blog_filters_heading": "在行動裝置上顯示於文章上方",
     "related_products_intent": "相關：類似產品。搭配：適合搭配的產品，在 Search & Discovery 中設定。",
     "bundle_discount": "顯示為較低的組合價。請在 Shopify 建立對應的自動折扣，結帳時才會套用。0 顯示一般總價。",

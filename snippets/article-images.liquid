@@ -1,0 +1,38 @@
+{%- doc -%}
+  Renders a row of images inside an article: up to three columns on desktop and a
+  swipeable row on mobile.
+
+  @param {object[]} images - Images, e.g. a list of files from a metafield
+
+  @example
+  {% render 'article-images', images: article.metafields.custom.images.value %}
+{%- enddoc -%}
+
+<div
+  class="article-images snap-carousel"
+  style="--snap-carousel-columns: {{ images.count | at_most: 3 }}; --snap-carousel-mobile-width: 42%;"
+>
+  {% for image in images %}
+    {{
+      image
+      | image_url: width: 800
+      | image_tag:
+        widths: '300, 400, 600, 800',
+        sizes: '(min-width: 750px) 190px, 42vw',
+        loading: 'lazy',
+        alt: image.alt,
+        class: 'article-images__image'
+    }}
+  {% endfor %}
+</div>
+
+{% stylesheet %}
+  .article-images__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+    border-radius: var(--style-border-radius-xs);
+  }
+{% endstylesheet %}

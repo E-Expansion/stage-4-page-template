@@ -1,0 +1,28 @@
+{%- doc -%}
+  Outputs the custom properties that recolour primary buttons, for use in a style
+  attribute. The text picks the palette extreme that contrasts with the colour, and the
+  hover state follows the theme's hover shift.
+
+  @param {string} color - Button colour
+
+  @example
+  <div style="{% render 'button-color-vars', color: section.settings.button_color %}"></div>
+{%- enddoc -%}
+
+{%- if color != blank -%}
+  {%- liquid
+    assign button_brightness = color | color_brightness
+    assign button_text = 'var(--palette-lightest)'
+    if button_brightness > 128
+      assign button_text = 'var(--palette-darkest)'
+    endif
+    capture button_hover
+      render 'util-palette-hover-shift', color: color
+    endcapture
+    assign button_hover = button_hover | strip
+  -%}
+  --color-primary-button-background: {{ color }}; --color-primary-button-border: {{ color }};
+  --color-primary-button-text: {{ button_text }}; --color-primary-button-hover-background: {{ button_hover }};
+  --color-primary-button-hover-border: {{ button_hover }}; --color-primary-button-hover-text: {{ button_text }};
+  --color-primary-button-focus-outline: {{ color }};
+{%- endif -%}
