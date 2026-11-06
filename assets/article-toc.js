@@ -1,4 +1,5 @@
 import { Component } from '@theme/component';
+import { getScrollEventTarget, scrollContainerMediaQuery } from '@theme/scroll-container';
 
 /**
  * Marks the heading the reader is on in the list of article headings, and closes the
@@ -14,16 +15,18 @@ class ArticleTocComponent extends Component {
 
   /** @type {AbortController | undefined} */
   #abortController;
+  /** @type {EventTarget | undefined} */
+  #scrollTarget;
   #frame = 0;
 
   connectedCallback() {
     super.connectedCallback();
 
     this.#abortController = new AbortController();
-    window.addEventListener('scroll', this.#scheduleUpdate, {
-      passive: true,
+    scrollContainerMediaQuery.addEventListener('change', this.#listenToScroll, {
       signal: this.#abortController.signal,
     });
+    this.#listenToScroll();
     this.#update();
   }
 
@@ -31,12 +34,23 @@ class ArticleTocComponent extends Component {
     super.disconnectedCallback();
 
     this.#abortController?.abort();
+    this.#scrollTarget?.removeEventListener('scroll', this.#scheduleUpdate);
     cancelAnimationFrame(this.#frame);
   }
 
   handleLinkClick() {
     this.closest('details')?.removeAttribute('open');
   }
+
+  /**
+   * The page scrolls in .page-wrapper from 990px and in the document below that, so the
+   * listener moves along when the screen crosses that width.
+   */
+  #listenToScroll = () => {
+    this.#scrollTarget?.removeEventListener('scroll', this.#scheduleUpdate);
+    this.#scrollTarget = getScrollEventTarget();
+    this.#scrollTarget.addEventListener('scroll', this.#scheduleUpdate, { passive: true });
+  };
 
   #scheduleUpdate = () => {
     cancelAnimationFrame(this.#frame);
