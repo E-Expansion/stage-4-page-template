@@ -15,7 +15,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
 | Journal (blog) | `templates/blog.json` | Done; optional store setup (see below) |
-| Article | `templates/article.json` | To do (still Horizon default) |
+| Article | `templates/article.json` | In progress: header done, rest still Horizon default |
 
 ## Working on the theme
 
@@ -75,7 +75,8 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `star-rating` | Five stars from the review metafields | Product tile, product mention |
 | `author-byline` | Avatar and author name, from the article's `custom.author` | Press mentions, article card |
 | `author-bio` | "About the author" card | Article page (planned) |
-| `breadcrumbs` | Trail built from the current page, with structured data | Page header |
+| `page-heading` | Breadcrumbs, h1, optional tag badge and text | Page header, article header |
+| `breadcrumbs` | Trail built from the current page, with structured data | Page heading |
 | `faq-accordion` | One FAQ question (native `<details>`) | FAQ section |
 | `seo-text-block` | Bordered long-form text card | SEO text section |
 | `chat-trigger-script` | Opens Shopify Inbox from any `[data-chat-trigger]` link | Footer, FAQ |
@@ -99,6 +100,10 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 `page-header` → `featured-article` → `blog-filters` (tag filters, sorting, search, article grid) → `newsletter-signup`
 
 Shopify cannot sort blogs and Liquid cannot read a sort parameter, so `blog-filters` renders every article (up to 250) and `assets/blog-filters.js` sorts them and reveals them in batches.
+
+### Article (`templates/article.json`)
+
+`main-blog-post`: `_blog-post-header` → Horizon's date, image and content blocks. The second column on desktop is reserved for the sidebar.
 
 ### Header and footer groups
 

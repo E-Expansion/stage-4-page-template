@@ -1,0 +1,35 @@
+{%- doc -%}
+  Renders the top of an article: breadcrumbs, title, tag badge and the article's excerpt,
+  from the shared page-heading snippet.
+{%- enddoc -%}
+
+<header
+  class="blog-post-header"
+  {{ block.shopify_attributes }}
+>
+  {% render 'page-heading',
+    title: article.title,
+    text: article.excerpt,
+    tags: article.tags,
+    show_breadcrumbs: true
+  %}
+</header>
+
+{% stylesheet %}
+  .blog-post-header {
+    width: 100%;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.title",
+  "tag": null,
+  "presets": [
+    {
+      "name": "t:names.title",
+      "category": "t:categories.blog_post"
+    }
+  ]
+}
+{% endschema %}

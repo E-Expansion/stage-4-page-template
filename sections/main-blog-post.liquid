@@ -9,50 +9,52 @@
 <div
   class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
-<div class="section{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
+<div class="section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
   <div
-    class="
-      spacing-style
-      layout-panel-flex
-      layout-panel-flex--column
-      section-content-wrapper
-      mobile-column
-    "
-    style="
-      {% render 'layout-panel-style', settings: section.settings %}
-      {% render 'spacing-style', settings: section.settings %}
-    "
+    class="blog-post-layout spacing-style"
+    style="{% render 'spacing-style', settings: section.settings %}"
   >
-    {% content_for 'blocks' %}
+    <div
+      class="
+        blog-post-layout__main
+        layout-panel-flex
+        layout-panel-flex--column
+        section-content-wrapper
+        mobile-column
+      "
+      style="{% render 'layout-panel-style', settings: section.settings %}"
+    >
+      {% content_for 'blocks' %}
 
-    {% if blog.comments_enabled? %}
-      <div class="blog-post-comments-container">
-        <h2 class="h3">{{- 'blogs.article.comments_heading' | t: count: article.comments_count -}}</h2>
+      {% if blog.comments_enabled? %}
+        <div class="blog-post-comments-container">
+          <h2 class="h3">{{- 'blogs.article.comments_heading' | t: count: article.comments_count -}}</h2>
 
-        <div class="blog-post-comments">
-          {% paginate article.comments by 10 %}
-            {% for comment in article.comments %}
-              <div class="blog-post-comment">
-                {{ comment.content }}
-                <div class="blog-post-comment__author">
-                  <span class="blog-post-comment__author-name">{{- comment.author -}}</span>
-                  <span>{{- 'blogs.article.comment_author_separator' | t -}}</span>
-                  <span class="blog-post-comment__date">
-                    {{- comment.created_at | time_tag: format: 'date' -}}
-                  </span>
+          <div class="blog-post-comments">
+            {% paginate article.comments by 10 %}
+              {% for comment in article.comments %}
+                <div class="blog-post-comment">
+                  {{ comment.content }}
+                  <div class="blog-post-comment__author">
+                    <span class="blog-post-comment__author-name">{{- comment.author -}}</span>
+                    <span>{{- 'blogs.article.comment_author_separator' | t -}}</span>
+                    <span class="blog-post-comment__date">
+                      {{- comment.created_at | time_tag: format: 'date' -}}
+                    </span>
+                  </div>
                 </div>
+              {% endfor %}
+
+              <div class="blog-post-comments-pagination">
+                {{- paginate | default_pagination -}}
               </div>
-            {% endfor %}
+            {% endpaginate %}
+          </div>
 
-            <div class="blog-post-comments-pagination">
-              {{- paginate | default_pagination -}}
-            </div>
-          {% endpaginate %}
+          {% render 'blog-comment-form', article: article, section_id: section.id %}
         </div>
-
-        {% render 'blog-comment-form', article: article, section_id: section.id %}
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -61,6 +63,21 @@
 </script>
 
 {% stylesheet %}
+  /* The second column is kept free for the sidebar on larger screens */
+  .blog-post-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--padding-3xl);
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) 16.25rem;
+    }
+  }
+
+  .blog-post-layout__main {
+    min-width: 0;
+  }
+
   .blog-post-comments-container {
     width: 100%;
     max-width: var(--normal-content-width);
@@ -121,6 +138,9 @@
     },
     {
       "type": "_blog-post-title"
+    },
+    {
+      "type": "_blog-post-header"
     },
     {
       "type": "_blog-post-info-text"

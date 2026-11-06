@@ -1,6 +1,7 @@
 {% comment %}
   Section contract.
-  Page intro for listing pages: breadcrumbs, the page title and a short description.
+  Page intro for listing pages, using the shared page-heading snippet: breadcrumbs, the
+  page title and a short description.
   Title and description are read from the current collection, blog or page, so one
   template serves every collection or blog. The section's own title and text are used
   when set (title) or when the resource has no description (text). Blogs have no
@@ -24,10 +25,14 @@
       assign resource_title = page_title
   endcase
 
-  assign title = section.settings.title | default: resource_title | escape
+  assign title = section.settings.title | default: resource_title
   assign description = resource_description
   if description == blank
     assign description = section.settings.text
+  endif
+
+  if section.settings.show_product_count and template.name == 'collection'
+    assign count_label = 'content.item_count' | t: count: collection.products_count
   endif
 %}
 
@@ -41,75 +46,15 @@
   class="page-header section section--page-width spacing-style color-custom-{{ section.id }}"
   style="{% render 'spacing-padding', settings: section.settings %}"
 >
-  <div class="page-header__inner">
-    {% if section.settings.show_breadcrumbs %}
-      {% render 'breadcrumbs',
-        parent_label: section.settings.parent_label,
-        parent_url: section.settings.parent_link
-      %}
-    {% endif %}
-
-    <h1 class="page-header__title">{{ title }}</h1>
-
-    {% if description != blank %}
-      <div class="page-header__text rte">{{ description }}</div>
-    {% endif %}
-
-    {% if section.settings.show_product_count and template.name == 'collection' %}
-      <p class="page-header__count desktop:hidden">
-        {{- 'content.item_count' | t: count: collection.products_count -}}
-      </p>
-    {% endif %}
-  </div>
+  {% render 'page-heading',
+    title: title,
+    text: description,
+    show_breadcrumbs: section.settings.show_breadcrumbs,
+    parent_label: section.settings.parent_label,
+    parent_url: section.settings.parent_link,
+    count: count_label
+  %}
 </div>
-
-{% stylesheet %}
-  .page-header__inner {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-sm);
-    min-width: 0;
-
-    @media screen and (min-width: 750px) {
-      gap: var(--gap-md);
-    }
-  }
-
-  .page-header__title {
-    margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--3xl);
-    line-height: var(--line-height--display-tight);
-    letter-spacing: var(--letter-spacing--heading-tight);
-    overflow-wrap: anywhere;
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--4xl);
-    }
-  }
-
-  .page-header__text {
-    max-width: 40rem;
-    font-size: var(--font-size--sm);
-    line-height: var(--line-height--body-loose);
-    color: var(--color-foreground-muted);
-
-    & > * {
-      margin: 0;
-    }
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--md);
-    }
-  }
-
-  .page-header__count {
-    margin: 0;
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground-muted);
-  }
-{% endstylesheet %}
 
 {% schema %}
 {

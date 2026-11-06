@@ -41,7 +41,7 @@
       if current_tags.size > 0
         assign crumb_labels = crumb_labels | append: separator | append: blog.title
         assign crumb_urls = crumb_urls | append: separator | append: blog.url
-        assign current_label = current_tags | first
+        assign current_label = current_tags | first | replace: '-', ' ' | capitalize
       else
         assign current_label = blog.title
       endif
@@ -52,7 +52,8 @@
       if article_tag != blank
         assign tag_handle = article_tag | handleize
         assign tag_url = blog.url | append: '/tagged/' | append: tag_handle
-        assign crumb_labels = crumb_labels | append: separator | append: article_tag
+        assign tag_label = article_tag | replace: '-', ' ' | capitalize
+        assign crumb_labels = crumb_labels | append: separator | append: tag_label
         assign crumb_urls = crumb_urls | append: separator | append: tag_url
       endif
       assign current_label = article.title

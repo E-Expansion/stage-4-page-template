@@ -1,0 +1,87 @@
+{%- doc -%}
+  Renders a page intro: breadcrumbs, the h1, an optional tag badge and a short text. Used
+  full width by the page-header section and in the article column by the blog post header.
+
+  @param {string} title - Page title, escaped here
+  @param {string} [text] - Rich text HTML shown under the title
+  @param {string[]} [tags] - Tags for the badge between title and text, e.g. `article.tags`
+  @param {boolean} [show_breadcrumbs] - Show the breadcrumb trail
+  @param {string} [parent_label] - Extra crumb after Home
+  @param {string} [parent_url] - Link of the extra crumb
+  @param {string} [count] - Short count text, shown on mobile only
+
+  @example
+  {% render 'page-heading', title: article.title, text: article.excerpt, tags: article.tags, show_breadcrumbs: true %}
+{%- enddoc -%}
+
+<div class="page-header__inner">
+  {% if show_breadcrumbs %}
+    {% render 'breadcrumbs', parent_label: parent_label, parent_url: parent_url %}
+  {% endif %}
+
+  <h1 class="page-header__title">{{ title | escape }}</h1>
+
+  {% if tags != blank %}
+    {% render 'tag-badge', tags: tags, class: 'page-header__tag' %}
+  {% endif %}
+
+  {% if text != blank %}
+    <div class="page-header__text rte">{{ text }}</div>
+  {% endif %}
+
+  {% if count != blank %}
+    <p class="page-header__count desktop:hidden">{{ count }}</p>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .page-header__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    min-width: 0;
+
+    @media screen and (min-width: 750px) {
+      gap: var(--gap-md);
+    }
+  }
+
+  .page-header__title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--3xl);
+    line-height: var(--line-height--display-tight);
+    letter-spacing: var(--letter-spacing--heading-tight);
+    overflow-wrap: anywhere;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--4xl);
+    }
+  }
+
+  .page-header__text {
+    max-width: 40rem;
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    & > * {
+      margin: 0;
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .page-header__tag {
+    align-self: flex-start;
+  }
+
+  .page-header__count {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
