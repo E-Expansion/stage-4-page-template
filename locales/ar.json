@@ -206,6 +206,8 @@
       "other": "قراءة {{ count }} دقائق"
     },
     "updated_on": "تم التحديث في {{ date }}",
+    "keep_reading": "تابع القراءة",
+    "on_this_page": "في هذه الصفحة",
     "read_article": "اقرأ المقال",
     "about_author": "عن الكاتب",
     "color_count": {

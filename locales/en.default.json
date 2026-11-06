@@ -207,6 +207,8 @@
       "other": "{{ count }} min read"
     },
     "updated_on": "updated {{ date }}",
+    "keep_reading": "Keep reading",
+    "on_this_page": "On this page",
     "read_article": "Read the article",
     "about_author": "About the author",
     "color_count": {

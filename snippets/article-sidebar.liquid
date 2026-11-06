@@ -1,0 +1,99 @@
+{%- doc -%}
+  Renders the article sidebar: the list of headings (on large screens), "Keep reading" and
+  the shared product tile. Keep reading shows the articles in the custom.related_articles
+  metafield, or the blog's latest three others when empty. The product comes from
+  custom.product, the same one as the [product] marker in the text.
+
+  @param {object} article - The article
+  @param {string} section_id - The section ID, used for unique form IDs
+
+  @example
+  {% render 'article-sidebar', article: article, section_id: section.id %}
+{%- enddoc -%}
+
+{% liquid
+  assign related_articles = article.metafields.custom.related_articles.value
+
+  capture keep_reading
+    if related_articles != blank
+      for item in related_articles
+        echo '<li>'
+        render 'article-card', article: item, layout: 'link'
+        echo '</li>'
+      endfor
+    else
+      assign shown = 0
+      for item in blog.articles
+        if item.id != article.id and shown < 3
+          assign shown = shown | plus: 1
+          echo '<li>'
+          render 'article-card', article: item, layout: 'link'
+          echo '</li>'
+        endif
+      endfor
+    endif
+  endcapture
+
+  capture toc
+    render 'article-toc', article: article
+  endcapture
+
+  assign sidebar_product = article.metafields.custom.product.value
+%}
+
+{% if toc contains '<nav' %}
+  <div class="article-sidebar__card article-sidebar__card--toc article-toc">
+    <h2 class="article-sidebar__title">{{ 'content.on_this_page' | t }}</h2>
+    {{ toc }}
+  </div>
+{% endif %}
+
+{% if keep_reading contains '<li>' %}
+  <div class="article-sidebar__card">
+    <h2 class="article-sidebar__title">{{ 'content.keep_reading' | t }}</h2>
+    <ul class="article-sidebar__list list-unstyled">
+      {{ keep_reading }}
+    </ul>
+  </div>
+{% endif %}
+
+{% if sidebar_product != blank %}
+  <ul class="article-sidebar__product list-unstyled">
+    {% render 'product-tile', product: sidebar_product, section_id: section_id, sizes: '(min-width: 990px) 260px, 100vw' %}
+  </ul>
+{% endif %}
+
+{% stylesheet %}
+  .article-sidebar__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding: var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  /* The collapsible list in the article text replaces this one on smaller screens */
+  .article-sidebar__card--toc {
+    @media screen and (max-width: 989px) {
+      display: none;
+    }
+  }
+
+  .article-sidebar__title {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-weight: var(--font-body--weight);
+    font-size: var(--font-size--2xs);
+    letter-spacing: var(--letter-spacing-sm);
+    text-transform: uppercase;
+    color: var(--color-foreground-muted);
+  }
+
+  .article-sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+{% endstylesheet %}

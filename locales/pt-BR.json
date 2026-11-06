@@ -176,6 +176,8 @@
       "other": "{{ count }} min de leitura"
     },
     "updated_on": "Atualizado em {{ date }}",
+    "keep_reading": "Continue lendo",
+    "on_this_page": "Nesta página",
     "read_article": "Ler o artigo",
     "about_author": "Sobre o autor",
     "color_count": {

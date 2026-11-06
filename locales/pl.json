@@ -178,6 +178,8 @@
       "other": "{{ count }} min czytania"
     },
     "updated_on": "Zaktualizowano {{ date }}",
+    "keep_reading": "Czytaj dalej",
+    "on_this_page": "Na tej stronie",
     "read_article": "Przeczytaj artykuł",
     "about_author": "O autorze",
     "color_count": {

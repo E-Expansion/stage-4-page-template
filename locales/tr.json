@@ -174,6 +174,8 @@
       "other": "{{ count }} dk okuma"
     },
     "updated_on": "Güncellendi: {{ date }}",
+    "keep_reading": "Okumaya devam et",
+    "on_this_page": "Bu sayfada",
     "read_article": "Makaleyi oku",
     "about_author": "Yazar hakkında",
     "color_count": {

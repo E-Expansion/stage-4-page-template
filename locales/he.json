@@ -200,6 +200,8 @@
       "other": "קריאה של {{ count }} דקות"
     },
     "updated_on": "עודכן ב-{{ date }}",
+    "keep_reading": "המשיכו לקרוא",
+    "on_this_page": "בעמוד זה",
     "read_article": "לקריאת המאמר",
     "about_author": "על הכותב",
     "color_count": {

@@ -5,6 +5,9 @@
   - [images]: row of images from custom.images
   - [cta]: banner from the custom.cta metaobject, or this block's settings when empty
   A marker without content is removed.
+
+  Each h2 gets a numbered id for the links in article-toc, and the collapsible version of
+  that list goes before the first h2.
 {%- enddoc -%}
 
 {% liquid
@@ -40,6 +43,24 @@
     endcapture
     assign content = content | replace: '<p>[cta]</p>', marker_html | replace: '[cta]', marker_html
   endif
+
+  assign heading_parts = content | prepend: ' ' | split: '<h2'
+  if heading_parts.size > 1
+    capture toc
+      render 'article-toc', article: article
+    endcapture
+    assign toc_label = 'content.on_this_page' | t
+    capture inline_toc
+      echo '<div class="article-toc-inline article-toc">'
+      render 'faq-accordion', question: toc_label, answer: toc
+      echo '</div>'
+    endcapture
+
+    assign content = heading_parts.first | append: inline_toc
+    for part in heading_parts offset: 1
+      assign content = content | append: '<h2 id="article-section-' | append: forloop.index | append: '"' | append: part
+    endfor
+  endif
 %}
 
 <div
@@ -74,6 +95,7 @@
 
     rte-formatter > h2 {
       margin-block: var(--padding-3xl) var(--padding-lg);
+      scroll-margin-block-start: calc(var(--header-height, 0px) + var(--padding-lg));
       font-size: var(--font-size--2xl);
 
       @media screen and (min-width: 750px) {

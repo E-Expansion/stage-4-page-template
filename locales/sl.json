@@ -178,6 +178,8 @@
       "other": "{{ count }} min branja"
     },
     "updated_on": "Posodobljeno {{ date }}",
+    "keep_reading": "Berite naprej",
+    "on_this_page": "Na tej strani",
     "read_article": "Preberi članek",
     "about_author": "O avtorju",
     "color_count": {

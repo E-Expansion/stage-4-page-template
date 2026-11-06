@@ -178,6 +178,8 @@
       "other": "{{ count }} мин чтения"
     },
     "updated_on": "Обновлено {{ date }}",
+    "keep_reading": "Читать далее",
+    "on_this_page": "На этой странице",
     "read_article": "Читать статью",
     "about_author": "Об авторе",
     "color_count": {

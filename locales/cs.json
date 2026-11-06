@@ -178,6 +178,8 @@
       "other": "{{ count }} min čtení"
     },
     "updated_on": "Aktualizováno {{ date }}",
+    "keep_reading": "Čtěte dále",
+    "on_this_page": "Na této stránce",
     "read_article": "Přečíst článek",
     "about_author": "O autorovi",
     "color_count": {

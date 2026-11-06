@@ -176,6 +176,8 @@
       "other": "{{ count }} min de citit"
     },
     "updated_on": "Actualizat pe {{ date }}",
+    "keep_reading": "Continuă să citești",
+    "on_this_page": "Pe această pagină",
     "read_article": "Citește articolul",
     "about_author": "Despre autor",
     "color_count": {

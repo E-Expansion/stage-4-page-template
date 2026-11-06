@@ -15,7 +15,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
 | Journal (blog) | `templates/blog.json` | Done; optional store setup (see below) |
-| Article | `templates/article.json` | In progress: all done except the sidebar |
+| Article | `templates/article.json` | Done; needs store setup (see below) |
 
 ## Working on the theme
 
@@ -66,14 +66,16 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 |---|---|---|
 | `section-heading` | Heading row: title, text, and a link or side text | Category selector, curated products, UGC, press |
 | `.snap-carousel` (class in `assets/base.css`) | Grid on desktop, swipeable row on mobile | Category selector, curated products, subcategories |
-| `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid |
+| `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid, article sidebar |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article content |
 | `article-meta` | Read time and date of an article | Article card, article author line |
 | `article-images` | Row of images inside an article | Article content |
+| `article-toc` (+ `assets/article-toc.js`) | List of an article's h2s that tracks the current one | Article sidebar, article content |
+| `article-sidebar` | On this page, Keep reading and the product tile | Article page |
 | `cta-banner` | Dark banner with text and a button | Article content |
 | `button-color-vars` | Custom properties that recolour primary buttons | Newsletter signup, article content |
 | `category-tile` | Collection tile (normal or `small`) | Category selector, subcategories |
-| `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article, blog grid; article pages (planned) |
+| `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article, blog grid, article sidebar |
 | `tag-badge` | Coloured badge from product or article tags | Product tile, article card |
 | `listing-toolbar-styles` | Styles for the bar above a listing and the paging below it | Collection and blog listings |
 | `star-rating` | Five stars from the review metafields | Product tile, product mention |
@@ -108,7 +110,7 @@ Shopify cannot sort blogs and Liquid cannot read a sort parameter, so `blog-filt
 
 ### Article (`templates/article.json`)
 
-`main-blog-post`: `_blog-post-header` → `_blog-post-byline` → featured image → `_blog-post-content` → `_blog-post-faq` → `_blog-post-author-bio`. The second column on desktop is reserved for the sidebar.
+`main-blog-post`: `_blog-post-header` → `_blog-post-byline` → featured image → `_blog-post-content` → `_blog-post-faq` → `_blog-post-author-bio`. `article-sidebar` sits beside it and is sticky from 990px. On smaller screens it moves under the article and `On this page` collapses into the text, before the first h2.
 
 The article text can place components between paragraphs with a marker on its own line: `[product]`, `[images]` and `[cta]`, filled from the metafields below.
 
@@ -145,7 +147,8 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Blog | `custom.featured_article` | Blog post | Featured article (falls back to the latest article) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
 | Article | `custom.faq_heading` | Single-line text | Article FAQ heading (falls back to the block's heading) |
-| Article | `custom.product` | Product | `[product]` marker |
+| Article | `custom.related_articles` | List of blog posts | Keep reading (falls back to the blog's latest articles) |
+| Article | `custom.product` | Product | `[product]` marker, article sidebar |
 | Article | `custom.product_detail` | Single-line text | Extra text in the `[product]` row, e.g. "fits a 14\" laptop" |
 | Article | `custom.images` | List of files (images) | `[images]` marker |
 | Article | `custom.cta` | `article_cta` metaobject | `[cta]` marker (falls back to the content block's settings) |

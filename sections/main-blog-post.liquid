@@ -12,7 +12,10 @@
 <div class="section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
   <div
     class="blog-post-layout spacing-style"
-    style="{% render 'spacing-style', settings: section.settings %}"
+    style="
+      {% render 'spacing-style', settings: section.settings %}
+      {% if section.settings.accent_color != blank %}--blog-post-accent: {{ section.settings.accent_color }};{% endif %}
+    "
   >
     <div
       class="
@@ -55,6 +58,10 @@
         </div>
       {% endif %}
     </div>
+
+    <aside class="blog-post-sidebar">
+      {% render 'article-sidebar', article: article, section_id: section.id %}
+    </aside>
   </div>
 </div>
 
@@ -63,7 +70,6 @@
 </script>
 
 {% stylesheet %}
-  /* The second column is kept free for the sidebar on larger screens */
   .blog-post-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -76,6 +82,29 @@
 
   .blog-post-layout__main {
     min-width: 0;
+  }
+
+  .blog-post-sidebar {
+    --blog-post-sidebar-offset: calc(var(--header-height, 0px) + var(--padding-lg));
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    min-width: 0;
+
+    /* Scrolls on its own when it is taller than the screen, so nothing stays out of reach */
+    @media screen and (min-width: 990px) {
+      position: sticky;
+      inset-block-start: var(--blog-post-sidebar-offset);
+      align-self: start;
+      max-height: calc(100vh - var(--blog-post-sidebar-offset) - var(--padding-lg));
+      overflow-y: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   .blog-post-comments-container {
@@ -197,6 +226,12 @@
       "id": "border_color",
       "label": "t:settings.border_color",
       "default": "{{ settings.color_palette.color2 }}"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "t:settings.accent_color",
+      "default": "{{ settings.color_palette.color3 }}"
     },
     {
       "type": "header",

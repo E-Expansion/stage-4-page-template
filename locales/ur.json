@@ -194,6 +194,8 @@
       "other": "{{ count }} منٹ کا مطالعہ"
     },
     "updated_on": "{{ date }} کو اپ ڈیٹ کیا گیا",
+    "keep_reading": "پڑھنا جاری رکھیں",
+    "on_this_page": "اس صفحے پر",
     "read_article": "مضمون پڑھیں",
     "about_author": "مصنف کے بارے میں",
     "color_count": {

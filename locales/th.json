@@ -174,6 +174,8 @@
       "other": "อ่าน {{ count }} นาที"
     },
     "updated_on": "อัปเดตเมื่อ {{ date }}",
+    "keep_reading": "อ่านต่อ",
+    "on_this_page": "ในหน้านี้",
     "read_article": "อ่านบทความ",
     "about_author": "เกี่ยวกับผู้เขียน",
     "color_count": {

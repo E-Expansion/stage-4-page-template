@@ -1,0 +1,101 @@
+{%- doc -%}
+  Renders the list of an article's h2 headings as links, and marks the one the reader is
+  on (assets/article-toc.js). The links point to the ids that the _blog-post-content block
+  gives its headings, numbered in the same order. Renders nothing without headings.
+
+  @param {object} article - The article
+
+  @example
+  {% render 'article-toc', article: article %}
+{%- enddoc -%}
+
+{% assign heading_parts = article.content | prepend: ' ' | split: '<h2' %}
+
+{% if heading_parts.size > 1 %}
+  <script
+    src="{{ 'article-toc.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <article-toc-component>
+    <nav aria-label="{{ 'content.on_this_page' | t }}">
+      <ol class="article-toc__list list-unstyled">
+        {% for part in heading_parts offset: 1 %}
+          {% liquid
+            assign heading_html = part | split: '</h2>' | first
+            assign heading_text = '<h2' | append: heading_html | strip_html | strip
+          %}
+          <li>
+            <a
+              href="#article-section-{{ forloop.index }}"
+              class="article-toc__link"
+              ref="links[]"
+              on:click="/handleLinkClick"
+              {% if forloop.first %}
+                aria-current="true"
+              {% endif %}
+            >
+              {{- heading_text -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </article-toc-component>
+{% endif %}
+
+{% stylesheet %}
+  .article-toc .article-toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-toc .article-toc__link {
+    display: block;
+    padding-block: var(--padding-3xs);
+    padding-inline-start: var(--padding-xs);
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-normal);
+    color: var(--color-foreground-muted);
+    text-decoration: none;
+    border-inline-start: 2px solid var(--color-border);
+    overflow-wrap: anywhere;
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    &[aria-current] {
+      color: var(--color-foreground);
+      border-inline-start-color: var(--blog-post-accent, var(--color-foreground));
+    }
+  }
+
+  /* Collapsible version between the article's first paragraphs on smaller screens */
+  .article-toc-inline {
+    margin-block: var(--padding-lg);
+    padding-inline: var(--padding-lg);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+
+    .faq-accordion {
+      border: 0;
+    }
+
+    .faq-accordion__question {
+      font-size: var(--font-size--2xs);
+      letter-spacing: var(--letter-spacing-sm);
+      text-transform: uppercase;
+      color: var(--color-foreground-muted);
+    }
+  }
+{% endstylesheet %}

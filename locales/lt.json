@@ -178,6 +178,8 @@
       "other": "{{ count }} min skaitymo"
     },
     "updated_on": "Atnaujinta {{ date }}",
+    "keep_reading": "Skaitykite toliau",
+    "on_this_page": "Šiame puslapyje",
     "read_article": "Skaityti straipsnį",
     "about_author": "Apie autorių",
     "color_count": {
