@@ -165,6 +165,9 @@
     "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> af {{ total }}",
     "products_shown": "{{ shown }} af {{ total }} produkter",
     "sort_by": "Sortér efter:",
+    "sort_oldest": "Ældste",
+    "sort_recent": "Nyeste",
+    "sort_title": "A-Å",
     "home": "Forside",
     "read_time": {
       "one": "{{ count }} min. læsning",

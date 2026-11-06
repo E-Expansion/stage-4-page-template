@@ -165,6 +165,9 @@
     "showing_range_html": "{{ total }}件中 <strong>{{ start }}–{{ end }}</strong>件を表示",
     "products_shown": "{{ total }}点中{{ shown }}点",
     "sort_by": "並べ替え:",
+    "sort_oldest": "古い順",
+    "sort_recent": "新しい順",
+    "sort_title": "タイトル順",
     "home": "ホーム",
     "read_time": {
       "one": "{{ count }}分で読めます",

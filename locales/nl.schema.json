@@ -214,7 +214,7 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
-    "article": "Artikel",
+    "articles_per_page": "Artikelen per pagina",
     "bundle_max_products": "Producten naast dit product",
     "show_image": "Afbeelding tonen",
     "show_sticky_add_to_cart": "Sticky add to cart tonen",
@@ -1264,7 +1264,7 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
-    "featured_article": "Laat leeg om het nieuwste artikel te tonen",
+    "blog_filters_heading": "Wordt op mobiel boven de artikelen getoond",
     "related_products_intent": "Gerelateerd: vergelijkbare producten. Aanvullend: producten die erbij passen, ingesteld in Search & Discovery.",
     "bundle_discount": "Wordt getoond als lagere bundelprijs. Maak een bijpassende automatische korting in Shopify zodat de checkout die rekent. Bij 0 zie je het gewone totaal.",
     "frequently_bought_together": "Toont de aanvullende producten uit Search & Discovery, of anders het metaveld custom.frequently_bought_together (lijst van producten). Verborgen als er geen zijn.",

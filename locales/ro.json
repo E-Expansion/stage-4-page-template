@@ -167,6 +167,9 @@
     "showing_range_html": "Se afișează <strong>{{ start }}–{{ end }}</strong> din {{ total }}",
     "products_shown": "{{ shown }} din {{ total }} produse",
     "sort_by": "Sortează după:",
+    "sort_oldest": "Cele mai vechi",
+    "sort_recent": "Recente",
+    "sort_title": "A–Z",
     "home": "Acasă",
     "read_time": {
       "one": "{{ count }} min de citit",

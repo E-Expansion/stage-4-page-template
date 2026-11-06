@@ -214,7 +214,7 @@
     "disclosures": "Prohlášení"
   },
   "settings": {
-    "article": "Článek",
+    "articles_per_page": "Počet článků na stránku",
     "bundle_max_products": "Produkty kromě tohoto",
     "show_image": "Zobrazit obrázek",
     "show_sticky_add_to_cart": "Zobrazit připnuté přidání do košíku",
@@ -1264,7 +1264,7 @@
     "disclosures": "Prohlášení"
   },
   "info": {
-    "featured_article": "Nechte prázdné, chcete-li zobrazit nejnovější článek",
+    "blog_filters_heading": "Zobrazuje se nad články na mobilu",
     "related_products_intent": "Související: podobné produkty. Doplňkové: produkty, které se hodí, nastavené v Search & Discovery.",
     "bundle_discount": "Zobrazí se jako nižší cena sady. Vytvořte odpovídající automatickou slevu, aby ji pokladna uplatnila. 0 zobrazí běžný součet.",
     "frequently_bought_together": "Zobrazuje doplňkové produkty ze Search & Discovery, jinak metapole custom.frequently_bought_together (seznam produktů). Skryto, pokud žádné nejsou.",

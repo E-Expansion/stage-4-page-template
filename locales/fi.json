@@ -165,6 +165,9 @@
     "showing_range_html": "Näytetään <strong>{{ start }}–{{ end }}</strong> / {{ total }}",
     "products_shown": "{{ shown }} / {{ total }} tuotetta",
     "sort_by": "Lajittele:",
+    "sort_oldest": "Vanhimmat",
+    "sort_recent": "Uusimmat",
+    "sort_title": "A–Ö",
     "home": "Etusivu",
     "read_time": {
       "one": "{{ count }} min lukuaika",

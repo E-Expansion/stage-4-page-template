@@ -169,6 +169,9 @@
     "showing_range_html": "Показано <strong>{{ start }}–{{ end }}</strong> из {{ total }}",
     "products_shown": "{{ shown }} из {{ total }} товаров",
     "sort_by": "Сортировать:",
+    "sort_oldest": "Старые",
+    "sort_recent": "Новые",
+    "sort_title": "А–Я",
     "home": "Главная",
     "read_time": {
       "one": "{{ count }} мин чтения",

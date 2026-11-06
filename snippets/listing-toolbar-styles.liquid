@@ -1,0 +1,238 @@
+{%- doc -%}
+  Shared styles for the bar above a listing and the progress and paging below it: result
+  count, sort select, pills, progress bar, page buttons and "Load more". Used by the
+  collection and blog listings.
+
+  @example
+  {% render 'listing-toolbar-styles' %}
+{%- enddoc -%}
+
+{% stylesheet %}
+  /* Toolbar */
+  .listing-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-sm);
+
+    @media screen and (max-width: 749px) {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+    }
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      padding: var(--padding-md) var(--padding-lg);
+      background-color: var(--color-background);
+      border: var(--style-border-width) solid var(--color-border);
+      border-radius: var(--style-border-radius-xs);
+    }
+  }
+
+  .listing-toolbar__filter,
+  .listing-toolbar__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    min-height: 2.25rem;
+    padding: var(--padding-xs) var(--padding-md);
+    font-size: var(--font-size--xs);
+    white-space: nowrap;
+    color: var(--color-foreground);
+    text-decoration: none;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .listing-toolbar__filter .svg-wrapper {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+  }
+
+  .listing-toolbar__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    padding-inline: 0.25rem;
+    font-size: var(--font-size--3xs);
+    color: var(--collection-accent-text, var(--color-background));
+    background-color: var(--collection-accent, var(--color-foreground));
+    border-radius: 999px;
+  }
+
+  .listing-toolbar__pills {
+    display: flex;
+    gap: var(--gap-xs);
+    margin: 0;
+    margin-inline-end: calc(var(--page-margin) * -1);
+    padding-inline-end: var(--page-margin);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .listing-toolbar__pill[aria-current] {
+    color: var(--color-background);
+    background-color: var(--color-foreground);
+    border-color: var(--color-foreground);
+  }
+
+  .listing-toolbar__count {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+
+    strong {
+      font-weight: var(--font-heading--weight);
+      color: var(--color-foreground);
+    }
+
+    @media screen and (max-width: 749px) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .listing-toolbar__sort {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sm);
+  }
+
+  .listing-toolbar__sort-label {
+    font-size: var(--font-size--xs);
+    white-space: nowrap;
+  }
+
+  .listing-toolbar__select-wrapper {
+    position: relative;
+  }
+
+  .listing-toolbar__select {
+    min-width: 7rem;
+    padding: var(--padding-xs) var(--padding-2xl) var(--padding-xs) var(--padding-sm);
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--xs);
+    color: var(--color-input-text);
+    background-color: var(--color-input-background);
+    border: var(--style-border-width-inputs) solid var(--color-input-border);
+    border-radius: var(--style-border-radius-inputs);
+    cursor: pointer;
+    appearance: none;
+  }
+
+  .listing-toolbar__caret {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: var(--padding-sm);
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* Pagination */
+  .listing-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-sm);
+    padding-block-start: var(--padding-lg);
+  }
+
+  .listing-pagination__progress-text {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .listing-pagination__bar {
+    width: 100%;
+    max-width: 7.5rem;
+    height: 2px;
+    overflow: hidden;
+    background-color: var(--color-border);
+
+    @media screen and (max-width: 749px) {
+      max-width: none;
+    }
+  }
+
+  .listing-pagination__bar-fill {
+    display: block;
+    height: 100%;
+    background-color: var(--color-foreground);
+    transition: width var(--animation-speed) var(--animation-easing);
+  }
+
+  .listing-pagination__pages {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin: var(--padding-xs) 0 0;
+  }
+
+  .listing-pagination__step,
+  .listing-pagination__page {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding-inline: var(--padding-sm);
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground);
+    text-decoration: none;
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-foreground);
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .listing-pagination__page {
+    padding-inline: 0;
+  }
+
+  .listing-pagination__page--current {
+    color: var(--color-background);
+    background-color: var(--color-foreground);
+  }
+
+  .listing-pagination__step--disabled {
+    color: var(--color-foreground-muted);
+    border-color: var(--color-border);
+  }
+
+  .listing-pagination__gap {
+    font-size: var(--font-size--xs);
+  }
+
+  .listing-pagination__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: var(--minimum-touch-target);
+    margin-block-start: var(--padding-xs);
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    text-decoration: none;
+    border: var(--style-border-width) solid var(--color-foreground);
+    border-radius: var(--style-border-radius-xs);
+
+    &[aria-busy='true'] {
+      opacity: var(--disabled-opacity);
+      pointer-events: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .listing-pagination__bar-fill {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

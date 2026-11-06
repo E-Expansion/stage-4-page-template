@@ -169,6 +169,9 @@
     "showing_range_html": "Zobrazeno <strong>{{ start }}–{{ end }}</strong> z {{ total }}",
     "products_shown": "{{ shown }} z {{ total }} produktů",
     "sort_by": "Řadit podle:",
+    "sort_oldest": "Nejstarší",
+    "sort_recent": "Nejnovější",
+    "sort_title": "A–Z",
     "home": "Domů",
     "read_time": {
       "one": "{{ count }} min čtení",

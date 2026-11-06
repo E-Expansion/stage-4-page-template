@@ -214,7 +214,7 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
-    "article": "Artikel",
+    "articles_per_page": "Artikel pro Seite",
     "bundle_max_products": "Produkte neben diesem",
     "show_image": "Bild anzeigen",
     "show_sticky_add_to_cart": "Fixierten Warenkorb-Button anzeigen",
@@ -1264,7 +1264,7 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
-    "featured_article": "Leer lassen, um den neuesten Artikel anzuzeigen",
+    "blog_filters_heading": "Wird auf Mobilgeräten über den Artikeln angezeigt",
     "related_products_intent": "Ähnlich: vergleichbare Produkte. Ergänzend: passende Produkte, festgelegt in Search & Discovery.",
     "bundle_discount": "Wird als niedrigerer Bundle-Preis gezeigt. Lege einen passenden automatischen Rabatt an, damit der Checkout ihn berechnet. 0 zeigt die normale Summe.",
     "frequently_bought_together": "Zeigt die ergänzenden Produkte aus Search & Discovery, sonst das Metafeld custom.frequently_bought_together (Produktliste). Ausgeblendet, wenn keine vorhanden.",

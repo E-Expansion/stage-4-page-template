@@ -78,6 +78,8 @@
     {% if accent != blank %}--collection-accent: {{ accent }}; --collection-accent-text: {{ accent_text }};{% endif %}
   "
 >
+  {% render 'listing-toolbar-styles' %}
+
   {% paginate collection.products by section.settings.products_per_page %}
     {% liquid
       assign page_size = collection.products.size
@@ -340,11 +342,11 @@
       {% endif %}
 
       <div class="collection-products__main">
-        <div class="collection-toolbar">
+        <div class="listing-toolbar">
           {% if section.settings.enable_filtering %}
             <button
               type="button"
-              class="collection-toolbar__filter button-unstyled desktop:hidden"
+              class="listing-toolbar__filter button-unstyled desktop:hidden"
               aria-controls="{{ panel_id }}"
               aria-expanded="false"
               ref="filterButton"
@@ -358,14 +360,14 @@
               </span>
               {{ 'actions.show_filters' | t }}
               {% if active_count > 0 %}
-                <span class="collection-toolbar__badge">{{ active_count }}</span>
+                <span class="listing-toolbar__badge">{{ active_count }}</span>
                 <span class="visually-hidden">{{ 'accessibility.filter_count' | t: count: active_count }}</span>
               {% endif %}
             </button>
           {% endif %}
 
           {% if section.settings.show_sort and mobile_sort_values.size > 0 %}
-            <ul class="collection-toolbar__pills list-unstyled desktop:hidden">
+            <ul class="listing-toolbar__pills list-unstyled desktop:hidden">
               {% for option in collection.sort_options %}
                 {% assign option_value = option.value %}
                 {% for wanted in mobile_sort_values %}
@@ -374,7 +376,7 @@
                     <li>
                       <a
                         href="{{ collection.url }}?sort_by={{ option.value }}{{ filter_query }}"
-                        class="collection-toolbar__pill"
+                        class="listing-toolbar__pill"
                         {% if option.value == sort_by %}
                           aria-current="true"
                         {% endif %}
@@ -388,7 +390,7 @@
             </ul>
           {% endif %}
 
-          <p class="collection-toolbar__count">
+          <p class="listing-toolbar__count">
             {% if paginate.items > 0 %}
               {{ 'content.showing_range_html' | t: start: first_item, end: last_item, total: paginate.items }}
             {% else %}
@@ -397,17 +399,17 @@
           </p>
 
           {% if section.settings.show_sort %}
-            <div class="collection-toolbar__sort mobile:hidden">
+            <div class="listing-toolbar__sort mobile:hidden">
               <label
                 for="SortBy-{{ section.id }}"
-                class="collection-toolbar__sort-label"
+                class="listing-toolbar__sort-label"
               >
                 {{- 'content.sort_by' | t -}}
               </label>
-              <div class="collection-toolbar__select-wrapper">
+              <div class="listing-toolbar__select-wrapper">
                 <select
                   id="SortBy-{{ section.id }}"
-                  class="collection-toolbar__select"
+                  class="listing-toolbar__select"
                   name="sort_by"
                   {% if section.settings.enable_filtering %}
                     form="{{ form_id }}"
@@ -426,7 +428,7 @@
                   {% endfor %}
                 </select>
                 <span
-                  class="svg-wrapper collection-toolbar__caret"
+                  class="svg-wrapper listing-toolbar__caret"
                   aria-hidden="true"
                 >
                   {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -480,38 +482,38 @@
         {% endcomment %}
         {% if paginate.items > 0 %}
           <nav
-            class="collection-pagination"
+            class="listing-pagination"
             aria-label="{{ 'content.pagination.nav_label' | t }}"
-            data-collection-pagination
+            data-listing-pagination
           >
             <p
-              class="collection-pagination__progress-text"
+              class="listing-pagination__progress-text"
               data-progress-text
             >
               {{ 'content.products_shown' | t: shown: last_item, total: paginate.items }}
             </p>
             <div
-              class="collection-pagination__bar"
+              class="listing-pagination__bar"
               aria-hidden="true"
             >
               <span
-                class="collection-pagination__bar-fill"
+                class="listing-pagination__bar-fill"
                 style="width: {{ progress_percent }}%;"
                 data-progress-bar
               ></span>
             </div>
 
-            <ul class="collection-pagination__pages list-unstyled mobile:hidden">
+            <ul class="listing-pagination__pages list-unstyled mobile:hidden">
               <li>
                 {% if paginate.previous %}
                   <a
                     href="{{ paginate.previous.url }}"
-                    class="collection-pagination__step"
+                    class="listing-pagination__step"
                   >
                     {{- 'content.pagination.previous' | t -}}
                   </a>
                 {% else %}
-                  <span class="collection-pagination__step collection-pagination__step--disabled">
+                  <span class="listing-pagination__step listing-pagination__step--disabled">
                     {{- 'content.pagination.previous' | t -}}
                   </span>
                 {% endif %}
@@ -519,7 +521,7 @@
               {% if paginate.pages <= 1 %}
                 <li>
                   <span
-                    class="collection-pagination__page collection-pagination__page--current"
+                    class="listing-pagination__page listing-pagination__page--current"
                     aria-current="page"
                   >
                     1
@@ -531,20 +533,20 @@
                     {% if part.is_link %}
                       <a
                         href="{{ part.url }}"
-                        class="collection-pagination__page"
+                        class="listing-pagination__page"
                         aria-label="{{ 'content.pagination.page' | t: page: part.title }}"
                       >
                         {{- part.title -}}
                       </a>
                     {% elsif part.title != '&hellip;' %}
                       <span
-                        class="collection-pagination__page collection-pagination__page--current"
+                        class="listing-pagination__page listing-pagination__page--current"
                         aria-current="page"
                       >
                         {{- part.title -}}
                       </span>
                     {% else %}
-                      <span class="collection-pagination__gap">{{ part.title }}</span>
+                      <span class="listing-pagination__gap">{{ part.title }}</span>
                     {% endif %}
                   </li>
                 {% endfor %}
@@ -553,12 +555,12 @@
                 {% if paginate.next %}
                   <a
                     href="{{ paginate.next.url }}"
-                    class="collection-pagination__step"
+                    class="listing-pagination__step"
                   >
                     {{- 'content.pagination.next' | t -}}
                   </a>
                 {% else %}
-                  <span class="collection-pagination__step collection-pagination__step--disabled">
+                  <span class="listing-pagination__step listing-pagination__step--disabled">
                     {{- 'content.pagination.next' | t -}}
                   </span>
                 {% endif %}
@@ -568,7 +570,7 @@
             {% if paginate.next %}
               <a
                 href="{{ paginate.next.url }}"
-                class="collection-pagination__more desktop:hidden"
+                class="listing-pagination__more desktop:hidden"
                 ref="loadMore"
                 on:click="/loadMore"
                 data-load-more
@@ -926,134 +928,6 @@
     color: var(--color-foreground-muted);
   }
 
-  /* Toolbar */
-  .collection-toolbar {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--gap-sm);
-
-    @media screen and (max-width: 749px) {
-      grid-template-columns: auto minmax(0, 1fr);
-      align-items: center;
-    }
-
-    @media screen and (min-width: 750px) {
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      padding: var(--padding-md) var(--padding-lg);
-      background-color: var(--color-background);
-      border: var(--style-border-width) solid var(--color-border);
-      border-radius: var(--style-border-radius-xs);
-    }
-  }
-
-  .collection-toolbar__filter,
-  .collection-toolbar__pill {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--gap-xs);
-    min-height: 2.25rem;
-    padding: var(--padding-xs) var(--padding-md);
-    font-size: var(--font-size--xs);
-    white-space: nowrap;
-    color: var(--color-foreground);
-    text-decoration: none;
-    background-color: var(--color-background);
-    border: var(--style-border-width) solid var(--color-border);
-    border-radius: var(--style-border-radius-xs);
-  }
-
-  .collection-toolbar__filter .svg-wrapper {
-    width: var(--icon-size-xs);
-    height: var(--icon-size-xs);
-  }
-
-  .collection-toolbar__badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 1.125rem;
-    height: 1.125rem;
-    padding-inline: 0.25rem;
-    font-size: var(--font-size--3xs);
-    color: var(--collection-accent-text, var(--color-background));
-    background-color: var(--collection-accent, var(--color-foreground));
-    border-radius: 999px;
-  }
-
-  .collection-toolbar__pills {
-    display: flex;
-    gap: var(--gap-xs);
-    margin: 0;
-    margin-inline-end: calc(var(--page-margin) * -1);
-    padding-inline-end: var(--page-margin);
-    overflow-x: auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .collection-toolbar__pill[aria-current] {
-    color: var(--color-background);
-    background-color: var(--color-foreground);
-    border-color: var(--color-foreground);
-  }
-
-  .collection-toolbar__count {
-    margin: 0;
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground-muted);
-
-    strong {
-      font-weight: var(--font-heading--weight);
-      color: var(--color-foreground);
-    }
-
-    @media screen and (max-width: 749px) {
-      grid-column: 1 / -1;
-    }
-  }
-
-  .collection-toolbar__sort {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-sm);
-  }
-
-  .collection-toolbar__sort-label {
-    font-size: var(--font-size--xs);
-    white-space: nowrap;
-  }
-
-  .collection-toolbar__select-wrapper {
-    position: relative;
-  }
-
-  .collection-toolbar__select {
-    min-width: 7rem;
-    padding: var(--padding-xs) var(--padding-2xl) var(--padding-xs) var(--padding-sm);
-    font-family: var(--font-body--family);
-    font-size: var(--font-size--xs);
-    color: var(--color-input-text);
-    background-color: var(--color-input-background);
-    border: var(--style-border-width-inputs) solid var(--color-input-border);
-    border-radius: var(--style-border-radius-inputs);
-    cursor: pointer;
-    appearance: none;
-  }
-
-  .collection-toolbar__caret {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-end: var(--padding-sm);
-    width: var(--icon-size-xs);
-    height: var(--icon-size-xs);
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-
   /* Grid */
   .collection-products__grid {
     display: grid;
@@ -1082,103 +956,8 @@
     }
   }
 
-  /* Pagination */
-  .collection-pagination {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--gap-sm);
-    padding-block-start: var(--padding-lg);
-  }
-
-  .collection-pagination__progress-text {
-    margin: 0;
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground-muted);
-  }
-
-  .collection-pagination__bar {
-    width: 100%;
-    max-width: 7.5rem;
-    height: 2px;
-    overflow: hidden;
-    background-color: var(--color-border);
-
-    @media screen and (max-width: 749px) {
-      max-width: none;
-    }
-  }
-
-  .collection-pagination__bar-fill {
-    display: block;
-    height: 100%;
-    background-color: var(--color-foreground);
-    transition: width var(--animation-speed) var(--animation-easing);
-  }
-
-  .collection-pagination__pages {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-xs);
-    margin: var(--padding-xs) 0 0;
-  }
-
-  .collection-pagination__step,
-  .collection-pagination__page {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 2rem;
-    height: 2rem;
-    padding-inline: var(--padding-sm);
-    font-size: var(--font-size--xs);
-    color: var(--color-foreground);
-    text-decoration: none;
-    background-color: var(--color-background);
-    border: var(--style-border-width) solid var(--color-foreground);
-    border-radius: var(--style-border-radius-xs);
-  }
-
-  .collection-pagination__page {
-    padding-inline: 0;
-  }
-
-  .collection-pagination__page--current {
-    color: var(--color-background);
-    background-color: var(--color-foreground);
-  }
-
-  .collection-pagination__step--disabled {
-    color: var(--color-foreground-muted);
-    border-color: var(--color-border);
-  }
-
-  .collection-pagination__gap {
-    font-size: var(--font-size--xs);
-  }
-
-  .collection-pagination__more {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: var(--minimum-touch-target);
-    margin-block-start: var(--padding-xs);
-    font-size: var(--font-size--sm);
-    color: var(--color-foreground);
-    text-decoration: none;
-    border: var(--style-border-width) solid var(--color-foreground);
-    border-radius: var(--style-border-radius-xs);
-
-    &[aria-busy='true'] {
-      opacity: var(--disabled-opacity);
-      pointer-events: none;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .collection-filters,
-    .collection-pagination__bar-fill {
+    .collection-filters {
       transition: none;
     }
   }

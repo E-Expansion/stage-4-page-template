@@ -214,7 +214,7 @@
     "disclosures": "開示情報"
   },
   "settings": {
-    "article": "記事",
+    "articles_per_page": "ページあたりの記事数",
     "bundle_max_products": "この商品以外の商品数",
     "show_image": "画像を表示",
     "show_sticky_add_to_cart": "追従するカートに追加を表示",
@@ -1264,7 +1264,7 @@
     "disclosures": "開示情報"
   },
   "info": {
-    "featured_article": "最新の記事を表示するには空欄のままにします",
+    "blog_filters_heading": "モバイルで記事の上に表示されます",
     "related_products_intent": "関連: 似た商品。補完: 一緒に使う商品（Search & Discovery で設定）。",
     "bundle_discount": "セット価格として表示されます。チェックアウトで適用されるよう対応する自動割引を作成してください。0 で通常の合計を表示します。",
     "frequently_bought_together": "Search & Discovery の補完商品、なければ custom.frequently_bought_together メタフィールド（商品リスト）を表示します。ない場合は非表示です。",

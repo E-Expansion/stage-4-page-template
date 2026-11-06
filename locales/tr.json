@@ -165,6 +165,9 @@
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> / {{ total }} gösteriliyor",
     "products_shown": "{{ shown }} / {{ total }} ürün",
     "sort_by": "Sırala:",
+    "sort_oldest": "En eski",
+    "sort_recent": "En yeni",
+    "sort_title": "A-Z",
     "home": "Ana sayfa",
     "read_time": {
       "one": "{{ count }} dk okuma",

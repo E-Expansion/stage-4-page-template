@@ -169,6 +169,9 @@
     "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
     "products_shown": "{{ shown }} od {{ total }} izdelkov",
     "sort_by": "Razvrsti po:",
+    "sort_oldest": "Najstarejše",
+    "sort_recent": "Najnovejše",
+    "sort_title": "A–Ž",
     "home": "Domov",
     "read_time": {
       "one": "{{ count }} min branja",

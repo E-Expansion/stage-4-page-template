@@ -165,6 +165,9 @@
     "showing_range_html": "Показани <strong>{{ start }}–{{ end }}</strong> от {{ total }}",
     "products_shown": "{{ shown }} от {{ total }} продукта",
     "sort_by": "Сортиране по:",
+    "sort_oldest": "Най-стари",
+    "sort_recent": "Най-нови",
+    "sort_title": "А-Я",
     "home": "Начало",
     "read_time": {
       "one": "{{ count }} мин. четене",

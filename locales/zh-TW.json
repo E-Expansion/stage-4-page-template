@@ -165,6 +165,9 @@
     "showing_range_html": "顯示第 <strong>{{ start }}–{{ end }}</strong> 件，共 {{ total }} 件",
     "products_shown": "{{ shown }} / {{ total }} 件商品",
     "sort_by": "排序方式：",
+    "sort_oldest": "最早",
+    "sort_recent": "最新",
+    "sort_title": "標題排序",
     "home": "首頁",
     "read_time": {
       "one": "閱讀需 {{ count }} 分鐘",

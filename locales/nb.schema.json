@@ -214,7 +214,7 @@
     "disclosures": "Opplysninger"
   },
   "settings": {
-    "article": "Artikkel",
+    "articles_per_page": "Artikler per side",
     "bundle_max_products": "Produkter i tillegg til dette",
     "show_image": "Vis bilde",
     "show_sticky_add_to_cart": "Vis fast legg i handlekurv",
@@ -1264,7 +1264,7 @@
     "disclosures": "Opplysninger"
   },
   "info": {
-    "featured_article": "La feltet stå tomt for å vise den nyeste artikkelen",
+    "blog_filters_heading": "Vises over artiklene på mobil",
     "related_products_intent": "Relaterte: lignende produkter. Utfyllende: produkter som passer til, valgt i Search & Discovery.",
     "bundle_discount": "Vises som lavere pakkepris. Opprett en tilsvarende automatisk rabatt slik at kassen trekker den. 0 viser vanlig sum.",
     "frequently_bought_together": "Viser utfyllende produkter fra Search & Discovery, ellers metafeltet custom.frequently_bought_together (produktliste). Skjult hvis ingen.",

@@ -165,6 +165,9 @@
     "showing_range_html": "{{ total }}개 중 <strong>{{ start }}–{{ end }}</strong> 표시",
     "products_shown": "{{ total }}개 중 {{ shown }}개 제품",
     "sort_by": "정렬:",
+    "sort_oldest": "오래된순",
+    "sort_recent": "최신순",
+    "sort_title": "가나다순",
     "home": "홈",
     "read_time": {
       "one": "{{ count }}분 분량",

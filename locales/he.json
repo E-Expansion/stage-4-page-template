@@ -191,6 +191,9 @@
     "showing_range_html": "מציג <strong>{{ start }}–{{ end }}</strong> מתוך {{ total }}",
     "products_shown": "{{ shown }} מתוך {{ total }} מוצרים",
     "sort_by": "מיון לפי:",
+    "sort_oldest": "הישנים ביותר",
+    "sort_recent": "החדשים ביותר",
+    "sort_title": "א-ת",
     "home": "דף הבית",
     "read_time": {
       "one": "קריאה של דקה {{ count }}",

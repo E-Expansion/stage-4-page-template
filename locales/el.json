@@ -165,6 +165,9 @@
     "showing_range_html": "Εμφάνιση <strong>{{ start }}–{{ end }}</strong> από {{ total }}",
     "products_shown": "{{ shown }} από {{ total }} προϊόντα",
     "sort_by": "Ταξινόμηση κατά:",
+    "sort_oldest": "Παλαιότερα",
+    "sort_recent": "Πιο πρόσφατα",
+    "sort_title": "Α-Ω",
     "home": "Αρχική",
     "read_time": {
       "one": "{{ count }} λεπτό ανάγνωσης",

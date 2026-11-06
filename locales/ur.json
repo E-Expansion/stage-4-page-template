@@ -185,6 +185,9 @@
     "showing_range_html": "{{ total }} میں سے <strong>{{ start }}–{{ end }}</strong> دکھا رہے ہیں",
     "products_shown": "{{ total }} میں سے {{ shown }} پروڈکٹس",
     "sort_by": "ترتیب دیں:",
+    "sort_oldest": "پرانے ترین",
+    "sort_recent": "تازہ ترین",
+    "sort_title": "الف تا ی",
     "home": "ہوم",
     "read_time": {
       "one": "{{ count }} منٹ کا مطالعہ",

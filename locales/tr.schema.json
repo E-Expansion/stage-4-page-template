@@ -214,7 +214,7 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
-    "article": "Makale",
+    "articles_per_page": "Sayfa başına makale",
     "bundle_max_products": "Bu ürün dışındaki ürünler",
     "show_image": "Görseli göster",
     "show_sticky_add_to_cart": "Sabit sepete ekle göster",
@@ -1264,7 +1264,7 @@
     "disclosures": "Bildirimler"
   },
   "info": {
-    "featured_article": "En son makaleyi göstermek için boş bırakın",
+    "blog_filters_heading": "Mobilde makalelerin üzerinde gösterilir",
     "related_products_intent": "İlgili: benzer ürünler. Tamamlayıcı: uyumlu ürünler, Search & Discovery'de belirlenir.",
     "bundle_discount": "Daha düşük paket fiyatı olarak gösterilir. Ödemede uygulanması için eşleşen otomatik indirim oluşturun. 0 normal toplamı gösterir.",
     "frequently_bought_together": "Search & Discovery'deki tamamlayıcı ürünleri, yoksa custom.frequently_bought_together meta alanını (ürün listesi) gösterir. Yoksa gizlenir.",

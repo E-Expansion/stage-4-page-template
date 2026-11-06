@@ -214,7 +214,7 @@
     "disclosures": "披露信息"
   },
   "settings": {
-    "article": "文章",
+    "articles_per_page": "每页文章数",
     "bundle_max_products": "除本产品外的产品数",
     "show_image": "显示图片",
     "show_sticky_add_to_cart": "显示固定加入购物车栏",
@@ -1264,7 +1264,7 @@
     "disclosures": "披露信息"
   },
   "info": {
-    "featured_article": "留空以显示最新文章",
+    "blog_filters_heading": "在移动设备上显示在文章上方",
     "related_products_intent": "相关：类似产品。搭配：与之相配的产品，在 Search & Discovery 中设置。",
     "bundle_discount": "显示为较低的组合价。请在 Shopify 中创建对应的自动折扣，结账时才会生效。0 显示普通总价。",
     "frequently_bought_together": "显示 Search & Discovery 中的搭配产品，否则显示 custom.frequently_bought_together 元字段（产品列表）。没有时隐藏。",

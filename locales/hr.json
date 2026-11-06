@@ -167,6 +167,9 @@
     "showing_range_html": "Prikazano <strong>{{ start }}–{{ end }}</strong> od {{ total }}",
     "products_shown": "{{ shown }} od {{ total }} proizvoda",
     "sort_by": "Poredaj po:",
+    "sort_oldest": "Najstarije",
+    "sort_recent": "Najnovije",
+    "sort_title": "A–Ž",
     "home": "Početna",
     "read_time": {
       "one": "{{ count }} min čitanja",

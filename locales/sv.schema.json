@@ -214,7 +214,7 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
-    "article": "Artikel",
+    "articles_per_page": "Artiklar per sida",
     "bundle_max_products": "Produkter utöver denna",
     "show_image": "Visa bild",
     "show_sticky_add_to_cart": "Visa fast lägg i varukorg",
@@ -1264,7 +1264,7 @@
     "disclosures": "Upplysningar"
   },
   "info": {
-    "featured_article": "Lämna tomt för att visa den senaste artikeln",
+    "blog_filters_heading": "Visas ovanför artiklarna på mobilen",
     "related_products_intent": "Relaterade: liknande produkter. Kompletterande: produkter som passar till, valda i Search & Discovery.",
     "bundle_discount": "Visas som lägre paketpris. Skapa en motsvarande automatisk rabatt så att kassan drar av den. 0 visar normal summa.",
     "frequently_bought_together": "Visar kompletterande produkter från Search & Discovery, annars metafältet custom.frequently_bought_together (produktlista). Dolt om inga finns.",

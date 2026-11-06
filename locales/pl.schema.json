@@ -214,7 +214,7 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
-    "article": "Artykuł",
+    "articles_per_page": "Artykuły na stronę",
     "bundle_max_products": "Produkty oprócz tego",
     "show_image": "Pokaż obraz",
     "show_sticky_add_to_cart": "Pokaż przyklejony przycisk koszyka",
@@ -1264,7 +1264,7 @@
     "disclosures": "Informacje prawne"
   },
   "info": {
-    "featured_article": "Pozostaw puste, aby wyświetlić najnowszy artykuł",
+    "blog_filters_heading": "Wyświetlane nad artykułami na urządzeniach mobilnych",
     "related_products_intent": "Powiązane: podobne produkty. Uzupełniające: pasujące produkty, ustawione w Search & Discovery.",
     "bundle_discount": "Pokazywane jako niższa cena zestawu. Utwórz pasujący rabat automatyczny, aby kasa go naliczyła. 0 pokazuje zwykłą sumę.",
     "frequently_bought_together": "Pokazuje produkty uzupełniające z Search & Discovery, a w przeciwnym razie metapole custom.frequently_bought_together (lista produktów). Ukryte, gdy ich brak.",

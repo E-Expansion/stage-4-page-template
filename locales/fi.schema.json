@@ -214,7 +214,7 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
-    "article": "Artikkeli",
+    "articles_per_page": "Artikkeleita sivulla",
     "bundle_max_products": "Tuotteet tämän lisäksi",
     "show_image": "Näytä kuva",
     "show_sticky_add_to_cart": "Näytä kiinteä lisää ostoskoriin",
@@ -1264,7 +1264,7 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
-    "featured_article": "Jätä tyhjäksi, niin uusin artikkeli näytetään",
+    "blog_filters_heading": "Näkyy artikkelien yläpuolella mobiilissa",
     "related_products_intent": "Samankaltaiset: vastaavat tuotteet. Täydentävät: sopivat tuotteet, valitaan Search & Discoveryssä.",
     "bundle_discount": "Näytetään alempana pakettihintana. Luo vastaava automaattinen alennus, jotta kassa veloittaa sen. 0 näyttää normaalin summan.",
     "frequently_bought_together": "Näyttää Search & Discoveryn täydentävät tuotteet, muuten metakentän custom.frequently_bought_together (tuoteluettelo). Piilotettu, jos niitä ei ole.",

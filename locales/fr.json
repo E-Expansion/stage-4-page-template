@@ -167,6 +167,9 @@
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> sur {{ total }}",
     "products_shown": "{{ shown }} produits sur {{ total }}",
     "sort_by": "Trier par :",
+    "sort_oldest": "Plus anciens",
+    "sort_recent": "Récents",
+    "sort_title": "A–Z",
     "home": "Accueil",
     "read_time": {
       "one": "{{ count }} min de lecture",

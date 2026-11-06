@@ -169,6 +169,9 @@
     "showing_range_html": "Rodoma <strong>{{ start }}–{{ end }}</strong> iš {{ total }}",
     "products_shown": "{{ shown }} iš {{ total }} produktų",
     "sort_by": "Rikiuoti pagal:",
+    "sort_oldest": "Seniausi",
+    "sort_recent": "Naujausi",
+    "sort_title": "A–Ž",
     "home": "Pradžia",
     "read_time": {
       "one": "{{ count }} min skaitymo",

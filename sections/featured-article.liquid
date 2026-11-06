@@ -1,23 +1,20 @@
 {% comment %}
   Section contract.
   Large article card (the shared article-card snippet in its featured layout). Shows the
-  article picked in the section, or the blog's latest article when none is picked, so the
-  template needs no upkeep. Only shows on the first page of an unfiltered blog; on tag and
-  later pages the visitor is looking for something else.
+  article in the blog's custom.featured_article metafield, or its latest article, so the
+  template needs no upkeep. blog-filters reads the same metafield to leave this article
+  out of the grid. Hidden on tag pages, where the visitor is looking for something else.
   @example
   <!-- Blog template > Add section > Featured article -->
 {% endcomment %}
 
 {% liquid
-  assign featured_article = section.settings.article | default: blog.articles.first
-
-  assign is_filtered = false
-  if current_tags.size > 0 or current_page > 1
-    assign is_filtered = true
-  endif
+  unless current_tags.size > 0
+    assign featured_article = blog.metafields.custom.featured_article.value | default: blog.articles.first
+  endunless
 %}
 
-{% if featured_article != blank and is_filtered == false %}
+{% if featured_article != blank %}
   {% render 'contrast-override',
     background_color: section.settings.background_color,
     border_color: section.settings.border_color,
@@ -60,12 +57,6 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "article",
-      "id": "article",
-      "label": "t:settings.article",
-      "info": "t:info.featured_article"
-    },
     {
       "type": "text",
       "id": "link_label",

@@ -14,7 +14,7 @@ A generic Shopify theme template for E-Expansion, built on Shopify's **Horizon**
 | Header, top bar, footer | `sections/header-group.json`, `sections/footer-group.json` | Done |
 | Collection | `templates/collection.json` | Done; needs store setup (see below) |
 | Product | `templates/product.json` | To do (still Horizon default) |
-| Journal (blog) | `templates/blog.json` | In progress: page header and featured article done, article list still Horizon default |
+| Journal (blog) | `templates/blog.json` | Done; optional store setup (see below) |
 | Article | `templates/article.json` | To do (still Horizon default) |
 
 ## Working on the theme
@@ -69,8 +69,9 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article page (planned) |
 | `category-tile` | Collection tile (normal or `small`) | Category selector, subcategories |
-| `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article; article pages (planned) |
+| `article-card` | Article card (`card`, `featured` or `link` layout) | Featured article, blog grid; article pages (planned) |
 | `tag-badge` | Coloured badge from product or article tags | Product tile, article card |
+| `listing-toolbar-styles` | Styles for the bar above a listing and the paging below it | Collection and blog listings |
 | `star-rating` | Five stars from the review metafields | Product tile, product mention |
 | `author-byline` | Avatar and author name, from the article's `custom.author` | Press mentions, article card |
 | `author-bio` | "About the author" card | Article page (planned) |
@@ -95,7 +96,9 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 
 ### Journal (`templates/blog.json`)
 
-`page-header` → `featured-article` → `main-blog` (still Horizon default)
+`page-header` → `featured-article` → `blog-filters` (tag filters, sorting, search, article grid) → `newsletter-signup`
+
+Shopify cannot sort blogs and Liquid cannot read a sort parameter, so `blog-filters` renders every article (up to 250) and `assets/blog-filters.js` sorts them and reveals them in batches.
 
 ### Header and footer groups
 
@@ -126,6 +129,7 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Collection | `custom.seo_text` | Rich text | SEO text section |
 | Product | `custom.seo_heading` | Single-line text | SEO text section (body is the product description) |
 | Blog | `custom.subtitle` | Single-line text | Page header subtitle (falls back to the section's own text) |
+| Blog | `custom.featured_article` | Blog post | Featured article (falls back to the latest article) |
 | Article | `custom.author` | `author` metaobject | Article card, author byline, author bio |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
 

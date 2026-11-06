@@ -165,6 +165,9 @@
     "showing_range_html": "Viser <strong>{{ start }}–{{ end }}</strong> av {{ total }}",
     "products_shown": "{{ shown }} av {{ total }} produkter",
     "sort_by": "Sorter etter:",
+    "sort_oldest": "Eldste",
+    "sort_recent": "Nyeste",
+    "sort_title": "A–Å",
     "home": "Hjem",
     "read_time": {
       "one": "{{ count }} min lesetid",

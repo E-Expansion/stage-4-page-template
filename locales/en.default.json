@@ -198,6 +198,9 @@
     "showing_range_html": "Showing <strong>{{ start }}–{{ end }}</strong> of {{ total }}",
     "products_shown": "{{ shown }} of {{ total }} products",
     "sort_by": "Sort by:",
+    "sort_oldest": "Oldest",
+    "sort_recent": "Recent",
+    "sort_title": "A–Z",
     "home": "Home",
     "read_time": {
       "one": "{{ count }} min read",

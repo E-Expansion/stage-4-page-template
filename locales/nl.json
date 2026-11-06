@@ -165,6 +165,9 @@
     "showing_range_html": "<strong>{{ start }}–{{ end }}</strong> van {{ total }}",
     "products_shown": "{{ shown }} van {{ total }} producten",
     "sort_by": "Sorteer op:",
+    "sort_oldest": "Oudste",
+    "sort_recent": "Recent",
+    "sort_title": "A-Z",
     "home": "Home",
     "read_time": {
       "one": "{{ count }} min leestijd",
