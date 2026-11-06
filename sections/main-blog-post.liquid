@@ -71,11 +71,15 @@
 
 {% stylesheet %}
   .blog-post-layout {
+    --blog-post-text-width: 100%;
+
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--padding-3xl);
 
     @media screen and (min-width: 990px) {
+      --blog-post-text-width: max(70%, var(--narrow-content-width));
+
       grid-template-columns: minmax(0, 1fr) 16.25rem;
     }
   }

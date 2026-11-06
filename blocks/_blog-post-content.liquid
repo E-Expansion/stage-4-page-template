@@ -65,6 +65,7 @@
 
 <div
   class="blog-post-content rte"
+  {{ block.shopify_attributes }}
   style="
     {% if block.settings.text_color != blank %}
       --color: {{ block.settings.text_color }};
@@ -81,7 +82,7 @@
 {% stylesheet %}
   .blog-post-content {
     width: 100%;
-    max-width: var(--narrow-content-width);
+    max-width: var(--blog-post-text-width);
     margin-block-start: var(--padding-xs);
     color: var(--color, inherit);
 
@@ -153,6 +154,7 @@
 {% schema %}
 {
   "name": "t:names.content",
+  "tag": null,
   "settings": [
     {
       "type": "color",
