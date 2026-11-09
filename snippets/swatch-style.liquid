@@ -1,0 +1,65 @@
+{%- doc -%}
+  Outputs the CSS custom properties for a colour swatch (`--swatch-color` and/or
+  `--swatch-image`), or nothing when no colour is found. Used where Shopify does not hand
+  over a swatch itself, such as storefront filter values: Search & Discovery only passes
+  `filter_value.swatch` in some setups.
+
+  Looks the colour up by name, in this order:
+  1. The swatch passed in (e.g. `value.swatch`), when it has a colour or image.
+  2. The standard Color metaobjects (Content > Metaobjects > Color), matched on their label.
+  3. The colour option values of the store's products (the same swatches the product
+     tiles show), matched on their name.
+
+  @param {string} name - Colour name, e.g. a filter value label ("Cognac")
+  @param {object} [swatch] - A swatch object to use when present
+
+  @example
+  {%- capture swatch_style -%}{% render 'swatch-style', name: value.label, swatch: value.swatch %}{%- endcapture -%}
+{%- enddoc -%}
+
+{%- liquid
+  assign found_color = swatch.color
+  assign found_image = swatch.image
+  assign wanted = name | strip | downcase
+
+  # 2. Standard Color metaobjects
+  if found_color == blank and found_image == blank and wanted != blank
+    for entry in shop.metaobjects['shopify--color-pattern'].values
+      assign entry_label = entry.label.value | default: entry.label | strip | downcase
+      if entry_label == wanted
+        assign entry_color = entry.color.value
+        if entry_color.first != blank
+          assign entry_color = entry_color.first
+        endif
+        assign found_color = entry_color
+        assign found_image = entry.image.value
+        break
+      endif
+    endfor
+  endif
+
+  # 3. Colour option values of the products
+  if found_color == blank and found_image == blank and wanted != blank
+    for product in collections.all.products
+      for option in product.options_with_values
+        for option_value in option.values
+          assign option_value_name = option_value.name | strip | downcase
+          if option_value_name == wanted and option_value.swatch != blank
+            assign found_color = option_value.swatch.color
+            assign found_image = option_value.swatch.image
+            break
+          endif
+        endfor
+        if found_color != blank or found_image != blank
+          break
+        endif
+      endfor
+      if found_color != blank or found_image != blank
+        break
+      endif
+    endfor
+  endif
+-%}
+
+{%- if found_color != blank -%}--swatch-color: {{ found_color }};{%- endif -%}
+{%- if found_image != blank -%}--swatch-image: url({{ found_image | image_url: width: 64 }});{%- endif -%}

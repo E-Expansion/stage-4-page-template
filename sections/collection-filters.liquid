@@ -6,8 +6,10 @@
   sort pills, and a "Load more" button that appends the next page.
   Filters are a plain GET form, so everything works without JavaScript; the script submits
   on change (desktop), runs the mobile panel, the price slider and "Load more".
-  Colour values show their swatch (from the Color metaobject, like the product tiles) in
-  place of the checkbox, with a ring when selected; active filter chips show it too.
+  Values of a colour filter (label or parameter containing color/colour/kleur) show their
+  swatch in place of the checkbox, with a ring when selected; active filter chips show it
+  too. The colour is looked up by name in snippets/swatch-style.liquid, because Search &
+  Discovery does not always pass the swatch on.
   Products render with the shared product-tile snippet. A promo block can sit at a chosen
   position on the first page.
   @example
@@ -170,13 +172,19 @@
                           class="collection-filters__chip"
                           aria-label="{{ 'accessibility.remove_item' | t: title: value.label }}"
                         >
-                          {%- if value.swatch.color != blank or value.swatch.image != blank -%}
+                          {%- liquid
+                            assign chip_swatch_style = blank
+                            assign chip_filter_name = filter.label | append: ' ' | append: filter.param_name | downcase
+                            if chip_filter_name contains 'color' or chip_filter_name contains 'colour' or chip_filter_name contains 'kleur'
+                              capture chip_swatch_style
+                                render 'swatch-style', name: value.label, swatch: value.swatch
+                              endcapture
+                            endif
+                          -%}
+                          {%- if chip_swatch_style != blank -%}
                             <span
                               class="collection-filters__swatch collection-filters__swatch--small"
-                              style="
-                                {% if value.swatch.color != blank %}--swatch-color: {{ value.swatch.color }};{% endif %}
-                                {% if value.swatch.image != blank %}--swatch-image: url({{ value.swatch.image | image_url: width: 64 }});{% endif %}
-                              "
+                              style="{{ chip_swatch_style }}"
                               aria-hidden="true"
                             ></span>
                           {%- endif -%}
@@ -191,7 +199,14 @@
             {% endif %}
 
             {% for filter in collection.filters %}
-              {% assign filter_label = filter.label | escape %}
+              {% liquid
+                assign filter_label = filter.label | escape
+                assign filter_name = filter.label | append: ' ' | append: filter.param_name | downcase
+                assign is_color_filter = false
+                if filter_name contains 'color' or filter_name contains 'colour' or filter_name contains 'kleur'
+                  assign is_color_filter = true
+                endif
+              %}
               <fieldset class="collection-filters__group">
                 <legend class="collection-filters__legend">{{ filter_label }}</legend>
 
@@ -309,10 +324,15 @@
                           assign is_disabled = true
                         endif
 
-                        # Colour values carry the swatch of the Color metaobject (same as the product tiles)
-                        assign swatch = value.swatch
+                        # Colour values get the swatch of their colour, as on the product tiles
+                        assign swatch_style = blank
+                        if is_color_filter
+                          capture swatch_style
+                            render 'swatch-style', name: value.label, swatch: value.swatch
+                          endcapture
+                        endif
                         assign has_swatch = false
-                        if swatch.color != blank or swatch.image != blank
+                        if swatch_style != blank
                           assign has_swatch = true
                         endif
                       %}
@@ -337,10 +357,7 @@
                           {%- if has_swatch -%}
                             <span
                               class="collection-filters__swatch"
-                              style="
-                                {% if swatch.color != blank %}--swatch-color: {{ swatch.color }};{% endif %}
-                                {% if swatch.image != blank %}--swatch-image: url({{ swatch.image | image_url: width: 64 }});{% endif %}
-                              "
+                              style="{{ swatch_style }}"
                               aria-hidden="true"
                             ></span>
                           {%- endif -%}
