@@ -1,9 +1,11 @@
 {%- doc -%}
   Renders the "Added to cart" notification that appears at the top right of every page
   when something is added to the cart, from anywhere (product tiles, search results,
-  product page, quick add). Shows the item's image, title and variant, with "View cart"
-  (opens the cart drawer when there is one) and "Check out". Hides after a few seconds,
-  pauses while hovered or focused. Skipped when the cart drawer opens for the same add.
+  product page, quick add). Shows the item's image, title and variant, a quantity stepper
+  and a remove button for that cart line, and "View cart" (opens the cart drawer when there
+  is one) and "Check out". Hides after a few seconds, pauses while hovered or focused.
+  Skipped when the cart drawer opens for the same add. The border uses the palette's
+  border colour (color2), like the product tiles.
   Filled in by assets/cart-notification.js. Rendered once from layout/theme.liquid.
 
   @example
@@ -28,9 +30,12 @@
     class="cart-notification"
     popover="manual"
     aria-labelledby="CartNotificationHeading"
+    style="--cart-notification-border: {{ settings.color_palette.color2 }};"
     ref="panel"
     on:pointerenter="/pause"
     on:pointerleave="/resume"
+    on:focus="/pause"
+    on:blur="/resume"
   >
     <div class="cart-notification__header">
       <p
@@ -79,6 +84,66 @@
           class="cart-notification__variant"
           ref="variant"
         ></p>
+
+        <div class="cart-notification__controls">
+          <div
+            class="cart-notification__quantity"
+            role="group"
+            aria-label="{{ 'accessibility.quantity' | t }}"
+          >
+            <button
+              type="button"
+              class="cart-notification__step button-unstyled"
+              aria-label="{{ 'accessibility.decrease_quantity' | t }}"
+              ref="decrease"
+              on:click="/decrease"
+            >
+              <span
+                class="svg-wrapper"
+                aria-hidden="true"
+              >
+                {{- 'icon-minus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+            <input
+              class="cart-notification__input"
+              type="number"
+              inputmode="numeric"
+              min="1"
+              value="1"
+              aria-label="{{ 'accessibility.quantity' | t }}"
+              ref="quantity"
+              on:change="/setQuantity"
+            >
+            <button
+              type="button"
+              class="cart-notification__step button-unstyled"
+              aria-label="{{ 'accessibility.increase_quantity' | t }}"
+              on:click="/increase"
+            >
+              <span
+                class="svg-wrapper"
+                aria-hidden="true"
+              >
+                {{- 'icon-plus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="cart-notification__remove button-unstyled"
+            on:click="/removeLine"
+          >
+            <span
+              class="svg-wrapper"
+              aria-hidden="true"
+            >
+              {{- 'icon-delete.svg' | inline_asset_content -}}
+            </span>
+            {{ 'actions.remove' | t }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -116,8 +181,8 @@
     padding: var(--padding-lg);
     color: var(--color-foreground);
     background-color: var(--color-background);
-    border: var(--style-border-width) solid var(--color-border);
-    border-radius: var(--style-border-radius-md);
+    border: var(--style-border-width) solid var(--cart-notification-border, var(--color-border));
+    border-radius: var(--style-border-radius-xs);
     box-shadow: var(--shadow-popover);
 
     @media screen and (min-width: 750px) {
@@ -184,7 +249,7 @@
 
   .cart-notification__item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--gap-md);
   }
 
@@ -200,7 +265,89 @@
     display: flex;
     flex-direction: column;
     gap: var(--padding-3xs);
+    flex-grow: 1;
     min-width: 0;
+  }
+
+  .cart-notification__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    margin-block-start: var(--padding-xs);
+  }
+
+  /* Stepper with the same border as the notification and the product tiles */
+  .cart-notification__quantity {
+    display: inline-flex;
+    align-items: stretch;
+    border: var(--style-border-width) solid var(--cart-notification-border, var(--color-border));
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .cart-notification__step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-foreground);
+    background-color: transparent;
+
+    .svg-wrapper,
+    svg {
+      width: var(--icon-size-xs);
+      height: var(--icon-size-xs);
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  .cart-notification__input {
+    width: 2.25rem;
+    padding: 0;
+    font-size: var(--font-size--sm);
+    text-align: center;
+    color: var(--color-foreground);
+    background: transparent;
+    border: 0;
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+  }
+
+  .cart-notification__remove {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-2xs);
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+    background-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+
+    .svg-wrapper,
+    svg {
+      width: var(--icon-size-xs);
+      height: var(--icon-size-xs);
+    }
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  cart-notification-component[busy] :is(.cart-notification__quantity, .cart-notification__remove) {
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   .cart-notification__title,
@@ -228,9 +375,15 @@
     display: contents;
   }
 
-  .cart-notification__button {
+  /* Compact buttons: smaller than the theme's default button size */
+  .cart-notification .cart-notification__button {
+    --button-padding-block: var(--padding-xs);
+    --button-padding-inline: var(--padding-sm);
+
     justify-content: center;
     width: 100%;
+    min-height: 0;
+    font-size: var(--font-size--xs);
     text-align: center;
   }
 
