@@ -6,6 +6,8 @@
   sort pills, and a "Load more" button that appends the next page.
   Filters are a plain GET form, so everything works without JavaScript; the script submits
   on change (desktop), runs the mobile panel, the price slider and "Load more".
+  Colour values show their swatch (from the Color metaobject, like the product tiles) in
+  place of the checkbox, with a ring when selected; active filter chips show it too.
   Products render with the shared product-tile snippet. A promo block can sit at a chosen
   position on the first page.
   @example
@@ -168,6 +170,16 @@
                           class="collection-filters__chip"
                           aria-label="{{ 'accessibility.remove_item' | t: title: value.label }}"
                         >
+                          {%- if value.swatch.color != blank or value.swatch.image != blank -%}
+                            <span
+                              class="collection-filters__swatch collection-filters__swatch--small"
+                              style="
+                                {% if value.swatch.color != blank %}--swatch-color: {{ value.swatch.color }};{% endif %}
+                                {% if value.swatch.image != blank %}--swatch-image: url({{ value.swatch.image | image_url: width: 64 }});{% endif %}
+                              "
+                              aria-hidden="true"
+                            ></span>
+                          {%- endif -%}
                           {{- value.label | escape }}
                           <span aria-hidden="true">×</span>
                         </a>
@@ -296,12 +308,19 @@
                         if value.count == 0 and value.active == false
                           assign is_disabled = true
                         endif
+
+                        # Colour values carry the swatch of the Color metaobject (same as the product tiles)
+                        assign swatch = value.swatch
+                        assign has_swatch = false
+                        if swatch.color != blank or swatch.image != blank
+                          assign has_swatch = true
+                        endif
                       %}
                       <li class="collection-filters__option{% if is_disabled %} collection-filters__option--disabled{% endif %}">
                         <input
                           type="checkbox"
                           id="{{ input_id }}"
-                          class="collection-filters__checkbox"
+                          class="collection-filters__checkbox{% if has_swatch %} visually-hidden-input{% endif %}"
                           name="{{ value.param_name }}"
                           value="{{ value.value }}"
                           {% if value.active %}
@@ -315,6 +334,16 @@
                           for="{{ input_id }}"
                           class="collection-filters__label"
                         >
+                          {%- if has_swatch -%}
+                            <span
+                              class="collection-filters__swatch"
+                              style="
+                                {% if swatch.color != blank %}--swatch-color: {{ swatch.color }};{% endif %}
+                                {% if swatch.image != blank %}--swatch-image: url({{ swatch.image | image_url: width: 64 }});{% endif %}
+                              "
+                              aria-hidden="true"
+                            ></span>
+                          {%- endif -%}
                           {{- value.label | escape -}}
                         </label>
                         <span class="collection-filters__count">{{ value.count }}</span>
@@ -758,10 +787,53 @@
   }
 
   .collection-filters__label {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
     flex-grow: 1;
     min-width: 0;
     cursor: pointer;
     overflow-wrap: anywhere;
+  }
+
+  /* Colour swatch in place of the checkbox; a ring shows it is selected (as on product tiles) */
+  .collection-filters__swatch {
+    --collection-filters-swatch-size: 1.125rem;
+
+    flex-shrink: 0;
+    width: var(--collection-filters-swatch-size);
+    height: var(--collection-filters-swatch-size);
+    background-color: var(--swatch-color, rgb(var(--color-foreground-rgb) / var(--opacity-20)));
+    background-image: var(--swatch-image, none);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-10));
+    border-radius: 50%;
+    transition: box-shadow var(--animation-speed) var(--animation-easing);
+  }
+
+  .collection-filters__swatch--small {
+    --collection-filters-swatch-size: 0.625rem;
+
+    border-color: rgb(var(--color-background-rgb) / var(--opacity-30));
+  }
+
+  .collection-filters__label:hover .collection-filters__swatch {
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3px rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .collection-filters__checkbox:checked + .collection-filters__label {
+    color: var(--color-foreground);
+    font-weight: 600;
+  }
+
+  .collection-filters__checkbox:checked + .collection-filters__label .collection-filters__swatch {
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 3px var(--color-foreground);
+  }
+
+  .collection-filters__checkbox:focus-visible + .collection-filters__label .collection-filters__swatch {
+    outline: var(--focus-outline-width) solid var(--color-foreground);
+    outline-offset: 4px;
   }
 
   .collection-filters__count {
