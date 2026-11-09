@@ -1,22 +1,48 @@
 {% doc %}
-  Renders product detail tabs ("Benefits", "Compare", "Sustainability") from _product-tab
-  child blocks: a row of tabs above the open tab's content. The tabs are radio buttons, so
-  they work without JavaScript, move with the arrow keys and keep their choice when the
-  information column re-renders on a variant change. The first tab opens by default.
+  Renders product detail tabs ("Benefits", "Compare", "Sustainability"): a row of tabs above
+  the open tab's content. The tabs are radio buttons, so they work without JavaScript, move
+  with the arrow keys and keep their choice when the information column re-renders on a
+  variant change. The first tab opens by default.
+
+  The tabs come from the product's custom.tabs metafield (a list of product_tab
+  metaobjects: title, heading, content), so each product shows its own tabs from one
+  template. Products without it fall back to the _product-tab blocks. Renders nothing when
+  neither has tabs. Each tab is rendered by snippets/product-tab.liquid.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
 
-<div
-  class="product-tabs"
-  {% if block.settings.accent_color != blank %}
-    style="--product-tabs-accent: {{ block.settings.accent_color }};"
-  {% endif %}
-  {{ block.shopify_attributes }}
->
-  {% content_for 'blocks' %}
-</div>
+{% liquid
+  assign tab_entries = product.metafields.custom.tabs.value
+  assign group_name = 'ProductTabs-' | append: section.id
+
+  capture tabs
+    if tab_entries.size > 0
+      for entry in tab_entries
+        assign entry_content = blank
+        if entry.content != blank
+          assign entry_content = entry.content | metafield_tag
+        endif
+        render 'product-tab', id: entry.system.id, group: group_name, title: entry.title.value, heading: entry.heading.value, content: entry_content
+      endfor
+    else
+      content_for 'blocks'
+    endif
+  endcapture
+%}
+
+{% if tabs != blank %}
+  <div
+    class="product-tabs"
+    {% if block.settings.accent_color != blank %}
+      style="--product-tabs-accent: {{ block.settings.accent_color }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    {{ tabs }}
+  </div>
+{% endif %}
 
 {% stylesheet %}
   /* Tabs share the first row; the open panel takes the full width below them */

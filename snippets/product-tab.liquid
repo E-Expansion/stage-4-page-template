@@ -1,0 +1,179 @@
+{%- doc -%}
+  Renders one tab of the product detail tabs: the tab label (a radio, so the tabs work
+  without JavaScript) and its panel with a heading, rich text and optionally a page's
+  content. Lists in the text get check marks in the tabs' accent colour. Must sit inside
+  `.product-tabs` (blocks/_product-tabs.liquid), which lays the tabs out.
+
+  Used for the tabs from the product's custom.tabs metafield and for _product-tab blocks.
+
+  @param {string} id - Unique ID for this tab, e.g. the block or metaobject ID
+  @param {string} group - Radio group name shared by the tabs of one product
+  @param {string} title - Tab label, escaped here
+  @param {string} [heading] - Panel heading, escaped here
+  @param {string} [content] - Panel rich text HTML
+  @param {string} [extra_content] - More HTML below the text, e.g. a page's content
+  @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
+
+  @example
+  {% render 'product-tab', id: entry.system.id, group: group_name, title: entry.title.value, heading: entry.heading.value, content: content %}
+{%- enddoc -%}
+
+{% liquid
+  assign input_id = 'ProductTab-' | append: id
+  assign tab_title = title | escape
+%}
+
+{% if tab_title != blank %}
+  <div
+    class="product-tab"
+    {{ attributes }}
+  >
+    <input
+      type="radio"
+      class="product-tab__input visually-hidden-input"
+      id="{{ input_id }}"
+      name="{{ group }}"
+      value="{{ id }}"
+      data-keep-checked
+    >
+    <label
+      class="product-tab__label"
+      for="{{ input_id }}"
+    >
+      {{- tab_title -}}
+    </label>
+
+    <div class="product-tab__panel">
+      {% if heading != blank %}
+        <h3 class="product-tab__heading">{{ heading | escape }}</h3>
+      {% endif %}
+      {% if content != blank %}
+        <div class="product-tab__content rte">{{ content }}</div>
+      {% endif %}
+      {% if extra_content != blank %}
+        <div class="product-tab__content rte">{{ extra_content }}</div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .product-tab {
+    display: contents;
+  }
+
+  .product-tab__label {
+    flex: 1 1 0;
+    order: 0;
+    min-width: 0;
+    padding: var(--padding-sm) var(--padding-xs);
+    font-size: var(--font-size--sm);
+    text-align: center;
+    overflow-wrap: anywhere;
+    color: var(--color-foreground-muted);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    cursor: pointer;
+    transition: color var(--animation-speed) var(--animation-easing),
+      background-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-md) var(--padding-sm);
+      font-size: var(--font-size--md);
+    }
+  }
+
+  .product-tab__panel {
+    display: none;
+    flex: 1 0 100%;
+    order: 1;
+    min-width: 0;
+    padding: var(--padding-lg) var(--padding-md);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--padding-2xl);
+    }
+  }
+
+  /* Open tab: the checked one, or the first while none is checked */
+  .product-tab__input:checked + .product-tab__label,
+  .product-tabs:not(:has(.product-tab__input:checked)) .product-tab:first-child .product-tab__label {
+    color: var(--product-tabs-accent, var(--color-foreground));
+    background-color: var(--color-background);
+  }
+
+  .product-tab__input:checked ~ .product-tab__panel,
+  .product-tabs:not(:has(.product-tab__input:checked)) .product-tab:first-child .product-tab__panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+
+    @media screen and (min-width: 750px) {
+      gap: var(--gap-lg);
+    }
+  }
+
+  .product-tab__input:focus-visible + .product-tab__label {
+    outline: var(--focus-outline-width) solid var(--color-foreground);
+    outline-offset: calc(var(--focus-outline-width) * -1);
+  }
+
+  .product-tab__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--lg);
+    line-height: var(--line-height--display-normal);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--xl);
+    }
+  }
+
+  .product-tab__content {
+    font-size: var(--font-size--sm);
+    line-height: var(--line-height--body-loose);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--md);
+    }
+
+    & > :first-child {
+      margin-block-start: 0;
+    }
+
+    & > :last-child {
+      margin-block-end: 0;
+    }
+
+    /* Lists read as a checklist */
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-sm);
+      padding: 0;
+      list-style: none;
+    }
+
+    & ul li {
+      position: relative;
+      padding-inline-start: calc(var(--icon-size-sm) + var(--gap-md));
+    }
+
+    & ul li::before {
+      content: '';
+      position: absolute;
+      inset-block-start: 0.2em;
+      inset-inline-start: 0;
+      width: var(--icon-size-sm);
+      height: var(--icon-size-sm);
+      background-color: var(--product-tabs-accent, var(--color-foreground));
+      /* Check mark shape; its color comes from background-color */
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4.5 10.5l3.5 4 7.5-9' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+        center / contain no-repeat;
+    }
+  }
+{% endstylesheet %}

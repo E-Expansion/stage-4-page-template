@@ -1,7 +1,13 @@
 {% doc %}
-  Renders the "Buy more, pay less" card: a heading above a list of quantity tiers
-  (_volume-tier blocks), each a radio row with a label, the price per item and a
-  "Save 7%" badge. The chosen tier sets the quantity the buy button adds to the cart.
+  Renders the "Buy more, pay less" card: a heading above a list of quantity tiers, each a
+  radio row with a label, the price per item and a "Save 7%" badge. The chosen tier sets the
+  quantity the buy button adds to the cart.
+
+  The tiers come from the product's custom.volume_tiers metafield (a list of volume_tier
+  metaobjects: label, quantity, discount), so each product has its own tiers from one
+  template. Products without it fall back to the _volume-tier blocks. Renders nothing when
+  neither has tiers. Each tier is rendered by snippets/volume-tier.liquid.
+
   The prices shown are calculated from the tier's discount; checkout only applies them
   when a matching automatic discount exists in Shopify.
 
@@ -18,24 +24,38 @@
       assign badge_text = 'var(--palette-lightest)'
     endif
   endif
+
+  assign tier_entries = product.metafields.custom.volume_tiers.value
+
+  capture tiers
+    if tier_entries.size > 0
+      for entry in tier_entries
+        render 'volume-tier', product: product, id: entry.system.id, section_id: section.id, label: entry.label.value, quantity: entry.quantity.value, discount: entry.discount.value
+      endfor
+    else
+      content_for 'blocks'
+    endif
+  endcapture
 %}
 
-<fieldset
-  class="volume-pricing"
-  style="
-    {% if block.settings.accent_color != blank %}--volume-accent: {{ block.settings.accent_color }};{% endif %}
-    {% if badge_text %}--volume-badge-background: {{ block.settings.badge_color }}; --volume-badge-text: {{ badge_text }};{% endif %}
-  "
-  {{ block.shopify_attributes }}
->
-  {% if block.settings.heading != blank %}
-    <legend class="volume-pricing__heading">{{ block.settings.heading | escape }}</legend>
-  {% endif %}
+{% if tiers != blank %}
+  <fieldset
+    class="volume-pricing"
+    style="
+      {% if block.settings.accent_color != blank %}--volume-accent: {{ block.settings.accent_color }};{% endif %}
+      {% if badge_text %}--volume-badge-background: {{ block.settings.badge_color }}; --volume-badge-text: {{ badge_text }};{% endif %}
+    "
+    {{ block.shopify_attributes }}
+  >
+    {% if block.settings.heading != blank %}
+      <legend class="volume-pricing__heading">{{ block.settings.heading | escape }}</legend>
+    {% endif %}
 
-  <div class="volume-pricing__tiers">
-    {% content_for 'blocks' %}
-  </div>
-</fieldset>
+    <div class="volume-pricing__tiers">
+      {{ tiers }}
+    </div>
+  </fieldset>
+{% endif %}
 
 {% stylesheet %}
   .volume-pricing {

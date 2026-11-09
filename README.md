@@ -142,6 +142,8 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | `faq` | `question` (single-line text), `answer` (rich text) |
 | `author` | `name` (single-line text), `image` (file), `bio` (rich text) |
 | `article_cta` | `heading`, `text`, `link_label` (single-line text), `link` (URL) |
+| `product_tab` | `title`, `heading` (single-line text), `content` (rich text) |
+| `volume_tier` | `label` (single-line text), `quantity` (integer), `discount` (integer, percent) |
 
 ### Metafields
 
@@ -161,6 +163,8 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Article | `custom.product_detail` | Single-line text | Extra text in the `[product]` row, e.g. "fits a 14\" laptop" |
 | Article | `custom.images` | List of files (images) | `[images]` marker |
 | Article | `custom.cta` | `article_cta` metaobject | `[cta]` marker (falls back to the content block's settings) |
+| Product | `custom.tabs` | List of `product_tab` metaobjects | Product detail tabs (falls back to the tab blocks) |
+| Product | `custom.volume_tiers` | List of `volume_tier` metaobjects | "Buy more, pay less" (falls back to the tier blocks; add matching automatic discounts) |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
 
 ### Colour swatches

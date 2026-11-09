@@ -1,0 +1,112 @@
+{%- doc -%}
+  Renders one quantity tier of the "Buy more, pay less" card: a radio that sets the buy
+  form's quantity, the label, the selected variant's price minus the tier discount
+  ("€175.00 each") and a "Save 7%" badge. The tier with quantity 1 starts selected. Must
+  sit inside `.volume-pricing` (blocks/_product-volume-pricing.liquid).
+
+  Used for the tiers from the product's custom.volume_tiers metafield and for _volume-tier
+  blocks.
+
+  @param {object} product - The product
+  @param {string} id - Unique ID for this tier, e.g. the block or metaobject ID
+  @param {string} section_id - Section ID, links the radio to the buy form
+  @param {string} label - Tier label, escaped here
+  @param {number} quantity - Quantity the tier adds to the cart
+  @param {number} [discount] - Discount in percent
+  @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
+
+  @example
+  {% render 'volume-tier', product: product, id: entry.system.id, section_id: section.id, label: entry.label.value, quantity: entry.quantity.value, discount: entry.discount.value %}
+{%- enddoc -%}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign tier_quantity = quantity | plus: 0 | at_least: 1
+  assign tier_discount = discount | plus: 0 | at_least: 0 | at_most: 100
+  assign price_factor = 100 | minus: tier_discount
+  assign tier_price = variant.price | times: price_factor | divided_by: 100
+
+  if settings.currency_code_enabled_product_pages
+    assign tier_price = tier_price | money_with_currency
+  else
+    assign tier_price = tier_price | money
+  endif
+
+  # Links the radio to the buy block's form, so its value is sent as the quantity
+  assign form_id = 'ProductBuyForm-' | append: section_id
+  assign input_id = 'VolumeTier-' | append: id
+%}
+
+<label
+  class="volume-tier"
+  for="{{ input_id }}"
+  {{ attributes }}
+>
+  <input
+    type="radio"
+    class="volume-tier__input"
+    id="{{ input_id }}"
+    name="quantity"
+    value="{{ tier_quantity }}"
+    form="{{ form_id }}"
+    data-keep-checked
+    {% if tier_quantity == 1 %}
+      checked
+    {% endif %}
+  >
+  <span class="volume-tier__label">{{ label | escape }}</span>
+  <span class="volume-tier__price">{{ 'content.price_each' | t: price: tier_price }}</span>
+  <span class="volume-tier__badge-slot">
+    {% if tier_discount > 0 %}
+      <span class="volume-tier__badge">{{ 'content.save_percent' | t: percent: tier_discount }}</span>
+    {% endif %}
+  </span>
+</label>
+
+{% stylesheet %}
+  /* Each tier spans the card's grid so prices and badges line up across rows. Scoped to the
+     card so it outranks base.css's label:has(input) inline-flex rule */
+  .volume-pricing .volume-tier {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+    font-size: var(--font-size--sm);
+    cursor: pointer;
+  }
+
+  /* Theme radio (base.css), in the card's accent color */
+  .volume-tier__input {
+    margin: 0;
+
+    &:checked {
+      border-color: var(--volume-accent, var(--color-foreground));
+    }
+
+    &:checked::after {
+      background: var(--volume-accent, var(--color-foreground));
+    }
+  }
+
+  .volume-tier__price {
+    justify-self: end;
+    text-align: end;
+    color: var(--color-foreground-muted);
+    white-space: nowrap;
+  }
+
+  .volume-tier__badge-slot {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .volume-tier__badge {
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--2xs);
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--volume-badge-text, var(--color-background));
+    background-color: var(--volume-badge-background, var(--color-foreground));
+    border-radius: var(--style-border-radius-xs);
+  }
+{% endstylesheet %}
