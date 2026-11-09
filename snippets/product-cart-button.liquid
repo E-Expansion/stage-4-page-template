@@ -1,0 +1,100 @@
+{%- doc -%}
+  Renders the round add-to-cart button of a product tile or row. It adds to the cart
+  directly (through the theme's product form) when the product has one variant, or when
+  its only option is colour: then it adds the colour shown, and hovering or tapping a
+  swatch switches the variant it adds (assets/product-tile.js). Other products link to
+  the product page to choose options. Renders nothing for sold-out products.
+  Styled by product-tile.
+
+  Used by product-tile (cards) and product-row (search results).
+
+  @param {object} product - The product
+  @param {string} section_id - Section ID, used for a unique form ID
+  @param {string} [title] - Escaped product title for the button label, defaults to the product title
+
+  @example
+  {% render 'product-cart-button', product: product, section_id: section.id %}
+{%- enddoc -%}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign label_title = title | default: product.title | escape
+
+  # Colour as the only option: the swatches choose the variant, so it can be added here
+  assign color_only = false
+  if product.options_with_values.size == 1
+    assign only_option = product.options_with_values | first
+    assign only_option_name = only_option.name | downcase
+    assign only_first_value = only_option.values | first
+    if only_first_value.swatch != blank or only_option_name == 'color' or only_option_name == 'colour' or only_option_name == 'kleur'
+      assign color_only = true
+    endif
+  endif
+
+  assign can_add_directly = false
+  if variant.available
+    if product.variants_count == 1 or color_only
+      assign can_add_directly = true
+    endif
+  endif
+
+  assign form_id = 'ProductCartForm-' | append: section_id | append: '-' | append: product.id
+%}
+
+{% if product != blank and product.available %}
+  {% capture cart_icon %}
+    <span
+      class="svg-wrapper"
+      aria-hidden="true"
+    >
+      {{- 'icon-cart.svg' | inline_asset_content -}}
+    </span>
+  {% endcapture %}
+
+  {% if can_add_directly %}
+    <product-form-component
+      class="product-tile__form"
+      data-section-id="{{ section_id }}"
+      data-product-id="{{ product.id }}"
+      on:submit="/handleSubmit"
+    >
+      <span
+        class="visually-hidden"
+        aria-live="assertive"
+        role="status"
+        aria-atomic="true"
+        ref="liveRegion"
+      ></span>
+      {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input
+          type="hidden"
+          name="id"
+          ref="variantId"
+          value="{{ variant.id }}"
+        >
+        <input
+          type="hidden"
+          name="quantity"
+          value="{{ variant.quantity_rule.min | default: 1 }}"
+        >
+        <button
+          type="submit"
+          name="add"
+          class="product-tile__cart button-unstyled"
+          aria-label="{{ 'actions.add_to_cart' | t }}: {{ label_title }}"
+        >
+          {{ cart_icon }}
+        </button>
+      {%- endform -%}
+    </product-form-component>
+  {% else %}
+    <a
+      href="{{ product.url }}"
+      class="product-tile__cart"
+      aria-label="{{ 'actions.choose' | t }}: {{ label_title }}"
+      ref="cartLink"
+    >
+      {{ cart_icon }}
+    </a>
+  {% endif %}
+{% endif %}

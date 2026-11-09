@@ -1,0 +1,243 @@
+{%- doc -%}
+  Renders the "Added to cart" notification that appears at the top right of every page
+  when something is added to the cart, from anywhere (product tiles, search results,
+  product page, quick add). Shows the item's image, title and variant, with "View cart"
+  (opens the cart drawer when there is one) and "Check out". Hides after a few seconds,
+  pauses while hovered or focused. Skipped when the cart drawer opens for the same add.
+  Filled in by assets/cart-notification.js. Rendered once from layout/theme.liquid.
+
+  @example
+  {% render 'cart-notification' %}
+{%- enddoc -%}
+
+<script
+  src="{{ 'cart-notification.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<cart-notification-component class="cart-notification-host">
+  <p
+    class="visually-hidden"
+    role="status"
+    aria-live="polite"
+    ref="status"
+  ></p>
+
+  <div
+    class="cart-notification"
+    popover="manual"
+    aria-labelledby="CartNotificationHeading"
+    ref="panel"
+    on:pointerenter="/pause"
+    on:pointerleave="/resume"
+  >
+    <div class="cart-notification__header">
+      <p
+        id="CartNotificationHeading"
+        class="cart-notification__heading"
+      >
+        <span
+          class="svg-wrapper cart-notification__check"
+          aria-hidden="true"
+        >
+          {{- 'icon-checkmark.svg' | inline_asset_content -}}
+        </span>
+        {{ 'products.product.added_to_cart' | t }}
+      </p>
+      <button
+        type="button"
+        class="cart-notification__close button-unstyled"
+        aria-label="{{ 'actions.close' | t }}"
+        on:click="/hide"
+      >
+        <span
+          class="svg-wrapper"
+          aria-hidden="true"
+        >
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </span>
+      </button>
+    </div>
+
+    <div class="cart-notification__item">
+      <img
+        class="cart-notification__image"
+        src="data:,"
+        alt=""
+        width="64"
+        height="64"
+        hidden
+        ref="image"
+      >
+      <div class="cart-notification__text">
+        <p
+          class="cart-notification__title"
+          ref="title"
+        ></p>
+        <p
+          class="cart-notification__variant"
+          ref="variant"
+        ></p>
+      </div>
+    </div>
+
+    <div class="cart-notification__actions">
+      <a
+        href="{{ routes.cart_url }}"
+        class="button-secondary cart-notification__button"
+        on:click="/openCart"
+      >
+        {{- 'content.view_cart' | t -}}
+      </a>
+      <form
+        action="{{ routes.cart_url }}"
+        method="post"
+        class="cart-notification__checkout"
+      >
+        <button
+          type="submit"
+          name="checkout"
+          class="button cart-notification__button"
+        >
+          {{- 'content.checkout' | t -}}
+        </button>
+      </form>
+    </div>
+  </div>
+</cart-notification-component>
+
+{% stylesheet %}
+  .cart-notification {
+    position: fixed;
+    inset: var(--padding-md) var(--padding-md) auto auto;
+    width: min(24rem, calc(100vw - 2 * var(--padding-md)));
+    margin: 0;
+    padding: var(--padding-lg);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: var(--style-border-width) solid var(--color-border);
+    border-radius: var(--style-border-radius-md);
+    box-shadow: var(--shadow-popover);
+
+    @media screen and (min-width: 750px) {
+      inset: var(--padding-xl) var(--padding-xl) auto auto;
+    }
+
+    &:popover-open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+      animation: cart-notification-in var(--animation-speed-slow) var(--animation-easing);
+    }
+
+    &.cart-notification--closing {
+      animation: cart-notification-out var(--animation-speed) var(--animation-easing) forwards;
+    }
+  }
+
+  @keyframes cart-notification-in {
+    from {
+      opacity: 0;
+      translate: 0 calc(var(--padding-md) * -1);
+    }
+  }
+
+  @keyframes cart-notification-out {
+    to {
+      opacity: 0;
+      translate: 0 calc(var(--padding-md) * -1);
+    }
+  }
+
+  .cart-notification__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+  }
+
+  .cart-notification__heading {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .cart-notification__check {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-in-stock);
+  }
+
+  .cart-notification__close {
+    display: inline-flex;
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    color: var(--color-foreground-muted);
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  .cart-notification__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-md);
+  }
+
+  .cart-notification__image {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .cart-notification__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .cart-notification__title,
+  .cart-notification__variant {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .cart-notification__variant {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .cart-notification__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-sm);
+  }
+
+  .cart-notification__checkout {
+    display: contents;
+  }
+
+  .cart-notification__button {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cart-notification:popover-open,
+    .cart-notification.cart-notification--closing {
+      animation: none;
+    }
+  }
+{% endstylesheet %}

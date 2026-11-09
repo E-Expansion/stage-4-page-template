@@ -1,18 +1,20 @@
 {%- doc -%}
   Renders a product as a horizontal row: tag badge and image on the left; title, short
   description, star rating, stock, price (with the discount on sale) and colour swatches on
-  the right. The whole row links to the product. Used for search results in the search
-  drawer.
+  the right, with a "View product" label and the add-to-cart button at the bottom. The
+  whole row links to the product. Used for search results in the search drawer.
 
   Shares its parts with product-tile (tag-badge, star-rating, product-stock, product-price,
-  product-swatches), so badges, colours and visibility follow the same Theme settings >
-  Product cards. Hovering a swatch previews that colour's image (assets/product-tile.js).
+  product-swatches, product-cart-button), so badges, colours and visibility follow the same
+  Theme settings > Product cards. Hovering a swatch previews that colour's image and makes
+  the cart button add that colour (assets/product-tile.js).
 
   @param {object} product - The product to render
+  @param {string} section_id - Section ID, used for a unique cart form ID
   @param {string} [sizes] - Image sizes attribute, defaults to the row's fixed image width
 
   @example
-  {% render 'product-row', product: product %}
+  {% render 'product-row', product: product, section_id: section.id %}
 {%- enddoc -%}
 
 {% liquid
@@ -80,12 +82,18 @@
         {% render 'product-swatches', product: product %}
       {% endif %}
 
-      <span
-        class="product-row__cta"
-        aria-hidden="true"
-      >
-        {{- 'actions.view_product' | t -}}
-      </span>
+      <div class="product-row__footer">
+        <span
+          class="product-row__cta"
+          aria-hidden="true"
+        >
+          {{- 'actions.view_product' | t -}}
+        </span>
+
+        {% if settings.product_tile_show_cart %}
+          {% render 'product-cart-button', product: product, section_id: section_id, title: title %}
+        {% endif %}
+      </div>
     </div>
   </product-tile-component>
 </li>
@@ -193,8 +201,16 @@
     margin-block-start: var(--padding-2xs);
   }
 
-  .product-row__cta {
+  .product-row__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+    align-self: stretch;
     margin-block-start: var(--padding-2xs);
+  }
+
+  .product-row__cta {
     font-size: var(--font-size--sm);
     color: var(--color-foreground);
     text-decoration: underline;

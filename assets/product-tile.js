@@ -2,7 +2,8 @@ import { Component } from '@theme/component';
 
 /**
  * Product tile colour swatches: hovering, focusing or tapping a swatch shows that colour's
- * variant image in the tile and points the title and cart links at that variant. The
+ * variant image in the tile, points the title and cart links at that variant and makes
+ * the add-to-cart form add it (snippets/product-cart-button.liquid). The
  * swatch images are preloaded when the pointer first reaches the swatch row, so the
  * swap is instant. Without this script the tile shows its default image and links.
  *
@@ -43,6 +44,13 @@ class ProductTileComponent extends Component {
       if (link) link.href = url;
       if (cartLink) cartLink.href = url;
     }
+
+    // The cart form (a nested product-form-component, so not in this tile's refs) adds the colour shown
+    const { variantId, available } = swatch.dataset;
+    const variantInput = this.querySelector('product-form-component input[name="id"]');
+    const addButton = this.querySelector('product-form-component button[name="add"]');
+    if (variantId && variantInput instanceof HTMLInputElement) variantInput.value = variantId;
+    if (available && addButton instanceof HTMLButtonElement) addButton.disabled = available !== 'true';
   }
 
   /**

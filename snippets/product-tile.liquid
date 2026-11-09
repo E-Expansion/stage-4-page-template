@@ -2,15 +2,16 @@
   Renders the shared product tile used in product rows and grids (curated products,
   collection grid, related products): image with a tag badge, title, colour swatches
   and/or an option summary, star rating, price, stock status and a cart button.
-  Single-variant products are added through the theme's product form; others link to
-  the product page to choose options. Which parts show, badges, the low stock threshold
+  Products with one variant, or with colour as their only option, are added through the
+  theme's product form; others link to the product page to choose options (see
+  product-cart-button). Which parts show, badges, the low stock threshold
   and status colours come from Theme settings > Product cards.
 
   Swatches read each colour's swatch (Content > Metaobjects > Color). Hovering, focusing
   or tapping one previews that colour's variant image and points the links at that
   variant (assets/product-tile.js). Swatches, price and stock are shared snippets
-  (product-swatches, product-price, product-stock), also used by product-row; their
-  styles live here.
+  (product-swatches, product-price, product-stock, product-cart-button), also used by
+  product-row; their styles live here.
 
   @param {object} [product] - The product to render. A placeholder tile is shown when blank.
   @param {string} section_id - The section ID, used for unique form IDs.
@@ -73,13 +74,6 @@
     endif
   endif
 
-  assign can_add_directly = false
-  if product.variants_count == 1 and variant.available
-    assign can_add_directly = true
-  endif
-
-  assign form_id = 'ProductTileForm-' | append: section_id | append: '-' | append: product.id
-
   assign image_sizes = sizes | default: '(min-width: 750px) 25vw, 45vw'
   assign image_loading = 'lazy'
   if eager
@@ -132,62 +126,8 @@
           {% endif %}
         </div>
 
-        {% if product != blank and product.available and settings.product_tile_show_cart %}
-          {% capture cart_icon %}
-            <span
-              class="svg-wrapper"
-              aria-hidden="true"
-            >
-              {{- 'icon-cart.svg' | inline_asset_content -}}
-            </span>
-          {% endcapture %}
-
-          {% if can_add_directly %}
-            <product-form-component
-              class="product-tile__form"
-              data-section-id="{{ section_id }}"
-              data-product-id="{{ product.id }}"
-              on:submit="/handleSubmit"
-            >
-              <span
-                class="visually-hidden"
-                aria-live="assertive"
-                role="status"
-                aria-atomic="true"
-                ref="liveRegion"
-              ></span>
-              {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                <input
-                  type="hidden"
-                  name="id"
-                  ref="variantId"
-                  value="{{ variant.id }}"
-                >
-                <input
-                  type="hidden"
-                  name="quantity"
-                  value="{{ variant.quantity_rule.min | default: 1 }}"
-                >
-                <button
-                  type="submit"
-                  name="add"
-                  class="product-tile__cart button-unstyled"
-                  aria-label="{{ 'actions.add_to_cart' | t }}: {{ title }}"
-                >
-                  {{ cart_icon }}
-                </button>
-              {%- endform -%}
-            </product-form-component>
-          {% else %}
-            <a
-              href="{{ product.url }}"
-              class="product-tile__cart"
-              aria-label="{{ 'actions.choose' | t }}: {{ title }}"
-              ref="cartLink"
-            >
-              {{ cart_icon }}
-            </a>
-          {% endif %}
+        {% if settings.product_tile_show_cart %}
+          {% render 'product-cart-button', product: product, section_id: section_id, title: title %}
         {% endif %}
       </div>
 

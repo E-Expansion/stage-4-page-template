@@ -69,6 +69,8 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid, article sidebar |
 | `product-row` | Product as a horizontal row: badge, image, title, short description, rating, stock, price with discount, swatches | Search drawer |
 | `product-swatches`, `product-price`, `product-stock` | Parts shared by `product-tile` and `product-row`: colour swatches (image preview on hover), price with optional "Save x%", stock status | Product tile, product row |
+| `product-cart-button` | Round add-to-cart button; adds directly for single-variant or colour-only products (the hovered swatch picks the colour), otherwise links to the product | Product tile, product row |
+| `cart-notification` (+ `assets/cart-notification.js`) | "Added to cart" notification at the top right after any add to cart, with View cart and Check out | Layout (every page) |
 | `search-drawer` (+ `assets/search-drawer.js`) | Right-hand search panel with live results, opened from the header search fields | Header |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article content |
 | `article-meta` | Read time and date of an article | Article card, article author line |

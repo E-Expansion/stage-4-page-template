@@ -1,6 +1,7 @@
 {%- doc -%}
   Renders a product's colour swatches. Hovering, focusing or tapping one previews that
-  colour's variant image and points the links at that variant (assets/product-tile.js).
+  colour's variant image, points the links at that variant and makes the cart button add
+  it (assets/product-tile.js).
   Must sit inside a <product-tile-component> whose image has ref="image" and whose title
   link has ref="link". Renders nothing when the product has no colour option.
 
@@ -86,6 +87,8 @@
         "
         {% if value_variant %}
           data-url="{{ value_variant.url }}"
+          data-variant-id="{{ value_variant.id }}"
+          data-available="{{ value_variant.available }}"
         {% endif %}
         {% if value_media != blank %}
           data-src="{{ value_media.preview_image | image_url: width: 1000 }}"

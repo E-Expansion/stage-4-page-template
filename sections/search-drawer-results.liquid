@@ -83,7 +83,7 @@
         >
           <ul class="search-drawer__list list-unstyled">
             {% for product in products %}
-              {% render 'product-row', product: product %}
+              {% render 'product-row', product: product, section_id: section.id %}
             {% endfor %}
           </ul>
         </div>
