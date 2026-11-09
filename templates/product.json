@@ -232,8 +232,8 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Benefits",
-                "heading": "Built for every day, and made to look better with every mile.",
-                "content": "<ul><li>Full-grain leather that develops a rich, individual patina</li><li>Comfortably fits a 14-inch laptop and daily essentials</li><li>Hand-finished edges and solid brass hardware</li><li>Five-year repair guarantee</li></ul>",
+                "heading": "{{ metaobjects.product_tab.benefits.heading.value }}",
+                "content": "{{ metaobjects.product_tab.benefits.content | metafield_tag }}",
                 "page": ""
               },
               "blocks": {}
@@ -242,8 +242,8 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Compare",
-                "heading": "Which size suits you?",
-                "content": "<ul><li>Small: tablet, wallet and keys</li><li>Medium: a 14-inch laptop and daily essentials</li><li>Large: a 16-inch laptop, documents and a change of clothes</li></ul>",
+                "heading": "{{ metaobjects.product_tab.compare.title.value }}",
+                "content": "{{ metaobjects.product_tab.compare.content | metafield_tag }}",
                 "page": ""
               },
               "blocks": {}
@@ -252,8 +252,8 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Sustainability",
-                "heading": "Made to last, not to replace.",
-                "content": "<p>Vegetable-tanned leather from an audited tannery, unlacquered brass and a recycled cotton lining. Every bag can be repaired in our workshop.</p>",
+                "heading": "{{ metaobjects.product_tab.sustainability.heading.value }}",
+                "content": "{{ metaobjects.product_tab.sustainability.content | metafield_tag }}",
                 "page": ""
               },
               "blocks": {}
@@ -310,6 +310,32 @@
         "border_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 24,
         "padding-block-end": 48
+      }
+    },
+    "bundle": {
+      "type": "product-bundle",
+      "settings": {
+        "heading": "Frequently bought together",
+        "max_products": 2,
+        "discount_percent": 10,
+        "button_color": "{{ settings.color_palette.color1 }}",
+        "badge_color": "{{ settings.color_palette.color5 }}",
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 24,
+        "padding-block-end": 48
+      }
+    },
+    "seo_text": {
+      "type": "seo-text",
+      "settings": {
+        "heading": "About [title]",
+        "text": "",
+        "align_with_grid": false,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 8,
+        "padding-block-end": 8
       }
     },
     "faq": {
@@ -373,34 +399,17 @@
         "padding-block-end": 48
       }
     },
-    "bundle": {
-      "type": "product-bundle",
-      "settings": {
-        "heading": "Frequently bought together",
-        "max_products": 2,
-        "discount_percent": 10,
-        "border_color": "{{ settings.color_palette.color2 }}"
-      }
-    },
-    "seo_text": {
-      "type": "seo-text",
-      "settings": {
-        "heading": "About [title]",
-        "text": "",
-        "align_with_grid": false,
-        "background_color": "{{ settings.color_palette.background }}",
-        "border_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 8,
-        "padding-block-end": 8
-      }
-    },
     "related_products": {
       "type": "related-products",
       "settings": {
         "heading": "You may also like",
         "intent": "related",
         "max_products": 4,
-        "columns": 4
+        "columns": 4,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 24,
+        "padding-block-end": 48
       }
     }
   },
