@@ -5,7 +5,9 @@
   bundle total with an optional bundle discount and one button that adds them all to the
   cart. Complementary products come from Search & Discovery (complementary products) or,
   failing that, the product's custom.frequently_bought_together metafield (list of
-  products); one template serves every product. Hidden when a product has none.
+  products) or custom.frequently_bought_together_handles (single-line text with product
+  handles separated by commas, which a product CSV imports reliably); one template serves
+  every product. Hidden when a product has none.
   The discount shown here is only charged when a matching automatic discount exists.
   @example
   <!-- Product template > Add section > Frequently bought together -->
@@ -15,20 +17,31 @@
   assign variant = product.selected_or_first_available_variant
   assign max_products = section.settings.max_products
 
+  # The complementary products as a list of handles, from the first source that has any:
+  # Search & Discovery, the custom.frequently_bought_together product list, or the
+  # custom.frequently_bought_together_handles text ("keychain-fob, leather-care-kit"),
+  # which imports reliably from a product CSV.
   assign complementary = product.metafields['shopify--discovery--product_recommendation'].complementary_products.value
   if complementary == blank
     assign complementary = product.metafields.custom.frequently_bought_together.value
   endif
+  if complementary != blank
+    assign complementary_handles = complementary | map: 'handle' | join: ','
+  else
+    assign complementary_handles = product.metafields.custom.frequently_bought_together_handles.value | remove: ' '
+  endif
+  assign complementary_handles = complementary_handles | split: ','
 
   # Collect buyable extras and the bundle total
   assign extra_ids = ''
   assign extra_count = 0
   assign total = variant.price
-  for extra in complementary
+  for extra_handle in complementary_handles
     if extra_count >= max_products
       break
     endif
-    if extra.id == product.id or extra.available == false
+    assign extra = all_products[extra_handle]
+    if extra == blank or extra.id == product.id or extra.available == false
       continue
     endif
     assign extra_count = extra_count | plus: 1
@@ -103,11 +116,12 @@
           <ul class="product-bundle__items list-unstyled">
             {% render 'product-bundle-item', product: product, variant: variant, show_plus: false %}
             {% assign shown = 0 %}
-            {% for extra in complementary %}
+            {% for extra_handle in complementary_handles %}
               {% if shown >= max_products %}
                 {% break %}
               {% endif %}
-              {% if extra.id == product.id or extra.available == false %}
+              {% assign extra = all_products[extra_handle] %}
+              {% if extra == blank or extra.id == product.id or extra.available == false %}
                 {% continue %}
               {% endif %}
               {% assign shown = shown | plus: 1 %}
