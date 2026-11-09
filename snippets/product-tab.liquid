@@ -12,6 +12,8 @@
   @param {string} title - Tab label, escaped here
   @param {string} [heading] - Panel heading, escaped here
   @param {string} [content] - Panel rich text HTML
+  @param {string} [lines] - Plain text, e.g. a multi-line text metafield: each line becomes a
+    checklist item; a single line shows as a paragraph. Shown instead of `content` when set.
   @param {string} [extra_content] - More HTML below the text, e.g. a page's content
   @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
 
@@ -25,6 +27,25 @@
 %}
 
 {% liquid
+  # Plain lines (multi-line text metafields import cleanly from CSV) become a list or paragraph
+  if lines != blank
+    assign line_items = lines | strip | newline_to_br | split: '<br />'
+    capture content
+      if line_items.size > 1
+        echo '<ul>'
+        for line_item in line_items
+          assign line_text = line_item | strip | escape
+          if line_text != blank
+            echo '<li>' | append: line_text | append: '</li>'
+          endif
+        endfor
+        echo '</ul>'
+      else
+        echo '<p>' | append: line_items.first | strip | escape | append: '</p>'
+      endif
+    endcapture
+  endif
+
   assign has_content = false
   if heading != blank or content != blank or extra_content != blank
     assign has_content = true

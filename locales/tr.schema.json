@@ -1275,6 +1275,7 @@
     "certificate_image": "Daire içinde gösterilir. Görsel seçilene kadar yer tutucu görünür.",
     "certificate_link": "Sertifika kuruluşunun web sitesi. Yeni sekmede açılır.",
     "product_tab_content": "Listeler kontrol listesi olarak görünür. Ürün başına farklı içerik için bir ürün meta alanı (zengin metin) bağlayın.",
+    "product_tab_lines": "Ürün başına farklı içerik göstermek için bir ürün meta alanı (çok satırlı metin) bağlayın. Her satır bir kontrol listesi öğesi olur; tek satır paragraf olarak gösterilir. Doldurulduğunda yukarıdaki metnin yerine geçer.",
     "product_tab_page": "Metnin altına bir sayfanın içeriğini ekler, ör. karşılaştırma tablosu.",
     "product_tabs_accent": "Etkin sekme metni ve liste işaretleri.",
     "back_in_stock": "Yalnızca seçilen varyant tükendiğinde görünür. Her kayıt, e-posta pazarlama onayı veren ve \"back-in-stock\" ile ürün ve varyant etiketi taşıyan bir müşteri olur. Stok geldiğinde haber vermek için Müşteriler bölümünde bulabilirsiniz.",

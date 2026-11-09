@@ -1275,6 +1275,7 @@
     "certificate_image": "Exibida em círculo. Até escolher uma imagem, aparece um espaço reservado.",
     "certificate_link": "O site da certificadora. Abre em uma nova aba.",
     "product_tab_content": "Listas aparecem como checklist. Conecte um metacampo de produto (rich text) para conteúdo diferente por produto.",
+    "product_tab_lines": "Conecte um metacampo do produto (texto de várias linhas) para mostrar conteúdo diferente por produto. Cada linha vira um item da lista; uma única linha aparece como parágrafo. Substitui o texto acima quando preenchido.",
     "product_tab_page": "Adiciona o conteúdo de uma página abaixo do texto, por ex. uma tabela comparativa.",
     "product_tabs_accent": "Texto da aba ativa e marcações das listas.",
     "back_in_stock": "Aparece só quando a variante escolhida está esgotada. Cada cadastro vira um cliente com consentimento de marketing por e-mail, com a tag \"back-in-stock\" e uma de produto e variante. Encontre-os em Clientes para avisar quando o estoque voltar.",

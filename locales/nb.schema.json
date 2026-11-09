@@ -1275,6 +1275,7 @@
     "certificate_image": "Vises rundt. Til et bilde er valgt, vises en plassholder.",
     "certificate_link": "Nettstedet til sertifiseringsorganet. Åpnes i en ny fane.",
     "product_tab_content": "Lister vises som sjekkliste. Koble til et produktmetafelt (rik tekst) for ulikt innhold per produkt.",
+    "product_tab_lines": "Koble til et produktmetafelt (tekst med flere linjer) for å vise ulikt innhold per produkt. Hver linje blir et punkt i sjekklisten; én linje vises som et avsnitt. Erstatter teksten over når det er fylt ut.",
     "product_tab_page": "Legger til innholdet på en side under teksten, f.eks. en sammenligningstabell.",
     "product_tabs_accent": "Tekst på aktiv fane og hakemerker i lister.",
     "back_in_stock": "Vises bare når valgt variant er utsolgt. Hver påmelding blir en kunde med samtykke til e-postmarkedsføring, merket \"back-in-stock\" og med produkt og variant. Finn dem under Kunder for å gi beskjed når varen er tilbake.",

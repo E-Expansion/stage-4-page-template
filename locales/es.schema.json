@@ -1275,6 +1275,7 @@
     "certificate_image": "Se muestra en un círculo. Hasta elegir una imagen se ve un marcador.",
     "certificate_link": "El sitio web del organismo certificador. Se abre en una pestaña nueva.",
     "product_tab_content": "Las listas se muestran como checklist. Conecta un metacampo de producto (texto enriquecido) para mostrar contenido distinto por producto.",
+    "product_tab_lines": "Conecta un metacampo de producto (texto de varias líneas) para mostrar contenido distinto por producto. Cada línea se convierte en un elemento de la lista; una sola línea se muestra como párrafo. Sustituye al texto de arriba si está relleno.",
     "product_tab_page": "Añade el contenido de una página bajo el texto, p. ej. una tabla comparativa.",
     "product_tabs_accent": "Texto de la pestaña activa y marcas de las listas.",
     "back_in_stock": "Solo aparece si la variante elegida está agotada. Cada registro se convierte en un cliente con consentimiento de marketing por correo, con la etiqueta \"back-in-stock\" y otra de producto y variante. Encuéntralos en Clientes para avisarles cuando vuelva el stock.",

@@ -1,7 +1,8 @@
 {% doc %}
-  One tab of the product detail tabs. Connect its heading and text to product metafields
-  in the theme editor (e.g. custom.tab_benefits_heading and custom.tab_benefits) so each
-  product shows its own content; left out when empty. Markup and styles live in
+  One tab of the product detail tabs. Connect its heading and content to product
+  metafields in the theme editor (e.g. custom.tab_benefits_heading, single-line text, and
+  custom.tab_benefits, multi-line text with one list item per line) so each product shows
+  its own content; left out when empty. Markup and styles live in
   snippets/product-tab.liquid.
 
   @example
@@ -10,7 +11,7 @@
 
 {% liquid
   assign group_name = 'ProductTabs-' | append: section.id
-  render 'product-tab', id: block.id, group: group_name, title: block.settings.title, heading: block.settings.heading, content: block.settings.content, extra_content: block.settings.page.content, attributes: block.shopify_attributes
+  render 'product-tab', id: block.id, group: group_name, title: block.settings.title, heading: block.settings.heading, content: block.settings.content, lines: block.settings.lines, extra_content: block.settings.page.content, attributes: block.shopify_attributes
 %}
 
 {% schema %}
@@ -35,6 +36,12 @@
       "id": "content",
       "label": "t:settings.text",
       "info": "t:info.product_tab_content"
+    },
+    {
+      "type": "textarea",
+      "id": "lines",
+      "label": "t:settings.content",
+      "info": "t:info.product_tab_lines"
     },
     {
       "type": "page",

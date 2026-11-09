@@ -1275,6 +1275,7 @@
     "certificate_image": "Wird rund angezeigt. Bis ein Bild gewählt ist, erscheint ein Platzhalter.",
     "certificate_link": "Die Website der Zertifizierungsstelle. Öffnet sich in einem neuen Tab.",
     "product_tab_content": "Listen werden als Checkliste angezeigt. Verbinde ein Produkt-Metafeld (Rich Text), um je Produkt andere Inhalte zu zeigen.",
+    "product_tab_lines": "Verbinde ein Produkt-Metafeld (mehrzeiliger Text), um pro Produkt andere Inhalte zu zeigen. Jede Zeile wird zu einem Checklistenpunkt; eine einzelne Zeile wird als Absatz angezeigt. Ersetzt den Text oben, wenn ausgefüllt.",
     "product_tab_page": "Fügt den Inhalt einer Seite unter dem Text hinzu, z. B. eine Vergleichstabelle.",
     "product_tabs_accent": "Text des aktiven Tabs und Häkchen in Listen.",
     "back_in_stock": "Erscheint nur, wenn die gewählte Variante ausverkauft ist. Jede Anmeldung wird ein Kunde mit E-Mail-Marketing-Einwilligung, getaggt mit „back-in-stock“ sowie Produkt und Variante. Unter Kunden findest du sie, um sie bei neuem Bestand zu benachrichtigen.",

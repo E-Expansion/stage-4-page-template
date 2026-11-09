@@ -1275,6 +1275,7 @@
     "certificate_image": "Affichée en cercle. Un espace réservé s'affiche tant qu'aucune image n'est choisie.",
     "certificate_link": "Le site de l'organisme certificateur. S'ouvre dans un nouvel onglet.",
     "product_tab_content": "Les listes s'affichent comme une checklist. Connectez un métachamp produit (texte enrichi) pour un contenu différent par produit.",
+    "product_tab_lines": "Connectez un métachamp de produit (texte multiligne) pour afficher un contenu différent par produit. Chaque ligne devient un élément de liste ; une seule ligne s'affiche comme un paragraphe. Remplace le texte ci-dessus s'il est rempli.",
     "product_tab_page": "Ajoute le contenu d'une page sous le texte, p. ex. un tableau comparatif.",
     "product_tabs_accent": "Texte de l'onglet actif et coches des listes.",
     "back_in_stock": "S'affiche uniquement si la variante choisie est épuisée. Chaque inscription devient un client consentant au marketing par e-mail, avec la balise « back-in-stock » et une balise produit et variante. Retrouvez-les dans Clients pour les prévenir du retour en stock.",

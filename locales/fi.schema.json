@@ -1275,6 +1275,7 @@
     "certificate_image": "Näytetään pyöreänä. Kunnes kuva valitaan, näkyy paikkamerkki.",
     "certificate_link": "Sertifioijan verkkosivusto. Avautuu uuteen välilehteen.",
     "product_tab_content": "Listat näytetään tarkistuslistana. Yhdistä tuotteen metakenttä (rich text), jotta jokaisella tuotteella on oma sisältönsä.",
+    "product_tab_lines": "Yhdistä tuotteen metakenttä (monirivinen teksti), jotta jokaisella tuotteella on oma sisältönsä. Jokaisesta rivistä tulee tarkistuslistan kohta; yksittäinen rivi näytetään kappaleena. Korvaa yllä olevan tekstin, kun se on täytetty.",
     "product_tab_page": "Lisää sivun sisällön tekstin alle, esim. vertailutaulukon.",
     "product_tabs_accent": "Aktiivisen välilehden teksti ja listojen valintamerkit.",
     "back_in_stock": "Näkyy vain, kun valittu muunnelma on loppu. Jokaisesta ilmoittautumisesta tulee asiakas, joka on antanut sähköpostimarkkinointiluvan, tunnisteilla \"back-in-stock\" sekä tuote ja muunnelma. Löydät heidät Asiakkaat-kohdasta ilmoittaaksesi, kun tuotetta on taas.",

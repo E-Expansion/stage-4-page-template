@@ -1275,6 +1275,7 @@
     "certificate_image": "Zobrazí se v kruhu. Dokud nevyberete obrázek, zobrazí se zástupný symbol.",
     "certificate_link": "Web certifikační organizace. Otevře se na nové kartě.",
     "product_tab_content": "Seznamy se zobrazí jako checklist. Propojte metapole produktu (rich text) pro jiný obsah u každého produktu.",
+    "product_tab_lines": "Připojte metapole produktu (víceřádkový text) a zobrazte u každého produktu jiný obsah. Každý řádek se stane položkou seznamu; jediný řádek se zobrazí jako odstavec. Pokud je vyplněno, nahrazuje text výše.",
     "product_tab_page": "Přidá obsah stránky pod text, např. srovnávací tabulku.",
     "product_tabs_accent": "Text aktivní záložky a zaškrtnutí v seznamech.",
     "back_in_stock": "Zobrazí se jen, když je vybraná varianta vyprodaná. Každá registrace vytvoří zákazníka se souhlasem s e-mailovým marketingem, se štítkem „back-in-stock“ a štítkem produktu a varianty. Najdete je v Zákaznících a dáte jim vědět, až bude zboží zpět.",
