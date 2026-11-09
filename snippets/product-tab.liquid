@@ -41,7 +41,9 @@
         endfor
         echo '</ul>'
       else
-        echo '<p>' | append: line_items.first | strip | escape | append: '</p>'
+        # Escape the text first, then wrap it, so the tag itself is not escaped
+        assign line_text = line_items.first | strip | escape
+        echo '<p>' | append: line_text | append: '</p>'
       endif
     endcapture
   endif
