@@ -26,7 +26,8 @@
       # "Search results", with "12 search results found for "bag"" underneath
       assign resource_title = 'content.search_results' | t
       if search.performed
-        assign search_count_text = 'accessibility.search_results_count' | t: count: search.results_count, query: search.terms | escape
+        # The t filter already escapes its output, including the search terms
+        assign search_count_text = 'accessibility.search_results_count' | t: count: search.results_count, query: search.terms
         assign resource_description = '<p>' | append: search_count_text | append: '</p>'
       endif
     else
