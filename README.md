@@ -142,7 +142,6 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | `faq` | `question` (single-line text), `answer` (rich text) |
 | `author` | `name` (single-line text), `image` (file), `bio` (rich text) |
 | `article_cta` | `heading`, `text`, `link_label` (single-line text), `link` (URL) |
-| `product_tab` | `title`, `heading` (single-line text), `content` (rich text) |
 | `volume_tier` | `label` (single-line text), `quantity` (integer), `discount` (integer, percent) |
 
 ### Metafields
@@ -163,7 +162,8 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Article | `custom.product_detail` | Single-line text | Extra text in the `[product]` row, e.g. "fits a 14\" laptop" |
 | Article | `custom.images` | List of files (images) | `[images]` marker |
 | Article | `custom.cta` | `article_cta` metaobject | `[cta]` marker (falls back to the content block's settings) |
-| Product | `custom.tabs` | List of `product_tab` metaobjects | Product detail tabs (falls back to the tab blocks) |
+| Product | `custom.tab_benefits`, `custom.tab_compare`, `custom.tab_sustainability` | Rich text | Product detail tabs: text of each tab (connected in the theme editor; empty tabs are hidden) |
+| Product | `custom.tab_benefits_heading`, `custom.tab_compare_heading`, `custom.tab_sustainability_heading` | Single-line text | Product detail tabs: heading of each tab |
 | Product | `custom.volume_tiers` | List of `volume_tier` metaobjects | "Buy more, pay less" (falls back to the tier blocks; add matching automatic discounts) |
 | Product | `reviews.rating`, `reviews.rating_count` | Filled by a review app | Star rating |
 

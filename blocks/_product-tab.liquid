@@ -1,7 +1,8 @@
 {% doc %}
-  One manually filled tab of the product detail tabs. Only used when the product has no
-  tabs in its custom.tabs metafield (see blocks/_product-tabs.liquid). Markup and styles
-  live in snippets/product-tab.liquid.
+  One tab of the product detail tabs. Connect its heading and text to product metafields
+  in the theme editor (e.g. custom.tab_benefits_heading and custom.tab_benefits) so each
+  product shows its own content; left out when empty. Markup and styles live in
+  snippets/product-tab.liquid.
 
   @example
   {% content_for 'blocks' %}

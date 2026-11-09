@@ -4,7 +4,8 @@
   content. Lists in the text get check marks in the tabs' accent colour. Must sit inside
   `.product-tabs` (blocks/_product-tabs.liquid), which lays the tabs out.
 
-  Used for the tabs from the product's custom.tabs metafield and for _product-tab blocks.
+  Renders nothing without a title, or without any heading, text or extra content, so a
+  tab whose product metafields are empty is left out.
 
   @param {string} id - Unique ID for this tab, e.g. the block or metaobject ID
   @param {string} group - Radio group name shared by the tabs of one product
@@ -15,7 +16,7 @@
   @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
 
   @example
-  {% render 'product-tab', id: entry.system.id, group: group_name, title: entry.title.value, heading: entry.heading.value, content: content %}
+  {% render 'product-tab', id: block.id, group: group_name, title: block.settings.title, content: block.settings.content %}
 {%- enddoc -%}
 
 {% liquid
@@ -23,7 +24,14 @@
   assign tab_title = title | escape
 %}
 
-{% if tab_title != blank %}
+{% liquid
+  assign has_content = false
+  if heading != blank or content != blank or extra_content != blank
+    assign has_content = true
+  endif
+%}
+
+{% if tab_title != blank and has_content %}
   <div
     class="product-tab"
     {{ attributes }}
