@@ -178,6 +178,11 @@
               autocomplete="off"
               data-search-drawer-trigger
             >
+            <input
+              type="hidden"
+              name="type"
+              value="product"
+            >
           </form>
         {% endif %}
 
@@ -290,6 +295,11 @@
           placeholder="{{ section.settings.search_placeholder | escape }}"
           autocomplete="off"
           data-search-drawer-trigger
+        >
+        <input
+          type="hidden"
+          name="type"
+          value="product"
         >
       </form>
     {% endif %}

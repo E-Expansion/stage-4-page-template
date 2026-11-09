@@ -5,6 +5,7 @@
   - collection: Home / [parent] / collection
   - blog: Home / blog, or Home / blog / tag on a tag-filtered blog page
   - article: Home / blog / first tag / article
+  - search: Home / [parent] / Search results
   - other pages: Home / page title
   Also outputs BreadcrumbList structured data. The last item is the current page.
 
@@ -37,6 +38,8 @@
       assign current_label = product.title
     when 'collection'
       assign current_label = collection.title
+    when 'search'
+      assign current_label = 'content.search_results' | t
     when 'blog'
       if current_tags.size > 0
         assign crumb_labels = crumb_labels | append: separator | append: blog.title

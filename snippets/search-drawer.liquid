@@ -3,7 +3,7 @@
   with a search field and live results. Focusing or clicking any input with
   [data-search-drawer-trigger] (the header search fields) opens it. Results come from
   Shopify's predictive search and are rendered by sections/search-drawer-results.liquid
-  (assets/search-drawer.js). Pressing Enter goes to the full search page.
+  (assets/search-drawer.js). Pressing Enter goes to the search page, which lists the matching products like a collection.
 
   @param {string} [placeholder] - Placeholder of the search field
 
@@ -92,6 +92,11 @@
           type="hidden"
           name="options[prefix]"
           value="last"
+        >
+        <input
+          type="hidden"
+          name="type"
+          value="product"
         >
         <button
           type="button"

@@ -3,7 +3,8 @@
   Page intro for listing pages, using the shared page-heading snippet: breadcrumbs, the
   page title and a short description.
   Title and description are read from the current collection, blog or page, so one
-  template serves every collection or blog. The section's own title and text are used
+  template serves every collection or blog. On the search page the title is "Search
+  results" with the number of results for the search terms underneath. The section's own title and text are used
   when set (title) or when the resource has no description (text). Blogs have no
   description field in Shopify, so they read the custom.subtitle metafield instead.
   Collections can also show their product count on mobile.
@@ -21,6 +22,13 @@
       assign resource_description = blog.metafields.custom.subtitle.value | escape
     when 'page'
       assign resource_title = page.title
+    when 'search'
+      # "Search results", with "12 search results found for "bag"" underneath
+      assign resource_title = 'content.search_results' | t
+      if search.performed
+        assign search_count_text = 'accessibility.search_results_count' | t: count: search.results_count, query: search.terms | escape
+        assign resource_description = '<p>' | append: search_count_text | append: '</p>'
+      endif
     else
       assign resource_title = page_title
   endcase

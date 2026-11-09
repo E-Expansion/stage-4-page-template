@@ -107,6 +107,12 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 
 `page-header` → `subcategories` → `collection-filters` (products, filters, sorting, pagination) → `seo-text` → `faq`
 
+### Search (`templates/search.json`)
+
+`page-header` → `subcategories` → `collection-filters`
+
+The search page uses the collection sections, so search results look and filter like a collection (Shop all). Searches are limited to products (`type=product`). The product listing itself is `snippets/collection-listing.liquid`, shared by both pages.
+
 ### Journal (`templates/blog.json`)
 
 `page-header` → `featured-article` → `blog-filters` (tag filters, sorting, search, article grid) → `newsletter-signup`

@@ -21,7 +21,7 @@
   {% if predictive_search.performed %}
     {% liquid
       assign encoded_terms = predictive_search.terms | url_encode
-      assign search_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&options%5Bprefix%5D=last'
+      assign search_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&type=product&options%5Bprefix%5D=last'
     %}
     <p
       class="visually-hidden"

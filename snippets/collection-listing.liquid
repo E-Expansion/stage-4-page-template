@@ -1,0 +1,594 @@
+{%- doc -%}
+  Renders the product listing of sections/collection-filters.liquid for one page of
+  results: the filter panel (a GET form), the toolbar (count, sort), the product grid of
+  product-tile snippets with an optional promo block, and the pagination. Used for both a
+  collection (collection.products) and the search page (search.results), so the search
+  page looks and filters exactly like a collection. Styles live in the section.
+
+  Rendered inside the section's paginate tag.
+
+  @param {object} section - The collection-filters section
+  @param {object} paginate - The paginate object of the surrounding paginate tag
+  @param {object[]} products - The products on this page (collection.products or search.results)
+  @param {object[]} listing_filters - Storefront filters (collection.filters or search.filters)
+  @param {object[]} sort_options - Sort options (collection.sort_options or search.sort_options)
+  @param {string} sort_by - The current sort value
+  @param {string} base_url - URL the filter form and sort links point to
+  @param {string} [base_query] - Query that every sort link keeps, ending in "&" (search terms)
+  @param {string} [search_terms] - Search terms; adds them to the filter form as hidden fields
+  @param {string} form_id - ID of the filter form
+  @param {string} panel_id - ID of the filter panel
+  @param {number} active_count - Number of active filters
+  @param {string} filter_query - Active filters as a query string, kept by the sort links
+  @param {string} clear_url - URL without filters
+  @param {string[]} mobile_sort_values - Sort values shown as pills on mobile
+  @param {string} [promo_blocks] - Rendered promo blocks, placed in the grid on the first page
+
+  @example
+  {% render 'collection-listing', section: section, paginate: paginate, products: collection.products, listing_filters: collection.filters, sort_options: collection.sort_options, sort_by: sort_by, base_url: collection.url, form_id: form_id, panel_id: panel_id, active_count: active_count, filter_query: filter_query, clear_url: clear_url, mobile_sort_values: mobile_sort_values %}
+{%- enddoc -%}
+
+{% liquid
+  assign page_size = products.size
+  assign first_item = paginate.current_offset | plus: 1
+  assign last_item = paginate.current_offset | plus: page_size
+  assign progress_percent = 0
+  if paginate.items > 0
+    assign progress_percent = last_item | times: 100 | divided_by: paginate.items
+  endif
+%}
+
+<collection-filters-component
+  class="collection-products__layout{% if section.settings.enable_filtering == false %} collection-products__layout--no-filters{% endif %}"
+  data-section-id="{{ section.id }}"
+>
+  {% if section.settings.enable_filtering %}
+    <aside
+      id="{{ panel_id }}"
+      class="collection-filters"
+      ref="panel"
+      aria-label="{{ 'accessibility.filters' | t }}"
+    >
+      <form
+        id="{{ form_id }}"
+        class="collection-filters__form"
+        action="{{ base_url }}"
+        method="get"
+        ref="form"
+        on:change="/handleChange"
+        on:submit="/handleSubmit"
+      >
+        {%- if search_terms != blank -%}
+          <input
+            type="hidden"
+            name="q"
+            value="{{ search_terms | escape }}"
+          >
+          <input
+            type="hidden"
+            name="type"
+            value="product"
+          >
+          <input
+            type="hidden"
+            name="options[prefix]"
+            value="last"
+          >
+        {%- endif -%}
+        <div class="collection-filters__header">
+          <h2 class="collection-filters__title">{{ 'actions.show_filters' | t }}</h2>
+          {% if active_count > 0 %}
+            <a
+              href="{{ clear_url }}"
+              class="collection-filters__clear"
+            >
+              {{- 'actions.clear_all' | t -}}
+            </a>
+          {% endif %}
+          <button
+            type="button"
+            class="collection-filters__close button-unstyled desktop:hidden"
+            aria-label="{{ 'actions.close' | t }}"
+            on:click="/closeFilters"
+          >
+            <span
+              class="svg-wrapper"
+              aria-hidden="true"
+            >
+              {{- 'icon-close.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+
+        {% if active_count > 0 %}
+          <ul
+            class="collection-filters__active list-unstyled"
+            aria-label="{{ 'accessibility.active_filters' | t }}"
+          >
+            {% for filter in listing_filters %}
+              {% if filter.type == 'price_range' %}
+                {% if filter.min_value.value != null or filter.max_value.value != null %}
+                  {% liquid
+                    assign chip_min = filter.min_value.value | default: 0 | money_without_trailing_zeros
+                    assign chip_max = filter.max_value.value | default: filter.range_max | money_without_trailing_zeros
+                    assign chip_label = chip_min | append: ' – ' | append: chip_max | strip_html
+                  %}
+                  <li>
+                    <a
+                      href="{{ filter.url_to_remove }}"
+                      class="collection-filters__chip"
+                      aria-label="{{ 'accessibility.remove_item' | t: title: chip_label }}"
+                    >
+                      {{- chip_label }}
+                      <span aria-hidden="true">×</span>
+                    </a>
+                  </li>
+                {% endif %}
+              {% else %}
+                {% for value in filter.active_values %}
+                  <li>
+                    <a
+                      href="{{ value.url_to_remove }}"
+                      class="collection-filters__chip"
+                      aria-label="{{ 'accessibility.remove_item' | t: title: value.label }}"
+                    >
+                      {%- liquid
+                        assign chip_swatch_style = blank
+                        assign chip_filter_name = filter.label | append: ' ' | append: filter.param_name | downcase
+                        if chip_filter_name contains 'color' or chip_filter_name contains 'colour' or chip_filter_name contains 'kleur'
+                          capture chip_swatch_style
+                            render 'swatch-style', name: value.label, swatch: value.swatch
+                          endcapture
+                        endif
+                      -%}
+                      {%- if chip_swatch_style != blank -%}
+                        <span
+                          class="collection-filters__swatch collection-filters__swatch--small"
+                          style="{{ chip_swatch_style }}"
+                          aria-hidden="true"
+                        ></span>
+                      {%- endif -%}
+                      {{- value.label | escape }}
+                      <span aria-hidden="true">×</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% for filter in listing_filters %}
+          {% liquid
+            assign filter_label = filter.label | escape
+            assign filter_name = filter.label | append: ' ' | append: filter.param_name | downcase
+            assign is_color_filter = false
+            if filter_name contains 'color' or filter_name contains 'colour' or filter_name contains 'kleur'
+              assign is_color_filter = true
+            endif
+          %}
+          <fieldset class="collection-filters__group">
+            <legend class="collection-filters__legend">{{ filter_label }}</legend>
+
+            {% if filter.type == 'price_range' %}
+              {% liquid
+                assign range_max = filter.range_max | divided_by: 100.0 | ceil
+                assign current_min = filter.min_value.value | default: 0 | divided_by: 100
+                assign current_max = filter.max_value.value | default: filter.range_max | divided_by: 100.0 | ceil
+                if range_max > 0
+                  assign start_fraction = current_min | times: 1.0 | divided_by: range_max
+                  assign end_fraction = current_max | times: 1.0 | divided_by: range_max
+                else
+                  assign start_fraction = 0
+                  assign end_fraction = 1
+                endif
+                assign min_id = 'PriceMin-' | append: section.id
+                assign max_id = 'PriceMax-' | append: section.id
+              %}
+              <div
+                class="price-range"
+                style="--price-range-start: {{ start_fraction }}; --price-range-end: {{ end_fraction }};"
+              >
+                {% comment %}
+                  The number fields carry the filter values, so typing works and the
+                  filter works without JavaScript. The sliders only drive them.
+                {% endcomment %}
+                <div
+                  class="price-range__track"
+                  aria-hidden="true"
+                >
+                  <span class="price-range__fill"></span>
+                  <span class="price-range__thumb price-range__thumb--min"></span>
+                  <span class="price-range__thumb price-range__thumb--max"></span>
+                  <input
+                    type="range"
+                    class="price-range__slider"
+                    min="0"
+                    max="{{ range_max }}"
+                    step="1"
+                    value="{{ current_min }}"
+                    tabindex="-1"
+                    data-bound="min"
+                    {% if start_fraction > 0.5 %}
+                      data-raised
+                    {% endif %}
+                    on:input="/updatePriceRange"
+                  >
+                  <input
+                    type="range"
+                    class="price-range__slider"
+                    min="0"
+                    max="{{ range_max }}"
+                    step="1"
+                    value="{{ current_max }}"
+                    tabindex="-1"
+                    data-bound="max"
+                    on:input="/updatePriceRange"
+                  >
+                </div>
+
+                <div class="price-range__fields">
+                  <label
+                    class="price-range__field"
+                    for="{{ min_id }}"
+                  >
+                    <span class="visually-hidden">{{ 'accessibility.price_filter_low' | t }}</span>
+                    <span aria-hidden="true">{{ cart.currency.symbol }}</span>
+                    <input
+                      id="{{ min_id }}"
+                      type="number"
+                      class="price-range__number"
+                      name="{{ filter.min_value.param_name }}"
+                      min="0"
+                      max="{{ range_max }}"
+                      step="1"
+                      inputmode="numeric"
+                      value="{{ current_min }}"
+                      data-bound="min"
+                      on:input="/updatePriceRange"
+                    >
+                  </label>
+                  <span
+                    class="price-range__separator"
+                    aria-hidden="true"
+                  >–</span>
+                  <label
+                    class="price-range__field"
+                    for="{{ max_id }}"
+                  >
+                    <span class="visually-hidden">{{ 'accessibility.price_filter_high' | t }}</span>
+                    <span aria-hidden="true">{{ cart.currency.symbol }}</span>
+                    <input
+                      id="{{ max_id }}"
+                      type="number"
+                      class="price-range__number"
+                      name="{{ filter.max_value.param_name }}"
+                      min="0"
+                      max="{{ range_max }}"
+                      step="1"
+                      inputmode="numeric"
+                      value="{{ current_max }}"
+                      data-bound="max"
+                      on:input="/updatePriceRange"
+                    >
+                  </label>
+                </div>
+              </div>
+            {% else %}
+              <ul class="collection-filters__options list-unstyled">
+                {% for value in filter.values %}
+                  {% liquid
+                    assign input_id = 'Filter-' | append: section.id | append: '-' | append: filter.param_name | append: '-' | append: forloop.index | handleize
+                    assign is_disabled = false
+                    if value.count == 0 and value.active == false
+                      assign is_disabled = true
+                    endif
+
+                    # Colour values get the swatch of their colour, as on the product tiles
+                    assign swatch_style = blank
+                    if is_color_filter
+                      capture swatch_style
+                        render 'swatch-style', name: value.label, swatch: value.swatch
+                      endcapture
+                    endif
+                    assign has_swatch = false
+                    if swatch_style != blank
+                      assign has_swatch = true
+                    endif
+                  %}
+                  <li class="collection-filters__option{% if is_disabled %} collection-filters__option--disabled{% endif %}">
+                    <input
+                      type="checkbox"
+                      id="{{ input_id }}"
+                      class="collection-filters__checkbox{% if has_swatch %} visually-hidden-input{% endif %}"
+                      name="{{ value.param_name }}"
+                      value="{{ value.value }}"
+                      {% if value.active %}
+                        checked
+                      {% endif %}
+                      {% if is_disabled %}
+                        disabled
+                      {% endif %}
+                    >
+                    <label
+                      for="{{ input_id }}"
+                      class="collection-filters__label"
+                    >
+                      {%- if has_swatch -%}
+                        <span
+                          class="collection-filters__swatch"
+                          style="{{ swatch_style }}"
+                          aria-hidden="true"
+                        ></span>
+                      {%- endif -%}
+                      {{- value.label | escape -}}
+                    </label>
+                    <span class="collection-filters__count">{{ value.count }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </fieldset>
+        {% endfor %}
+
+        <div class="collection-filters__footer">
+          <button
+            type="submit"
+            class="button collection-filters__submit"
+          >
+            {{- 'actions.apply' | t -}}
+          </button>
+        </div>
+      </form>
+    </aside>
+    <div
+      class="collection-filters__backdrop"
+      on:click="/closeFilters"
+    ></div>
+  {% endif %}
+
+  <div class="collection-products__main">
+    <div class="listing-toolbar">
+      {% if section.settings.enable_filtering %}
+        <button
+          type="button"
+          class="listing-toolbar__filter button-unstyled desktop:hidden"
+          aria-controls="{{ panel_id }}"
+          aria-expanded="false"
+          ref="filterButton"
+          on:click="/openFilters"
+        >
+          <span
+            class="svg-wrapper"
+            aria-hidden="true"
+          >
+            {{- 'icon-filter.svg' | inline_asset_content -}}
+          </span>
+          {{ 'actions.show_filters' | t }}
+          {% if active_count > 0 %}
+            <span class="listing-toolbar__badge">{{ active_count }}</span>
+            <span class="visually-hidden">{{ 'accessibility.filter_count' | t: count: active_count }}</span>
+          {% endif %}
+        </button>
+      {% endif %}
+
+      {% if section.settings.show_sort and mobile_sort_values.size > 0 %}
+        <ul class="listing-toolbar__pills list-unstyled desktop:hidden">
+          {% for option in sort_options %}
+            {% assign option_value = option.value %}
+            {% for wanted in mobile_sort_values %}
+              {% assign wanted_value = wanted | strip %}
+              {% if wanted_value == option_value %}
+                <li>
+                  <a
+                    href="{{ base_url }}?{{ base_query }}sort_by={{ option.value }}{{ filter_query }}"
+                    class="listing-toolbar__pill"
+                    {% if option.value == sort_by %}
+                      aria-current="true"
+                    {% endif %}
+                  >
+                    {{- option.name | escape -}}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <p class="listing-toolbar__count">
+        {% if paginate.items > 0 %}
+          {{ 'content.showing_range_html' | t: start: first_item, end: last_item, total: paginate.items }}
+        {% else %}
+          {{ 'content.no_products_found' | t }}
+        {% endif %}
+      </p>
+
+      {% if section.settings.show_sort %}
+        <div class="listing-toolbar__sort mobile:hidden">
+          <label
+            for="SortBy-{{ section.id }}"
+            class="listing-toolbar__sort-label"
+          >
+            {{- 'content.sort_by' | t -}}
+          </label>
+          <div class="listing-toolbar__select-wrapper">
+            <select
+              id="SortBy-{{ section.id }}"
+              class="listing-toolbar__select"
+              name="sort_by"
+              {% if section.settings.enable_filtering %}
+                form="{{ form_id }}"
+              {% endif %}
+              on:change="/handleSortChange"
+            >
+              {% for option in sort_options %}
+                <option
+                  value="{{ option.value }}"
+                  {% if option.value == sort_by %}
+                    selected
+                  {% endif %}
+                >
+                  {{- option.name | escape -}}
+                </option>
+              {% endfor %}
+            </select>
+            <span
+              class="svg-wrapper listing-toolbar__caret"
+              aria-hidden="true"
+            >
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if products.size > 0 %}
+      <ul
+        class="collection-products__grid list-unstyled"
+        ref="grid"
+        data-collection-grid
+      >
+        {% for product in products %}
+          {% liquid
+            # Search can return pages and articles too; the grid only shows products
+            if product.object_type != blank and product.object_type != 'product'
+              continue
+            endif
+            assign eager = false
+            if forloop.index <= 3 and paginate.current_page == 1
+              assign eager = true
+            endif
+          %}
+          {% render 'product-tile',
+            product: product,
+            section_id: section.id,
+            sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 50vw',
+            eager: eager
+          %}
+          {% if paginate.current_page == 1 and forloop.index == section.settings.promo_position %}
+            {{ promo_blocks }}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="collection-products__empty">
+        <p>{{ 'content.no_products_found' | t }}</p>
+        {% if active_count > 0 %}
+          <a
+            href="{{ clear_url }}"
+            class="button"
+          >
+            {{- 'actions.clear_all' | t -}}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% comment %}
+      Always shown when there are products, so shoppers see how many there are; the
+      page buttons just stay disabled on a single page.
+    {% endcomment %}
+    {% if paginate.items > 0 %}
+      <nav
+        class="listing-pagination"
+        aria-label="{{ 'content.pagination.nav_label' | t }}"
+        data-listing-pagination
+      >
+        <p
+          class="listing-pagination__progress-text"
+          data-progress-text
+        >
+          {{ 'content.products_shown' | t: shown: last_item, total: paginate.items }}
+        </p>
+        <div
+          class="listing-pagination__bar"
+          aria-hidden="true"
+        >
+          <span
+            class="listing-pagination__bar-fill"
+            style="width: {{ progress_percent }}%;"
+            data-progress-bar
+          ></span>
+        </div>
+
+        <ul class="listing-pagination__pages list-unstyled mobile:hidden">
+          <li>
+            {% if paginate.previous %}
+              <a
+                href="{{ paginate.previous.url }}"
+                class="listing-pagination__step"
+              >
+                {{- 'content.pagination.previous' | t -}}
+              </a>
+            {% else %}
+              <span class="listing-pagination__step listing-pagination__step--disabled">
+                {{- 'content.pagination.previous' | t -}}
+              </span>
+            {% endif %}
+          </li>
+          {% if paginate.pages <= 1 %}
+            <li>
+              <span
+                class="listing-pagination__page listing-pagination__page--current"
+                aria-current="page"
+              >
+                1
+              </span>
+            </li>
+          {% else %}
+            {% for part in paginate.parts %}
+              <li>
+                {% if part.is_link %}
+                  <a
+                    href="{{ part.url }}"
+                    class="listing-pagination__page"
+                    aria-label="{{ 'content.pagination.page' | t: page: part.title }}"
+                  >
+                    {{- part.title -}}
+                  </a>
+                {% elsif part.title != '&hellip;' %}
+                  <span
+                    class="listing-pagination__page listing-pagination__page--current"
+                    aria-current="page"
+                  >
+                    {{- part.title -}}
+                  </span>
+                {% else %}
+                  <span class="listing-pagination__gap">{{ part.title }}</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          {% endif %}
+          <li>
+            {% if paginate.next %}
+              <a
+                href="{{ paginate.next.url }}"
+                class="listing-pagination__step"
+              >
+                {{- 'content.pagination.next' | t -}}
+              </a>
+            {% else %}
+              <span class="listing-pagination__step listing-pagination__step--disabled">
+                {{- 'content.pagination.next' | t -}}
+              </span>
+            {% endif %}
+          </li>
+        </ul>
+
+        {% if paginate.next %}
+          <a
+            href="{{ paginate.next.url }}"
+            class="listing-pagination__more desktop:hidden"
+            ref="loadMore"
+            on:click="/loadMore"
+            data-load-more
+          >
+            {{- 'actions.load_more' | t -}}
+          </a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  </div>
+</collection-filters-component>
