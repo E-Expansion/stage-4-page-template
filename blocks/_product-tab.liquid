@@ -1,8 +1,9 @@
 {% doc %}
-  One tab of the product detail tabs. Connect its heading and content to product
-  metafields in the theme editor (e.g. custom.tab_benefits_heading, single-line text, and
-  custom.tab_benefits, multi-line text with one list item per line) so each product shows
-  its own content; left out when empty. Markup and styles live in
+  One tab of the product detail tabs. Per product content: connect the heading to a
+  single-line text metafield in the theme editor (e.g. custom.tab_benefits_heading), and
+  enter the key of a multi-line text metafield (e.g. tab_benefits) under "Metafield key";
+  each line becomes a checklist item. Theme editor text areas cannot connect to
+  metafields, so the block reads that metafield itself. Left out when empty. Markup and styles live in
   snippets/product-tab.liquid.
 
   @example
@@ -11,7 +12,20 @@
 
 {% liquid
   assign group_name = 'ProductTabs-' | append: section.id
-  render 'product-tab', id: block.id, group: group_name, title: block.settings.title, heading: block.settings.heading, content: block.settings.content, lines: block.settings.lines, extra_content: block.settings.page.content, attributes: block.shopify_attributes
+
+  # Multi-line text metafield named in the settings: "tab_benefits" (custom namespace) or "namespace.key"
+  assign lines = blank
+  assign metafield_key = block.settings.metafield_key | strip
+  if metafield_key != blank
+    assign key_parts = metafield_key | split: '.'
+    if key_parts.size > 1
+      assign lines = product.metafields[key_parts[0]][key_parts[1]].value
+    else
+      assign lines = product.metafields.custom[metafield_key].value
+    endif
+  endif
+
+  render 'product-tab', id: block.id, group: group_name, title: block.settings.title, heading: block.settings.heading, content: block.settings.content, lines: lines, extra_content: block.settings.page.content, attributes: block.shopify_attributes
 %}
 
 {% schema %}
@@ -38,9 +52,9 @@
       "info": "t:info.product_tab_content"
     },
     {
-      "type": "textarea",
-      "id": "lines",
-      "label": "t:settings.content",
+      "type": "text",
+      "id": "metafield_key",
+      "label": "t:settings.metafield_key",
       "info": "t:info.product_tab_lines"
     },
     {

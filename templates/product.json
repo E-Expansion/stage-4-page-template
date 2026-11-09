@@ -232,8 +232,9 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Benefits",
-                "heading": "{{ metaobjects.product_tab.benefits.heading.value }}",
-                "content": "{{ metaobjects.product_tab.benefits.content | metafield_tag }}",
+                "heading": "{{ product.metafields.custom.tab_benefits_heading.value }}",
+                "content": "",
+                "metafield_key": "tab_benefits",
                 "page": ""
               },
               "blocks": {}
@@ -242,8 +243,9 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Compare",
-                "heading": "{{ metaobjects.product_tab.compare.title.value }}",
-                "content": "{{ metaobjects.product_tab.compare.content | metafield_tag }}",
+                "heading": "{{ product.metafields.custom.tab_compare_heading.value }}",
+                "content": "",
+                "metafield_key": "tab_compare",
                 "page": ""
               },
               "blocks": {}
@@ -252,8 +254,9 @@
               "type": "_product-tab",
               "settings": {
                 "title": "Sustainability",
-                "heading": "{{ metaobjects.product_tab.sustainability.heading.value }}",
-                "content": "{{ metaobjects.product_tab.sustainability.content | metafield_tag }}",
+                "heading": "{{ product.metafields.custom.tab_sustainability_heading.value }}",
+                "content": "",
+                "metafield_key": "tab_sustainability",
                 "page": ""
               },
               "blocks": {}
