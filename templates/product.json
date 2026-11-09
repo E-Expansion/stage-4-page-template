@@ -90,7 +90,7 @@
             "tier_1": {
               "type": "_volume-tier",
               "settings": {
-                "label": "One satchel",
+                "label": "One Item",
                 "quantity": 1,
                 "discount": 0
               },
@@ -99,7 +99,7 @@
             "tier_2": {
               "type": "_volume-tier",
               "settings": {
-                "label": "Two - mix any colour",
+                "label": "Two, mix any colour or size",
                 "quantity": 2,
                 "discount": 7
               },
