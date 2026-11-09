@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Optional. Verwendet sonst den kleinen Text",
     "header_logo_source": "Lade ein Logo unter Theme-Einstellungen > Logo und Favicon hoch. Ohne Logo wird der Shopname angezeigt.",
     "menu_item_link": "Wird als \"Alle anzeigen\"-Link im Mega-Menü angezeigt oder als Link verwendet, wenn das Element keine Spalten hat",
+    "menu_item_collection": "Erstellt die Spalten aus dem Metafeld custom.subcategories der Kollektion, derselben Liste, die der Abschnitt Unterkategorien zeigt. Leer lassen, um die Spaltenblöcke unten zu verwenden.",
     "free_shipping_threshold": "In der Standardwährung deines Shops. Auf 0 setzen, um den Restbetrag auszublenden.",
     "free_shipping_threshold_placeholder": "Verwende [threshold], um den Schwellenwert einzufügen",
     "free_shipping_amount_placeholder": "Wird angezeigt, wenn der Warenkorb Artikel enthält. Verwende [amount], um den Restbetrag einzufügen",

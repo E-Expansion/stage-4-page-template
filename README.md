@@ -118,6 +118,8 @@ The article text can place components between paragraphs with a marker on its ow
 
 `top-bar` and `header` sit in the header group. `footer` sits in the footer group.
 
+Each top-level menu item picks a collection. Its mega menu columns are that collection's `custom.subcategories`, and the links in each column are the subcollection's own `custom.subcategories` (or its first five products when it has none). The menu therefore always matches the subcategories strip on collection pages. Without a collection, or with an empty metafield, the manual column and link blocks are used. The featured collection always takes the last column.
+
 ### Reusable on any template
 
 `page-header`, `faq` (horizontal or vertical layout), `seo-text` and `newsletter-signup`.
@@ -139,7 +141,7 @@ These are configured in Shopify admin, not in code. Pages still render without t
 | Owner | Key | Type | Used by |
 |---|---|---|---|
 | Product, collection, article | `custom.faq` | List of `faq` metaobjects | FAQ section (falls back to its own blocks) |
-| Collection | `custom.subcategories` | List of collections | Subcategories section |
+| Collection | `custom.subcategories` | List of collections | Subcategories section, header mega menu (columns, and links per column) |
 | Collection | `custom.seo_heading` | Single-line text | SEO text section |
 | Collection | `custom.seo_text` | Rich text | SEO text section |
 | Product | `custom.seo_heading` | Single-line text | SEO text section (body is the product description) |

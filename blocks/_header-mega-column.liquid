@@ -1,43 +1,19 @@
 {% doc %}
-  Renders one mega menu column: an optional heading followed by its link blocks.
-  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+  Renders one manually built mega menu column: an optional heading followed by its link
+  blocks. Markup lives in snippets/header-mega-column.liquid. Only used when the parent
+  menu item has no collection with subcategories.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
 
 {% liquid
-  assign heading = block.settings.heading | escape
   capture links
     content_for 'blocks'
   endcapture
+  assign heading = block.settings.heading | escape
+  render 'header-mega-column', heading: heading, url: block.settings.link, links: links, attributes: block.shopify_attributes
 %}
-
-{% if heading != blank or links != blank %}
-  <li
-    class="site-mega__column"
-    {{ block.shopify_attributes }}
-  >
-    {% if heading != blank %}
-      {% if block.settings.link != blank %}
-        <a
-          href="{{ block.settings.link }}"
-          class="site-mega__column-heading"
-        >
-          {{- heading -}}
-        </a>
-      {% else %}
-        <span class="site-mega__column-heading">{{ heading }}</span>
-      {% endif %}
-    {% endif %}
-
-    {% if links != blank %}
-      <ul class="site-mega__links list-unstyled">
-        {{ links }}
-      </ul>
-    {% endif %}
-  </li>
-{% endif %}
 
 {% schema %}
 {

@@ -1,21 +1,71 @@
 {% doc %}
-  Renders a top-level header navigation item. With column blocks it becomes a mega menu
+  Renders a top-level header navigation item. With columns it becomes a mega menu
   trigger: a hover/click dropdown on desktop and an accordion in the mobile sidebar.
-  Without columns it renders as a plain link. The desktop dropdown is a grid of four equal
-  columns; the featured collection set on the header section (image and short text) takes
-  the fourth in every dropdown, so one new or limited collection is promoted everywhere.
+  Without columns it renders as a plain link.
+
+  Columns come from the same data as the subcategories strip on collection pages, so the
+  menu and the collection pages always match:
+  - Columns: the chosen collection's custom.subcategories metafield (list of collections).
+  - Links in a column: that subcollection's own custom.subcategories, or its first
+    products when it has none.
+  Without a collection, or when its metafield is empty, the manual column blocks are used.
+
+  The desktop dropdown has at least four equal columns; the featured collection set on the
+  header section (image and short text) always takes the last one, so one new or limited
+  collection is promoted everywhere.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
 
 {% liquid
-  assign label = block.settings.label | escape
+  assign source = block.settings.collection
+  assign label = block.settings.label | default: source.title | escape
+  assign item_url = block.settings.link | default: source.url
   assign submenu_id = 'MegaMenu-' | append: block.id
+  assign column_count = 0
 
-  capture columns
-    content_for 'blocks'
-  endcapture
+  # Data-driven columns: one per subcategory, skipping empty collections like the subcategories section does
+  if source != blank
+    capture columns
+      for subcollection in source.metafields.custom.subcategories.value
+        if subcollection.handle == 'frontpage' or subcollection.products_count == 0
+          continue
+        endif
+
+        capture links
+          assign children = subcollection.metafields.custom.subcategories.value
+          if children.size > 0
+            for child in children
+              if child.products_count == 0
+                continue
+              endif
+              assign child_title = child.title | escape
+              render 'header-mega-link', label: child_title, url: child.url
+            endfor
+          else
+            for product in subcollection.products limit: 5
+              assign product_title = product.title | escape
+              render 'header-mega-link', label: product_title, url: product.url
+            endfor
+          endif
+        endcapture
+
+        assign subcollection_title = subcollection.title | escape
+        render 'header-mega-column', heading: subcollection_title, url: subcollection.url, links: links
+        assign column_count = column_count | plus: 1
+      endfor
+    endcapture
+  endif
+
+  # Fallback: manually built column blocks
+  if columns == blank
+    capture columns
+      content_for 'blocks'
+    endcapture
+    assign column_count = block.blocks.size
+  endif
+
   assign has_columns = false
   if columns != blank
     assign has_columns = true
@@ -32,7 +82,11 @@
     if featured_text == blank
       assign featured_text = featured.title | escape
     endif
+    assign column_count = column_count | plus: 1
   endif
+
+  # Never fewer than four tracks, so short menus keep the designed proportions
+  assign grid_columns = column_count | at_least: 4
 %}
 
 {% if label != blank %}
@@ -63,7 +117,10 @@
       >
         <div class="site-mega__inner section section--page-width">
           <div class="site-mega__content">
-            <ul class="site-mega__columns list-unstyled">
+            <ul
+              class="site-mega__columns list-unstyled"
+              style="--site-mega-columns: {{ grid_columns }};"
+            >
               {{ columns }}
 
               {% if featured != blank %}
@@ -96,9 +153,9 @@
               {% endif %}
             </ul>
 
-            {% if block.settings.link != blank %}
+            {% if item_url != blank %}
               <a
-                href="{{ block.settings.link }}"
+                href="{{ item_url }}"
                 class="site-mega__view-all"
               >
                 {{- 'actions.view_all' | t }}
@@ -108,11 +165,11 @@
           </div>
         </div>
       </div>
-    {% elsif block.settings.link != blank %}
+    {% elsif item_url != blank %}
       <a
-        href="{{ block.settings.link }}"
+        href="{{ item_url }}"
         class="site-nav__link"
-        {% if block.settings.link == request.path %}
+        {% if item_url == request.path %}
           aria-current="page"
         {% endif %}
       >
@@ -206,16 +263,16 @@
       padding-block: var(--padding-4xl);
     }
 
-    /* Four equal columns; the featured collection is pinned to the last one */
+    /* Equal columns (at least four); the featured collection is pinned to the last one */
     .site-mega__columns {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(var(--site-mega-columns, 4), minmax(0, 1fr));
       gap: var(--gap-2xl);
       margin: 0;
     }
 
     .site-mega__featured {
-      grid-column: 4;
+      grid-column: -2 / -1;
       grid-row: 1;
       padding-inline-start: var(--gap-2xl);
       border-inline-start: var(--style-border-width) solid var(--color-border);
@@ -315,10 +372,15 @@
   ],
   "settings": [
     {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:settings.collection",
+      "info": "t:info.menu_item_collection"
+    },
+    {
       "type": "text",
       "id": "label",
-      "label": "t:settings.label",
-      "default": "Menu item"
+      "label": "t:settings.label"
     },
     {
       "type": "url",

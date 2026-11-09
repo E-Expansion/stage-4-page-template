@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "İsteğe bağlı. Boşsa küçük metin kullanılır",
     "header_logo_source": "Tema ayarları > Logo ve favicon bölümünden bir logo yükleyin. Logo yoksa mağaza adı gösterilir.",
     "menu_item_link": "Mega menüde \"Tümünü görüntüle\" bağlantısı olarak gösterilir veya öğenin sütunu yoksa öğe bağlantısı olarak kullanılır",
+    "menu_item_collection": "Sütunları koleksiyonun custom.subcategories meta alanından, alt kategoriler bölümünün gösterdiği aynı listeden oluşturur. Aşağıdaki sütun bloklarını kullanmak için boş bırakın.",
     "free_shipping_threshold": "Mağazanızın varsayılan para biriminde. Kalan tutarı gizlemek için 0 olarak ayarlayın.",
     "free_shipping_threshold_placeholder": "Eşik tutarını eklemek için [threshold] kullanın",
     "free_shipping_amount_placeholder": "Sepette ürün olduğunda gösterilir. Kalan tutarı eklemek için [amount] kullanın",

@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Valfritt. Använder annars den lilla texten",
     "header_logo_source": "Ladda upp en logotyp under Temainställningar > Logotyp och favicon. Utan logotyp visas butikens namn.",
     "menu_item_link": "Visas som en \"Visa alla\"-länk i megamenyn, eller används som objektets länk när det saknar kolumner",
+    "menu_item_collection": "Bygger kolumnerna från kollektionens metafält custom.subcategories, samma lista som underkategorisektionen visar. Lämna tomt för att använda kolumnblocken nedan.",
     "free_shipping_threshold": "I butikens standardvaluta. Ange 0 för att dölja återstående belopp.",
     "free_shipping_threshold_placeholder": "Använd [threshold] för att infoga gränsbeloppet",
     "free_shipping_amount_placeholder": "Visas när varukorgen innehåller artiklar. Använd [amount] för att infoga återstående belopp",

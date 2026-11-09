@@ -299,6 +299,7 @@
     "hero_banner_subtext_mobile": "Optional. Falls back to the small text",
     "header_logo_source": "Upload a logo in Theme settings > Logo and favicon. Without one, the store name is shown.",
     "menu_item_link": "Shown as a \"View all\" link in the mega menu, or used as the item link when it has no columns",
+    "menu_item_collection": "Builds the columns from the collection's custom.subcategories metafield, the same list the subcategories section shows. Leave empty to use the column blocks below.",
     "free_shipping_threshold": "In your store's default currency. Set to 0 to hide the remaining amount.",
     "free_shipping_threshold_placeholder": "Use [threshold] to insert the threshold amount",
     "free_shipping_amount_placeholder": "Shown when the cart has items. Use [amount] to insert the remaining amount",

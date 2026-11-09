@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Valinnainen. Käyttää muuten pientä tekstiä",
     "header_logo_source": "Lataa logo kohdassa Teeman asetukset > Logo ja favicon. Ilman logoa näytetään kaupan nimi.",
     "menu_item_link": "Näytetään \"Näytä kaikki\" -linkkinä megavalikossa tai käytetään kohteen linkkinä, jos sillä ei ole sarakkeita",
+    "menu_item_collection": "Muodostaa sarakkeet kokoelman metakentästä custom.subcategories, samasta luettelosta, jonka alaluokat-osio näyttää. Jätä tyhjäksi käyttääksesi alla olevia sarakelohkoja.",
     "free_shipping_threshold": "Kauppasi oletusvaluutassa. Aseta arvoksi 0 piilottaaksesi jäljellä olevan summan.",
     "free_shipping_threshold_placeholder": "Lisää kynnysarvo käyttämällä [threshold]",
     "free_shipping_amount_placeholder": "Näytetään, kun ostoskorissa on tuotteita. Lisää jäljellä oleva summa käyttämällä [amount]",

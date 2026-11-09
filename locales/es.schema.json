@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Opcional. Usa el texto pequeño si no se define",
     "header_logo_source": "Sube un logotipo en Configuración del tema > Logotipo y favicon. Sin él, se muestra el nombre de la tienda.",
     "menu_item_link": "Se muestra como enlace \"Ver todo\" en el megamenú, o se usa como enlace del elemento si no tiene columnas",
+    "menu_item_collection": "Crea las columnas a partir del metacampo custom.subcategories de la colección, la misma lista que muestra la sección de subcategorías. Déjalo vacío para usar los bloques de columna de abajo.",
     "free_shipping_threshold": "En la moneda predeterminada de tu tienda. Establece 0 para ocultar el importe restante.",
     "free_shipping_threshold_placeholder": "Usa [threshold] para insertar el importe del umbral",
     "free_shipping_amount_placeholder": "Se muestra cuando el carrito tiene artículos. Usa [amount] para insertar el importe restante",

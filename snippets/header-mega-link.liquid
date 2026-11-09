@@ -1,0 +1,21 @@
+{% doc %}
+  Renders one link inside a mega menu column. Used by the manual link block and by
+  menu items that build their columns from a collection's subcategories.
+  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+
+  @param {string} label - Link text, already escaped
+  @param {string} url - Link target
+  @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
+
+  @example
+  {% render 'header-mega-link', label: child.title | escape, url: child.url %}
+{% enddoc %}
+
+<li {{ attributes }}>
+  <a
+    href="{{ url }}"
+    class="site-mega__link"
+  >
+    {{- label -}}
+  </a>
+</li>

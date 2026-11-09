@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Opcjonalnie. Domyślnie używany jest mały tekst",
     "header_logo_source": "Prześlij logo w Ustawieniach motywu > Logo i favicon. Bez logo wyświetlana jest nazwa sklepu.",
     "menu_item_link": "Wyświetlany jako link „Wyświetl wszystko” w mega menu lub używany jako link elementu, gdy nie ma kolumn",
+    "menu_item_collection": "Tworzy kolumny z metapola custom.subcategories kolekcji, tej samej listy, którą pokazuje sekcja podkategorii. Pozostaw puste, aby użyć bloków kolumn poniżej.",
     "free_shipping_threshold": "W domyślnej walucie sklepu. Ustaw 0, aby ukryć pozostałą kwotę.",
     "free_shipping_threshold_placeholder": "Użyj [threshold], aby wstawić kwotę progu",
     "free_shipping_amount_placeholder": "Wyświetlane, gdy koszyk zawiera produkty. Użyj [amount], aby wstawić pozostałą kwotę",

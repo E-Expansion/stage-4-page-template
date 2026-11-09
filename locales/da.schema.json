@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Valgfrit. Bruger ellers den lille tekst",
     "header_logo_source": "Upload et logo under Temaindstillinger > Logo og favicon. Uden logo vises butikkens navn.",
     "menu_item_link": "Vises som et \"Se alle\"-link i megamenuen eller bruges som elementets link, når det ikke har kolonner",
+    "menu_item_collection": "Opbygger kolonnerne ud fra kollektionens metafelt custom.subcategories, den samme liste som underkategori-sektionen viser. Lad være tom for at bruge kolonneblokkene nedenfor.",
     "free_shipping_threshold": "I din butiks standardvaluta. Angiv 0 for at skjule det resterende beløb.",
     "free_shipping_threshold_placeholder": "Brug [threshold] til at indsætte grænsebeløbet",
     "free_shipping_amount_placeholder": "Vises, når kurven indeholder varer. Brug [amount] til at indsætte det resterende beløb",

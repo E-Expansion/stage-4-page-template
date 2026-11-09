@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Facoltativo. Usa il testo piccolo se assente",
     "header_logo_source": "Carica un logo in Impostazioni tema > Logo e favicon. Senza logo viene mostrato il nome del negozio.",
     "menu_item_link": "Mostrato come link \"Visualizza tutto\" nel mega menu, o usato come link dell'elemento se non ha colonne",
+    "menu_item_collection": "Crea le colonne dal metacampo custom.subcategories della collezione, lo stesso elenco mostrato dalla sezione sottocategorie. Lascia vuoto per usare i blocchi colonna qui sotto.",
     "free_shipping_threshold": "Nella valuta predefinita del tuo negozio. Imposta 0 per nascondere l'importo rimanente.",
     "free_shipping_threshold_placeholder": "Usa [threshold] per inserire l'importo della soglia",
     "free_shipping_amount_placeholder": "Mostrato quando il carrello contiene articoli. Usa [amount] per inserire l'importo rimanente",

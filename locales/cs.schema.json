@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "Volitelné. Jinak se použije malý text",
     "header_logo_source": "Nahrajte logo v Nastavení motivu > Logo a favicon. Bez loga se zobrazí název obchodu.",
     "menu_item_link": "Zobrazí se jako odkaz „Zobrazit vše“ v mega menu, nebo se použije jako odkaz položky, pokud nemá sloupce",
+    "menu_item_collection": "Sestaví sloupce z metapole custom.subcategories kolekce, ze stejného seznamu, který zobrazuje sekce podkategorií. Ponechte prázdné, chcete-li použít bloky sloupců níže.",
     "free_shipping_threshold": "Ve výchozí měně obchodu. Nastavením na 0 skryjete zbývající částku.",
     "free_shipping_threshold_placeholder": "Pomocí [threshold] vložíte částku limitu",
     "free_shipping_amount_placeholder": "Zobrazí se, když košík obsahuje položky. Pomocí [amount] vložíte zbývající částku",

@@ -58,8 +58,9 @@
         "nav_everyday_carry": {
           "type": "_header-nav-item",
           "settings": {
+            "collection": "everyday-carry",
             "label": "Everyday Carry",
-            "link": "shopify://collections/all"
+            "link": ""
           },
           "blocks": {
             "everyday_carry_c1": {
@@ -186,8 +187,9 @@
         "nav_small_goods": {
           "type": "_header-nav-item",
           "settings": {
+            "collection": "small-goods",
             "label": "Small Goods",
-            "link": "shopify://collections/all"
+            "link": ""
           },
           "blocks": {
             "small_goods_c1": {
@@ -305,8 +307,9 @@
         "nav_travel": {
           "type": "_header-nav-item",
           "settings": {
+            "collection": "travel",
             "label": "Travel",
-            "link": "shopify://collections/all"
+            "link": ""
           },
           "blocks": {
             "travel_c1": {
@@ -424,8 +427,9 @@
         "nav_refill_care": {
           "type": "_header-nav-item",
           "settings": {
+            "collection": "refill-care",
             "label": "Refill & Care",
-            "link": "shopify://collections/all"
+            "link": ""
           },
           "blocks": {
             "refill_care_c1": {

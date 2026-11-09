@@ -1,0 +1,40 @@
+{% doc %}
+  Renders one mega menu column: an optional heading followed by its links. Used by the
+  manual column block and by menu items that build their columns from a collection's
+  subcategories. Renders nothing when both heading and links are empty.
+  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+
+  @param {string} [heading] - Column heading, already escaped
+  @param {string} [url] - Makes the heading a link
+  @param {string} [links] - Rendered <li> items, e.g. from the header-mega-link snippet
+  @param {string} [attributes] - Theme editor attributes (block.shopify_attributes)
+
+  @example
+  {% render 'header-mega-column', heading: sub.title | escape, url: sub.url, links: links %}
+{% enddoc %}
+
+{% if heading != blank or links != blank %}
+  <li
+    class="site-mega__column"
+    {{ attributes }}
+  >
+    {% if heading != blank %}
+      {% if url != blank %}
+        <a
+          href="{{ url }}"
+          class="site-mega__column-heading"
+        >
+          {{- heading -}}
+        </a>
+      {% else %}
+        <span class="site-mega__column-heading">{{ heading }}</span>
+      {% endif %}
+    {% endif %}
+
+    {% if links != blank %}
+      <ul class="site-mega__links list-unstyled">
+        {{ links }}
+      </ul>
+    {% endif %}
+  </li>
+{% endif %}

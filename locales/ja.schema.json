@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "任意。未設定の場合は小さいテキストを使用します",
     "header_logo_source": "テーマ設定 > ロゴとファビコンでロゴをアップロードしてください。ロゴがない場合はストア名が表示されます。",
     "menu_item_link": "メガメニューで「すべて表示」リンクとして表示されます。列がない場合は項目のリンクとして使用されます",
+    "menu_item_collection": "コレクションのメタフィールド custom.subcategories（サブカテゴリーセクションと同じリスト）から列を作成します。下の列ブロックを使う場合は空欄のままにしてください。",
     "free_shipping_threshold": "ストアのデフォルト通貨で指定します。0に設定すると残りの金額が非表示になります。",
     "free_shipping_threshold_placeholder": "[threshold]を使用してしきい値を挿入します",
     "free_shipping_amount_placeholder": "カートに商品がある場合に表示されます。[amount]を使用して残りの金額を挿入します",

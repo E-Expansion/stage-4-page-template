@@ -1,21 +1,18 @@
 {% doc %}
-  Renders a single link inside a mega menu column.
-  Styled by blocks/_header-nav-item.liquid, which owns the mega menu layout.
+  Renders a single manually built link inside a mega menu column.
+  Markup lives in snippets/header-mega-link.liquid.
 
   @example
   {% content_for 'blocks' %}
 {% enddoc %}
 
-{% if block.settings.label != blank %}
-  <li {{ block.shopify_attributes }}>
-    <a
-      href="{{ block.settings.link | default: routes.all_products_collection_url }}"
-      class="site-mega__link"
-    >
-      {{- block.settings.label | escape -}}
-    </a>
-  </li>
-{% endif %}
+{% liquid
+  if block.settings.label != blank
+    assign label = block.settings.label | escape
+    assign url = block.settings.link | default: routes.all_products_collection_url
+    render 'header-mega-link', label: label, url: url, attributes: block.shopify_attributes
+  endif
+%}
 
 {% schema %}
 {

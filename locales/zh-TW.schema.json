@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "選填。未設定時使用小字文字",
     "header_logo_source": "在佈景主題設定 > 標誌和網站圖示中上傳標誌。未上傳時會顯示商店名稱。",
     "menu_item_link": "在超級選單中顯示為「查看全部」連結；若該項目沒有欄，則用作項目連結",
+    "menu_item_collection": "根據商品系列的 custom.subcategories 中繼欄位（與子類別區段顯示的清單相同）產生各欄。留空則使用下方的欄區塊。",
     "free_shipping_threshold": "以商店預設幣別計算。設為 0 可隱藏剩餘金額。",
     "free_shipping_threshold_placeholder": "使用 [threshold] 插入門檻金額",
     "free_shipping_amount_placeholder": "購物車中有商品時顯示。使用 [amount] 插入剩餘金額",

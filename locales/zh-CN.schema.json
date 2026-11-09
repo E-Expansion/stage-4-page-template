@@ -1329,6 +1329,7 @@
     "hero_banner_subtext_mobile": "可选。未设置时使用小号文本",
     "header_logo_source": "在主题设置 > 徽标和网站图标中上传徽标。未上传时显示商店名称。",
     "menu_item_link": "在超级菜单中显示为“查看全部”链接；若该项没有列，则用作该项的链接",
+    "menu_item_collection": "根据产品系列的 custom.subcategories 元字段（与子类别分区显示的列表相同）生成各列。留空则使用下方的列区块。",
     "free_shipping_threshold": "以商店默认货币计。设置为 0 可隐藏剩余金额。",
     "free_shipping_threshold_placeholder": "使用 [threshold] 插入门槛金额",
     "free_shipping_amount_placeholder": "购物车中有商品时显示。使用 [amount] 插入剩余金额",
