@@ -258,7 +258,11 @@
           "engraved-watch-strap",
           "atlas-leather-weekender-bag",
           "compass-leather-keychain",
-          "heritage-leather-wallet"
+          "heritage-leather-wallet",
+          "glasses-case",
+          "journal-cover",
+          "desk-mat",
+          "classic-belt"
         ],
         "max_products": 4,
         "columns": 4,
@@ -441,6 +445,8 @@
         "link_label": "Chat with us",
         "link": "",
         "link_opens_chat": true,
+        "layout": "horizontal",
+        "align_with_grid": false,
         "background_color": "{{ settings.color_palette.background }}",
         "border_color": "{{ settings.color_palette.color2 }}",
         "link_color": "{{ settings.color_palette.color3 }}",
