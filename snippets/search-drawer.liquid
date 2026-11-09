@@ -1,0 +1,269 @@
+{%- doc -%}
+  Renders the search drawer: a panel that slides in from the right over a dimmed page,
+  with a search field and live results. Focusing or clicking any input with
+  [data-search-drawer-trigger] (the header search fields) opens it. Results come from
+  Shopify's predictive search and are rendered by sections/search-drawer-results.liquid
+  (assets/search-drawer.js). Pressing Enter goes to the full search page.
+
+  @param {string} [placeholder] - Placeholder of the search field
+
+  @example
+  {% render 'search-drawer', placeholder: section.settings.search_placeholder %}
+{%- enddoc -%}
+
+{% liquid
+  assign placeholder_text = placeholder
+  if placeholder_text == blank
+    assign placeholder_text = 'content.search_input_placeholder' | t
+  endif
+%}
+
+<script
+  src="{{ 'search-drawer.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<search-drawer-component
+  id="SearchDrawer"
+  data-section-id="search-drawer-results"
+>
+  <dialog
+    ref="dialog"
+    class="search-drawer"
+    aria-labelledby="SearchDrawerHeading"
+  >
+    <div class="search-drawer__inner">
+      <div class="search-drawer__header">
+        <h2
+          id="SearchDrawerHeading"
+          class="search-drawer__heading"
+        >
+          {{- 'content.search' | t -}}
+        </h2>
+        <button
+          type="button"
+          class="search-drawer__close button-unstyled"
+          aria-label="{{ 'actions.close' | t }}"
+          on:click="/closeDialog"
+        >
+          <span
+            class="svg-wrapper"
+            aria-hidden="true"
+          >
+            {{- 'icon-close.svg' | inline_asset_content -}}
+          </span>
+        </button>
+      </div>
+
+      <form
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+        class="search-drawer__form"
+      >
+        <label
+          for="SearchDrawerInput"
+          class="visually-hidden"
+        >
+          {{- 'content.search_input_label' | t -}}
+        </label>
+        <span
+          class="svg-wrapper search-drawer__icon"
+          aria-hidden="true"
+        >
+          {{- 'icon-search.svg' | inline_asset_content -}}
+        </span>
+        <input
+          id="SearchDrawerInput"
+          class="search-drawer__input"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ placeholder_text | escape }}"
+          autocomplete="off"
+          autofocus
+          aria-controls="SearchDrawerResults"
+          ref="input"
+          on:input="/search"
+        >
+        <input
+          type="hidden"
+          name="options[prefix]"
+          value="last"
+        >
+        <button
+          type="button"
+          class="search-drawer__clear button-unstyled"
+          ref="clear"
+          on:click="/clear"
+          hidden
+        >
+          {{- 'actions.clear' | t -}}
+        </button>
+      </form>
+
+      <div
+        id="SearchDrawerResults"
+        class="search-drawer__results"
+        ref="results"
+      ></div>
+    </div>
+  </dialog>
+</search-drawer-component>
+
+{% stylesheet %}
+  .search-drawer {
+    --search-drawer-padding: var(--padding-lg);
+
+    position: fixed;
+    inset-block: 0;
+    inset-inline: auto 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: 0;
+    box-shadow: var(--shadow-popover);
+
+    @media screen and (min-width: 750px) {
+      --search-drawer-padding: var(--padding-2xl);
+
+      width: min(38rem, 90vw);
+    }
+
+    &[open] {
+      animation: search-drawer-in var(--animation-speed-slow) var(--animation-easing);
+    }
+
+    &.dialog-closing {
+      animation: search-drawer-out var(--animation-speed) var(--animation-easing) forwards;
+    }
+
+    &::backdrop {
+      background-color: rgb(0 0 0 / 0.4);
+    }
+  }
+
+  @keyframes search-drawer-in {
+    from {
+      translate: 100% 0;
+    }
+  }
+
+  @keyframes search-drawer-out {
+    to {
+      translate: 100% 0;
+    }
+  }
+
+  .search-drawer__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .search-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-md);
+    padding: var(--search-drawer-padding) var(--search-drawer-padding) var(--padding-md);
+  }
+
+  .search-drawer__heading {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--2xl);
+    line-height: var(--line-height--display-tight);
+  }
+
+  .search-drawer__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-inline-end: calc(var(--padding-xs) * -1);
+    color: var(--color-foreground);
+
+    .svg-wrapper,
+    svg {
+      width: var(--icon-size-md);
+      height: var(--icon-size-md);
+    }
+  }
+
+  .search-drawer__form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-inline: var(--search-drawer-padding);
+  }
+
+  .search-drawer__icon {
+    position: absolute;
+    inset-inline-start: var(--padding-md);
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    color: var(--color-foreground-muted);
+    pointer-events: none;
+  }
+
+  .search-drawer__input {
+    width: 100%;
+    min-width: 0;
+    padding-block: var(--padding-md);
+    padding-inline: calc(var(--padding-md) + var(--icon-size-sm) + var(--padding-xs)) 5rem;
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--md);
+    color: var(--color-input-text);
+    background-color: var(--color-input-background);
+    border: var(--style-border-width-inputs) solid var(--color-input-border);
+    border-radius: var(--style-border-radius-inputs);
+
+    &::placeholder {
+      color: rgb(var(--color-input-text-rgb) / var(--opacity-50));
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .search-drawer__clear {
+    position: absolute;
+    inset-inline-end: var(--padding-md);
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground-muted);
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+  }
+
+  .search-drawer__results {
+    flex-grow: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: var(--padding-lg) var(--search-drawer-padding) var(--search-drawer-padding);
+    transition: opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  search-drawer-component[loading] .search-drawer__results {
+    opacity: 0.5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .search-drawer[open],
+    .search-drawer.dialog-closing {
+      animation: none;
+    }
+  }
+{% endstylesheet %}

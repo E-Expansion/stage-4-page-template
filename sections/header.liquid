@@ -3,6 +3,7 @@
   Site header: logo, search, localization, account and cart on the top row, with a
   navigation row of mega menu items and utility links underneath. On mobile the same
   navigation markup becomes an off-canvas sidebar opened from the menu button.
+  The search fields open the search drawer (snippets/search-drawer.liquid) with live results.
   Keeps `#header-component` and the `--header-height` / `--header-group-height`
   custom properties that layout scripts and sticky sections depend on.
   @example
@@ -175,6 +176,7 @@
               value="{{ search.terms | escape }}"
               placeholder="{{ section.settings.search_placeholder | escape }}"
               autocomplete="off"
+              data-search-drawer-trigger
             >
           </form>
         {% endif %}
@@ -287,6 +289,7 @@
           value="{{ search.terms | escape }}"
           placeholder="{{ section.settings.search_placeholder | escape }}"
           autocomplete="off"
+          data-search-drawer-trigger
         >
       </form>
     {% endif %}
@@ -340,6 +343,10 @@
     </div>
   </div>
 </site-header-component>
+
+{% if section.settings.show_search %}
+  {% render 'search-drawer', placeholder: section.settings.search_placeholder %}
+{% endif %}
 
 {% stylesheet %}
   .header-section {

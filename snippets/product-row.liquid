@@ -1,0 +1,213 @@
+{%- doc -%}
+  Renders a product as a horizontal row: tag badge and image on the left; title, short
+  description, star rating, stock, price (with the discount on sale) and colour swatches on
+  the right. The whole row links to the product. Used for search results in the search
+  drawer.
+
+  Shares its parts with product-tile (tag-badge, star-rating, product-stock, product-price,
+  product-swatches), so badges, colours and visibility follow the same Theme settings >
+  Product cards. Hovering a swatch previews that colour's image (assets/product-tile.js).
+
+  @param {object} product - The product to render
+  @param {string} [sizes] - Image sizes attribute, defaults to the row's fixed image width
+
+  @example
+  {% render 'product-row', product: product %}
+{%- enddoc -%}
+
+{% liquid
+  assign title = product.title | escape
+  assign image = product.featured_media.preview_image
+  assign excerpt = product.description | strip_html | truncatewords: 16 | escape
+  assign image_sizes = sizes | default: '(min-width: 750px) 8rem, 6rem'
+%}
+
+<li class="product-row">
+  <product-tile-component class="product-row__inner">
+    <div class="product-row__media">
+      {% if settings.product_tile_show_badge %}
+        {% render 'tag-badge', tags: product.tags, rules_only: true, class: 'product-row__badge' %}
+      {% endif %}
+
+      <div class="product-row__image-wrapper">
+        {% if image != blank %}
+          {{
+            image
+            | image_url: width: 400
+            | image_tag:
+              widths: '160, 240, 320, 400',
+              sizes: image_sizes,
+              loading: 'lazy',
+              alt: '',
+              class: 'product-row__image',
+              ref: 'image'
+          }}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'product-row__image product-tile__placeholder' }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="product-row__body">
+      <h3 class="product-row__title">
+        <a
+          href="{{ product.url }}"
+          class="product-row__link"
+          ref="link"
+        >
+          {{- title -}}
+        </a>
+      </h3>
+
+      {% if excerpt != blank %}
+        <p class="product-row__excerpt">{{ excerpt }}</p>
+      {% endif %}
+
+      {% if settings.product_tile_show_rating or settings.product_tile_show_stock %}
+        <div class="product-row__meta">
+          {% if settings.product_tile_show_rating %}
+            {% render 'star-rating', product: product, show_count: false %}
+          {% endif %}
+          {% if settings.product_tile_show_stock %}
+            {% render 'product-stock', product: product %}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% render 'product-price', product: product, show_savings: true %}
+
+      {% if settings.product_tile_colors != 'text' %}
+        {% render 'product-swatches', product: product %}
+      {% endif %}
+
+      <span
+        class="product-row__cta"
+        aria-hidden="true"
+      >
+        {{- 'actions.view_product' | t -}}
+      </span>
+    </div>
+  </product-tile-component>
+</li>
+
+{% stylesheet %}
+  .product-row__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: var(--gap-md);
+    align-items: start;
+    padding-block: var(--padding-lg);
+    border-block-end: var(--style-border-width) solid var(--color-border);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: 8rem minmax(0, 1fr);
+      gap: var(--gap-lg);
+    }
+  }
+
+  .product-row__media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-sm);
+  }
+
+  .product-row__image-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-xs);
+  }
+
+  .product-row__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-speed-slow) var(--animation-easing);
+  }
+
+  @media (hover: hover) {
+    .product-row__inner:hover .product-row__image {
+      transform: scale(1.03);
+    }
+  }
+
+  .product-row__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-xs);
+    min-width: 0;
+  }
+
+  .product-row__title {
+    margin: 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--md);
+    line-height: var(--line-height--body-tight);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--lg);
+    }
+  }
+
+  /* Stretched link makes the whole row clickable; the swatches sit above it */
+  .product-row__link {
+    color: var(--color-foreground);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .product-row__excerpt {
+    margin: 0;
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--body-loose);
+    color: var(--color-foreground-muted);
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--font-size--sm);
+    }
+  }
+
+  .product-row__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-xs) var(--gap-md);
+  }
+
+  .product-row__body .product-tile__price {
+    font-size: var(--font-size--md);
+  }
+
+  .product-row__body .product-tile__swatches {
+    margin-block-start: var(--padding-2xs);
+  }
+
+  .product-row__cta {
+    margin-block-start: var(--padding-2xs);
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .product-row__inner:hover .product-row__cta {
+    text-decoration-thickness: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-row__image {
+      transition: none;
+    }
+  }
+{% endstylesheet %}

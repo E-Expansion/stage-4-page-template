@@ -1,0 +1,104 @@
+{%- doc -%}
+  Renders a product's colour swatches. Hovering, focusing or tapping one previews that
+  colour's variant image and points the links at that variant (assets/product-tile.js).
+  Must sit inside a <product-tile-component> whose image has ref="image" and whose title
+  link has ref="link". Renders nothing when the product has no colour option.
+
+  The colour option is the first one with swatches, or one named like a colour. Swatches
+  read each colour's swatch (Content > Metaobjects > Color). The number shown comes from
+  Theme settings > Product cards.
+
+  Used by product-tile (cards) and product-row (search results).
+
+  @param {object} product - The product
+  @param {object} [option] - The colour option, when the caller already found it
+
+  @example
+  {% render 'product-swatches', product: product %}
+{%- enddoc -%}
+
+{% liquid
+  assign color_option = option
+  if color_option == blank and product.has_only_default_variant == false
+    for candidate_option in product.options_with_values
+      assign option_name = candidate_option.name | downcase
+      assign first_value = candidate_option.values | first
+      if first_value.swatch != blank or option_name == 'color' or option_name == 'colour' or option_name == 'kleur'
+        assign color_option = candidate_option
+        break
+      endif
+    endfor
+  endif
+%}
+
+{% if color_option != blank %}
+  {% liquid
+    assign color_index = color_option.position | minus: 1
+    assign swatch_limit = settings.product_tile_max_swatches
+    assign hidden_count = color_option.values.size | minus: swatch_limit
+  %}
+  <script
+    src="{{ 'product-tile.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <div
+    class="product-tile__swatches"
+    role="group"
+    aria-label="{{ color_option.name | escape }}"
+    on:pointerenter="/preload"
+  >
+    {% for value in color_option.values limit: swatch_limit %}
+      {% liquid
+        # The variant for this colour and its image; any variant of the colour with an image will do
+        assign value_variant = value.variant
+        assign value_media = value_variant.featured_media
+        if value_media == blank
+          for candidate in product.variants
+            if candidate.options[color_index] == value.name and candidate.featured_media != blank
+              assign value_media = candidate.featured_media
+              break
+            endif
+          endfor
+        endif
+
+        assign value_srcset = ''
+        if value_media != blank
+          assign srcset_widths = '240,360,480,640,800,1000' | split: ','
+          for width in srcset_widths
+            assign width_url = value_media.preview_image | image_url: width: width
+            assign value_srcset = value_srcset | append: width_url | append: ' ' | append: width | append: 'w'
+            unless forloop.last
+              assign value_srcset = value_srcset | append: ', '
+            endunless
+          endfor
+        endif
+      %}
+      <button
+        type="button"
+        class="product-tile__swatch"
+        aria-label="{{ value.name | escape }}"
+        aria-pressed="{{ value.selected }}"
+        style="
+          {% if value.swatch.color %}--swatch-color: {{ value.swatch.color }};{% endif %}
+          {% if value.swatch.image %}--swatch-image: url({{ value.swatch.image | image_url: width: 64 }});{% endif %}
+        "
+        {% if value_variant %}
+          data-url="{{ value_variant.url }}"
+        {% endif %}
+        {% if value_media != blank %}
+          data-src="{{ value_media.preview_image | image_url: width: 1000 }}"
+          data-srcset="{{ value_srcset }}"
+        {% endif %}
+        ref="swatches[]"
+        on:pointerenter="/preview"
+        on:focus="/preview"
+        on:click="/preview"
+      ></button>
+    {% endfor %}
+    {% if hidden_count > 0 %}
+      <span class="product-tile__swatch-more">+{{ hidden_count }}</span>
+    {% endif %}
+  </div>
+{% endif %}

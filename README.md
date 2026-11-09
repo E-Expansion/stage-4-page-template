@@ -67,6 +67,9 @@ All of these are snippets in `snippets/` (unless noted) and are called with `{% 
 | `section-heading` | Heading row: title, text, and a link or side text | Category selector, curated products, UGC, press |
 | `.snap-carousel` (class in `assets/base.css`) | Grid on desktop, swipeable row on mobile | Category selector, curated products, subcategories |
 | `product-tile` (+ `assets/product-tile.js`) | Product card: badge, colour swatches with image preview on hover, rating, price, stock, add to cart | Curated products, collection grid, article sidebar |
+| `product-row` | Product as a horizontal row: badge, image, title, short description, rating, stock, price with discount, swatches | Search drawer |
+| `product-swatches`, `product-price`, `product-stock` | Parts shared by `product-tile` and `product-row`: colour swatches (image preview on hover), price with optional "Save x%", stock status | Product tile, product row |
+| `search-drawer` (+ `assets/search-drawer.js`) | Right-hand search panel with live results, opened from the header search fields | Header |
 | `product-mention` | Small product card (`row` or `stack` layout) | Article content |
 | `article-meta` | Read time and date of an article | Article card, article author line |
 | `article-images` | Row of images inside an article | Article content |
@@ -117,6 +120,8 @@ The article text can place components between paragraphs with a marker on its ow
 ### Header and footer groups
 
 `top-bar` and `header` sit in the header group. `footer` sits in the footer group.
+
+The header search fields open `search-drawer`. While typing it fetches `sections/search-drawer-results.liquid` from Shopify's predictive search, with tabs for products, collections and blog posts. Enter goes to the full search page.
 
 Each top-level menu item picks a collection. Its mega menu columns are that collection's `custom.subcategories`, and the links in each column are the subcollection's own `custom.subcategories` (or its first five products when it has none). The menu therefore always matches the subcategories strip on collection pages. Without a collection, or with an empty metafield, the manual column and link blocks are used. The featured collection always takes the last column.
 

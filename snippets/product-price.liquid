@@ -1,0 +1,31 @@
+{%- doc -%}
+  Renders a product's price, with the compare-at price struck through when it is on sale
+  and optionally a "Save 20%" label. Styled by product-tile.
+
+  Used by product-tile (cards) and product-row (search results).
+
+  @param {object} [product] - The product. A placeholder price is shown when blank.
+  @param {boolean} [show_savings] - Show the discount percentage next to a sale price
+
+  @example
+  {% render 'product-price', product: product, show_savings: true %}
+{%- enddoc -%}
+
+<p class="product-tile__price">
+  {% if product.compare_at_price > product.price %}
+    <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
+    {{ product.price | money }}
+    <s class="product-tile__compare">{{ product.compare_at_price | money }}</s>
+    {% if show_savings %}
+      {% liquid
+        assign savings = product.compare_at_price | minus: product.price | times: 100.0
+        assign savings_percent = savings | divided_by: product.compare_at_price | round
+      %}
+      <span class="product-tile__savings">{{ 'content.save_percent' | t: percent: savings_percent }}</span>
+    {% endif %}
+  {% elsif product != blank %}
+    {{ product.price | money }}
+  {% else %}
+    {{ 1999 | money }}
+  {% endif %}
+</p>

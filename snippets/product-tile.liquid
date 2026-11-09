@@ -8,7 +8,9 @@
 
   Swatches read each colour's swatch (Content > Metaobjects > Color). Hovering, focusing
   or tapping one previews that colour's variant image and points the links at that
-  variant (assets/product-tile.js).
+  variant (assets/product-tile.js). Swatches, price and stock are shared snippets
+  (product-swatches, product-price, product-stock), also used by product-row; their
+  styles live here.
 
   @param {object} [product] - The product to render. A placeholder tile is shown when blank.
   @param {string} section_id - The section ID, used for unique form IDs.
@@ -71,14 +73,6 @@
     endif
   endif
 
-  # Stock status
-  assign stock_state = 'in'
-  if product != blank and product.available == false
-    assign stock_state = 'out'
-  elsif variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' and variant.inventory_quantity > 0 and variant.inventory_quantity <= settings.low_stock_threshold
-    assign stock_state = 'low'
-  endif
-
   assign can_add_directly = false
   if product.variants_count == 1 and variant.available
     assign can_add_directly = true
@@ -94,14 +88,6 @@
 %}
 
 <li class="product-tile">
-  {% if show_swatches %}
-    <script
-      src="{{ 'product-tile.js' | asset_url }}"
-      type="module"
-      fetchpriority="low"
-    ></script>
-  {% endif %}
-
   <product-tile-component class="product-tile__inner">
     <div class="product-tile__media">
       {% if image != blank %}
@@ -142,69 +128,7 @@
           {% endif %}
 
           {% if show_swatches %}
-            {% liquid
-              assign color_index = color_option.position | minus: 1
-              assign swatch_limit = settings.product_tile_max_swatches
-              assign hidden_count = color_option.values.size | minus: swatch_limit
-            %}
-            <div
-              class="product-tile__swatches"
-              role="group"
-              aria-label="{{ color_option.name | escape }}"
-              on:pointerenter="/preload"
-            >
-              {% for value in color_option.values limit: swatch_limit %}
-                {% liquid
-                  # The variant for this colour and its image; any variant of the colour with an image will do
-                  assign value_variant = value.variant
-                  assign value_media = value_variant.featured_media
-                  if value_media == blank
-                    for candidate in product.variants
-                      if candidate.options[color_index] == value.name and candidate.featured_media != blank
-                        assign value_media = candidate.featured_media
-                        break
-                      endif
-                    endfor
-                  endif
-
-                  assign value_srcset = ''
-                  if value_media != blank
-                    assign srcset_widths = '240,360,480,640,800,1000' | split: ','
-                    for width in srcset_widths
-                      assign width_url = value_media.preview_image | image_url: width: width
-                      assign value_srcset = value_srcset | append: width_url | append: ' ' | append: width | append: 'w'
-                      unless forloop.last
-                        assign value_srcset = value_srcset | append: ', '
-                      endunless
-                    endfor
-                  endif
-                %}
-                <button
-                  type="button"
-                  class="product-tile__swatch"
-                  aria-label="{{ value.name | escape }}"
-                  aria-pressed="{{ value.selected }}"
-                  style="
-                    {% if value.swatch.color %}--swatch-color: {{ value.swatch.color }};{% endif %}
-                    {% if value.swatch.image %}--swatch-image: url({{ value.swatch.image | image_url: width: 64 }});{% endif %}
-                  "
-                  {% if value_variant %}
-                    data-url="{{ value_variant.url }}"
-                  {% endif %}
-                  {% if value_media != blank %}
-                    data-src="{{ value_media.preview_image | image_url: width: 1000 }}"
-                    data-srcset="{{ value_srcset }}"
-                  {% endif %}
-                  ref="swatches[]"
-                  on:pointerenter="/preview"
-                  on:focus="/preview"
-                  on:click="/preview"
-                ></button>
-              {% endfor %}
-              {% if hidden_count > 0 %}
-                <span class="product-tile__swatch-more">+{{ hidden_count }}</span>
-              {% endif %}
-            </div>
+            {% render 'product-swatches', product: product, option: color_option %}
           {% endif %}
         </div>
 
@@ -272,29 +196,10 @@
       {% endif %}
 
       <div class="product-tile__footer">
-        <p class="product-tile__price">
-          {% if product.compare_at_price > product.price %}
-            <span class="visually-hidden">{{ 'content.price_sale' | t }}</span>
-            {{ product.price | money }}
-            <s class="product-tile__compare">{{ product.compare_at_price | money }}</s>
-          {% elsif product != blank %}
-            {{ product.price | money }}
-          {% else %}
-            {{ 1999 | money }}
-          {% endif %}
-        </p>
+        {% render 'product-price', product: product %}
 
-        {% if product != blank and settings.product_tile_show_stock %}
-          <p class="product-tile__stock product-tile__stock--{{ stock_state }}">
-            {%- case stock_state -%}
-              {%- when 'out' -%}
-                {{ 'content.inventory_out_of_stock' | t }}
-              {%- when 'low' -%}
-                {{ 'content.inventory_only_count_left' | t: count: variant.inventory_quantity }}
-              {%- else -%}
-                {{ 'content.inventory_in_stock' | t }}
-            {%- endcase -%}
-          </p>
+        {% if settings.product_tile_show_stock %}
+          {% render 'product-stock', product: product, variant: variant %}
         {% endif %}
       </div>
     </div>
@@ -516,6 +421,17 @@
   .product-tile__compare {
     margin-inline-start: var(--padding-2xs);
     color: var(--color-foreground-muted);
+  }
+
+  /* "Save 20%" next to a sale price (product-price with show_savings) */
+  .product-tile__savings {
+    display: inline-block;
+    margin-inline-start: var(--padding-xs);
+    padding: var(--padding-3xs) var(--padding-xs);
+    font-size: var(--font-size--xs);
+    color: var(--color-low-stock);
+    background-color: rgb(from var(--color-low-stock) r g b / 0.1);
+    border-radius: var(--style-border-radius-xs);
   }
 
   .product-tile__stock {

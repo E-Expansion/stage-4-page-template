@@ -1,0 +1,36 @@
+{%- doc -%}
+  Renders a product's stock status: in stock, only a few left (at or below the low-stock
+  threshold in Theme settings > Product cards) or out of stock. Styled by product-tile.
+
+  Used by product-tile (cards) and product-row (search results).
+
+  @param {object} product - The product
+  @param {object} [variant] - The variant to check, defaults to the selected or first available one
+
+  @example
+  {% render 'product-stock', product: product %}
+{%- enddoc -%}
+
+{% liquid
+  assign stock_variant = variant | default: product.selected_or_first_available_variant
+
+  assign stock_state = 'in'
+  if product.available == false
+    assign stock_state = 'out'
+  elsif stock_variant.inventory_management == 'shopify' and stock_variant.inventory_policy == 'deny' and stock_variant.inventory_quantity > 0 and stock_variant.inventory_quantity <= settings.low_stock_threshold
+    assign stock_state = 'low'
+  endif
+%}
+
+{% if product != blank %}
+  <p class="product-tile__stock product-tile__stock--{{ stock_state }}">
+    {%- case stock_state -%}
+      {%- when 'out' -%}
+        {{ 'content.inventory_out_of_stock' | t }}
+      {%- when 'low' -%}
+        {{ 'content.inventory_only_count_left' | t: count: stock_variant.inventory_quantity }}
+      {%- else -%}
+        {{ 'content.inventory_in_stock' | t }}
+    {%- endcase -%}
+  </p>
+{% endif %}

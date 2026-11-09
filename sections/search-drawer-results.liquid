@@ -1,0 +1,280 @@
+{% comment %}
+  Section contract.
+  Live results for the search drawer (snippets/search-drawer.liquid). Not placed on a
+  template: assets/search-drawer.js fetches it through the Section Rendering API from
+  Shopify's predictive search (/search/suggest?section_id=search-drawer-results) and
+  swaps the content of `.search-drawer-results` into the drawer.
+  Shows a tab per resource type that has results (products, collections, blog posts), with
+  products as rows (snippets/product-row.liquid), and a link to the full search page.
+  @example
+  <!-- Fetched by assets/search-drawer.js; never added in the theme editor -->
+{% endcomment %}
+
+{% liquid
+  assign products = predictive_search.resources.products
+  assign collections = predictive_search.resources.collections
+  assign articles = predictive_search.resources.articles
+  assign results_count = products.size | plus: collections.size | plus: articles.size
+%}
+
+<div class="search-drawer-results">
+  {% if predictive_search.performed %}
+    {% liquid
+      assign encoded_terms = predictive_search.terms | url_encode
+      assign search_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&options%5Bprefix%5D=last'
+    %}
+    <p
+      class="visually-hidden"
+      role="status"
+    >
+      {%- if results_count > 0 -%}
+        {{ 'accessibility.search_results_count' | t: count: results_count, query: predictive_search.terms }}
+      {%- else -%}
+        {{ 'accessibility.search_results_no_results' | t: query: predictive_search.terms }}
+      {%- endif -%}
+    </p>
+
+    {% if results_count > 0 %}
+      <div
+        class="search-drawer__tabs"
+        role="group"
+        aria-label="{{ 'content.search_results' | t }}"
+      >
+        {% if products.size > 0 %}
+          <button
+            type="button"
+            class="search-drawer__tab button-unstyled"
+            data-tab="products"
+            aria-pressed="false"
+            on:click="/selectTab"
+          >
+            {{- 'content.search_results_resource_products' | t -}}
+          </button>
+        {% endif %}
+        {% if collections.size > 0 %}
+          <button
+            type="button"
+            class="search-drawer__tab button-unstyled"
+            data-tab="collections"
+            aria-pressed="false"
+            on:click="/selectTab"
+          >
+            {{- 'content.search_results_resource_collections' | t -}}
+          </button>
+        {% endif %}
+        {% if articles.size > 0 %}
+          <button
+            type="button"
+            class="search-drawer__tab button-unstyled"
+            data-tab="articles"
+            aria-pressed="false"
+            on:click="/selectTab"
+          >
+            {{- 'content.search_results_resource_articles' | t -}}
+          </button>
+        {% endif %}
+      </div>
+
+      {% if products.size > 0 %}
+        <div
+          class="search-drawer__panel"
+          data-panel="products"
+          hidden
+        >
+          <ul class="search-drawer__list list-unstyled">
+            {% for product in products %}
+              {% render 'product-row', product: product %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if collections.size > 0 %}
+        <div
+          class="search-drawer__panel"
+          data-panel="collections"
+          hidden
+        >
+          <ul class="search-drawer__list list-unstyled">
+            {% for result in collections %}
+              <li>
+                <a
+                  href="{{ result.url }}"
+                  class="search-drawer__resource"
+                >
+                  <span class="search-drawer__resource-media">
+                    {% if result.featured_image != blank %}
+                      {{
+                        result.featured_image
+                        | image_url: width: 240
+                        | image_tag: widths: '120, 240', sizes: '4rem', loading: 'lazy', alt: ''
+                      }}
+                    {% else %}
+                      {{ 'collection-1' | placeholder_svg_tag: 'product-tile__placeholder' }}
+                    {% endif %}
+                  </span>
+                  <span class="search-drawer__resource-text">
+                    <span class="search-drawer__resource-title">{{ result.title | escape }}</span>
+                    <span class="search-drawer__resource-meta">
+                      {{- 'content.search_results_resource_products_count' | t: count: result.products_count -}}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if articles.size > 0 %}
+        <div
+          class="search-drawer__panel"
+          data-panel="articles"
+          hidden
+        >
+          <ul class="search-drawer__list list-unstyled">
+            {% for result in articles %}
+              <li>
+                <a
+                  href="{{ result.url }}"
+                  class="search-drawer__resource"
+                >
+                  <span class="search-drawer__resource-media">
+                    {% if result.image != blank %}
+                      {{
+                        result.image
+                        | image_url: width: 240
+                        | image_tag: widths: '120, 240', sizes: '4rem', loading: 'lazy', alt: ''
+                      }}
+                    {% else %}
+                      {{ 'blog-apparel-1' | placeholder_svg_tag: 'product-tile__placeholder' }}
+                    {% endif %}
+                  </span>
+                  <span class="search-drawer__resource-text">
+                    <span class="search-drawer__resource-title">{{ result.title | escape }}</span>
+                    {% render 'article-meta', article: result %}
+                  </span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <a
+        href="{{ search_url }}"
+        class="search-drawer__view-all button"
+      >
+        {{- 'content.search_results_view_all' | t -}}
+      </a>
+    {% else %}
+      <p class="search-drawer__empty">
+        {{- 'content.search_results_no_results' | t: terms: predictive_search.terms -}}
+      </p>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .search-drawer__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-xs) var(--gap-lg);
+  }
+
+  .search-drawer__tab {
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: var(--font-size--md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-sm);
+    color: var(--color-foreground-muted);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35em;
+    transition: color var(--animation-speed) var(--animation-easing),
+      text-decoration-color var(--animation-speed) var(--animation-easing);
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    &[aria-pressed='true'] {
+      color: var(--color-foreground);
+      text-decoration-color: currentcolor;
+    }
+  }
+
+  .search-drawer__panel {
+    margin-block-start: var(--padding-xs);
+  }
+
+  .search-drawer__list {
+    margin: 0;
+  }
+
+  .search-drawer__resource {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: var(--gap-md);
+    align-items: center;
+    padding-block: var(--padding-md);
+    color: var(--color-foreground);
+    text-decoration: none;
+    border-block-end: var(--style-border-width) solid var(--color-border);
+
+    &:hover .search-drawer__resource-title {
+      text-decoration: underline;
+    }
+  }
+
+  .search-drawer__resource-media {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-xs);
+
+    img,
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .search-drawer__resource-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+    min-width: 0;
+  }
+
+  .search-drawer__resource-title {
+    font-size: var(--font-size--md);
+    overflow-wrap: anywhere;
+  }
+
+  .search-drawer__resource-meta {
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-muted);
+  }
+
+  .search-drawer__view-all {
+    margin-block-start: var(--padding-xl);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-drawer__empty {
+    margin: 0;
+    color: var(--color-foreground-muted);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.predictive_search",
+  "settings": []
+}
+{% endschema %}
