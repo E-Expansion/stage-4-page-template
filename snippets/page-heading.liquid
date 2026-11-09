@@ -4,14 +4,16 @@
 
   @param {string} title - Page title, escaped here
   @param {string} [text] - Rich text HTML shown under the title
-  @param {string[]} [tags] - Tags for the badge between title and text, e.g. `article.tags`
+  @param {string[]} [badge_tags] - Tags for the badge between title and text, e.g. `article.tags`.
+    Not named `tags`: on collection pages Shopify has a global `tags` (all product tags),
+    which would fill an omitted parameter and show a badge there.
   @param {boolean} [show_breadcrumbs] - Show the breadcrumb trail
   @param {string} [parent_label] - Extra crumb after Home
   @param {string} [parent_url] - Link of the extra crumb
   @param {string} [count] - Short count text, shown on mobile only
 
   @example
-  {% render 'page-heading', title: article.title, text: article.excerpt, tags: article.tags, show_breadcrumbs: true %}
+  {% render 'page-heading', title: article.title, text: article.excerpt, badge_tags: article.tags, show_breadcrumbs: true %}
 {%- enddoc -%}
 
 <div class="page-header__inner">
@@ -21,8 +23,8 @@
 
   <h1 class="page-header__title">{{ title | escape }}</h1>
 
-  {% if tags != blank %}
-    {% render 'tag-badge', tags: tags, class: 'page-header__tag' %}
+  {% if badge_tags != blank %}
+    {% render 'tag-badge', tags: badge_tags, class: 'page-header__tag' %}
   {% endif %}
 
   {% if text != blank %}
