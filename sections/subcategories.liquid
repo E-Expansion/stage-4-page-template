@@ -5,7 +5,9 @@
   (/collections/all) it shows every collection instead, without the "View all" tile. The collections come from the
   current collection's custom.subcategories metafield (a list of collections), so each
   collection shows its own strip from one template; the section's collection list is the
-  fallback. A grid on desktop, a swipeable row on mobile.
+  fallback. The collection being viewed is left out. A grid with a fixed number of columns
+  on desktop (so tiles keep the same width however many there are), a swipeable row on
+  mobile.
   @example
   <!-- Collection template > Add section > Subcategories; fill custom.subcategories per collection -->
 {% endcomment %}
@@ -35,11 +37,8 @@
     assign view_all_url = section.settings.view_all_link | default: routes.all_products_collection_url
   endif
 
-  assign tile_count = subcollections.size
-  if view_all_label != blank
-    assign tile_count = tile_count | plus: 1
-  endif
-  assign columns = tile_count | at_least: 1 | at_most: 6
+  # A fixed number of columns, so tiles keep the same width however many there are
+  assign columns = section.settings.columns | default: 5
 %}
 
 {% if subcollections.size > 0 or request.design_mode %}
@@ -62,8 +61,11 @@
     <ul class="subcategories__list snap-carousel list-unstyled">
       {% for subcollection in subcollections limit: 12 %}
         {% liquid
-          # Skip the store's built-in home page collection and empty collections
+          # Skip the store's built-in home page collection, empty collections and the collection being viewed
           if subcollection.handle == 'frontpage' or subcollection.products_count == 0
+            continue
+          endif
+          if subcollection.id == collection.id or subcollection.handle == collection.handle
             continue
           endif
         %}
@@ -115,6 +117,15 @@
       "id": "collections",
       "label": "t:categories.collections",
       "limit": 11
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "default": 5
     },
     {
       "type": "select",
