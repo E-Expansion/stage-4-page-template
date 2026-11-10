@@ -24,8 +24,11 @@ class ProductGiftWrapComponent extends Component {
     super.connectedCallback();
 
     this.#abortController = new AbortController();
-    // Capture phase runs before the product form's own submit handler
-    document.addEventListener('submit', this.#handleSubmit, { capture: true, signal: this.#abortController.signal });
+    // The product form's on:submit handler is a capture listener on document (component.js),
+    // registered before this script loads. A capture listener on window runs before any
+    // listener on document, so the gift wrap is added first and the form's handler only
+    // runs on the resubmit.
+    window.addEventListener('submit', this.#handleSubmit, { capture: true, signal: this.#abortController.signal });
   }
 
   disconnectedCallback() {
