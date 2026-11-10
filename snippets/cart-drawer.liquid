@@ -40,8 +40,11 @@
     </div>
   {% endcapture %}
 
+  {% comment %} overlay: slides over the page on every screen size instead of squeezing it {% endcomment %}
   <theme-drawer
     id="cart-drawer"
+    overlay
+    no-persist
     data-skip-node-update
   >
     <dialog

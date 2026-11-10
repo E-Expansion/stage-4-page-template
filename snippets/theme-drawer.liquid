@@ -3,6 +3,8 @@
 
   Loads the theme-drawer Web Component and provides global drawer
   coordination: session restore, page-wrapper squeeze, and state persistence.
+  Drawers with the `overlay` attribute (the cart drawer) slide over the page at every
+  width: they never squeeze it and are not restored after navigation.
   Rendered once from layout/theme.liquid.
 
   Individual drawer snippets (e.g. chat-drawer) render their own
@@ -35,7 +37,8 @@
     var dialogs = [];
     for (var i = 0; i < drawerIds.length; i++) {
       var drawer = document.getElementById(drawerIds[i]);
-      if (!drawer) continue;
+      // Overlay drawers are modal dialogs, which this restore cannot open; they start closed
+      if (!drawer || drawer.hasAttribute('overlay')) continue;
 
       drawer.setAttribute('open', '');
 
@@ -87,21 +90,23 @@
 
   // ── Squeeze coordination ──
   // Listens to all drawers. Only squeezes on wide viewports.
-  document.addEventListener('theme-drawer:open', () => {
+  // Overlay drawers (e.g. the cart drawer) slide over the page and never squeeze it.
+  document.addEventListener('theme-drawer:open', (event) => {
+    if (event.target instanceof Element && event.target.hasAttribute('overlay')) return;
     if (squeezeQuery.matches) {
       pageWrapper?.classList.add('page-wrapper--drawer-open');
     }
   });
 
   document.addEventListener('theme-drawer:close', () => {
-    const openDrawer = document.querySelector('theme-drawer[open]');
+    const openDrawer = document.querySelector('theme-drawer[open]:not([overlay])');
     if (!openDrawer) {
       pageWrapper?.classList.remove('page-wrapper--drawer-open');
     }
   });
 
   squeezeQuery.addEventListener('change', () => {
-    const openDrawer = document.querySelector('theme-drawer[open]');
+    const openDrawer = document.querySelector('theme-drawer[open]:not([overlay])');
     pageWrapper?.classList.toggle('page-wrapper--drawer-open', Boolean(openDrawer) && squeezeQuery.matches);
   });
 

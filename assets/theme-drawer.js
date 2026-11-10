@@ -18,6 +18,10 @@ const MODAL_BREAKPOINT = 990;
  * panel is a modal dialog (`showModal()`) — native focus trap, scroll-lock,
  * and ARIA semantics. Same focus-on-close-button + restore-on-close UX.
  *
+ * With the `overlay` attribute the drawer always uses that modal overlay, also
+ * on wide viewports, so it slides over the page instead of squeezing it
+ * (the cart drawer does this).
+ *
  * Dispatches {@link DrawerOpenEvent} and {@link DrawerCloseEvent}.
  *
  * @typedef {object} Refs
@@ -52,6 +56,14 @@ export class ThemeDrawer extends Component {
     return this.hasAttribute('open');
   }
 
+  /**
+   * @returns {boolean} Whether the drawer opens as a modal overlay: always with the
+   * `overlay` attribute, otherwise only on narrow viewports.
+   */
+  get #isModal() {
+    return this.hasAttribute('overlay') || this.#modalQuery.matches;
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this.#modalQuery.addEventListener('change', this.#onModalBreakpointChange);
@@ -78,7 +90,7 @@ export class ThemeDrawer extends Component {
    */
   #onRestore() {
     const { panel } = this.refs;
-    if (this.#modalQuery.matches) {
+    if (this.#isModal) {
       lockScroll(panel);
     }
 
@@ -131,7 +143,8 @@ export class ThemeDrawer extends Component {
    * crosses the modal breakpoint while the drawer is open.
    */
   #onModalBreakpointChange = () => {
-    if (!this.isOpen) return;
+    // Overlay drawers are modal at every width, so crossing the breakpoint changes nothing
+    if (!this.isOpen || this.hasAttribute('overlay')) return;
 
     const { panel } = this.refs;
     const nestedDialog = this.#getOpenNestedDialog();
@@ -145,7 +158,7 @@ export class ThemeDrawer extends Component {
     panel.close();
     removeTrapFocus();
 
-    if (this.#modalQuery.matches) {
+    if (this.#isModal) {
       lockScroll(panel);
       panel.showModal();
     } else {
@@ -215,7 +228,7 @@ export class ThemeDrawer extends Component {
 
     this.#previouslyFocused = /** @type {HTMLElement | null} */ (document.activeElement);
 
-    if (this.#modalQuery.matches) {
+    if (this.#isModal) {
       lockScroll(panel);
       panel.showModal();
     } else {
@@ -251,7 +264,7 @@ export class ThemeDrawer extends Component {
     // In modal mode, dialogs live in the browser's top layer where z-index
     // is ignored — stacking follows showModal() call order. Re-calling
     // showModal() moves this dialog to the top of the stack.
-    if (this.#modalQuery.matches && panel.open) {
+    if (this.#isModal && panel.open) {
       lockScroll(panel);
       panel.close();
       panel.showModal();
