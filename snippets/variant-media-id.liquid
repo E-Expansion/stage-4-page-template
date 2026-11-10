@@ -2,11 +2,11 @@
   Outputs the ID of the media that shows a variant's colour, or nothing when there is
   none. Used wherever the theme jumps to or previews "the image of this colour".
 
-  Shopify's own variant image (variant.featured_media) is used when its alt text or file
-  name mentions the variant's colour. Otherwise the first product media whose alt text or
-  file name mentions that colour wins ("AirPods Case in Cognac", "airpods-case-cognac.jpg"),
-  and only then the variant image as Shopify has it. This keeps the right photo when an
-  import linked variants to the wrong images, which happens with product CSV imports.
+  Only media in the product's gallery is returned. Shopify's variant image is used when it
+  is in the gallery and does not name another colour. Otherwise the first gallery image
+  whose alt text or file name mentions the colour wins ("AirPods Case in Cognac",
+  "airpods-case-cognac.jpg"), then a gallery image with the same file name. Imports can link
+  variants to copies of an image that are not in the gallery; this still finds the slide.
 
   The colour option is the first one with swatches, or one named like a colour. Products
   without one simply get the variant image.
@@ -19,8 +19,10 @@
 {%- enddoc -%}
 
 {%- liquid
+  # Always returns a media item that is in product.media, so the gallery has a slide for it
   assign variant_media = variant.featured_media
-  assign result_id = variant_media.id
+  assign variant_media_id = variant_media.id | append: ''
+  assign variant_file = variant_media.preview_image.src | split: '?' | first | split: '/' | last | downcase
   assign color_value = blank
 
   for candidate_option in product.options_with_values
@@ -32,30 +34,49 @@
       break
     endif
   endfor
+  assign color_handle = color_value | handleize
 
-  if color_value != blank
-    # Match on the alt text, or on the file name with dashes ("dark-brown" for "Dark brown")
-    assign color_handle = color_value | handleize
-    assign variant_matches = false
+  assign same_id = blank
+  assign same_file = blank
+  assign color_match = blank
 
-    if variant_media != blank
-      assign media_alt = variant_media.alt | downcase
-      assign media_file = variant_media.preview_image.src | split: '?' | first | split: '/' | last | downcase
+  for media in product.media
+    assign media_id = media.id | append: ''
+    assign media_alt = media.alt | downcase
+    assign media_file = media.preview_image.src | split: '?' | first | split: '/' | last | downcase
+    assign mentions_color = false
+    if color_value != blank
       if media_alt contains color_value or media_file contains color_handle
-        assign variant_matches = true
+        assign mentions_color = true
       endif
     endif
 
-    unless variant_matches
-      for media in product.media
-        assign media_alt = media.alt | downcase
-        assign media_file = media.preview_image.src | split: '?' | first | split: '/' | last | downcase
-        if media_alt contains color_value or media_file contains color_handle
-          assign result_id = media.id
-          break
-        endif
-      endfor
-    endunless
+    if media_id == variant_media_id and same_id == blank
+      assign same_id = media_id
+    endif
+    if variant_file != blank and media_file == variant_file and same_file == blank
+      assign same_file = media_id
+    endif
+    if mentions_color and color_match == blank
+      assign color_match = media_id
+    endif
+  endfor
+
+  # 1. The variant's own image, as long as it does not name a different colour
+  # 2. The first image that names the colour
+  # 3. The same file under another media ID
+  assign result_id = color_match
+  if same_id != blank
+    assign variant_alt = variant_media.alt | downcase
+    if color_value == blank or color_match == blank or variant_alt contains color_value or variant_file contains color_handle
+      assign result_id = same_id
+    endif
+  endif
+  if result_id == blank
+    assign result_id = same_file
+  endif
+  if result_id == blank
+    assign result_id = variant_media_id
   endif
 
   echo result_id
