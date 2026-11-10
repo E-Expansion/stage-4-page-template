@@ -22,6 +22,9 @@
     "filter": "Филтър",
     "payment_methods": "Начини на плащане",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Име",
       "email": "Имейл адрес",
       "phone": "Телефон",

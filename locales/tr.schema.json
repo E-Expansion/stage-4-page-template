@@ -215,6 +215,10 @@
     "disclosures": "Bildirimler"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "Sayfa başına makale",
     "bundle_max_products": "Bu ürün dışındaki ürünler",
     "show_image": "Görseli göster",
@@ -1031,6 +1035,7 @@
     "input_field": "Giriş alanı"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "Harekete geçirici mesaj",
     "sticky_add_to_cart": "Sabit sepete ekle",
     "order_cutoff": "Son sipariş saati ve kargo günleri",
@@ -1267,6 +1272,8 @@
     "disclosures": "Bildirimler"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "Makale metninde [cta] bulunan yerde gösterilir. custom.cta meta alanı önceliklidir.",
     "blog_filters_heading": "Mobilde makalelerin üzerinde gösterilir",
     "related_products_intent": "İlgili: benzer ürünler. Tamamlayıcı: uyumlu ürünler, Search & Discovery'de belirlenir.",

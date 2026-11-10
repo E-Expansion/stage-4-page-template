@@ -215,6 +215,10 @@
     "disclosures": "Oplysninger"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "Artikler pr. side",
     "bundle_max_products": "Produkter ud over dette",
     "show_image": "Vis billede",
@@ -1031,6 +1035,7 @@
     "input_field": "Indtastningsfelt"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "Opfordring til handling",
     "sticky_add_to_cart": "Fastgjort 'Læg i kurv'",
     "order_cutoff": "Bestillingsdeadline og afsendelsesdage",
@@ -1267,6 +1272,8 @@
     "disclosures": "Oplysninger"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "Vises, hvor artiklens tekst indeholder [cta]. Metafeltet custom.cta har forrang.",
     "blog_filters_heading": "Vises over artiklerne på mobil",
     "related_products_intent": "Relaterede: lignende produkter. Supplerende: produkter der passer til, valgt i Search & Discovery.",

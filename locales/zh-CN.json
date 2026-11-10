@@ -22,6 +22,9 @@
     "filter": "筛选条件",
     "payment_methods": "付款方式",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "名称",
       "email": "电子邮件",
       "phone": "电话",

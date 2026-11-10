@@ -131,6 +131,9 @@
   },
   "blocks": {
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Name",
       "email": "Email",
       "phone": "Phone",

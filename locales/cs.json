@@ -22,6 +22,9 @@
     "filter": "Filtr",
     "payment_methods": "Platební metody",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Název",
       "email": "E-mail",
       "phone": "Telefon",

@@ -22,6 +22,9 @@
     "filter": "Filtrer",
     "payment_methods": "Moyens de paiement",
     "contact_form": {
+      "hours": "Horaires d'ouverture",
+      "order_number": "Numéro de commande (facultatif)",
+      "message": "Message",
       "name": "Nom",
       "email": "E-mail",
       "phone": "Téléphone",

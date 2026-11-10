@@ -215,6 +215,10 @@
     "disclosures": "Pflichtangaben"
   },
   "settings": {
+    "email_address": "E-Mail-Adresse",
+    "phone_number": "Telefonnummer",
+    "opening_hours": "Öffnungszeiten",
+    "show_order_number": "Feld für Bestellnummer anzeigen",
     "articles_per_page": "Artikel pro Seite",
     "bundle_max_products": "Produkte neben diesem",
     "show_image": "Bild anzeigen",
@@ -1031,6 +1035,7 @@
     "input_field": "Eingabefeld"
   },
   "content": {
+    "contact_details": "Kontaktdaten",
     "call_to_action": "Handlungsaufforderung",
     "sticky_add_to_cart": "Fixierte Schaltfläche „In den Warenkorb“",
     "order_cutoff": "Bestellschluss und Versandtage",
@@ -1267,6 +1272,8 @@
     "disclosures": "Pflichtangaben"
   },
   "info": {
+    "contact_form_text": "Leer lassen, um den Inhalt der Seite zu verwenden.",
+    "contact_form_email": "Leer lassen, um die Absender-E-Mail des Shops zu verwenden.",
     "article_cta": "Erscheint dort, wo der Artikeltext [cta] enthält. Das Metafeld custom.cta hat Vorrang.",
     "blog_filters_heading": "Wird auf Mobilgeräten über den Artikeln angezeigt",
     "related_products_intent": "Ähnlich: vergleichbare Produkte. Ergänzend: passende Produkte, festgelegt in Search & Discovery.",

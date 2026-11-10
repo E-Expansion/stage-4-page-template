@@ -33,6 +33,7 @@
     "text": "Text"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "Call to action",
     "sticky_add_to_cart": "Sticky add to cart",
     "order_cutoff": "Order cut-off and shipping days",
@@ -236,6 +237,8 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "Shown where the article text contains [cta]. The custom.cta metafield takes priority.",
     "blog_filters_heading": "Shown above the articles on mobile",
     "related_products_intent": "Related: similar products. Complementary: products that go with this one, set in Search & Discovery.",
@@ -864,6 +867,10 @@
     "below_media": "Below media"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "Articles per page",
     "bundle_max_products": "Products besides this one",
     "show_image": "Show image",

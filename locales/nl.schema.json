@@ -215,6 +215,10 @@
     "disclosures": "Toelichtingen"
   },
   "settings": {
+    "email_address": "E-mailadres",
+    "phone_number": "Telefoonnummer",
+    "opening_hours": "Openingstijden",
+    "show_order_number": "Veld voor ordernummer tonen",
     "articles_per_page": "Artikelen per pagina",
     "bundle_max_products": "Producten naast dit product",
     "show_image": "Afbeelding tonen",
@@ -1031,6 +1035,7 @@
     "input_field": "Invoerveld"
   },
   "content": {
+    "contact_details": "Contactgegevens",
     "call_to_action": "Call-to-action",
     "sticky_add_to_cart": "Vaste 'Toevoegen aan winkelwagen'-balk",
     "order_cutoff": "Besteldeadline en verzenddagen",
@@ -1267,6 +1272,8 @@
     "disclosures": "Toelichtingen"
   },
   "info": {
+    "contact_form_text": "Laat leeg om de inhoud van de pagina zelf te gebruiken.",
+    "contact_form_email": "Laat leeg om het afzenderadres van de winkel te gebruiken.",
     "article_cta": "Wordt getoond waar de artikeltekst [cta] bevat. Het metaveld custom.cta gaat voor.",
     "blog_filters_heading": "Wordt op mobiel boven de artikelen getoond",
     "related_products_intent": "Gerelateerd: vergelijkbare producten. Aanvullend: producten die erbij passen, ingesteld in Search & Discovery.",

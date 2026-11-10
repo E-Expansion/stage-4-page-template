@@ -22,6 +22,9 @@
     "filter": "Filtriraj",
     "payment_methods": "Načini plaćanja",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Ime",
       "email": "Adresa e-pošte",
       "phone": "Telefon",

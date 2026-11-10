@@ -22,6 +22,9 @@
     "filter": "Filtruoti",
     "payment_methods": "Mokėjimo būdai",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Vardas",
       "email": "El. pašto adresas",
       "phone": "Telefonas",

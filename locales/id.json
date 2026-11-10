@@ -22,6 +22,9 @@
     "filter": "Filter",
     "payment_methods": "Metode pembayaran",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Nama",
       "email": "Email",
       "phone": "Telepon",

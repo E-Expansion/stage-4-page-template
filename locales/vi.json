@@ -22,6 +22,9 @@
     "filter": "Bộ lọc",
     "payment_methods": "Phương thức thanh toán",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Tên",
       "email": "Email",
       "phone": "Điện thoại",

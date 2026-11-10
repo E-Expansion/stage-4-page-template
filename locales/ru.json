@@ -22,6 +22,9 @@
     "filter": "Фильтровать",
     "payment_methods": "Способы оплаты",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Имя",
       "email": "Электронный адрес",
       "phone": "Телефон",

@@ -22,6 +22,9 @@
     "filter": "Filtrele",
     "payment_methods": "Ödeme yöntemleri",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Ad",
       "email": "E-posta",
       "phone": "Telefon",

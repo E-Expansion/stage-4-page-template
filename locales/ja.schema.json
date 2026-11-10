@@ -215,6 +215,10 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "ページあたりの記事数",
     "bundle_max_products": "この商品以外の商品数",
     "show_image": "画像を表示",
@@ -1031,6 +1035,7 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "行動喚起",
     "sticky_add_to_cart": "固定「カートに追加」",
     "order_cutoff": "注文締め切りと発送日",
@@ -1267,6 +1272,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "記事の本文に [cta] がある位置に表示されます。メタフィールド custom.cta が優先されます。",
     "blog_filters_heading": "モバイルで記事の上に表示されます",
     "related_products_intent": "関連: 似た商品。補完: 一緒に使う商品（Search & Discovery で設定）。",

@@ -22,6 +22,9 @@
     "filter": "Φιλτράρισμα",
     "payment_methods": "Μέθοδοι πληρωμής",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Όνομα",
       "email": "Email",
       "phone": "Τηλέφωνο",

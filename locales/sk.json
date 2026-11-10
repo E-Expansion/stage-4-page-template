@@ -22,6 +22,9 @@
     "filter": "Filtrovať",
     "payment_methods": "Spôsoby platby",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Meno",
       "email": "E-mail",
       "phone": "Telefón",

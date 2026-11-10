@@ -118,6 +118,9 @@
   },
   "blocks": {
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "نام",
       "email": "ای میل",
       "phone": "فون",

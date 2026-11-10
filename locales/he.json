@@ -122,6 +122,9 @@
   },
   "blocks": {
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "שם",
       "email": "דוא\"ל",
       "phone": "טלפון",

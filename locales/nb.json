@@ -22,6 +22,9 @@
     "filter": "Filter",
     "payment_methods": "Betalingsmåter",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Navn",
       "email": "E-post",
       "phone": "Telefon",

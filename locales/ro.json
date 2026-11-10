@@ -21,6 +21,9 @@
     },
     "filter": "Filtrează",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Nume",
       "email": "Adresă de e-mail",
       "phone": "Telefon",

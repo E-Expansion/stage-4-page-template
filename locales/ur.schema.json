@@ -30,6 +30,7 @@
     "text": "ٹیکسٹ"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "عمل کی ترغیب",
     "sticky_add_to_cart": "اسٹکی ایڈ ٹو کارٹ",
     "order_cutoff": "آرڈر کا آخری وقت اور ترسیل کے دن",
@@ -228,6 +229,8 @@
     "work_quickly_to_ship": "<p>ہم جلد از جلد آپ کا آرڈر شپ کرنے کے لیے تیزی سے کام کریں گے۔ آپ کا آرڈر شپ ہونے کے بعد، آپ کو مزید معلومات کے ساتھ ایک ای میل موصول ہوگی۔ آپ کے مقام کے لحاظ سے ترسیل کے اوقات مختلف ہو سکتے ہیں۔</p>"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "جہاں مضمون کے متن میں [cta] ہو وہاں دکھایا جاتا ہے۔ میٹا فیلڈ custom.cta کو ترجیح حاصل ہے۔",
     "blog_filters_heading": "موبائل پر مضامین کے اوپر دکھایا جاتا ہے",
     "related_products_intent": "متعلقہ: ملتے جلتے پروڈکٹس۔ تکمیلی: ساتھ جچنے والے پروڈکٹس، Search & Discovery میں سیٹ۔",
@@ -812,6 +815,10 @@
     "below_media": "میڈیا کے نیچے"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "فی صفحہ مضامین",
     "bundle_max_products": "اس کے علاوہ پروڈکٹس",
     "show_image": "تصویر دکھائیں",

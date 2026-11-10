@@ -215,6 +215,10 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "Artikkeleita sivulla",
     "bundle_max_products": "Tuotteet tämän lisäksi",
     "show_image": "Näytä kuva",
@@ -1031,6 +1035,7 @@
     "input_field": "Syöttökenttä"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "Toimintakehotus",
     "sticky_add_to_cart": "Kiinteä Lisää ostoskoriin -toiminto",
     "order_cutoff": "Tilauksen määräaika ja lähetyspäivät",
@@ -1267,6 +1272,8 @@
     "disclosures": "Ilmoitukset"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "Näkyy kohdassa, jossa artikkelin teksti sisältää [cta]. Metakenttä custom.cta on etusijalla.",
     "blog_filters_heading": "Näkyy artikkelien yläpuolella mobiilissa",
     "related_products_intent": "Samankaltaiset: vastaavat tuotteet. Täydentävät: sopivat tuotteet, valitaan Search & Discoveryssä.",

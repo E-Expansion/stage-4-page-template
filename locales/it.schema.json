@@ -215,6 +215,10 @@
     "disclosures": "Informative"
   },
   "settings": {
+    "email_address": "Indirizzo email",
+    "phone_number": "Numero di telefono",
+    "opening_hours": "Orari di apertura",
+    "show_order_number": "Mostra campo numero ordine",
     "articles_per_page": "Articoli per pagina",
     "bundle_max_products": "Prodotti oltre a questo",
     "show_image": "Mostra immagine",
@@ -1031,6 +1035,7 @@
     "input_field": "Campo di inserimento"
   },
   "content": {
+    "contact_details": "Recapiti",
     "call_to_action": "Invito all’azione",
     "sticky_add_to_cart": "Aggiunta al carrello fissa",
     "order_cutoff": "Orario limite e giorni di spedizione",
@@ -1267,6 +1272,8 @@
     "disclosures": "Informative"
   },
   "info": {
+    "contact_form_text": "Lascia vuoto per usare il contenuto della pagina.",
+    "contact_form_email": "Lascia vuoto per usare l'email mittente del negozio.",
     "article_cta": "Mostrato dove il testo dell’articolo contiene [cta]. Il metacampo custom.cta ha la priorità.",
     "blog_filters_heading": "Mostrato sopra gli articoli su dispositivi mobili",
     "related_products_intent": "Correlati: prodotti simili. Complementari: prodotti abbinabili, impostati in Search & Discovery.",

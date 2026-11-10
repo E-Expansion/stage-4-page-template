@@ -215,6 +215,10 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "每页文章数",
     "bundle_max_products": "除本产品外的产品数",
     "show_image": "显示图片",
@@ -1031,6 +1035,7 @@
     "input_field": "输入字段"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "行动号召",
     "sticky_add_to_cart": "悬浮“添加到购物车”",
     "order_cutoff": "截单时间和发货日",
@@ -1267,6 +1272,8 @@
     "disclosures": "披露信息"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "显示在文章正文包含 [cta] 的位置。元字段 custom.cta 优先。",
     "blog_filters_heading": "在移动设备上显示在文章上方",
     "related_products_intent": "相关：类似产品。搭配：与之相配的产品，在 Search & Discovery 中设置。",

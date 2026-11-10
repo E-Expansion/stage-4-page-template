@@ -215,6 +215,10 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "จำนวนบทความต่อหน้า",
     "bundle_max_products": "สินค้านอกเหนือจากชิ้นนี้",
     "show_image": "แสดงรูปภาพ",
@@ -1031,6 +1035,7 @@
     "input_field": "ช่องกรอกข้อมูล"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "คำกระตุ้นให้ดำเนินการ",
     "sticky_add_to_cart": "เพิ่มลงในตะกร้าสินค้าแบบตรึง",
     "order_cutoff": "เวลาปิดรับคำสั่งซื้อและวันจัดส่ง",
@@ -1267,6 +1272,8 @@
     "disclosures": "การเปิดเผยข้อมูล"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "แสดงในตำแหน่งที่ข้อความบทความมี [cta] เมตาฟิลด์ custom.cta จะมีลำดับความสำคัญกว่า",
     "blog_filters_heading": "แสดงเหนือบทความบนมือถือ",
     "related_products_intent": "ที่เกี่ยวข้อง: สินค้าที่คล้ายกัน ใช้คู่กัน: สินค้าที่เข้ากัน ตั้งค่าใน Search & Discovery",

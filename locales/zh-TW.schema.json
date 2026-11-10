@@ -215,6 +215,10 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "每頁文章數",
     "bundle_max_products": "除本產品外的產品數",
     "show_image": "顯示圖片",
@@ -1031,6 +1035,7 @@
     "input_field": "輸入欄位"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "行動呼籲",
     "sticky_add_to_cart": "固定加入購物車",
     "order_cutoff": "截單時間和出貨日",
@@ -1267,6 +1272,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "顯示於文章內文包含 [cta] 的位置。中繼欄位 custom.cta 優先。",
     "blog_filters_heading": "在行動裝置上顯示於文章上方",
     "related_products_intent": "相關：類似產品。搭配：適合搭配的產品，在 Search & Discovery 中設定。",

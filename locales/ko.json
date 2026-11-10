@@ -22,6 +22,9 @@
     "filter": "필터",
     "payment_methods": "결제 방법",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "이름",
       "email": "이메일",
       "phone": "전화",

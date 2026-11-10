@@ -30,6 +30,7 @@
     "text": "טקסט"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "קריאה לפעולה",
     "sticky_add_to_cart": "לחצן 'הוספה לסל' דביק",
     "order_cutoff": "שעת סגירת הזמנות וימי משלוח",
@@ -228,6 +229,8 @@
     "work_quickly_to_ship": "<p>נעבוד מהר כדי לשלוח את ההזמנה שלך בהקדם האפשרי. לאחר שההזמנה שלך תישלח, תקבל דוא&quot;ל עם מידע נוסף. זמני האספקה משתנים בהתאם למיקומך.</p>"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "מוצג היכן שטקסט המאמר מכיל [cta]. לשדה המטא custom.cta יש עדיפות.",
     "blog_filters_heading": "מוצג מעל המאמרים בנייד",
     "related_products_intent": "קשורים: מוצרים דומים. משלימים: מוצרים שמתאימים, מוגדרים ב-Search & Discovery.",
@@ -812,6 +815,10 @@
     "below_media": "מתחת למדיה"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "מאמרים בעמוד",
     "bundle_max_products": "מוצרים מלבד מוצר זה",
     "show_image": "הצגת תמונה",

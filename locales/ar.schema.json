@@ -30,6 +30,7 @@
     "text": "نص"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "دعوة إلى اتخاذ إجراء",
     "sticky_add_to_cart": "إضافة إلى السلة ثابتة",
     "order_cutoff": "موعد إغلاق الطلبات وأيام الشحن",
@@ -228,6 +229,8 @@
     "work_quickly_to_ship": "<p>سنعمل بسرعة لشحن طلبك في أقرب وقت ممكن. بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على مزيد من المعلومات. تختلف أوقات التوصيل حسب موقعك.</p>"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "يظهر حيث يحتوي نص المقال على [cta]. يحل حقل التعريف custom.cta محل هذه القيم.",
     "blog_filters_heading": "يظهر فوق المقالات على الهاتف المحمول",
     "related_products_intent": "ذات صلة: منتجات مشابهة. مكملة: منتجات تناسبه، تُحدد في Search & Discovery.",
@@ -812,6 +815,10 @@
     "below_media": "أسفل الوسائط"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "عدد المقالات في كل صفحة",
     "bundle_max_products": "منتجات إلى جانب هذا",
     "show_image": "إظهار الصورة",

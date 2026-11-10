@@ -22,6 +22,9 @@
     "filter": "ตัวกรอง",
     "payment_methods": "วิธีการชำระเงิน",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "ชื่อ",
       "email": "อีเมล",
       "phone": "โทรศัพท์",

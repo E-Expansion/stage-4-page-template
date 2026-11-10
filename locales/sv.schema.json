@@ -215,6 +215,10 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "email_address": "Email address",
+    "phone_number": "Phone number",
+    "opening_hours": "Opening hours",
+    "show_order_number": "Show order number field",
     "articles_per_page": "Artiklar per sida",
     "bundle_max_products": "Produkter utöver denna",
     "show_image": "Visa bild",
@@ -1031,6 +1035,7 @@
     "input_field": "Inmatningsfält"
   },
   "content": {
+    "contact_details": "Contact details",
     "call_to_action": "Uppmaning till handling",
     "sticky_add_to_cart": "Fast ”Lägg till i varukorgen”",
     "order_cutoff": "Beställningsdeadline och leveransdagar",
@@ -1267,6 +1272,8 @@
     "disclosures": "Upplysningar"
   },
   "info": {
+    "contact_form_text": "Leave empty to use the page's own content.",
+    "contact_form_email": "Leave empty to use the store's sender email.",
     "article_cta": "Visas där artikeltexten innehåller [cta]. Metafältet custom.cta har företräde.",
     "blog_filters_heading": "Visas ovanför artiklarna på mobilen",
     "related_products_intent": "Relaterade: liknande produkter. Kompletterande: produkter som passar till, valda i Search & Discovery.",

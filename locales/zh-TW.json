@@ -22,6 +22,9 @@
     "filter": "篩選條件",
     "payment_methods": "付款方式",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "名稱",
       "email": "電子郵件",
       "phone": "電話",

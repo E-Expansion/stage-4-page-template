@@ -22,6 +22,9 @@
     "filter": "フィルター",
     "payment_methods": "決済方法",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "名前",
       "email": "メールアドレス",
       "phone": "電話",

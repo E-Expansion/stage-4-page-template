@@ -22,6 +22,9 @@
     "filter": "Szűrés",
     "payment_methods": "Fizetési módok",
     "contact_form": {
+      "hours": "Opening hours",
+      "order_number": "Order number (optional)",
+      "message": "Message",
       "name": "Név",
       "email": "E-mail-cím",
       "phone": "Telefonszám",
