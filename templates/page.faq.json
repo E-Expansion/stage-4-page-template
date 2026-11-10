@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_header": {
+      "type": "page-header",
+      "settings": {
+        "title": "",
+        "text": "",
+        "show_product_count": false,
+        "show_breadcrumbs": true,
+        "parent_label": "",
+        "parent_link": "",
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 24,
+        "padding-block-end": 16
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq_1": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Orders placed before 15:00 on a working day leave the workshop the same day. Within the Netherlands and Belgium they usually arrive in 1–2 working days, elsewhere in the EU in 2–5.</p>",
+            "open": true
+          },
+          "blocks": {}
+        },
+        "faq_2": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Do you ship outside the EU?",
+            "answer": "<p>We ship to the UK, Switzerland, Norway and the United States. Import duties and taxes for orders outside the EU are calculated at checkout.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_3": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I track my order?",
+            "answer": "<p>Yes. As soon as your order leaves the workshop you receive an email with a tracking link.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_4": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I add gift wrap and a note?",
+            "answer": "<p>Yes. Tick the gift wrap option on the product page and write your note. We wrap it in recycled paper with a brass seal and leave the price off the packing slip.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_5": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I return something I have used?",
+            "answer": "<p>You can return any item within 30 days. If it has been used, we will inspect it and refund the full amount when it can be restored to as-new condition.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_6": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How do I start a return?",
+            "answer": "<p>Send us a message with your order number. We reply within one working day with a return label. Refunds are made to your original payment method within 5 working days of receiving the item.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_7": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "What does the 5-year repair guarantee cover?",
+            "answer": "<p>Stitching, hardware, zips and edge finishing are repaired free of charge for five years. Wear from normal use, such as scratches and patina, is part of the leather's character and not covered.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_8": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "What if my item is older than five years?",
+            "answer": "<p>We still repair it, at cost. We keep the parts in stock for every piece we have ever sold, so nothing has to be replaced because a part is missing.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_9": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How do I care for my leather?",
+            "answer": "<p>Wipe it with a dry cloth and condition it two to four times a year. Let wet leather dry slowly at room temperature, never on a heater. Our care guide explains it step by step.</p>",
+            "open": false
+          },
+          "blocks": {}
+        },
+        "faq_10": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Is the leather vegetable-tanned?",
+            "answer": "<p>Yes. All our leather is full-grain and vegetable-tanned at a single tannery forty kilometres from the workshop, without chromium.</p>",
+            "open": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "heading": "Frequently asked questions",
+        "text": "<p>Still unsure? Our workshop answers within one working day.</p>",
+        "link_label": "Chat with us",
+        "link": "",
+        "link_opens_chat": true,
+        "layout": "horizontal",
+        "align_with_grid": false,
+        "background_color": "{{ settings.color_palette.background }}",
+        "border_color": "",
+        "link_color": "",
+        "padding-block-start": 16,
+        "padding-block-end": 64
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "faq"
+  ]
+}
