@@ -50,6 +50,12 @@ export async function refreshProductInfo(source, { optionValues, variantId, sell
 
     morph(column, nextColumn);
 
+    // morph only updates the column's children; the selected variant, selling plan and
+    // media live on the column itself, so copy those over too
+    for (const { name, value } of nextColumn.attributes) {
+      if (name.startsWith('data-') && column.getAttribute(name) !== value) column.setAttribute(name, value);
+    }
+
     for (const [id, value] of keptValues) {
       const field = id ? document.getElementById(id) : null;
       if (field instanceof HTMLTextAreaElement || field instanceof HTMLInputElement) field.value = value ?? '';
