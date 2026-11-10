@@ -28,8 +28,8 @@
       "settings": {
         "heading": "Get in touch",
         "text": "",
-        "email": "",
-        "phone": "",
+        "email": "contact@atelier.com",
+        "phone": "+31 06 1234 5678",
         "hours": "<p>Monday to Friday, 9:00 – 17:00</p>",
         "show_order_number": true,
         "button_label": "Send message",
