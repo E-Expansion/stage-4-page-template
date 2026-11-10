@@ -22,14 +22,27 @@
   capture selected_media_id
     render 'variant-media-id', product: product, variant: product.selected_or_first_available_variant
   endcapture
+  assign selected_media_file = product.selected_or_first_available_variant.featured_media.preview_image.src | split: '?' | first | split: '/' | last
   assign start_index = 0
+  assign start_found = false
   for media in product.media
     assign media_id = media.id | append: ''
     if media_id == selected_media_id
       assign start_index = forloop.index0
+      assign start_found = true
       break
     endif
   endfor
+  # Same image under another media ID: match on file name
+  unless start_found or selected_media_file == blank
+    for media in product.media
+      assign media_file = media.preview_image.src | split: '?' | first | split: '/' | last
+      if media_file == selected_media_file
+        assign start_index = forloop.index0
+        break
+      endif
+    endfor
+  endunless
   assign start_number = start_index | plus: 1
   assign dialog_id = 'ProductGalleryZoom-' | append: section_id
 %}
@@ -53,6 +66,7 @@
         <li
           class="product-gallery__slide"
           data-media-id="{{ media.id }}"
+          data-media-file="{{ media.preview_image.src | split: '?' | first | split: '/' | last }}"
           ref="slides[]"
         >
           {% case media.media_type %}

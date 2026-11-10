@@ -72,10 +72,16 @@ class ProductGalleryComponent extends Component {
   /**
    * Shows the slide holding a media item, e.g. a variant's image after a variant change.
    *
+   * Matches on media ID first, then on file name, so the right slide is found even when
+   * the variant points at a different media ID for the same image.
+   *
    * @param {string | number} mediaId
+   * @param {string} [mediaFile] - The image's file name, e.g. "airpods-case-cognac.jpg"
    */
-  showMedia(mediaId) {
-    const index = this.refs.slides?.findIndex((slide) => slide.dataset.mediaId === String(mediaId)) ?? -1;
+  showMedia(mediaId, mediaFile) {
+    const slides = this.refs.slides ?? [];
+    let index = slides.findIndex((slide) => slide.dataset.mediaId === String(mediaId));
+    if (index < 0 && mediaFile) index = slides.findIndex((slide) => slide.dataset.mediaFile === mediaFile);
     if (index >= 0) this.select(index);
   }
 

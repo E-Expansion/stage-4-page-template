@@ -70,12 +70,12 @@ export async function refreshProductInfo(source, { optionValues, variantId, sell
 
     column.dispatchEvent(new CustomEvent('product-info:render', { bubbles: true }));
 
-    const { variantId: newVariantId, sellingPlanId: newSellingPlanId, mediaId } = column.dataset;
+    const { variantId: newVariantId, sellingPlanId: newSellingPlanId, mediaId, mediaFile } = column.dataset;
     updateUrl(newVariantId, newSellingPlanId);
 
     const gallery = column.closest('.product-main')?.querySelector('product-gallery-component');
-    if (mediaId && gallery && 'showMedia' in gallery && typeof gallery.showMedia === 'function') {
-      gallery.showMedia(mediaId);
+    if ((mediaId || mediaFile) && gallery && 'showMedia' in gallery && typeof gallery.showMedia === 'function') {
+      gallery.showMedia(mediaId, mediaFile);
     }
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') return;

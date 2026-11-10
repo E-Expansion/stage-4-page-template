@@ -37,6 +37,21 @@
       %}
     </div>
 
+    {% liquid
+      # The selected colour's image, by ID and by file name; the gallery matches on either
+      assign selected_variant = product.selected_or_first_available_variant
+      capture selected_media_id
+        render 'variant-media-id', product: product, variant: selected_variant
+      endcapture
+      assign selected_media_file = selected_variant.featured_media.preview_image.src | split: '?' | first | split: '/' | last
+      for media in product.media
+        assign media_id = media.id | append: ''
+        if media_id == selected_media_id
+          assign selected_media_file = media.preview_image.src | split: '?' | first | split: '/' | last
+          break
+        endif
+      endfor
+    %}
     {% comment %} Read by assets/product-info.js when an option or purchase type changes {% endcomment %}
     <div
       class="product-main__info"
@@ -44,7 +59,8 @@
       data-product-url="{{ product.url }}"
       data-variant-id="{{ product.selected_or_first_available_variant.id }}"
       data-selling-plan-id="{{ product.selected_or_first_available_variant.selected_selling_plan_allocation.selling_plan.id }}"
-      data-media-id="{% render 'variant-media-id', product: product, variant: product.selected_or_first_available_variant %}"
+      data-media-id="{{ selected_media_id }}"
+      data-media-file="{{ selected_media_file }}"
     >
       {% content_for 'blocks' %}
     </div>
