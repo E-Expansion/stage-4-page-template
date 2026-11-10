@@ -25,6 +25,9 @@ class ProductGalleryComponent extends Component {
 
   #zoomIndex = 0;
 
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  #settleTimer;
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -65,8 +68,18 @@ class ProductGalleryComponent extends Component {
     // Slides are full width; scrollLeft runs negative in right-to-left layouts
     const { track } = this.refs;
     const direction = getComputedStyle(track).direction === 'rtl' ? -1 : 1;
-    track.scrollTo({ left: direction * index * track.clientWidth, behavior });
+    const left = direction * index * track.clientWidth;
+    track.scrollTo({ left, behavior });
     this.#setIndex(index);
+
+    // A smooth scroll can be cut short, e.g. when the page re-snaps the stage while the
+    // product information re-renders. Finish it instantly if it did not arrive.
+    clearTimeout(this.#settleTimer);
+    if (behavior !== 'instant') {
+      this.#settleTimer = setTimeout(() => {
+        if (Math.abs(track.scrollLeft - left) > 1) track.scrollTo({ left, behavior: 'instant' });
+      }, 500);
+    }
   }
 
   /**
@@ -82,7 +95,8 @@ class ProductGalleryComponent extends Component {
     const slides = this.refs.slides ?? [];
     let index = slides.findIndex((slide) => slide.dataset.mediaId === String(mediaId));
     if (index < 0 && mediaFile) index = slides.findIndex((slide) => slide.dataset.mediaFile === mediaFile);
-    if (index >= 0) this.select(index);
+    // Wait a frame so the re-rendered product information has settled its layout first
+    if (index >= 0) requestAnimationFrame(() => this.select(index));
   }
 
   /**
@@ -155,8 +169,18 @@ class ProductGalleryComponent extends Component {
       else thumb.removeAttribute('aria-current');
     });
 
-    // Keep the active thumbnail visible in a scrolling thumbnail list
-    this.refs.thumbs?.[index]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    // Keep the active thumbnail visible in its list. Scrolls only that list: scrollIntoView
+    // would also scroll the page and can cancel the stage's smooth scroll.
+    const thumb = this.refs.thumbs?.[index];
+    const list = thumb?.closest('ul');
+    if (thumb && list) {
+      const listBox = list.getBoundingClientRect();
+      const thumbBox = thumb.getBoundingClientRect();
+      if (thumbBox.top < listBox.top) list.scrollTop += thumbBox.top - listBox.top;
+      else if (thumbBox.bottom > listBox.bottom) list.scrollTop += thumbBox.bottom - listBox.bottom;
+      if (thumbBox.left < listBox.left) list.scrollLeft += thumbBox.left - listBox.left;
+      else if (thumbBox.right > listBox.right) list.scrollLeft += thumbBox.right - listBox.right;
+    }
   }
 
   #handleScroll = () => {
