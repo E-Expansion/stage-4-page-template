@@ -5,9 +5,17 @@
   metafields: custom.size_dimensions under each value and custom.size_note after the
   selected value, plus an optional size guide page in a dialog.
 
-  Choosing a value re-renders the information column for the new variant (stock, price,
-  buy button) and moves the gallery to the variant's image; see assets/product-info.js.
-  Hidden for products without options.
+  Colours are separate products (linked variations), so every colour has its own URL and
+  page in search results. Each product links its sibling colours through the product
+  metafields custom.variant_a, custom.variant_b and custom.variant_c (a product reference or a
+  pasted product URL). Those render first, as real links, labelled with each product's
+  custom.color_name (falls back to the title) and an optional custom.color_swatch colour.
+  The current product is shown as selected; it is added first when it is not linked itself.
+  A variant option named like the colour label is hidden once links are set.
+
+  Choosing a variant value (e.g. a size) re-renders the information column for the new
+  variant (stock, price, buy button); see assets/product-info.js.
+  Hidden for products without options and without linked colours.
 
   @example
   {% content_for 'blocks' %}
@@ -18,6 +26,48 @@
   assign size_option = block.settings.size_option | strip | downcase
   assign guide_page = block.settings.size_guide_page
   assign guide_label = block.settings.size_guide_label | escape
+  assign color_label = block.settings.color_label | strip
+  assign color_key = color_label | downcase
+
+  # Linked colour products: collect their handles from the variant_a/b/c metafields.
+  # A product reference gives the product directly; a pasted URL is reduced to its handle.
+  assign linked_handles = ''
+  assign has_current = false
+  assign link_keys = 'variant_a,variant_b,variant_c' | split: ','
+  for key in link_keys
+    assign link_field = product.metafields.custom[key]
+    if link_field == blank
+      continue
+    endif
+    assign link_handle = blank
+    if link_field.type == 'product_reference'
+      assign link_handle = link_field.value.handle
+    else
+      assign link_url = link_field.value | append: '' | strip
+      if link_url contains '/products/'
+        assign link_handle = link_url | split: '/products/' | last | split: '?' | first | split: '#' | first | split: '/' | first
+      endif
+    endif
+    if link_handle == blank
+      continue
+    endif
+    if link_handle == product.handle
+      assign has_current = true
+    endif
+    assign linked_handles = linked_handles | append: ',' | append: link_handle
+  endfor
+  unless has_current
+    assign linked_handles = product.handle | append: linked_handles
+  endunless
+  assign linked_handles = linked_handles | split: ',' | compact | uniq
+
+  # Only one entry means just this product: no colour row
+  assign has_colors = false
+  if linked_handles.size > 1
+    assign has_colors = true
+  endif
+
+  assign current_color = product.metafields.custom.color_name.value | default: product.title
 
   if block.settings.size_guide_color != blank
     assign guide_brightness = block.settings.size_guide_color | color_brightness
@@ -29,7 +79,7 @@
   endif
 %}
 
-{% unless product.has_only_default_variant %}
+{% if product.has_only_default_variant == false or has_colors %}
   <script
     src="{{ 'product-variant-picker.js' | asset_url }}"
     type="module"
@@ -43,6 +93,68 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
+    {% if has_colors %}
+      {% assign color_label_id = 'VariantColors-' | append: block.id %}
+      <div class="variant-option">
+        <div class="variant-option__header">
+          <p
+            class="variant-option__legend"
+            id="{{ color_label_id }}"
+          >
+            <span class="variant-option__name">{{ color_label | escape }}</span>
+            <span aria-hidden="true">-</span>
+            <span class="variant-option__selected">{{ current_color | escape }}</span>
+          </p>
+        </div>
+
+        <ul
+          class="variant-option__values list-unstyled"
+          role="list"
+          aria-labelledby="{{ color_label_id }}"
+        >
+          {% for handle in linked_handles %}
+            {% liquid
+              if handle == product.handle
+                assign linked = product
+              else
+                assign linked = all_products[handle]
+              endif
+              if linked == blank or linked.id == blank
+                continue
+              endif
+              assign linked_name = linked.metafields.custom.color_name.value | default: linked.title
+              assign linked_swatch = linked.metafields.custom.color_swatch.value
+              assign is_current = false
+              if linked.id == product.id
+                assign is_current = true
+              endif
+            %}
+            <li>
+              <a
+                class="variant-option__button variant-option__button--link{% unless linked.available %} variant-option__button--unavailable{% endunless %}"
+                href="{{ linked.url }}"
+                {% if is_current %}
+                  aria-current="page"
+                {% endif %}
+              >
+                <span class="variant-option__label">
+                  {%- if linked_swatch != blank -%}
+                    <span
+                      class="variant-option__swatch"
+                      style="--swatch-color: {{ linked_swatch }};"
+                      aria-hidden="true"
+                    ></span>
+                  {%- endif -%}
+                  {{- linked_name | escape -}}
+                  {%- unless linked.available %} - {{ 'blocks.sold_out' | t | downcase }}{% endunless -%}
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
     {% for option in product.options_with_values %}
       {% liquid
         assign option_index = forloop.index0
@@ -52,6 +164,12 @@
           assign is_size = true
         endif
         assign label_id = 'VariantOption-' | append: block.id | append: '-' | append: option_index
+        # A leftover colour option is replaced by the linked colours above; it stays in the
+        # DOM (hidden) so its selected value is still sent when another option changes
+        assign is_replaced_color = false
+        if has_colors and color_key != blank and option_key == color_key
+          assign is_replaced_color = true
+        endif
         assign size_note = blank
         if is_size
           assign size_note = variant.metafields.custom.size_note.value
@@ -61,6 +179,9 @@
         class="variant-option"
         role="radiogroup"
         aria-labelledby="{{ label_id }}"
+        {% if is_replaced_color %}
+          hidden
+        {% endif %}
       >
         <div class="variant-option__header">
           <p
@@ -160,7 +281,7 @@
       </dialog>
     {% endif %}
   </product-variant-picker-component>
-{% endunless %}
+{% endif %}
 
 {% stylesheet %}
   .variant-options {
@@ -246,7 +367,8 @@
       border-color: var(--color-foreground);
     }
 
-    &:has(:checked) {
+    &:has(:checked),
+    &[aria-current='page'] {
       color: var(--color-background);
       background-color: var(--color-foreground);
       border-color: var(--color-foreground);
@@ -256,6 +378,21 @@
       outline: var(--focus-outline-width, 2px) solid var(--color-foreground);
       outline-offset: var(--focus-outline-offset, 2px);
     }
+  }
+
+  .variant-option__values .variant-option__button--link {
+    text-decoration: none;
+  }
+
+  .variant-option__swatch {
+    display: inline-block;
+    width: 0.875em;
+    height: 0.875em;
+    margin-inline-end: var(--gap-2xs);
+    vertical-align: -0.1em;
+    background-color: var(--swatch-color);
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-20));
+    border-radius: 50%;
   }
 
   .variant-option__button--unavailable .variant-option__label {
@@ -323,6 +460,13 @@
   "name": "t:names.product_variant_picker",
   "tag": null,
   "settings": [
+    {
+      "type": "text",
+      "id": "color_label",
+      "label": "t:settings.color_label",
+      "info": "t:info.color_label",
+      "default": "Colour"
+    },
     {
       "type": "text",
       "id": "size_option",
