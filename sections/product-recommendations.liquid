@@ -97,6 +97,8 @@
       %}
       {% capture list_items %}
         {% for product in products limit: section.settings.max_products %}
+          {% capture product_hidden %}{% render 'product-hidden', product: product %}{% endcapture %}
+          {% if product_hidden == 'true' %}{% continue %}{% endif %}
           <div class="resource-list__item">
             {% content_for 'block',
               type: '_product-card',

@@ -1,0 +1,22 @@
+{%- doc -%}
+  Outputs "true" when a product should stay out of product lists: collections, search,
+  predictive search and recommendations. Used for products that only exist to be added by
+  the theme itself, such as gift wrap.
+
+  A product is hidden with Shopify's own metafield seo.hidden set to 1. That metafield
+  also keeps it out of Shopify's search and the sitemap. It works with and without a
+  metafield definition in the admin.
+
+  @param {object} product - The product to check
+
+  @example
+  {% capture hidden %}{% render 'product-hidden', product: product %}{% endcapture %}
+  {% if hidden == 'true' %}{% continue %}{% endif %}
+{%- enddoc -%}
+
+{%- liquid
+  assign seo_hidden = product.metafields.seo.hidden
+  if seo_hidden.value == 1 or seo_hidden == 1 or seo_hidden.value == '1' or seo_hidden == '1'
+    echo 'true'
+  endif
+-%}

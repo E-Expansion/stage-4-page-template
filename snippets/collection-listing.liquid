@@ -451,6 +451,8 @@
         data-collection-grid
       >
         {% for product in products %}
+          {% capture product_hidden %}{% render 'product-hidden', product: product %}{% endcapture %}
+          {% if product_hidden == 'true' %}{% continue %}{% endif %}
           {% liquid
             # Search can return pages and articles too; the grid only shows products
             if product.object_type != blank and product.object_type != 'product'

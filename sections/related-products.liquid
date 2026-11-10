@@ -51,6 +51,8 @@
 
         <ul class="related-products__list snap-carousel list-unstyled">
           {% for recommendation in recommendations.products %}
+            {% capture product_hidden %}{% render 'product-hidden', product: recommendation %}{% endcapture %}
+            {% if product_hidden == 'true' %}{% continue %}{% endif %}
             {% render 'product-tile', product: recommendation, section_id: section.id %}
           {% endfor %}
         </ul>

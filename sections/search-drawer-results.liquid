@@ -83,6 +83,8 @@
         >
           <ul class="search-drawer__list list-unstyled">
             {% for product in products %}
+              {% capture product_hidden %}{% render 'product-hidden', product: product %}{% endcapture %}
+              {% if product_hidden == 'true' %}{% continue %}{% endif %}
               {% render 'product-row', product: product, section_id: section.id %}
             {% endfor %}
           </ul>
