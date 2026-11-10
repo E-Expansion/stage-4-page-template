@@ -52,17 +52,27 @@
   >
     {% for value in color_option.values limit: swatch_limit %}
       {% liquid
-        # The variant for this colour and its image; any variant of the colour with an image will do
+        # The variant for this colour and the image that shows the colour (see variant-media-id)
         assign value_variant = value.variant
-        assign value_media = value_variant.featured_media
-        if value_media == blank
+        if value_variant == blank
           for candidate in product.variants
-            if candidate.options[color_index] == value.name and candidate.featured_media != blank
-              assign value_media = candidate.featured_media
+            if candidate.options[color_index] == value.name
+              assign value_variant = candidate
               break
             endif
           endfor
         endif
+        capture value_media_id
+          render 'variant-media-id', product: product, variant: value_variant
+        endcapture
+        assign value_media = blank
+        for media in product.media
+          assign media_id = media.id | append: ''
+          if media_id == value_media_id
+            assign value_media = media
+            break
+          endif
+        endfor
 
         assign value_srcset = ''
         if value_media != blank

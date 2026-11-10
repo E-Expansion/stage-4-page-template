@@ -2,7 +2,8 @@
   Renders a product's media gallery: a swipeable main stage with a tag badge and a
   "1 / 5 | click to zoom" counter, thumbnails beside it on desktop and below it on mobile,
   and a full-screen zoom dialog for images. Images, videos and 3D models are supported;
-  zoom applies to images. Starts on the selected variant's image when it has one.
+  zoom applies to images. Starts on the selected variant's colour image when it has one
+  (snippets/variant-media-id.liquid).
   Behaviour lives in assets/product-gallery.js; without it the stage still swipes and
   every image stays visible.
 
@@ -18,10 +19,13 @@
 
 {% liquid
   assign media_count = product.media.size
-  assign selected_media_id = product.selected_or_first_available_variant.featured_media.id
+  capture selected_media_id
+    render 'variant-media-id', product: product, variant: product.selected_or_first_available_variant
+  endcapture
   assign start_index = 0
   for media in product.media
-    if media.id == selected_media_id
+    assign media_id = media.id | append: ''
+    if media_id == selected_media_id
       assign start_index = forloop.index0
       break
     endif

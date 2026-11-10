@@ -44,7 +44,7 @@
       data-product-url="{{ product.url }}"
       data-variant-id="{{ product.selected_or_first_available_variant.id }}"
       data-selling-plan-id="{{ product.selected_or_first_available_variant.selected_selling_plan_allocation.selling_plan.id }}"
-      data-media-id="{{ product.selected_or_first_available_variant.featured_media.id }}"
+      data-media-id="{% render 'variant-media-id', product: product, variant: product.selected_or_first_available_variant %}"
     >
       {% content_for 'blocks' %}
     </div>

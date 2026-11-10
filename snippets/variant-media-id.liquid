@@ -1,0 +1,62 @@
+{%- doc -%}
+  Outputs the ID of the media that shows a variant's colour, or nothing when there is
+  none. Used wherever the theme jumps to or previews "the image of this colour".
+
+  Shopify's own variant image (variant.featured_media) is used when its alt text or file
+  name mentions the variant's colour. Otherwise the first product media whose alt text or
+  file name mentions that colour wins ("AirPods Case in Cognac", "airpods-case-cognac.jpg"),
+  and only then the variant image as Shopify has it. This keeps the right photo when an
+  import linked variants to the wrong images, which happens with product CSV imports.
+
+  The colour option is the first one with swatches, or one named like a colour. Products
+  without one simply get the variant image.
+
+  @param {object} product - The product
+  @param {object} variant - The variant whose image to find
+
+  @example
+  {% capture media_id %}{% render 'variant-media-id', product: product, variant: variant %}{% endcapture %}
+{%- enddoc -%}
+
+{%- liquid
+  assign variant_media = variant.featured_media
+  assign result_id = variant_media.id
+  assign color_value = blank
+
+  for candidate_option in product.options_with_values
+    assign option_name = candidate_option.name | downcase
+    assign first_value = candidate_option.values | first
+    if first_value.swatch != blank or option_name == 'color' or option_name == 'colour' or option_name == 'kleur'
+      assign color_index = candidate_option.position | minus: 1
+      assign color_value = variant.options[color_index] | downcase | strip
+      break
+    endif
+  endfor
+
+  if color_value != blank
+    # Match on the alt text, or on the file name with dashes ("dark-brown" for "Dark brown")
+    assign color_handle = color_value | handleize
+    assign variant_matches = false
+
+    if variant_media != blank
+      assign media_alt = variant_media.alt | downcase
+      assign media_file = variant_media.preview_image.src | split: '?' | first | split: '/' | last | downcase
+      if media_alt contains color_value or media_file contains color_handle
+        assign variant_matches = true
+      endif
+    endif
+
+    unless variant_matches
+      for media in product.media
+        assign media_alt = media.alt | downcase
+        assign media_file = media.preview_image.src | split: '?' | first | split: '/' | last | downcase
+        if media_alt contains color_value or media_file contains color_handle
+          assign result_id = media.id
+          break
+        endif
+      endfor
+    endunless
+  endif
+
+  echo result_id
+-%}
