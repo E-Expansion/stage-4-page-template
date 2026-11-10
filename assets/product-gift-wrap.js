@@ -34,9 +34,12 @@ class ProductGiftWrapComponent extends Component {
   #handleCartLinesUpdate = (event) => {
     if (event.action !== 'add' || !this.refs.checkbox.checked) return;
 
-    // Only the add from this section's buy form, not quick add, bundles or our own update
+    // Only the add from this section's buy form, not quick add, bundles or our own update.
+    // Compare elements, not form.id: the product form has an input named "id", which
+    // shadows form.id and returns that input instead of the form's ID.
     const source = event.target;
-    if (!(source instanceof HTMLElement) || source.querySelector('form')?.id !== this.dataset.formId) return;
+    const form = this.dataset.formId ? document.getElementById(this.dataset.formId) : null;
+    if (!form || !(source instanceof Node) || !source.contains(form)) return;
 
     event.promise
       ?.then(({ detail }) => {
@@ -64,7 +67,8 @@ class ProductGiftWrapComponent extends Component {
       new CartLinesUpdateEvent({
         action: 'update',
         context: 'product',
-        lines: [{ merchandiseId: variantId, quantity: 1 }],
+        // An 'update' expects cart line IDs, which the new line doesn't have until the add returns
+        lines: [],
         promise: deferred.promise,
       })
     );
