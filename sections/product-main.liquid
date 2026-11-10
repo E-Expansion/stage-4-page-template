@@ -8,6 +8,11 @@
   <!-- Product template > Product information; add blocks to the information column -->
 {% endcomment %}
 
+{% comment %} Product details for search engines: name, images, price, stock and reviews {% endcomment %}
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+
 {% render 'contrast-override',
   background_color: section.settings.background_color,
   border_color: section.settings.border_color,
