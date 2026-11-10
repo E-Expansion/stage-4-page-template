@@ -7,10 +7,9 @@
 
   Colours are separate products (linked variations), so every colour has its own URL and
   page in search results. Each product links its sibling colours through the product
-  metafields custom.variant_a, custom.variant_b and custom.variant_c (a product reference or a
-  pasted product URL). Those render first, as real links, labelled with each product's
-  custom.color_name (falls back to the title) and an optional custom.color_swatch colour.
-  The current product is shown as selected; it is added first when it is not linked itself.
+  metafields custom.variant_a, custom.variant_b and custom.variant_c (product references).
+  Those render first, as real links (snippets/linked-colors.liquid, shared with the product
+  cards). The current product is shown as selected.
   A variant option named like the colour label is hidden once links are set.
 
   Choosing a variant value (e.g. a size) re-renders the information column for the new
@@ -29,41 +28,13 @@
   assign color_label = block.settings.color_label | strip
   assign color_key = color_label | downcase
 
-  # Linked colour products: collect their handles from the variant_a/b/c metafields.
-  # A product reference gives the product directly; a pasted URL is reduced to its handle.
-  assign linked_handles = ''
-  assign has_current = false
-  assign link_keys = 'variant_a,variant_b,variant_c' | split: ','
-  for key in link_keys
-    assign link_field = product.metafields.custom[key]
-    if link_field == blank
-      continue
-    endif
-    assign link_handle = blank
-    if link_field.type == 'product_reference'
-      assign link_handle = link_field.value.handle
-    else
-      assign link_url = link_field.value | append: '' | strip
-      if link_url contains '/products/'
-        assign link_handle = link_url | split: '/products/' | last | split: '?' | first | split: '#' | first | split: '/' | first
-      endif
-    endif
-    if link_handle == blank
-      continue
-    endif
-    if link_handle == product.handle
-      assign has_current = true
-    endif
-    assign linked_handles = linked_handles | append: ',' | append: link_handle
-  endfor
-  unless has_current
-    assign linked_handles = product.handle | append: linked_handles
-  endunless
-  assign linked_handles = linked_handles | split: ',' | compact | uniq
-
-  # Only one entry means just this product: no colour row
+  # Linked colour products (custom.variant_a/b/c), shared with the product cards
+  capture color_links
+    render 'linked-colors', product: product, layout: 'links'
+  endcapture
+  assign color_links = color_links | strip
   assign has_colors = false
-  if linked_handles.size > 1
+  if color_links != blank
     assign has_colors = true
   endif
 
@@ -112,45 +83,7 @@
           role="list"
           aria-labelledby="{{ color_label_id }}"
         >
-          {% for handle in linked_handles %}
-            {% liquid
-              if handle == product.handle
-                assign linked = product
-              else
-                assign linked = all_products[handle]
-              endif
-              if linked == blank or linked.id == blank
-                continue
-              endif
-              assign linked_name = linked.metafields.custom.color_name.value | default: linked.title
-              assign linked_swatch = linked.metafields.custom.color_swatch.value
-              assign is_current = false
-              if linked.id == product.id
-                assign is_current = true
-              endif
-            %}
-            <li>
-              <a
-                class="variant-option__button variant-option__button--link{% unless linked.available %} variant-option__button--unavailable{% endunless %}"
-                href="{{ linked.url }}"
-                {% if is_current %}
-                  aria-current="page"
-                {% endif %}
-              >
-                <span class="variant-option__label">
-                  {%- if linked_swatch != blank -%}
-                    <span
-                      class="variant-option__swatch"
-                      style="--swatch-color: {{ linked_swatch }};"
-                      aria-hidden="true"
-                    ></span>
-                  {%- endif -%}
-                  {{- linked_name | escape -}}
-                  {%- unless linked.available %} - {{ 'blocks.sold_out' | t | downcase }}{% endunless -%}
-                </span>
-              </a>
-            </li>
-          {% endfor %}
+          {{ color_links }}
         </ul>
       </div>
     {% endif %}

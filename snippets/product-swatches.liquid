@@ -1,7 +1,9 @@
 {%- doc -%}
-  Renders a product's colour swatches. Hovering, focusing or tapping one previews that
-  colour's variant image, points the links at that variant and makes the cart button add
-  it (assets/product-tile.js).
+  Renders a product's colour swatches. Products with linked colours (separate products per
+  colour, custom.variant_a/b/c) show those, via the linked-colors snippet; hovering one
+  previews that product's image and points the title and links at it. Otherwise hovering,
+  focusing or tapping one previews that colour's variant image, points the links at that
+  variant and makes the cart button add it (assets/product-tile.js).
   Must sit inside a <product-tile-component> whose image has ref="image" and whose title
   link has ref="link". Renders nothing when the product has no colour option.
 
@@ -19,8 +21,32 @@
 {%- enddoc -%}
 
 {% liquid
+  capture linked_swatches
+    render 'linked-colors', product: product, layout: 'swatches', limit: settings.product_tile_max_swatches
+  endcapture
+  assign linked_swatches = linked_swatches | strip
+  # Number of colour buttons, for the group label ("3 colours")
+  assign linked_count = linked_swatches | split: 'ref="swatches[]"' | size | minus: 1
+%}
+
+{% if linked_swatches != blank %}
+  <div
+    class="product-tile__swatches"
+    role="group"
+    aria-label="{{ 'content.color_count' | t: count: linked_count }}"
+    on:pointerenter="/preload"
+  >
+    {{ linked_swatches }}
+  </div>
+{% endif %}
+
+{% liquid
+  if linked_swatches != blank
+    assign option = blank
+    assign skip_options = true
+  endif
   assign color_option = option
-  if color_option == blank and product.has_only_default_variant == false
+  if color_option == blank and product.has_only_default_variant == false and skip_options != true
     for candidate_option in product.options_with_values
       assign option_name = candidate_option.name | downcase
       assign first_value = candidate_option.values | first

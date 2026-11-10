@@ -1,0 +1,174 @@
+{%- doc -%}
+  Renders a product's linked colours: separate products, one per colour, linked through the
+  product metafields custom.variant_a, custom.variant_b and custom.variant_c. Each colour is
+  labelled with its custom.color_name (falls back to the title) and coloured with its
+  custom.color_swatch.
+
+  The metafields should be product references, which need no lookup. A pasted product URL
+  also works, but is looked up with all_products, which Shopify caps at 20 handles per page,
+  so on busy pages (collection grids) some URL-linked colours can go missing.
+
+  The current product is always included: in its linked position, or first when it does not
+  link to itself. Renders nothing when fewer than two colours are found.
+
+  Two layouts share this lookup so every place shows the same colours in the same order:
+  - 'links': <li> items with a real link per colour, for the product page variant picker.
+  - 'swatches': swatch buttons that preview the colour in a product-tile-component
+    (assets/product-tile.js), for product cards and search results.
+
+  @param {object} product - The product being shown
+  @param {string} layout - 'links' or 'swatches'
+  @param {number} [limit] - Swatches only: maximum shown, the rest become a "+n" count
+
+  @example
+  {% render 'linked-colors', product: product, layout: 'swatches', limit: 4 %}
+{%- enddoc -%}
+
+{% liquid
+  assign link_keys = 'variant_a,variant_b,variant_c' | split: ','
+
+  # First pass: does the product link to itself, and how many colours resolve?
+  assign has_self = false
+  assign color_count = 0
+  for key in link_keys
+    assign link_field = product.metafields.custom[key]
+    if link_field == blank
+      continue
+    endif
+    if link_field.type == 'product_reference'
+      assign linked = link_field.value
+    else
+      assign link_handle = link_field.value | append: '' | split: '/products/' | last | split: '?' | first | split: '#' | first | split: '/' | first
+      assign linked = all_products[link_handle]
+    endif
+    if linked == blank or linked.id == blank
+      continue
+    endif
+    if linked.id == product.id
+      assign has_self = true
+    endif
+    assign color_count = color_count | plus: 1
+  endfor
+
+  if has_self
+    assign slots = link_keys
+  else
+    assign slots = 'self,variant_a,variant_b,variant_c' | split: ','
+    assign color_count = color_count | plus: 1
+  endif
+
+  assign max_shown = limit | default: 99
+  assign hidden_count = color_count | minus: max_shown
+%}
+
+{%- if color_count > 1 -%}
+  {%- if layout == 'swatches' -%}
+    <script
+      src="{{ 'product-tile.js' | asset_url }}"
+      type="module"
+      fetchpriority="low"
+    ></script>
+  {%- endif -%}
+
+  {%- assign shown = 0 -%}
+  {%- for slot in slots -%}
+    {% liquid
+      if shown >= max_shown
+        break
+      endif
+
+      if slot == 'self'
+        assign linked = product
+      else
+        assign link_field = product.metafields.custom[slot]
+        if link_field == blank
+          continue
+        endif
+        if link_field.type == 'product_reference'
+          assign linked = link_field.value
+        else
+          assign link_handle = link_field.value | append: '' | split: '/products/' | last | split: '?' | first | split: '#' | first | split: '/' | first
+          assign linked = all_products[link_handle]
+        endif
+      endif
+      if linked == blank or linked.id == blank
+        continue
+      endif
+      assign shown = shown | plus: 1
+
+      assign linked_name = linked.metafields.custom.color_name.value | default: linked.title
+      assign linked_swatch = linked.metafields.custom.color_swatch.value
+      assign is_current = false
+      if linked.id == product.id
+        assign is_current = true
+      endif
+    %}
+
+    {%- if layout == 'links' -%}
+      <li>
+        <a
+          class="variant-option__button variant-option__button--link{% unless linked.available %} variant-option__button--unavailable{% endunless %}"
+          href="{{ linked.url }}"
+          {% if is_current %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span class="variant-option__label">
+            {%- if linked_swatch != blank -%}
+              <span
+                class="variant-option__swatch"
+                style="--swatch-color: {{ linked_swatch }};"
+                aria-hidden="true"
+              ></span>
+            {%- endif -%}
+            {{- linked_name | escape -}}
+            {%- unless linked.available %} - {{ 'blocks.sold_out' | t | downcase }}{% endunless -%}
+          </span>
+        </a>
+      </li>
+    {%- else -%}
+      {% liquid
+        assign linked_media = linked.featured_media.preview_image
+        assign linked_srcset = ''
+        if linked_media != blank
+          assign srcset_widths = '240,360,480,640,800,1000' | split: ','
+          for width in srcset_widths
+            assign width_url = linked_media | image_url: width: width
+            assign linked_srcset = linked_srcset | append: width_url | append: ' ' | append: width | append: 'w'
+            unless forloop.last
+              assign linked_srcset = linked_srcset | append: ', '
+            endunless
+          endfor
+        endif
+        assign linked_variant = linked.selected_or_first_available_variant
+      %}
+      <button
+        type="button"
+        class="product-tile__swatch"
+        aria-label="{{ linked_name | escape }}"
+        aria-pressed="{{ is_current }}"
+        {% if linked_swatch != blank %}
+          style="--swatch-color: {{ linked_swatch }};"
+        {% endif %}
+        data-url="{{ linked.url }}"
+        data-title="{{ linked.title | escape }}"
+        data-available="{{ linked.available }}"
+        {% if linked.has_only_default_variant %}
+          data-variant-id="{{ linked_variant.id }}"
+        {% endif %}
+        {% if linked_media != blank %}
+          data-src="{{ linked_media | image_url: width: 1000 }}"
+          data-srcset="{{ linked_srcset }}"
+        {% endif %}
+        ref="swatches[]"
+        on:pointerenter="/preview"
+        on:focus="/preview"
+        on:click="/preview"
+      ></button>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if layout == 'swatches' and hidden_count > 0 -%}
+    <span class="product-tile__swatch-more">+{{ hidden_count }}</span>
+  {%- endif -%}
+{%- endif -%}
