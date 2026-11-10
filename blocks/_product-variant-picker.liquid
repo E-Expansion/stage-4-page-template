@@ -155,6 +155,8 @@
       </div>
     {% endif %}
 
+    {% comment %} Products without real options only have "Title / Default Title": skip it {% endcomment %}
+    {% unless product.has_only_default_variant %}
     {% for option in product.options_with_values %}
       {% liquid
         assign option_index = forloop.index0
@@ -253,6 +255,7 @@
         </div>
       </div>
     {% endfor %}
+    {% endunless %}
 
     {% if guide_page != blank %}
       <dialog

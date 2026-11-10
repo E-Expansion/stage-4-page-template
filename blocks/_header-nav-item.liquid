@@ -7,7 +7,7 @@
   menu and the collection pages always match:
   - Columns: the chosen collection's custom.subcategories metafield (list of collections).
   - Links in a column: that subcollection's own custom.subcategories, or its first
-    products when it has none.
+    products when it has none (one link per colour group; see custom.variant_a).
   Without a collection, or when its metafield is empty, the manual column blocks are used.
 
   The desktop dropdown has at least four equal columns; the featured collection set on the
@@ -44,9 +44,30 @@
               render 'header-mega-link', label: child_title, url: child.url
             endfor
           else
-            for product in subcollection.products limit: 5
-              assign product_title = product.title | escape
+            # Colours are separate linked products (custom.variant_a/b/c). Show one link per
+            # colour group, keyed on the shared variant_a link, with the colour left off the title
+            assign seen_groups = ','
+            assign shown = 0
+            for product in subcollection.products limit: 50
+              if shown >= 5
+                break
+              endif
+              assign group_link = product.metafields.custom.variant_a.value
+              assign group_key = group_link.handle | default: group_link | default: product.handle
+              assign group_key = group_key | split: '/products/' | last | split: '?' | first
+              assign group_marker = ',' | append: group_key | append: ','
+              if seen_groups contains group_marker
+                continue
+              endif
+              assign seen_groups = seen_groups | append: group_key | append: ','
+
+              assign product_title = product.title
+              assign color_name = product.metafields.custom.color_name.value
+              if color_name != blank
+                assign product_title = product_title | remove_last: color_name | strip
+              endif
               render 'header-mega-link', label: product_title, url: product.url
+              assign shown = shown | plus: 1
             endfor
           endif
         endcapture
