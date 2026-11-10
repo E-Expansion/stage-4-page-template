@@ -1,9 +1,13 @@
 import { Component } from '@theme/component';
+import { StandardEvents, CartLinesUpdateEvent } from '@shopify/events';
+import { fetchConfig } from '@theme/utilities';
 
 /**
- * Gift wrap option on the product page. When it is ticked, a submit of the buy form first
- * adds the gift wrap product (with the note as a line item property), then lets the buy
- * form's own submit run, so Horizon's cart drawer opens with both lines.
+ * Gift wrap option on the product page. Listens for the cart add of this section's buy form
+ * (the same event the cart drawer and the cart notification use, so it covers the buy button
+ * and the sticky buy bar). When the checkbox is ticked and that add succeeded, it adds the
+ * gift wrap product, with the note as a line item property, and dispatches a cart update so
+ * the cart drawer and the cart count follow.
  *
  * @typedef {object} Refs
  * @property {HTMLInputElement} checkbox - The gift wrap checkbox.
@@ -14,50 +18,32 @@ import { Component } from '@theme/component';
 class ProductGiftWrapComponent extends Component {
   requiredRefs = ['checkbox'];
 
-  /** @type {AbortController | undefined} */
-  #abortController;
-
-  /** True while the buy form is resubmitted after adding the gift wrap */
-  #resubmitting = false;
-
   connectedCallback() {
     super.connectedCallback();
-
-    this.#abortController = new AbortController();
-    // The product form's on:submit handler is a capture listener on document (component.js),
-    // registered before this script loads. A capture listener on window runs before any
-    // listener on document, so the gift wrap is added first and the form's handler only
-    // runs on the resubmit.
-    window.addEventListener('submit', this.#handleSubmit, { capture: true, signal: this.#abortController.signal });
+    document.addEventListener(StandardEvents.cartLinesUpdate, this.#handleCartLinesUpdate);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.#abortController?.abort();
+    document.removeEventListener(StandardEvents.cartLinesUpdate, this.#handleCartLinesUpdate);
   }
 
-  /** @param {SubmitEvent} event */
-  #handleSubmit = async (event) => {
-    const form = event.target;
-    if (!(form instanceof HTMLFormElement) || form.id !== this.dataset.formId) return;
-    if (this.#resubmitting || !this.refs.checkbox.checked) return;
+  /**
+   * @param {import('@shopify/events').CartLinesUpdateEvent} event
+   */
+  #handleCartLinesUpdate = (event) => {
+    if (event.action !== 'add' || !this.refs.checkbox.checked) return;
 
-    event.preventDefault();
-    event.stopImmediatePropagation();
+    // Only the add from this section's buy form, not quick add, bundles or our own update
+    const source = event.target;
+    if (!(source instanceof HTMLElement) || source.querySelector('form')?.id !== this.dataset.formId) return;
 
-    try {
-      await this.#addGiftWrap();
-    } catch (error) {
-      // Still add the product itself; only the wrap is missing
-      console.error(error);
-    }
-
-    this.#resubmitting = true;
-    try {
-      form.requestSubmit(event.submitter instanceof HTMLElement ? event.submitter : undefined);
-    } finally {
-      this.#resubmitting = false;
-    }
+    event.promise
+      ?.then(({ detail }) => {
+        if (!detail || detail.didError) return;
+        return this.#addGiftWrap();
+      })
+      .catch((error) => console.error('[gift-wrap]', error));
   };
 
   async #addGiftWrap() {
@@ -68,13 +54,50 @@ class ProductGiftWrapComponent extends Component {
     /** @type {Record<string, string>} */
     const properties = note ? { [noteProperty]: note } : {};
 
-    const response = await fetch(Theme.routes.cart_add_url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ items: [{ id: Number(variantId), quantity: 1, properties }] }),
-    });
+    const sectionIds = Array.from(document.querySelectorAll('cart-items-component'))
+      .map((element) => (element instanceof HTMLElement ? element.dataset.sectionId : ''))
+      .filter(Boolean);
 
-    if (!response.ok) throw new Error(`Gift wrap could not be added (${response.status})`);
+    const deferred = CartLinesUpdateEvent.createPromise();
+    // 'update', not 'add', so the "added to cart" notification keeps showing the product itself
+    this.dispatchEvent(
+      new CartLinesUpdateEvent({
+        action: 'update',
+        context: 'product',
+        lines: [{ merchandiseId: variantId, quantity: 1 }],
+        promise: deferred.promise,
+      })
+    );
+
+    try {
+      const body = JSON.stringify({
+        items: [{ id: Number(variantId), quantity: 1, properties }],
+        sections: sectionIds.join(','),
+        sections_url: window.location.pathname,
+      });
+      const response = await fetch(Theme.routes.cart_add_url, fetchConfig('json', { body }));
+      const result = await response.json();
+      if (!response.ok || result.status) {
+        throw new Error(`Gift wrap could not be added (${response.status}): ${result.description ?? result.message ?? ''}`);
+      }
+
+      // The add response has the added items and sections, but not the whole cart
+      const cart = await (await fetch(`${Theme.routes.cart_url}.js`, { headers: { Accept: 'application/json' } })).json();
+
+      deferred.resolve({
+        cart: CartLinesUpdateEvent.createCartFromAjaxResponse(cart),
+        detail: {
+          sections: result.sections,
+          items: cart.items,
+          itemCount: cart.item_count,
+          source: 'product-gift-wrap',
+          didError: false,
+        },
+      });
+    } catch (error) {
+      deferred.reject(error);
+      throw error;
+    }
   }
 }
 

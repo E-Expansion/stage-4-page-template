@@ -1,9 +1,9 @@
 {% doc %}
   Renders the gift wrap option: a checkbox card "Add gift wrap and a handwritten note - €4.50"
   with a short description, and a note field that appears when it is ticked. The gift wrap
-  is a separate product chosen in the block settings; when ticked, add to cart first adds
-  that product (with the note as a line item property) and then the main product, so the
-  charge shows up in the cart and at checkout. Renders nothing for shoppers until a buyable
+  is a separate product chosen in the block settings; when ticked, a successful add to cart
+  of this section's buy form also adds that product (with the note as a line item property),
+  so the charge shows up in the cart and at checkout. Renders nothing for shoppers until a buyable
   product is chosen; the editor shows why instead.
   Behaviour lives in assets/product-gift-wrap.js.
 
@@ -213,7 +213,7 @@
       "type": "text",
       "id": "note_placeholder",
       "label": "t:settings.placeholder",
-      "default": "Write your note (max. 250 characters)",
+      "default": "Write your note (optional, max. 250 characters)",
       "visible_if": "{{ block.settings.show_note }}"
     },
     {

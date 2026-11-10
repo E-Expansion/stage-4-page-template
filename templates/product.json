@@ -128,7 +128,7 @@
             "label": "Add gift wrap and a handwritten note",
             "description": "Recycled paper, brass seal, no price on the packing slip.",
             "show_note": true,
-            "note_placeholder": "Write your note (max. 250 characters)",
+            "note_placeholder": "Write your note (optional, max. 250 characters)",
             "accent_color": "{{ settings.color_palette.color3 }}"
           },
           "blocks": {}
