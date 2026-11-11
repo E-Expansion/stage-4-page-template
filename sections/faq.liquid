@@ -162,14 +162,10 @@
     line-height: var(--line-height--display-normal);
     letter-spacing: var(--letter-spacing--heading-tight);
     overflow-wrap: anywhere;
-
-    @media screen and (min-width: 990px) {
-      font-size: var(--font-size--3xl);
-    }
   }
 
   .faq__text {
-    font-size: var(--font-size--md);
+    font-size: var(--font-size--sm);
     line-height: var(--line-height--body-loose);
     color: var(--color-foreground-muted);
 
@@ -186,6 +182,16 @@
     &:hover {
       text-decoration-thickness: 2px;
     }
+  }
+
+  /* Same text sizes as the rest of the page; the accordion snippet's larger sizes are
+     meant for blog articles */
+  .faq__list .faq-accordion__question {
+    font-size: var(--font-size--md);
+  }
+
+  .faq__list .faq-accordion__answer {
+    font-size: var(--font-size--sm);
   }
 
   /* Mobile: dividers run edge to edge of the card, text keeps the card padding */

@@ -115,6 +115,12 @@
     min-width: 0;
   }
 
+  /* Title, meta row and price read as one group: a small gap between them when they
+     follow each other, in any order the merchant sets */
+  .product-main__info > :is(.product-title, .product-meta, .product-price) + :is(.product-title, .product-meta, .product-price) {
+    margin-block-start: calc(var(--gap-xs) - var(--margin-2xl));
+  }
+
   /* Both columns stick; the shorter one (usually the gallery) stays in view while the
      taller one scrolls past, the taller one has no room to stick */
   @media screen and (min-width: 990px) {

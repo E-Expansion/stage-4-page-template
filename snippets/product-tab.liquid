@@ -113,7 +113,6 @@
 
     @media screen and (min-width: 750px) {
       padding: var(--padding-md) var(--padding-sm);
-      font-size: var(--font-size--md);
     }
   }
 
@@ -142,9 +141,6 @@
     flex-direction: column;
     gap: var(--gap-md);
 
-    @media screen and (min-width: 750px) {
-      gap: var(--gap-lg);
-    }
   }
 
   .product-tab__input:focus-visible + .product-tab__label {
@@ -152,25 +148,17 @@
     outline-offset: calc(var(--focus-outline-width) * -1);
   }
 
-  /* A lead-in line above the text, not a document heading: one step above the body text */
+  /* A lead-in line above the text, not a document heading: body size, set apart by weight */
   .product-tab__heading {
     margin: 0;
     font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--md);
+    font-size: var(--font-size--sm);
     line-height: var(--line-height--body-tight);
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--lg);
-    }
   }
 
   .product-tab__content {
     font-size: var(--font-size--sm);
     line-height: var(--line-height--body-loose);
-
-    @media screen and (min-width: 750px) {
-      font-size: var(--font-size--md);
-    }
 
     & > :first-child {
       margin-block-start: 0;
