@@ -76,7 +76,7 @@
 
     <div class="product-tab__panel">
       {% if heading != blank %}
-        <h3 class="product-tab__heading">{{ heading | escape }}</h3>
+        <p class="product-tab__heading">{{ heading | escape }}</p>
       {% endif %}
       {% if content != blank %}
         <div class="product-tab__content rte">{{ content }}</div>
@@ -152,15 +152,15 @@
     outline-offset: calc(var(--focus-outline-width) * -1);
   }
 
+  /* A lead-in line above the text, not a document heading: one step above the body text */
   .product-tab__heading {
     margin: 0;
-    font-family: var(--font-heading--family);
     font-weight: var(--font-heading--weight);
-    font-size: var(--font-size--lg);
-    line-height: var(--line-height--display-normal);
+    font-size: var(--font-size--md);
+    line-height: var(--line-height--body-tight);
 
     @media screen and (min-width: 750px) {
-      font-size: var(--font-size--xl);
+      font-size: var(--font-size--lg);
     }
   }
 
